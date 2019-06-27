@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <h1 style="text-center"> Projects I Have Completed to a Reasonable Extent</h1>
+    </div>
+    <div class="row">
+        {% for p in pages %}
+
+        vvvvv THIS LINE IS BROKEN vvvvv
+        <h2><a href = "{{ p.title }}">{{ p.title }}</a>: </h2>
+
+        {{ p.description }}
+
+
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
+

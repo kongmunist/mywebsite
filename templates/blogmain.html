@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3">
+            {% include "aboutsidebar.html" %}
+        </div>
+        <div class="col-9">
+
+            <h2>BLOG POST LIST</h2>
+             Yea normal main blog page
+            <ul>
+            {% for p in pages %}
+            <li>
+                <a href="{{ url_for("page", path=p.path) }}">{{ p.title }}</a>
+            {% if p.meta.tags|length %}
+                | Tagged:
+                {% for page_tag in p.meta.tags %}
+                    <a href="{{ url_for("tag", tag=page_tag) }}">{{ page_tag }}</a>
+                {% endfor %}
+                | Date Published:
+                {{p.meta.date}}
+            {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+

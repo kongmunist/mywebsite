@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3">
+            {% include "aboutsidebar.html" %}
+        </div>
+        <div class="col-9">
+
+            <h2>Here's a list of all the tags</h2>
+
+            {% for t in pages %}
+
+                <a href="{{ url_for("tag", tag=t) }}">{{ t }}</a>
+            {% endfor %}
+
+
+        </div>
+    </div>
+</div>
+{% endblock content %}
