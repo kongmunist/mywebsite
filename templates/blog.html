@@ -3,14 +3,21 @@
 {% block app_content %}
 <div class="container-fluid">
     <div class="row">
+        <div class="col-xs-3">
 
+            <img class="media-object" src="{{url_for('static', filename = 'me.png')}}"/>
+            I'm Andy
+
+        </div>
+
+            <div class="col-xs-9">
             <!--This SHOULD only have one page in it, but if it ever collides in filename we're screwed-->
         {% for p in page %}
             <h2>{{ p.title }}</h2>
             {{ p.html|safe }}
 
         {% endfor %}
-
+            </div>
     </div>
 </div>
 {% endblock %}
