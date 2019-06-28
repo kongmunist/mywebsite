@@ -23,6 +23,12 @@ freezer = Freezer(app)
 def index():
     return render_template('index.html', pages=pages)
 
+@app.route("/about/")
+def about():
+    print("about page")
+    return render_template('about.html')
+
+
 @app.route("/blog/")
 def mainblog():
     print("main blog page")

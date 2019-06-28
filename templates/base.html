@@ -8,16 +8,32 @@
 
     <title>Andy Kong</title>
     <style type="text/css">
-   body { background: #e0e0d8 !important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+   body { background: #343838 !important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
     </style>
 
 </head>
 <body>
 
 
-<nav class="navbar navbar-dark" style="background-color: #e0e0d8;">
+<nav class="navbar navbar-dark" style="background-color: #343838;">
   <a class="navbar-brand" href="{{ url_for("index") }}">
     <img src="{{ url_for('static', filename = 'mylogo.png') }}" height="50" alt="">
+
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for("index") }}">Index<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for("mainproject") }}">Projects</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="{{ url_for("mainblog") }}">Blog</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="{{ url_for("about") }}">About</a>
+      </li>
+    </ul>
+
   </a>
 </nav>
 
