@@ -1,13 +1,9 @@
 {% extends "base.html" %}
 
 
-{% block content %}
+{% block app_content %}
 <div class="container-fluid">
     <div class="row">
-        <div class="col-3">
-            {% include "aboutsidebar.html" %}
-        </div>
-        <div class="col-9">
 
             <h2>Here's a list of all the tags</h2>
 
@@ -17,7 +13,6 @@
             {% endfor %}
 
 
-        </div>
     </div>
 </div>
-{% endblock content %}
+{% endblock %}
