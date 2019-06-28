@@ -1,0 +1,17 @@
+{% extends "base.html"%}
+
+{% block app_content %}
+<div class="container-fluid">
+<div class="row">
+<div class="media">
+    <div class="media-left">
+        <img class="media-object" src="{{url_for('static', filename = 'me.png')}}"/>
+    </div>
+    <div class="media-body">
+        <h4 class="media-heading">A picture of my stupid face</h4>
+        Hello my name is Andy and I suck
+    </div>
+</div>
+</div>
+</div>
+{% endblock %}

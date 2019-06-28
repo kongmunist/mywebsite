@@ -1,5 +1,6 @@
 from flask import Flask, render_template, url_for
 from flask_flatpages import FlatPages
+from flask_bootstrap import Bootstrap
 
 import sys
 from flask_frozen import Freezer
@@ -18,6 +19,7 @@ app = Flask(__name__)
 app.config.from_object(__name__)
 pages = FlatPages(app)
 freezer = Freezer(app)
+bootstrap = Bootstrap(app)
 
 @app.route("/")
 def index():
@@ -28,6 +30,11 @@ def mainblog():
     print("main blog page")
     blogPages = [p for p in pages if "blog"==p.meta.get('label')]
     return render_template('blogmain.html', page=[], pages=blogPages)
+
+@app.route("/about/")
+def about():
+    print("aboutme")
+    return render_template('about.html', pages=pages)
 
 
 # need to make individual redirects for the rest of the tabs too (tagged, projects)
