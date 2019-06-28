@@ -8,6 +8,12 @@ DEBUG = True
 FLATPAGES_AUTO_RELOAD = DEBUG
 FLATPAGES_EXTENSION = '.md'
 
+
+
+# run "python sitebuilder.py build" in shell to build to the build folder
+
+
+
 app = Flask(__name__)
 app.config.from_object(__name__)
 pages = FlatPages(app)
@@ -59,6 +65,7 @@ def tag(tag):
 def mainproject():
     print("main project page")
     projPages = [p for p in pages if "project" == p.meta.get('label')]
+    # projPages = [x.path[9:] for x in projPages]
     return render_template('projectsmain.html', pages = projPages)
 
 @app.route('/projects/<string:project>/')
@@ -67,27 +74,12 @@ def project(project):
     page = [pages.get("projects/" + project)]
     if page[0] is None:
         return mainproject()
-    return render_template('projects.html', page = page)
+    return render_template('projects.html', page = page[0])
 
 
 @app.route('/<path:path>/')
 def page(path):
     print("page " + path)
-    # if "blog" == path:
-    #     blogPages = [p for p in pages if "blog" == p.meta.get('label')]
-    #     return render_template('blogmain.html', page=[], pages=blogPages)
-
-    # if "projects" == path:
-    #     projPages = [p for p in pages if "project" == p.meta.get('label')]
-    #     return render_template('project.html', page=[], pages = projPages)
-
-    # if "tagged" == path:
-    #     listPages = set()
-    #     for p in pages:
-    #         for t in p.meta.get('tags', []):
-    #             listPages.add(t)
-    #     return render_template('tag.html', pages=[], tag=list(listPages))
-
 
     page = pages.get_or_404(path)
     return render_template('page.html', page=page)

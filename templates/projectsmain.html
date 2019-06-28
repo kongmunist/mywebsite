@@ -8,11 +8,8 @@
     <div class="row">
         {% for p in pages %}
 
-        vvvvv THIS LINE IS BROKEN vvvvv
-        <h2><a href = "{{ p.title }}">{{ p.title }}</a>: </h2>
-
+        <h2><a href = "{{ url_for("project",project=p.path[9:]) }}">{{ p.title }}</a>: </h2>
         {{ p.description }}
-
 
         {% endfor %}
     </div>
