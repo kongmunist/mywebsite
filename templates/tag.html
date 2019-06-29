@@ -5,10 +5,20 @@
 {% block app_content %}
 <div class="container-fluid">
     <div class="row">
+
+        <div class="col-xs-3">
+
+            {% include "aboutsidebar.html" %}
+
+        </div>
+
+            <div class="col-xs-9">
+
             <h2>List of stuff tagged <em>{{ tag }}</em></h2>
             {% with pages=pages  %}
                 {% include "_list.html" %}
             {% endwith %}
+            </div>
     </div>
 </div>
 {% endblock %}
