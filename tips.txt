@@ -1,0 +1,4 @@
+Used some workaround I found on Stack Overflow to render jinja templates ({{}}) before rendering markdown for the project and blog posts. now i can use url_for on images in .md files
+class="d-block mx-auto" for images in bootstrap. mx-auto centers, d-block prevents it from being inline.
+Images in md have to be beside a text block (touching, 1 \n) or else the headers (###) will attach to the sides -.-
+

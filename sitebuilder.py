@@ -1,5 +1,5 @@
-from flask import Flask, render_template, url_for
-from flask_flatpages import FlatPages
+from flask import Flask, render_template, url_for, render_template_string, Markup
+from flask_flatpages import FlatPages, pygmented_markdown
 from flask_bootstrap import Bootstrap
 
 import sys
@@ -18,6 +18,13 @@ app.config.from_object(__name__)
 pages = FlatPages(app)
 freezer = Freezer(app)
 bootstrap = Bootstrap(app)
+
+def prerender_jinja(text):
+    prerendered_body = render_template_string(Markup(text))
+    return pygmented_markdown(prerendered_body)
+
+app.config['FLATPAGES_HTML_RENDERER'] = prerender_jinja
+
 
 @app.route("/")
 def index():
