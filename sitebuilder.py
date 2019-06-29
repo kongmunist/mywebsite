@@ -103,10 +103,14 @@ def page(path):
 
 if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == "build":
-        #Builds the website into a static site and runs "firebase deploy" to update the site
-        app.config["FREEZER_DESTINATION"] = "../andykong.org/public"
-        freezer.freeze()
-        os.system("(cd ../andykong.org && firebase deploy)")
+        # Builds the website into a static site and runs "firebase deploy" to update the site
+        if len(sys.argv) > 2 and sys.argv[2] == "local":
+            #PLEASE DO NOT RUN "python sitebuilder.py build local" IF YOU ARE NOT ON ANDY'S MAC
+            app.config["FREEZER_DESTINATION"] = "../andykong.org/public"
+            freezer.freeze()
+            os.system("(cd ../andykong.org && firebase deploy)")
+        else:
+            freezer.freeze()
     else:
         app.run(port=8000)
 
