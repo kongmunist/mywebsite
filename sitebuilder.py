@@ -1,9 +1,12 @@
 from flask import Flask, render_template, url_for, render_template_string, Markup
 from flask_flatpages import FlatPages, pygmented_markdown
 from flask_bootstrap import Bootstrap
+from flask_frozen import Freezer
 
 import sys
-from flask_frozen import Freezer
+import subprocess
+import os
+
 
 DEBUG = True
 FLATPAGES_AUTO_RELOAD = DEBUG
@@ -100,7 +103,10 @@ def page(path):
 
 if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == "build":
+        #Builds the website into a static site and runs "firebase deploy" to update the site
+        app.config["FREEZER_DESTINATION"] = "../andykong.org/public"
         freezer.freeze()
+        os.system("(cd ../andykong.org && firebase deploy)")
     else:
         app.run(port=8000)
 

@@ -9,7 +9,7 @@
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
   <style>
-body { background: #202222 !important; }
+body { background: #202222; }
 
 a { color:#00B4CC }
 
@@ -18,6 +18,10 @@ a:hover {
     text-decoration: none;
 }
 
+img {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
 
 .text-primary { color:red !important }
 
@@ -32,6 +36,9 @@ a:hover {
     color:#00b4cc !important;
     text-decoration: none;
     }
+
+html, body{margin:0px !important; padding:0px !important;}
+
 </style>
 
   </head>
@@ -39,26 +46,33 @@ a:hover {
 
 
     <nav class="navbar navbar-expand-lg">
-        <!--<div class="container-fluid">-->
-        <a class="navbar-brand navitem" href="/">Andy Kong</a>
-              <ul class="navbar-nav">
+        <div class="container-fluid">
+        <a class="navbar-brand navitem" href="/" style="font-size:30;">Andy Kong</a>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+              <ul class="navbar-nav ml-auto">
+
 
                 <li class="nav-item"><a class="navitem nav-link" href="/about/">About</a></li>
                 <li class="nav-item"><a class="navitem nav-link" href="/projects/">Projects</a></li>
                 <li class="nav-item"><a class="navitem nav-link" href="/blog/">Blog</a></li>
               </ul>
+        </div>
+        </div>
     </nav>
 
-    <div class="container">
+    <div class="container-fluid">
         
-<div class="container-fluid">
     <div class="row">
         <p style="text-center">Personal Website</p>
         <p>Hello! I made a website for showing off my project portfolio, posting "sorry for not posting" blog posts, and hosting an About Me page to make it easier for recruiters to find and ignore links to my Github, Youtube, and food blog.</p>
-<p>![Website V1][websitev1.png]</p>
-<p>Here's what it looks like now :(. Function before fashion, as they say. I'm working on the projects tab and header, after that I can make it pretty (I say that now, but I might get lazy and rationalize that it won't change anyone's opinion of me considering I don't value my web dev skills very high on my list of capabilities (That was a really long aside, you must be tired of this sentence by now)). </p>
+<h5>6/27</h5>
+<p>Here's what it used to look like. Function before fashion, as they say. I'm working on the projects tab and header, after that I can make it pretty (I say that now, but I might get lazy and rationalize that it won't change anyone's opinion of me considering I don't value my web dev skills very high on my list of capabilities (That was a really long aside, you must be tired of this sentence by now)). 
+<img src=/static/websitev1.png width="600" class="d-block mx-auto"/></p>
+<h3>6/29</h3>
+<p>Writing this update sucked. Weird workaround in jinja allows the url_for from Flask-FlatPages to work and find the pathnames for images, but it meant there was a lot of shifting and reorganizing of words and images on the page. Real headache. 
+<img src=/static/websitev2.png width="600" class="d-block mx-auto img-thumbnail"/>
+Anyway, got the color scheme sorted out now so it's less of an eyesore. Using the a variant of <a href="https://www.colourlovers.com/palette/482774/dream_magnet">Dream Magnet</a> and <a href="https://www.colourlovers.com/palette/292482/Terra">Terra</a> from this website where people just post nice color aesthetics. Very wholesome site, and quite beautiful. I've never considered that one could "discover" a color, but these people do it just for fun of arranging them. </p>
 
-    </div>
 </div>
 
     </div>
