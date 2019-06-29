@@ -10,9 +10,7 @@ FLATPAGES_AUTO_RELOAD = DEBUG
 FLATPAGES_EXTENSION = '.md'
 
 
-
 # run "python sitebuilder.py build" in shell to build to the build folder
-
 
 
 app = Flask(__name__)

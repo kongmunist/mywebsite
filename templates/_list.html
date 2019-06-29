@@ -1,6 +1,6 @@
-<ul class="list-group">
+<ul>
 {% for page in pages %}
-    <li class="list-group-item">
+    <li>
         <a href="{{ url_for("page", path=page.path) }}">{{ page.title }}</a>
     {% if page.meta.tags|length %}
         | Tagged:
