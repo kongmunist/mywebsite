@@ -1,3 +1,18 @@
-<img class="media-object"  src="{{url_for('static', filename = 'me.png')}}"/>
+{% extends "base.html" %}
+
+{% block app_content %}
+    <div class="row">
+        <div class="col-3">
+
+<img class="media-object img-fluid"  src="{{url_for('static', filename = 'me.png')}}"/>
 <br>
 I'm Andy
+
+</div>
+            <div class="col-9 p-0">
+                {% block batcontent %}
+                {% endblock %}
+        </div>
+</div>
+
+{% endblock %}

@@ -1,15 +1,6 @@
-{% extends "base.html" %}
+{% extends "aboutsidebar.html" %}
 
-{% block app_content %}
-    <div class="row">
-        <div class="col-xs-3">
-
-            {% include "aboutsidebar.html" %}
-
-        </div>
-
-            <div class="col-xs-9">
-            <!--This SHOULD only have one page in it, but if it ever collides in filename we're screwed-->
+{% block batcontent %}
         {% for p in page %}
             <h2>{{ p.title }}</h2>
             {{ p.html|safe }}
@@ -17,5 +8,7 @@
         {% endfor %}
             </div>
 </div>
+
 {% endblock %}
+
 

@@ -1,41 +1,30 @@
-{% extends "base.html" %}
+{% extends "aboutsidebar.html" %}
 
-{% block app_content %}
+{% block batcontent %}
 
-<!--<div class="container" style = "background:white;">-->
-    <div class="row" ">
-        <div class="col-xs-3">
+    <div class="page-header">
+        <h1>BLOG POST LIST</h1>
+        <h1><small>A normal page yea</small></h1>
+    </div>
+    <div class="list-group">
+    {% for p in pages %}
+        <a href="{{ url_for("page", path=p.path) }}">
+            <h4 class="list-group-item-heading">
+                {{ p.title }}
+            </h4>
+        </a>
+            <p class="list-group-item-text">
+            The first couple of words...</p>
+    {% if p.meta.tags|length %}
+        Tagged:
+        {% for page_tag in p.meta.tags %}
+            <a href="{{ url_for("tag", tag=page_tag) }}">{{ page_tag }}</a>
+        {% endfor %}
+        | Date Published:
+        {{p.meta.date}}
+    {% endif %}
+    {% endfor %}
 
-            {% include "aboutsidebar.html" %}
-
-        </div>
-
-            <div class="col-xs-9 p-0">
-
-            <!--<div class="page-header">-->
-                <h1>BLOG POST LIST</h1>
-                <h1><small>A normal page yea</small></h1>
-            <!--</div>-->
-            <div class="list-group">
-            {% for p in pages %}
-                <a href="{{ url_for("page", path=p.path) }}">
-                    <h4 class="list-group-item-heading">
-                        {{ p.title }}
-                    </h4>
-                </a>
-                    <p class="list-group-item-text">
-                    The first couple of words...</p>
-            {% if p.meta.tags|length %}
-                Tagged:
-                {% for page_tag in p.meta.tags %}
-                    <a href="{{ url_for("tag", tag=page_tag) }}">{{ page_tag }}</a>
-                {% endfor %}
-                | Date Published:
-                {{p.meta.date}}
-            {% endif %}
-            {% endfor %}
-        </div>
-                <!--</div>-->
 </div>
 
 {% endblock %}
