@@ -4,14 +4,17 @@
     <div class="row">
         <div class="col-3">
 
-<img class="media-object img-fluid"  src="{{url_for('static', filename = 'me.png')}}"/>
-<br>
-I'm Andy
+<img class="media-object mx-auto d-block rounded-circle" style="margin-bottom:0px" src="{{url_for('static', filename = 'me.png')}}"/>
+<h1 class="text-center">Hi, I'm Andy!</h1>
+<p class="text-center">Computer Science major at Carnegie Mellon</p>
+
 
 </div>
-            <div class="col-9 p-0">
+            <div class="col-9 p-0" style="padding:20px;">
+                <div class="container-fluid" style=" padding-top:20px">
                 {% block batcontent %}
                 {% endblock %}
+                    </div>
         </div>
 </div>
 
