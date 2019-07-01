@@ -1,7 +1,8 @@
 title: Personal Website
 date: 2019-06-26
 label: project
-description: Static website generator built in Flask, Flask-Freeze, and Flask-Flatpages, hosted with Firebase
+pic: websitev2.png
+description: Static website generator built with Flask and hosted on Firebase. You're looking right at it!
 
 Hello! I made a website for showing off my project portfolio, posting "sorry for not posting" blog posts, and hosting an About Me page to make it easier for recruiters to find and ignore links to my Github, Youtube, and food blog.
 

@@ -2,4 +2,7 @@ MARKDOWN JINJA - Used some workaround I found on Stack Overflow to render jinja 
 IMAGES - mx-auto centers, d-block prevents it from being inline. SOMETIMES YOU NEED BOTH, using class="d-block mx-auto" for <img>
 IMAGE TEXT - Images in md have to be beside a text block (touching, 1 \n) or else the headers (###) will attach to the sides -.-
 JINJA TEMPLATES - Can nest multiple templates (base extends to aboutsidebar extends to every blog and tag page) by making abousidebar extend base and then "extends aboutsidebar.html" instead of base.
+SITUATIONAL - remove the href from the <a> class info in projectsmain and the text will change color.
+CSS - pointers can be changed to be a multitude of special icons, that's browser rendered.
+HTML - .div onclick can make them links without having to mess with <a> tags surrounding them
 
