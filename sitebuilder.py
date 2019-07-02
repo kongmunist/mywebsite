@@ -21,7 +21,7 @@ app = Flask(__name__)
 app.config.from_object(__name__)
 pages = FlatPages(app)
 freezer = Freezer(app)
-bootstrap = Bootstrap(app)
+#bootstrap = Bootstrap(app)
 
 def prerender_jinja(text):
     prerendered_body = render_template_string(Markup(text))
