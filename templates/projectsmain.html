@@ -88,7 +88,7 @@
         {% for p in pages %}
 
 
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='{{ url_for("project",project=p.path[9:]) }}'">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='{{ url_for("project",project=p.path[9:]) }}'">
     <div class="hovereffect">
         <img class="img-responsive" src="{{ url_for("static", filename=p.pic) }}" alt="" height="300px">
 
@@ -97,7 +97,7 @@
            <a class="info" href="{{ url_for("project",project=p.path[9:]) }}">{{ p.description }}</a>
         </div>
     </div>
-</div>
+    </div>
 
 
         {% endfor %}

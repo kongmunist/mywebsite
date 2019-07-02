@@ -3,6 +3,7 @@ from flask_flatpages import FlatPages, pygmented_markdown
 from flask_bootstrap import Bootstrap
 from flask_frozen import Freezer
 
+from datetime import datetime
 import sys
 import subprocess
 import os
@@ -25,8 +26,17 @@ bootstrap = Bootstrap(app)
 def prerender_jinja(text):
     prerendered_body = render_template_string(Markup(text))
     return pygmented_markdown(prerendered_body)
-
 app.config['FLATPAGES_HTML_RENDERER'] = prerender_jinja
+
+def dateconvert(str):
+    return str.strftime("%d %B, %Y")
+    print(str)
+    # try:
+    #     return datetime.strptime(str,"%Y-%m-%d").strftime("%d %B, %Y")
+    # except:
+    #     return str
+app.jinja_env.globals.update(dateconvert=dateconvert)
+
 
 
 @app.route("/")

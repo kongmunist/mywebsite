@@ -4,25 +4,32 @@
 
     <div class="page-header">
         <h1>BLOG POST LIST</h1>
-        <h1><small>A normal page yea</small></h1>
+        <hr>
+        <!--<h1><small>A normal page yea</small></h1>-->
     </div>
-    <div class="list-group">
+    <div class="">
     {% for p in pages %}
         <a href="{{ url_for("page", path=p.path) }}">
-            <h4 class="list-group-item-heading">
+            <h4 class="list-group-item-heading" style="cursor: pointer;">
                 {{ p.title }}
             </h4>
         </a>
+        <blockquote>
             <p class="list-group-item-text">
-            The first couple of words...</p>
+
+                {{ p.snippet }}
+
+            </p></blockquote>
     {% if p.meta.tags|length %}
         Tagged:
         {% for page_tag in p.meta.tags %}
             <a href="{{ url_for("tag", tag=page_tag) }}">{{ page_tag }}</a>
         {% endfor %}
         | Date Published:
-        {{p.meta.date}}
+
+        {{ dateconvert(p.meta.date) }}
     {% endif %}
+        <hr>
     {% endfor %}
 
 </div>

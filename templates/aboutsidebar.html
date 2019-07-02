@@ -2,14 +2,23 @@
 
 {% block app_content %}
     <div class="row" style = "height:100vh; ">
-        <div class="col-3" style=" background:grey;">
+        <div class="col-3" style="background:grey;">
+
 
 <img class="media-object mx-auto d-block rounded-circle" style="margin-bottom:0px;" width="80%" src="{{url_for('static', filename = 'me.png')}}"/>
 <h1 class="text-center" style="font-size: 3.5vw;">Hi, I'm Andy!</h1>
 <p class="text-center"  style="font-size: 1.7vw;">Computer Science major at Carnegie Mellon</p>
 
-
+            <div class="links" style="margin:15px; line-height: 2.7">
+<a href="https://critiquefood.blogspot.com/" target="_blank" title="Food For Thought"><i class="fas fa-ice-cream fa-3x"></i></a>&nbsp
+<a href="https://github.com/kongmunist" target="_blank" title="Github"><i class="fab fa-github-square fa-3x"></i></a>&nbsp
+<a href="mailto:andyking99@gmail.com" target="_blank" title="Email"><i class="far fa-paper-plane fa-3x"></i></a>&nbsp
+<a href="https://www.youtube.com/channel/UC8hEr0FkB5i-gQC4b7b5fvg" target="_blank" title="YouTube"><i class="fab fa-youtube fa-3x"></i></a>&nbsp
+<a href="https://www.instagram.com/kongmunist/" target="_blank" title="Instagram"><i class="fab fa-instagram fa-3x"></i></a>&nbsp
+<a href="https://www.linkedin.com/in/andy-k-99976b92/" target="_blank" title="Instagram"><i class="fab fa-linkedin-in fa-3x"></i></a>&nbsp
+                </div>
 </div>
+
             <div class="col-9 p-0" style="padding:20px;">
                 <div class="container-fluid" style=" padding-top:20px">
                 {% block batcontent %}
