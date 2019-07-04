@@ -1,8 +1,8 @@
 title: Test Project
+date: 2019-07-01
 label: project
-date: 2019-07-1
-description: A test file. What's it to ya?
 pic: mylogo.png
+description: A test file. What's it to ya?
 
 
 

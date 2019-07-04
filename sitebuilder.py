@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, render_template_string, Markup
+from flask import Flask, render_template, url_for, render_template_string, Markup, redirect
 from flask_flatpages import FlatPages, pygmented_markdown
 from flask_bootstrap import Bootstrap
 from flask_frozen import Freezer
@@ -29,19 +29,14 @@ def prerender_jinja(text):
 app.config['FLATPAGES_HTML_RENDERER'] = prerender_jinja
 
 def dateconvert(str):
-    return str.strftime("%d %B, %Y")
-    print(str)
-    # try:
-    #     return datetime.strptime(str,"%Y-%m-%d").strftime("%d %B, %Y")
-    # except:
-    #     return str
+    return str.strftime("%B %d, %Y")
 app.jinja_env.globals.update(dateconvert=dateconvert)
 
 
 
 @app.route("/")
 def index():
-    return render_template('index.html', pages=pages)
+    return redirect("blog") #render_template('index.html', pages=pages)
 
 @app.route("/about/")
 def about():
@@ -53,6 +48,9 @@ def about():
 def mainblog():
     print("main blog page")
     blogPages = [p for p in pages if "blog"==p.meta.get('label')]
+    blogPages = [(x.meta.get('date'), x) for x in blogPages]
+    blogPages.sort(reverse=True)
+    blogPages=[x[1] for x in blogPages]
     return render_template('blogmain.html', page=[], pages=blogPages)
 
 # @app.route("/about/")
@@ -92,6 +90,10 @@ def tag(tag):
 def mainproject():
     print("main project page")
     projPages = [p for p in pages if "project" == p.meta.get('label')]
+    projPages = [(x.meta.get('date'), x) for x in projPages]
+    projPages.sort(reverse=True)
+    projPages = [x[1] for x in projPages]
+
     # projPages = [x.path[9:] for x in projPages]
     return render_template('projectsmain.html', pages = projPages)
 

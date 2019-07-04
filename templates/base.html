@@ -44,14 +44,28 @@ img {
     background-color: #202222 !important;
 }
 
+.navbar-custom .navbar-brand{
+    font-size: 30px;
+    color: #00dffc !important;
+}
+
 .navbar-custom .navitem{
     color:#00dffc !important;
-    }
+}
 
 .navitem:hover{
     color:#00b4cc !important;
     text-decoration: none;
-    }
+}
+
+.hidden{
+  display: none;
+}
+
+.navbar-toggler-icon {
+  border: none;
+  outline: none;
+}
 
 .caption{
     font-size:12px;
@@ -70,9 +84,6 @@ hr{
     background-color:white !important;
 }
 
-
-
-
 </style>
 
       <!--.navbar-custom{-->
@@ -85,7 +96,10 @@ hr{
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-custom">
   <a class="navbar-brand" href="/">Andy Kong</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
+      <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
+          </span>
+        </i>
   </button>
 
   <div class="collapse navbar-collapse " id="navbarSupportedContent">
