@@ -5,11 +5,12 @@
             <h2>{{ p.title }}</h2>
             <p> Published {{ dateconvert(p.meta.date) }}</p>
 <hr>
-            {{ p.html|safe }}
 
-        {% endfor %}
-            </div>
+<div class="blogpage">
+            {{ p.html|safe }}
 </div>
+        {% endfor %}
+
 
 {% endblock %}
 

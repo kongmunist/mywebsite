@@ -4,7 +4,7 @@
 {% block app_content %}
 <div class="row">
     <div class="media-left col-4">
-        <img class="mx-auto d-block media-object" src="{{url_for('static', filename = 'me.png')}}"/>
+        <img class="mx-auto d-block media-object" src="{{url_for('static', filename = 'me.png')}}" style="width:auto; max-width: 30vw; padding-left:15px"/>
     </div>
     <div class="media-body col-6" style="padding:10px;">
         <h4 class="media-heading" ><br></h4>
@@ -20,7 +20,8 @@ If you're looking for the code for a project of mine, you can find it all in my 
 
 <br/>
 <hr/>
-<br/>
+<h2><a href="{{ url_for("static", filename="resume.pdf") }}">Résumé</a></h2>
+
 <span class="contacticon center">
 	<a href="mailto:andyking99@gmail.com"><i class="fa fa-envelope-square"></i></a>
 	<a href="https://github.com/kongmunist" target="_blank"><i class="fab fa-github"></i></a>

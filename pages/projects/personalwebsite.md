@@ -1,10 +1,14 @@
 title: Personal Website
 date: 2019-06-26
 label: project
+timespan: June-July 2019
 pic: websitev2.png
 description: Static website generator built with Flask and hosted on Firebase. You're looking right at it!
 
 Hello! I made a website for showing off my project portfolio, posting "sorry for not posting" blog posts, and hosting an About Me page to make it easier for recruiters to find and ignore links to my Github, Youtube, and food blog.
+
+### 7/3
+It is done. 
 
 ### 7/2
 Lots has been done! The project display page has some neat animations I stole from [this guy](https://miketricking.github.io/bootstrap-image-hover/) and hacked to pieces. Blog list page is also legible now, with lines and stuff separating all the info
