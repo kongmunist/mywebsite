@@ -36,7 +36,7 @@ app.jinja_env.globals.update(dateconvert=dateconvert)
 
 @app.route("/")
 def index():
-    return redirect("blog") #render_template('index.html', pages=pages)
+    return redirect("projects") #render_template('index.html', pages=pages)
 
 @app.route("/about/")
 def about():
@@ -53,12 +53,6 @@ def mainblog():
     blogPages=[x[1] for x in blogPages]
     return render_template('blogmain.html', page=[], pages=blogPages)
 
-# @app.route("/about/")
-# def about():
-#     print("aboutme")
-#     return render_template('about.html', pages=pages)
-
-
 @app.route("/blog/<string:title>/")
 def blog(title):
     print("blog page " + title)
@@ -67,6 +61,7 @@ def blog(title):
     if page[0] is None:
         return mainblog()
     return render_template('blog.html', page=page, pages = blogPages)
+
 
 @app.route('/tagged/')
 def maintag():
@@ -77,7 +72,6 @@ def maintag():
             listPages.add(t)
     return render_template('tagmain.html', page = [], pages=listPages)
 
-# TODO: add blog posts for each tag - list tags and pages
 @app.route('/tagged/<string:tag>/')
 def tag(tag):
     print("tag " + tag)
@@ -85,6 +79,7 @@ def tag(tag):
     if len(tagged) == 0:
         return maintag()
     return render_template('tag.html', pages=tagged, tag=tag)
+
 
 @app.route('/projects/')
 def mainproject():
@@ -105,6 +100,12 @@ def project(project):
         return mainproject()
     return render_template('projects.html', page = page[0])
 
+
+@app.route("/friends/")
+def friends():
+    # print("friends" + friend)
+    print("friends")
+    return render_template("friends.html")
 
 @app.route('/<path:path>/')
 def page(path):
