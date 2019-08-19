@@ -7,6 +7,7 @@ from datetime import datetime
 import sys
 import subprocess
 import os
+import time
 
 
 DEBUG = True
@@ -117,9 +118,16 @@ if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == "build":
         # Builds the website into a static site and runs "firebase deploy" to update the site
         if len(sys.argv) > 2 and sys.argv[2] == "local":
-            #PLEASE DO NOT RUN "python sitebuilder.py build local" IF YOU ARE NOT ON ANDY'S MAC
+            # PLEASE DO NOT RUN "python sitebuilder.py build local" IF YOU ARE NOT ON ANDY'S MAC
             app.config["FREEZER_DESTINATION"] = "../andykong.org/public"
             freezer.freeze()
+
+            # Push everything to github
+            os.system("git stage -A")
+            os.system("git commit -m \"blog update " + time.ctime() + "\"")
+            os.system("git push origin master")
+
+            # Deploy build file to firebase
             os.system("(cd ../andykong.org && firebase deploy)")
         else:
             freezer.freeze()
