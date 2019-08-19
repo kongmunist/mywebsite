@@ -1,14 +1,11 @@
 {% extends "aboutsidebar.html" %}
 
 {% block batcontent %}
-
-    <div class="page-header">
-        <h1>BLOG POST LIST</h1>
-        <hr>
-        <!--<h1><small>A normal page yea</small></h1>-->
-    </div>
+ <!--<h1><small>A normal page yea</small></h1>-->
     <div class="">
+        <h1>BLOG POST LIST</h1>
     {% for p in pages %}
+        <hr>
         <a href="{{ url_for("page", path=p.path) }}">
             <h4 class="list-group-item-heading" style="cursor: pointer;">
                 {{ p.title }}
@@ -23,13 +20,13 @@
     {% if p.meta.tags|length %}
         Tagged:
         {% for page_tag in p.meta.tags %}
-            <a href="{{ url_for("tag", tag=page_tag) }}">{{ page_tag }}</a>
+            <a href="{{ url_for("tag", tag=page_tag) }}">{{ page_tag }}, </a>
         {% endfor %}
         | Date Published:
 
         {{ dateconvert(p.meta.date) }}
     {% endif %}
-        <hr>
+
     {% endfor %}
 
 </div>

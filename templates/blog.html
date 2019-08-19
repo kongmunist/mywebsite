@@ -2,11 +2,11 @@
 
 {% block batcontent %}
         {% for p in page %}
-            <h2>{{ p.title }}</h2>
-            <p> Published {{ dateconvert(p.meta.date) }}</p>
-<hr>
 
 <div class="blogpage">
+    <h2>{{ p.title }}</h2>
+            <p> Published {{ dateconvert(p.meta.date) }}</p>
+<hr>
             {{ p.html|safe }}
 </div>
         {% endfor %}

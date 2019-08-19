@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 
 {% block app_content %}
-    <div class="row" style = "height:100vh; ">
-        <div class="col-3">
+    <div class="row" style = "height:100vh; padding-left:20px; padding-right:10px">
+        <div class="col-sm-12 col-md-3">
 
 
-<img class="media-object mx-auto d-block rounded-circle" style="margin-bottom:0px;" width="80%" src="{{url_for('static', filename = 'me.png')}}"/>
+<a href="https://andykong.org"> <img class="media-object mx-auto d-block rounded-circle" style="margin-bottom:0px;" width="65%" src="{{url_for('static', filename = 'me.png')}}"/></a>
 <h1 class="text-center" style="font-size: 3.5vw;">Hi, I'm Andy!</h1>
-<p class="text-center"  style="font-size: 1.7vw;">Computer Science major at Carnegie Mellon</p>
+<p class="text-center"  style="font-size: 2vw;">Computer Science major at Carnegie Mellon</p>
 
-            <div class="links" style="margin:15px; line-height: 2.7">
+            <div class="links text-center" style="margin:15px; line-height: 2.7; font-size:2vw;">
 <a href="https://critiquefood.blogspot.com/" target="_blank" title="Food For Thought"><i class="fas fa-ice-cream fa-3x"></i></a>&nbsp
 <a href="https://github.com/kongmunist" target="_blank" title="Github"><i class="fab fa-github-square fa-3x"></i></a>&nbsp
 <a href="mailto:andyking99@gmail.com" target="_blank" title="Email"><i class="far fa-paper-plane fa-3x"></i></a>&nbsp
@@ -20,8 +20,9 @@
                 </div>
 </div>
 
-            <div class="col-9 p-0" style="padding:20px;">
-                <div class="container-fluid" style=" padding-top:20px">
+            <div class="col-xl-7 col-lg-7 col-md-8 col-sm-12 p-0 text-" style="padding-left:20px;padding-right:20px;">
+                <div class="container-fluid img-rounded shadow-lg d-flex" style=" padding-top:20px;padding-bottom:20px; background-color:#404242; border-radius:20px">
+
                 {% block batcontent %}
                 {% endblock %}
                     </div>

@@ -110,7 +110,6 @@ def friends():
 @app.route('/<path:path>/')
 def page(path):
     print("page " + path)
-
     page = pages.get_or_404(path)
     return render_template('page.html', page=page)
 
