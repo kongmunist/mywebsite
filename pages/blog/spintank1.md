@@ -38,7 +38,7 @@ I've been using a chopstick in a slingshot to simulate a missile hitting the spi
 <img class="d-block mx-auto" src="{{ url_for("static",filename="spintankstationaryshot.png") }}"/>
 <p class="caption">Stationary chopstick firing leaves a hole</p>
 
-<img class="d-block mx-auto" src="{{ url_for("static",filename="spintankstationaryshot.png") }}"/>
+<img class="d-block mx-auto" src="{{ url_for("static",filename="spintankspinningshot.png") }}"/>
 <p class="caption">Spinning chopstick firing leaves a dent in the hull, but less damage</p>
 
 I need to experiment more with which latitude I'm shooting, since the hull strength changes at different heights. I should also use different lengths and weights of projectiles, since the chopstick is incredibly narrow compared to the dome itself. Some shots on the spinning hull also tore a larger hole than the one on the stationary hull, which I think is caused by a chopstick penetrating the hull followed by the rotation ripping it out.
