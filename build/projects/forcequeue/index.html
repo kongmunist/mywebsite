@@ -132,25 +132,23 @@ hr{
     <div class="row">
         <div class="col-2"></div>
         <div class="col-8 projectpage" style="max-width:1000px;">
-        <h1 style="text-center">Personal Website</h1>
-            <p>Timespan: June-July 2019</p>
-            <p>Published: 2019-06-26</p>
+        <h1 style="text-center">Spotify Force Queueing</h1>
+            <p>Timespan: July-August 2019</p>
+            <p>Published: 2019-07-31</p>
             <hr>
-        <p>Hello! I made a website for showing off my project portfolio, posting "sorry for not posting" blog posts, and hosting an About Me page to make it easier for recruiters to find and ignore links to my Github, Youtube, and food blog.</p>
-<h3>7/3</h3>
-<p>It is done. </p>
-<h3>7/2</h3>
-<p>Lots has been done! The project display page has some neat animations I stole from <a href="https://miketricking.github.io/bootstrap-image-hover/">this guy</a> and hacked to pieces. Blog list page is also legible now, with lines and stuff separating all the info
-<img class="d-block mx-auto" src="/static/websitev3.png"/>
-<p class="caption">Rendering the "Date Published" as legible text was inordinately hard given how minor it looks...</p></p>
-<p>Projects also no longer fill your entire FOV (I tried to add a picture to show this but I realize you're also looking right at the changes I am talking about -.-)! The images also scale, but that's more easily demonstrable by just moving the browser's bounds. Need to add sorting by date for the blog and project pages, then those are done!</p>
-<h3>6/29</h3>
-<p>Writing this update sucked cause of my hacky implementation. Weird workaround in jinja allows the url_for from Flask-FlatPages to work and find the pathnames for images, but it meant there was a lot of shifting and reorganizing of words and images on the page. Real headache. 
-<img src=/static/websitev2.png class="d-block mx-auto img-thumbnail"/>
-Anyway, got the color scheme sorted out now so it's less of an eyesore. Using the a variant of <a href="https://www.colourlovers.com/palette/482774/dream_magnet">Dream Magnet</a> and <a href="https://www.colourlovers.com/palette/292482/Terra">Terra</a> from this website where people just post nice color aesthetics. Very wholesome site, and quite beautiful. I've never considered that one could "discover" a color, but these people do it just for fun of arranging them. </p>
-<h3>6/27</h3>
-<p><img src=/static/websitev1.png class="d-block mx-auto"/></p>
-<p>Here's what it used to look like. Function before fashion, as they say. I'm working on the projects tab and header, after that I can make it pretty (I say that now, but I might get lazy and rationalize that it won't change anyone's opinion of me considering I don't value my web dev skills very high on my list of capabilities (That was a really long aside, you must be tired of this sentence by now)). </p>
+        <p>I made this project to solve the niche issue the backseat rider faces when they are added to a collaborative playlist but the guy in the passenger seat keeps queueing the songs they want to hear but not the ones the backseat rider wants to hear. The way I chose to remedy this was to add the desired song a few hundred times (~800 seems like a good amount), heavily increasing the chance that the next random song is the song that the backseat passenger wants to hear. I call this technique "force-queueing", just to have the excuse of using a word with 5 vowels in a row</p>
+<p>Anyway. Let's get technical. </p>
+<p><img class="d-block mx-auto" src="/static/fqspotifyapichart.png"/>
+<p class="caption">It is already alienating how rigid the API calls have to be; no, it isn't nice to see it on a convoluted, 6 step, 3 level chart. </p></p>
+<p>APIs are hard to use. Debugging is almost nonexistent in the form of vague codes (anything above 400 is bad, ~200 is usually good), and the naming rules use URL headers to encode information. In addition, the lack of distinction between query parameters, header parameters, and body parameters is so unclear and never enumerated well on the API site itself. </p>
+<p>I like to think of my computer as a packet cannon; the API calls I send out are just well-aimed payloads at other packet cannons (servers) that contain information on where to shoot back what kind of data. So, that being my mental model, I am vastly confused by the permissions and authorizations and authentications that making any sort of API call requires. What the hell does the official OAuth site mean when it says that the differences between <strong>Authentication</strong> and <strong>Authorization</strong> are like the distinction between fudge and chocolate? Phenomenal explanation, gentlemen. Thank god I never plan on touching a server as long as I live. </p>
+<p><img class="d-block mx-auto" src="/static/kerokerokerokerokerokero.png"/>
+<p class="caption">A great playlist I made</p></p>
+<p>I registered my application under my Spotify Developer dashboard and gave it a callback URL that I would be hosting with <a href="https://palletsprojects.com/p/flask/">Flask</a> (127.0.0.1/spotify/callbacks). Using the Python <a href="https://2.python-requests.org/en/master/">requests</a> library, I made a few GET requests to the authorization URL provided by the Spotify Web API platform in order to make sure my application token worked. </p>
+<p>Then, I launched the user authentication webpage which gave my application 'public-playlist-modify' permissions through a token after I logged in with my Spotify user account. I couldn't figure out how to parse headers from my callback Flask site, so I copy-pasted it into my script body. After this, instead of getting '403 Unauthorized' I got '400 Error parsing JSON'. Whose error? Mine, or the Spotify server? How do i fix the way you or I parsed it? Stack Overflow was unhelpful on this occasion, and I got frustrated with the project at this point.</p>
+<p><img class="d-block mx-auto" src="/static/fqspotipy.png"/>
+<p class="caption">Something made by someone smarter than I am</p></p>
+<p>And it turns out anyone who wants to make a Python-controlled Spotify API harness just uses 'pip install spotipy'. That's cool I guess, just read the docs for <a href="https://spotipy.readthedocs.io/en/latest/">that</a>. </p>
             </div>
         <div class="col-2"></div>
         <!--Need to make project images all have that max width-->
