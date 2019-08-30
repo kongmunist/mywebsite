@@ -1,5 +1,5 @@
 title: Spin Tank
-date: 2019-07-30
+date: 2019-08-30
 label: project
 timespan: August 2019
 pic: spintankabrams.png
