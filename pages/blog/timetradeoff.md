@@ -8,7 +8,7 @@ Preface: Yes, I am going to spend more time thinking about spending time than th
 
 If you've glanced at the project section of my website at all, you may realize that almost every project I do spans only a month, maybe two at most. And if I were more inclined to talk about what I'm doing vs. doing what I'm doing, you would perhaps realize that most of my projects take place over the span of a week or two. Any longer, and I lose interest or the project becomes tedious as progress slows, and any shorter, I feel like I can't have done anything worth talking about. 
 
-In contrast, I have a friend (who now has a Wikipedia page) who has spent the past three years working on the same project. He is widely recognized for his achievements, and I won't spend another three sentences stroking his ego cause I know he hates being publicly renowned and I don't want to get hit next time I see him. 
+In contrast, I have a friend (who now has a Wikipedia page) who has spent the past three years working on the same project. He is widely recognized for his achievements, and I won't spend another sentence stroking his ego cause I know he hates being publicly renowned. Regardless, he is a perfect example of what I cannot do: spend his time on one thing and only one thing. 
 
 Two very different approaches to 
 
