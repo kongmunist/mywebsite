@@ -2,10 +2,10 @@
 
 {% block app_content %}
     <div class="row" style = "height:100vh; padding-left:20px; padding-right:10px">
-        <div class="col-sm-12 col-md-3">
+        <div class="col-sm-12 col-lg-3">
 
 
-<a href="https://andykong.org"> <img class="media-object mx-auto d-block rounded-circle" style="margin-bottom:0px;" width="65%" src="{{url_for('static', filename = 'me.png')}}"/></a>
+<a href="https://andykong.org"> <img class="media-object mx-auto d-block rounded-circle " style="margin-bottom:0px; max-height:20vh;" src="{{url_for('static', filename = 'me.png')}}"/></a>
 <h1 class="text-center" style="font-size: 3.5vw;">Hi, I'm Andy!</h1>
 <p class="text-center"  style="font-size: 2vw;">Computer Science major at Carnegie Mellon</p>
 
@@ -20,8 +20,13 @@
                 </div>
 </div>
 
-            <div class="col-xl-7 col-lg-7 col-md-8 col-sm-12 p-0 text-" style="padding-left:20px;padding-right:20px;">
-                <div class="container-fluid img-rounded shadow-lg d-flex" style=" padding-top:20px;padding-bottom:20px; background-color:#404242; border-radius:20px">
+
+            <div class="col-xl-7 col-lg-7 col-md-10 col-xs-10 p-0 " style="">
+                <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;
+
+    text-overflow:ellipsis;
+    width:100%;
+    ">
 
                 {% block batcontent %}
                 {% endblock %}

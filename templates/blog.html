@@ -3,7 +3,7 @@
 {% block batcontent %}
         {% for p in page %}
 
-<div class="blogpage">
+<div class="blogpage overflow-hidden">
     <h2>{{ p.title }}</h2>
             <p> Published {{ dateconvert(p.meta.date) }}</p>
 <hr>
