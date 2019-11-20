@@ -14,9 +14,9 @@ We rely so heavily on our eyes for almost everything. Balance, trajectory planni
 
 ## If you find this project interesting and/or think that there's some neat way to edit the visual field that I've missed, don't hesitate to email me to let me know what your idea is, and I'll try to implement it (andyking99@gmail.com).
 
+
+Filters/new eyes I'm trying to implement
+- rainbow cycling the colors
+- inverting the world
+- deepdreaming, live (like this video):
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DgPaCWJL7XI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
-
-<img src={{ url_for('static', filename = 'extraarmeeg.jpg')}} width="450" class="d-block mx-auto"/>
-<p class="caption"></p>
