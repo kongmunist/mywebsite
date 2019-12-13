@@ -33,3 +33,9 @@ I'm not saying BCIs will allow us all to be Doc Ock, or that they'll cure disabi
 When computers first became commercially available in the 1960s, they revolutionized the way we did work. Calculations could be done instantly; large spreadsheets of data could be manipulated at scale. But today, despite all the advances we've made in computing, we do work at the same rate as a worker in the 1960s. We're limited fundamentally by the speed of our interface, the keyboard and mouse.
 
 BCIs are currently still in the early stages of development, and won't be feasible for at least another 10 years. But with a working brain-computer interface, we'll open an entirely new field of ways to connect our brains to the world around us. It's time for a new interface. 
+
+
+<br><br>
+
+in the bent get get
+
