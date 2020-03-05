@@ -12,4 +12,4 @@ METADATA YML - Calling page.meta.date renders automatically as a datetime.date o
 HTML - you wrote a <p class="caption"> for making captions below images. It's hella useful
 BLOG IMAGES - TEMPLATE is <img class="d-block mx-auto" src="{{ url_for('static',filename='filename.png') }}"/>
 BOOTSTRAP - if you want to center text, use class=text-center and don't put a row around it
-
+YOUTUBE EMBEDDED - to center it, make a div around it with style="text-align:center;" and class="d-block mx-auto", i don't know which one is necessary

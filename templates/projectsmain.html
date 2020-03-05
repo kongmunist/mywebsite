@@ -36,6 +36,7 @@
 .hovereffect h2 {
   color: #fff;
   text-align: center;
+  overflow: hidden;
   position: relative;
   font-size: 17px;
   padding: 10px;
@@ -89,8 +90,8 @@
 
 
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='{{ url_for("project",project=p.path[9:]) }}'">
-    <div class="hovereffect">
-        <img class="img-responsive" src="{{ url_for("static", filename=p.pic) }}" height="" width="500vw">
+    <div class="hovereffect" >
+        <img class="img-responsive" src="{{ url_for("static", filename=p.pic) }}" max-height="00vw" width="400vw">
 
         <div class="overlay">
            <h2>{{ p.title }}</h2>
@@ -98,7 +99,8 @@
         </div>
     </div>
     </div>
-    <br>
+
+        <br>
 
 
         {% endfor %}

@@ -50,6 +50,7 @@ def mainblog():
     print("main blog page")
     blogPages = [p for p in pages if "blog"==p.meta.get('label')]
     blogPages = [(x.meta.get('date'), x) for x in blogPages]
+
     blogPages.sort(reverse=True)
     blogPages=[x[1] for x in blogPages]
     return render_template('blogmain.html', page=[], pages=blogPages)
@@ -87,6 +88,7 @@ def mainproject():
     print("main project page")
     projPages = [p for p in pages if "project" == p.meta.get('label')]
     projPages = [(x.meta.get('date'), x) for x in projPages]
+    print(projPages)
     projPages.sort(reverse=True)
     projPages = [x[1] for x in projPages]
 
