@@ -2,7 +2,7 @@ title: Altered Perceptions
 date: 2020-03-04
 label: project
 timespan: November 2019 - January 2020
-pic: alteredibis.png
+pic: alteredbonsai.png
 description: VR headset + POV camera + preprocessing => new way to see the world
 
 <br>

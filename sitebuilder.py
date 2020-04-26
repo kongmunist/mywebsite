@@ -88,7 +88,7 @@ def mainproject():
     print("main project page")
     projPages = [p for p in pages if "project" == p.meta.get('label')]
     projPages = [(x.meta.get('date'), x) for x in projPages]
-    print(projPages)
+    # print(projPages)
     projPages.sort(reverse=True)
     projPages = [x[1] for x in projPages]
 

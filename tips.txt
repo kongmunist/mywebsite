@@ -5,8 +5,6 @@ JINJA TEMPLATES - Can nest multiple templates (base extends to aboutsidebar exte
 SITUATIONAL - remove the href from the <a> class info in projectsmain and the text will change color.
 CSS - pointers can be changed to be a multitude of special icons, that's browser rendered.
 HTML - .div onclick can make them links without having to mess with <a> tags surrounding them
-ADVERTISING MASSES - sell according to what the user becomes with the product, and less on what the product can do
-CLOTHES - Muji shirts you have are NOT breathable. Do not wear into the gym. They do prevent sweat from showing though
 JINJA - allow functions from sitebuilder.py to be called in the html {{}} things by updating flask global variables. app.jinja_env.globals.update(clever_function=clever_function)
 METADATA YML - Calling page.meta.date renders automatically as a datetime.date object, no need to parse a string
 HTML - you wrote a <p class="caption"> for making captions below images. It's hella useful
