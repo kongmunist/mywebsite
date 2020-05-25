@@ -2,7 +2,7 @@ title: Variable resistance tests of Velostat/Linqstat
 date: 2020-05-17
 label: blog
 tags: [wearables, conductivefabric, velostat]
-snippet: Testing the effects of bending, twisting, and touch on conductive fabric.
+snippet: Testing the effects of bending, twisting, and touch on the conductive plastic Velostat.
 
 This is [Velostat](https://en.wikipedia.org/wiki/Velostat):
 
