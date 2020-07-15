@@ -7,6 +7,7 @@ snippet: Displaying 3D images on a 2D computer screen
 I was reading about holograms and realized that I could emulate it on a computer. Basically, screen objects don't shift perspective like real objects do (showing a different side when you look from the left vs. right, etc.) 
 
 <img class="d-block mx-auto" src={{ url_for("static", filename = 'digitalholocube.png') }} width="400" />
+<p class="caption">[image credit](https://light2015blogdotorg.wordpress.com/2015/11/05/holography-art-with-light/)</p>
 
 However, with head tracking, the computer can compute what new angle your eyes are looking from and recalculate the image view. This can be used for looking at CAD models, or on websites for a more 3D experience, or for hiding information on the sides of a usually unviewable object (like a scavenger hunt or something), or creating a head whose eyes literally follow you around. 
 
