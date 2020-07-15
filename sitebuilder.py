@@ -130,7 +130,7 @@ if __name__ == "__main__":
             os.system("git push origin master")
 
             # Deploy build file to firebase
-            os.system("(cd ../andykong.org && firebase deploy)")
+            os.system("(cd andykong.org && firebase deploy)")
         else:
             freezer.freeze()
     else:
