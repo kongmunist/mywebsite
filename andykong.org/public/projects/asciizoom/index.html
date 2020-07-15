@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Andy Kong!
+    </title>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c62dcd5933.js"></script>
+
+    <style>
+body {
+background: #202222;
+font-family: 'Ubuntu', sans-serif;
+}
+
+a { color:#00B4CC }
+
+a:hover {
+    color:#00dffc;
+    text-decoration: none;
+}
+
+img {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.navbar-custom {
+    font-size: 22px;
+    background-color: #202222 !important;
+}
+
+.navbar-custom .navbar-brand{
+    font-size: 30px;
+    color: #00dffc !important;
+}
+
+.navbar-custom .navitem{
+    color:#00dffc !important;
+}
+
+.navitem:hover{
+    color:#00b4cc !important;
+    text-decoration: none;
+}
+
+.hidden{
+  display: none;
+}
+
+.navbar-toggler-icon {
+  border: none;
+  outline: none;
+}
+
+.caption{
+    font-size:12px;
+    margin-top:5px;
+    text-align: center;
+    font-style: italic;
+}
+
+.projectpage img{
+    max-width: 50vw;
+    height: auto;
+    width: auto;
+}
+
+.blogpage img{
+    max-width: 50vw;
+    height: auto;
+    width: auto;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+hr{
+    background-color:white !important;
+}
+
+</style>
+
+
+    <link rel="icon" href=" /static/aklogo.png " />
+</head>
+<body style="color:#F8E0CB;">
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-custom">
+    <a class="navbar-brand" style="height:50px" href="/"><img src="/static/aklogo.png" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
+      <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
+          </span>
+        </i>
+    </button>
+
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/about">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/projects">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/blog">Blog</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8 projectpage" style="max-width:1000px;">
+        <h1 style="text-center; margin-bottom: 5px">AsciiZOOM</h1>
+            <p style="margin-bottom: 0px; margin-top: 0px">Timespan: April 2020</p>
+            <p style="margin-bottom: 5px; margin-top: 0px">Published: 2020-04-25</p>
+            <hr>
+        <h3>Video</h3>
+<p><div style="text-align:center;" class="d-block mx-auto"><iframe width="560" height="315" src="https://www.youtube.com/embed/g4YCxM5STj0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<br><br></p>
+<hr>
+
+<h3>Background</h3>
+<p>Because of security concerns over the use of Zoom (<a href="https://theintercept.com/2020/03/31/zoom-meeting-encryption/">here</a> and <a href="https://en.wikipedia.org/wiki/Zoom_Video_Communications#Security">here</a>) and its inability to be invoked from the commmand line, me and a friend decided to get together to make a more secure version.</p>
+<hr>
+
+<h3>Video Encoding</h3>
+<p>Since we didn't want to eat up all the bandwidth on our server, we decided the most efficient way to send each frame of video was to pack it into a single TCP packet. You might be wondering how we fit a full image in under 50 kilobytes: with text! Through the magic of ascii art, we were able to re-encode a frame as pure text characters, packaging a single pixel into 8 bits instead of the traditional 24. Since we only used 4 unique "characters," we could have further reduced this down to 2 bits if we were really pressed for space, but the additional processing on either end would have led to additional latency.</p>
+<p><img class="d-block mx-auto" src="/static/chickensidecomparison.jpeg"/></p>
+<p>There's plenty of example code online for asciifying an image, but the code is <a href="https://github.com/kongmunist/asciiZOOM">here</a> for both asciifization and transmitting. This text-based image sending also makes encryption easier, since we can just caesar cipher with a predetermined shift and the image is ruined. </p>
+<hr>
+
+<h3>Networking</h3>
+<p>We used TCP sockets to transfer the frames of video. In hindsight, we probably should have used UDP, since we don't want dropped frames to accumulate latency. TCP's guaranteed packet delivery means that delays in sending one frame end up delaying every subsequent frame. We set up a server on our school's publicly exposed servers (it's exposed online if you can ssh into it even while not on school wifi) and both connected from our local terminals. The server then coordinates, sending one person's packets to the other person and vice versa.</p>
+<p>And if you want audio, use Discord or something :P</p>
+            </div>
+        <div class="col-2"></div>
+        <!--Need to make project images all have that max width-->
+
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="//instant.page/5.1.0" type="module" integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Andy Kong!
+    </title>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c62dcd5933.js"></script>
+
+    <style>
+body {
+background: #202222;
+font-family: 'Ubuntu', sans-serif;
+}
+
+a { color:#00B4CC }
+
+a:hover {
+    color:#00dffc;
+    text-decoration: none;
+}
+
+img {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.navbar-custom {
+    font-size: 22px;
+    background-color: #202222 !important;
+}
+
+.navbar-custom .navbar-brand{
+    font-size: 30px;
+    color: #00dffc !important;
+}
+
+.navbar-custom .navitem{
+    color:#00dffc !important;
+}
+
+.navitem:hover{
+    color:#00b4cc !important;
+    text-decoration: none;
+}
+
+.hidden{
+  display: none;
+}
+
+.navbar-toggler-icon {
+  border: none;
+  outline: none;
+}
+
+.caption{
+    font-size:12px;
+    margin-top:5px;
+    text-align: center;
+    font-style: italic;
+}
+
+.projectpage img{
+    max-width: 50vw;
+    height: auto;
+    width: auto;
+}
+
+.blogpage img{
+    max-width: 50vw;
+    height: auto;
+    width: auto;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+hr{
+    background-color:white !important;
+}
+
+</style>
+
+
+    <link rel="icon" href=" /static/aklogo.png " />
+</head>
+<body style="color:#F8E0CB;">
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-custom">
+    <a class="navbar-brand" style="height:50px" href="/"><img src="/static/aklogo.png" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
+      <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
+          </span>
+        </i>
+    </button>
+
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/about">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/projects">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/blog">Blog</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8 projectpage" style="max-width:1000px;">
+        <h1 style="text-center; margin-bottom: 5px">Altered Perceptions</h1>
+            <p style="margin-bottom: 0px; margin-top: 0px">Timespan: November 2019 - January 2020</p>
+            <p style="margin-bottom: 5px; margin-top: 0px">Published: 2020-03-04</p>
+            <hr>
+        <p><br>
+<div style="text-align:center;" class="d-block mx-auto">
+<iframe width="560" height="315" align="middle" src="https://www.youtube.com/embed/k4v0TsgcNes" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<br></p>
+<p>This is my first art project, sponsored by the Frank-Ratchye Studio for Creative Inquiry at CMU's School of Fine Arts. Here's the <a href="https://github.com/kongmunist/alteredperceptions">code on GitHub</a>
+<br></p>
+<h3>Motivation</h3>
+<p>People at my school are always complaining about how boring campus/Pittsburgh/real life looks. "Wean is too brutalist and all concrete" and "Gates smells like coffee and looks ugly." I think the real problem is that we get so used to the things we see every day that we stop really seeing them; that is to say, the beauty of the world is hidden in plain sight. </p>
+<p>So I wanted to build something to change the way we see things, to edit the way objects appear to us so we can see them as exciting new things instead of boring old things. I wanted to take our eyes, and alter their colors, shapes, and details in some way to make people take a good look at their surroundings. How cool would it be if everything you saw was altered like this ibis below?</p>
+<p><img class="d-block mx-auto" src="/static/alteredibis.png"/></p>
+<p>One way you could do this is to have an augmented reality helmet that overlays different filters onto your screen, for your viewing pleasure. But you'd be able to see through it to the real world, since AR is just glass. So I settled on the Playstation VR headset with a USB camera, to sort of approximate VR glasses. In addition, I chose to use an Nvidia Jetson Nano to power the camera and headset, so we could do mid-level processing at live speeds. </p>
+<p><img class="d-block mx-auto" src="/static/alteredpsvr.jpg"/></p>
+<h3>Hardware Hacking</h3>
+<p>Usually headsets don't let you access their video streaming directly, however, PSVR's creators are nice/negligent enough to allow simple USB control. To hack into the PSVR's HDMI port to send a screen directly to it, someone wrote a nice Python <a href="https://github.com/mungewell/pyPSVR">script</a> that accesses it like a monitor screen. Run that once on startup with the options you want and you're good to go. Just show the frames that you want the headset to see on the desktop's screen, and the headset will see the same thing.</p>
+<h3>Programming</h3>
+<p>The code is written in Python. I actually tried C++ OpenCV at first because "real programmers" told me it was faster. However, the screen display was much slower, going at around 100 ms. Terrible latency, makes the whole thing sickening to wear. So I went with Python.</p>
+<p>All I do is have multiple threads that run concurrently. One thread grabs the last frame from the camera and puts it in the first aliased list, the second thread pulls the frame from the first list, processes it according to the filter I choose, and puts it in a second aliased list. The third thread pulls an image from the 2nd list and displays it fullscreen. All this code is in complexcamera.py</p>
+<p>Depending on the filter number, the processing thread uses a function from neweyes.py. These include thresholding, edge detection, and plain old color swapping. They look pretty cool, and I show off some of them in the video above. </p>
+<p><img class="d-block mx-auto" src="/static/alteredadaptivethresh.png"/>
+<p class="caption">Some neighborhood-aware adaptive thresholding, or NYC Line Profile Style</p></p>
+<h3>Future work</h3>
+<p>These are all pretty standard CV techniques that I've just modified to be neat to look at, instead of using them to gain more information about an image. I think they look really cool, but at the same time I understand I'm not playing with the shapes or lines or anything too major. The next step for this project is to make it capable of producing DeepDream images live:</p>
+<p><img class="d-block mx-auto" src="/static/altereddeepdreamdog.jpg"/></p>
+<p>DeepDream is sort of like inverting a neural network; you give it a photo, and tell it to make the photo look <i>more</i> like something, a dog or a dumbell or whatever, instead of asking it what the photo is of. But this inversion takes a long time. For even minor effects on shrunken images, it takes over half a second. I think this is because it's not what neural networks are meant for, so I'm going to work on a Convolutional Neural Network that produces DeepDream images going forwards, instead of going backwards. No more inverting and tracing back. Just propogate forward once and you're done. </p>
+<p>But that's a project for later. If you're interested in collaborating on adding more filters or new kinds (I wanted to use Haar Cascades for eye and mouth detection in order to really mess with how people's faces looked), let me know! I'm always down to work on cool image edits (especially if they run LIVE).</p>
+            </div>
+        <div class="col-2"></div>
+        <!--Need to make project images all have that max width-->
+
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="//instant.page/5.1.0" type="module" integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script>
+</body>
+</html>

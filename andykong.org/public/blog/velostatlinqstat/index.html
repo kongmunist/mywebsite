@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Andy Kong!
+    </title>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c62dcd5933.js"></script>
+
+    <style>
+body {
+background: #202222;
+font-family: 'Ubuntu', sans-serif;
+}
+
+a { color:#00B4CC }
+
+a:hover {
+    color:#00dffc;
+    text-decoration: none;
+}
+
+img {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.navbar-custom {
+    font-size: 22px;
+    background-color: #202222 !important;
+}
+
+.navbar-custom .navbar-brand{
+    font-size: 30px;
+    color: #00dffc !important;
+}
+
+.navbar-custom .navitem{
+    color:#00dffc !important;
+}
+
+.navitem:hover{
+    color:#00b4cc !important;
+    text-decoration: none;
+}
+
+.hidden{
+  display: none;
+}
+
+.navbar-toggler-icon {
+  border: none;
+  outline: none;
+}
+
+.caption{
+    font-size:12px;
+    margin-top:5px;
+    text-align: center;
+    font-style: italic;
+}
+
+.projectpage img{
+    max-width: 50vw;
+    height: auto;
+    width: auto;
+}
+
+.blogpage img{
+    max-width: 50vw;
+    height: auto;
+    width: auto;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+hr{
+    background-color:white !important;
+}
+
+</style>
+
+
+    <link rel="icon" href=" /static/aklogo.png " />
+</head>
+<body style="color:#F8E0CB;">
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-custom">
+    <a class="navbar-brand" style="height:50px" href="/"><img src="/static/aklogo.png" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
+      <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
+          </span>
+        </i>
+    </button>
+
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/about">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/projects">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/blog">Blog</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+    <div class="row" style = "height:100vh; padding-left:20px; padding-right:10px">
+        <div class="col-sm-12 col-lg-3">
+
+
+<a href="https://andykong.org"> <img class="media-object mx-auto d-block rounded-circle " style="margin-bottom:0px; max-height:20vh;" src="/static/me.png"/></a>
+<h1 class="text-center" style="font-size: 3vw;">Hi, I'm Andy!</h1>
+<p class="text-center"  style="font-size: 1.5vw;">CS major at Carnegie Mellon, open for collaboration.</p>
+
+            <div class="links text-center" style="margin:15px; line-height: 2.7; font-size:2vw;">
+<a href="https://critiquefood.blogspot.com/" target="_blank" title="Food For Thought"><i class="fas fa-ice-cream fa-2x"></i></a>&nbsp
+<a href="https://github.com/kongmunist" target="_blank" title="Github"><i class="fab fa-github-square fa-2x"></i></a>&nbsp
+<a href="mailto:andyking99@gmail.com" target="_blank" title="Email"><i class="far fa-paper-plane fa-2x"></i></a>&nbsp
+<a href="https://www.youtube.com/channel/UC8hEr0FkB5i-gQC4b7b5fvg" target="_blank" title="YouTube"><i class="fab fa-youtube fa-2x"></i></a>&nbsp
+<a href="https://www.instagram.com/kongmunist/" target="_blank" title="Instagram"><i class="fab fa-instagram fa-2x"></i></a>&nbsp
+<a href="https://www.linkedin.com/in/andy-k-99976b92/" target="_blank" title="Instagram"><i class="fab fa-linkedin-in fa-2x"></i></a>&nbsp
+<a href="https://medium.com/@andyking99" target="_blank" title="Medium"><i class="fab fa-3x fa-medium"></i></a>&nbsp
+                </div>
+</div>
+
+
+            <div class="col-xl-7 col-lg-7 col-md-10 col-xs-10 p-0 " style="">
+                <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;
+
+    text-overflow:ellipsis;
+    width:100%;
+    ">
+
+                
+        
+
+<div class="blogpage overflow-hidden">
+    <h2>Variable resistance tests of Velostat/Linqstat</h2>
+            <p> Published May 17, 2020</p>
+<hr>
+            <p>This is <a href="https://en.wikipedia.org/wiki/Velostat">Velostat</a>:</p>
+<p><img src=/static/velostat.jpg width="400" class="d-block mx-auto"/></p>
+<p>It's a conductive sheet that's sometimes used for packaging ESD-sensitive electronics, but is commonly used by wearables hobbyists since it changes resistance when <i>anything</i> happens to it. Wrinkling. Heating. Bending. Twisting. Pressing. Anything that touches it is detectable!</p>
+<p>However, there's not a ton of information about it online, like how much change in resistance is visible for bending vs. twisting, etc. So I decide to do some testing and show y'all the results so you wouldn't have to!</p>
+<p>All tests were done on a 6.0 x 1.2 cm piece of the material, which I got from Adafruit. I held it in contact using some alligator clips, which weren't super precise contacts. This is probably why the baseline resistances were so variable, around 55 kΩ ± 5 kΩ. </p>
+<p><img src=/static/velostatnormal2.jpg width="400" class="d-block mx-auto"/></p>
+<p class="caption">Basic experimental setup</p>
+
+<h3>Twisting</h3>
+<p><img src=/static/velostat180.jpg width="400" class="d-block mx-auto"/></p>
+<p>For these tests, I simply flipped one alligator clip and held the strip taut on the table. Best results came from twisting the strip so much that it curled into a tube, around 360 degrees for this width of strip.</p>
+<p><img src=/static/velostattwist.png width="400" class="d-block mx-auto"/></p>
+<h3>Bending</h3>
+<p><img src=/static/velostatbend.jpg width="400" class="d-block mx-auto"/></p>
+<p>I bent the strip into a bit of an omega shape, which didn't change it much. When I pinched it, the overall distance of the strip changed so the resistance went down instead of up.</p>
+<p><img src=/static/velostatbend.png width="400" class="d-block mx-auto"/></p>
+<h3>Pulling</h3>
+<p>The resistance increased "linearly" from not pulling to maximum pull strength. This test was a bit tricky since my resistance would change the strips if I touched both alligator clips, so I carefully pulled both ends of the plastic without contacting the clips. </p>
+<p><img src=/static/velostatpull.png width="400" class="d-block mx-auto"/></p>
+<h3>Touching/Pressure</h3>
+<p>When it comes to pressure, Velostat is not that great of a sensor without modification. I found that surface area of the finger touch affects the resistance more than pressing on it, and that non-finger touching with a plastic scissor's handle did not affect it much at at all. </p>
+<p><img src=/static/velostattouch.png width="400" class="d-block mx-auto"/></p>
+<h3>Touching (Bent sheet)</h3>
+<p>Since I wanted to use this as a pressure sensor, I tried folding the sheet in the middle then pressing on that. This worked much better, but required securing by tape or some other adhesive. </p>
+<p><img src=/static/velostatfoldtouch.png width="400" class="d-block mx-auto"/></p>
+<h3>Heating</h3>
+<p><a href="https://electronics.stackexchange.com/questions/452291/velostat-sensitivity-to-temperature">This</a> site I visited claimed that heat did not affect the sheet's resistance, but I decided to test it out. I held a soldering iron near my test strip without touching it, and found the biggest changes yet! It took a few seconds to heat to the max resistance, and about a minute to cool back to baseline. </p>
+<p><img src=/static/velostatheating.png width="400" class="d-block mx-auto"/></p>
+<h3>Connections and Conclusions</h3>
+<p>I wanted to connect some wire to this stuff, but <a href="https://www.kobakant.at/DIY/?p=381">some people</a> online were using copper tape with conductive adhesive and conductive thread, which I didn't have. I tried soldering to it, but it just melted :(. Since alligator clips worked, I tried "crimping" some metal wire onto it, and that seemed to work well. Seems like it just needs to be in tight contact with metal to conduct. </p>
+<p><img src=/static/velostatcrimp.jpg width="400" class="d-block mx-auto"/></p>
+<p>That's all! I'm probably going to stick with pressure sensing with my folded sheet, it seems to produce pretty drastic resistance changes. </p>
+</div>
+        
+
+
+
+                    </div>
+        </div>
+</div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="//instant.page/5.1.0" type="module" integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script>
+</body>
+</html>

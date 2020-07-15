@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Andy Kong!
+    </title>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c62dcd5933.js"></script>
+
+    <style>
+body {
+background: #202222;
+font-family: 'Ubuntu', sans-serif;
+}
+
+a { color:#00B4CC }
+
+a:hover {
+    color:#00dffc;
+    text-decoration: none;
+}
+
+img {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.navbar-custom {
+    font-size: 22px;
+    background-color: #202222 !important;
+}
+
+.navbar-custom .navbar-brand{
+    font-size: 30px;
+    color: #00dffc !important;
+}
+
+.navbar-custom .navitem{
+    color:#00dffc !important;
+}
+
+.navitem:hover{
+    color:#00b4cc !important;
+    text-decoration: none;
+}
+
+.hidden{
+  display: none;
+}
+
+.navbar-toggler-icon {
+  border: none;
+  outline: none;
+}
+
+.caption{
+    font-size:12px;
+    margin-top:5px;
+    text-align: center;
+    font-style: italic;
+}
+
+.projectpage img{
+    max-width: 50vw;
+    height: auto;
+    width: auto;
+}
+
+.blogpage img{
+    max-width: 50vw;
+    height: auto;
+    width: auto;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+hr{
+    background-color:white !important;
+}
+
+</style>
+
+
+    <link rel="icon" href=" /static/aklogo.png " />
+</head>
+<body style="color:#F8E0CB;">
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-custom">
+    <a class="navbar-brand" style="height:50px" href="/"><img src="/static/aklogo.png" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
+      <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
+          </span>
+        </i>
+    </button>
+
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/about">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/projects">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/blog">Blog</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8 projectpage" style="max-width:1000px;">
+        <h1 style="text-center; margin-bottom: 5px">Carnegie Calendar</h1>
+            <p style="margin-bottom: 0px; margin-top: 0px">Timespan: August - January 2019</p>
+            <p style="margin-bottom: 5px; margin-top: 0px">Published: 2020-06-18</p>
+            <hr>
+        <p><a href="https://carnegiecalendar.com" target="_blank">Here's</a> the site, and <a href="https://github.com/kongmunist/CarnegieCalendar" target="_blank">here's</a> the GitHub. </p>
+<p><img class="d-block mx-auto" src="/static/CCmain.png"/></p>
+<hr>
+
+<h3>Why I made it</h3>
+<p>This site was a personal project attempted in freshman year by me and some overzealous friends. I had some trouble figuring out when/where student orgs were meeting because there was no central location to post all that stuff (and often nobody in the club cared enough to post their events somewhere else), so I wanted to make a searchable site that could collect all that automatically. </p>
+<p>During a hackathon in 2nd semester, we entered with the plan to make this site, since one didn't already exist. We tried to run regex and NLP on the school sites in order to retrieve all the events going on around the school, following every link on the site in the hopes it would redirect to another school site. In the process, we found the branching factor of each school website was about 43, learned how to make websites using Django, and that we suck at demoing after not sleeping for a whole night. </p>
+<p>I later realized many of the websites already had embedded Google Calendars with URLs and everything that I could just download directly. I spent a frenzied three hours collecting every calendar link manually, then wrote a Python script to manually poll all of them and filter the events. No events without a location and time, no events with no description, and no events before the current moment. Timezones are also wacky in .ics files. I learned a lot about the standard. </p>
+<hr>
+
+<h3>How it works</h3>
+<p>Website is two parts: event collection and searchable front-end. Event collection is done by using the requests library to download every calendar in a very long list that I put together by hand. The ics files are immediately cracked open and their events extracted and added into a big list. This list is filtered, so contains no events with duplicate descriptions or times. After iterating through the entire list of calendars, it saves all the filtered events (and standardizes their timezone information) into one honkin' big .ics. </p>
+<p><img class="d-block mx-auto" src="/static/CCurllist.png"/></p>
+<p>Front-end is written in Flask, all it does is load in the main .ics and crack it open, displaying all the events through a jinja2 template. There was a lot of weird markdown/prerendering stuff I had to do to the site in order to get the dates to show up as Month Day, Year, instead of 05-12-20 or something, but it looks serviceable. When users search something, the terms are split by comma and we look if the description or title of events contains each search term. This has to be redundancy checked as well. Computers are good enough now that I didn't have to do this in an efficient way at all for the load times to be under 0.5 sec. If a user searches empty string, we just display all the events. The download link performs the search again (search terms are stored in the local storage of the site) and packages the matching events into an .ics that is then downloaded. </p>
+<p>That's all the features!</p>
+<hr>
+
+<h3>Bonus: How I advertised for it</h3>
+<p>I finished this over Winter Break, and then came onto campus a few days before everyone else came back. I decided to put up posters on the billboards around school like everyone else. But unlike everyone else, I decided to run a huge A/B test of which billboard locations were prime scanning locations. I created a script to make every poster have a unique QR code going to the carnegie calendar website (carnegiecalendar.com/1001 for example), then had those redirect to the main site URL. I assigned every billboard a unique number, then write a big spreadsheet of the numbers and their corresponding locations. This way, I could count which redirects were most common and use this data for future advertising. I wrote the number on the QR code very faintly in a corner, and then me and a bunch of friends went and posted them around the school. It took like an hour together, but would've taken me around 5 alone. Thanks, friends.</p>
+<p><img class="d-block mx-auto" src="/static/CCzoomout.png"/>
+<p class="caption">Normal poster, from a glance nothing is out of the ordinary.</p></p>
+<p><img class="d-block mx-auto" src="/static/CCzoomin.png"/>
+<p class="caption">As you can see, a tiny hidden number denoting the link</p></p>
+<p>It turns out very few people actually scan the posters on the walls, so I only got around 100 hits on 60 posters. Not super worth it. However, I posted it on Facebook and immediately got like 900 hits before the mods took it down, so I guess social media really is the future of the internet.</p>
+            </div>
+        <div class="col-2"></div>
+        <!--Need to make project images all have that max width-->
+
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="//instant.page/5.1.0" type="module" integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script>
+</body>
+</html>
