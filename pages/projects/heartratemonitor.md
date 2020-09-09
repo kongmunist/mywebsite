@@ -1,4 +1,4 @@
-title: Web Heartrate Monitor
+title: Webcam Heartrate Monitor
 date: 2020-08-05
 label: project
 timespan: July-August 2020
