@@ -37,7 +37,16 @@ app.jinja_env.globals.update(dateconvert=dateconvert)
 
 @app.route("/")
 def index():
-    return redirect("projects") #render_template('index.html', pages=pages)
+    # return redirect("projects") #render_template('index.html', pages=pages)
+    print("about me + projects main page")
+    projPages = [p for p in pages if "project" == p.meta.get('label')]
+    projPages = [(x.meta.get('date'), x) for x in projPages]
+    # print(projPages)
+    projPages.sort(reverse=True)
+    projPages = [x[1] for x in projPages]
+
+    return render_template('main.html', pages = projPages)
+
 
 @app.route("/about/")
 def about():
@@ -134,5 +143,5 @@ if __name__ == "__main__":
         else:
             freezer.freeze()
     else:
-        app.run(port=8000)
+        app.run(port=8001)
 
