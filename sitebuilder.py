@@ -129,6 +129,9 @@ if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == "build":
         # Builds the website into a static site and runs "firebase deploy" to update the site
         if len(sys.argv) > 2 and sys.argv[2] == "local":
+            # turn off DEBUG
+            DEBUG = False
+            
             # PLEASE DO NOT RUN "python sitebuilder.py build local" IF YOU ARE NOT ON ANDY'S MAC
             app.config["FREEZER_DESTINATION"] = "andykong.org/public"
             freezer.freeze()
