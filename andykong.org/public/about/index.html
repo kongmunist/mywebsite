@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -148,40 +147,282 @@ code {
 </nav>
 
 
+<style>
+    .hovereffect {
+  width: 100%;
+  height: 90%;
+  float: center;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+}
+
+.hovereffect .overlay {
+  width: 100%;
+  height: 93%;
+  position: absolute;
+  overflow: hidden;
+  top: 7%;
+  left: 0;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.hovereffect:hover .overlay {
+  background-color: rgba(0, 180, 196, 0.6);
+}
+
+.hovereffect img {
+  display: flex;
+  position: relative;
+}
+
+.hovereffect h2 {
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  font-size: 17px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  -webkit-transform: translateY(45px);
+  -ms-transform: translateY(100px);
+  transform: translateY(45px);
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.hovereffect:hover h2 {
+  -webkit-transform: translateY(5px);
+  -ms-transform: translateY(5px);
+  transform: translateY(5px);
+}
+
+.hovereffect a.info {
+  display: inline-block;
+  text-decoration: none;
+  padding: 7px 14px;
+  color: #fff;
+  border: 1px solid #fff;
+  background-color: #000;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  font-weight: normal;
+}
+
+.hovereffect:hover a.info {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+</style>
+
 <div class="row">
-    <div class="media-left col-4">
-        <img class="mx-auto d-block media-object" src="/static/me.png" style="width:auto; max-width: 30vw; padding-left:15px"/>
+    <div class="media-left offset-xl-1 col-lg-4 col-md-4" style="padding-left:30px; ">
+        <img class="mx-auto d-block media-object" src="/static/me.png" style="width:auto; max-width: 30vw; margin-bottom:10px"/>
+
+            <div class="links text-center" style="margin:15px; font-size:1.7vw;">
+<a href="https://critiquefood.blogspot.com/" target="_blank" title="Food For Thought"><i class="fas fa-ice-cream fa-3x"></i></a>&nbsp
+<a href="https://www.youtube.com/channel/UC8hEr0FkB5i-gQC4b7b5fvg" target="_blank" title="YouTube"><i class="fab fa-youtube fa-3x"></i></a>
+</div>
     </div>
 
-    <div class="media-body col-6" style="padding:10px;">
-        <h2>About me</h2>
-        <h4 class="media-heading" ></h4>
-        Hello! I'm Andy Kong, an undergraduate student studying computer science at Carnegie Mellon in Pittsburgh. I'm interested in developing BCIs that allow us to talk seamlessly with our devices, with the end goal of controlling robots with them. My role model is Doc Ock from Spiderman, but without the evil.
+    <div class="media-body col-xl-7 col-lg-8 col-md-8" style="padding:50px; padding-top:10px;">
+        <i>Currently looking for internship/work (preferably in HCI) for Spring 2021 and Summer 2021. I have extensive electronics hardware (PCB design, analog and digital signal processing, microcontrollers) and software experience (Python, Java, C/C++).</i>
+
         <br><br>
-        My main goal is to try new things and improve human ability through technology.
+        Hello! I'm Andy Kong, a student studying computer science and human-computer interaction at Carnegie Mellon University.
+        <br><br>
+        My research interests include neural control of devices (EMG/EEG), discreet screen-less interfaces, and improving human-computer information bandwidth. My main goal is to try new things and improve human ability through technology.
 <br><br>
-
-This website is for documenting my technical projects and writing my ramblings. If you have any topics to suggest, hit up my <a href="mailto:andyking99@gmail.com" target="blank">email</a>!
-My culinary projects (if eating counts as a project) can be found on my <a href="http://critiquefood.blogspot.com" target="blank">food blog</a>.
-If you're looking for the code for a project of mine, you can find it all in my <a href="http://github.com/kongmunist" target="blank">Github</a>. If it's a video you want, check out my <a href="https://www.youtube.com/channel/UC8hEr0FkB5i-gQC4b7b5fvg" target="blank">YouTube</a>. All links below.
-<br><br>
-
-<h2>Collaboration/Consulting</h2>
-
-If you've got a project that you think I'd find interesting to work on, please contact me at my email below! I'm always happy to hear new ideas. 
+        This website is for documenting my technical/research/personal projects and writing my ramblings and failed experiments in my blog. If you find any cool topics you think I'd find interesting, I'd love to hear about it! Email me!
+    <br/>
+    </div>
+</div>
 
 
-<br/>
-<hr/>
+<hr>
 
-<span class="contacticon center">
-	<a href="mailto:andyking99@gmail.com"><i class="fa fa-envelope-square"></i></a>
-	<a href="https://github.com/kongmunist" target="_blank"><i class="fab fa-github"></i></a>
-	<a href="https://www.youtube.com/channel/UC8hEr0FkB5i-gQC4b7b5fvg" target="_blank"><i class="fab fa-youtube"></i></a>
-	<a href="https://www.linkedin.com/in/andy-k-99976b92/" target="_blank"><i class="fab fa-linkedin"></i></a>
-	<a href="https://www.instagram.com/kongmunist" target = "_blank"><i class="fab fa-instagram"></i></a>
-</span>
+<a href="/projects"><h1 class="text-center" > Portfolio </h1></a>
 
+<div class="container-fluid" style="height: 100%;">
+    <div class="row" >
+
+
+        
+
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/myo2/'">
+    <div class="hovereffect" >
+        <img class="img mx-auto d-block" src="/static/myo2tensingcropped.gif" height="400vw" >
+
+        <div class="overlay">
+           <h2>Myo2</h2>
+           <a class="info" href="/projects/myo2/">Making my own ultra-sensitive EMG sensors for measuring unnoticeable muscle movement</a>
+        </div>
+    </div>
+    </div>
+
+
+
+        
+
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/heartratemonitor/'">
+    <div class="hovereffect" >
+        <img class="img mx-auto d-block" src="/static/heartratemainpage.png" height="400vw" >
+
+        <div class="overlay">
+           <h2>Webcam Heartrate Monitor</h2>
+           <a class="info" href="/projects/heartratemonitor/">Website that can determine your heartrate using ambient lighting and a camera.</a>
+        </div>
+    </div>
+    </div>
+
+
+
+        
+
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/carnegiecalendar/'">
+    <div class="hovereffect" >
+        <img class="img mx-auto d-block" src="/static/CCmain.png" height="400vw" >
+
+        <div class="overlay">
+           <h2>Carnegie Calendar</h2>
+           <a class="info" href="/projects/carnegiecalendar/">All-encompassing, auto-updating events calendar for everything going on at uni</a>
+        </div>
+    </div>
+    </div>
+
+
+
+        
+
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/asciizoom/'">
+    <div class="hovereffect" >
+        <img class="img mx-auto d-block" src="/static/asciizoom.png" height="400vw" >
+
+        <div class="overlay">
+           <h2>AsciiZOOM</h2>
+           <a class="info" href="/projects/asciizoom/">The first secure, text-based videoconferencing app, accessible from the safety of your terminal.</a>
+        </div>
+    </div>
+    </div>
+
+
+
+        
+
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/alteredperceptions/'">
+    <div class="hovereffect" >
+        <img class="img mx-auto d-block" src="/static/alteredbonsai.png" height="400vw" >
+
+        <div class="overlay">
+           <h2>Altered Perceptions</h2>
+           <a class="info" href="/projects/alteredperceptions/">VR headset + POV camera + preprocessing =&gt; new way to see the world</a>
+        </div>
+    </div>
+    </div>
+
+
+
+        
+
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/ampbox/'">
+    <div class="hovereffect" >
+        <img class="img mx-auto d-block" src="/static/ampbox.png" height="400vw" >
+
+        <div class="overlay">
+           <h2>Amp Box</h2>
+           <a class="info" href="/projects/ampbox/">A box optimized for ease-of-use in amplifying tiny electrical signals (&lt;10 mv)</a>
+        </div>
+    </div>
+    </div>
+
+
+
+        
+
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/manualbackprop/'">
+    <div class="hovereffect" >
+        <img class="img mx-auto d-block" src="/static/backprop.png" height="400vw" >
+
+        <div class="overlay">
+           <h2>Manual Backpropagation</h2>
+           <a class="info" href="/projects/manualbackprop/">Manually implementing backpropagation to prove that I know how it works</a>
+        </div>
+    </div>
+    </div>
+
+
+
+        
+
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/spintank/'">
+    <div class="hovereffect" >
+        <img class="img mx-auto d-block" src="/static/spintankabrams.png" height="400vw" >
+
+        <div class="overlay">
+           <h2>Spin Tank</h2>
+           <a class="info" href="/projects/spintank/">Testing a novel reactive tank armor that spins to deflect projectiles</a>
+        </div>
+    </div>
+    </div>
+
+
+
+        
+
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/forcequeue/'">
+    <div class="hovereffect" >
+        <img class="img mx-auto d-block" src="/static/kerokerokerokerokerokero.png" height="400vw" >
+
+        <div class="overlay">
+           <h2>Spotify Force Queueing</h2>
+           <a class="info" href="/projects/forcequeue/">A Python program using Spotify APIs to forcibly queue songs on collaborative playlists when you don&#39;t have aux control</a>
+        </div>
+    </div>
+    </div>
+
+
+
+        
+
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/eyetracker/'">
+    <div class="hovereffect" >
+        <img class="img mx-auto d-block" src="/static/eyetrackthumbnail.png" height="400vw" >
+
+        <div class="overlay">
+           <h2>Eye-Tracking Mouse</h2>
+           <a class="info" href="/projects/eyetracker/">An easy-to-use, handless mouse utilizing a laptop&#39;s built-in webcam and some CNNs.</a>
+        </div>
+    </div>
+    </div>
+
+
+
+        
+
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/personalwebsite/'">
+    <div class="hovereffect" >
+        <img class="img mx-auto d-block" src="/static/websitev2.png" height="400vw" >
+
+        <div class="overlay">
+           <h2>Personal Website</h2>
+           <a class="info" href="/projects/personalwebsite/">Static website generator built with Flask and hosted on Firebase. You&#39;re looking right at it!</a>
+        </div>
+    </div>
+    </div>
+
+
+
+        
     </div>
 </div>
 
