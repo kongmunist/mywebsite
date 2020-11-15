@@ -162,11 +162,11 @@ code {
             <p style="margin-bottom: 5px; margin-top: 0px">Published: 2020-03-04</p>
 
             <hr>
-        <p><br>
+        <p><br></p>
 <div style="text-align:center;" class="d-block mx-auto">
 <iframe width="560" height="315" align="middle" src="https://www.youtube.com/embed/k4v0TsgcNes" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
-<br></p>
+<p><br></p>
 <p>This is my first art project, sponsored by the Frank-Ratchye Studio for Creative Inquiry at CMU's School of Fine Arts. Here's the <a href="https://github.com/kongmunist/alteredperceptions">code on GitHub</a>
 <br></p>
 <h3>Motivation</h3>
@@ -181,8 +181,9 @@ code {
 <p>The code is written in Python. I actually tried C++ OpenCV at first because "real programmers" told me it was faster. However, the screen display was much slower, going at around 100 ms. Terrible latency, makes the whole thing sickening to wear. So I went with Python.</p>
 <p>All I do is have multiple threads that run concurrently. One thread grabs the last frame from the camera and puts it in the first aliased list, the second thread pulls the frame from the first list, processes it according to the filter I choose, and puts it in a second aliased list. The third thread pulls an image from the 2nd list and displays it fullscreen. All this code is in complexcamera.py</p>
 <p>Depending on the filter number, the processing thread uses a function from neweyes.py. These include thresholding, edge detection, and plain old color swapping. They look pretty cool, and I show off some of them in the video above. </p>
-<p><img class="d-block mx-auto" src="/static/alteredadaptivethresh.png"/>
-<p class="caption">Some neighborhood-aware adaptive thresholding, or NYC Line Profile Style</p></p>
+<p><img class="d-block mx-auto" src="/static/alteredadaptivethresh.png"/></p>
+<p class="caption">Some neighborhood-aware adaptive thresholding, or NYC Line Profile Style</p>
+
 <h3>Future work</h3>
 <p>These are all pretty standard CV techniques that I've just modified to be neat to look at, instead of using them to gain more information about an image. I think they look really cool, but at the same time I understand I'm not playing with the shapes or lines or anything too major. The next step for this project is to make it capable of producing DeepDream images live:</p>
 <p><img class="d-block mx-auto" src="/static/altereddeepdreamdog.jpg"/></p>

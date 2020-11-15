@@ -44,7 +44,7 @@ We see that the error is significant, definitely not enough to just round away l
 
 <img src={{ url_for('static', filename = 'aabignetexamples.png')}} width="300" class="d-block mx-auto"/>
 
-It's AWFUL! Terrible! Abysmal! A child could do better than that! Whe- oh, we're getting a message from ML himself. He said to change the learning rate. Whoops. Here's the actual results
+It's AWFUL! Terrible! Abysmal! A child could do better than that! Whe- oh, we're getting a message from ML themselves. They said to change the learning rate. Whoops. Here's the actual results
 
 <img src={{ url_for('static', filename = 'aabignetgoodexamples.png')}} width="300" class="d-block mx-auto"/>
 

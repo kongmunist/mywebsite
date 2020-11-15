@@ -1,6 +1,6 @@
 from flask import Flask, render_template, url_for, render_template_string, Markup, redirect
 from flask_flatpages import FlatPages, pygmented_markdown
-from flask_bootstrap import Bootstrap
+# from flask_bootstrap import Bootstrap
 from flask_frozen import Freezer
 
 from datetime import datetime
@@ -24,6 +24,7 @@ pages = FlatPages(app)
 freezer = Freezer(app)
 #bootstrap = Bootstrap(app)
 
+# Allows markdown to do flask functions before the site's HTML renders. INTEGRAL. SO IMPORTANT.
 def prerender_jinja(text):
     prerendered_body = render_template_string(Markup(text))
     return pygmented_markdown(prerendered_body)
