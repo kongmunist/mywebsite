@@ -80,10 +80,20 @@ def blog(title):
 def maintag():
     print("main tagged page")
     listPages = set()
+    numPages = dict()
+
+    allTag = []
+    # For all blog posts,
     for p in pages:
-        for t in p.meta.get('tags', []):
-            listPages.add(t)
-    return render_template('tagmain.html', page = [], pages=listPages)
+        if ("blog"==p.meta.get('label')):
+            for t in p.meta.get('tags', []):
+                listPages.add(t)
+                numPages[t] = numPages.get(t, 0) + 1
+                allTag.append(t)
+
+    listPages = sorted(list(listPages))
+    numPages = [numPages[x] for x in listPages]
+    return render_template('tagmain.html', pages=listPages, num_per_tag=numPages)
 
 @app.route('/tagged/<string:tag>/')
 def tag(tag):

@@ -1,10 +1,17 @@
 {% extends "aboutsidebar.html" %}
 
 {% block batcontent %}
+    <div>
     <h2>Here's a list of all the tags</h2>
+    <hr>
 
-    {% for t in pages %}
+    <a href="{{ url_for("tag", tag=pages.0) }}">{{ pages.0 }} ({{ num_per_tag.0 }})</a>
 
-        <a href="{{ url_for("tag", tag=t) }}">{{ t }}</a>
+
+    {% for t in pages[1:] %}
+        <br>
+        <a href="{{ url_for("tag", tag=t) }}">{{ t }} ({{ num_per_tag[loop.index]}})</a>
     {% endfor %}
+
+    </div>
 {% endblock %}

@@ -1,8 +1,11 @@
 {% extends "aboutsidebar.html" %}
 
 {% block batcontent %}
+    <div>
     <h2>List of stuff tagged <em>{{ tag }}</em></h2>
+        <hr>
     {% with pages=pages  %}
         {% include "_list.html" %}
     {% endwith %}
+    </div>
 {% endblock %}
