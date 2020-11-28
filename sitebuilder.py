@@ -62,7 +62,7 @@ def mainblog():
     blogPages = [p for p in pages if "blog"==p.meta.get('label')]
     blogPages = [(x.meta.get('date'), x) for x in blogPages]
 
-    blogPages.sort(reverse=True)
+    blogPages.sort(reverse=True, key= lambda x: x[0])
     blogPages=[x[1] for x in blogPages]
     return render_template('blogmain.html', page=[], pages=blogPages)
 
