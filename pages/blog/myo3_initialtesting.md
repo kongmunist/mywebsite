@@ -1,5 +1,5 @@
 title: Myo3 initial tests
-date: 2020-11-27
+date: 2020-11-26
 label: blog
 tags: [myo3, projectlog, PCB]
 snippet: It's like they always say, the hard part's the software
