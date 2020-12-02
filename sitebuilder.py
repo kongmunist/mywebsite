@@ -60,7 +60,7 @@ def about():
 def mainblog():
     print("main blog page")
     blogPages = [p for p in pages if "blog"==p.meta.get('label')]
-    blogPages = [(x.meta.get('date'), x) for x in blogPages]
+    blogPages = [(x.meta.get('date'), x) for x in blogPages if 'wip' not in x.meta.get('tags')]
 
     blogPages.sort(reverse=True, key= lambda x: x[0])
     blogPages=[x[1] for x in blogPages]
@@ -71,6 +71,8 @@ def blog(title):
     print("blog page " + title)
     page = [pages.get("blog/" + title)]
     blogPages = [p for p in pages if "blog"==p.meta.get('label')]
+
+
     if page[0] is None:
         return mainblog()
     return render_template('blog.html', page=page, pages = blogPages)
