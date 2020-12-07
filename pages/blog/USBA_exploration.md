@@ -2,7 +2,7 @@ title: Exploring USB-A breakout cables
 date: 2020-12-04
 label: blog
 tags: [electronics]
-snippet: The normal USB
+snippet: The normal USB cable
 
 Recently I had the need for a 5V battery to power a circuit. 
 
