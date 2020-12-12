@@ -151,8 +151,12 @@ if __name__ == "__main__":
                 os.system("brctl download static/" + icloud_file)
 
             # wait for them to download
+            print("waiting for static resources to download from icloud", end="")
             while (len([x for x in os.listdir("static/") if ".icloud" in x]) > 0):
-                time.sleep(.1)
+                time.sleep(1)
+                print(".", end="")
+
+
 
             # PLEASE DO NOT RUN "python sitebuilder.py build local" IF YOU ARE NOT ON ANDY'S MAC
             app.config["FREEZER_DESTINATION"] = "andykong.org/public"

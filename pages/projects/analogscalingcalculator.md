@@ -5,18 +5,18 @@ timespan: December 2020
 pic: analogscalinggraphic.png
 description: Taming an unruly analog signal into a more manageable size.
 
-![Mapping analog voltages between two rails]({{ url_for('static', filename = 'analogscalinggraphic.png')}})
+<img class="d-block mx-auto" src="{{ url_for('static',filename='analogscalinggraphic.png') }}"/>
+<p class="caption">Mapping analog voltages between two rails</p>
 
-This webpage is the live calculator I made for the analog scaling problem I highlighted in [this blog post](http://andykong.org/blog/analog_scalingvoltages/). It solves the problem of moving an analog signal within one voltage range to another voltage range with one op-amp. 
+
+This webpage is the live calculator I made for the analog scaling problem I highlighted in [this blog post](/blog/analog_scalingvoltages/). It solves the problem of moving an analog signal within one voltage range to another voltage range with one op-amp. 
 
 Here, an example is set up scaling ±15V sensor output to 0-5V Arduino/microcontroller analogRead-able values.
 
 
 <hr>
 ### Circuit setup
-![]({{ url_for('static', filename = 'scalingvoltage_nonumbers.png')}})
-<br>
-
+<img class="d-block mx-auto" src="{{ url_for('static',filename='scalingvoltage_nonumbers.png') }}"/>
 <form id="voltageform">
 	<table style="width:100%">
 		<tr>
@@ -35,8 +35,8 @@ Here, an example is set up scaling ±15V sensor output to 0-5V Arduino/microcont
 </form>
 <br>
 
-<h2>Solution</h2>
 <hr>
+<h2>Solution</h2>
 <table width="50%">
 	<tr>
 		<td>
