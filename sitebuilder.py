@@ -145,7 +145,15 @@ if __name__ == "__main__":
         if len(sys.argv) > 2 and sys.argv[2] == "local":
             # turn off DEBUG
             DEBUG = False
-            
+
+            # Download all files in the static folder
+            for icloud_file in [x for x in os.listdir("static/") if ".icloud" in x]:
+                os.system("brctl download static/" + icloud_file)
+
+            # wait for them to download
+            while (len([x for x in os.listdir("static/") if ".icloud" in x]) > 0):
+                time.sleep(.1)
+
             # PLEASE DO NOT RUN "python sitebuilder.py build local" IF YOU ARE NOT ON ANDY'S MAC
             app.config["FREEZER_DESTINATION"] = "andykong.org/public"
             freezer.freeze()

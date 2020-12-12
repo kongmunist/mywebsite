@@ -6,7 +6,10 @@ snippet: What to do when your circuit outputs ±5V but your ADC only takes 0-5V
 
 The problem I'm going to be talking about today is how to translate an analog signal from one range to another. I have dealt with this problem three times now, each time was more unintuitive than the last so I thought it'd be useful if I wrote down my process for other people to see what's going on and solve their similar problems. 
 
-<br><hr>
+![Mapping analog voltages between two rails]({{ url_for('static', filename = 'analogscalinggraphic.png')}})
+<p class="caption">Mapping analog voltages between two rails</p>
+
+<hr>
 ### An example of this problem
 Let's say you're using a complicated device, which takes in some analog/digital signal in order to control some aspect of itself. As an example, let's say it controls its position. You go to measure the device's current position to control what position you actually want it to go to, but discover from the datasheet or your fried microcontroller that the analog signal out from the device has a different rail-to-rail voltage than your microcontroller. It runs at ±15V and your board runs from USB's 0-5V! 
 
@@ -55,12 +58,12 @@ So let's go over it. R1 and R2 are feedback for the Vin, they do the dividing of
 You may be saying "Ohh, but Andy, this isn't like a differential op-amp at all! The noninverting input doesn't even have resistors." Well to that I say, how do you expect to make your reference voltage? You'll usually have to make a voltage divider to ground, and voila, the original subtractor structure appears.
 
 ### Example please? 
-Sure! Let's say we're solving the above mapping: from ±15V rails to a 0-5V range. This op-amp is in an inverting configuration (negative feedback), so the higher initial voltage is going to have to map to the lower voltage on the output. Here's what we're trying to accomplish.
+Sure! Let's say we're solving the above mapping: from ±15V rails to a 0-5V range. This op-amp is in an inverting configuration (negative feedback), so the higher initial voltage is going to have to map to the lower voltage on the output, and vice versa. Here's what we're trying to accomplish.
 
 ![Mapping of voltages that would fix your problems, pt. 2]({{ url_for('static', filename = 'voltagescalingmath2.png')}})
 <p class="caption">Mapping of voltages that would fix your problems, pt. 2</p>
 
-We can just plug in our knowns and solve the linear system of equations for Vref and the resistor ratio. Let's say R2/R1 = r for simplicity's sake. ! From the first equation, we have Vin = 15V, Vout = 0V, and the second equation we have Vin = -15V and Vout = 5V. So in LaTeX form:
+We can just plug in our knowns and solve the linear system of equations for Vref and the resistor ratio. Let's say R2/R1 = r just so we can write it more easily. From the first equation, we have Vin = 15V, Vout = 0V, and the second equation we have Vin = -15V and Vout = 5V. So in LaTeX form:
 
 ![Equation one]({{ url_for('static', filename = 'analogscale_eq1.png')}})
 
@@ -72,10 +75,10 @@ Then we just ask Wolfram Alpha! I'm using v for Vref to make it easier to type.
 
 ![Wolfram Answer]({{ url_for('static', filename = 'wolframanswer.png')}})
 
-Great! So our R1 has to equal 6xR2, and our reference voltage should be somewhere around 2.14V. 
+Great! So our R1 has to equal 6*R2, and our reference voltage should be somewhere around 2.14V. 
 
 ### Implementing the resistor ratio and voltage divider
-I want to pick realistic resistors because usually these circuits are needed immediately and in real-life, so I usually use a resistor ratio calculator to make this easier. (This site)[http://jansson.us/resistors.html] is a godsend. I'm really lazy in real life, so I'm only going to use the single resistor in series option, but the other ones are usually a little or a lot better in terms of error. 
+I want to pick realistic resistors because these circuits are usually needed immediately and in real-life, so I usually use a resistor ratio calculator to make this easier. [This site](http://jansson.us/resistors.html) is a godsend. I'm really lazy in real life, so I'm only going to use the single resistor in series option, but the other ones are usually a little or a lot better in terms of error. 
 
 For the resistors with a ratio of 1/6, it seems a good choice is a 56kΩ and 330kΩ resistor. 
 
@@ -95,8 +98,8 @@ Here's the part values we picked out in simulation:
 
 The +15V rail becomes -0.13V, so very close to the 0V we wanted it to be. The -15V rail nails 5V almost exactly. So yea, I'd say they work. 
 
-Sometimes the solution with realistic resistors will need some tuning, because negative voltages will usually damage a circuit, but you can just tune the initial parameters on the voltage mapping and solve the problem again. 
+Sometimes the solution with realistic resistors will need some tuning, because negative voltages will usually damage a circuit, but you can just tune the initial parameters on the initial voltage mapping to be a little tighter and solve the problem again. 
 
 ## Closing
-Anyway, I encounter this problem all the time, and as I work more with hardware I think this is an integral "glue" circuit that you should master if you're going to work with hardware of various logical and analog levels too. That's all for now, cya next time!
+Anyway, I encounter this problem all the time, and as I work more with hardware I think this is an integral "glue" circuit that you should master if you're going to work with hardware of various logical and analog levels. That's all for now, cya next time!
 
