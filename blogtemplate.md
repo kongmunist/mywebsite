@@ -4,8 +4,9 @@ label: blog
 tags: [template]
 snippet: Blog Post Summary
 
-![Image Caption]({{ url_for('static', filename = 'panorama2_betterstitch.jpg')}})
-[Link example](https://andykong.org)
-
 Late last night I was greeted in my dreams by a green, ghastly spectre. Words words words. 
 
+![Image Caption]({{ url_for('static', filename = 'none.jpg')}})
+<p class="caption">Image desc</p>
+
+[Link example](https://andykong.org)
