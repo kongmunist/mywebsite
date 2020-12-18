@@ -6,7 +6,7 @@ snippet: Blog Post Summary
 
 Late last night I was greeted in my dreams by a green, ghastly spectre. Words words words. 
 
-![Image Caption]({{ url_for('static', filename = 'badglasses.png')}})
 <p class="caption">Image desc</p>
+![Image Caption]({{ url_for('static', filename = 'badglasses.png')}})
 
 [Link example](https://andykong.org)
