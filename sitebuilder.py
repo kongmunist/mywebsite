@@ -157,7 +157,6 @@ if __name__ == "__main__":
                 print(".", end="")
 
 
-
             # PLEASE DO NOT RUN "python sitebuilder.py build local" IF YOU ARE NOT ON ANDY'S MAC
             app.config["FREEZER_DESTINATION"] = "andykong.org/public"
             freezer.freeze()
