@@ -4,6 +4,10 @@ label: blog
 tags: [tutorial, CV, heartrate]
 snippet: A guide on how to pronounce the word, and how to implement it in Python
 
+Here's the code if you want to give it a shot yourself: [gist](https://gist.github.com/kongmunist/ba659019a483117a846dc2101e27f13d). You will need to download the Haar cascades yourself though.
+
+<hr>
+
 Today I'm going to be telling you about this sick computer vision technique that requires only your webcam feed to get your heartrate. And no, I'm not talking about the phone flashlight trick. I'm talking photoplethysmography (PPG)!
 
 Existing cameras on phones and laptops are amazing, their resolution has allowed some really cool sensing techniques besides taking great photos of your Chipotle burrito. Even knowing this, I found this technique hard to believe. 
