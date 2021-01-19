@@ -1,5 +1,5 @@
 title: The first generation of handheld barcode scanners — with laser tubes
-date: 2021-01-13
+date: 2021-01-14
 label: blog
 tags: [history, electronics]
 snippet: History of the LS1000 and MH290, and a demo of the 2nd!
