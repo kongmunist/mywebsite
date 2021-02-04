@@ -1,5 +1,5 @@
 title: Physical Word Length Calculator 
-date: 2021-01-31
+date: 2021-02-01
 label: blog
 tags: [calculator, p5js, cursive]
 snippet: Determine how much string you'll need to spell out a phrase

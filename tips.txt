@@ -16,3 +16,4 @@ HTML/JS - if you try to set the style by doing elem.style.fontSize = "100%";, ma
 CSS - Need both "backdrop-filter: blur(4px)" and "-webkit-backdrop-filter: blur(4px)" to make the blur happen in Safari.
 CSS Animations - The from needs to have all details, but the "to" doesn't. You already know the to, it's in the object's specification that records which animation is happening. 
 JINJA - "300 kHz to 1 kHz faster than you can say \"free bits\"" is how you add quotes. You're welcome. I think other forbidden characters can be added like this too.
+HTML - center tables using "margin-left: auto; margin-right: auto;"
