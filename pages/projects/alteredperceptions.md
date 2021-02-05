@@ -7,7 +7,7 @@ description: VR headset + POV camera + preprocessing => new way to see the world
 
 <br>
 <div style="text-align:center;" class="d-block mx-auto">
-<iframe width="560" height="315" align="middle" src="https://www.youtube.com/embed/k4v0TsgcNes" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="50%" height="100%" align="middle" src="https://www.youtube.com/embed/k4v0TsgcNes" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 <br>
 
