@@ -10,10 +10,11 @@ METADATA YML - Calling page.meta.date renders automatically as a datetime.date o
 HTML - you wrote a <p class="caption"> for making captions below images. It's hella useful
 BLOG IMAGES - TEMPLATE is <img class="d-block mx-auto" src="{{ url_for('static',filename='filename.png') }}"/>
 BOOTSTRAP - if you want to center text, use class=text-center and don't put a row around it
-YOUTUBE EMBEDDED - to center it, make a div around it with style="text-align:center;" and class="d-block mx-auto", i don't know which one is necessary
+YOUTUBE EMBEDDED - to center it, make a div around it with style="text-align:center;" and class="d-block mx-auto", i don't know which one is necessary. EDIT it's the first one, the text-align center.
 HTML - On a new page (like tagmain), if the bat content doesn't have an additional div all the formatting goes to hell. Place a div as the first thing in {{} bat_content} or whatever
 HTML/JS - if you try to set the style by doing elem.style.fontSize = "100%";, make SURE you don't put "100%;" with a semicolon inside the thing. It'll terminate it all on its own, but you putting the ; makes it reject the string. So much for being concientious :(.
 CSS - Need both "backdrop-filter: blur(4px)" and "-webkit-backdrop-filter: blur(4px)" to make the blur happen in Safari.
 CSS Animations - The from needs to have all details, but the "to" doesn't. You already know the to, it's in the object's specification that records which animation is happening. 
 JINJA - "300 kHz to 1 kHz faster than you can say \"free bits\"" is how you add quotes. You're welcome. I think other forbidden characters can be added like this too.
 HTML - center tables using "margin-left: auto; margin-right: auto;"
+JAVASCRIPT - cannot add buttons with onclick attribute to a <p> tag. Just doesn't work. 
