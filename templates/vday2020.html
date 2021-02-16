@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+<div>
+<script>
+    a = document.getElementsByTagName("nav");
+    document.body.removeChild(a[0]);
+</script>
+
+
+
+<br><br>
+        <h1 class="text-center">Happy Valentine's Day Darling!</h1>
+
+<img src="{{ url_for("static", filename="hana/biscotti.JPG") }}" height="300px" style="position:absolute; top:10%; left: 15%;">
+
+<img src="{{ url_for("static", filename="hana/maskoff.JPG") }}" height="300px" style="position:absolute; top:38.33%; left: 15%;">
+
+<img src="{{ url_for("static", filename="hana/mirror.JPG") }}" height="300px" style="position:absolute; top:66.66%; left: 15%;">
+
+
+<img src="{{ url_for("static", filename="hana/monalisa.PNG") }}" height="300px" style="position:absolute; top:10%; right: 15%;">
+
+<img src="{{ url_for("static", filename="hana/sleepy.JPG") }}" height="300px" style="position:absolute; top:38.33%; right: 15%;">
+
+<img src="{{ url_for("static", filename="hana/toes.JPG") }}" height="300px" style="position:absolute; top:66.66%; right: 15%;">
+
+
+<img src="{{ url_for("static", filename="hana/toes.JPG") }}" height="300px" style="position:absolute; top:66.66%; right: 15%;">
+
+<div>
+<img src="{{ url_for("static", filename="hana/poem.png") }}" height="300px" style="position:absolute; top:30%; left: calc(50% - 306px);">
+</div>
+
+
+
+<!-- 
+            <p style="text-align:center; padding-top:10%; "> <br><br>When god made you perfect did &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; he give you those on purpose? 
+<br>A cute little nose, ears asking to be kissed into, and flowing, strong black hair?<br>
+A penchant for makeup, good taste in clothes, and a sweet heart?</p>
+<br>
+            <p style="text-align:center"> Sweetheart, you make the hours fly by<br>
+And leave me wishing<br>
+for many more!<br>
+~ I love you ~
+</p> -->
+
+
+</div>
+<!--</div>-->
+{% endblock %}

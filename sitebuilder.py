@@ -133,6 +133,11 @@ def friends():
     print("friends")
     return render_template("friends.html")
 
+@app.route("/vday2020/")
+def vday2020():
+    print("vday2020")
+    return render_template("vday2020.html")
+
 @app.route('/<path:path>/')
 def page(path):
     print("page " + path)
