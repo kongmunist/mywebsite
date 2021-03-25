@@ -11,22 +11,26 @@
                 {{ p.title }}
             </h4>
         </a>
-        <blockquote>
-            <p class="list-group-item-text">
+        <!-- <blockquote ></blockquote> -->
+            <p class="list-group-item-text" style="margin-bottom: 3px; margin-left: 1em;">
 
                 {{ p.snippet }}
 
-            </p></blockquote>
+            </p>
+    <p style="font-size: .8em; text-align: right;">
     {% if p.meta.tags|length %}
-        Tagged:
+        Tags:
         <a href="{{ url_for("tag", tag= p.meta.tags.0  ) }}">{{ p.meta.tags.0 }}</a>
         {% for page_tag in p.meta.tags[1:] %}
             <a href="{{ url_for("tag", tag=page_tag) }}">,&nbsp;{{ page_tag }}</a>
         {% endfor %}
-        | Date Published:
+
+        <br>
+        Date Published:
 
         {{ dateconvert(p.meta.date) }}
     {% endif %}
+    </p>
 
     {% endfor %}
 
