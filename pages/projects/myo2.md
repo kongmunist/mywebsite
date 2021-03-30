@@ -2,7 +2,7 @@ title: Myo2
 date: 2020-10-23
 label: project
 timespan: July 2020 - now
-pic: myo2tensingcropped.gif
+pic: myo2tensing.png
 description: Making my own ultra-sensitive EMG sensors for measuring unnoticeable muscle movement
 
 Here it is! My own EMG sensor board, capable of amplifying 50uV muscle signals into ~1V outputs without getting drowned out by electromagnetic interference or noise. Total gain is around 30,000x.
