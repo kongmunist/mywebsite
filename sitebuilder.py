@@ -86,6 +86,7 @@ def rss():
         fe.title(article.meta['title'])
         fe.link(href=article.path)
         fe.description(article.body)
+        # fe.subtitle(article.snippet)
         # fe.guid(article.id, permalink=False) # Or: fe.guid(article.url, permalink=True)
         fe.author(name="Andy Kong", email="andyking99@gmail.com")
         # fe.pubDate(dateconvert(article.meta['date']))
@@ -97,11 +98,11 @@ def rss():
 
 
 
-    response = make_response(fg.rss_str())
+    response = make_response(fg.rss_str(pretty=True))
     response.headers.set('Content-Type', 'application/rss+xml')
 
     return response
-    return ""
+    # return ""
 
 
 @app.route("/about/")
