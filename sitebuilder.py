@@ -1,9 +1,12 @@
-from flask import Flask, render_template, url_for, render_template_string, Markup, redirect
+from flask import Flask, render_template, url_for, render_template_string, Markup, \
+        redirect,make_response
 from flask_flatpages import FlatPages, pygmented_markdown
 # from flask_bootstrap import Bootstrap
 from flask_frozen import Freezer
+from feedgen.feed import FeedGenerator
 
 from datetime import datetime
+import pytz
 import sys
 import subprocess
 import os
@@ -47,6 +50,58 @@ def index():
     projPages = [x[1] for x in projPages]
 
     return render_template('main.html', pages = projPages)
+
+
+import inspect
+
+@app.route("/rss/")
+def rss():
+    print("rss page")
+
+    # Get blog pages
+    blogPages = [p for p in pages if "blog" == p.meta.get('label')]
+    blogPages = [(x.meta.get('date'), x) for x in blogPages if
+                 'wip' not in x.meta.get('tags')]
+    blogPages.sort(reverse=True, key=lambda x: x[0])
+    blogPages = [x[1] for x in blogPages]
+
+    # Create Feed generator
+    fg = FeedGenerator()
+    fg.title("Andy Kong's Blog")
+    fg.description('Thoughts and Work')
+    fg.link(href='https://andykong.org')
+
+    # print(blogPages[0].path)
+    # print(blogPages[0].meta)
+    # for i in inspect.getmembers(blogPages[0]):
+    #     # Ignores anything starting with underscore
+    #     # (that is, private and protected attributes)
+    #     if not i[0].startswith('_'):
+    #         # Ignores methods
+    #         if not inspect.ismethod(i[1]):
+    #             print(i[0])
+
+    for article in blogPages: # get_news() returns a list of articles from somewhere
+        fe = fg.add_entry()
+        fe.title(article.meta['title'])
+        fe.link(href=article.path)
+        fe.description(article.body)
+        # fe.guid(article.id, permalink=False) # Or: fe.guid(article.url, permalink=True)
+        fe.author(name="Andy Kong", email="andyking99@gmail.com")
+        # fe.pubDate(dateconvert(article.meta['date']))
+        # print(article.meta['date'])
+
+        dt = datetime.combine(article.meta['date'], datetime.min.time())
+        timezone = pytz.timezone('America/Chicago')
+        fe.pubDate(timezone.localize(dt))
+
+
+
+    response = make_response(fg.rss_str())
+    response.headers.set('Content-Type', 'application/rss+xml')
+
+    return response
+    return ""
 
 
 @app.route("/about/")
