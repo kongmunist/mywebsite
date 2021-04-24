@@ -1,4 +1,4 @@
-title: Intro to Woodworking Pt. 1
+title: Intro to Intro to Woodworking
 date: 2021-03-24
 label: blog
 tags: [woodworking, cmu]
