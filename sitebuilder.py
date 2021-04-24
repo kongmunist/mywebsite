@@ -52,37 +52,34 @@ def index():
     return render_template('main.html', pages = projPages)
 
 
-# import inspect
-# Get blog pages
-blogPages = [p for p in pages if "blog" == p.meta.get('label')]
-blogPages = [(x.meta.get('date'), x) for x in blogPages if
-             'wip' not in x.meta.get('tags')]
-blogPages.sort(reverse=True, key=lambda x: x[0])
-blogPages = [x[1] for x in blogPages]
-
-# Create Feed generator
-fg = FeedGenerator()
-fg.title("Andy Kong's Blog")
-fg.description('Thoughts and Work')
-fg.link(href='https://andykong.org')
-
-for article in blogPages: # get_news() returns a list of articles from somewhere
-    fe = fg.add_entry()
-    fe.title(article.meta['title'])
-    fe.link(href=article.path)
-    fe.description(article.body)
-    # fe.subtitle(article.snippet)
-    # fe.guid(article.id, permalink=False) # Or: fe.guid(article.url, permalink=True)
-    fe.author(name="Andy Kong", email="andyking99@gmail.com")
-    # fe.pubDate(dateconvert(article.meta['date']))
-    # print(article.meta['date'])
-
-    dt = datetime.combine(article.meta['date'], datetime.min.time())
-    timezone = pytz.timezone('America/Chicago')
-    fe.pubDate(timezone.localize(dt))
 @app.route("/rss.xml")
 def rss():
     print("rss page")
+
+    # Get blog pages
+    blogPages = [p for p in pages if "blog" == p.meta.get('label')]
+    blogPages = [(x.meta.get('date'), x) for x in blogPages if
+                 'wip' not in x.meta.get('tags')]
+    blogPages.sort(reverse=True, key=lambda x: x[0])
+    blogPages = [x[1] for x in blogPages]
+
+    # Create Feed generator
+    fg = FeedGenerator()
+    fg.title("Andy Kong's Blog")
+    fg.description('Thoughts and Work')
+    fg.link(href='https://andykong.org')
+
+    for article in blogPages:  # get_news() returns a list of articles from somewhere
+        fe = fg.add_entry()
+        fe.title(article.meta['title'])
+        fe.link(href=article.path)
+        fe.content(article.body)
+        fe.description(article.meta['snippet'], isSummary=True)
+        fe.author(name="Andy Kong", email="andyking99@gmail.com")
+        dt = datetime.combine(article.meta['date'], datetime.min.time())
+        timezone = pytz.timezone('America/New_York')
+        fe.pubDate(timezone.localize(dt))
+
     response = make_response(fg.rss_str(pretty=True))
     response.headers.set('Content-Type', 'application/rss+xml')
 
