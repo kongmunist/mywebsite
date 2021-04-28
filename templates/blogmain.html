@@ -22,7 +22,7 @@
         Tags:
         <a href="{{ url_for("tag", tag= p.meta.tags.0  ) }}">{{ p.meta.tags.0 }}</a>
         {% for page_tag in p.meta.tags[1:] %}
-            <a href="{{ url_for("tag", tag=page_tag) }}">,&nbsp;{{ page_tag }}</a>
+            <a href="{{ url_for("tag", tag=page_tag) }}">,&nbsp;{{page_tag}}</a>
         {% endfor %}
 
         <br>
