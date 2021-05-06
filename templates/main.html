@@ -77,6 +77,28 @@
   -ms-transform: scale(1);
   transform: scale(1);
 }
+
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity:0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity:1;
+  }
+}
+
+@keyframes appear{
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
 </style>
 
 <div class="row">
@@ -92,18 +114,18 @@
 
 
     <div class="media-body col-xl-7 col-lg-8 col-md-8" style="padding:50px; padding-top:10px;">
-        <div style="font-size:2em">Howdy!</div>
+        <div style="font-size:2em; animation: 0.7s ease .3s slideInFromRight forwards; opacity:0;">Howdy!</div>
 
-        I'm Andy Kong
-
-        <br><br>
-
-        I am currently a student at the School of Computer Science at Carnegie Mellon University.
-        <br><br>
+        <br>
+        <p style="animation: 1s ease 1.5s appear forwards; opacity:0;">
+          I'm Andy Kong. I am currently a student at the School of Computer Science at Carnegie Mellon University studying CS and human-computer interaction.
+        
+        <br><br><br>
+        
         My research interests include biological and neural interfaces, intuitive computing, and improving the speeds we can talk to computers. These all connect to my driving force: I want to make things that don't exist yet. 
 <br><br>
-        Welcome to my website! I built this from scratch to document my personal and research work, and to store my writing, thoughts, and project logs in my blog. If you find any cool topics you think I'd find interesting, I'd love to hear about it! <a href="mailto:andyking99@gmail.com" target="blank">Email me</a> or find me on <a href="https://twitter.com/oldestasian" target="blank">Twitter!</a>
-    <br/>
+        Welcome to my website! I built it from scratch to document my personal and research work, and to store my writing, thoughts, and project logs in my blog. If you find any cool topics you think I'd find interesting, I'd love to hear about it! <a href="mailto:andyking99@gmail.com" target="blank">Email me</a> or find me on <a href="https://twitter.com/oldestasian" target="blank">Twitter!</a>
+      </p>
     </div>
 </div>
 
