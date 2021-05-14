@@ -99,7 +99,53 @@
   }
 }
 
+@keyframes appearAndSlideABit{
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.appearOnScroll{
+  opacity:0;
+}
 </style>
+
+<script type="text/javascript">
+  var expose
+  window.addEventListener('DOMContentLoaded', (event) => { // Dynamic load images if supported
+    if (window.IntersectionObserverEntry.prototype.hasOwnProperty('isIntersecting')){
+      const callback = function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting){
+            animDelay = .2 + parseFloat((entry.target.offsetLeft/window.innerWidth).toFixed(1))/2
+            console.log(animDelay)
+            entry.target.style.animation = "0.7s ease " + animDelay + "s appearAndSlideABit forwards"
+          }
+          expose = entry
+          // console.log(expose.isIntersecting)
+        });
+      };
+
+      const observer = new IntersectionObserver(callback);
+      const targets = document.querySelectorAll(".appearOnScroll");
+      targets.forEach(function(target) {
+        observer.observe(target);
+      });
+    } else { // If unsupported, show all targets
+      const targets = document.querySelectorAll(".appearOnScroll");
+      targets.forEach(function(target) {
+        target.style.opacity = 1.0;
+      });
+    }
+  });  
+
+</script>
+
 
 <div class="row">
     <div class="media-left offset-xl-1 col-lg-4 col-md-4" style="padding-left:30px; ">
@@ -140,7 +186,7 @@
 
         {% for p in pages %}
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='{{ url_for("project",project=p.path[9:]) }}'">
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" onclick="window.location.href='{{ url_for("project",project=p.path[9:]) }}'">
     <div class="hovereffect" >
         <img class="img mx-auto d-block" src="{{ url_for("static", filename= p.pic) }}" height="400vw" loading="lazy">
 

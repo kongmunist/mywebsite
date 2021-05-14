@@ -267,7 +267,53 @@ code {
   }
 }
 
+@keyframes appearAndSlideABit{
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.appearOnScroll{
+  opacity:0;
+}
 </style>
+
+<script type="text/javascript">
+  var expose
+  window.addEventListener('DOMContentLoaded', (event) => { // Dynamic load images if supported
+    if (window.IntersectionObserverEntry.prototype.hasOwnProperty('isIntersecting')){
+      const callback = function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting){
+            animDelay = .2 + parseFloat((entry.target.offsetLeft/window.innerWidth).toFixed(1))/2
+            console.log(animDelay)
+            entry.target.style.animation = "0.7s ease " + animDelay + "s appearAndSlideABit forwards"
+          }
+          expose = entry
+          // console.log(expose.isIntersecting)
+        });
+      };
+
+      const observer = new IntersectionObserver(callback);
+      const targets = document.querySelectorAll(".appearOnScroll");
+      targets.forEach(function(target) {
+        observer.observe(target);
+      });
+    } else { // If unsupported, show all targets
+      const targets = document.querySelectorAll(".appearOnScroll");
+      targets.forEach(function(target) {
+        target.style.opacity = 1.0;
+      });
+    }
+  });  
+
+</script>
+
 
 <div class="row">
     <div class="media-left offset-xl-1 col-lg-4 col-md-4" style="padding-left:30px; ">
@@ -308,7 +354,7 @@ code {
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/directionofvoice/'">
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" onclick="window.location.href='/projects/directionofvoice/'">
     <div class="hovereffect" >
         <img class="img mx-auto d-block" src="/static/dov_thumbnail.png" height="400vw" loading="lazy">
 
@@ -323,7 +369,7 @@ code {
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/eyecatcher/'">
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" onclick="window.location.href='/projects/eyecatcher/'">
     <div class="hovereffect" >
         <img class="img mx-auto d-block" src="/static/eyecatchercrop4.gif" height="400vw" loading="lazy">
 
@@ -338,7 +384,7 @@ code {
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/analogscalingcalculator/'">
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" onclick="window.location.href='/projects/analogscalingcalculator/'">
     <div class="hovereffect" >
         <img class="img mx-auto d-block" src="/static/analogscalinggraphic.png" height="400vw" loading="lazy">
 
@@ -353,7 +399,7 @@ code {
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/myo2/'">
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" onclick="window.location.href='/projects/myo2/'">
     <div class="hovereffect" >
         <img class="img mx-auto d-block" src="/static/myo2tensing.png" height="400vw" loading="lazy">
 
@@ -368,7 +414,7 @@ code {
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/heartratemonitor/'">
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" onclick="window.location.href='/projects/heartratemonitor/'">
     <div class="hovereffect" >
         <img class="img mx-auto d-block" src="/static/heartratemainpage.png" height="400vw" loading="lazy">
 
@@ -383,7 +429,7 @@ code {
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/carnegiecalendar/'">
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" onclick="window.location.href='/projects/carnegiecalendar/'">
     <div class="hovereffect" >
         <img class="img mx-auto d-block" src="/static/CCmain.png" height="400vw" loading="lazy">
 
@@ -398,7 +444,7 @@ code {
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/asciizoom/'">
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" onclick="window.location.href='/projects/asciizoom/'">
     <div class="hovereffect" >
         <img class="img mx-auto d-block" src="/static/asciizoom.png" height="400vw" loading="lazy">
 
@@ -413,7 +459,7 @@ code {
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/alteredperceptions/'">
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" onclick="window.location.href='/projects/alteredperceptions/'">
     <div class="hovereffect" >
         <img class="img mx-auto d-block" src="/static/alteredbonsai.png" height="400vw" loading="lazy">
 
@@ -428,7 +474,7 @@ code {
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/ampbox/'">
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" onclick="window.location.href='/projects/ampbox/'">
     <div class="hovereffect" >
         <img class="img mx-auto d-block" src="/static/ampbox.png" height="400vw" loading="lazy">
 
@@ -443,7 +489,7 @@ code {
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/manualbackprop/'">
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" onclick="window.location.href='/projects/manualbackprop/'">
     <div class="hovereffect" >
         <img class="img mx-auto d-block" src="/static/backprop.png" height="400vw" loading="lazy">
 
@@ -458,7 +504,7 @@ code {
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/spintank/'">
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" onclick="window.location.href='/projects/spintank/'">
     <div class="hovereffect" >
         <img class="img mx-auto d-block" src="/static/spintankabrams.png" height="400vw" loading="lazy">
 
@@ -473,7 +519,7 @@ code {
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/forcequeue/'">
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" onclick="window.location.href='/projects/forcequeue/'">
     <div class="hovereffect" >
         <img class="img mx-auto d-block" src="/static/kerokerokerokerokerokero.png" height="400vw" loading="lazy">
 
@@ -488,7 +534,7 @@ code {
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/eyetracker/'">
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" onclick="window.location.href='/projects/eyetracker/'">
     <div class="hovereffect" >
         <img class="img mx-auto d-block" src="/static/eyetrackthumbnail.png" height="400vw" loading="lazy">
 
@@ -503,7 +549,7 @@ code {
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/personalwebsite/'">
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" onclick="window.location.href='/projects/personalwebsite/'">
     <div class="hovereffect" >
         <img class="img mx-auto d-block" src="/static/websitev2.png" height="400vw" loading="lazy">
 
