@@ -139,9 +139,9 @@
       });
     } else { // If unsupported, show all targets
       const targets = document.querySelectorAll(".appearOnScroll");
-      targets.forEach(function(target) {
-        target.style.opacity = 1.0;
-      });
+      for (let i = 0; i< targets.length; i++){
+        target.style.opacity = 1.0;        
+      }
     }
   });  
 
