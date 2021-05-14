@@ -293,7 +293,7 @@ code {
       console.log("is intersecting");
 
       const callback = function(entries) {
-        entries.forEach(entry => {
+        entries.forEach(function(entry) {
           if (entry.isIntersecting){
             animDelay = .2 + parseFloat((entry.target.offsetLeft/window.innerWidth).toFixed(1))/2
             console.log(animDelay)
