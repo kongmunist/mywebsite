@@ -286,7 +286,12 @@ code {
 <script type="text/javascript">
   var expose
   window.addEventListener('DOMContentLoaded', (event) => { // Dynamic load images if supported
+    console.log(typeof(window.IntersectionObserverEntry) != "undefined");
+    console.log(window.IntersectionObserverEntry.prototype.hasOwnProperty('isIntersecting'));
+    console.log();
     if (typeof(window.IntersectionObserverEntry) != "undefined" && window.IntersectionObserverEntry.prototype.hasOwnProperty('isIntersecting')){
+      console.log("is intersecting");
+
       const callback = function(entries) {
         entries.forEach(entry => {
           if (entry.isIntersecting){
@@ -305,6 +310,7 @@ code {
         observer.observe(target);
       });
     } else { // If unsupported, show all targets
+      console.log("not intersecting");
       const targets = document.querySelectorAll(".appearOnScroll");
       targets.forEach(function(target) {
         target.style.opacity = 1.0;
