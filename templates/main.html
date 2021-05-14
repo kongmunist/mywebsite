@@ -117,7 +117,7 @@
 
 <script type="text/javascript">
   var expose
-  window.addEventListener('DOMContentLoaded', (event) => { // Dynamic load images if supported
+  window.addEventListener('DOMContentLoaded', function (event) { // Dynamic load images if supported
     console.log(typeof(window.IntersectionObserverEntry) != "undefined");
     console.log(window.IntersectionObserverEntry.prototype.hasOwnProperty('isIntersecting'));
     console.log();
