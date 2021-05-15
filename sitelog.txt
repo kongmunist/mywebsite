@@ -1,1 +1,1 @@
-May 14 2021 - Addition of CSS transitions for the project images on main page, creation of sitelog. Even made the project images load for IE people -.- Such a backwards web browser
+May 14 2021 - Addition of CSS transitions for the project images on main page, creation of sitelog. Even made the project images load for IE people -.- Such a backwards web browser, debugging is terrible I had to upload the whole site like 6 times.
