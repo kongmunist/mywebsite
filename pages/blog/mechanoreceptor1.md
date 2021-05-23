@@ -29,6 +29,8 @@ Despite this limitation, I still found something cool. By placing a set of pads 
 
 I'm using pulses of a few hundred microseconds, at a frequency of 70+ Hz. Lower than that, and the sensation no longer felt like squeezing. There's also a persistent buzzing feeling from the TENS, and it is on-par with the strength of the squeezing. A bit distracting, but the squeeze is cool. 
 
+I'm assuming the mechanoreceptors I'm stimulating are the Merkel discs, since squeezing is really a sustained pressure. You could argue I'm feeling a momentary pressure multiple times per second, but I think that's just the same thing as a sustained pressure. 
+
 ## Applications
 Ideally we get all the mechanoreceptors stimulating separately, since this would let us produce a whole world of different textures when we touch objects in VR. Side note, does anyone want to make a VR game together? We can call it Firm Handshake Simulator 2022.
 
