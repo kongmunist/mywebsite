@@ -9,7 +9,7 @@ description: Taming an unruly analog signal into a more manageable size.
 <p class="caption">Mapping analog voltages between two rails</p>
 
 
-This webpage is the live calculator I made for the analog scaling problem I highlighted in [this blog post](/blog/analog_scalingvoltages/). It solves the problem of moving an analog signal within one voltage range to another voltage range with one op-amp. 
+This webpage is the live calculator I made for the analog scaling problem I highlighted in [this blog post](/blog/analogscalingvoltages/). It solves the problem of moving an analog signal within one voltage range to another voltage range with one op-amp. 
 
 Here, an example is set up scaling ±15V sensor output to 0-5V Arduino/microcontroller analogRead-able values.
 
