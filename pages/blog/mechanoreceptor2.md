@@ -51,10 +51,17 @@ The palm was a bit harder to feel differences in sensation, since the skin thick
 ![Dots of high vibration sensitivity on my palm]({{ url_for('static', filename = 'mech2_pacpalm.jpg')}})
 
 <br>
+# Aftereffects
+I held the spike with my right hand, and stimulated my left. I held it loosely, but still felt vibration in my right hand for a long time. At the end of the trial, my right hand had some weird sensations. For the next 30-45 minutes, whenever I tapped my index finger and thumb together, I felt a bouncing/springy sensation. Like hitting a drum, but the drum is just two of my fingers. It worked when I tapped other surfaces too, like my table. This felt strongest in my index finger, but it also worked for my middle finger and thumb. Really weird feeling, but probably not useful for anything. 
+
+
+<br>
 # Closing Notes 
 Interestingly enough, there were a few spots on my back-hand that felt no vibration at all. Maybe a dead zone with no nearby Pacs? Blame my mom, I guess.
 
 It was hard to ignore the feeling of the vibrating point poking me. I thought that the sharp-ish point coupled with vibration might actually damage the skin, and my skin did start hurting wherever I poked vertically. I found it hard to separate this sensation from the vibration I was looking for.
+
+
 
 
 Cool effect! I have now separately stimulated the Pacs and the Merkel discs. Two down, two to go.
