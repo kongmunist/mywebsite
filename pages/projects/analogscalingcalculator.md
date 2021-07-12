@@ -21,12 +21,13 @@ Here, an example is set up scaling ±15V sensor output to 0-5V Arduino/microcont
 	<table style="width:100%">
 		<tr>
 			<td style="text-align:center">
-				<h5>Input Voltage Ranges (Vin):</h5> </td><td> Low rail: <input id="1" size="3" value="-15"> V, High rail:<input id="2" size="3" value="15"> V
+				Vin Ranges:</td><td> Low rail: <input id="1" size="8" value="-15"> V <br>High rail:<input id="2" size="8" value="15"> V
 			</td>
 		</tr>
+		<tr><td>&nbsp</td></tr>
 		<tr>
 			<td style="text-align:center">
-				<h5>Desired Output Range (Vout):</h5> </td><td> Low rail: <input id="3" size="3" value="0"> V, High rail: <input id="4" size="3" value="5"> V
+				Desired Vout Range: </td><td> Low rail: <input id="3" size="8" value="0"> V <br>High rail: <input id="4" size="8" value="5"> V
 				<!-- Vout high rail: </td><td> Vout high rail: <input id="4"> -->
 			</td>
 		</tr>
@@ -41,18 +42,19 @@ Here, an example is set up scaling ±15V sensor output to 0-5V Arduino/microcont
 	<tr>
 		<td>
 			Vref: </td><td>
-			<input id="vref" size=4> V
+			<input id="vref" size=8> V
 		</td>
 	</tr>
 	<tr>
 		<td>
 			R2/R1 ratio: </td><td>
-			<input id="rratio" size=4>
+			<input id="rratio" size=8>
 		</td>
 	</tr>
 </table>
 <br>
 
+<hr>
 ### Practical Implementation:
 
 To find real-world resistors that create this reference voltage or match this resistor ratio, you can visit [this other calculator](http://jansson.us/resistors.html), which I find invaluable. 
@@ -60,7 +62,38 @@ To find real-world resistors that create this reference voltage or match this re
 Happy scaling!
 <br>
 
-<script>
+<hr>
+## Update 7/11/21
+I've used this calculator several times since I initially made this page, which makes it a success in my eyes. But I have had troubles selecting real components to make the actual circuit. The Vref is off by a few mV or the ratio is sorta right, but it's hard to tell how close is close enough by the numbers alone. 
+
+This update adds the reverse calculation of output voltage rails given the input voltage rails, Vref, and resistor ratio of the real components you've got to give you an idea of how accurate the output rails will be. 
+
+<form id="reverseform">
+	<table style="width:100%">
+		<tr>
+			<td style="text-align:center">
+				Vin rails: </td><td> Low rail: <input id="rev1" size="8" value="-15"> V <br> High rail:<input id="rev2" size="8" value="15"> V
+			</td>
+			<td>Vout rails: </td><td> Low rail: <input id="revo1" size="8"> V <br> High rail:<input id="revo2" size="8"> V</td>
+		</tr>
+		<tr>
+			<td style="text-align:center">
+				Vref: </td><td> <input id="rev3" size="8" value="2.14"> V 
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align:center">
+				R2/R1 ratio: </td><td> <input id="rev4" size="8" value="0.1666"> 
+			</td>
+		</tr>
+	</table>
+</form>
+
+<br><br>
+
+
+
+<script> /////////////// Solves the forward simultaneous equations 
 		// Input order is vin_low, vin_high, vout_low, vout_high
 	 function solveAnalogScaling(v1, v2, v3, v4){
 	 	console.log("solving analog scale for vin_l, vin_h, vout_l, v_out_h: ", v1, v2, v3, v4);
@@ -77,14 +110,31 @@ Happy scaling!
 	 	v4 = parseFloat(document.getElementById("4").value);
 	 	if ([v1, v2, v3, v4].every(elem => !isNaN(elem))){
 	 		tmp = solveAnalogScaling(v1, v2, v3, v4);
-	 		document.getElementById("vref").value = tmp[0];
-	 		document.getElementById("rratio").value = tmp[1];
+	 		document.getElementById("vref").value = tmp[0].toFixed(4);
+	 		document.getElementById("rratio").value = tmp[1].toFixed(4);
 	 	}
 	 }
-
 	// Attach an event handler to the form above
 	document.getElementById("voltageform").oninput = updateSoln;
-
 	// run initial solution with default vals
-	updateSoln()
+	updateSoln();
+
+
+
+	////////////////// 7/11/21 Solves the reverse equations
+	function updateReverseSoln(){
+		vinHIGH = parseFloat(document.getElementById("rev1").value);
+		vinLOW = parseFloat(document.getElementById("rev2").value);
+		Vref = parseFloat(document.getElementById("rev3").value);
+		rratio = parseFloat(document.getElementById("rev4").value);
+
+		if ([vinHIGH, vinLOW, Vref, rratio].every(elem => !isNaN(elem))){
+			lowRail = (Vref-vinHIGH)*rratio + Vref;
+			highRail = (Vref-vinLOW)*rratio + Vref;
+			document.getElementById("revo1").value = lowRail.toFixed(4);
+			document.getElementById("revo2").value = highRail.toFixed(4);
+		}
+	}
+	document.getElementById("reverseform").oninput = updateReverseSoln;
+	updateReverseSoln();
 </script>
