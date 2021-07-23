@@ -1,21 +1,21 @@
-title: Comparing Sugar Percentage Of A Peach vs. Sugary Drinks
+title: Comparing The Sugar Percentage Of A Peach vs. Sugary Drinks
 date: 2021-07-23
 label: blog
 tags: [refractometer, experiment]
 snippet: Testing out a scientific device is sweet!
 
-It's a shame: I've met many smart people who were never educated in the fine art of slapping a watermelon to determine their ripeness by their (usually immigrant) parents. I thought I could do these poor folks a great service by using technology to help them figure out a watermelon's sweetness.
+It's a shame: I've met many smart people who were never educated in the fine art of slapping a watermelon to determine their ripeness by their (usually immigrant) parents. I thought I could do these poor folks a great service by using technology to help them figure out a watermelon's sweetness for them.
 
 <p class="caption">Refractometer on the left. The liquid goes on the blue part at the top. The bar chart on the right is what you see through the peephole. </p>
 ![Refractometer on the left. The liquid goes on the blue, tilted part. The bar chart on the right is what you see through the peephole. ]({{ url_for('static', filename = 'refractest_displaypic.png')}})
 
 
-The first step is determining how sweet the watermelon is, so of course I had to go buy a refractometer. As it turns out, adding sugar to water changes how much light rays bend when they go through the water, or the index of refraction (IOR). A refractometer lets anyone look through a peephole to compare an unknown sugary liquid's index to water (0% sugar). By looking at where the new line of intersection is on the graph, we can figure out exactly how many degrees Brix there are. Brix is just a complex way to say % sucrose by weight. 
+The first step is determining how sweet the watermelon is, so of course I had to go buy a refractometer. As it turns out, adding sugar to water changes how much light rays bend when they go through the water, AKA the index of refraction (IOR). A refractometer lets anyone look through a peephole to compare an unknown sugary liquid to water (0% sugar). By looking at where the new line of intersection is on the graph, we can figure out exactly how many degrees Brix there are. Brix is just a complex way to say % sugar by weight. 
 
 <p class="caption">Arrangement of all the liquids I had to try</p>
 ![Arrangement of all the liquids I had to try]({{ url_for('static', filename = 'refractest_showcase.jpg')}})
 
-After I got the refractometer, I really wanted to make sure it gave out accurate numbers for both fruit and regular liquids. It just so happened that there were several sugary drinks in my pantry leftover from a club party, which listed their grams of sugar and grams of total mass under Nutrition Facts. Using this, I'd be able to determine the proper degrees Brix before confirming it with my refractometer. 
+After I got the refractometer, I really wanted to make sure it gave out accurate numbers for both fruit and regular liquids. It just so happened that there were several sugary drinks in my pantry leftover from a club party, which listed their grams of sugar and grams of total mass under Nutrition Facts. Using this, I'd be able to determine the proper sugar content before confirming it with my refractometer. 
 
 <hr>
 # Onto the results!!
@@ -74,9 +74,9 @@ I had a lot of fun running these experiments, partly because I got to sip sugarl
 
 1. Sugar and salt are confounding; both raise the index of refraction at similar concentrations. This must be adjusted for in higher-salt liquids.
 2. Carbonated drinks bubble up underneath the test plate, which can't be good for accuracy. 
-3. Limited range of 0-38% sugar means dilution is necessary for some solutions, which can add error
+3. Limited range of 0-38% sugar means dilution is necessary for some solutions, which can add error.
 4. Lack of density knowledge about Izze or Coke may have also skewed my numbers. As I mentioned above, adjusting the weight of Izze using a higher density gave an alternate sugar percentage that matched exactly what I read on my refractometer.
-5. No precision or digital readout means measurements are slow and annoying to perform. 
+5. No precision or digital readout means measurements are slow and annoying to perform manually. 
 
 ## Weird findings
 The variance in the sugar % of drinks is surprisingly small. To be fair, I only did a small number of drinks, but they only varied by 2.6% despite tasting wildly different. 
