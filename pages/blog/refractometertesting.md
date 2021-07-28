@@ -1,8 +1,8 @@
 title: Comparing The Sugar Percentage Of A Peach vs. Sugary Drinks
 date: 2021-07-23
 label: blog
-tags: [refractometer, experiment]
-snippet: Testing out a scientific device is sweet!
+tags: [refractometer, experiment, sugarinfruit]
+snippet: Testing out a sweet scientific instrument
 
 It's a shame: I've met many smart people who were never educated in the fine art of slapping a watermelon to determine their ripeness by their (usually immigrant) parents. I thought I could do these poor folks a great service by using technology to help them figure out a watermelon's sweetness for them.
 
