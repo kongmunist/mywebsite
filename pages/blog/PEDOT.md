@@ -26,9 +26,10 @@ You can add PDMS to make it stretchier (up to 80%!), but you'll need to add this
 ## What I want to do with it
 1. I want to deposit some and do a sheet resistance test, maybe with diethylene glycol or ethylene glycol
 2. Since ethylene glycol does approximately the same thing as the much more poisonous diethylene glycol, maybe do a test with that instead [[paper]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8071320/)
+3. Maybe since propylene glycol is even less poisonous than that, use it instead? It seems to work for conductvity if you soak PEDOT in it after drying it. 
 
 <p class="caption">Ethylene Glycol > Diethylene Glycol</p>
 ![Ethylene Glycol > Diethylene Glycol]({{ url_for('static', filename = 'pedot_EGoverDEG.png')}})
 
-3. I also want to try the electro-osmotic pump using a sheet of it. Apparently it's quite good, but we'll see.
+4. I also want to try the electro-osmotic pump using a sheet of it. Apparently it's quite good, but we'll see.
 

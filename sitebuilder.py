@@ -70,15 +70,16 @@ def rss():
     fg.link(href='https://andykong.org')
 
     for article in blogPages:  # get_news() returns a list of articles from somewhere
-        fe = fg.add_entry()
-        fe.title(article.meta['title'])
-        fe.link(href=article.path)
-        fe.content(article.body)
-        fe.description(article.meta['snippet'], isSummary=True)
-        fe.author(name="Andy Kong", email="andyking99@gmail.com")
-        dt = datetime.combine(article.meta['date'], datetime.min.time())
-        timezone = pytz.timezone('America/New_York')
-        fe.pubDate(timezone.localize(dt))
+        if 'wip' not in article.meta.get('tags'):
+            fe = fg.add_entry()
+            fe.title(article.meta['title'])
+            fe.link(href=article.path)
+            fe.content(article.body)
+            fe.description(article.meta['snippet'], isSummary=True)
+            fe.author(name="Andy Kong", email="andyking99@gmail.com")
+            dt = datetime.combine(article.meta['date'], datetime.min.time())
+            timezone = pytz.timezone('America/New_York')
+            fe.pubDate(timezone.localize(dt))
 
     response = make_response(fg.rss_str(pretty=True))
     response.headers.set('Content-Type', 'application/rss+xml')
