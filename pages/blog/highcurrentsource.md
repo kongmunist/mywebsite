@@ -88,6 +88,9 @@ As expected, the output voltage dropped a bit to compensate for the short. Howev
 
 Using the initial reading of 4.3V, Ohm's law says the MK750 output 185A at first, and a clamp meter agreed at around 170A. The wall meter read 1120W during this test.
 
+<video src="{{ url_for('static', filename = 'mk750_vid3.mov')}}" controls></video>
+
+
 # Closing thoughts
 This power supply is amazing. Unfortunately, the NJE Corporation just filed for bankruptcy last year (2020), so I don't think we'll be seeing many more power supplies where that came from. 
 
