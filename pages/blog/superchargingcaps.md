@@ -4,7 +4,7 @@ label: blog
 tags: [electronics]
 snippet: Who has time for 5RC?
 
-I recently thought about a way to charge capacitors really quickly.
+I recently thought about a way to charge capacitors really quickly. 
 
 If you think about it, capacitors are sort of like buckets that you can fill with electrons. Their peak level is their voltage rating, and if you keep filling them they explode. Usually this means you only charge capacitors using a voltage less than or equal to their max voltage, to avoid the explosion.
 
