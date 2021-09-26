@@ -1,3 +1,4 @@
+Sept 26, 2021 - Changed font site-wide to Akinson Hyperlegible for accessibility. Also added the blurb about PhD programs in my bio
 August 28 2021 - Added mathjax, now can do $$ LaTeX but not anything else. So mandatory newline
 August 10 2021 - Changed font spacing of headers away from 1px. More legible.
 May 14 2021 - Addition of CSS transitions for the project images on main page, creation of sitelog. Even made the project images load for IE people -.- Such a backwards web browser, debugging is terrible I had to upload the whole site like 6 times.
