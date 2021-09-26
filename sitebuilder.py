@@ -196,7 +196,7 @@ if __name__ == "__main__":
             # wait for them to download
             print("waiting for static resources to download from icloud", end="")
             while (len([x for x in os.listdir("static/") if ".icloud" in x]) > 0):
-                time.sleep(1)
+                time.sleep(2)
                 print(".", end="")
 
 
