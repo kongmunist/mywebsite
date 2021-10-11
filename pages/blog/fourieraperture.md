@@ -4,7 +4,7 @@ label: blog
 tags: [light, fourier, optics]
 snippet: Light speed!
 
-Hello! I'm going to tell you something cool about light. Specifically, the Fourier Transform of a 2D image using apertures and lenses.  
+Hello! I'm going to tell you something cool about light. Specifically, how to use apertures and lenses to perform the Fourier Transform of a 2D image at the speed of light.  
 
 # Backstory
 When I was still a wee boy, my computational photography professor mentioned that a lens performs a Fourier Transform on light that enters it. A Fourier transform of light is a frequency domain representation of the image, and captures the exact same information as the regular picture. We don't usually notice this property of lenses because it only happens to coherent light, like a laser. One example of this is how a bright image (the sun) becomes a single point at the focus of the lens, because there is a 0-frequency component to the brightness entering the lens. 
