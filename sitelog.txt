@@ -1,3 +1,4 @@
+November 1, 2021 - Made link highlighting have transitions
 Sept 26, 2021 - Changed font site-wide to Akinson Hyperlegible for accessibility. Also added the blurb about PhD programs in my bio
 August 28 2021 - Added mathjax, now can do $$ LaTeX but not anything else. So mandatory newline
 August 10 2021 - Changed font spacing of headers away from 1px. More legible.
