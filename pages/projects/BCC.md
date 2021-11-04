@@ -2,7 +2,7 @@ title: Body Channel Communication
 date: 2021-10-08
 label: project
 timespan: April 2021 - May 2021
-pic: myo2tensing.png
+pic: bcc_alansonsketch.jpg
 description: Identifying users by their touch alone
 
 <div style="text-align:center;"><iframe width="560" height="315" src="https://www.youtube.com/embed/bt-C2V-wS3Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
