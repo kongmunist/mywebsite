@@ -34,7 +34,7 @@ body {
 background: #202222;
 /*font-family: 'Fira Sans Condensed', sans-serif;*/
 /*font-family: 'Roboto Slab', sans-serif;*/
-font-size:1.4em;
+font-size:1.2em;
 /*font-family: 'Roboto Slab', sans-serif;*/
 
 font-family: 'Ubuntu', sans-serif;
@@ -213,8 +213,8 @@ code {
 
 
 <div class="blogpage overflow-hidden">
-    <h2>Speed Check (calling Python Built-in functions)</h2>
-            <p> Published May 25, 2020</p>
+    <h1 style="margin-bottom:0px; font-size:2.5em;">Speed Check (calling Python Built-in functions)</h1>
+            <p style="font-size:0.8em;"> Published May 25, 2020</p>
 <hr>
             <p>I found this cool <a href="http://blog.kevmod.com/2020/05/python-performance-its-not-just-the-interpreter">blog post</a> that was trying to show Python's slower execution time does not just come from its interpreter, and instead was more interested in the benchmark that they ran converting ints to strings as a toy example.</p>
 <p>They mentioned off-hand that built-in function calls in Python must be traced back to the built-in library by the interpreter, which takes a decent amount of time if most of your code just calls built-in functions. Here's the code: </p>
