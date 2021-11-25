@@ -20,3 +20,11 @@ HTML - center tables using "margin-left: auto; margin-right: auto;"
 JAVASCRIPT - cannot add buttons with onclick attribute to a <p> tag. Just doesn't work. 
 JAVASCRIPT - Internet Explorer doesn't support arrow notation for functions
 TWITTER - use the class "tw-align-center" to center embedded tweets
+NEW LAPTOP SETUP - Good job on the new computer! I hope it's faster than your brain. Anyway, do this:
+    1. pip install everything in the sitebuilder.py imports, 
+    2. download the site scripts from github, give them new pictures
+        3. Run each one to make sure they work
+    4. Download firebase (which you'll need npm to do (which you'll need nvm to do))
+    5. Make sure your "git push origin" works. It probably doesn't since the ssh keys don't get carried over. You'll have to refollow this guide: https://docs.github.com/en/authentication/troubleshooting-ssh/error-permission-denied-publickey
+    6. Should be done. Enjoy!
+    
