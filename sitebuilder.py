@@ -13,19 +13,29 @@ import os
 import time
 
 
+
+
+# run "python sitebuilder.py build" in shell to build to the build folder
 DEBUG = True
 FLATPAGES_AUTO_RELOAD = DEBUG
 FLATPAGES_EXTENSION = '.md'
 
-
-# run "python sitebuilder.py build" in shell to build to the build folder
-
+# FLATPAGES_ROOT ='/Users/andykong/Library/Mobile Documents/com~apple~CloudDocs/programming/personalwebsite/pages'
 
 app = Flask(__name__)
 app.config.from_object(__name__)
 pages = FlatPages(app)
 freezer = Freezer(app)
 #bootstrap = Bootstrap(app)
+
+
+# FLATPAGES_EXTENSION = '.md'
+# app.FLATPAGES_EXTENSION = '.md'
+app.config['FLATPAGES_EXTENSION'] = '.md'
+print(app.config['FLATPAGES_EXTENSION'])
+
+
+
 
 # Allows markdown to do flask functions before the site's HTML renders. INTEGRAL. SO IMPORTANT.
 def prerender_jinja(text):
@@ -45,7 +55,8 @@ def index():
     print("about me + projects main page")
     projPages = [p for p in pages if "project" == p.meta.get('label')]
     projPages = [(x.meta.get('date'), x) for x in projPages]
-    # print(projPages)
+    print(projPages)
+    print([x.meta.get('label') for x in pages])
     projPages.sort(reverse=True)
     projPages = [x[1] for x in projPages]
 
