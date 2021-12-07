@@ -55,8 +55,6 @@ def index():
     print("about me + projects main page")
     projPages = [p for p in pages if "project" == p.meta.get('label')]
     projPages = [(x.meta.get('date'), x) for x in projPages]
-    print(projPages)
-    print([x.meta.get('label') for x in pages])
     projPages.sort(reverse=True)
     projPages = [x[1] for x in projPages]
 
