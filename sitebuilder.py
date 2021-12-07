@@ -138,9 +138,10 @@ def maintag():
     for p in pages:
         if ("blog"==p.meta.get('label')):
             for t in p.meta.get('tags', []):
-                listPages.add(t)
-                numPages[t] = numPages.get(t, 0) + 1
-                allTag.append(t)
+                tl = t.lower()
+                listPages.add(tl)
+                numPages[tl] = numPages.get(tl, 0) + 1
+                allTag.append(tl)
 
     listPages = sorted(list(listPages))
     numPages = [numPages[x] for x in listPages]
@@ -149,10 +150,14 @@ def maintag():
 @app.route('/tagged/<string:tag>/')
 def tag(tag):
     print("tag " + tag)
-    tagged = [p for p in pages if tag in p.meta.get('tags', [])]
+    tl = tag.lower()
+    tagged = [p for p in pages if tl in [x.lower() for x in p.meta.get('tags', [])]]
+    # lowercase all tags
+
+
     if len(tagged) == 0:
         return maintag()
-    return render_template('tag.html', pages=tagged, tag=tag)
+    return render_template('tag.html', pages=tagged, tag=tl)
 
 
 @app.route('/projects/')
