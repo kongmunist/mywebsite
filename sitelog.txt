@@ -1,4 +1,4 @@
-Dec 7, 2021 - Fixed tag pages with uppercase tags to also use pages with lowercase tags.
+Dec 7, 2021 - Fixed tag pages with uppercase tags to also use pages with lowercase tags. - ITS NOT FIXED YET, NEED TO MIGRATE TO DYNAMIC SITE
 November 25, 2021 - Home for Thanksgiving. Migrated to new Macbook Pro. Github Copilot is crazy
 November 1, 2021 - Made link highlighting have transitions
 Sept 26, 2021 - Changed font site-wide to Akinson Hyperlegible for accessibility. Also added the blurb about PhD programs in my bio

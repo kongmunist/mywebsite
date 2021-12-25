@@ -150,8 +150,6 @@ def tag(tag):
     print("tag " + tag)
     tl = tag.lower()
     tagged = [p for p in pages if tl in [x.lower() for x in p.meta.get('tags', [])]]
-    # lowercase all tags
-
 
     if len(tagged) == 0:
         return maintag()
@@ -229,4 +227,16 @@ if __name__ == "__main__":
             freezer.freeze()
     else:
         app.run(port=8001)
+
+
+
+
+
+
+
+
+
+
+
+
 
