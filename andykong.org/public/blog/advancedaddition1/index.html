@@ -227,8 +227,16 @@ code {
 <p>I thought I was clever for a second, but then I realized that my models would only be able to approximate linear functions. The only features taken for input would be x<subscript>1</subscript>,x<subscript>2</subscript>,...x<subscript>n</subscript>, and they would just come out with some coefficient but no additional features. This is a formidable technique for simpler functions, but more complex hypotheses would require the activation functions (Sigmoid, Rectified Linear Unit, etc), which cannot be precomputed because they depend on the values of their inputs! </p>
 <p>Activation functions could be broken down some more, but I would have to spend a little more time with it. I think that the individual nature of the function means that a simple precomputation wouldn't be allowed. We could threshold the inputs by backtracking the minimum value required to overcome the ReLU or something, and that would save a bit of time.</p>
 <p>So, the takeaway is that most neural networks cannot be sped up using precomputation, since every layer usually has a nonlinear activation function. But in any model with multiple matrix multiplications or additions done in succession, the evaluation of the two matrices can be precomputed to speed up the model. </p>
-</div>
+
+    
+        Post Tags:
+        <a href="/tagged/projectlog/">projectlog</a>
         
+            <a href="/tagged/advancedaddition/">,&nbsp;advancedaddition</a>
+        
+    
+</div>
+
 
 
 

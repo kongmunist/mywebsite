@@ -27,4 +27,13 @@ NEW LAPTOP SETUP - Good job on the new computer! I hope it's faster than your br
     4. Download firebase (which you'll need npm to do (which you'll need nvm to do))
     5. Make sure your "git push origin" works. It probably doesn't since the ssh keys don't get carried over. You'll have to refollow this guide: https://docs.github.com/en/authentication/troubleshooting-ssh/error-permission-denied-publickey
     6. Should be done. Enjoy!
-    
+MAKING HTML TABLE  - use this style
+    Table Style from https://www.tablesgenerator.com/html_tables:
+    <style type="text/css">
+    .tg  {border-collapse:collapse;border-spacing:0;margin-left: auto; margin-right: auto;}
+    .tg td{border-color:white;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+      overflow:hidden;padding:10px 5px;word-break:normal;}
+    .tg th{border-color:white;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+      font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+    .tg .tg-0lax{text-align:left;vertical-align:top}
+    </style>
