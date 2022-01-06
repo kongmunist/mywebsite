@@ -1,9 +1,13 @@
 {% extends "base.html" %}
 
+{% block meta_content %}
+<meta name="author" content="Andy Kong">
+<meta name="title" content="{{ page.title }}">
+<meta name="description" content="{{ page.description }}">
+{% endblock %}
+
+
 {% block app_content %}
-    <meta name="author" content="Andy Kong">
-    <meta name="title" content="{{ page.title }}">
-    <meta name="description" content="{{ page.description }}">
 
 
 

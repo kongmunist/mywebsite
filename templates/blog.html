@@ -1,5 +1,14 @@
 {% extends "aboutsidebar.html" %}
 
+{% block meta_content %}
+    {% for p in page %}
+        <meta name="author" content="Andy Kong">
+        <meta name="title" content="{{ p.title }}">
+        <meta name="description" content="{{ p.snippet }}">
+        <meta name="keywords" content="{% for tag in p.tags %} {{tag}}, {% endfor %}">
+    {% endfor %}
+{% endblock %}
+
 {% block batcontent %}
 <style>
     h1{
@@ -11,10 +20,6 @@
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
         {% for p in page %}
-<meta name="author" content="Andy Kong">
-<meta name="title" content="{{ p.title }}">
-<meta name="description" content="{{ p.snippet }}">
-<meta name="keywords" content="{% for tag in p.tags %} {{tag}}, {% endfor %}">
 
 
 <div class="blogpage overflow-hidden">
