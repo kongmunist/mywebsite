@@ -156,7 +156,7 @@
 
 <div class="row">
     <div class="media-left offset-xl-1 col-lg-4 col-md-4" style="padding-left:30px; ">
-        <img class="mx-auto d-block media-object" src="{{url_for('static', filename = 'me3.jpg')}}" style="width:auto; max-width: 30vw; margin-bottom:10px"/>
+        <img alt="Photo of Andy Kong (website author) smiling" class="mx-auto d-block media-object" src="{{url_for('static', filename = 'me3.jpg')}}" style="width:auto; max-width: 30vw; margin-bottom:10px"/>
 
             <div class="links text-center" style="margin:15px; font-size:1.7vw;">
 <!-- <a href="https://critiquefood.blogspot.com/" target="_blank" title="Food For Thought"><i class="fas fa-ice-cream fa-3x"></i></a>&nbsp
@@ -203,7 +203,7 @@
 
         <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" onclick="window.location.href='{{ url_for("project",project=p.path[9:]) }}'">
     <div class="hovereffect" >
-        <img class="img mx-auto d-block" src="{{ url_for("static", filename= p.pic) }}" height="400vw" loading="lazy">
+        <img alt="{{ p.title }} Hero Image" class="img mx-auto d-block" src="{{ url_for("static", filename= p.pic) }}" height="400vw" loading="lazy">
 
         <div class="overlay">
            <h2>{{ p.title }}</h2>
