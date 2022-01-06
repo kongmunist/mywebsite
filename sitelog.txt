@@ -1,4 +1,4 @@
-Jane 6, 22 - Removed words from the tags at bottom of the screen, added space before h1 in all blog posts (maybe I should also do it across the whole site too?)
+Jan 6, 22 - Removed extra words from the tags at bottom of the screen, also gave them little surrounding buttons. Added space before h1 in all blog posts (maybe I should also do it across the whole site too?). Lots of inlining of JS and CSS resources. 
 Jan 3, 2022 - HNYE. Removed tags from blogmain, added to individual pages. 
 Dec 7, 2021 - Fixed tag pages with uppercase tags to also use pages with lowercase tags. - ITS NOT FIXED YET, NEED TO MIGRATE TO DYNAMIC SITE or do something more clever
 November 25, 2021 - Home for Thanksgiving. Migrated to new Macbook Pro. Github Copilot is crazy
