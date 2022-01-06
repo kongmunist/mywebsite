@@ -1,6 +1,12 @@
 {% extends "aboutsidebar.html" %}
 
 {% block batcontent %}
+<style>
+    h1{
+  margin-top: 1em;
+}
+</style>
+
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
@@ -18,10 +24,12 @@
             {{ p.html|safe }}
 
     {% if p.meta.tags|length %}
-        Post Tags:
-        <a href="{{ url_for("tag", tag= p.meta.tags.0  ) }}">{{ p.meta.tags.0 }}</a>
+        <hr>
+        <a class="btn btn-info" href="{{ url_for("tag", tag= p.meta.tags.0  ) }}">{{ p.meta.tags.0 }}</a>
+
         {% for page_tag in p.meta.tags[1:] %}
-            <a href="{{ url_for("tag", tag=page_tag) }}">,&nbsp;{{page_tag}}</a>
+            &nbsp;
+            <a class="btn btn-info" href="{{ url_for("tag", tag=page_tag) }}">{{page_tag}}</a>
         {% endfor %}
     {% endif %}
 </div>

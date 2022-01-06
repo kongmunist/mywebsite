@@ -1,7 +1,7 @@
 title: Examples from the Taxonomy of Automation
 date: 2022-01-03
 label: blog
-tags: [automation]
+tags: [automation, thoughts]
 snippet: Is convenience pleasure?
 
 Hello y'all. I've been thinking about automation, specifically, intuitive interaction design's role in coddling people. 
@@ -71,10 +71,5 @@ A question for later: Why do we value human level 3 much more than robot level 3
 Until then, cya around!
 
 
-
-
-
-
-[Link example](https://andykong.org)
 
 
