@@ -37,3 +37,4 @@ MAKING HTML TABLE  - use this style
       font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
     .tg .tg-0lax{text-align:left;vertical-align:top}
     </style>
+BASH - Double quotes make the shell expand variables, single quotes do no such thing. Thanks sed and https://askubuntu.com/questions/76808/how-do-i-use-variables-in-a-sed-command

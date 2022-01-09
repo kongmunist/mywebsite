@@ -1,4 +1,4 @@
-{% extends "aboutsidebar.html" %}
+{% extends "noaboutsidebar.html" %}
 
 {% block meta_content %}
     {% for p in page %}
@@ -30,12 +30,14 @@
 
     {% if p.meta.tags|length %}
         <hr>
+        <p style="line-height:250%;">
         <a class="btn btn-info" href="{{ url_for("tag", tag= p.meta.tags.0  ) }}">{{ p.meta.tags.0 }}</a>
 
         {% for page_tag in p.meta.tags[1:] %}
             &nbsp;
             <a class="btn btn-info" href="{{ url_for("tag", tag=page_tag) }}">{{page_tag}}</a>
         {% endfor %}
+        </p> 
     {% endif %}
 </div>
 
