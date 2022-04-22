@@ -47,8 +47,25 @@ def dateconvert(str):
     return str.strftime("%B %d, %Y")
 app.jinja_env.globals.update(dateconvert=dateconvert)
 
+@app.context_processor
+def utility_processor():
+    def add_pic(filename, captionalt):
+        # format:
+        # < p class ="caption" > Desc < / p > ![Caption]({{url_for('static', filename='badglasses.png')}})
+        pstuff = "<p class =\"caption\"> %s </p>" % captionalt
+        mdstuff = "![%s]({{url_for(\"static\", filename=\"%s\")}})" % (captionalt, filename)
+        print(pstuff, "AHH", mdstuff)
+        print(Markup(pstuff), "AHH", Markup(mdstuff))
+        print(render_template_string(pstuff), "AHH", render_template_string(mdstuff))
+        # return pstuff + mdstuff
+        return Markup(pstuff) + render_template_string(mdstuff)
+    # def format_price(amount, currency="€"):
+    #     return f"{amount:.2f}{currency}"
+    return dict(add_pic=add_pic)
 
 
+
+###################### Flask setup functions ##############################
 @app.route("/")
 def index():
     # return redirect("projects") #render_template('index.html', pages=pages)
