@@ -6,8 +6,7 @@ snippet: Blog Post Summary
 
 
 
-<p class="caption">Desc</p>
-![Caption]({{ url_for('static', filename = 'badglasses.png')}})
 
+{{ add_pic("file", "caption") }}
 [Link example](https://andykong.org)
 
