@@ -31,7 +31,7 @@ Since the amplifier's gain equation puts the potentiometer on the bottom (100k/p
 
 As the final test, we hooked up electrodes across my arms to see if the heartbeat (EKG) was detectable. The wires leading to the electrode was unshielded, and you could really tell from the 60Hz noise. Regardless, with the gain turned up you could see a periodic flutter in the 60Hz wave of around 1 Hz. I'm not going to conclude that the heartbeat was visible, but if you looked closely enough this box would work as a general purpose heartrate detector. 
 
-Let me know what you think, or what features could be added or improved on at andyking99@gmail.com. If this is something you'd find useful and would pay money for, also let me know (wink wink Sam).
+Let me know what you think, or what features could be added or improved on at andykongresearch@gmail.com. If this is something you'd find useful and would pay money for, also let me know (wink wink Sam).
 
 
 
