@@ -16,12 +16,14 @@ So while you can average 2<sup>n</sup> samples to reduce the Noise Power by a fa
 
 However, I'm still not sure exactly how SNR relates to bits of resolution. I understand the math, but not intuitively. It still feels like you could average two binary numbers to get one that has one more bit of info. Maybe it only has 0.5 more bits of extra information? That would definitely correspond to it having "less noise," which it does after averaging... I definitely don't understand completely. 
 
+<br>
+
 ### Noise is necessary
 
-OOH, also it's important for you to know that you NEED noise on your ADC input. Luckily microcontroller voltage references are not the most stable thing in the world, so you usually have enough noise on the pin already to dither the signal up and down with some frequency. I read on some Stackoverflow post that if God made you a 10-bit ADC that was perfectly stable, it could not be directly oversampled to get extra bits of resolution. It'd always give the same answer. Some systems couple a sawtooth wave through a capacitor onto the sampling pin as a form of dithering noise, but I think I don't need to do that. 
+Also, I learned that you NEED noise on your ADC input. Luckily microcontroller voltage references are not the most stable thing in the world, so you usually have enough noise on the pin to wiggle the signal up and down already. I read on some Stackoverflow post that if God made you a 10-bit ADC that was perfectly stable, it could not be directly oversampled to get extra bits of resolution. It'd always give the same answer. Some systems couple a sawtooth wave through a capacitor onto the sampling pin as a form of dithering noise, but I think I don't need to do that. 
 
 ### So how many bits can we really get?
-So the Teensy ADC goes at 362 kHz, and gives 12 bits natively. We can get 16 bits at 362000/256 = 1414 kHz, and maybe one more for a 350 Hz sampling freq. Not bad! We've upgraded our ADC for no noticeable loss, besides maybe some noise loss we could've used the averaging for. I think if we use both ADCs to sample, we'd reduce the noise and perhaps even get 17 bits at 700 Hz, but that's a really minor improvement. 
+So the Teensy ADC goes at 362 kHz, and gives 12 bits natively. We can get 16 bits at 362000/256 = 1414 Hz, and maybe one more bit for a 350 Hz sampling freq. Not bad! We've upgraded our ADC for no noticeable loss, besides maybe some noise loss we could've used the averaging for. I think if we use both ADCs to sample, we'd reduce the noise and perhaps even get 17 bits at 700 Hz, but that's a really minor improvement. 
 
 Anyway. I'll try it later, but this is what I've been exploring for now. 
 
