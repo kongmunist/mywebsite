@@ -14,7 +14,9 @@ Context
  - murmations
  - fire mountain
 
-Howdy folks! Long time no project! 
+Howdy folks, long time no project! 
+
+
 
 
 
@@ -22,7 +24,6 @@ Howdy folks! Long time no project!
 
 <!-- {{ add_pic("IMG_0287.JPG", "caption") }} -->
 {{ add_pic("meiger_presentation.png", "") }} 
-{{ add_pic("meiger_presentation.png", "", True) }} 
 [Link example](https://andykong.org)
 
 

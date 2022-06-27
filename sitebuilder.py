@@ -19,6 +19,7 @@ import time
 DEBUG = True
 FLATPAGES_AUTO_RELOAD = DEBUG
 FLATPAGES_EXTENSION = '.md'
+FREEZER_IGNORE_404_NOT_FOUND = True
 
 # FLATPAGES_ROOT ='/Users/andykong/Library/Mobile Documents/com~apple~CloudDocs/programming/personalwebsite/pages'
 

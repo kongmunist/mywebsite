@@ -232,6 +232,8 @@ code {
 
 
 <style>
+
+/* This hovereffect is useless, completely superseded by the next one */
     .hovereffect {
   width: 100%;
   height: 90%;
@@ -240,10 +242,14 @@ code {
   position: relative;
   text-align: center;
   cursor: pointer;
+
+  display: flex;
+  justify-content: center;
 }
 
 .hovereffect .overlay {
   width: 100%;
+
   height: 93%;
   position: absolute;
   overflow: hidden;
@@ -329,6 +335,7 @@ code {
   }
 }
 
+/*
 @keyframes appearAndSlideABit{
   0% {
     opacity: 0;
@@ -338,6 +345,15 @@ code {
     opacity: 1;
     transform: translateX(0px);
   }
+}*/
+
+/* Generated from CSS elastic ease generator: https://codepen.io/amit_sheen/full/xxdKroP/57c932ba5730a4d512adc8ab49059892 */
+@keyframes elastic {
+  0% { transform: translateX(100px); opacity:0;}
+  33.54% { transform: translateX(-26.58px); }
+  60.59% { transform: translateX(15.76px); }
+  82.41% { transform: translateX(-7.04px); }
+  100.00% { transform: translateX(0.00px); opacity:1;}
 }
 
 .appearOnScroll{
@@ -354,7 +370,8 @@ code {
         entries.forEach( function(entry) {
           if (entry.isIntersecting){
             animDelay = .2 + parseFloat((entry.target.offsetLeft/window.innerWidth).toFixed(1))/2
-            entry.target.style.animation = "0.7s ease " + animDelay + "s appearAndSlideABit forwards"
+            entry.target.style.animation = "1s ease-in-out " + animDelay + "s elastic forwards"
+            // entry.target.style.animation = "0.7s ease " + animDelay + "s appearAndSlideABit forwards"
           }
           expose = entry
           // console.log(expose.isIntersecting)
@@ -420,18 +437,35 @@ code {
 <a href="/projects/"><h1 class="text-center" > Portfolio </h1></a>
 
 <div class="container-fluid" style="height: 100%;">
-    <div class="row" >
+    <div class="row" style="padding-left:15px;">
+
+
+        
+
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" onclick="window.location.href='/projects/igneous/'">
+    <div class="hovereffect">
+        <img alt="Igneous Hero Image" class="img mx-auto d-block" src="/static/ign_exhib7.jpg" height="400vw"
+                    loading="lazy">
+
+        <div class="overlay" >
+           <h2 style="width:90%; margin-left:5%; border-radius:12px">Igneous</h2>
+           <a style="border-radius:12px" class="info" href="/projects/igneous/">A morphing landscape of colored wax melting for hours, reflecting visitors&#39; actions</a>
+        </div>
+    </div>
+    </div>
+
 
 
         
 
         <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" onclick="window.location.href='/projects/eyemu/'">
-    <div class="hovereffect" >
-        <img alt="EyeMU Hero Image" class="img mx-auto d-block" src="/static/eyemuhero.png" height="400vw" loading="lazy">
+    <div class="hovereffect">
+        <img alt="EyeMU Hero Image" class="img mx-auto d-block" src="/static/eyemuhero_clipped.png" height="400vw"
+                    loading="lazy">
 
-        <div class="overlay">
-           <h2>EyeMU</h2>
-           <a class="info" href="/projects/eyemu/">First first-author paper! &#34;EyeMU Interactions, Gaze + IMU Gestures on Mobile Devices&#34;</a>
+        <div class="overlay" >
+           <h2 style="width:90%; margin-left:5%; border-radius:12px">EyeMU</h2>
+           <a style="border-radius:12px" class="info" href="/projects/eyemu/">First first-author paper! &#34;EyeMU Interactions, Gaze + IMU Gestures on Mobile Devices&#34;</a>
         </div>
     </div>
     </div>
@@ -441,12 +475,13 @@ code {
         
 
         <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" onclick="window.location.href='/projects/BCC/'">
-    <div class="hovereffect" >
-        <img alt="Body Channel Communication Hero Image" class="img mx-auto d-block" src="/static/bcc_alansonsketch.jpg" height="400vw" loading="lazy">
+    <div class="hovereffect">
+        <img alt="Body Channel Communication Hero Image" class="img mx-auto d-block" src="/static/bcc_alansonsketch.jpg" height="400vw"
+                    loading="lazy">
 
-        <div class="overlay">
-           <h2>Body Channel Communication</h2>
-           <a class="info" href="/projects/BCC/">Identifying users by their touch alone</a>
+        <div class="overlay" >
+           <h2 style="width:90%; margin-left:5%; border-radius:12px">Body Channel Communication</h2>
+           <a style="border-radius:12px" class="info" href="/projects/BCC/">Identifying users by their touch alone</a>
         </div>
     </div>
     </div>
@@ -456,12 +491,13 @@ code {
         
 
         <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" onclick="window.location.href='/projects/directionofvoice/'">
-    <div class="hovereffect" >
-        <img alt="Direction-of-Voice Hero Image" class="img mx-auto d-block" src="/static/dov_thumbnail.png" height="400vw" loading="lazy">
+    <div class="hovereffect">
+        <img alt="Direction-of-Voice Hero Image" class="img mx-auto d-block" src="/static/dov_thumbnail.png" height="400vw"
+                    loading="lazy">
 
-        <div class="overlay">
-           <h2>Direction-of-Voice</h2>
-           <a class="info" href="/projects/directionofvoice/">A novel method for estimating speaker head direction from a single microphone array</a>
+        <div class="overlay" >
+           <h2 style="width:90%; margin-left:5%; border-radius:12px">Direction-of-Voice</h2>
+           <a style="border-radius:12px" class="info" href="/projects/directionofvoice/">A novel method for estimating speaker head direction from a single microphone array</a>
         </div>
     </div>
     </div>
@@ -471,12 +507,13 @@ code {
         
 
         <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" onclick="window.location.href='/projects/eyecatcher/'">
-    <div class="hovereffect" >
-        <img alt="EyeCatcher Hero Image" class="img mx-auto d-block" src="/static/eyecatchercrop4.gif" height="400vw" loading="lazy">
+    <div class="hovereffect">
+        <img alt="EyeCatcher Hero Image" class="img mx-auto d-block" src="/static/eyecatchercrop4.gif" height="400vw"
+                    loading="lazy">
 
-        <div class="overlay">
-           <h2>EyeCatcher</h2>
-           <a class="info" href="/projects/eyecatcher/">A glimpse into another world, made possible through real-time head tracking</a>
+        <div class="overlay" >
+           <h2 style="width:90%; margin-left:5%; border-radius:12px">EyeCatcher</h2>
+           <a style="border-radius:12px" class="info" href="/projects/eyecatcher/">A glimpse into another world, made possible through real-time head tracking</a>
         </div>
     </div>
     </div>
@@ -486,12 +523,13 @@ code {
         
 
         <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" onclick="window.location.href='/projects/analogscalingcalculator/'">
-    <div class="hovereffect" >
-        <img alt="Analog Signal Scaling Hero Image" class="img mx-auto d-block" src="/static/analogscalinggraphic.png" height="400vw" loading="lazy">
+    <div class="hovereffect">
+        <img alt="Analog Signal Scaling Hero Image" class="img mx-auto d-block" src="/static/analogscalinggraphic.png" height="400vw"
+                    loading="lazy">
 
-        <div class="overlay">
-           <h2>Analog Signal Scaling</h2>
-           <a class="info" href="/projects/analogscalingcalculator/">Taming an unruly analog signal into a more manageable size.</a>
+        <div class="overlay" >
+           <h2 style="width:90%; margin-left:5%; border-radius:12px">Analog Signal Scaling</h2>
+           <a style="border-radius:12px" class="info" href="/projects/analogscalingcalculator/">Taming an unruly analog signal into a more manageable size.</a>
         </div>
     </div>
     </div>
@@ -501,12 +539,13 @@ code {
         
 
         <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" onclick="window.location.href='/projects/myo2/'">
-    <div class="hovereffect" >
-        <img alt="Myo2 Hero Image" class="img mx-auto d-block" src="/static/myo2tensing.png" height="400vw" loading="lazy">
+    <div class="hovereffect">
+        <img alt="Myo2 Hero Image" class="img mx-auto d-block" src="/static/myo2tensing.png" height="400vw"
+                    loading="lazy">
 
-        <div class="overlay">
-           <h2>Myo2</h2>
-           <a class="info" href="/projects/myo2/">Making my own ultra-sensitive EMG sensors for measuring unnoticeable muscle movement</a>
+        <div class="overlay" >
+           <h2 style="width:90%; margin-left:5%; border-radius:12px">Myo2</h2>
+           <a style="border-radius:12px" class="info" href="/projects/myo2/">Making my own ultra-sensitive EMG sensors for measuring unnoticeable muscle movement</a>
         </div>
     </div>
     </div>
@@ -516,12 +555,13 @@ code {
         
 
         <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" onclick="window.location.href='/projects/heartratemonitor/'">
-    <div class="hovereffect" >
-        <img alt="Webcam Heartrate Monitor Hero Image" class="img mx-auto d-block" src="/static/heartratemainpage.png" height="400vw" loading="lazy">
+    <div class="hovereffect">
+        <img alt="Webcam Heartrate Monitor Hero Image" class="img mx-auto d-block" src="/static/heartratefromcamera.jpg" height="400vw"
+                    loading="lazy">
 
-        <div class="overlay">
-           <h2>Webcam Heartrate Monitor</h2>
-           <a class="info" href="/projects/heartratemonitor/">Website that can determine your heartrate using ambient lighting and a camera.</a>
+        <div class="overlay" >
+           <h2 style="width:90%; margin-left:5%; border-radius:12px">Webcam Heartrate Monitor</h2>
+           <a style="border-radius:12px" class="info" href="/projects/heartratemonitor/">Website that can determine your heartrate using ambient lighting and a camera.</a>
         </div>
     </div>
     </div>
@@ -531,12 +571,13 @@ code {
         
 
         <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" onclick="window.location.href='/projects/carnegiecalendar/'">
-    <div class="hovereffect" >
-        <img alt="Carnegie Calendar Hero Image" class="img mx-auto d-block" src="/static/CCmain.png" height="400vw" loading="lazy">
+    <div class="hovereffect">
+        <img alt="Carnegie Calendar Hero Image" class="img mx-auto d-block" src="/static/CCmain.png" height="400vw"
+                    loading="lazy">
 
-        <div class="overlay">
-           <h2>Carnegie Calendar</h2>
-           <a class="info" href="/projects/carnegiecalendar/">All-encompassing, auto-updating events calendar for everything going on at uni</a>
+        <div class="overlay" >
+           <h2 style="width:90%; margin-left:5%; border-radius:12px">Carnegie Calendar</h2>
+           <a style="border-radius:12px" class="info" href="/projects/carnegiecalendar/">All-encompassing, auto-updating events calendar for everything going on at uni</a>
         </div>
     </div>
     </div>
@@ -546,12 +587,13 @@ code {
         
 
         <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" onclick="window.location.href='/projects/asciizoom/'">
-    <div class="hovereffect" >
-        <img alt="AsciiZOOM Hero Image" class="img mx-auto d-block" src="/static/asciizoom.png" height="400vw" loading="lazy">
+    <div class="hovereffect">
+        <img alt="AsciiZOOM Hero Image" class="img mx-auto d-block" src="/static/asciizoom.png" height="400vw"
+                    loading="lazy">
 
-        <div class="overlay">
-           <h2>AsciiZOOM</h2>
-           <a class="info" href="/projects/asciizoom/">The first secure, text-based videoconferencing app, accessible from the safety of your terminal.</a>
+        <div class="overlay" >
+           <h2 style="width:90%; margin-left:5%; border-radius:12px">AsciiZOOM</h2>
+           <a style="border-radius:12px" class="info" href="/projects/asciizoom/">The first secure, text-based videoconferencing app, accessible from the safety of your terminal.</a>
         </div>
     </div>
     </div>
@@ -561,12 +603,13 @@ code {
         
 
         <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" onclick="window.location.href='/projects/alteredperceptions/'">
-    <div class="hovereffect" >
-        <img alt="Altered Perceptions Hero Image" class="img mx-auto d-block" src="/static/alteredbonsai.png" height="400vw" loading="lazy">
+    <div class="hovereffect">
+        <img alt="Altered Perceptions Hero Image" class="img mx-auto d-block" src="/static/alteredbonsai.png" height="400vw"
+                    loading="lazy">
 
-        <div class="overlay">
-           <h2>Altered Perceptions</h2>
-           <a class="info" href="/projects/alteredperceptions/">VR headset + POV camera + preprocessing =&gt; new way to see the world</a>
+        <div class="overlay" >
+           <h2 style="width:90%; margin-left:5%; border-radius:12px">Altered Perceptions</h2>
+           <a style="border-radius:12px" class="info" href="/projects/alteredperceptions/">VR headset + POV camera + preprocessing =&gt; new way to see the world</a>
         </div>
     </div>
     </div>
@@ -576,12 +619,13 @@ code {
         
 
         <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" onclick="window.location.href='/projects/ampbox/'">
-    <div class="hovereffect" >
-        <img alt="Amp Box Hero Image" class="img mx-auto d-block" src="/static/ampbox.png" height="400vw" loading="lazy">
+    <div class="hovereffect">
+        <img alt="Amp Box Hero Image" class="img mx-auto d-block" src="/static/ampbox.png" height="400vw"
+                    loading="lazy">
 
-        <div class="overlay">
-           <h2>Amp Box</h2>
-           <a class="info" href="/projects/ampbox/">A box optimized for ease-of-use in amplifying tiny electrical signals (&lt;10 mv)</a>
+        <div class="overlay" >
+           <h2 style="width:90%; margin-left:5%; border-radius:12px">Amp Box</h2>
+           <a style="border-radius:12px" class="info" href="/projects/ampbox/">A box optimized for ease-of-use in amplifying tiny electrical signals (&lt;10 mv)</a>
         </div>
     </div>
     </div>
@@ -591,12 +635,13 @@ code {
         
 
         <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" onclick="window.location.href='/projects/manualbackprop/'">
-    <div class="hovereffect" >
-        <img alt="Manual Backpropagation Hero Image" class="img mx-auto d-block" src="/static/backprop.png" height="400vw" loading="lazy">
+    <div class="hovereffect">
+        <img alt="Manual Backpropagation Hero Image" class="img mx-auto d-block" src="/static/backprop.png" height="400vw"
+                    loading="lazy">
 
-        <div class="overlay">
-           <h2>Manual Backpropagation</h2>
-           <a class="info" href="/projects/manualbackprop/">Manually implementing backpropagation to prove that I know how it works</a>
+        <div class="overlay" >
+           <h2 style="width:90%; margin-left:5%; border-radius:12px">Manual Backpropagation</h2>
+           <a style="border-radius:12px" class="info" href="/projects/manualbackprop/">Manually implementing backpropagation to prove that I know how it works</a>
         </div>
     </div>
     </div>
@@ -606,12 +651,13 @@ code {
         
 
         <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" onclick="window.location.href='/projects/spintank/'">
-    <div class="hovereffect" >
-        <img alt="Spin Tank Hero Image" class="img mx-auto d-block" src="/static/spintankabrams.png" height="400vw" loading="lazy">
+    <div class="hovereffect">
+        <img alt="Spin Tank Hero Image" class="img mx-auto d-block" src="/static/spintankabrams.png" height="400vw"
+                    loading="lazy">
 
-        <div class="overlay">
-           <h2>Spin Tank</h2>
-           <a class="info" href="/projects/spintank/">Testing a novel reactive tank armor that spins to deflect projectiles</a>
+        <div class="overlay" >
+           <h2 style="width:90%; margin-left:5%; border-radius:12px">Spin Tank</h2>
+           <a style="border-radius:12px" class="info" href="/projects/spintank/">Testing a novel reactive tank armor that spins to deflect projectiles</a>
         </div>
     </div>
     </div>
@@ -621,12 +667,13 @@ code {
         
 
         <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" onclick="window.location.href='/projects/forcequeue/'">
-    <div class="hovereffect" >
-        <img alt="Spotify Force Queueing Hero Image" class="img mx-auto d-block" src="/static/kerokerokerokerokerokero.png" height="400vw" loading="lazy">
+    <div class="hovereffect">
+        <img alt="Spotify Force Queueing Hero Image" class="img mx-auto d-block" src="/static/kerokerokerokerokerokero.png" height="400vw"
+                    loading="lazy">
 
-        <div class="overlay">
-           <h2>Spotify Force Queueing</h2>
-           <a class="info" href="/projects/forcequeue/">A Python program using Spotify APIs to forcibly queue songs on collaborative playlists when you don&#39;t have aux control</a>
+        <div class="overlay" >
+           <h2 style="width:90%; margin-left:5%; border-radius:12px">Spotify Force Queueing</h2>
+           <a style="border-radius:12px" class="info" href="/projects/forcequeue/">A Python program using Spotify APIs to forcibly queue songs on collaborative playlists when you don&#39;t have aux control</a>
         </div>
     </div>
     </div>
@@ -636,12 +683,13 @@ code {
         
 
         <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" onclick="window.location.href='/projects/eyetracker/'">
-    <div class="hovereffect" >
-        <img alt="Eye-Tracking Mouse Hero Image" class="img mx-auto d-block" src="/static/eyetrackthumbnail.png" height="400vw" loading="lazy">
+    <div class="hovereffect">
+        <img alt="Eye-Tracking Mouse Hero Image" class="img mx-auto d-block" src="/static/eyetrackthumbnail.png" height="400vw"
+                    loading="lazy">
 
-        <div class="overlay">
-           <h2>Eye-Tracking Mouse</h2>
-           <a class="info" href="/projects/eyetracker/">An easy-to-use, handless mouse utilizing a laptop&#39;s built-in webcam and some CNNs.</a>
+        <div class="overlay" >
+           <h2 style="width:90%; margin-left:5%; border-radius:12px">Eye-Tracking Mouse</h2>
+           <a style="border-radius:12px" class="info" href="/projects/eyetracker/">An easy-to-use, handless mouse utilizing a laptop&#39;s built-in webcam and some CNNs.</a>
         </div>
     </div>
     </div>
@@ -651,12 +699,13 @@ code {
         
 
         <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" onclick="window.location.href='/projects/personalwebsite/'">
-    <div class="hovereffect" >
-        <img alt="Personal Website Hero Image" class="img mx-auto d-block" src="/static/websitev2.png" height="400vw" loading="lazy">
+    <div class="hovereffect">
+        <img alt="Personal Website Hero Image" class="img mx-auto d-block" src="/static/websitev2.png" height="400vw"
+                    loading="lazy">
 
-        <div class="overlay">
-           <h2>Personal Website</h2>
-           <a class="info" href="/projects/personalwebsite/">Static website generator built with Flask and hosted on Firebase. You&#39;re looking right at it!</a>
+        <div class="overlay" >
+           <h2 style="width:90%; margin-left:5%; border-radius:12px">Personal Website</h2>
+           <a style="border-radius:12px" class="info" href="/projects/personalwebsite/">Static website generator built with Flask and hosted on Firebase. You&#39;re looking right at it!</a>
         </div>
     </div>
     </div>

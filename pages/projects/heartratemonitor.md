@@ -7,7 +7,7 @@ description: Website that can determine your heartrate using ambient lighting an
 
 Hey! This is Andy. Here's the link to the [website that can find your heartrate](http://heartrateleaderboard.netlify.app/).
 
-{{ add_image(heartratemainpage.png, "Website main page, pre-graphic designer stage")}}
+{{ add_pic("heartratemainpage.png", "Website main page, pre-graphic designer stage", "True")}}
 
 I recently came across this app that used a smartphone camera and flashlight to calculate your heartrate. This relies on the fact that oxygenated blood and deoxygenated blood have different colors, and it's noticeable on a smartphone camera. In fact, one of my favorite party tricks is to start recording a video on my phone while pressing my finger on the camera, and show people how you can <i>see</i> my pulse as the color on the video pulses a darker color occasionally. Try it yourself!
 
