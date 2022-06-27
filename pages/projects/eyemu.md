@@ -2,7 +2,7 @@ title: EyeMU
 date: 2021-12-01
 label: project
 timespan: June 2020 - October 2021
-pic: eyemuhero.png
+pic: eyemuhero_clipped.png
 description: First first-author paper! "EyeMU Interactions, Gaze + IMU Gestures on Mobile Devices"
 
 <h1 style="text-align:center;"> Second paper! </h1>

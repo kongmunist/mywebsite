@@ -1,3 +1,10 @@
+TODO:
+- make GIFs into videos
+- Make the images on the front page snap into position following a random path
+
+
+June 27, 2022 - Added image centering for the front page by adding display:flex and justify-content: center to the "hovercontent" CSS class. Gonna have to resize some of the images. Also rounded the captions on the main page. Also added more elastic animations to the front page. Also made it so projects on the front page won't show up if they're from the future.
+June 25, 2022 - Started work at Google, still writing proposal and we're on week 4. Time flies! Added picture previews to Sublime by modifying a plugin.
 April 22, 2022 - Graduating from college in 3 weeks. Added a jinja pre-processor to add pictures to the website more easily
 Feb 5, 2022 - Changed blog sidebar picture
 Jane 9, 2022 - Howdy, where do I start. Fixed tags at the bottom of blog pages overlapping. Removed about sidebar from blog posts, removed the container too so there's no weird shadow thing (Added noaboutsidebar.html). Removed shadow from blogmain too, and fixed sizing across the whole blog. Removed excess horizontal space so there's no scrollbar, changed navbar collapse breakpoint from lg to md. Added padding and readjusted so it all looks good on mobile and all sizes of the desktop. Let's send it!

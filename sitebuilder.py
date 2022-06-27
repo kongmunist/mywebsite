@@ -40,6 +40,9 @@ print(app.config['FLATPAGES_EXTENSION'])
 # Allows markdown to do flask functions before the site's HTML renders. INTEGRAL. SO IMPORTANT.
 def prerender_jinja(text):
     prerendered_body = render_template_string(Markup(text))
+    # print("PR Body", type(prerendered_body), prerendered_body)
+    # pygmented_markdown converts the ~[]() syntax into actual html
+    # print("pyg body", type(pygmented_markdown(prerendered_body)), pygmented_markdown(prerendered_body))
     return pygmented_markdown(prerendered_body)
 app.config['FLATPAGES_HTML_RENDERER'] = prerender_jinja
 
@@ -47,15 +50,46 @@ def dateconvert(str):
     return str.strftime("%B %d, %Y")
 app.jinja_env.globals.update(dateconvert=dateconvert)
 
+
 @app.context_processor
 def utility_processor():
-    def add_pic(filename, captionalt):
+    def add_pic(filename, captionalt, center=False):
         # format for image:
         # < p class ="caption" > Desc < / p > ![Caption]({{url_for('static', filename='badglasses.png')}})
-        pstuff = "<p class =\"caption\"> %s </p>" % captionalt
+
+        # Add centering: 
+        # if (center):
+        #     print(filename, "center true")
+        # print(center, type(center))
+        
+
+        overallString = ""
         mdstuff = "![%s]({{url_for(\"static\", filename=\"%s\")}})" % (captionalt, filename)
-        # print(Markup(pstuff) + Markup(render_template_string(mdstuff)))
-        return Markup(pstuff) + "\n" + render_template_string(mdstuff)
+
+        # don't add caption if it's empty string
+        if not len(captionalt.strip()) == 0:
+            pstuff = "<p class =\"caption\"> %s </p>" % captionalt
+            overallString += Markup(pstuff) + "\n" + render_template_string(mdstuff)
+        else:
+            overallString += render_template_string(mdstuff)
+
+
+        # print(type(overallString), "overall", overallString, )
+        # print("PYG", pygmented_markdown(overallString))
+        # Add centering stuff if you want it centered. 
+        # print("overall, ", overallString)
+
+        # Cursed double conversion because I don't know how to add html attributes to a markdown string.
+        if (center):
+            pyg = pygmented_markdown(overallString)
+            if ("<img" in pyg):
+                # print("IMG, ", pyg)
+                imgInd = pyg.find("<img") + 4
+                centerHTML = ' style="display: block; margin-left: auto;margin-right: auto;" '
+                overallString = Markup(pyg[:imgInd] + centerHTML + pyg[imgInd:])
+                # print(pyg[:imgInd], "AIDNWIN", pyg[imgInd:])
+        return overallString
+
     return dict(add_pic=add_pic)
 
 
@@ -68,6 +102,12 @@ def index():
     projPages = [p for p in pages if "project" == p.meta.get('label')]
     projPages = [(x.meta.get('date'), x) for x in projPages]
     projPages.sort(reverse=True)
+
+    # filter out projects that are in the future
+    today = datetime.date(datetime.now())
+    projPages = filter(lambda x: x[0] < today, projPages)
+
+    # Extract out the pages only
     projPages = [x[1] for x in projPages]
 
     return render_template('main.html', pages = projPages)

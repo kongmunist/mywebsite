@@ -8,6 +8,8 @@
 
 {% block app_content %}
 <style>
+
+/* This hovereffect is useless, completely superseded by the next one */
     .hovereffect {
   width: 100%;
   height: 90%;
@@ -16,10 +18,14 @@
   position: relative;
   text-align: center;
   cursor: pointer;
+
+  display: flex;
+  justify-content: center;
 }
 
 .hovereffect .overlay {
   width: 100%;
+
   height: 93%;
   position: absolute;
   overflow: hidden;
@@ -105,6 +111,7 @@
   }
 }
 
+/*
 @keyframes appearAndSlideABit{
   0% {
     opacity: 0;
@@ -114,6 +121,15 @@
     opacity: 1;
     transform: translateX(0px);
   }
+}*/
+
+/* Generated from CSS elastic ease generator: https://codepen.io/amit_sheen/full/xxdKroP/57c932ba5730a4d512adc8ab49059892 */
+@keyframes elastic {
+  0% { transform: translateX(100px); opacity:0;}
+  33.54% { transform: translateX(-26.58px); }
+  60.59% { transform: translateX(15.76px); }
+  82.41% { transform: translateX(-7.04px); }
+  100.00% { transform: translateX(0.00px); opacity:1;}
 }
 
 .appearOnScroll{
@@ -130,7 +146,8 @@
         entries.forEach( function(entry) {
           if (entry.isIntersecting){
             animDelay = .2 + parseFloat((entry.target.offsetLeft/window.innerWidth).toFixed(1))/2
-            entry.target.style.animation = "0.7s ease " + animDelay + "s appearAndSlideABit forwards"
+            entry.target.style.animation = "1s ease-in-out " + animDelay + "s elastic forwards"
+            // entry.target.style.animation = "0.7s ease " + animDelay + "s appearAndSlideABit forwards"
           }
           expose = entry
           // console.log(expose.isIntersecting)
@@ -196,18 +213,19 @@
 <a href="/projects/"><h1 class="text-center" > Portfolio </h1></a>
 
 <div class="container-fluid" style="height: 100%;">
-    <div class="row" >
+    <div class="row" style="padding-left:15px;">
 
 
         {% for p in pages %}
 
         <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" onclick="window.location.href='{{ url_for("project",project=p.path[9:]) }}'">
-    <div class="hovereffect" >
-        <img alt="{{ p.title }} Hero Image" class="img mx-auto d-block" src="{{ url_for("static", filename= p.pic) }}" height="400vw" loading="lazy">
+    <div class="hovereffect">
+        <img alt="{{ p.title }} Hero Image" class="img mx-auto d-block" src="{{ url_for("static", filename= p.pic) }}" height="400vw"
+                    loading="lazy">
 
-        <div class="overlay">
-           <h2>{{ p.title }}</h2>
-           <a class="info" href="{{ url_for("project",project=p.path[9:]) }}">{{ p.description }}</a>
+        <div class="overlay" >
+           <h2 style="width:90%; margin-left:5%; border-radius:12px">{{ p.title }}</h2>
+           <a style="border-radius:12px" class="info" href="{{ url_for("project",project=p.path[9:]) }}">{{ p.description }}</a>
         </div>
     </div>
     </div>
