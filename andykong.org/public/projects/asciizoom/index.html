@@ -8,9 +8,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="author" content="Andy Kong">
-<meta name="title" content="AsciiZOOM">
-<meta name="description" content="The first secure, text-based videoconferencing app, accessible from the safety of your terminal.">
+    <meta name="author" content="Andy Kong">
+    <meta name="title" content="AsciiZOOM">
+    <meta name="description" content="The first secure, text-based videoconferencing app, accessible from the safety of your terminal.">
 
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -121,11 +121,6 @@ a:hover {
     text-decoration: none;
 }
 
-img {
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-
 .navbar-custom {
     font-size: 22px;
     background-color: #202222 !important;
@@ -158,12 +153,12 @@ img {
     font-size:12px;
     text-align: center;
     font-style: italic;
-    margin-bottom: 0px;
-    margin-top:10px;
+    margin-bottom: .2em;
+    margin-top: 1em;
 }
 
 .projectpage img{
-    max-width: 50vw;
+    max-width: 75vw;
     height: auto;
     width: auto;
 }
@@ -234,10 +229,10 @@ code {
 
 
 
-
-    <div class="row">
-        <div class="col-2"></div>
-        <div class="col-8 projectpage" style="max-width:1000px;">
+<!--    <div class="row justify-content-center">-->
+<div class="row overflow-hidden" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+        <div class="col-lg-2"></div>
+        <div class="col-12 col-lg-8 projectpage" style="max-width:1000px;">
         <h1 style="text-center; margin-bottom: 5px">AsciiZOOM</h1>
             <i><p style="margin-bottom: 5px; margin-top: 0px">The first secure, text-based videoconferencing app, accessible from the safety of your terminal.</p></i>
             <p style="margin-bottom: 0px; margin-top: 0px">Timespan: April 2020</p>
@@ -260,7 +255,7 @@ code {
 <p>We used TCP sockets to transfer the frames of video. In hindsight, we probably should have used UDP, since we don't want dropped frames to accumulate latency. TCP's guaranteed packet delivery means that delays in sending one frame end up delaying every subsequent frame. We set up a server on our school's publicly exposed servers (it's exposed online if you can ssh into it even while not on school wifi) and both connected from our local terminals. The server then coordinates, sending one person's packets to the other person and vice versa. </p>
 <p>And if you want audio, use Discord or something :P</p>
             </div>
-        <div class="col-2"></div>
+        <div class="col-lg-2"></div>
         <p style="line-height:300%;">&nbsp;</p>
 </div>
 

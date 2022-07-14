@@ -8,9 +8,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="author" content="Andy Kong">
-<meta name="title" content="Altered Perceptions">
-<meta name="description" content="VR headset + POV camera + preprocessing =&gt; new way to see the world">
+    <meta name="author" content="Andy Kong">
+    <meta name="title" content="Altered Perceptions">
+    <meta name="description" content="VR headset + POV camera + preprocessing =&gt; new way to see the world">
 
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -121,11 +121,6 @@ a:hover {
     text-decoration: none;
 }
 
-img {
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-
 .navbar-custom {
     font-size: 22px;
     background-color: #202222 !important;
@@ -158,12 +153,12 @@ img {
     font-size:12px;
     text-align: center;
     font-style: italic;
-    margin-bottom: 0px;
-    margin-top:10px;
+    margin-bottom: .2em;
+    margin-top: 1em;
 }
 
 .projectpage img{
-    max-width: 50vw;
+    max-width: 75vw;
     height: auto;
     width: auto;
 }
@@ -234,10 +229,10 @@ code {
 
 
 
-
-    <div class="row">
-        <div class="col-2"></div>
-        <div class="col-8 projectpage" style="max-width:1000px;">
+<!--    <div class="row justify-content-center">-->
+<div class="row overflow-hidden" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+        <div class="col-lg-2"></div>
+        <div class="col-12 col-lg-8 projectpage" style="max-width:1000px;">
         <h1 style="text-center; margin-bottom: 5px">Altered Perceptions</h1>
             <i><p style="margin-bottom: 5px; margin-top: 0px">VR headset + POV camera + preprocessing =&gt; new way to see the world</p></i>
             <p style="margin-bottom: 0px; margin-top: 0px">Timespan: November 2019 - January 2020</p>
@@ -272,7 +267,7 @@ code {
 <p>DeepDream is sort of like inverting a neural network; you give it a photo, and tell it to make the photo look <i>more</i> like something, a dog or a dumbell or whatever, instead of asking it what the photo is of. But this inversion takes a long time. For even minor effects on shrunken images, it takes over half a second. I think this is because it's not what neural networks are meant for, so I'm going to work on a Convolutional Neural Network that produces DeepDream images going forwards, instead of going backwards. No more inverting and tracing back. Just propogate forward once and you're done. </p>
 <p>But that's a project for later. If you're interested in collaborating on adding more filters or new kinds (I wanted to use Haar Cascades for eye and mouth detection in order to really mess with how people's faces looked), let me know! I'm always down to work on cool image edits (especially if they run LIVE).</p>
             </div>
-        <div class="col-2"></div>
+        <div class="col-lg-2"></div>
         <p style="line-height:300%;">&nbsp;</p>
 </div>
 

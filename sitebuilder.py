@@ -54,7 +54,7 @@ app.jinja_env.globals.update(dateconvert=dateconvert)
 
 @app.context_processor
 def utility_processor():
-    def add_pic(filename, captionalt, center=False):
+    def add_pic(filename, captionalt, center=True):
         # format for image:
         # < p class ="caption" > Desc < / p > ![Caption]({{url_for('static', filename='badglasses.png')}})
 
@@ -73,12 +73,6 @@ def utility_processor():
             overallString += Markup(pstuff) + "\n" + render_template_string(mdstuff)
         else:
             overallString += render_template_string(mdstuff)
-
-
-        # print(type(overallString), "overall", overallString, )
-        # print("PYG", pygmented_markdown(overallString))
-        # Add centering stuff if you want it centered. 
-        # print("overall, ", overallString)
 
         # Cursed double conversion because I don't know how to add html attributes to a markdown string.
         if (center):

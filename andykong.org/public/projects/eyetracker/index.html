@@ -8,9 +8,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="author" content="Andy Kong">
-<meta name="title" content="Eye-Tracking Mouse">
-<meta name="description" content="An easy-to-use, handless mouse utilizing a laptop&#39;s built-in webcam and some CNNs.">
+    <meta name="author" content="Andy Kong">
+    <meta name="title" content="Eye-Tracking Mouse">
+    <meta name="description" content="An easy-to-use, handless mouse utilizing a laptop&#39;s built-in webcam and some CNNs.">
 
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -121,11 +121,6 @@ a:hover {
     text-decoration: none;
 }
 
-img {
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-
 .navbar-custom {
     font-size: 22px;
     background-color: #202222 !important;
@@ -158,12 +153,12 @@ img {
     font-size:12px;
     text-align: center;
     font-style: italic;
-    margin-bottom: 0px;
-    margin-top:10px;
+    margin-bottom: .2em;
+    margin-top: 1em;
 }
 
 .projectpage img{
-    max-width: 50vw;
+    max-width: 75vw;
     height: auto;
     width: auto;
 }
@@ -234,10 +229,10 @@ code {
 
 
 
-
-    <div class="row">
-        <div class="col-2"></div>
-        <div class="col-8 projectpage" style="max-width:1000px;">
+<!--    <div class="row justify-content-center">-->
+<div class="row overflow-hidden" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+        <div class="col-lg-2"></div>
+        <div class="col-12 col-lg-8 projectpage" style="max-width:1000px;">
         <h1 style="text-center; margin-bottom: 5px">Eye-Tracking Mouse</h1>
             <i><p style="margin-bottom: 5px; margin-top: 0px">An easy-to-use, handless mouse utilizing a laptop&#39;s built-in webcam and some CNNs.</p></i>
             <p style="margin-bottom: 0px; margin-top: 0px">Timespan: May-June 2019</p>
@@ -258,7 +253,7 @@ code {
 <p>The models performed worse in real-world conditions. The lighting was different, the angle I looked at my screen with was different, and my squintiness would change depending on how I felt. I'm sure the model was very confused. In the end, I added a 25 timestep moving average to calm down the predicted eye placements. No more jitter! Then with my newly tamed eye-tracking models, I drew my name and a star. </p>
 <p><img class="d-block mx-auto" src="/static/stareye.png" /></p>
             </div>
-        <div class="col-2"></div>
+        <div class="col-lg-2"></div>
         <p style="line-height:300%;">&nbsp;</p>
 </div>
 

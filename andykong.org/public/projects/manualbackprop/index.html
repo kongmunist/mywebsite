@@ -8,9 +8,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="author" content="Andy Kong">
-<meta name="title" content="Manual Backpropagation">
-<meta name="description" content="Manually implementing backpropagation to prove that I know how it works">
+    <meta name="author" content="Andy Kong">
+    <meta name="title" content="Manual Backpropagation">
+    <meta name="description" content="Manually implementing backpropagation to prove that I know how it works">
 
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -121,11 +121,6 @@ a:hover {
     text-decoration: none;
 }
 
-img {
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-
 .navbar-custom {
     font-size: 22px;
     background-color: #202222 !important;
@@ -158,12 +153,12 @@ img {
     font-size:12px;
     text-align: center;
     font-style: italic;
-    margin-bottom: 0px;
-    margin-top:10px;
+    margin-bottom: .2em;
+    margin-top: 1em;
 }
 
 .projectpage img{
-    max-width: 50vw;
+    max-width: 75vw;
     height: auto;
     width: auto;
 }
@@ -234,10 +229,10 @@ code {
 
 
 
-
-    <div class="row">
-        <div class="col-2"></div>
-        <div class="col-8 projectpage" style="max-width:1000px;">
+<!--    <div class="row justify-content-center">-->
+<div class="row overflow-hidden" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+        <div class="col-lg-2"></div>
+        <div class="col-12 col-lg-8 projectpage" style="max-width:1000px;">
         <h1 style="text-center; margin-bottom: 5px">Manual Backpropagation</h1>
             <i><p style="margin-bottom: 5px; margin-top: 0px">Manually implementing backpropagation to prove that I know how it works</p></i>
             <p style="margin-bottom: 0px; margin-top: 0px">Timespan: March 2019</p>
@@ -250,7 +245,7 @@ code {
 <p><img class="d-block mx-auto" src="/static/manualbackpropcode.png"/></p>
 <p>This post is short because the code is not very neat to look at or think about. Machine learning really is just a bunch of matrices multiplying themselves. I meant to implement gradient checking to make sure I had taken the derivatives properly, but I was much too lazy. This whole project took about 8 hours, and doing the same thing in PyTorch would have taken less than 1. I just thought it was a fun, personal challenge, and now will never take PyTorch for granted again.</p>
             </div>
-        <div class="col-2"></div>
+        <div class="col-lg-2"></div>
         <p style="line-height:300%;">&nbsp;</p>
 </div>
 

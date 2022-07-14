@@ -5,154 +5,193 @@ timespan: Nov-Dec 2021
 pic: ign_exhib7.jpg
 description: A morphing landscape of colored wax melting for hours, reflecting visitors' actions
 
-My third and final project for Electronic Logics && Creative Practice, an IDeATE course at CMU. Our [original writeup](https://courses.ideate.cmu.edu/62-362/f2021/igneous/) contains more photos + detailed process of construction.
+My third and final project for Electronic Logics && Creative Practice, an IDeATE course at CMU. 
+
+- Our [final writeup](https://courses.ideate.cmu.edu/62-362/f2021/igneous/) contains more photos + detailed process of constructing the mountain and assembling the candles. 
+
+- Our [project check-in](https://courses.ideate.cmu.edu/62-362/f2021/group-check-in-andy-davine-leah/) has prototype pictures of our work that we did to validate before making anything permanent. 
+
+- And our [brainstorming post](https://courses.ideate.cmu.edu/62-362/f2021/arrows-ideation-leah-andy-davine/) has the other ideas that we juggled around before thinking of this one. 
+
+Archive links: 
+[(Final)](https://web.archive.org/web/20220627101740/https://courses.ideate.cmu.edu/62-362/f2021/arrows-ideation-leah-andy-davine/)
+[(Check-in)](https://web.archive.org/web/20220627101723/https://courses.ideate.cmu.edu/62-362/f2021/group-check-in-andy-davine-leah/)
+[(Brainstorm)](https://web.archive.org/web/20220627101912/https://courses.ideate.cmu.edu/62-362/f2021/igneous/)
+
+Check 'em out!
 
 <hr>
 
-Context
- - ideate
- - murmations
- - fire mountain
+Howdy folks, long time no project! More info linked above, and this here is a timelapse of the exhibit. Keep reading for more pictures!
 
-Howdy folks, long time no project! 
+<div style="text-align: center;"><iframe width="560" height="315" src="https://www.youtube.com/embed/afivxSqr79Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 
+In my 2nd to last semester at CMU, I took an artsy class called Electronic Logics && Creative Practice. If you don't know CMU, we have an entire tech + arts department called IDeATE shoved into a library basement. The department gave me creative technologist vibes, and I wanted to see if I'd like that kind of environment. And I did!
 
+{{ add_pic("ign_backstory.jpg", "Fun parts included messing around with materials") }} 
 
+I read once that artists require some downtime; all production and no consumption make Jack a boring, static creative. ELCP embraced that ethos wholeheartedly. 
 
+Timelines for projects were 3-4 weeks, with room for slip. Class hours alternated between open shop hours and fun summer camp activities like guiding an eye-closed partner through the building using only verbal instructions. Did I feel silly running into doors or guiding my partner into a wall on accident? Yes. But I also realized how heavily we depend on our eyes. 
 
+The "uselessness" of the activities felt like their use, as if the activities were fertilizer during our brain's recovery period. A fallow period is necessary for a successful crop rotation, and our brain does well with a similar concept. 
 
-<!-- {{ add_pic("IMG_0287.JPG", "caption") }} -->
-{{ add_pic("meiger_presentation.png", "") }} 
-[Link example](https://andykong.org)
+Anyway, our third project had a few differences from the earlier ones. It had the theme of Emergent Behavior, had to be a group project, and would be showcased to the general public at an exhibition! I didn't want to do another electronics project; I already did a couple in-class and out, and I wanted to see if I could create something impressive that I didn't already have experience in. 
 
+Post-brainstorming + reality check, we were left with only one project: Igneous. Let me tell you about it!
 
+<hr>
 
 
+# Igneous 
 
-================================== 
+{{ add_pic("ign_giantscauseway.jpg", "") }} 
 
-Narrative Description
+This is the Giant's Causeway, a natural basalt formation found in Northern Ireland. The columns are believed to be formed by the cracking of cooling magma, which takes on hexagonal shapes as the cracks descend deeper. Something about minimization of surface energy... Unsure. I wanted to parallel this with hundreds of candles, creating a small scale version that visitors would be able to light and watch m
 
-Inspired by the Giant’s Causeway in Ireland, we’d like to create a natural landscape composed of tiled hexagonal column candles. As the candles are lit, the melted wax will pool and drip organically, eroding the landscape over time. Event visitors can choose which candles to light or put out, collaboratively altering the terrain over the course of the exhibition. As they pass the candles later, they can see the marks and pits that their choices have made upon the landscape. 
+<hr>
 
-Additionally, the data output from another group (sound, color, etc.; we don’t know what the other projects are yet!) will be mapped onto our arrangement of candles; the data we receive will also determine which candles will be lit, working with/against the human audience input. For example, we could set up fans to fan the flames or blow certain candles out. Beyond electronic input, we’ll also want to have the candles exposed. This way, the breeze that people generate by simply walking past will get the flames dancing and potentially even put some of them out. 
+# Narrative Description
+"Inspired by the Giant’s Causeway in Ireland, we’d like to create a natural landscape composed of tiled hexagonal column candles. As the candles are lit, the melted wax will pool and drip organically, eroding the landscape over time. Event visitors can choose which candles to light or put out, collaboratively altering the terrain over the course of the exhibition. As they pass the candles later, they can see the marks and pits that their choices have made upon the landscape. 
 
-We’d like this piece to be installed indoors if possible, since if it’s outside, environmental input like wind may also affect our flames. 
-Materials
+Additionally, the data output from another group (sound, color, etc.; we don’t know what the other projects are yet!) will be mapped onto our arrangement of candles; the data we receive will also determine which candles will be lit, working with/against the human audience input. For example, we could set up fans to fan the flames or blow certain candles out. Beyond electronic input, we’ll also want to have the candles exposed. This way, the breeze that people generate by simply walking past will get the flames dancing and potentially even put some of them out. "
 
-Candle wax – purchase
-Thin candle wicks – purchase
-(15-20) hexagonal candle molds – purchase
-Grill lighters (participants light candles)
-Need to make >100 1.5” hexagonal candles, varying heights
+<hr>
 
+# Initial assembly
+Because we decided to use candles to emulate the hexagonal columns, I felt very strongly that they needed to be hexagonally shaped. However, nobody sells hexagon candles in bulk, since they take a ton of extra work and don't look much better. We thought about casting them ourselves (lots of wicks and experiments to get right) or cutting them (turns out to be really hard. Eventually we conceded that small detail of the project and got on with the main bit. 
 
-=======================================
-Group Check in: Andy Davine Leah
-To solve our problem of having to cast so many candles, we’ve found a two-part alternative:
 
-use foam core blocks to create base height variation; we can reduce the max candle height significantly while achieving  great overall height variation for our landscape
-start with pre-bought cylindrical candles (we can buy them in bulk; don’t need to deal with tedious wick and melt calculations) and cut/shave them down into hexagons– might be a bit messy/imperfect, but that might create a more organic form that reads less religious
+## Cutting with a knife
+Took too long, and the final shape isn't consistent. 
 
+{{ add_pic("ign_orig1.jpg", "A stick of beeswax I had, with a hexagon outline traced out") }} 
+{{ add_pic("ign_orig2.jpg", "Manually shaved beeswax stick with steak knife and vegetable peeler. Does not look very hexagonal and took a lot of effort :(") }} 
 
-Other updates:
+## Cutting with a mold
+I sharpened a small bit of sheet metal, then bent it into a hexagon. This cutter bent outwards when cutting due to the wax being hard to cut. I sharpened it and embedded it in a block of wood, still no good. 
 
-Because our pre-bought cylindrical candles will be un-dyed, we’ll buy colored wax dye chips for participants to sprinkle into the melted wax pools while the candles are lit– this is now an additional input.
-If we have to be installed outside, we’ll have a camera streaming video of the installation projected in the space (no particular preference of location as of now) so we have a physical presence inside the event.
-If we have to be installed outside, we’d like to be inside one of the concave nooks beside the main entrance; we’d likely need some sort of wind screen.
-Materials:
+{{ add_pic("ign_orig3.jpg", "Hexagonal candle mold made with bent sheet metal") }} 
+{{ add_pic("ign_orig4.jpg", "Softening the wax candles in hot water") }} 
+{{ add_pic("ign_orig5.jpg", "Leftover wax after cutting. The mold is now in the wood block for support purposes") }} 
+{{ add_pic("ign_orig6.jpg", "The resulting candle. Pretty hexagonal, a bit lumpy, and super hard to push it through.") }} 
 
-(2) 200-count cylindrical candles, $175.64 total https://www.thecandledepot.com/collections/vigil-candles/products/white-utility-vigil-candle-small-diameter-set-of-200
-hexagonal cookie cutters/ knives/ vegetable peelers to cut the cylindrical candles to shape
-candle dye chips; we want brown, gray, green https://www.amazon.com/Candle-Dyes-Making-Color-Flakes/dp/B06Y3T5RV4?th=1
-custom built wooden table:
-(4) 38″ long 2×4 lumber for legs
-(2) 24″ long 2×4 lumber
-(2) 13″ long 2×4 lumber
-(2) 35″ ish long 2×4 lumber for leg braces
-(1) 22″ x 30″ 3/4″ ply tabletop
-(1) 16″ x 24″ 3/8″ ply base for candles
+## Giving up on the hexagon part
+They're hard to cut, reduces our surface area; who even likes hexagons anyway? We decided to just stick with the cylindrical candles for our mountain for simplicity due to time constraints. We also found out the company had shipped us around 100 fewer candles than we expected, so we needed all the surface area we could get! 
 
-=======================================================================
 
-Description
-Inspired by the Giant’s Causeway in Ireland, we arranged 300 white cylindrical candles into a mountain terrain formation that reacts slowly to audience interaction. Users were invited to light candles and add dye chips (choice of 8 colors) to pools of melted wax, shaping and coloring the terrain. The terrain “erodes” and transforms organically throughout the night as a result of the collective contributions. Our piece acts as a memorial of the community experience of creating something. A projection on the ceiling of CFA’s Main Hall streamed live video of the piece and users interacting with it, encouraging those inside the hall to come outside and contribute to it as well. 
+### Concrete base
+Since we didn't want to waste wax making the mountain completely solid, we made these platforms that would make it easier to vary the candle heights. 
 
+{{ add_pic("ign_assem1.jpg", "Concrete board that our teacher donated to us from his on-hold bathroom remodeling project") }} 
+{{ add_pic("ign_assem2.jpg", "Inspection of the concrete board") }} 
+{{ add_pic("ign_assem3.jpg", "The concrete platforms on their wooden pegs, pre-drilling.") }} 
 
-Early in the exhibition. Only a few candles have been lit and dyed.
+## Candle placement
+The placement of the candles also took a bit of thought. Just lying them out looked ugly and too regular, so we were going to cut the bottoms off some and glue them onto others. Hot glue held everything down. 
 
+Cutting the candles turned out to be hard, especially since we needed around 300 of them, but my teammates came up with the now-famous "roll a box cutter back and forth" strategy, using body weight and the radial lever arm to make it easier. 
 
-People interacting with the piece. Demonstrates overall scale.
+{{ add_pic("ign_assem4.jpg", "Candles placed but not glued. We also haven't varied the heights yet.") }} 
 
+We also used cement board later to fill in a large gap when we found out that we didn’t have enough candles to cover one side of the mountain (pictured below). 
 
-Close up of the lit candles and how the dye flows with the melting wax.
+{{ add_pic("ign_assem5.jpg", "Post-cut candles, with some big ones in front. We've glued a few to be floating, and the insides are still visible.") }} 
+{{ add_pic("ign_assem7.jpg", "Completed candle mountain, with a few test candles lit") }} 
 
+## Cart and Foil
+So, we were going to transport this thing indoors so people could interact with it. Unfortunately, the fire chief did not like that, so we were exiled outside the front door. Here you can see the cart that we ended up using. 
 
-Projection of the piece in the hall.
+Another important feature was suggested by Zach, our teacher. He wanted to layer the cart with foil in case the wax dripped out of the sculpture. "How silly" I said, "what a preposterous idea." He insisted, I demurred, we wrapped the whole top. This turns out to be an ass-saving maneuver by Zach, so I'm glad we did that.
 
+{{ add_pic("ign_assem6.jpg", "Foil and cart that made our final exhibit presentable at the exposition") }} 
+{{ add_pic("ign_assem8.jpg", "Wax dye chips for the audience to use on the candles so they weren't all just white") }} 
 
-The piece near the end of the exhibition.
 
 
-Final results after the entire exhibition.
 
 
-As the dyed candles melted, the wax built up, creating interesting layers and formations.
 
 
-Chunks of colored solidified wax and their patterns.
 
-Video
-Time lapse of the piece over the course of the event:
 
 
 
-Process
-We experienced some setbacks while assembling our project, and had a few lucky breaks in our final, public installation. 
+# Exhibition
+We finished assembling all the candles and supplies the night before the exhibition. On the day of, at 4-5pm we began rolling our projects from the library to the Center of Fine Arts (this doesn't have a person's name in it because that would require a rich fine arts alumni who also loved CMU). 
 
+{{ add_pic("ign_exhib0.png", "Poster for the exhibition") }} 
 
-Andy testing his hexagonal candle cutter.
+Here's some of the first candles being lit, as well as a thematic shot. We were the only art group to be outside, and this turned out to be in our favor. Since we shared the space with the "Exploded Ensemble" class, they made so much ruckus playing everyone's project at the same time that several visitors came outside to us for refuge. 
 
+{{ add_pic("ign_exhib11.jpg", "Dramatic shot of candle mountain with dye chips with the long matches") }} 
 
-Testing the chip dyes.
+{{ add_pic("ign_exhib1.jpg", "A fellow classmate looks on with awe") }} 
 
-We initially planned to imitate the shape of the columns in the Giant’s Causeway exactly, filling a 24”x36” rectangle with about 250 pounds of hexagonal wax candles. This initial plan’s footprint downscaled to 18”x24” when our proposed budget went above $300, and the hexagons had to be rethought after we had trouble finding thin candles in that shape.
+{{ add_pic("ign_exhib2.jpg", "Far away shot from the front door of CFA to our exhibit. We're the only ones outside") }} 
+{{ add_pic("ign_exhib3.jpg", "Our project represented indoors by a projected video feed") }} 
+{{ add_pic("ign_exhib4.jpg", "Closeup of one of the candles flowing into another one as it melts") }} 
+{{ add_pic("ign_exhib5.jpg", "Closeup of the candles with pooled colored wax, and flowing down as the wax melts") }} 
+{{ add_pic("ign_exhib6.jpg", "Visitors having a great, arson-y time lighting candles and leaving dye chips everywhere. ") }} 
+{{ add_pic("ign_exhib7.jpg", "Front shot of candle mountain near the beginning of our exhibit") }} 
+{{ add_pic("ign_exhib8.jpg", "A further away shot of candle mountain with a big crowd of visitors. We were a popular project!") }} 
 
-Since we wanted a large “mountain” terrain, we needed a decently-sized base to build on. Using images from the actual Giant’s Causeway, we calculated that the height couldn’t go over ⅔ of the longest base or else it’d look weird. We did our initial planning using this metric plus the height of the tallest bulk candles we could find. This design turned out to be around 200 pounds of wax, which seemed unwieldy and needlessly expensive. We chose a smaller base, and someone came up with the idea of using platforms on the inside so we could avoid making the entire mountain out of solid wax. The project seemed reasonably priced at this size, and would still look proportional when built. 
+## Wax drip
+Remember the aluminum platform we had wrapped over the cart earlier? That turned out to be a great thing. When the wax began leaking everywhere, we were able to round up the corners of the cover and contain the wax without dropping it all over the ground. While it did not save Zach’s pants, we later found that the buildup of wax layers created many beautiful colors arranged across different layers, much like a sedimentary rock.
 
-At this point we were still planning on creating a bunch of hexagonal candles from circular ones. In initial plans to make the hexagons, we thought about methods like using long, hexagonal PVC tubes as molds (sold only on Alibaba, so shipping took too long), 3D printing or silicone molds (really slow), and cutting candles down to shape (slow, bad quality). Each of the mold approaches would have taken several days of boiling, pouring, casting, and cooling, and cutting each one seemed silly, time-consuming, and dangerous. Not to mention all the inevitable quality problems with manually making all our own candles! We settled on buying circular candles and pushing them through a hexagon cookie cutter. The cheapest site we could find sold 200 candles for $80, and we needed around 350 candles post-cut to fill our platform. 
+{{ add_pic("ign_exhib9.jpg", "Drippings from the cart hit Zach in the pants.") }} 
 
-We placed the order right before everyone left for Thanksgiving and waited with bated breath. When we returned, we found the candles were of the expected size, but did not realize that the quantity was wrong. To make hexagons, we created a prototype cutter using wood, epoxy, and bent sheet metal. This rig could cut warmed candles by simply pushing them through by hand. While testing the candle cutter, we noticed that we were missing around a hundred candles, which meant we would not be able to fill our base with hexagons. Especially since they shrink and pack closer when cut. Our hexagon idea died here, and to everyone’s relief: the hexagon tile cutter took a lot of force! Going with the cylinders saved a lot of time and looked almost equivalent, but we still needed to adjust the heights of every candle. 
 
+{{ add_pic("ign_exhib10.jpg", "The Crew behind their waxy creation. Mountain is about halfway through its brief but bright existence") }} 
 
-Screwing the cement board platforms into the wooden supports.
 
 
-Gluing the candles into place.
 
 
-Just started the cutting and gluing, so only the top candles have been worked on. The rest of the candles are arranged into place.
-    
-Davine came up with a method using a box cutter and rolling it over an end of the candle until it cracked off. Cut-offs of the base could be glued onto another candle, and allowed us to vary their heights for a more organic look. We used hot glue to put them together, then used it again to glue the entire candle to the platform it was sitting on to secure the mountain. 
 
-While the mountain was being built, some of us prepped the platform and cart for the final installation. The base is a large sheet of plywood with standing segments of two-by-four drilled into it; on top of these lie the platforms. Since the platforms are wick-level with individual candles, we chose to make them out of a non-flammable material. Luckily, Zach had some cement board that was perfect for this. We scored it with a carbide knife, then broke it by bending it. 
+# Cleanup
+As we wheeled our cart back to the workshop, we reveled in the beautiful colors on the mountain, and all the crazy, winding topography that the wax had formed as it melted and flowed. 
 
 
-Breaking the cement board into the mountainous back of the piece.
+{{ add_pic("ign_waxy1.jpg", "Green side of the mountain's base, with the empty wax dye container") }} 
+{{ add_pic("ign_waxy9.jpg", "A close-up shot of the green side") }} 
+{{ add_pic("ign_waxy2.jpg", "A bit messier purple side, with plenty of long match handles left in the carnage") }} 
+{{ add_pic("ign_waxy3.jpg", "The elephant wall, scorched and overrun by a couple of the candles") }} 
+{{ add_pic("ign_waxy4.jpg", "Front view, with much of the underlying concrete platforms exposed") }} 
+{{ add_pic("ign_waxy5.jpg", "Closeup on the inside. Stalagtites have formed from the waxy trails dripping downwards. ") }} 
 
+# Beautiful Stratigraphy
 
-Created cardboard separators for the dishes and put the dye chips into them.
+As we began disassembling the mountain's structure, we were really in for a surprise. No visitor had gotten to see it, but as we sliced and unscrewed everything, we exposed these vivid colored sheets. Our melting wax had formed these beautiful splotches and layers deep inside the mountain itself, purely through the audience's organic addition of color onto random candles. 
 
-We also used cement board later to fill in a large gap when we found out that we didn’t have enough candles to cover one side of the mountain. Once all the platforms and wood bits were screwed in, we co-opted Zach’s rolling cart to carry it to CFA. We put a cloth canvas over it, then another solid sheet of black aluminum foil on top of that to catch any stray wax strips. This turned out to be invaluable later. When we finished assembling the mountain, we carefully carried it on top of the cart and placed it over the aluminum protection layer. Leah and Davine made holders for the dyes, and Zach gifted us these long matches that were in his house for the participants to light candles with. 
-a 
+We were all so surprised, and I personally felt incredibly joyous to see that our original project goal of emergent behavior had come about all on its own without any planning on our part. Organic as it should be, and beautiful in its aimlessness. 
 
-Everything is finished, and we’re heading out to place it at our exhibition.
+{{ add_pic("ign_waxy6.jpg", "The candle bases with wax filling in gaps, all attached to this central wooden beam") }} 
+{{ add_pic("ign_waxy7.jpg", "PLACE DYE DISH HERE") }} 
+{{ add_pic("ign_waxy8.jpg", "Layers of orange, purple, blue, and green are left in cylindrical shapes, hugging candles that are no longer there") }} 
 
-Once every gap was filled and no internal structure poking out, we wheeled it over to CFA. We lit a few candles first just to show people how to interact with our mountain, but most people had no trouble at all figuring it out. Lots of people came by and lit candles, most adding dyes and watching the streams. We did not anticipate the wax “rivers” that would form from flowing dye, but those were very mesmerizing. We also did not expect the wax from 300 candles to begin leaking into the internal structure, and it started leaking out onto the platform. Here’s where the aluminum came into play; we were able to round up the corners and contain the wax without dropping it all over the ground. While it did not save Zach’s pants, we later found that the buildup of wax layers created many beautiful colors arranged across different layers, much like a sedimentary rock. The dyes worked great. Mother nature felt kind that night, and it wasn’t too cold or windy for the most part. It even helped; the inside was so cacophonous that many people preferred to be outside anyway. Davine put together a last-minute project setup, streaming from outside onto the ceiling in the Great Hall to remind everyone inside that we were outside. Overall, everyone who came by had a great time lighting and dying candles and what it created was truly beautiful.
+{{ add_pic("ign_waxy10.jpg", "Ridges and texture left by the wax's rapidly cooling surface, puffed up by the more molten wax below ") }} 
+{{ add_pic("ign_waxy11.jpg", "A lighthouse of a single stray candle amidst sprawling tendrils of green") }} 
 
-https://courses.ideate.cmu.edu/62-362/f2021/igneous/
+## Post-Disassembly Archaeology
+In elementary school, I always wanted to be an archaeologist. I loved digging up stuff with rocks and sticks, and finding other cool scraps in the ground. I knew that cataloguing played a bit role in the daily life of an archaeologist, so I kept many samples of rocks. Some had iron inclusions, a few smooth marble, others grey and sharp. This process felt the same way.
 
-========================= 
+We took big chunks of wax and extracted pieces that looked interesting. I took way more photos than my teammates, but I'm assuming that's because this is my first public art endeavor, and they are jaded from doing it a lot. 
 
-video link:https://youtu.be/afivxSqr79Y
+Beyond the first inch, the wax still hurt to touch, and felt soft under my hands. Big blocks were moldable like putty. 
+
+{{ add_pic("ign_waxy13.jpg", "Tools you'll need: cardboard cutter, sample bin, black aluminum foil. ABK IYKYK") }} 
+
+{{ add_pic("ign_waxy12.jpg", "The side wall placed flat on the base board after all the wax has been removed. Wood stains and hot glue are the only evidence that candles once stood here proudly") }} 
+
+{{ add_pic("ign_waxy14.jpg", "Select pieces volume 1. Large chunks from the edges (rounded corners) give an idea of the waxy puzzle that once occupied the land") }} 
+{{ add_pic("ign_waxy15.jpg", "Closeup on the smaller pieces. Big fan of these, some looked like food while others just displayed a nice lineup of color") }} 
+
+{{ add_pic("ign_waxy17.jpg", "A few chunks resembled food, this brown and red bit looking like a slice of raspberry cake") }} 
+{{ add_pic("ign_waxy18.jpg", "Underside of the purple bit, with a lot of shades of blue in one patch.") }} 
+{{ add_pic("ign_waxy19.jpg", "Green Lighthouse (2022), wax and wick and wood") }} 
+
+Overall, a thing of great beauty that I'm glad to have brought to people's lives. A great night, great pictures, and a great quantity of random, beautiful bits of wax coming from the collective action of everyone in the audience that night.
+
+
