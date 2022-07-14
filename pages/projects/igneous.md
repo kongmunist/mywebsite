@@ -5,6 +5,9 @@ timespan: Nov-Dec 2021
 pic: ign_exhib7.jpg
 description: A morphing landscape of colored wax melting for hours, reflecting visitors' actions
 
+{{ add_pic("ign_waxy20.jpg", "Guess where we got this!") }} 
+
+
 My third and final project for Electronic Logics && Creative Practice, an IDeATE course at CMU. 
 
 - Our [final writeup](https://courses.ideate.cmu.edu/62-362/f2021/igneous/) contains more photos + detailed process of constructing the mountain and assembling the candles. 
@@ -27,9 +30,6 @@ Howdy folks, long time no project! More info linked above, and this here is a ti
 <div class="video-container">
     <iframe class="youtubevideo" src="https://www.youtube.com/embed/afivxSqr79Y"allowfullscreen></iframe>
 </div>
-
-
-{{ add_pic("ign_waxy20.jpg", "Guess where we got this!") }} 
 
 
 In my 2nd to last semester at CMU, I took an artsy class called Electronic Logics && Creative Practice. If you don't know CMU, we have an entire tech + arts department called IDeATE shoved into a library basement. The department gave me creative technologist vibes, and I wanted to see if I'd like that kind of environment. And I did!
