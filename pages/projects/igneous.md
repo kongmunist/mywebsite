@@ -24,7 +24,10 @@ Check 'em out!
 
 Howdy folks, long time no project! More info linked above, and this here is a timelapse of the exhibit. Keep reading for more pictures!
 
-<div style="text-align: center;"><iframe src="https://www.youtube.com/embed/afivxSqr79Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="video-container">
+    <iframe class="youtubevideo" src="https://www.youtube.com/embed/afivxSqr79Y"allowfullscreen></iframe>
+</div>
+
 
 {{ add_pic("ign_waxy20.jpg", "Guess where we got this!") }} 
 
