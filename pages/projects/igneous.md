@@ -24,7 +24,9 @@ Check 'em out!
 
 Howdy folks, long time no project! More info linked above, and this here is a timelapse of the exhibit. Keep reading for more pictures!
 
-<div style="text-align: center;"><iframe width="560" height="315" src="https://www.youtube.com/embed/afivxSqr79Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div style="text-align: center;"><iframe src="https://www.youtube.com/embed/afivxSqr79Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
+{{ add_pic("ign_waxy20.jpg", "Guess where we got this!") }} 
 
 
 In my 2nd to last semester at CMU, I took an artsy class called Electronic Logics && Creative Practice. If you don't know CMU, we have an entire tech + arts department called IDeATE shoved into a library basement. The department gave me creative technologist vibes, and I wanted to see if I'd like that kind of environment. And I did!
