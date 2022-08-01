@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>
+    Andy Kong!
+</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+        <meta name="author" content="Andy Kong">
+        <meta name="title" content="MacGyvering Electronics From Merch">
+        <meta name="description" content="TFW no batteries :(">
+        <meta name="keywords" content=" electronics,  macgyver, ">
+    
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142983151-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-142983151-1');
+</script>
+
+
+
+    
+    <!-- Bootstrap -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap.min.css">
+
+    <!-- <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap" rel="stylesheet"> -->
+
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Ubuntu&display=swap" rel="stylesheet"> -->
+    
+
+    <style type="text/css">
+        /* Atkinson Hyperlegible */
+        /* latin-ext */
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/atkinsonhyperlegible/v7/9Bt23C1KxNDXMspQ1lPyU89-1h6ONRlW45G07JIoWQeCbGWn.woff2) format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* latin */
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/atkinsonhyperlegible/v7/9Bt23C1KxNDXMspQ1lPyU89-1h6ONRlW45G04pIoWQeCbA.woff2) format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        /* Ubuntu */
+        /* latin-ext */
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCs6KVjbNBYlgoKcQ72nU6AF7xm.woff2) format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* latin */
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCs6KVjbNBYlgoKfw72nU6AFw.woff2) format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+    </style>
+
+    <script src="/static/fontawesome.js" defer></script>
+    <!-- <script src="https://kit.fontawesome.com/c62dcd5933.js"></script> -->
+
+    <!-- Instant Page inlined - source is instant.page/5.1.0 -->
+    <script src="/static/instantpage-5.1.0.js" type="module" defer></script>
+
+
+
+
+    <style>
+body {
+background: #202222;
+/*font-family: 'Fira Sans Condensed', sans-serif;*/
+/*font-family: 'Roboto Slab', sans-serif;*/
+font-size:1.2em;
+/*font-family: 'Roboto Slab', sans-serif;*/
+
+font-family: 'Ubuntu', sans-serif;
+}
+
+.navlinks{
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-size: 1.2em;
+}
+
+h1, h2, h3, h4, h5, h6{
+    /*font-family: 'Ubuntu', sans-serif;*/
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    /*font-size: 1.2em;*/
+    /*letter-spacing: 1px;*/
+}
+
+
+a {
+    transition: color .2s linear;
+    color:#00B4CC
+}
+
+a:hover {
+    color:#00dffc;
+    text-decoration: none;
+}
+
+.navbar-custom {
+    font-size: 22px;
+    background-color: #202222 !important;
+}
+
+.navbar-custom .navbar-brand{
+    font-size: 30px;
+    color: #00dffc !important;
+}
+
+.navbar-custom .navitem{
+    color:#00dffc !important;
+}
+
+.navitem:hover{
+    color:#00b4cc !important;
+    text-decoration: none;
+}
+
+.hidden{
+  display: none;
+}
+
+.navbar-toggler-icon {
+  border: none;
+  outline: none;
+}
+
+.caption{
+    font-size:12px;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: .2em;
+    margin-top: 1em;
+}
+
+.projectpage img{
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}
+
+.blogpage img{
+    max-width: 75vw;
+    height: auto;
+    width: auto;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+hr{
+    background-color:white !important;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+
+.youtubevideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+code {
+  font-family: Consolas,"courier new";
+  color: #110000;
+  background-color: #AFAFAF;
+  padding: 2px;
+  font-size: 105%;
+}
+
+</style>
+
+
+    <link rel="icon" type="image/png" href=" /static/aklogo.png " />
+    
+
+</head>
+<body style="color:#F8E0CB;overflow-x: hidden;">
+
+
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
+      <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
+          </span>
+        </i>
+    </button>
+
+    <div class="collapse navbar-collapse " id="navbarSupportedContent" style="margin-left:25px;margin-top:10px">
+        <ul class="navbar-nav ml-auto navlinks">
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/static/resume.pdf ">CV/Resume</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://github.com/kongmunist" target="_blank" title="Github">GitHub</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://twitter.com/oldestasian" target="_blank" title="Twitter">Twitter</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="mailto:andyking99@gmail.com" target="_blank" title="Email">Email</a>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/blog/">[Blog]</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+<!-- padding-left:20px; padding-right:20px -->
+            <div class="col-md-8 col-11 p-0" style="">
+                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
+
+                
+<style>
+    h1{
+  margin-top: 1em;
+}
+</style>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        
+
+
+<div class="blogpage overflow-hidden">
+    <h1 style="margin-bottom:0px; font-size:2.5em;">MacGyvering Electronics From Merch</h1>
+            <p style="font-size:0.8em;"> Published May 31, 2021</p>
+<hr>
+            <p>Hello! I moved into Chicago yesterday and needed to do some electronics. Specifically, I needed a battery. But I had left my LiPo bag at home, and my 9Vs with it! What to do?</p>
+<h2>Merch to the rescue!</h2>
+<p>My friend had received a small, rechargeable ring light from a CMU thing. Since it had been made this year and not in 2008, I had figured it probably had a charging circuit and LiPo in it, which would be useful in the future. Today was that day!</p>
+<p class="caption">Ring light on, courtesy of CMU</p>
+<p><img alt="Ring light on" src="/static/mcg1_ringlight.jpg" /></p>
+<p>Sam, if you're reading this, sorry for what you're about to witness. </p>
+<p class="caption">Cute little LiPo powering the ring light</p>
+<p><img alt="Cute little LiPo in the ring light" src="/static/mcg1_battery.jpg" /></p>
+<p>So I pried off the back hinge and spring, then broke my thumbnail on the front panel. Tried again with my nail clipper while fixing the rest of my thumbnail, and this revealed what I knew had to be in there: the tiniest little LiPo I had ever seen. </p>
+<p>Here's a better view of the circuit. I couldn't identify two of the chips here. </p>
+<p class="caption">Cheapest way to charge the cheapest LiPo</p>
+<p><img alt="Cheapest way to charge the cheapest LiPo" src="/static/mcg1_circuit.jpg" /></p>
+<p>The top half is connected to the button which turns on the light. There's 3 levels of light + off, so maybe a 4-state... resistor? Another current limiting device? Not exactly sure. But the SOT-23 is a low-side MOSFET, and the battery's ground connection goes through the other chip before reaching the FET. </p>
+<p>Bottom half is the battery charger. Looking at the resistors, it appears they're using a resistor divider with 5100Ω and 1200Ω to step the USB's 5V down to 5 x 5100/(1200+5100) = 4.04V, with at least 0.8mA going across the 1200Ω. Astounding cost saving measure. I'm not sure how the resistor is handling this, since almost 1mA across 1200Ω is 1W wasted heat, but props to them.</p>
+<p>And of course, I didn't even have a soldering iron. Two alligator clips saved the day, scavenged from another project.</p>
+<p class="caption">Alligator clips dangerously close to each other</p>
+<p><img alt="Alligator clips dangerously close to each other" src="/static/mcg1_alligator.jpg" /></p>
+<p>In the end, this worked for my purposes, except that it also let in current the other way. I had to add an LED to the path since I didn't have a real diode -.- but that's the last of my electronics adventure today.</p>
+<h2>Did you learn anything?</h2>
+<p>In the middle of doing this whole janky process, I went to CVS to buy scissors to cut some wire and didn't think to just buy a 9V. Serves me right for trying to be clever, next time I'm going for pragmatic.</p>
+<p>Cya next time!</p>
+
+    
+        <hr>
+        <p style="line-height:250%;">
+        <a class="btn btn-info" href="/tagged/electronics/">electronics</a>
+
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/macgyver/">macgyver</a>
+        
+        </p> 
+    
+</div>
+
+
+
+
+                    </div>
+                    <br>
+        <!-- </div> -->
+</div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

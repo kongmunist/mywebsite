@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>
+    Andy Kong!
+</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+        <meta name="author" content="Andy Kong">
+        <meta name="title" content="Myo3 Assembly">
+        <meta name="description" content="Putting together the 3rd iteration of my EMG sensor">
+        <meta name="keywords" content=" projectlog,  myo,  PCB, ">
+    
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142983151-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-142983151-1');
+</script>
+
+
+
+    
+    <!-- Bootstrap -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap.min.css">
+
+    <!-- <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap" rel="stylesheet"> -->
+
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Ubuntu&display=swap" rel="stylesheet"> -->
+    
+
+    <style type="text/css">
+        /* Atkinson Hyperlegible */
+        /* latin-ext */
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/atkinsonhyperlegible/v7/9Bt23C1KxNDXMspQ1lPyU89-1h6ONRlW45G07JIoWQeCbGWn.woff2) format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* latin */
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/atkinsonhyperlegible/v7/9Bt23C1KxNDXMspQ1lPyU89-1h6ONRlW45G04pIoWQeCbA.woff2) format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        /* Ubuntu */
+        /* latin-ext */
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCs6KVjbNBYlgoKcQ72nU6AF7xm.woff2) format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* latin */
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCs6KVjbNBYlgoKfw72nU6AFw.woff2) format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+    </style>
+
+    <script src="/static/fontawesome.js" defer></script>
+    <!-- <script src="https://kit.fontawesome.com/c62dcd5933.js"></script> -->
+
+    <!-- Instant Page inlined - source is instant.page/5.1.0 -->
+    <script src="/static/instantpage-5.1.0.js" type="module" defer></script>
+
+
+
+
+    <style>
+body {
+background: #202222;
+/*font-family: 'Fira Sans Condensed', sans-serif;*/
+/*font-family: 'Roboto Slab', sans-serif;*/
+font-size:1.2em;
+/*font-family: 'Roboto Slab', sans-serif;*/
+
+font-family: 'Ubuntu', sans-serif;
+}
+
+.navlinks{
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-size: 1.2em;
+}
+
+h1, h2, h3, h4, h5, h6{
+    /*font-family: 'Ubuntu', sans-serif;*/
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    /*font-size: 1.2em;*/
+    /*letter-spacing: 1px;*/
+}
+
+
+a {
+    transition: color .2s linear;
+    color:#00B4CC
+}
+
+a:hover {
+    color:#00dffc;
+    text-decoration: none;
+}
+
+.navbar-custom {
+    font-size: 22px;
+    background-color: #202222 !important;
+}
+
+.navbar-custom .navbar-brand{
+    font-size: 30px;
+    color: #00dffc !important;
+}
+
+.navbar-custom .navitem{
+    color:#00dffc !important;
+}
+
+.navitem:hover{
+    color:#00b4cc !important;
+    text-decoration: none;
+}
+
+.hidden{
+  display: none;
+}
+
+.navbar-toggler-icon {
+  border: none;
+  outline: none;
+}
+
+.caption{
+    font-size:12px;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: .2em;
+    margin-top: 1em;
+}
+
+.projectpage img{
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}
+
+.blogpage img{
+    max-width: 75vw;
+    height: auto;
+    width: auto;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+hr{
+    background-color:white !important;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+
+.youtubevideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+code {
+  font-family: Consolas,"courier new";
+  color: #110000;
+  background-color: #AFAFAF;
+  padding: 2px;
+  font-size: 105%;
+}
+
+</style>
+
+
+    <link rel="icon" type="image/png" href=" /static/aklogo.png " />
+    
+
+</head>
+<body style="color:#F8E0CB;overflow-x: hidden;">
+
+
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
+      <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
+          </span>
+        </i>
+    </button>
+
+    <div class="collapse navbar-collapse " id="navbarSupportedContent" style="margin-left:25px;margin-top:10px">
+        <ul class="navbar-nav ml-auto navlinks">
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/static/resume.pdf ">CV/Resume</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://github.com/kongmunist" target="_blank" title="Github">GitHub</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://twitter.com/oldestasian" target="_blank" title="Twitter">Twitter</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="mailto:andyking99@gmail.com" target="_blank" title="Email">Email</a>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/blog/">[Blog]</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+<!-- padding-left:20px; padding-right:20px -->
+            <div class="col-md-8 col-11 p-0" style="">
+                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
+
+                
+<style>
+    h1{
+  margin-top: 1em;
+}
+</style>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        
+
+
+<div class="blogpage overflow-hidden">
+    <h1 style="margin-bottom:0px; font-size:2.5em;">Myo3 Assembly</h1>
+            <p style="font-size:0.8em;"> Published November 22, 2020</p>
+<hr>
+            <p>The PCBs came sometime last week, and I got the rest of my resistors and passives today. Time to construct!</p>
+<p>My housemates still are quarantining, so I was trying to stay out of the hallways and common areas (like the workshop we have -.-). I moved all parts into my room, but my desk definitely wasn't bright enough. We make do though. Big shoutout to <a href="https://github.com/openscopeproject/InteractiveHtmlBom">HTMLBom</a> for enabling my board construction, it's a super useful plugin for KiCAD and you should get it immediately.</p>
+<h3>Cool parts of the board:</h3>
+<ul>
+<li>
+<p>Using the TLV2624 to create a virtual ground from my single-sided power supply. It's the laziest way to do it, but I never claimed to be able to do power well.</p>
+</li>
+<li>
+<p>This board uses the input stage op-amp with optimal noise, assuming dry electrodes (1 MΩ resistance). This is the LME49721, with 4nV/rt(Hz) voltage noise and something like 1 fA/rt(Hz) current noise. Funnily enough, it's an audio amp, with lots of Thad graphs all over its datasheet. If it works it works!</p>
+</li>
+<li>
+<p>I made two boards actually. After the initial LME49721, I switch to an op amp that can source a little more current and drive more capacitance (for the analog filtering). </p>
+<ul>
+<li>One board uses the OPA4202, which can drive INFINITE capacitive load. I chose it because it can do that.</li>
+<li>The other uses the POPA4991, which can only drive 1nF cap load at gain=1. I chose it because it only needs supply voltage similar to the LME49721, meaning I can use a LiPO to power the board instead of trying to source 5V somewhere.</li>
+</ul>
+</li>
+<li>
+<p>It has pads on the back! This allows you to strap it directly to your arm to measure muscle signals. I got really sick of putting those 3M red dot electrodes all over myself, especially when they left glue residue all over me. </p>
+</li>
+<li>
+<p>Guard ring 😎 (really it's kind of useless cause I didn't put it on the back as well, but it's the thought that counts (also, I don't really care about input bias current, up until 1 pA or so. Then it generates (G=100000)*1pA*(1 MΩ skin impedance) = 1 V offset at the end of the circuit, which would definitely pin it to the rails!))</p>
+</li>
+</ul>
+<p><br></p>
+<h3>Problems I ran into:</h3>
+<ul>
+<li>
+<p>TSSOP 16 pin is <em>super</em> tight, it's hard to spudge properly (took me 3 tries). </p>
+</li>
+<li>
+<p>I only had 0402 and 0803 parts, but guess what footprint size I decided to use?? :)))))) Luckily both work, the 0402 is really stretching to reach both pads and it doesn't tack as well to the solder paste, but it still works. </p>
+</li>
+<li>
+<p>Also I shouldn't have picked a black solder mask, I can hardly see the 0402 resistors</p>
+</li>
+<li>
+<p>I didn't have 220nF capacitors at all, so I sorta just... skipped it. Luckily, if you know the board, you can just decide whether or not you need a part. This particular one was part of a passive high pass filter, which came before a 2nd order active high pass at the same cutoff frequency. I just removed the cap and resistor, and bridged the resistor pads afterwards. </p>
+</li>
+</ul>
+<p><br></p>
+<h3>Here's some pics!</h3>
+<h4>Front after spudging</h4>
+<p><img alt="Front of my EMG v3 board" src="/static/myo3front.jpg" /></p>
+<h4>Back of board, with integrated pads</h4>
+<p><img alt="Back of my EMG v3 board" src="/static/myo3back.png" /></p>
+<p>Gonna spec its noise and stuff soon!</p>
+
+    
+        <hr>
+        <p style="line-height:250%;">
+        <a class="btn btn-info" href="/tagged/projectlog/">projectlog</a>
+
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/myo/">myo</a>
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/PCB/">PCB</a>
+        
+        </p> 
+    
+</div>
+
+
+
+
+                    </div>
+                    <br>
+        <!-- </div> -->
+</div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

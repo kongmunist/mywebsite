@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>
+    Andy Kong!
+</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+        <meta name="author" content="Andy Kong">
+        <meta name="title" content="Analog Electronics Basics: Scaling Voltage Rails">
+        <meta name="description" content="What to do when your circuit outputs ±5V but your ADC only takes 0-5V">
+        <meta name="keywords" content=" analog,  electronics,  opamps, ">
+    
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142983151-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-142983151-1');
+</script>
+
+
+
+    
+    <!-- Bootstrap -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap.min.css">
+
+    <!-- <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap" rel="stylesheet"> -->
+
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Ubuntu&display=swap" rel="stylesheet"> -->
+    
+
+    <style type="text/css">
+        /* Atkinson Hyperlegible */
+        /* latin-ext */
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/atkinsonhyperlegible/v7/9Bt23C1KxNDXMspQ1lPyU89-1h6ONRlW45G07JIoWQeCbGWn.woff2) format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* latin */
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/atkinsonhyperlegible/v7/9Bt23C1KxNDXMspQ1lPyU89-1h6ONRlW45G04pIoWQeCbA.woff2) format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        /* Ubuntu */
+        /* latin-ext */
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCs6KVjbNBYlgoKcQ72nU6AF7xm.woff2) format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* latin */
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCs6KVjbNBYlgoKfw72nU6AFw.woff2) format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+    </style>
+
+    <script src="/static/fontawesome.js" defer></script>
+    <!-- <script src="https://kit.fontawesome.com/c62dcd5933.js"></script> -->
+
+    <!-- Instant Page inlined - source is instant.page/5.1.0 -->
+    <script src="/static/instantpage-5.1.0.js" type="module" defer></script>
+
+
+
+
+    <style>
+body {
+background: #202222;
+/*font-family: 'Fira Sans Condensed', sans-serif;*/
+/*font-family: 'Roboto Slab', sans-serif;*/
+font-size:1.2em;
+/*font-family: 'Roboto Slab', sans-serif;*/
+
+font-family: 'Ubuntu', sans-serif;
+}
+
+.navlinks{
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-size: 1.2em;
+}
+
+h1, h2, h3, h4, h5, h6{
+    /*font-family: 'Ubuntu', sans-serif;*/
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    /*font-size: 1.2em;*/
+    /*letter-spacing: 1px;*/
+}
+
+
+a {
+    transition: color .2s linear;
+    color:#00B4CC
+}
+
+a:hover {
+    color:#00dffc;
+    text-decoration: none;
+}
+
+.navbar-custom {
+    font-size: 22px;
+    background-color: #202222 !important;
+}
+
+.navbar-custom .navbar-brand{
+    font-size: 30px;
+    color: #00dffc !important;
+}
+
+.navbar-custom .navitem{
+    color:#00dffc !important;
+}
+
+.navitem:hover{
+    color:#00b4cc !important;
+    text-decoration: none;
+}
+
+.hidden{
+  display: none;
+}
+
+.navbar-toggler-icon {
+  border: none;
+  outline: none;
+}
+
+.caption{
+    font-size:12px;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: .2em;
+    margin-top: 1em;
+}
+
+.projectpage img{
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}
+
+.blogpage img{
+    max-width: 75vw;
+    height: auto;
+    width: auto;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+hr{
+    background-color:white !important;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+
+.youtubevideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+code {
+  font-family: Consolas,"courier new";
+  color: #110000;
+  background-color: #AFAFAF;
+  padding: 2px;
+  font-size: 105%;
+}
+
+</style>
+
+
+    <link rel="icon" type="image/png" href=" /static/aklogo.png " />
+    
+
+</head>
+<body style="color:#F8E0CB;overflow-x: hidden;">
+
+
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
+      <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
+          </span>
+        </i>
+    </button>
+
+    <div class="collapse navbar-collapse " id="navbarSupportedContent" style="margin-left:25px;margin-top:10px">
+        <ul class="navbar-nav ml-auto navlinks">
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/static/resume.pdf ">CV/Resume</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://github.com/kongmunist" target="_blank" title="Github">GitHub</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://twitter.com/oldestasian" target="_blank" title="Twitter">Twitter</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="mailto:andyking99@gmail.com" target="_blank" title="Email">Email</a>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/blog/">[Blog]</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+<!-- padding-left:20px; padding-right:20px -->
+            <div class="col-md-8 col-11 p-0" style="">
+                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
+
+                
+<style>
+    h1{
+  margin-top: 1em;
+}
+</style>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        
+
+
+<div class="blogpage overflow-hidden">
+    <h1 style="margin-bottom:0px; font-size:2.5em;">Analog Electronics Basics: Scaling Voltage Rails</h1>
+            <p style="font-size:0.8em;"> Published December 08, 2020</p>
+<hr>
+            <p>The problem I'm going to be talking about today is how to translate an analog signal from one range to another. I have dealt with this problem three times now, each time was more unintuitive than the last so I thought it'd be useful if I wrote down my process for other people to see what's going on and solve their similar problems. </p>
+<p><img alt="Mapping analog voltages between two rails" src="/static/analogscalinggraphic.png" /></p>
+<p class="caption">Mapping analog voltages between two rails</p>
+
+<hr>
+<h3>An example of this problem</h3>
+<p>Let's say you're using a complicated device, which takes in some analog/digital signal in order to control some aspect of itself. As an example, let's say it controls its position. You go to measure the device's current position to control what position you actually want it to go to, but discover from the datasheet or your fried microcontroller that the analog signal out from the device has a different rail-to-rail voltage than your microcontroller. It runs at ±15V and your board runs from USB's 0-5V! </p>
+<p><img alt="Mapping of voltages that would fix your problems" src="/static/voltagescalingmath1.png" /></p>
+<p class="caption">Mapping of voltages that would fix your problems</p>
+
+<p>You grab a new Arduino from the scrap heap and think about how to fix this problem. So clearly, if you could just divide all signals by six and then add 2.5V, the rails would match and you would be able to lock onto the signal from the microcontroller. Voila! Easy as cake. Implement an adder op-amp, then have another op amp with feedback resistors so that it divides itself by 6. </p>
+<p>However, you can do it using just one op amp. Introducing, the differential op amp!</p>
+<p><img alt="Difference op amp, or subtractor op amp schematic" src="/static/diffamp1.png" /></p>
+<p class="caption">Difference op amp, or subtractor op amp schematic</p>
+
+<h3>What they don't tell you</h3>
+<p>So most of the top Google results that show you how to implement a differential or subtractor op-amp configuration place some limitations on the problem to make it easier to solve. Maybe they say the resistors R1/R3 and R2/R4 have the same ratio, like the first result on Google, the <a href="https://www.electronics-tutorials.ws/opamp/opamp_5.html">electronics-tutorials</a> site.</p>
+<p><img alt="electronics-tutorials subtractor op-amp configuration" src="https://www.electronicshub.org/wp-content/uploads/2015/01/1.-Differential-amplifier-circuit.jpg" /></p>
+<p class="caption">Electronics Tutorials subtractor op-amp configuration</p>
+
+<p>Or, they might assume that the signal is zero-centered when telling you the gain. Both the site I cited above and the 2nd result on Google <a href="https://www.electronicshub.org/differential-amplifier/">(this site)</a> assume both of these things. But this isn't necessarily what you're looking for. It doesn't matter if their example op amps solve for </p>
+<p><img alt="Shitty solution of the differential op-amp" src="/static/analogscaling_shitsoln.png" /></p>
+<p>, that doesn't move the center voltage at all. And it gets worse if you want uneven gain on either side of the center, which may not be zero. What to do?</p>
+<p><br></p>
+<hr>
+
+<h3>How to solve this</h3>
+<p>Here's the full solution.</p>
+<p><img alt="Schematic of the problem statement" src="/static/scalingvoltageschematic.png" /></p>
+<p>Given this circuit above, </p>
+<p><img alt="Full solution to the differential op-amp" src="/static/analogscaling_fullsoln.png" /></p>
+<p>Seems easy, right? It is! And it shouldn't have been so hard for me to figure that out!</p>
+<h3>How's it work?</h3>
+<p>So let's go over it. R1 and R2 are feedback for the Vin, they do the dividing of Vin in the circuit. The tricky part is the Vref, and especially how it interacts with the Vin. It gets subtracted, sure, but if Vref is not zero then it's going to show up in your final output as well. </p>
+<p>You may be saying "Ohh, but Andy, this isn't like a differential op-amp at all! The noninverting input doesn't even have resistors." Well to that I say, how do you expect to make your reference voltage? You'll usually have to make a voltage divider to ground, and voila, the original subtractor structure appears.</p>
+<h3>Example please?</h3>
+<p>Sure! Let's say we're solving the above mapping: from ±15V rails to a 0-5V range. This op-amp is in an inverting configuration (negative feedback), so the higher initial voltage is going to have to map to the lower voltage on the output, and vice versa. Here's what we're trying to accomplish.</p>
+<p><img alt="Mapping of voltages that would fix your problems, pt. 2" src="/static/voltagescalingmath2.png" /></p>
+<p class="caption">Mapping of voltages that would fix your problems, pt. 2</p>
+
+<p>We can just plug in our knowns and solve the linear system of equations for Vref and the resistor ratio. Let's say R2/R1 = r just so we can write it more easily. From the first equation, we have Vin = 15V, Vout = 0V, and the second equation we have Vin = -15V and Vout = 5V. So in LaTeX form:</p>
+<p><img alt="Equation one" src="/static/analogscale_eq1.png" /></p>
+<p><img alt="Equation two" src="/static/analogscale_eq2.png" /></p>
+<p>Then we just ask Wolfram Alpha! I'm using v for Vref to make it easier to type.</p>
+<p><img alt="Wolfram Query" src="/static/wolframquery.png" /></p>
+<p><img alt="Wolfram Answer" src="/static/wolframanswer.png" /></p>
+<p>Great! So our R1 has to equal 6*R2, and our reference voltage should be somewhere around 2.14V. </p>
+<h3>Implementing the resistor ratio and voltage divider</h3>
+<p>I want to pick realistic resistors because these circuits are usually needed immediately and in real-life, so I usually use a resistor ratio calculator to make this easier. <a href="http://jansson.us/resistors.html">This site</a> is a godsend. I'm really lazy in real life, so I'm only going to use the single resistor in series option, but the other ones are usually a little or a lot better in terms of error. </p>
+<p>For the resistors with a ratio of 1/6, it seems a good choice is a 56kΩ and 330kΩ resistor. </p>
+<p><img alt="Resistor ratio solving for r" src="/static/analogscaling_r.png" /></p>
+<p>We'll assume we have access to a 5V source since the second set of rails is 0-5V. We can use the handy voltage divider option on the site to solve for this ratio all at once. Looks like a 33kΩ and 47kΩ resistor will do the trick. </p>
+<p><img alt="Resistor ratio solving for Vref" src="/static/analogscaling_vref.png" /></p>
+<p><br><hr></p>
+<h2>Does it work?</h2>
+<p>Here's the part values we picked out in simulation:</p>
+<p><img alt="Vout with +15V is near zero, around -0.1V" src="/static/analogscaling_solutionpos.png" /></p>
+<p><img alt="Vout with -15V is almost exactly 5V" src="/static/analogscaling_solutionneg.png" /></p>
+<p>The +15V rail becomes -0.13V, so very close to the 0V we wanted it to be. The -15V rail nails 5V almost exactly. So yea, I'd say they work. </p>
+<p>Sometimes the solution with realistic resistors will need some tuning, because negative voltages will usually damage a circuit, but you can just tune the initial parameters on the initial voltage mapping to be a little tighter and solve the problem again. </p>
+<h2>Closing</h2>
+<p>Anyway, I encounter this problem all the time, and as I work more with hardware I think this is an integral "glue" circuit that you should master if you're going to work with hardware of various logical and analog levels. That's all for now, cya next time!</p>
+
+    
+        <hr>
+        <p style="line-height:250%;">
+        <a class="btn btn-info" href="/tagged/analog/">analog</a>
+
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/electronics/">electronics</a>
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/opamps/">opamps</a>
+        
+        </p> 
+    
+</div>
+
+
+
+
+                    </div>
+                    <br>
+        <!-- </div> -->
+</div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

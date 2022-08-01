@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>
+    Andy Kong!
+</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Andy Kong">
+    <meta name="title" content="Body Channel Communication">
+    <meta name="description" content="Identifying users by their touch alone">
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142983151-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-142983151-1');
+</script>
+
+
+
+    
+    <!-- Bootstrap -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap.min.css">
+
+    <!-- <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap" rel="stylesheet"> -->
+
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Ubuntu&display=swap" rel="stylesheet"> -->
+    
+
+    <style type="text/css">
+        /* Atkinson Hyperlegible */
+        /* latin-ext */
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/atkinsonhyperlegible/v7/9Bt23C1KxNDXMspQ1lPyU89-1h6ONRlW45G07JIoWQeCbGWn.woff2) format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* latin */
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/atkinsonhyperlegible/v7/9Bt23C1KxNDXMspQ1lPyU89-1h6ONRlW45G04pIoWQeCbA.woff2) format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        /* Ubuntu */
+        /* latin-ext */
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCs6KVjbNBYlgoKcQ72nU6AF7xm.woff2) format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* latin */
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCs6KVjbNBYlgoKfw72nU6AFw.woff2) format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+    </style>
+
+    <script src="/static/fontawesome.js" defer></script>
+    <!-- <script src="https://kit.fontawesome.com/c62dcd5933.js"></script> -->
+
+    <!-- Instant Page inlined - source is instant.page/5.1.0 -->
+    <script src="/static/instantpage-5.1.0.js" type="module" defer></script>
+
+
+
+
+    <style>
+body {
+background: #202222;
+/*font-family: 'Fira Sans Condensed', sans-serif;*/
+/*font-family: 'Roboto Slab', sans-serif;*/
+font-size:1.2em;
+/*font-family: 'Roboto Slab', sans-serif;*/
+
+font-family: 'Ubuntu', sans-serif;
+}
+
+.navlinks{
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-size: 1.2em;
+}
+
+h1, h2, h3, h4, h5, h6{
+    /*font-family: 'Ubuntu', sans-serif;*/
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    /*font-size: 1.2em;*/
+    /*letter-spacing: 1px;*/
+}
+
+
+a {
+    transition: color .2s linear;
+    color:#00B4CC
+}
+
+a:hover {
+    color:#00dffc;
+    text-decoration: none;
+}
+
+.navbar-custom {
+    font-size: 22px;
+    background-color: #202222 !important;
+}
+
+.navbar-custom .navbar-brand{
+    font-size: 30px;
+    color: #00dffc !important;
+}
+
+.navbar-custom .navitem{
+    color:#00dffc !important;
+}
+
+.navitem:hover{
+    color:#00b4cc !important;
+    text-decoration: none;
+}
+
+.hidden{
+  display: none;
+}
+
+.navbar-toggler-icon {
+  border: none;
+  outline: none;
+}
+
+.caption{
+    font-size:12px;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: .2em;
+    margin-top: 1em;
+}
+
+.projectpage img{
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}
+
+.blogpage img{
+    max-width: 75vw;
+    height: auto;
+    width: auto;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+hr{
+    background-color:white !important;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+
+.youtubevideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+code {
+  font-family: Consolas,"courier new";
+  color: #110000;
+  background-color: #AFAFAF;
+  padding: 2px;
+  font-size: 105%;
+}
+
+</style>
+
+
+    <link rel="icon" type="image/png" href=" /static/aklogo.png " />
+    
+
+</head>
+<body style="color:#F8E0CB;overflow-x: hidden;">
+
+
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
+      <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
+          </span>
+        </i>
+    </button>
+
+    <div class="collapse navbar-collapse " id="navbarSupportedContent" style="margin-left:25px;margin-top:10px">
+        <ul class="navbar-nav ml-auto navlinks">
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/static/resume.pdf ">CV/Resume</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://github.com/kongmunist" target="_blank" title="Github">GitHub</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://twitter.com/oldestasian" target="_blank" title="Twitter">Twitter</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="mailto:andyking99@gmail.com" target="_blank" title="Email">Email</a>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/blog/">[Blog]</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+
+<!--    <div class="row justify-content-center">-->
+<div class="row overflow-hidden" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+        <div class="col-lg-2"></div>
+        <div class="col-12 col-lg-8 projectpage" style="max-width:1000px;">
+        <h1 style="text-center; margin-bottom: 5px">Body Channel Communication</h1>
+            <i><p style="margin-bottom: 5px; margin-top: 0px">Identifying users by their touch alone</p></i>
+            <p style="margin-bottom: 0px; margin-top: 0px">Timespan: April 2021 - May 2021</p>
+            <p style="margin-bottom: 5px; margin-top: 0px">Published: 2021-10-08</p>
+
+            <hr>
+        <div style="text-align:center;"><iframe width="560" height="315" src="https://www.youtube.com/embed/bt-C2V-wS3Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
+<hr>
+
+<h1>Inspiration</h1>
+<p>While walking down Craig Street one day, I was struck by inspiration! All of a sudden, I remembered that human skin conducted electricty, which meant it could also conduct signals! I thought immediately of 3-4 applications: touching your house's doorknob and having it unlock after recognizing you, turning on your car by touching your steering wheel without ever needing your keys, etc. The possibilities are all variations on a theme, but it's a damn good theme. </p>
+<p>I immediately went to Roboclub and began building a simple version. Very quickly I learned that it is difficult to send signals without a ground, but I had a prototype! I excitedly showed my friend, and he had some bubble-bursting news. As it often turns out, I am not the only one to think of this.</p>
+<p>People like <a href="http://www.alansonsample.com/research/BCC.html">Mr. Alanson Sample</a> have beaten me to it in 2018, and I found papers about this idea as early as 2010. Formally, the idea of using the body as a wire is called Body Channel Communication (BCC) or Human Body Communication (HBC). They even made these great figures describing it!</p>
+<p><img class="d-block mx-auto" src="/static/bcc_alansonsketch.jpg" style="margin-bottom:0px"/></p>
+<p class="caption">Nice Disney Research mock-ups</p>
+
+<p>After being disappointed in myself for not being born 3 years earlier and thinking of it, I sort of gave up on the topic. Not until my Sensing class mentioned a 2-month class project did I think of BCC again, and I proposed it on our big spreadsheet. Two of my classmates were interested, and we gave it a good crack. We made a shared ground version originally, but then we also got a wearable, wireless version working!</p>
+<p>The rest of this article will be a pruned version of my group's final writeup without the redundant bits. 
+<br><br><br><br><br><br></p>
+<hr>
+
+<h1>Body Channel Communication Introduction</h1>
+<p>Due to the human body’s high ionic concentration, electrical conductivity is fair across the skin and through the body. Because of this, any electrical waveform touching your body will also propagate through to anything you touch. We can harness this effect to give any wearable or device the ability to identify you and the objects you contact. For example, your smart watch could detect when you touch your smart doorknob, then authenticate and unlock it for you without needing a key or code entry. </p>
+<p>Our project aims to Implement a robust body channel communication system using wrist-worn microcontrollers as the receiver and various instrumented objects as transmitters. Specifically, we intend to implement an entry security/authentication system in which a “smartwatch” transmits a unique ID through our skin and is received by a microcontroller hooked up to a doorknob. </p>
+<p><img class="d-block mx-auto" src="/static/bcc_alansonsketch.jpg" style="margin-bottom:0px"/></p>
+<p class="caption">Nice Disney Research mock-ups showing what could be possible</p>
+
+<p>BCC opens up a wide range of possibilities for a user to interface with any device with a basic microcontroller. This allows information to be transmitted through a user’s touch, without adding an extra step of unlocking, identifying, or scanning. Touch input also enables the whole body to be used for input, not just the hands. This has obvious advantages over RFID. One application is unlocking a smart door: when an authorized user touches any part of their body to the door, their watch transmits an authenticated ID from their smartwatch (TX) to the door (RX) and unlocks it.</p>
+<p>One of the benefits of BCC is that it can be implemented on basic electronic hardware, allowing it to extend the usefulness of smartwatches. However, using the body to carry signals degrades the quality of the transmission, slowing down the bitrate or compromising the reliability. The signals also must transmit bits without using a shared ground potential. To overcome both of these, we can use a high frequency carrier wave to carry our bits. </p>
+<hr>
+
+<h1>Implementation Details</h1>
+<p>Due to time constraints and initial problems with getting unshared ground working, we prototyped using both shared and unshared ground. Both involved complicated signal processing, with shared ground requiring more digital smoothing and unshared ground requiring more analog processing. </p>
+<hr>
+
+<h2>Sending and Receiving Digital IDs (Shared Ground)</h2>
+<p>The shared ground BCC circuits are fairly simple: the transmitter consists of a signal pin (digital out) and the receiver consists of a receiving pin (analog in) tied to ground with a resistor (around 360 kΩ - 1MΩ).</p>
+<p><img class="d-block mx-auto" src="/static/bcc_sharedground.png" style="margin-bottom:0px"/></p>
+<p class="caption">BCC shared ground setup</p>
+
+<p>We decided to use byte-sized IDs (single characters) as a proof of concept to keep things simple. On the transmission side, bits are masked out one at a time and sent as a square wave with a period of 10ms. As such, if the ID were to be ‘M’, the transmitter would send a square wave with M’s ASCII value: 10101101, as seen below.</p>
+<p><img class="d-block mx-auto" src="/static/bcc_cleansigsg.png" style="margin-bottom:0px"/></p>
+<p class="caption">BCC shared ground, the signal we're sending is in green</p>
+
+<p>On the receiving end, the main challenge was dealing with the noisy signal. As can be seen in the picture below, the digital signal (shown in red) through our bodies is received with a lot of noise, so we use a fixed-size queue to compute a running mean of the signal and use that as our input (shown in green).</p>
+<p><img class="d-block mx-auto" src="/static/bcc_noisysigsg.png" style="margin-bottom:0px"/></p>
+<p class="caption">BCC shared ground, the signal we're receiving is in red, and smoothed in green</p>
+
+<p>To read the ID from this signal, we wait for the averaged signal to first change value (to synchronize with the transmitter’s clock ticks) and then read values after each period. Each value is then bit shifted into a character so that after at most 7 periods, it should equal the transmitted character.</p>
+<hr>
+
+<h2>Sending and Receiving Digital IDs (Unshared Ground)</h2>
+<p>Sending messages between devices usually takes place in the digital domain, and needs at least two wires: One for the ground, and one of the signal. The ground defines the 0 and 1 that both devices share; without it, there is no HIGH or LOW signal, there are just two floating voltages. </p>
+<p>The difficult part of sending signals over the body is that the body is one wire, and without a shared ground it is impossible to transmit DC HIGH and LOW signals directly across it. The body must be treated like an antenna instead, with the signal of interest encoded onto a high frequency carrier wave which needs to be decoded on the other side. </p>
+<p>We present an overview of our groundless system. More details can be found here.</p>
+<hr>
+
+<h2>Transmitter circuit</h2>
+<p>Using the Arduino’s clock as the carrier, we modulated our bits as the output using a transistor and a digital pin. When the modulation is HIGH, the clock is grounded and the output is nothing. When the modulation is LOW, the output is the clock.</p>
+<p><img class="d-block mx-auto" src="/static/bcc_transmitter.png" style="margin-bottom:0px"/></p>
+<p class="caption">Wrist-worn transmitter, with a conductive band and a transistor acting as a signal modulator</p>
+
+<p><img class="d-block mx-auto" src="/static/bcc_transmittersch.png" style="margin-bottom:0px"/></p>
+<p class="caption">Transmitter circuit</p>
+
+<hr>
+
+<h2>Receiver circuit</h2>
+<p>The receiver is a passive RC filter at 159 Hz followed by a gain stage set at 300 using a general-purpose op amp. This output is then fed into the Arduino ADC. </p>
+<p><img class="d-block mx-auto" src="/static/bcc_receiver.png" style="margin-bottom:0px"/></p>
+<p class="caption">Receiver setup</p>
+
+<p><img class="d-block mx-auto" src="/static/bcc_receiversch.png" style="margin-bottom:0px"/></p>
+<p class="caption">Receiver circuit</p>
+
+<hr>
+
+<h1>Demos and Prototyping Process</h1>
+<p>We implemented a couple of demos to showcase potential applications of our BCC system.</p>
+<h3>Smart door lock</h3>
+<p>As described in the introduction, our first demo shows the potential of BCC in authentication, for example for smart locks programmed to grant access to a set of users. A wearable device making contact with the user's skin transmits their unique ID (a simple implementation of this in our demo: character 'A' or 'M'). When the user touches the door knob, the smart lock receiver parses the user ID and grants access accordingly. Because of the time constraints and challenges we ran into with unshared ground circuits, we implemented the demo with shared ground.</p>
+<p>We designed an enclosure with a wrist strap to hold one transmitting microcontroller on the user's arm. A wire runs from the transmitter (output) pin to the surface of the enclosure that touches the user's skin. In a more refined prototype, the enclosure could be inset with a conductive material that connects to the transmitter pin. This would also provide a larger surface area for better coupling.</p>
+<p><img class="d-block mx-auto" src="/static/bcc_doorlockdemo.png" style="margin-bottom:0px"/></p>
+<p>Another enclosure is mounted on the door to hold the receiving microcontroller. In addition to the simple shared ground circuit with the receiving (input) pin and resistor to ground, we added an LED (Neopixel) to indicate whether access is granted (green light) or denied (red light).</p>
+<p>The enclosures were designed to be 3D-printed on an SLA printer. Because of print failures and time constraints they were ultimately printed on an FDM printer, resulting in some minor tolerance/resolution issues.</p>
+<hr>
+
+<h2>User-Aware Calendar</h2>
+<p>Our second demo shows the possibilities for personalization with BCC using a wearable device on each user’s wrist, also by transmitting user IDs through touch. In the demo, a calendar display updates to show the personal calendar of the user who has just touched the receiver pad. When user A touches the receiver pad, their ID ‘A’ is parsed by the receiver microcontroller, which communicates over Serial with a Processing script that updates the display to show their personal calendar.</p>
+<p><img class="d-block mx-auto" src="/static/bcc_calendardemo.png" style="margin-bottom:0px"/></p>
+<hr>
+
+<h1>Results</h1>
+<p>Our groundless body channel communication system can transmit at a bitrate up to 1kHz with minimal signal degradation due to analog filtering and amplification.</p>
+<p><img class="d-block mx-auto" src="/static/bcc_transmittedsig.png" style="margin-bottom:0px"/></p>
+<p class="caption">Transmitted signal</p>
+
+<p><img class="d-block mx-auto" src="/static/bcc_receivedsig.png" style="margin-bottom:0px"/></p>
+<p class="caption">Received signal</p>
+            </div>
+        <div class="col-lg-2"></div>
+        <p style="line-height:300%;">&nbsp;</p>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

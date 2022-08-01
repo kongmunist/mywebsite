@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>
+    Andy Kong!
+</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+        <meta name="author" content="Andy Kong">
+        <meta name="title" content="Javascript Libraries">
+        <meta name="description" content="What do you mean everything is a global???">
+        <meta name="keywords" content=" webdev,  javascript, ">
+    
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142983151-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-142983151-1');
+</script>
+
+
+
+    
+    <!-- Bootstrap -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap.min.css">
+
+    <!-- <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap" rel="stylesheet"> -->
+
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Ubuntu&display=swap" rel="stylesheet"> -->
+    
+
+    <style type="text/css">
+        /* Atkinson Hyperlegible */
+        /* latin-ext */
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/atkinsonhyperlegible/v7/9Bt23C1KxNDXMspQ1lPyU89-1h6ONRlW45G07JIoWQeCbGWn.woff2) format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* latin */
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/atkinsonhyperlegible/v7/9Bt23C1KxNDXMspQ1lPyU89-1h6ONRlW45G04pIoWQeCbA.woff2) format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        /* Ubuntu */
+        /* latin-ext */
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCs6KVjbNBYlgoKcQ72nU6AF7xm.woff2) format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* latin */
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCs6KVjbNBYlgoKfw72nU6AFw.woff2) format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+    </style>
+
+    <script src="/static/fontawesome.js" defer></script>
+    <!-- <script src="https://kit.fontawesome.com/c62dcd5933.js"></script> -->
+
+    <!-- Instant Page inlined - source is instant.page/5.1.0 -->
+    <script src="/static/instantpage-5.1.0.js" type="module" defer></script>
+
+
+
+
+    <style>
+body {
+background: #202222;
+/*font-family: 'Fira Sans Condensed', sans-serif;*/
+/*font-family: 'Roboto Slab', sans-serif;*/
+font-size:1.2em;
+/*font-family: 'Roboto Slab', sans-serif;*/
+
+font-family: 'Ubuntu', sans-serif;
+}
+
+.navlinks{
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-size: 1.2em;
+}
+
+h1, h2, h3, h4, h5, h6{
+    /*font-family: 'Ubuntu', sans-serif;*/
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    /*font-size: 1.2em;*/
+    /*letter-spacing: 1px;*/
+}
+
+
+a {
+    transition: color .2s linear;
+    color:#00B4CC
+}
+
+a:hover {
+    color:#00dffc;
+    text-decoration: none;
+}
+
+.navbar-custom {
+    font-size: 22px;
+    background-color: #202222 !important;
+}
+
+.navbar-custom .navbar-brand{
+    font-size: 30px;
+    color: #00dffc !important;
+}
+
+.navbar-custom .navitem{
+    color:#00dffc !important;
+}
+
+.navitem:hover{
+    color:#00b4cc !important;
+    text-decoration: none;
+}
+
+.hidden{
+  display: none;
+}
+
+.navbar-toggler-icon {
+  border: none;
+  outline: none;
+}
+
+.caption{
+    font-size:12px;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: .2em;
+    margin-top: 1em;
+}
+
+.projectpage img{
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}
+
+.blogpage img{
+    max-width: 75vw;
+    height: auto;
+    width: auto;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+hr{
+    background-color:white !important;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+
+.youtubevideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+code {
+  font-family: Consolas,"courier new";
+  color: #110000;
+  background-color: #AFAFAF;
+  padding: 2px;
+  font-size: 105%;
+}
+
+</style>
+
+
+    <link rel="icon" type="image/png" href=" /static/aklogo.png " />
+    
+
+</head>
+<body style="color:#F8E0CB;overflow-x: hidden;">
+
+
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
+      <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
+          </span>
+        </i>
+    </button>
+
+    <div class="collapse navbar-collapse " id="navbarSupportedContent" style="margin-left:25px;margin-top:10px">
+        <ul class="navbar-nav ml-auto navlinks">
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/static/resume.pdf ">CV/Resume</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://github.com/kongmunist" target="_blank" title="Github">GitHub</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://twitter.com/oldestasian" target="_blank" title="Twitter">Twitter</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="mailto:andyking99@gmail.com" target="_blank" title="Email">Email</a>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/blog/">[Blog]</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+<!-- padding-left:20px; padding-right:20px -->
+            <div class="col-md-8 col-11 p-0" style="">
+                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
+
+                
+<style>
+    h1{
+  margin-top: 1em;
+}
+</style>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        
+
+
+<div class="blogpage overflow-hidden">
+    <h1 style="margin-bottom:0px; font-size:2.5em;">Javascript Libraries</h1>
+            <p style="font-size:0.8em;"> Published November 28, 2020</p>
+<hr>
+            <p>I am writing a rather complex Javascript project at the moment, and needed to include two different Javascript libraries. One is <a href="https://p5js.org/">p5.js</a>, which is just Processing ported to HTML and used for drawing and a lot of visual display stuff. The other is <a href="https://mlweb.loria.fr/">mlweb</a>, which is a machine learning library written in pure Javascript. </p>
+<p><u><strong>One of the cursed things about using Javascript is that most libraries are written exclusively as a global import</strong></u>, so importing two large libraries is a nightmare if any of their functions overlap. While the ES6 standard (2015 major update to Javascript) recommends libraries encapsulate their functions into their own namespace, older ones or lazy ones still don't do it.</p>
+<p>This is annoying in Javascript, but isn't a problem at all in Python. Importing a library by default forces you to use their import name before any function or variable from that library (think <code>cv2.imread()</code> from <code>import cv2</code>, or <code>os.walk</code> from <code>import os</code>). </p>
+<p>In my case, <code>sin</code> and <code>tan</code> and a few other math functions overlapped. Though both functions do the same thing, the problem arises because of the format that they each return. If the p5.js function returns their own P5 class of int or Array, then the mlweb function calling it wouldn't be able to parse its output and crash. </p>
+<h3>Maybe there's already a fix for it?</h3>
+<p>I couldn't find anything after an hour of looking, so I made a <a href="https://stackoverflow.com/questions/64730996/how-can-i-include-a-javascript-library-with-a-namespace-without-manually-exporti">post about it on SO</a>. It was my first post, and was answered in 4 minutes in the negatory. Turns out there's no way to import Javascript like this: </p>
+<p><code>&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"&gt;&lt;/script&gt;</code></p>
+<p>And have it callable by module namespace. Wack!</p>
+<h3>Is there anything we can do?</h3>
+<p>For small libraries, it's doable. You can wrap your entire library.js file in a module declaration and then export each function you want to be able to use <a href="https://www.typescriptlang.org/docs/handbook/namespaces-and-modules.html">(source)</a>:</p>
+<p><code>declare module "SomeModule" {</code><br>
+&emsp;<code>export function fn(): string;</code><br>
+<code>}</code></p>
+<p>But this doesn't work for large libraries, since there are so many variables and functions and all kinds of stuff, and as far as I know there's no automatic tool for it. However, I think you could write something simple that would just parse a javascript file and export everything for you. </p>
+<p>Now that I think about it, I did something like this for my <a href="https://andykong.org/projects/heartratemonitor/">Webcam Heartrate</a> project. I ported a C++ package to Node.js using Emscripten, then used Browserify to port that to a script that I could just include. Then to call it, I added some lines around the library to expose it as a variable, and had to reference that variable to call its functions. May be useful for me to go back through and see if I can't throw together a quick solution...</p>
+<h3>Final fix</h3>
+<p>In the end, it turns out p5.js DOES conform to ES6, and can be wrapped in a big function wherever you call its functions and variables to not leak into the global namespace. With this solution, I stopped looking further into it. You can also invoke p5.js whenever you want in your javascript, if the problem is just the order in which the functions overlap (lazier, but easier).</p>
+<p>A Javascript encapsulator script would be really useful if Javascript continues being the norm for web stuff and people push more and more code into Javascript. It doesn't seem super hard, but for now there's not much of a fix and I'm busy. Summer project, anyone?</p>
+
+    
+        <hr>
+        <p style="line-height:250%;">
+        <a class="btn btn-info" href="/tagged/webdev/">webdev</a>
+
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/javascript/">javascript</a>
+        
+        </p> 
+    
+</div>
+
+
+
+
+                    </div>
+                    <br>
+        <!-- </div> -->
+</div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

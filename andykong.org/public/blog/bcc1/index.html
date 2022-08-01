@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>
+    Andy Kong!
+</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+        <meta name="author" content="Andy Kong">
+        <meta name="title" content="Implementing Body Channel Communication Pt. 1">
+        <meta name="description" content="Harnessing the body&#39;s conductivity as a signal path">
+        <meta name="keywords" content=" hci,  microcontroller,  bcc, ">
+    
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142983151-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-142983151-1');
+</script>
+
+
+
+    
+    <!-- Bootstrap -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap.min.css">
+
+    <!-- <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap" rel="stylesheet"> -->
+
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Ubuntu&display=swap" rel="stylesheet"> -->
+    
+
+    <style type="text/css">
+        /* Atkinson Hyperlegible */
+        /* latin-ext */
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/atkinsonhyperlegible/v7/9Bt23C1KxNDXMspQ1lPyU89-1h6ONRlW45G07JIoWQeCbGWn.woff2) format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* latin */
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/atkinsonhyperlegible/v7/9Bt23C1KxNDXMspQ1lPyU89-1h6ONRlW45G04pIoWQeCbA.woff2) format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        /* Ubuntu */
+        /* latin-ext */
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCs6KVjbNBYlgoKcQ72nU6AF7xm.woff2) format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* latin */
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCs6KVjbNBYlgoKfw72nU6AFw.woff2) format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+    </style>
+
+    <script src="/static/fontawesome.js" defer></script>
+    <!-- <script src="https://kit.fontawesome.com/c62dcd5933.js"></script> -->
+
+    <!-- Instant Page inlined - source is instant.page/5.1.0 -->
+    <script src="/static/instantpage-5.1.0.js" type="module" defer></script>
+
+
+
+
+    <style>
+body {
+background: #202222;
+/*font-family: 'Fira Sans Condensed', sans-serif;*/
+/*font-family: 'Roboto Slab', sans-serif;*/
+font-size:1.2em;
+/*font-family: 'Roboto Slab', sans-serif;*/
+
+font-family: 'Ubuntu', sans-serif;
+}
+
+.navlinks{
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-size: 1.2em;
+}
+
+h1, h2, h3, h4, h5, h6{
+    /*font-family: 'Ubuntu', sans-serif;*/
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    /*font-size: 1.2em;*/
+    /*letter-spacing: 1px;*/
+}
+
+
+a {
+    transition: color .2s linear;
+    color:#00B4CC
+}
+
+a:hover {
+    color:#00dffc;
+    text-decoration: none;
+}
+
+.navbar-custom {
+    font-size: 22px;
+    background-color: #202222 !important;
+}
+
+.navbar-custom .navbar-brand{
+    font-size: 30px;
+    color: #00dffc !important;
+}
+
+.navbar-custom .navitem{
+    color:#00dffc !important;
+}
+
+.navitem:hover{
+    color:#00b4cc !important;
+    text-decoration: none;
+}
+
+.hidden{
+  display: none;
+}
+
+.navbar-toggler-icon {
+  border: none;
+  outline: none;
+}
+
+.caption{
+    font-size:12px;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: .2em;
+    margin-top: 1em;
+}
+
+.projectpage img{
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}
+
+.blogpage img{
+    max-width: 75vw;
+    height: auto;
+    width: auto;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+hr{
+    background-color:white !important;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+
+.youtubevideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+code {
+  font-family: Consolas,"courier new";
+  color: #110000;
+  background-color: #AFAFAF;
+  padding: 2px;
+  font-size: 105%;
+}
+
+</style>
+
+
+    <link rel="icon" type="image/png" href=" /static/aklogo.png " />
+    
+
+</head>
+<body style="color:#F8E0CB;overflow-x: hidden;">
+
+
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
+      <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
+          </span>
+        </i>
+    </button>
+
+    <div class="collapse navbar-collapse " id="navbarSupportedContent" style="margin-left:25px;margin-top:10px">
+        <ul class="navbar-nav ml-auto navlinks">
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/static/resume.pdf ">CV/Resume</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://github.com/kongmunist" target="_blank" title="Github">GitHub</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://twitter.com/oldestasian" target="_blank" title="Twitter">Twitter</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="mailto:andyking99@gmail.com" target="_blank" title="Email">Email</a>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/blog/">[Blog]</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+<!-- padding-left:20px; padding-right:20px -->
+            <div class="col-md-8 col-11 p-0" style="">
+                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
+
+                
+<style>
+    h1{
+  margin-top: 1em;
+}
+</style>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        
+
+
+<div class="blogpage overflow-hidden">
+    <h1 style="margin-bottom:0px; font-size:2.5em;">Implementing Body Channel Communication Pt. 1</h1>
+            <p style="font-size:0.8em;"> Published April 17, 2021</p>
+<hr>
+            <p>Hello! Today I'm going to be talking about some preliminary experiments I did involving body channel communication, or BCC. BCC is a technique that uses the body's natural conductivity as a signal path, allowing your devices to talk to anything you touch. I implemented a basic version that requires a shared ground, some experiments from an implementation without a shared ground, and show practical techniques that worked for me. </p>
+<p class="caption">Transmitting signal over the skin</p>
+<p><img alt="Serial plotter transmitting signal over the skin" src="/static/bcc1_signaloverskin.png" /></p>
+<p><br></p>
+<h1>Background</h1>
+<hr>
+
+<h3>Why would you want this?</h3>
+<p>Despite your body's high resistance, large voltage changes propogate fairly well across it. If you wear a watch or some other device, it can digitally write out an I2C/UART/bitwise ASCII signal to a pin that's touching your skin by bringing the pin high and low. This digital logic signal propagates through you to whatever you're touching. </p>
+<p>If the device sends out your student ID, anything device you touch can now identify who is touching it. If it sends out your credit card information, you can pay with just a touch when checking out.</p>
+<p>Best of all, it works the other way. If a device is writing bits out to a surface, your watch can also detect when you touch something. If each device transmitted its own MAC address, your watch would know what you touched, and would be able to talk back to it through you. </p>
+<p><br></p>
+<h3>But doesn't sending a signal require two wires for ground and signal?</h3>
+<p>Very astute! It does! However, because the body is so conductive, it naturally couples capacitively to the environment around it. This means that the device and the human can share a ground connection without an additional wire; the device is grounded through the building's wiring, and the human through their salty body.</p>
+<p>The downside to this is that the ground connection is rather weak. The human-ground capacitor is estimated to be about 100pF or less, so signals don't cross the human-device THAT well. However, there has been research exporing how to robustly use BCC even with this weak connection. More details can be found in <a href="http://www.alansonsample.com/publications/docs/2018%20-%20UIST%20-%20Enabling%20Interactive%20Infrastructure%20with%20BCC.pdf">[1]</a> and <a href="http://www.alansonsample.com/research/BCC.html">[2]</a>. </p>
+<p><br></p>
+<h1>What I did</h1>
+<hr>
+
+<h2>Hardware</h2>
+<p>My setup is very simple. I used two Arduinos, two 180kΩ resistors, and two jumper wires. There is a "sender" Arduino imitating a smartwatch, and a receiver Arduino imitating a payment terminal or another interactive device. </p>
+<p>The sender has just a single jumper out, and it's digital writing a 10Hz square wave to the jumper wire.</p>
+<p class="caption">Sender Arduino</p>
+<p><img alt="Arduino with jumper wire outputting the digital signal" src="/static/bcc1_sender.jpg" /></p>
+<p>The receiver has a jumper wire on analog pin 0 which is reading at 100Hz. A 360kΩ resistor connects that pin to the ground pin. The extra resistor at the bottom is for measuring a ground truth analog reading, which I'll talk about later.</p>
+<p class="caption">Receiver Arduino</p>
+<p><img alt="Arduino with jumper wire on analog pin, which is connected to the ground by resistor" src="/static/bcc1_receiver.jpg" /></p>
+<p>The resistor is necessary because of the EMI pickup when I added the jumper wire to the analog pin. Here's the noise on the analog pin, then with the jumper, then when I hold the jumper with my finger. </p>
+<p class="caption">Baseline analog pin readings</p>
+<p><img alt="Serial plotter of baseline analog pin readings" src="/static/bcc1_baselineanalognoise.png" /></p>
+<p class="caption">Analog pin readings with jumper wire attached</p>
+<p><img alt="Serial plotter of analog pin readings with jumper wire attached" src="/static/bcc1_baselinewithwire.png" /></p>
+<p class="caption">Analog pin readings with human holding jumper wire</p>
+<p><img alt="Serial plotter of analog pin readings with human holding jumper wire" src="/static/bcc1_baselinetouchinganalognoise.png" /></p>
+<p>The human body acts as an antenna for 60Hz noise, and my body is no different. The spikes you see in the last image are from my environment, and would destroy our signal without the resistor to ground. The smaller the resistor, the easier the environment's noise gets leaked away from the pin. However, this easier leakage also reduces our overall signal more, so I picked a large resistor that approximately matched my skin's resistance. </p>
+<p><br></p>
+<h2>Signal (Shared Ground)</h2>
+<p class="caption">Shared ground BCC setup (technically they're already connected through the laptop's ground)</p>
+<p><img alt="Shared ground setup (technically they're already connected through the laptop's ground)" src="/static/bcc1_connectedground.jpg" /></p>
+<p>To transfer the signal, I touched the output jumper of the sending Arduino, then touched the input jumper of the receiving Arduino. I also pressed the output jumper directly against my other input, to capture a reference for what the output pin's signal looks like directly. </p>
+<p class="caption">Square wave being transferred over human touch. Green is the pin I'm touching, red is the reference pin</p>
+<p><img alt="Serial plotter of square wave being transferred over human touch" src="/static/bcc1_signaloverskin.png" /></p>
+<p>The signal transfer is pretty clear. The green line is what the receiver reads from my finger, and the red is the actual output of the pin. There's a bit of interference from the ADC, but even without the reference pin the signal transfers really cleanly.</p>
+<p class="caption">Square wave being transferred over human touch sans reference</p>
+<p><img alt="Square wave being transferred over human touch without reference" src="/static/bcc1_signaloverskin1.png" /></p>
+<p>Here's what the noise looks like in the setup if I hold the receiving pin without touching the signal pin. </p>
+<p class="caption">Noise when touching receiver pin without touching signal pin</p>
+<p><img alt="Noise when touching receiver pin without touching signal pin" src="/static/bcc1_nosignaloverskin.png" /></p>
+<p>The no-touch signal is a bit noisier than I would like, but definitely different enough from the touching signal that we would be able to detect it. </p>
+<p><br></p>
+<h2>Signal (No Shared Ground)</h2>
+<p>I connected the sending Arduino to another computer when I did this experiment. The receiver is plugged into my laptop, which was not connected to the wall outlet at the time.</p>
+<p class="caption">No shared ground BCC setup</p>
+<p><img alt="No shared ground setup" src="/static/bcc1_connectednoground.jpg" /></p>
+<p>Without the shared ground of my laptop, the problem gets a lot harder. I first tried holding the signal and receiving wires to compare the shared vs unshared grounds. The square wave is lost in big noise of a completely different frequency, and comes straight back when I connect the grounds again.</p>
+<p class="caption">Unconnected vs. connected ground BCC signal</p>
+<p><img alt="Unconnected vs. connected ground BCC signal" src="/static/bcc1_ngvsg.png" /></p>
+<p>I was worried that the signal wasn't actually getting through at all, but it does. I tried holding the signal wire, then dropping it but still touching the receiving wire. </p>
+<p class="caption">Received signal while I hold the signal wire then release it</p>
+<p><img alt="Received signal while I hold the signal wire vs when I don't" src="/static/bcc1_ng_touchvsnotouch.png" /></p>
+<p>And when I hold the receiving wire, then drop it, the signal goes to our nice analog baseline. </p>
+<p class="caption">Received signal while I hold the receiving wire then release it</p>
+<p><img alt="Received signal while I hold the receiving wire then release it" src="/static/bcc1_ng_touchvsnotouch2.png" /></p>
+<p>The detection is sizing up to be fairly tricky, but I think that we should be able to detect the signal even when the grounds are not shared. There's already a clear difference between touching signal and not, but we need to do some work on conditioning the signal to better cross the human-pin divide.</p>
+<h1>Next steps</h1>
+<p>This is a 10Hz signal, which is fairly slow. We can make it much higher, but I needed to go low to show the plots properly on the serial plotter. However, we're limited by the ADC time, which is middling on an Arduino. We may need to switch to another microcontroller if we want more speed. With a higher frequency, we also get better coupling to ground, which hopefully gives us a better transferred signal.</p>
+<p>We're gonna try bits next! Cya then!</p>
+
+    
+        <hr>
+        <p style="line-height:250%;">
+        <a class="btn btn-info" href="/tagged/hci/">hci</a>
+
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/microcontroller/">microcontroller</a>
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/bcc/">bcc</a>
+        
+        </p> 
+    
+</div>
+
+
+
+
+                    </div>
+                    <br>
+        <!-- </div> -->
+</div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

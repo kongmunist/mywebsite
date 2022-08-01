@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>
+    Andy Kong!
+</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+        <meta name="author" content="Andy Kong">
+        <meta name="title" content="Quantifying Interface Speeds">
+        <meta name="description" content="Comparing the information transfer rate of the keyboard, mouse, and other input devices.">
+        <meta name="keywords" content=" bci,  hci,  interfaces, ">
+    
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142983151-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-142983151-1');
+</script>
+
+
+
+    
+    <!-- Bootstrap -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap.min.css">
+
+    <!-- <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap" rel="stylesheet"> -->
+
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Ubuntu&display=swap" rel="stylesheet"> -->
+    
+
+    <style type="text/css">
+        /* Atkinson Hyperlegible */
+        /* latin-ext */
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/atkinsonhyperlegible/v7/9Bt23C1KxNDXMspQ1lPyU89-1h6ONRlW45G07JIoWQeCbGWn.woff2) format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* latin */
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/atkinsonhyperlegible/v7/9Bt23C1KxNDXMspQ1lPyU89-1h6ONRlW45G04pIoWQeCbA.woff2) format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        /* Ubuntu */
+        /* latin-ext */
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCs6KVjbNBYlgoKcQ72nU6AF7xm.woff2) format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* latin */
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCs6KVjbNBYlgoKfw72nU6AFw.woff2) format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+    </style>
+
+    <script src="/static/fontawesome.js" defer></script>
+    <!-- <script src="https://kit.fontawesome.com/c62dcd5933.js"></script> -->
+
+    <!-- Instant Page inlined - source is instant.page/5.1.0 -->
+    <script src="/static/instantpage-5.1.0.js" type="module" defer></script>
+
+
+
+
+    <style>
+body {
+background: #202222;
+/*font-family: 'Fira Sans Condensed', sans-serif;*/
+/*font-family: 'Roboto Slab', sans-serif;*/
+font-size:1.2em;
+/*font-family: 'Roboto Slab', sans-serif;*/
+
+font-family: 'Ubuntu', sans-serif;
+}
+
+.navlinks{
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-size: 1.2em;
+}
+
+h1, h2, h3, h4, h5, h6{
+    /*font-family: 'Ubuntu', sans-serif;*/
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    /*font-size: 1.2em;*/
+    /*letter-spacing: 1px;*/
+}
+
+
+a {
+    transition: color .2s linear;
+    color:#00B4CC
+}
+
+a:hover {
+    color:#00dffc;
+    text-decoration: none;
+}
+
+.navbar-custom {
+    font-size: 22px;
+    background-color: #202222 !important;
+}
+
+.navbar-custom .navbar-brand{
+    font-size: 30px;
+    color: #00dffc !important;
+}
+
+.navbar-custom .navitem{
+    color:#00dffc !important;
+}
+
+.navitem:hover{
+    color:#00b4cc !important;
+    text-decoration: none;
+}
+
+.hidden{
+  display: none;
+}
+
+.navbar-toggler-icon {
+  border: none;
+  outline: none;
+}
+
+.caption{
+    font-size:12px;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: .2em;
+    margin-top: 1em;
+}
+
+.projectpage img{
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}
+
+.blogpage img{
+    max-width: 75vw;
+    height: auto;
+    width: auto;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+hr{
+    background-color:white !important;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+
+.youtubevideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+code {
+  font-family: Consolas,"courier new";
+  color: #110000;
+  background-color: #AFAFAF;
+  padding: 2px;
+  font-size: 105%;
+}
+
+</style>
+
+
+    <link rel="icon" type="image/png" href=" /static/aklogo.png " />
+    
+
+</head>
+<body style="color:#F8E0CB;overflow-x: hidden;">
+
+
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
+      <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
+          </span>
+        </i>
+    </button>
+
+    <div class="collapse navbar-collapse " id="navbarSupportedContent" style="margin-left:25px;margin-top:10px">
+        <ul class="navbar-nav ml-auto navlinks">
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/static/resume.pdf ">CV/Resume</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://github.com/kongmunist" target="_blank" title="Github">GitHub</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://twitter.com/oldestasian" target="_blank" title="Twitter">Twitter</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="mailto:andyking99@gmail.com" target="_blank" title="Email">Email</a>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/blog/">[Blog]</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+<!-- padding-left:20px; padding-right:20px -->
+            <div class="col-md-8 col-11 p-0" style="">
+                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
+
+                
+<style>
+    h1{
+  margin-top: 1em;
+}
+</style>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        
+
+
+<div class="blogpage overflow-hidden">
+    <h1 style="margin-bottom:0px; font-size:2.5em;">Quantifying Interface Speeds</h1>
+            <p style="font-size:0.8em;"> Published January 21, 2021</p>
+<hr>
+            <p>A lot of brain-computer interface(BCI) researchers will express their results in terms of how much information the user can input in one minute, known as information transfer rate (ITR), measured in bits per minute.</p>
+<p>I haven't yet seen a compiled list of the ITR of common household interfaces, so I thought I'd make one. This list will only cover INPUT bits/min, so I'm not going to be calculating how much text you can read off a screen or a number readout since that's OUTPUT information.</p>
+<p>I'll list each device, explain its peculiarities and any choices I made regarding number of inputs, then give the stats. Here's a table of the results, read on for how I came to each number!</p>
+<h3>Definition of bits for ITR</h3>
+<p>Before we start, it may seem strange to quantify the mouse or touchscreen in terms of bits, since they're almost continuous input devices. Here, "bits" refers to the log2 of the number of options available. For example, if a user in a BCI trial is trying to select one button when there are two available to pick, then they transmit one "bit" of information per correct choice they make. If choosing a button takes the user 5 seconds, then they'll be able to make 12 choices in a minute. making 12 bits per minute the ITR.</p>
+<h2>Compiled Tables (Both available at page bottom)</h2>
+<p class="caption">Table of information transfer rates of all common devices</p>
+<p><img alt="Table of information transfer rates of all common devices" src="/static/bpmITRCommon.png" /></p>
+<p>Let's get into it!</p>
+<h1>List of Common Input Devices</h1>
+<hr>
+
+<h2>Thermostat</h2>
+<p class="caption">Picture of a thermostat</p>
+<p><img alt="Picture of a thermostat" src="/static/bpmthermostat.jpg" /></p>
+<p>I pressed 10 buttons in 6.4 seconds. </p>
+<h5># of Inputs: 5</h5>
+<h5>Input Speed: 1.5/sec</h5>
+<h5>Bits/min: 209</h5>
+<hr>
+
+<h2>TV Remote</h2>
+<p class="caption">Generic TV remote</p>
+<p><img alt="Generic TV remote" src="/static/bpmtvremote.png" /></p>
+<p>Since TV remotes have notoriously gummy buttons, they're a lot slower than the microwave. I pressed 10 buttons in 7.13 seconds. I used a slightly different television remote than the one pictured, which is why the # of inputs may not line up. </p>
+<h5># of Inputs: 42</h5>
+<h5>Input Speed: 1.4/sec</h5>
+<h5>TV Remote Bits/min: 453</h5>
+<hr>
+
+<h2>Microwave</h2>
+<p class="caption">Common Household Microwave</p>
+<p><img alt="Household Microwave" src="/static/bpmmicrowave.png" /></p>
+<p>Starting with common household electronics, the humble microwave. Though I've never used any button besides the numpad, start, and cancel, there are many more buttons which configure the microwave. I count 25 buttons, plus the trigger that opens the door. </p>
+<p>I can hit 10 buttons in 4.5 seconds (2.2/sec), but they were all sequential and next to each other so I'll say 2 buttons/sec. Log2(26) = 4.7, 4.7 bits/input * 2 inputs/sec * 60 sec/min = 564. Evidently, I did great in high school chemistry.</p>
+<h5># of Inputs: 26</h5>
+<h5>Input Speed: 2/sec</h5>
+<h5>Microwave Bits/min: 564</h5>
+<hr>
+
+<h2>Game Controller</h2>
+<p class="caption">They control nuclear submarines with these!</p>
+<p><img alt="They control nuclear submarines with these!" src="/static/bpmgamecontroller.png" /></p>
+<p>We're starting to get complicated. As anyone who has played Smash knows, single button presses do very little — combinations of keys are necessary to even play. I will count single button presses, joystick positions, and a joystick position + button press. </p>
+<p>There are 4 bumpers, 4 positions on the left pad (D-pad), 4 buttons on the right, and four in the center. Joysticks are analog, but we're going to discretize them as 8 edge positions and the neutral position. They also have an inward click, which I'm going to count as a button. Buttons alone, there are 18 total. There are 9 joystick positions per side, and moving between any two of them gives you 9 choose 2, or 36 unique joystick movements.</p>
+<p>Combining them gets complicated. Using the left joystick, you can't press anything on the D-pad or left-center, since your thumb covers that. You can, however, still use the bumper/trigger on the left side. So for the left joystick, you have access to 12 buttons. Doing this calculation for the right joystick, you get 13 buttons to work with. Since we already counted the neutral position + buttons in the single button presses, we have 8 joystick positions. For the left and right joystick respectively, that gives us 96 and 104 combination presses. </p>
+<p>I don't have a controller like this, but my friend who is a pro Smash player does. 
+10 joystick moves in 2.25 seconds, averaged over 16 trials (left-right flicking, neutral to edge and back). 1.84 sec for 10 face buttons, 2.35 sec for 10 trigger buttons. Since the center buttons are harder to press, and not everyone is a competitive Smash player, I'm going to use the slower time for the button inputs. I'll use the joystick speed for the combo speed, since it'll be the limiting factor. </p>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-0lax"></th>
+    <th class="tg-0lax">Buttons</th>
+    <th class="tg-0lax">Joystick</th>
+    <th class="tg-0lax">Buttons+Joystick</th>
+    <th class="tg-0lax">Totals</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-0pky"># of Inputs</td>
+    <td class="tg-0pky">18</td>
+    <td class="tg-0lax">36</td>
+    <td class="tg-0lax">200</td>
+    <td class="tg-0pky">254</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Input Speed</td>
+    <td class="tg-0pky">4.255</td>
+    <td class="tg-0lax">4.444</td>
+    <td class="tg-0lax">4.444</td>
+    <td class="tg-0pky">Average: 4.38</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Bits/min</td>
+    <td class="tg-0pky">1065</td>
+    <td class="tg-0lax">1379</td>
+    <td class="tg-0lax">2038</td>
+    <td class="tg-0pky">4,482</td>
+  </tr>
+</tbody>
+</table>
+
+<p><br></p>
+<h5>Game Controller Total Bits/min: 4,482</h5>
+<hr>
+
+<h2>Touchscreen</h2>
+<p class="caption">The Apple iPhone 11, most sold phone in 2019.</p>
+<p><img alt="The Apple iPhone 11, most sold phone in 2019." src="/static/bpmiphone11.jpg" /></p>
+<p>I'm using an Apple iPhone 11 as my reference phone since it's the most sold smartphone of 2019, according to Wikipedia. There are a lot of possible input gestures on the phone, and the touchscreen enables them to be fast. I'll count each input separately to make the count more accurate. However, I'm not counting pinches, so this will be a bit of an underestimate. </p>
+<p class="caption">Icons from the navigation bar on Instagram. Green box is 100 by 75 pixels. Note how it's rectangular in the x-axis. It's much easier to press very wide, short buttons than very tall, skinny buttons on a smartphone, which I didn't realize before.</p>
+<p><img alt="Icons from the navigation bar on Instagram. Green box is 100 by 75 pixels. Note how it's rectangular in the x-axis. It's much easier to press very wide, short buttons than very tall, skinny buttons on a smartphone, which I didn't realize before." src="/static/bpmphoneminsize10075.png" /></p>
+<p>For smallest input size with the finger, I used the sizes of the icon set from Instagram since they're quite reliable (I don't remember ever misclicking one). These also match the icon sizes in the footer of the iPhone clock app. The green square shown is 100x75 pixels. This divides into the iPhone 11 screen resolution of 1792x828, giving us around 198 non-overlapping rectangles. </p>
+<p>There are also 4 buttons around the phone, two of which can be pressed at once to trigger a different event (screenshot, shutdown, etc.). 4 choose 2 is 6, so that adds 10 inputs for a total of 208.</p>
+<p>I pressed on the screen 10 times in 4 seconds. It's not noticeably faster using two fingers. I held down 20 icons on my home screen in 27.55 seconds and dragged 20 times around the screen in 17.8 seconds. Each drag is from one square to any other square, making it 330x329. That's a lot of inputs, but the log2 takes it down. And there are 4 swipes, which can be done in the center or from the edge of the screen. I did 20 swipes in 15.5 seconds. </p>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;margin-left: auto; margin-right: auto;}
+.tg td{border-color:white;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:white;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-0lax"></th>
+    <th class="tg-0lax">Taps/clicks</th>
+    <th class="tg-0lax">Hold down</th>
+    <th class="tg-0lax">Drags</th>
+    <th class="tg-0lax">Swipes</th>
+    <th class="tg-0lax">Totals</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-0lax"># of Inputs</td>
+    <td class="tg-0lax">208</td>
+    <td class="tg-0lax">198</td>
+    <td class="tg-0lax">39,006</td>
+    <td class="tg-0lax">8</td>
+    <td class="tg-0lax">39,420</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Input Speed</td>
+    <td class="tg-0lax">2.5</td>
+    <td class="tg-0lax">0.725</td>
+    <td class="tg-0lax">1.12</td>
+    <td class="tg-0lax">1.29</td>
+    <td class="tg-0lax">Average: 1.41</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Bits/min</td>
+    <td class="tg-0lax">1155</td>
+    <td class="tg-0lax">332</td>
+    <td class="tg-0lax">1025</td>
+    <td class="tg-0lax">232</td>
+    <td class="tg-0lax">2,744</td>
+  </tr>
+</tbody>
+</table>
+
+<p><br></p>
+<h5>Touchscreen Total Bits/min: 2,744</h5>
+<hr>
+
+<h2>Touchscreen (Stylus)</h2>
+<p>Though not many smartphones these days have a stylus anymore, it does allow much more pinpoint clicks while allowing the same speed and gestures that using a finger does. I'm going to use the same speeds for taps, holds, drags, but will not count swipes or pinches since they are only possible with fingers.</p>
+<p>I'll use the screen resolution we used earlier for the iPhone 11 (1792x828), and a smaller 60x60 box for the minimum pointing size. This gives us 412 potential sites for input. I'll include the volume/power/home buttons only in the taps again. </p>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-0lax"></th>
+    <th class="tg-0lax">Taps/clicks</th>
+    <th class="tg-0lax">Hold down</th>
+    <th class="tg-0lax">Drags</th>
+    <th class="tg-0lax">Totals</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-0lax"># of Inputs</td>
+    <td class="tg-0lax">422</td>
+    <td class="tg-0lax">412</td>
+    <td class="tg-0lax">169,332</td>
+    <td class="tg-0lax">170,166</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Input Speed</td>
+    <td class="tg-0lax">2.5</td>
+    <td class="tg-0lax">0.725</td>
+    <td class="tg-0lax">1.12</td>
+    <td class="tg-0lax">Average: 1.45</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Bits/min</td>
+    <td class="tg-0lax">1308</td>
+    <td class="tg-0lax">377</td>
+    <td class="tg-0lax">1167</td>
+    <td class="tg-0lax">2,852</td>
+  </tr>
+</tbody>
+</table>
+
+<p><br></p>
+<h5>Touchscreen Stylus Total Bits/min: 2,852</h5>
+<hr>
+
+<h2>Touchscreen (Keyboard)</h2>
+<p class="caption">Picture of the iPhone keyboard, with diction key highlighted. I didn't want to find another picture so I reused this one</p>
+<p><img alt="Picture of the iPhone keyboard, with diction key highlighted. I didn't want to find another picture so I reused this one" src="/static/bpmdiction.jpg" /></p>
+<p>I'm using my iPhone 6s keyboard for this one. I'll count each page of keys separately, since they're harder to get to. I'm doing phone keyboard separately because A) we have a lot of muscle memory for it, which lets us input keys a lot faster than a usual interface, and B) to double check my numbers, the final bits/min of this should be bounded by the total bits/min of the touschreen.</p>
+<p>There are 29 typing keys on the primary keyboard, plus 26 for capital letters for a total of 55 keys. I type at 45 WPM on the phone, which is 225 characters/min. Including the space after ever word, that's actually 270 characters/min, or 4.5/sec.</p>
+<p>On the second page, there are 25 keys (I'm not recounting the delete, return, or spacebar), which can be pressed to your heart's desire, except when the spacebar happens. Since the spacebar is essential to typing, I'm going to count my typing speed with a spacebar after every character, giving us 18 keys in 20.29 seconds. I'll also count the space after each key, so 36 keys.</p>
+<p>I'll do the same for the third page, which also has 20 keys (5 are shared with page 2). I typed 19 in 20.93 seconds. Here I'll also count the space after each key, so 38 keys.</p>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-0lax"></th>
+    <th class="tg-0lax">First page</th>
+    <th class="tg-0lax">Second page</th>
+    <th class="tg-0lax">Third page</th>
+    <th class="tg-0lax">Totals</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-0pky"># of Inputs</td>
+    <td class="tg-0pky">55</td>
+    <td class="tg-0lax">25</td>
+    <td class="tg-0lax">20</td>
+    <td class="tg-0pky">100</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Input Speed</td>
+    <td class="tg-0pky">4.5</td>
+    <td class="tg-0lax">1.77</td>
+    <td class="tg-0lax">1.816</td>
+    <td class="tg-0pky">Average: 2.7</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Bits/min</td>
+    <td class="tg-0pky">1,560</td>
+    <td class="tg-0lax">460</td>
+    <td class="tg-0lax">471</td>
+    <td class="tg-0pky">2,491</td>
+  </tr>
+</tbody>
+</table>
+
+<p><br></p>
+<h5>Touchscreen Keyboard Total Bits/min: 2,491</h5>
+<hr>
+
+<h2>Mouse/trackpad + Screen</h2>
+<p class="caption">Macbook Air</p>
+<p><img alt="Macbook Air" src="/static/bpmmacbookair.png" /></p>
+<p>I'll be using my Macbook Air screen and touchpad as the reference for this one. With a screen resolution of 1440x900, it's worse than the smartphones we just saw, but I think the finger has a broader input area than the mouse pointer. For inputs, I'm counting clicks, double clicks, right clicks, drags, and swipes (scrolling included). </p>
+<p>For smallest reliable click size, I'm using the geometric mean of the icons from Google Chrome and the icons on the MacOS desktop. The green square shown is 30x30 and the desktop icons on MacOS are a slightly larger 70x70, for a combined 45x45. I spend more than half my time on Chrome, and the file icons in Finder are the same size as their icons, but dragging that small an icon is difficult. </p>
+<p class="caption">Smaller of the "smallest reliable click size" bounding boxes. This is from the Chrome toolbar, and has size 30x30 pixels.</p>
+<p><img alt="Smaller of the &quot;smallest reliable click size&quot; bounding boxes. This is from the Chrome toolbar, and has size 30x30 pixels." src="/static/bpmmouseminsize3030.png" /></p>
+<p>This divides into the screen to give us 640 clickable squares, which I use for single click, double click, and right click. Drag is from any square to another, so 640x639 = 408,960. There's 2 finger swipes and three finger swipes (from any side or center of the touchpad), and a pinch for a total of 19 potential swipes.</p>
+<p class="caption">Picture of the first mouse</p>
+<p><img alt="Picture of the first mouse" src="/static/bpmfirstmouse.jpg" /></p>
+<p>I clicked 20 times in 18.20 seconds, double clicked 20 times in 19 seconds, right clicked 18 times in 18.24 seconds, dragged 20 times in 26.15 seconds, and swiped 20 times in 20 seconds. </p>
+<table class="tg" style="margin-left: auto; margin-right: auto;">
+<thead>
+  <tr>
+    <th class="tg-0pky"></th>
+    <th class="tg-0pky">Taps/clicks</th>
+    <th class="tg-0lax">Double clicks</th>
+    <th class="tg-0lax">Right clicks</th>
+    <th class="tg-0pky">Drags</th>
+    <th class="tg-0lax">Swipes</th>
+    <th class="tg-0pky">Totals</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-0pky"># of Inputs</td>
+    <td class="tg-0pky">640</td>
+    <td class="tg-0lax">640</td>
+    <td class="tg-0lax">640</td>
+    <td class="tg-0pky">408,960</td>
+    <td class="tg-0lax">19</td>
+    <td class="tg-0pky">410,899</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Input Speed</td>
+    <td class="tg-0pky">1.099</td>
+    <td class="tg-0lax">1.05</td>
+    <td class="tg-0lax">0.986</td>
+    <td class="tg-0pky">0.764</td>
+    <td class="tg-0lax">1.0</td>
+    <td class="tg-0pky">Average: 0.98</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Bits/min</td>
+    <td class="tg-0pky">615</td>
+    <td class="tg-0lax">587</td>
+    <td class="tg-0lax">552</td>
+    <td class="tg-0pky">855</td>
+    <td class="tg-0lax">255</td>
+    <td class="tg-0pky">2,864</td>
+  </tr>
+</tbody>
+</table>
+<p><br></p>
+<h5>Mouse+Screen Total Bits/min: 2,864</h5>
+<hr>
+
+<h2>Keyboard</h2>
+<p class="caption">Physical keyboard, reduced because it doesn't have the numpad on the right.</p>
+<p><img alt="Physical keyboard, reduced because it doesn't have the numpad on the right." src="/static/bpmkeyboard.jpg" /></p>
+<p>I'll be using my Macbook Air keyboard, which is quite similar to the one shown above. I'm counting single keypresses for typing and not typing separately, and also combination keypresses (Control, Alt/Option, Command, Function, or Shift + any other keys).</p>
+<p>Believe it or not, there are 78 keys on the keyboard! I expected way less. I can type at 80 WPM on a good day, which is 400 keys/min assuming an average word length of 5 characters a word. I'm going to count each key that actually types a symbol in a normal text editor, which is 49 keys. Since holding shift doubles each key, this makes 98 inputs at 400 keys/min. Including the spacebar after every word, that's 480 keys/min, or 8/sec.</p>
+<p>That leaves 14 function keys, which I can press 20 times in 5 seconds. </p>
+<p>There are 7 combination keys (separating the left and right Command and Alt/Option) which can be pressed down in any combination with any typing or nontyping key. There are 69 of those keys. It's unrealistic to expect to be able to press any combination of the keys though (Imagine holding down all 7!), so we'll cap it at 3 combo keys at most. We also have to subtract out Shift + the 49 typing keys, since we already counted those in the typing test.</p>
+<p>For 1 combo key, we have 7 options. For 2, we have 21. For 3, we have 35 options. In total, that gives us 63x69=4347 options for input. I can press 20 combinations in 14 seconds. </p>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-0lax"></th>
+    <th class="tg-0lax">Single (typing)</th>
+    <th class="tg-0lax">Single (other)</th>
+    <th class="tg-0lax">Combo</th>
+    <th class="tg-0lax">Totals</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-0pky"># of Inputs</td>
+    <td class="tg-0pky">98</td>
+    <td class="tg-0lax">14</td>
+    <td class="tg-0lax">4,347</td>
+    <td class="tg-0pky">4,459</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Input Speed</td>
+    <td class="tg-0pky">8</td>
+    <td class="tg-0lax">4</td>
+    <td class="tg-0lax">1.429</td>
+    <td class="tg-0pky">Average: 4.48</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Bits/min</td>
+    <td class="tg-0pky">3175</td>
+    <td class="tg-0lax">914</td>
+    <td class="tg-0lax">1036</td>
+    <td class="tg-0pky">5,125</td>
+  </tr>
+</tbody>
+</table>
+<p><br></p>
+<h5>Physical Keyboard Total Bits/min: 5,125</h5>
+<hr>
+
+<p class="caption">Table of information transfer rates of all research devices</p>
+<p><img alt="Table of information transfer rates of all research devices" src="/static/bpmITRResearch.png" /></p>
+<h1>List of Experimental Input Devices</h1>
+<p>These are research devices that are still working out the kinks, and don't work incredibly reliably yet. I'm including voice control because it's a biometric device instead of a button input like the earlier ones, and doesn't work for everyone's voice yet.</p>
+<hr>
+
+<h2>Voice Control (Diction)</h2>
+<p class="caption">Voice control or diction button on an iPhone keyboard</p>
+<p><img alt="Voice control or diction button on an iPhone keyboard" src="/static/bpmdiction.jpg" /></p>
+<p>I used Google's voice to text function to dictate the sentence "Google's free service instantly translates words, phrases, and web pages between English and over 100 other languages." At 114 characters (118 with punctuation) in 7.37 seconds, this yields a whopping 165 WPM, or 957 characters/min. Apple's diction feature took the same amount of time, which was how long it took me to read the sentence.</p>
+<p>Since voice diction cannot detect punctuation or capital letters (except at the beginning of sentences), this is out of the 10 numbers, 26 letters, and spacebar. That leaves us with 37 unique input keys. </p>
+<h5># of Inputs: 37</h5>
+<h5>Input Speed: 15.47 characters/sec</h5>
+<h5>Bits/min: 4,835</h5>
+<hr>
+
+<h2>Fingerprint/Face recognition</h2>
+<p>This is probably a special class of "input", but I thought it'd be cool to include. </p>
+<h3>Fingerprints</h3>
+<p><a href="https://www.nist.gov/news-events/news/2004/07/nist-study-shows-computerized-fingerprint-matching-highly-accurate">NIST</a> says fingerprint scanners only give false positives 0.01% of the time. Assuming this is consistent, the fingerprint scanner reliably can differentiate you and 700,000 others from everyone else on earth, which is 10,000 other groups of 700,000 people. I'll say that's 10,000 inputs. My phone takes around 1 second to scan, but sometimes fails, so I'll say it operates at 1.5/sec</p>
+<h5># of Inputs: 10,000</h5>
+<h5>Input Speed: 1.5/sec</h5>
+<h5>Fingerprint Scanner Bits/min: 1196</h5>
+<h3>Face</h3>
+<p>Also from NIST, the best face recognition has a false positive rate of 0.08%, which is much higher than the fingerprint scanner. You'll be reliably recognized along with 5,600,000 others by the best face recognition, which is 1/1250 groups. It is much faster than a fingerprint scanner though, at least on the iPhone.</p>
+<h5># of Inputs: 1250</h5>
+<h5>Input Speed: 1/sec</h5>
+<h5>Face Recognition Bits/min: 617</h5>
+<hr>
+
+<h2>Eye tracking</h2>
+<p class="caption">Screenshot of someone using a Tobii Eye Tracker. The big blob is the predicted gaze location, which takes up about 10% of the screen</p>
+<p><img alt="Screenshot of someone using a Tobii Eye Tracker. The big blob is the predicted gaze location, which takes up about 10% of the screen" src="/static/bpmtobii.png" /></p>
+<p>Eye tracking uses your gaze location as input, usually to steer your cursor, but also for indicating attention. Tobii is one of the largest eye-tracking companies, selling hardware that just plugs into your computer and reports your gaze. However, it has a large inaccuracy which isn't mentioned on the website, and refuses to even mention accuracy specs for any of their products. </p>
+<p>If you watch anybody using it on YouTube like <a href="https://www.youtube.com/watch?v=uM0QtujhjcA">here</a>, you'll see the large spot size which indicates its approximate confidence zone. The frame was originally 850x475 pixels, and the size of the green square is 75x60 for an error margin of about 15% (geometric mean of x and y error). </p>
+<p>If this is the minimum spot size, we can do a similar calculation to the touchscreen section and find that there are around 90 differentiable squares on the screen. However, this doesn't include clicking, and the number of flicks an eye can do in a second. If I use my touchpad click, then I can look and click at 10 locations in 9.34 seconds. If I use a blink (which some eye trackers do use), then I can do 10 blinks in 6.68 seconds. </p>
+<p>The newest Tobii tracker polls at around 33Hz, but has a lot of smoothing going on. I'm going to say it updates the spot at 10Hz, because I don't notice it lagging at all whenever the eye flicks from one spot to another.</p>
+<h5># of Inputs: 90</h5>
+<h5>Input Speed: 1.07 clicks/sec, 1.5 blinks/sec</h5>
+<h5>Eye Tracker Bits/min: 417 clicking, 584 blinking</h5>
+<hr>
+
+<h2>Brain-computer interfaces (EEG)</h2>
+<p>There's a few different ways to detect what someone's thinking of. I'll go over both the P300 and SSVEP.</p>
+<h3>P300</h3>
+<p>The <a href="https://en.wikipedia.org/wiki/P300_(neuroscience)">P300</a> is a signal that arises when your expectation of what you're seeing is different from what you expect it to be. These BCIs work by flashing a grid of objects (letters, labeled buttons) and removing one object each time. If you ever don't see the one you're trying to select, then your brain emits a P300. It needs a lot of averaging across many trials to be done reliably though, and it's a very unintuitive way to select things. </p>
+<p>From this <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5924393/">review paper from 2018</a>, the average bits/min of P300 BCIs is around 30. The <a href="https://pubmed.ncbi.nlm.nih.gov/25080406/">best one</a> incorporated your brain's reaction to a familiar face to help you select a target more robustly, and hit 80 bits/min with an accuracy of 81.25%. </p>
+<p class="caption">A flowchart of SSVEP brain signal processing</p>
+<p><img alt="A flowchart of SSVEP brain signal processing" src="/static/bpmssvep.jpg" /></p>
+<h3>SSVEP</h3>
+<p>The <a href="https://en.wikipedia.org/wiki/Steady_state_visually_evoked_potential">SSVEP</a> is a signal that is also evoked by visual stimulus, but in this case it's caused by repeated flashes of light. It can be reliably detected for flickering between 10 and 20Hz. To use the SSVEP as input, you create an LED display or use a monitor with many buttons on it which are each flashing at a different frequency. Then, you look at the buttons for a short window of time. The frequency spectrum of the recorded EEG signal will have a peak at the frequency of the button you were focusing on, and the computer will know which one you want to select.</p>
+<p>The tradeoff here is a longer window raises accuracy but lowers the bits/min transferred, with a minimum of about 3s of data needed to detect it reliably. The best SSVEP ITR I found is from <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5783827/">this paper</a>, where they reached a mean of 325 bits/min. I believe this is the offline ITR though, so when they actually measured people using it live they got an ITR of 199 bits/min.</p>
+<h5># of Inputs: Variable</h5>
+<h5>Input Speed: 2/sec (max)</h5>
+<h5>BCI Bits/min: 199</h5>
+<hr>
+
+<h1>Discussion</h1>
+<p>The computer (trackpad + screen + keyboard) has undoubtedly the highest input rate of any device, clocking in at 7,989 bits/min. It seems that bits/min comes more from an interface which registers button presses quickly than one that offers many simultaneously available options. </p>
+<p>The game controller did better than I expected, beating out the smartphone handily, but that's just on input speed. The game controller offers much less analog control than the touchscreen, and has fewer available applications. You also must remember that the game controller does not have a high-density screen built-in, and must rely on there being one available.</p>
+<p>BCIs really need some work, seeing as their best technique clocks in under a thermostat. </p>
+<h1>Both Tables</h1>
+<p class="caption">Table of information transfer rates of all common devices</p>
+<p><img alt="Table of information transfer rates of all common devices" src="/static/bpmITRCommon.png" /></p>
+<p class="caption">Table of information transfer rates of all research devices</p>
+<p><img alt="Table of information transfer rates of all research devices" src="/static/bpmITRResearch.png" /></p>
+
+    
+        <hr>
+        <p style="line-height:250%;">
+        <a class="btn btn-info" href="/tagged/bci/">bci</a>
+
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/hci/">hci</a>
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/interfaces/">interfaces</a>
+        
+        </p> 
+    
+</div>
+
+
+
+
+                    </div>
+                    <br>
+        <!-- </div> -->
+</div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

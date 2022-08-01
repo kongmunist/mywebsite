@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>
+    Andy Kong!
+</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Andy Kong">
+    <meta name="title" content="Myo2">
+    <meta name="description" content="Making my own ultra-sensitive EMG sensors for measuring unnoticeable muscle movement">
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142983151-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-142983151-1');
+</script>
+
+
+
+    
+    <!-- Bootstrap -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap.min.css">
+
+    <!-- <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap" rel="stylesheet"> -->
+
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Ubuntu&display=swap" rel="stylesheet"> -->
+    
+
+    <style type="text/css">
+        /* Atkinson Hyperlegible */
+        /* latin-ext */
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/atkinsonhyperlegible/v7/9Bt23C1KxNDXMspQ1lPyU89-1h6ONRlW45G07JIoWQeCbGWn.woff2) format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* latin */
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/atkinsonhyperlegible/v7/9Bt23C1KxNDXMspQ1lPyU89-1h6ONRlW45G04pIoWQeCbA.woff2) format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        /* Ubuntu */
+        /* latin-ext */
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCs6KVjbNBYlgoKcQ72nU6AF7xm.woff2) format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* latin */
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCs6KVjbNBYlgoKfw72nU6AFw.woff2) format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+    </style>
+
+    <script src="/static/fontawesome.js" defer></script>
+    <!-- <script src="https://kit.fontawesome.com/c62dcd5933.js"></script> -->
+
+    <!-- Instant Page inlined - source is instant.page/5.1.0 -->
+    <script src="/static/instantpage-5.1.0.js" type="module" defer></script>
+
+
+
+
+    <style>
+body {
+background: #202222;
+/*font-family: 'Fira Sans Condensed', sans-serif;*/
+/*font-family: 'Roboto Slab', sans-serif;*/
+font-size:1.2em;
+/*font-family: 'Roboto Slab', sans-serif;*/
+
+font-family: 'Ubuntu', sans-serif;
+}
+
+.navlinks{
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-size: 1.2em;
+}
+
+h1, h2, h3, h4, h5, h6{
+    /*font-family: 'Ubuntu', sans-serif;*/
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    /*font-size: 1.2em;*/
+    /*letter-spacing: 1px;*/
+}
+
+
+a {
+    transition: color .2s linear;
+    color:#00B4CC
+}
+
+a:hover {
+    color:#00dffc;
+    text-decoration: none;
+}
+
+.navbar-custom {
+    font-size: 22px;
+    background-color: #202222 !important;
+}
+
+.navbar-custom .navbar-brand{
+    font-size: 30px;
+    color: #00dffc !important;
+}
+
+.navbar-custom .navitem{
+    color:#00dffc !important;
+}
+
+.navitem:hover{
+    color:#00b4cc !important;
+    text-decoration: none;
+}
+
+.hidden{
+  display: none;
+}
+
+.navbar-toggler-icon {
+  border: none;
+  outline: none;
+}
+
+.caption{
+    font-size:12px;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: .2em;
+    margin-top: 1em;
+}
+
+.projectpage img{
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}
+
+.blogpage img{
+    max-width: 75vw;
+    height: auto;
+    width: auto;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+hr{
+    background-color:white !important;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+
+.youtubevideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+code {
+  font-family: Consolas,"courier new";
+  color: #110000;
+  background-color: #AFAFAF;
+  padding: 2px;
+  font-size: 105%;
+}
+
+</style>
+
+
+    <link rel="icon" type="image/png" href=" /static/aklogo.png " />
+    
+
+</head>
+<body style="color:#F8E0CB;overflow-x: hidden;">
+
+
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
+      <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
+          </span>
+        </i>
+    </button>
+
+    <div class="collapse navbar-collapse " id="navbarSupportedContent" style="margin-left:25px;margin-top:10px">
+        <ul class="navbar-nav ml-auto navlinks">
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/static/resume.pdf ">CV/Resume</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://github.com/kongmunist" target="_blank" title="Github">GitHub</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://twitter.com/oldestasian" target="_blank" title="Twitter">Twitter</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="mailto:andyking99@gmail.com" target="_blank" title="Email">Email</a>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/blog/">[Blog]</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+
+<!--    <div class="row justify-content-center">-->
+<div class="row overflow-hidden" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+        <div class="col-lg-2"></div>
+        <div class="col-12 col-lg-8 projectpage" style="max-width:1000px;">
+        <h1 style="text-center; margin-bottom: 5px">Myo2</h1>
+            <i><p style="margin-bottom: 5px; margin-top: 0px">Making my own ultra-sensitive EMG sensors for measuring unnoticeable muscle movement</p></i>
+            <p style="margin-bottom: 0px; margin-top: 0px">Timespan: July 2020 - now</p>
+            <p style="margin-bottom: 5px; margin-top: 0px">Published: 2020-10-23</p>
+
+            <hr>
+        <p>Here it is! My own EMG sensor board, capable of amplifying 50uV muscle signals into ~1V outputs without getting drowned out by electromagnetic interference or noise. Total gain is around 30,000x.
+<img class="d-block mx-auto" src="/static/myo2tensingcropped.gif" style="margin-bottom:0px"/></p>
+<p class="caption">Myo2 muscle tensing test gif. Two hard contractions followed by a lighter, discreet contraction.</p>
+
+<p><img class="d-block mx-auto" src="/static/myo2boardpic.png" style="margin-bottom:0px"/></p>
+<p class="caption">Myo2 fully populated board, with level-shifting, right leg drive, and driven ground (and a guard ring on the inputs!)</p>
+
+<p><img class="d-block mx-auto" src="/static/myo2output1.png" style="margin-bottom:0px"/></p>
+<p class="caption">Muscle contraction test. The two clusters of activity are different electrode positions.</p>
+
+<hr>
+
+<h3>Motivation</h3>
+<p>Here's a fun question: what's the difference between a muscle-computer interface that can detect contractions before they happen, and a brain-computer interface? To an outside observer, I'd say not much. </p>
+<p>Anyone can do normal EMG: the Myoware sensor for that is for sale on Sparkfun. But what if you could detect muscle movement before it happens? I knew this was feasible because of a <a href="https://mirm-pitt.net/awards-and-recognition/weber-lab-student-clinches-first-place-at-shpe-poster-competition/">guest lecture</a> I saw at CMU. Professor Douglas Weber could detect muscle activations around 10 uV, which weren't strong enough to recruit muscle fibers, but were strong enough to detect using good electronics.</p>
+<p><a href="https://www.youtube.com/watch?v=c2RRHQt-WnY">CTRL-Labs</a> also reportedly could do this: they claimed in a few articles that their armband could detect intent to move before the movement visibly occurred. This was very exciting to me, since I wanted to see if their tech actually worked like they said. Then they got bought by Facebook, so I'll never get to see it until it's released in a product in 5 years :(. </p>
+<p>This led me to design and build my own EMG sensors. </p>
+<p><br></p>
+<h3>Specifications</h3>
+<p>When a muscle tenses, the coordinated opening of the ion channels in the fibers creates an electrical signal within the muscle that propogates outwards to the skin. This creates a very small surface signal, on the order of 1 millivolt. </p>
+<p><img class="d-block mx-auto" src="/static/myo2musclebelly.png"/></p>
+<p>To perform EMG, all you have to do is measure this voltage from the middle of the muscle belly to one end of the muscle. From an electronics standpoint, EMG is a high-noise, high-impedance voltage measurement problem. </p>
+<p>Since I wanted to measure nonvisible muscle signals as well as visible ones, my board would need to be ultra-low noise, with a lot of gain stages. Following Douglas Weber's research, the signal I was looking for was on the order of 1-8 microvolts, more than 1000x smaller than the ordinary EMG signal. In addition, since the body acts as an antenna for electromagnetic interference, I'd need amazingly sharp filters to cut out much of the noise before I amplified it so high.</p>
+<p>I wanted to turn a 1uV signal into a 100mV signal, a gain of 100,000x! For reference, a 100kOhm resistor alone has 1.3uV of thermal noise, which would ruin our noise floor. This makes my problem much more difficult. </p>
+<p><br></p>
+<h3>Board Design</h3>
+<p><img class="d-block mx-auto" src="/static/myo2badschematic.png" style="margin-bottom:0px"/></p>
+<p class="caption">Myo2 caricature of the final schematic. I drew this up for a friend to help me debug, but made errors that make it not feasible if constructed exactly like it's drawn.</p>
+
+<p>The board looks something like this image, but is not this schematic exactly. Roughly, I construct an instrumentation amplifier from 3 ultra-low current noise op-amps to turn the differential signal into a single-ended one, then apply a combination of low-pass, high-pass, and band-pass filtering stages that each have gain to this signal. The output theoretically has 90,000x gain, and around 100 mV of noise. </p>
+<p>From the middle of the instrumentation amplifier (representing the common-mode voltage), I generate a driven right leg that is connected back to the user (to reduce common mode noise from the body) and a low-impedance driven guard (to power the guard ring and cable guard for the inputs). This helps with the noise levels on the inputs.</p>
+<p>Finally, the output is scaled from ±5V to 0-3.3V, so that I can use a Teensy 4.0 microcontroller to digitize and save the signal onto my computer.</p>
+<h3>Testing</h3>
+<p>Tests were initially done with a signal generator as the input. I made a simple voltage divider that would take a signal and divide it by 1000, then feed it into the two inputs of a myo2 board. Then I fed it a 10 mV peak-peak sine wave, and increased the amplitude until the output was visible on the oscilloscope. Around 50 uV the signal was visible; then around 100 uV the signal was very obvious. </p>
+<p><img class="d-block mx-auto" src="/static/myo2RLD.png" style="margin-bottom:0px; "/></p>
+<p class="caption">Oscilloscope output of a muscle contraction. The yellow is the muscle signal, the blue is the right leg drive (RLD). When I connect the RLD pin to my body, the output noise on the yellow channel goes down by about 10% </p>
+
+<p>Output gain was not as high as I had hoped due to some imperfections in the filter amplifiers I chose. However, the output signal's noise was almost exactly what was predicted by the op amp's voltage and current noises after undergoing 10,000x gain. So I ran into a limitation in my parts selection, and not my implementation. It always feels good to figure out a problem is in your hardware and not the way you set it up.</p>
+<h3>Interested in making one?</h3>
+<p>Email me (check my CV)! I can send all schematics and talk more about my design decisions, just don't want to write it all up.</p>
+            </div>
+        <div class="col-lg-2"></div>
+        <p style="line-height:300%;">&nbsp;</p>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

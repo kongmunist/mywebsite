@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>
+    Andy Kong!
+</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+        <meta name="author" content="Andy Kong">
+        <meta name="title" content="Improving noisy EEG data through single channel averaging">
+        <meta name="description" content="How to get rid of Gaussian noise using a single electrode&#39;s measurements">
+        <meta name="keywords" content=" bci,  signalprocessing, ">
+    
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142983151-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-142983151-1');
+</script>
+
+
+
+    
+    <!-- Bootstrap -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap.min.css">
+
+    <!-- <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap" rel="stylesheet"> -->
+
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Ubuntu&display=swap" rel="stylesheet"> -->
+    
+
+    <style type="text/css">
+        /* Atkinson Hyperlegible */
+        /* latin-ext */
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/atkinsonhyperlegible/v7/9Bt23C1KxNDXMspQ1lPyU89-1h6ONRlW45G07JIoWQeCbGWn.woff2) format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* latin */
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/atkinsonhyperlegible/v7/9Bt23C1KxNDXMspQ1lPyU89-1h6ONRlW45G04pIoWQeCbA.woff2) format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        /* Ubuntu */
+        /* latin-ext */
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCs6KVjbNBYlgoKcQ72nU6AF7xm.woff2) format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* latin */
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCs6KVjbNBYlgoKfw72nU6AFw.woff2) format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+    </style>
+
+    <script src="/static/fontawesome.js" defer></script>
+    <!-- <script src="https://kit.fontawesome.com/c62dcd5933.js"></script> -->
+
+    <!-- Instant Page inlined - source is instant.page/5.1.0 -->
+    <script src="/static/instantpage-5.1.0.js" type="module" defer></script>
+
+
+
+
+    <style>
+body {
+background: #202222;
+/*font-family: 'Fira Sans Condensed', sans-serif;*/
+/*font-family: 'Roboto Slab', sans-serif;*/
+font-size:1.2em;
+/*font-family: 'Roboto Slab', sans-serif;*/
+
+font-family: 'Ubuntu', sans-serif;
+}
+
+.navlinks{
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-size: 1.2em;
+}
+
+h1, h2, h3, h4, h5, h6{
+    /*font-family: 'Ubuntu', sans-serif;*/
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    /*font-size: 1.2em;*/
+    /*letter-spacing: 1px;*/
+}
+
+
+a {
+    transition: color .2s linear;
+    color:#00B4CC
+}
+
+a:hover {
+    color:#00dffc;
+    text-decoration: none;
+}
+
+.navbar-custom {
+    font-size: 22px;
+    background-color: #202222 !important;
+}
+
+.navbar-custom .navbar-brand{
+    font-size: 30px;
+    color: #00dffc !important;
+}
+
+.navbar-custom .navitem{
+    color:#00dffc !important;
+}
+
+.navitem:hover{
+    color:#00b4cc !important;
+    text-decoration: none;
+}
+
+.hidden{
+  display: none;
+}
+
+.navbar-toggler-icon {
+  border: none;
+  outline: none;
+}
+
+.caption{
+    font-size:12px;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: .2em;
+    margin-top: 1em;
+}
+
+.projectpage img{
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}
+
+.blogpage img{
+    max-width: 75vw;
+    height: auto;
+    width: auto;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+hr{
+    background-color:white !important;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+
+.youtubevideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+code {
+  font-family: Consolas,"courier new";
+  color: #110000;
+  background-color: #AFAFAF;
+  padding: 2px;
+  font-size: 105%;
+}
+
+</style>
+
+
+    <link rel="icon" type="image/png" href=" /static/aklogo.png " />
+    
+
+</head>
+<body style="color:#F8E0CB;overflow-x: hidden;">
+
+
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
+      <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
+          </span>
+        </i>
+    </button>
+
+    <div class="collapse navbar-collapse " id="navbarSupportedContent" style="margin-left:25px;margin-top:10px">
+        <ul class="navbar-nav ml-auto navlinks">
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/static/resume.pdf ">CV/Resume</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://github.com/kongmunist" target="_blank" title="Github">GitHub</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://twitter.com/oldestasian" target="_blank" title="Twitter">Twitter</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="mailto:andyking99@gmail.com" target="_blank" title="Email">Email</a>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/blog/">[Blog]</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+<!-- padding-left:20px; padding-right:20px -->
+            <div class="col-md-8 col-11 p-0" style="">
+                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
+
+                
+<style>
+    h1{
+  margin-top: 1em;
+}
+</style>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        
+
+
+<div class="blogpage overflow-hidden">
+    <h1 style="margin-bottom:0px; font-size:2.5em;">Improving noisy EEG data through single channel averaging</h1>
+            <p style="font-size:0.8em;"> Published December 18, 2020</p>
+<hr>
+            <p>So I'm working with some EEG data, right? The kind collected by these caps. I'm gonna show you how to improve your signal-to-noise ratio from single channel EEG, specifically for detecting continuously repeating weak signals.</p>
+<p class="caption">Traditional EEG cap</p>
+<p><img alt="Traditional EEG cap" src="/static/tradeeg.png" /></p>
+<h2>Background you need to know about EEG</h2>
+<p>Skip this part if you already know about notch filters at 50/60 Hz -.-</p>
+<p>EEG (electroencephalography) is a technique for measuring brainwaves emanating from the firing of thousands of neurons under your skull. When used noninvasively, it measures the clumped firings by taking a voltage potential measurement on the surface of the skull. We can use some of these brainwaves that are predictable (or unpredictable) to control devices. These signals, or potentials, are the first brain-computer interfaces. </p>
+<h2>Traditional EEG noise reduction techniques</h2>
+<p>All EEG data is <a href="https://en.wikipedia.org/wiki/P300_(neuroscience)">super noisy</a>, and I'm not just saying that to excuse the fact that <em>my data</em> is super noisy. People solve this by using great analog electrical engineering or by averaging a bunch of different sites on the head. Think about it; if the noise is Gaussian random, and you measure the same spot on the head for the same signal 100 times and average all of them together, then the noise goes down by a factor of 10! Amazing!</p>
+<p>Unfortunately, electrodes take linear time to put on, and it's difficult to find 100 spots for electrodes on your head at all, much less at the same spot. So what happens instead? Well, we can repeat a stimulus a few times, and average <em>those</em>.</p>
+<p>If the stimulus is fast enough, we get to do this a few 10s of times in a few seconds, and reduce our noise by a decent amount. Combining this with multiple amplifiers, and you get almost the same thing as 10x decrease in noise.</p>
+<h2>What's the catch?</h2>
+<p>The catch is that this technique is usually only applied to triggered potentials like the P300 or increase in alpha wave activity. When the user <em>activates</em> a stimulus, like seeing a card or closing their eyes, the trial starts. Then, averaging a few trials, the data becomes usable. This takes forever — a minute or so, and is COMPLETELY UNUSABLE in the real world. </p>
+<p>It's also difficult to do with just one channel, for the reasons mentioned above. Multiple channels just makes it easier</p>
+<hr>
+<h2>My use case</h2>
+<p>OK, I admit it. I'm trying to detect the SSVEP, or the steady-state visually evoked potential. Read more about it <a href="https://en.wikipedia.org/wiki/Steady_state_visually_evoked_potential">here</a>. Basically, if you look at a light blinking from 10-20Hz, there's a very clear peak at that frequency in the EEG data measured over your visual cortex. </p>
+<p>However, it's a continuous signal, so I can't "time" when it starts and stops. I'm trying to do single channel SSVEP detection, instead of multi-channel. And, this signal is weak above 15Hz, and I'm looking for it at 35Hz. That's the opposite of most traits that make it easier to find. </p>
+<p>I'll show you my data. I'm looking for the 35Hz signal content of this brainwave. Top graph shows the waveform, measured over 40 sec, and bottom graph shows the power spectral density of the top graph (Basically the Fourier transform).</p>
+<p class="caption">35Hz signal from EEG DROWNED in noise</p>
+<p><img alt="35Hz signal from EEG DROWNED in noise" src="/static/35_full_noavg.png" /></p>
+<p>You can barely see the peak at all, much less differentiate it from any adjacent peak! I mean, it's high, but it's not that high, and it is surrounded by taller brothers. </p>
+<p>What if I told you there was a way I could make that graph into this one?</p>
+<p class="caption">35Hz signal from EEG clear as day</p>
+<p><img alt="35Hz signal from EEG clear as day" src="/static/35_full_04window.png" /></p>
+<p>That's a much nicer looking peak, isn't it? </p>
+<h2>The catch pt 2</h2>
+<p>I'm using 40 seconds of data here. NO WAY anyone sits still for 40 sec allowing you to collect their brainwaves to control something. But I'm going to show you that this still works with a much smaller window of 3 seconds, which I think makes a usable BCI</p>
+<hr>
+<h2>How to do single channel noise averaging</h2>
+<p>This technique takes advantage of the fact that a single channel of this EEG data oscillating at 35Hz repeats itself every second. Well, it repeats itself every 1/35 second to be more exact. What we can do is average over a window that contains an integer multiple of full waveforms (1/5 sec, 1/7 sec, 1/35 sec, 1 sec), and if the signal exists at all it will be amplified, and any other signal will be destroyed. Then we can take the FFT of it, and figure out what frequency we're looking for.</p>
+<p>Here's an example using a shorter chunk of data, 3 seconds. We see that with no averaging, the 35 peak rivals the 25Hz peak, and both are dominated by the &lt;20Hz peaks. </p>
+<p class="caption">A raw 3 second clip from our wave shows no 35Hz prominence</p>
+<p><img alt="A raw 3 second clip from our wave shows no 35Hz prominence" src="/static/35_3sec_noavg.png" /></p>
+<p>However, with averaging, the 35Hz peak is much higher than the 25Hz. While still lower than the high peak, we can just constrain the search space to &gt;20Hz frequencies, and this will give us the answer we want. What else can we do to make ths more apparent?</p>
+<p class="caption">An averaged 3 second clip from our wave shows slightly higher 35Hz peak, but nothing amazing</p>
+<p><img alt="An averaged 3 second clip from our wave shows slightly higher 35Hz peak, but nothing amazing" src="/static/35_3sec_06window.png" /></p>
+<p>Actually, to fix this, you can increase the FFT resolution (not really because of math or whatever it's really just sine interpolation but it looks like it, okay?) by padding the data with zeros! </p>
+<p class="caption">Animation of the FFT resolution increasing in front of our very eyes by using zero-padding</p>
+<p><img alt="Animation of the FFT resolution increasing in front of our very eyes by using zero-padding" src="/static/padright.gif" /></p>
+<p>if you change the window size and pad with zeros on both sides, the signal becomes very nicely defined, and the 35Hz is almost trivial to detect.</p>
+<p class="caption">Well-isolated 35Hz signal from our previously noisy-as-hell data using single channel averaging and zero-padding</p>
+<p><img alt="Well-isolated 35Hz signal from our previously noisy-as-hell data using single channel averaging and zero-padding" src="/static/35_padboth2.png" /></p>
+<h3>Caveats pt 3???</h3>
+<p>These are not cherrypicked examples, they're just the first 3 seconds of my collected data. </p>
+<p>I tried this with other starting positions and it is a bit finicky (all BCI stuff is), but the principle is still sound. For me, if one section didn't work, an adjacent one usually did. </p>
+<p>One problem is other multiple of 5 frequencies also compound when your window is a multiple of that size (I used 0.2 and 0.6 sec windows mostly), though the zero padding helps with that.</p>
+<h3>Conclusion</h3>
+<p>I haven't seen this mentioned in the literature (if you had, please email it to me!). Since the SSVEP is so weak at higher frequencies but the number of waveforms appears more often, this should make high-frequency SSVEP detection much easier. Anyway, I hope you found this useful, and/or interesting. If so, smash that like button. Cya!!</p>
+
+    
+        <hr>
+        <p style="line-height:250%;">
+        <a class="btn btn-info" href="/tagged/bci/">bci</a>
+
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/signalprocessing/">signalprocessing</a>
+        
+        </p> 
+    
+</div>
+
+
+
+
+                    </div>
+                    <br>
+        <!-- </div> -->
+</div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

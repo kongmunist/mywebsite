@@ -1,8 +1,5 @@
 
 .DS_Store
-.idea/misc.xml
-.idea/modules.xml
-.idea/personalwebsite.iml
-.idea/vcs.xml
-.idea/workspace.xml
+.idea/*
 andykong.org/*
+!andykong.org/public/
