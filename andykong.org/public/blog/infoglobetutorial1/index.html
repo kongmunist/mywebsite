@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>
+    Andy Kong!
+</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+        <meta name="author" content="Andy Kong">
+        <meta name="title" content="Infoglobe Tutorial Pt 1 — Hardware">
+        <meta name="description" content="Guts of the Infoglobe">
+        <meta name="keywords" content=" infoglobe,  hardware, ">
+    
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142983151-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-142983151-1');
+</script>
+
+
+
+    
+    <!-- Bootstrap -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap.min.css">
+
+    <!-- <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap" rel="stylesheet"> -->
+
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Ubuntu&display=swap" rel="stylesheet"> -->
+    
+
+    <style type="text/css">
+        /* Atkinson Hyperlegible */
+        /* latin-ext */
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/atkinsonhyperlegible/v7/9Bt23C1KxNDXMspQ1lPyU89-1h6ONRlW45G07JIoWQeCbGWn.woff2) format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* latin */
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/atkinsonhyperlegible/v7/9Bt23C1KxNDXMspQ1lPyU89-1h6ONRlW45G04pIoWQeCbA.woff2) format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        /* Ubuntu */
+        /* latin-ext */
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCs6KVjbNBYlgoKcQ72nU6AF7xm.woff2) format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* latin */
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCs6KVjbNBYlgoKfw72nU6AFw.woff2) format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+    </style>
+
+    <script src="/static/fontawesome.js" defer></script>
+    <!-- <script src="https://kit.fontawesome.com/c62dcd5933.js"></script> -->
+
+    <!-- Instant Page inlined - source is instant.page/5.1.0 -->
+    <script src="/static/instantpage-5.1.0.js" type="module" defer></script>
+
+
+
+
+    <style>
+body {
+background: #202222;
+/*font-family: 'Fira Sans Condensed', sans-serif;*/
+/*font-family: 'Roboto Slab', sans-serif;*/
+font-size:1.2em;
+/*font-family: 'Roboto Slab', sans-serif;*/
+
+font-family: 'Ubuntu', sans-serif;
+}
+
+.navlinks{
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-size: 1.2em;
+}
+
+h1, h2, h3, h4, h5, h6{
+    /*font-family: 'Ubuntu', sans-serif;*/
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    /*font-size: 1.2em;*/
+    /*letter-spacing: 1px;*/
+}
+
+
+a {
+    transition: color .2s linear;
+    color:#00B4CC
+}
+
+a:hover {
+    color:#00dffc;
+    text-decoration: none;
+}
+
+.navbar-custom {
+    font-size: 22px;
+    background-color: #202222 !important;
+}
+
+.navbar-custom .navbar-brand{
+    font-size: 30px;
+    color: #00dffc !important;
+}
+
+.navbar-custom .navitem{
+    color:#00dffc !important;
+}
+
+.navitem:hover{
+    color:#00b4cc !important;
+    text-decoration: none;
+}
+
+.hidden{
+  display: none;
+}
+
+.navbar-toggler-icon {
+  border: none;
+  outline: none;
+}
+
+.caption{
+    font-size:12px;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: .2em;
+    margin-top: 1em;
+}
+
+.projectpage img{
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}
+
+.blogpage img{
+    max-width: 75vw;
+    height: auto;
+    width: auto;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+hr{
+    background-color:white !important;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+
+.youtubevideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+code {
+  font-family: Consolas,"courier new";
+  color: #110000;
+  background-color: #AFAFAF;
+  padding: 2px;
+  font-size: 105%;
+}
+
+</style>
+
+
+    <link rel="icon" type="image/png" href=" /static/aklogo.png " />
+    
+
+</head>
+<body style="color:#F8E0CB;overflow-x: hidden;">
+
+
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
+      <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
+          </span>
+        </i>
+    </button>
+
+    <div class="collapse navbar-collapse " id="navbarSupportedContent" style="margin-left:25px;margin-top:10px">
+        <ul class="navbar-nav ml-auto navlinks">
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/static/resume.pdf ">CV/Resume</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://github.com/kongmunist" target="_blank" title="Github">GitHub</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://twitter.com/oldestasian" target="_blank" title="Twitter">Twitter</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="mailto:andyking99@gmail.com" target="_blank" title="Email">Email</a>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/blog/">[Blog]</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+<!-- padding-left:20px; padding-right:20px -->
+            <div class="col-md-8 col-11 p-0" style="">
+                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
+
+                
+<style>
+    h1{
+  margin-top: 1em;
+}
+</style>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        
+
+
+<div class="blogpage overflow-hidden">
+    <h1 style="margin-bottom:0px; font-size:2.5em;">Infoglobe Tutorial Pt 1 — Hardware</h1>
+            <p style="font-size:0.8em;"> Published October 01, 2022</p>
+<hr>
+            <style>
+    image{
+        max-width: 100%;
+    }
+</style>
+
+<p>Hello! I'm writing a tutorial on how to hack your own Olympia Infoglobe. This first part just tells you all the wires you'll need to cut or connect in order to make it display custom messages. </p>
+<p class ="caption"> caption </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="caption" src="/static/igt1_hero.jpeg" /></p>
+
+<p>If you don't already know about the Infoglobe (surprising considering how I won't shut up about it), it's a caller ID system from the turn of the millenia which displayed who was calling your quaint little landline phone. It could also store messages that people left you, and display holiday messages. Overall, a cute little device!</p>
+<p>Today, the humble Infoglobe has been rendered obsolete by the modern smartphone. With no landline resurgence in sight, we're going to hack the Infoglobe to show custom messages and give it a second life as a weather station or some other mundane job.</p>
+<p>Let's start!</p>
+<h1>Tools</h1>
+<p>You'll need the following things</p>
+<ul>
+<li>1x Infoglobe</li>
+<li>Philips head screwdriver</li>
+<li>wire cutter</li>
+<li>soldering iron + solder</li>
+<li>50-1kΩ resistor</li>
+</ul>
+<p class ="caption"> Since I already did this hack, I have only photographed two of the tools. Please use your imagination for the rest </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="Since I already did this hack, I have only photographed two of the tools. Please use your imagination for the rest" src="/static/igt1_tools.jpg" /></p>
+
+<h2>Step 1: Remove the screws from the base</h2>
+<p>Pretty straightforward. There's 4 Philips-head screws in these 4 dark holes. They're kinda deep in there, so get a long thing screwdriver. Nothing will happen when they come out, but it makes the next step easier. </p>
+<p class ="caption"> The four screw burrows, helpfully circled in red </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="The four screw burrows, helpfully circled in red" src="/static/igt1_screws.jpg" /></p>
+
+<h2>Step 2: Remove the clear blue dome</h2>
+<p>Now we're taking off the top and getting to the insides. The top is held on by four latches you can see from the outside on the edges.</p>
+<p class ="caption"> Latches visible from the outside (pic from eBay) </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="Latches visible from the outside (pic from eBay)" src="/static/igt1_latches.jpeg" /></p>
+
+<p>Inside, they have a little notch going from the wall radially inwards</p>
+<p class ="caption"> Inside the base, there are notches that go towards the center </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="Inside the base, there are notches that go towards the center" src="/static/igt1_bottomclasp.jpg" /></p>
+
+<p>The top part has these seatbelt-like shapes that line up with the notch on the inside. </p>
+<p class ="caption"> And on the top part, there are latches that extend into the body </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="And on the top part, there are latches that extend into the body" src="/static/igt1_topclasp.jpg" /></p>
+
+<h3>Careful!!</h3>
+<p>I won't lie to you: getting this thing off is kinda hard. You feel like you're gonna break it on accident, and it's a sphere so it's hard to hold on to, and will definitely break when you drop it. I recommend sitting on the floor or hugging it when you're wrestling the top part off. </p>
+<p>You'll want to pick one latch to start with. Right above the latch on the blue part, push inwards and pull up at the same time. Hold the base tightly with your other hand, or hug it with your arm. A wedge/screwdriver is unlikely to help. Here's a video of me getting the first one out.</p>
+<video controls style="max-width: 100%" src=/static/igt1_firstlatch.mp4></video>
+<p style="font-size:.7em;">Funnily enough, I'm wearing a Dome shirt as I open this dome</p>
+
+<p>The rest of the latches get easier after the first two. Same technique, just pull in and pull up at the same time. </p>
+<h1>Step 3: remove the propeller</h1>
+<p>Once you're in, the grey part will be loose, but still held in by the spinning arm of the Infoglobe. We'll have to take that off. Just use your screwdriver to remove those 3 small screws. The propeller is spring loaded, so maybe unscrew all of them a little first so the first one doesn't bounce out and get lost</p>
+<p class ="caption"> Note the square center peg and the triangular screw arrangement - automatic alignment! </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="Note the square center peg and the triangular screw arrangement - automatic alignment!" src="/static/igt1_propellerscrews.jpg" /></p>
+<p>Remove both the propeller and the grey plate and set them aside. </p>
+<h1>Step 4: Hijack the Infoglobe's data LED and add a current-limiting resistor</h1>
+<p>There's 3 obvious LEDs once you're looking at the circuit board. One is red, this is just a power indicator. Of the two other light-blue ones, the innermost one is the data LED. </p>
+<p class ="caption"> All LEDs inside the infoglobe, labeled </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="All LEDs inside the infoglobe, labeled" src="/static/igt1_dataLED.jpg" /></p>
+
+<p>Previous tutorials have made circuit boards that integrate into the infoglobe, allowing it to continue displaying the phone stuff you wanna see plus cool custom stuff. This is why past projects have had such complex setups. I say why bother? The data LED has two wires like any other LED, and if we cut them then we can write whatever we want. </p>
+<p>There's two ways about this. You can either cut both legs of the LED and solder on new wires that run to the outside of the infoglobe, or you can just cut the positive side of the LED and connect the grounds of the Infoglobe board to your microcontroller. </p>
+<p>Either way, two wires get added so it's really up to you. I started with the single wire and joined the grounds first because I knew I wanted to power my microcontroller off the infoglobe power eventually, and it made prototyping way faster. </p>
+<p class ="caption"> The two-cut approach hijacks the entire data LED. The LED's positive side is on the left </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="The two-cut approach hijacks the entire data LED. The LED&#39;s positive side is on the left" src="/static/igt1_bothcut.jpg" /></p>
+
+<p class ="caption"> The one cut approach, hijacks only the power wire (left) and requires you find ground somewhere else (anywhere connected to the right wirse is fine) </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="The one cut approach, hijacks only the power wire (left) and requires you find ground somewhere else (anywhere connected to the right wirse is fine)" src="/static/igt1_onecut.jpg" /></p>
+
+<p>Run those two wires outside of the casing and connect a resistor in series so you don't blow out the Infoglobe's infrared LED. </p>
+<h3>PLEASE CONNECT A SERIES RESISTOR TO THE DATA LED LINE BEFORE USING IT</h3>
+<hr>
+
+<h1>Testing out the Infoglobe without putting it all back together</h1>
+<p>If you wanted to plug in the infoglobe with all the plastic off, it'd probably be dangerous for both the board and you. It just takes a hair caught in the rotor to ruin your Infoglobe and hair and project all at once. But it sucks to put it all back together, and there is a way to be relatively safe without doing that. </p>
+<p>1) Put the grey piece back on. The alignment is a bit tricky but it should drop right in</p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/igt1_reass1.jpg" /></p>
+
+<p>2) Then place the rotor back on the center section and screw it in. Make sure you screw them all in a bit simultaneously, since there is a spring under it. </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/igt1_reass2.jpg" /></p>
+
+<p>3) Get something to fool the safety switch, preferably nonmetal</p>
+<p class ="caption"> This limit switch needs to be taped or pushed down </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="This limit switch needs to be taped or pushed down" src="/static/igt1_safeswitch.jpg" /></p>
+<p class ="caption"> Chopstick works for depressing it </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="Chopstick works for depressing it" src="/static/igt1_reass3.jpg" /></p>
+
+<p>The top dome can also be placed into the slots without clicking down, but still low enough to trigger the safety switch. This is probably the safest way to do it.</p>
+<p class ="caption"> The lid also works for triggering the safety switch, but this is the only method that is actually safe </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="The lid also works for triggering the safety switch, but this is the only method that is actually safe" src="/static/igt1_reass4.jpg" /></p>
+<p>4) Plug in the infoglobe power, and the rotor should begin spinning with no words appearing</p>
+<p>To change the insides requires at least unscrewing the rotor, but luckily you won't need to do it much at all. </p>
+<hr>
+<h1>Conclusion</h1>
+<p>There's a few more steps if you want to integrate the infoglobe with your microcontroller, but that's for a later tutorial. Now you've gotten a connected LED. Time to write some messaging software!</p>
+<p>If I haven't published it and you want me to get on with it, just shoot me an email and I'll add it to my very relaxed schedule. </p>
+
+    
+        <hr>
+        <p style="line-height:250%;">
+        <a class="btn btn-info" href="/tagged/infoglobe/">infoglobe</a>
+
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/hardware/">hardware</a>
+        
+        </p> 
+    
+</div>
+
+
+
+
+                    </div>
+                    <br>
+        <!-- </div> -->
+</div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>
