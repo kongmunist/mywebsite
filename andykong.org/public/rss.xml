@@ -6,7 +6,7 @@
     <description>Thoughts and Work</description>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
-    <lastBuildDate>Sat, 01 Oct 2022 00:11:45 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 04 Oct 2022 21:03:40 +0000</lastBuildDate>
     <item>
       <title>First Post!</title>
       <link>blog/first</link>
@@ -4353,7 +4353,7 @@ The top part has these seatbelt-like shapes that line up with the notch on the i
 
 I won't lie to you: getting this thing off is kinda hard. You feel like you're gonna break it on accident, and it's a sphere so it's hard to hold on to, and will definitely break when you drop it. I recommend sitting on the floor or hugging it when you're wrestling the top part off. 
 
-You'll want to pick one latch to start with. Right above the latch on the blue part, push inwards and pull up at the same time. Hold the base tightly with your other hand, or hug it with your arm. A wedge/screwdriver is unlikely to help. Here's a video of me getting the first one out.
+You'll want to pick one latch to start with. Right above the latch on the blue part, pull inwards and pull up at the same time. Hold the base tightly with your other hand, or hug it with your arm. A wedge/screwdriver is unlikely to help. Here's a video of me getting the first one out.
 
 
 &lt;video controls style="max-width: 100%" src={{ url_for("static", filename='igt1_firstlatch.mp4') }}&gt;&lt;/video&gt;
@@ -4418,6 +4418,82 @@ There's a few more steps if you want to integrate the infoglobe with your microc
 If I haven't published it and you want me to get on with it, just shoot me an email and I'll add it to my very relaxed schedule. </content:encoded>
       <author>andyking99@gmail.com (Andy Kong)</author>
       <pubDate>Sat, 01 Oct 2022 00:00:00 -0400</pubDate>
+    </item>
+    <item>
+      <title>Making Clear Gelatin From Porcine Sheets</title>
+      <link>blog/cleargelatin1</link>
+      <description>From Jello you came, and to Jello you shall return</description>
+      <content:encoded>Hello! I have recently moved to Switzerland. I'll be writing some smaller posts to encourage myself to get back into this blogging thing, and this is the first. We'll see if it works.
+
+Before coming to Switzerland, I thought a bit about the things I'd miss about America. According to forum posts from other expats, the Swiss had no mint chocolate (still true), nor peanut butter (untrue as of now), nor chocolate chips (still true), nor Jell-O and some of the other brands of random snacks. That's all find and good since most snacks have substitutes, but Jello??? There's no equivalent for this clear, jiggly snack!
+
+{{ add_pic("cg1_jellohero.jpg", "Look at that Joggly ") }}
+
+Luckily, I was able to find some sheets of pure-ish gelatin in the supermarket baking section, which is (I think) the core ingredient of Jello. Since I've only ever had colored, sweetened Jello, I decided my first time making it I would see how gross the unsweetened version is, as well as checking the clarity of it without any coloring.
+
+{{ add_pic("cg1_jellolens.jpg", "Partially inspired by my discovery that science classes will use gelatin casts to teach optics") }}
+
+
+&lt;hr&gt;
+## In sheets???
+
+The store sells gelatin in both powder and sheets form, and I chose the sheets cause I found the form factor interesting. Each sheet is good enough for around 100mL of liquid, and is totally clear with some bubbles at the seams.
+
+{{ add_pic("cg1_composite.jpg", "caption") }}
+
+The sheet is pretty cool. It's embossed in a diamond pattern (zoom in!) and is quite bendy (not brittle at all) and hard to the touch. And when I touched it, it didn't get sticky or anything, so my skin moisture did not sufficiently wet it. I put it in my mouth for 30 sec and it became only a bit softer, and had no flavor. I'm using a 500mL tupperware to hold my jello, so I used around 4 sheets and left some air in the top. 
+
+
+First, you gotta soak the gelatin sheets in cold water for 5-10 minutes. This is said to activate or "bloom" it. Supposedly putting it straight into hot water will swell the outside without letting the inside activate, but that sounds like untested baloney. 
+
+
+{{ add_pic("cg1_soaked.jpg", "Soaked gelatin sheet is like a clear tisseue") }}
+
+While that was happening I went and microwaved my tupperware to get the water warm. I brought over the gelatin, which had sagged down in the cup of water and got ready to transfer it. I used a spoon because I didn't know how my hand oils would affect the setting. 
+
+{{ add_pic("gc1_bothcups.jpg", "caption") }}
+
+The package said to stir until totally dissolved and I had worried that it would take a long time, but it dissolved on impact into this slightly tan cloud. I stirred it for just a few seconds and it incorporated just fine. Here's my tupperware chilling in the fridge right after this
+
+
+{{ add_pic("gc1_preset.jpg", "caption") }}
+
+
+On my first attempt, it didn't set right because I misread the instructions. I thought each sheet could set 1L, but that was off by an order of magnitude (I never claimed to read French). I corrected that error, and after a night in the fridge, the properly-set gelatin turned cloudy.
+
+
+{{ add_pic("gc1_postset.jpg", "caption") }}
+
+The gelatin is super stiff after setting, and on measuring, I realized I used 4 sheets for around 300g of water. This is a good ratio for future gelatin — I hate squishy Jell-O.
+
+{{ add_pic("gc1_meholding.jpg", "Me holding the gelatin. If it looks fun to hold, that's because it is") }}
+
+&lt;hr&gt;
+# Flavor
+
+The taste is completely neutral. There is a tiny or no taste added from the gelatin, it just feels wrong to be eating water. The mouthfeel is that of Jell-O, but there is no flavor. It's really weird, and feels almost like you shouldn't be eating it. 
+
+Since you can just reheat gelatin to make it liquid again, I made another batch with sugar. I heard that sucrose actually helps the gelatinization process, and wanted to check if that was true. I must say I didn't notice it being any stiffer, but it definitely tasted much better. 
+
+# Laser?
+{{ add_pic("cg1_laser.jpg", "Green laser experiment in gelatin") }}
+
+Finally, the reason that one of the tags is "laser" is because I wanted to see if the sugar gradient experiment would still work if the sugar gradient were solidified in gelatin. Spoiler: It does! Still bends light as we expect it to. 
+
+I think the diffusion of the sugar still happens, so eventually this block of gelatin won't bend lasers anymore. But I'll let you know how it looks later if I make a followup for this. 
+
+{{ add_pic("cg1_laser2.jpg", "A red laser also bends, but much less visibly (look at the spot on the table on the right, this is the bent output of the red laser). I heard adding a small amount of creamer to the water helps the red show up, but I'll try that later.") }}
+
+&lt;hr&gt;
+# Future Work
+1. Forgot to try the laser beam bending downwards, which is why I did this in the first place! Re-setting it now and seeing if it will bend down as well (probably will)
+2. I wonder if the gelatin will set at room-temperature? I want to extend the time it takes to set, to allow a more impressive sugar gradient to form. Even if it doesn't set at room temperature, we can use use this for our purposes. Dissolve the gelatin and let the sugar gradient form outside the fridge, and only then put it in the fridge to set.
+3. I wonder if the sugar gradient will slowly diffuse into the gelatin, negating the purpose of our gelatin in the first place? We can use saran wrap to avoid this though.
+
+I'm trying to make a circular laser, and I fear this is easily done with some hose and gelatin instead of this complex ass setup i'm envisioning. Perhaps this will be cooler though.
+</content:encoded>
+      <author>andyking99@gmail.com (Andy Kong)</author>
+      <pubDate>Tue, 04 Oct 2022 00:00:00 -0400</pubDate>
     </item>
   </channel>
 </rss>

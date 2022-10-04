@@ -58,7 +58,7 @@ The top part has these seatbelt-like shapes that line up with the notch on the i
 
 I won't lie to you: getting this thing off is kinda hard. You feel like you're gonna break it on accident, and it's a sphere so it's hard to hold on to, and will definitely break when you drop it. I recommend sitting on the floor or hugging it when you're wrestling the top part off. 
 
-You'll want to pick one latch to start with. Right above the latch on the blue part, push inwards and pull up at the same time. Hold the base tightly with your other hand, or hug it with your arm. A wedge/screwdriver is unlikely to help. Here's a video of me getting the first one out.
+You'll want to pick one latch to start with. Right above the latch on the blue part, pull inwards and pull up at the same time. Hold the base tightly with your other hand, or hug it with your arm. A wedge/screwdriver is unlikely to help. Here's a video of me getting the first one out.
 
 
 <video controls style="max-width: 100%" src={{ url_for("static", filename='igt1_firstlatch.mp4') }}></video>
