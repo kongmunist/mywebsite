@@ -268,8 +268,8 @@ if __name__ == "__main__":
             os.system("git commit -m \"blog update " + time.ctime() + "\"")
             os.system("git push origin master")
 
-            # Deploy build file to firebase
-            os.system("(cd andykong.org && firebase deploy)")
+            # Deploy build file to firebase — effective 10/4 no more firebase.
+            # os.system("(cd andykong.org && firebase deploy)")
         else:
             freezer.freeze()
     else:

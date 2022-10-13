@@ -2,7 +2,7 @@ title: Infoglobe Tutorial Pt 1 — Hardware
 date: 2022-10-01
 label: blog
 tags: [infoglobe, hardware]
-snippet: Guts of the Infoglobe
+snippet: Hacking the brain of the Infoglobe
 
 <style>
     image{
@@ -21,6 +21,7 @@ Today, the humble Infoglobe has been rendered obsolete by the modern smartphone.
 
 Let's start!
 
+<hr>
 # Tools
 You'll need the following things
 
@@ -90,11 +91,11 @@ Either way, two wires get added so it's really up to you. I started with the sin
 
 Run those two wires outside of the casing and connect a resistor in series so you don't blow out the Infoglobe's infrared LED. 
 
-### PLEASE CONNECT A SERIES RESISTOR TO THE DATA LED LINE BEFORE USING IT
+### PLEASE CONNECT A SERIES RESISTOR TO THE DATA LED LINE BEFORE USING IT, OTHERWISE YOU RISK BURNING OUT THE LED!
 
 <hr>
 
-# Testing out the Infoglobe without putting it all back together
+# Testing the Infoglobe without putting it back together
 If you wanted to plug in the infoglobe with all the plastic off, it'd probably be dangerous for both the board and you. It just takes a hair caught in the rotor to ruin your Infoglobe and hair and project all at once. But it sucks to put it all back together, and there is a way to be relatively safe without doing that. 
 
 1) Put the grey piece back on. The alignment is a bit tricky but it should drop right in
@@ -115,9 +116,28 @@ The top dome can also be placed into the slots without clicking down, but still 
 
 To change the insides requires at least unscrewing the rotor, but luckily you won't need to do it much at all. 
 
-<hr> 
+<hr>
+# Final setup
+At this point, you should have an Infoglobe with two wires coming out of it. I originally used F jumpers as the wires to the data LED, then plugged into them using an external Arduino. 
+
+{{ add_pic("igt1_testingsetup2.jpg", "Picture of the Arduino setup I originally worked with, Arduino not in-frame") }}
+
+Later when I was sure the code worked on Arduino, I moved to using an ESP8266 microcontroller. It's the little square with a blue light in the picture below. 
+
+
+{{ add_pic("igt1_testingsetup.jpg", "") }}
+
+Since the ESP has no headers, I'm using a breadboard to connect the ESP to the data wires. Again, the LED's wires you've added will just run out from under the shell of the Infoglobe, and they safety switch can be engaged using the top dome despite the wires preventing it from closing fully. 
+
+There is some more hardware on the breadboard than I'm letting on, but that will be covered in Pt 2.
+
+
+<hr>
 # Conclusion
 There's a few more steps if you want to integrate the infoglobe with your microcontroller, but that's for a later tutorial. Now you've gotten a connected LED. Time to write some messaging software!
 
 
 If I haven't published it and you want me to get on with it, just shoot me an email and I'll add it to my very relaxed schedule. 
+
+
+Update 10/13: There's a part two [here](../infoglobetutorial2)!

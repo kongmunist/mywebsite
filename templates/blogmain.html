@@ -7,35 +7,42 @@
 
 {% block batcontent %}
  <!--<h1><small>A normal page yea</small></h1>-->
-    <div class="">
+    <div style="margin-bottom:4em;">
+
         <h1>Thinking in Progress:</h1>
     {% for p in pages %}
-        <hr>
-        <a href="{{ url_for("page", path=p.path) }}">
-            <h4 class="list-group-item-heading" style="cursor: pointer;">
+        <hr style="margin-bottom:.2em; margin-top:1.5em;">
+
+<!--    Title    -->
+        <a style="float:left" href="{{ url_for("page", path=p.path) }}" >
+            <h3 class="list-group-item-heading" style="cursor: pointer; margin-bottom:0px; margin-top:.2em;">
                 {{ p.title }}
-            </h4>
+            </h3>
         </a>
-        <!-- <blockquote ></blockquote> -->
-            <p class="list-group-item-text" style="margin-bottom: 3px; margin-left: 1em;">
 
+<!--    Date    -->
+        <p style="font-size: .8em; text-align: right; margin-bottom:0px; margin-top:.5em; float:right;">{{ dateconvert(p.meta.date) }}</p>
+
+        <!--    Description/snippet    -->
+            <p class="list-group-item-text" style="font-size:0.9em; margin-bottom: 3px; margin-left: 1em; clear: left;">
                 {{ p.snippet }}
-
             </p>
-    <p style="font-size: .8em; text-align: right;">
-    {% if p.meta.tags|length %}
-        <!-- Tags:
-        <a href="{{ url_for("tag", tag= p.meta.tags.0  ) }}">{{ p.meta.tags.0 }}</a>
-        {% for page_tag in p.meta.tags[1:] %}
-            <a href="{{ url_for("tag", tag=page_tag) }}">,&nbsp;{{page_tag}}</a>
-        {% endfor %} -->
 
-        <!-- <br> -->
-        Date Published:
+<!--    Old tags code    -->
+<!--        <p style="font-size: .8em; text-align: right;">-->
+<!--    {% if p.meta.tags|length %}-->
+<!--        &lt;!&ndash; Tags:-->
+<!--        <a href="{{ url_for("tag", tag= p.meta.tags.0  ) }}">{{ p.meta.tags.0 }}</a>-->
+<!--        {% for page_tag in p.meta.tags[1:] %}-->
+<!--            <a href="{{ url_for("tag", tag=page_tag) }}">,&nbsp;{{page_tag}}</a>-->
+<!--        {% endfor %} &ndash;&gt;-->
 
-        {{ dateconvert(p.meta.date) }}
-    {% endif %}
-    </p>
+<!--        &lt;!&ndash; <br> &ndash;&gt;-->
+<!--        Date Published:-->
+
+<!--        {{ dateconvert(p.meta.date) }}-->
+<!--    {% endif %}-->
+<!--    </p>-->
 
     {% endfor %}
 

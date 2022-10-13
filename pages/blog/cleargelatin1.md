@@ -11,7 +11,7 @@ Before coming to Switzerland, I thought a bit about the things I'd miss about Am
 {{ add_pic("cg1_jellohero.jpg", "Look at that Joggly ") }}
 
 Luckily, I was able to find some sheets of pure-ish gelatin in the supermarket baking section, which is (I think) the core ingredient of Jello. Since I've only ever had colored, sweetened Jello, I decided my first time making it I would see how gross the unsweetened version is, as well as checking the clarity of it without any coloring.
-
+kes
 {{ add_pic("cg1_jellolens.jpg", "Partially inspired by my discovery that science classes will use gelatin casts to teach optics") }}
 
 
