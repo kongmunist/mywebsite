@@ -10,8 +10,8 @@
 
     
         <meta name="author" content="Andy Kong">
-        <meta name="title" content="Infoglobe Tutorial Pt 1 — Hardware">
-        <meta name="description" content="Guts of the Infoglobe">
+        <meta name="title" content="Infoglobe Tutorial Pt 1 — Hardware Prototyping">
+        <meta name="description" content="Hacking the brain of the Infoglobe">
         <meta name="keywords" content=" infoglobe,  hardware, ">
     
 
@@ -116,11 +116,11 @@ h1, h2, h3, h4, h5, h6{
 
 a {
     transition: color .2s linear;
-    color:#00B4CC
+    color:#00B4CC;
 }
 
 a:hover {
-    color:#00dffc;
+    color:#00DFFC;
     text-decoration: none;
 }
 
@@ -162,6 +162,7 @@ a:hover {
 
 .projectpage img{
     max-width: 100%;
+    max-height: 50vh;
     height: auto;
     width: auto;
 }
@@ -173,6 +174,11 @@ a:hover {
     width: auto;
     display: block !important;
     margin: 0 auto !important;
+}
+
+.blogpage h1, .blogpage h2{
+    color: #D49E68;
+    margin-top:
 }
 
 hr{
@@ -252,11 +258,12 @@ code {
                 <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
 
                 
-<style>
-    h1{
-  margin-top: 1em;
-}
-</style>
+
+<!--<style>-->
+<!--    h1{-->
+<!--  margin-top: 1em;-->
+<!--}-->
+<!--</style>-->
 
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -265,7 +272,7 @@ code {
 
 
 <div class="blogpage overflow-hidden">
-    <h1 style="margin-bottom:0px; font-size:2.5em;">Infoglobe Tutorial Pt 1 — Hardware</h1>
+    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Infoglobe Tutorial Pt 1 — Hardware Prototyping</h1>
             <p style="font-size:0.8em;"> Published October 01, 2022</p>
 <hr>
             <style>
@@ -281,6 +288,7 @@ code {
 <p>If you don't already know about the Infoglobe (surprising considering how I won't shut up about it), it's a caller ID system from the turn of the millenia which displayed who was calling your quaint little landline phone. It could also store messages that people left you, and display holiday messages. Overall, a cute little device!</p>
 <p>Today, the humble Infoglobe has been rendered obsolete by the modern smartphone. With no landline resurgence in sight, we're going to hack the Infoglobe to show custom messages and give it a second life as a weather station or some other mundane job.</p>
 <p>Let's start!</p>
+<hr>
 <h1>Tools</h1>
 <p>You'll need the following things</p>
 <ul>
@@ -338,10 +346,10 @@ code {
 <p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="The one cut approach, hijacks only the power wire (left) and requires you find ground somewhere else (anywhere connected to the right wirse is fine)" src="/static/igt1_onecut.jpg" /></p>
 
 <p>Run those two wires outside of the casing and connect a resistor in series so you don't blow out the Infoglobe's infrared LED. </p>
-<h3>PLEASE CONNECT A SERIES RESISTOR TO THE DATA LED LINE BEFORE USING IT</h3>
+<h3>PLEASE CONNECT A SERIES RESISTOR TO THE DATA LED LINE BEFORE USING IT, OTHERWISE YOU RISK BURNING OUT THE LED!</h3>
 <hr>
 
-<h1>Testing out the Infoglobe without putting it all back together</h1>
+<h1>Testing the Infoglobe without putting it back together</h1>
 <p>If you wanted to plug in the infoglobe with all the plastic off, it'd probably be dangerous for both the board and you. It just takes a hair caught in the rotor to ruin your Infoglobe and hair and project all at once. But it sucks to put it all back together, and there is a way to be relatively safe without doing that. </p>
 <p>1) Put the grey piece back on. The alignment is a bit tricky but it should drop right in</p>
 <p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/igt1_reass1.jpg" /></p>
@@ -361,9 +369,21 @@ code {
 <p>4) Plug in the infoglobe power, and the rotor should begin spinning with no words appearing</p>
 <p>To change the insides requires at least unscrewing the rotor, but luckily you won't need to do it much at all. </p>
 <hr>
+<h1>Final setup</h1>
+<p>At this point, you should have an Infoglobe with two wires coming out of it. I originally used F jumpers as the wires to the data LED, then plugged into them using an external Arduino. </p>
+<p class ="caption"> Picture of the Arduino setup I originally worked with, Arduino not in-frame </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="Picture of the Arduino setup I originally worked with, Arduino not in-frame" src="/static/igt1_testingsetup2.jpg" /></p>
+
+<p>Later when I was sure the code worked on Arduino, I moved to using an ESP8266 microcontroller. It's the little square with a blue light in the picture below. </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/igt1_testingsetup.jpg" /></p>
+
+<p>Since the ESP has no headers, I'm using a breadboard to connect the ESP to the data wires. Again, the LED's wires you've added will just run out from under the shell of the Infoglobe, and they safety switch can be engaged using the top dome despite the wires preventing it from closing fully. </p>
+<p>There is some more hardware on the breadboard than I'm letting on, but that will be covered in Pt 2.</p>
+<hr>
 <h1>Conclusion</h1>
 <p>There's a few more steps if you want to integrate the infoglobe with your microcontroller, but that's for a later tutorial. Now you've gotten a connected LED. Time to write some messaging software!</p>
 <p>If I haven't published it and you want me to get on with it, just shoot me an email and I'll add it to my very relaxed schedule. </p>
+<p>Update 10/13: There's a part two <a href="../infoglobetutorial2">here</a>!</p>
 
     
         <hr>

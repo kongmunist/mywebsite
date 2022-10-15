@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>
+    Andy Kong!
+</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+        <meta name="author" content="Andy Kong">
+        <meta name="title" content="Infoglobe Tutorial Pt. 2 — Hardware Integration">
+        <meta name="description" content="Internalized electronics">
+        <meta name="keywords" content=" template, ">
+    
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142983151-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-142983151-1');
+</script>
+
+
+
+    
+    <!-- Bootstrap -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap.min.css">
+
+    <!-- <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap" rel="stylesheet"> -->
+
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Ubuntu&display=swap" rel="stylesheet"> -->
+    
+
+    <style type="text/css">
+        /* Atkinson Hyperlegible */
+        /* latin-ext */
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/atkinsonhyperlegible/v7/9Bt23C1KxNDXMspQ1lPyU89-1h6ONRlW45G07JIoWQeCbGWn.woff2) format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* latin */
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/atkinsonhyperlegible/v7/9Bt23C1KxNDXMspQ1lPyU89-1h6ONRlW45G04pIoWQeCbA.woff2) format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        /* Ubuntu */
+        /* latin-ext */
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCs6KVjbNBYlgoKcQ72nU6AF7xm.woff2) format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* latin */
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCs6KVjbNBYlgoKfw72nU6AFw.woff2) format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+    </style>
+
+    <script src="/static/fontawesome.js" defer></script>
+    <!-- <script src="https://kit.fontawesome.com/c62dcd5933.js"></script> -->
+
+    <!-- Instant Page inlined - source is instant.page/5.1.0 -->
+    <script src="/static/instantpage-5.1.0.js" type="module" defer></script>
+
+
+
+
+    <style>
+body {
+background: #202222;
+/*font-family: 'Fira Sans Condensed', sans-serif;*/
+/*font-family: 'Roboto Slab', sans-serif;*/
+font-size:1.2em;
+/*font-family: 'Roboto Slab', sans-serif;*/
+
+font-family: 'Ubuntu', sans-serif;
+}
+
+.navlinks{
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-size: 1.2em;
+}
+
+h1, h2, h3, h4, h5, h6{
+    /*font-family: 'Ubuntu', sans-serif;*/
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    /*font-size: 1.2em;*/
+    /*letter-spacing: 1px;*/
+}
+
+
+a {
+    transition: color .2s linear;
+    color:#00B4CC;
+}
+
+a:hover {
+    color:#00DFFC;
+    text-decoration: none;
+}
+
+.navbar-custom {
+    font-size: 22px;
+    background-color: #202222 !important;
+}
+
+.navbar-custom .navbar-brand{
+    font-size: 30px;
+    color: #00dffc !important;
+}
+
+.navbar-custom .navitem{
+    color:#00dffc !important;
+}
+
+.navitem:hover{
+    color:#00b4cc !important;
+    text-decoration: none;
+}
+
+.hidden{
+  display: none;
+}
+
+.navbar-toggler-icon {
+  border: none;
+  outline: none;
+}
+
+.caption{
+    font-size:12px;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: .2em;
+    margin-top: 1em;
+}
+
+.projectpage img{
+    max-width: 100%;
+    max-height: 50vh;
+    height: auto;
+    width: auto;
+}
+
+.blogpage img{
+    max-width: 100%;
+    max-height: 50vh;
+    height: auto;
+    width: auto;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+.blogpage h1, .blogpage h2{
+    color: #D49E68;
+    margin-top:
+}
+
+hr{
+    background-color:white !important;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+
+.youtubevideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+code {
+  font-family: Consolas,"courier new";
+  color: #110000;
+  background-color: #AFAFAF;
+  padding: 2px;
+  font-size: 105%;
+}
+
+</style>
+
+
+    <link rel="icon" type="image/png" href=" /static/aklogo.png " />
+    
+
+</head>
+<body style="color:#F8E0CB;overflow-x: hidden;">
+
+
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
+      <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
+          </span>
+        </i>
+    </button>
+
+    <div class="collapse navbar-collapse " id="navbarSupportedContent" style="margin-left:25px;margin-top:10px">
+        <ul class="navbar-nav ml-auto navlinks">
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/static/resume.pdf ">CV/Resume</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://github.com/kongmunist" target="_blank" title="Github">GitHub</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://twitter.com/oldestasian" target="_blank" title="Twitter">Twitter</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="mailto:andyking99@gmail.com" target="_blank" title="Email">Email</a>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/blog/">[Blog]</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+<!-- padding-left:20px; padding-right:20px -->
+            <div class="col-md-8 col-11 p-0" style="">
+                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
+
+                
+
+<!--<style>-->
+<!--    h1{-->
+<!--  margin-top: 1em;-->
+<!--}-->
+<!--</style>-->
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        
+
+
+<div class="blogpage overflow-hidden">
+    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Infoglobe Tutorial Pt. 2 — Hardware Integration</h1>
+            <p style="font-size:0.8em;"> Published October 13, 2022</p>
+<hr>
+            <p>Hello! We're still hacking the Infoglobe. This post is about internalizing the external electronics we were using in the <a href="../infoglobetutorial1">first tutorial</a>, as well as powering our microcontroller using voltage from sources inside the infoglobe so we don't need two power lines. </p>
+<hr>
+
+<p>As you may remember from <a href="../infoglobetutorial1">last time</a>, we wired up the data LED and ran the wires out of the infoglobe, where they were connected to an ESP8266 via breadboard. This is a great testing setup for the Infoglobe because we can fine-tune and measure the data we're sending to control the Infoglobe's display as we're figuring out the IR protocol. </p>
+<p>From here, I'd recommend fellow Infoglobers to first write the software to control the Infoglobe, just in case there are any repairable hardware problems that can be detected early. Assuming you've done that or are using known-working code, we'll proceed with internalizing the electronics</p>
+<p class ="caption"> Our testing setup from tutorial 1 </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="Our testing setup from tutorial 1" src="/static/igt1_testingsetup.jpg" /></p>
+
+<hr>
+
+<h1>Tools</h1>
+<p>You'll need the following</p>
+<ul>
+<li>1x Infoglobe, opened</li>
+<li>ESP8266/ES32 or other small microcontroller</li>
+<li>Soldering iron + solder<ul>
+<li>Good air filter or fan</li>
+<li>Dexterity</li>
+</ul>
+</li>
+<li>Various passives<ul>
+<li>Thin or flexible wire, preferably both</li>
+<li>Power switch, small (optional)</li>
+<li>Diode (optional)</li>
+<li>Big capacitor (optional)</li>
+</ul>
+</li>
+</ul>
+<h1>Steps</h1>
+<ol>
+<li>Prep the microcontroller and its new home (µcompartment)<ul>
+<li>Prep compartment</li>
+<li>Attach the flyback diode</li>
+<li>Attach the filtering capacitor</li>
+</ul>
+</li>
+<li>Run power lines to our microcontroller<ul>
+<li>Find ~5V using a multimeter</li>
+<li>Run wires to the µcompartment</li>
+<li>(optional) Make an in-line power switch for the microcontroller</li>
+</ul>
+</li>
+<li>Run data lines to our microcontroller<ul>
+<li>Connect LED to ground with a resistor</li>
+<li>Solder new wire to the LED's high pin</li>
+<li>Run data line to µcompartment</li>
+</ul>
+</li>
+<li>Wire up the ESP<ul>
+<li>Melt a hole in the battery compartment</li>
+<li>Feed wires through the hole</li>
+</ul>
+</li>
+</ol>
+<hr>
+
+<h1>Step 1: Prepping the microcontroller</h1>
+<p>First we're gonna prepare the microcontroller for implanting. The main thing we're worried about is power — it sucks to have to plug two power cables in to use a consumer device, so we're hijacking the 5.6V line from within the Infoglobe itself. The only problem is that it's the motor power, so it's noisy and has kickback. Feel free to skip ahead if you know all this already. </p>
+<p>The motor's source is not the best. Starting up the spinning rotor requires a few kicks sometimes, evidenced in these sharp voltage drops on the scope. And even after the motor begins, there's noise on the voltage spanning almost 1Vpp. However these are tameable.</p>
+<p class ="caption"> Motor noise and startup behavior </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="Motor noise and startup behavior" src="/static/igt2_motorstartupnoise.jpg" /></p>
+
+<h3>Motor protections</h3>
+<p>A motor is a set of coils that magnetize when current goes through them, allowing them to push off a set of permanent magnets in their center and generate the torque that they're known for. Whenever we turn a motor off suddenly, we essentially stop pushing current through a large inductor, their coils. This inductor then tries to preserve the current going through it by flipping the voltage across it. In practice, this means turning off a motor briefly creates a massive spike of both positive and negative voltage. </p>
+<p class ="caption"> Motor turn off creates a big spike of voltage </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="Motor turn off creates a big spike of voltage" src="/static/igt2_motorkickback.jpg" /></p>
+
+<p>This is called kickback, and it can damage sensitive electronics like your microcontroller. To protect our ESP against kickback voltage, we connect a diode going from GND to V+. In case GND ever exceeds V+, it'll leak through the diode before it has a chance to go through our microcontroller and destroy it. </p>
+<h3>Smoothing motor voltage</h3>
+<p>Besides quickly fatal problems like kickback, I was also concerned about slowly fatal problems. Like that the noisy voltage of the motor would mess with the internal timings of the ESP and prevent WiFi from working properly. </p>
+<p>We are taking the stardard solution to this, which is to use decoupling or filter capactiors across V+ to GND. Due to the size of the noise, nothing worked until I got to massive values of C. Here I've placed a 220uF tantalum capacitor across the V+ line and GND halfway through the oscilloscope trace. </p>
+<p class ="caption"> Capacitor filtering motor noise down to half the amplitude </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="Capacitor filtering motor noise down to half the amplitude" src="/static/igt2_filtercapworks.jpg" /></p>
+
+<p>You can see the noise drop from a 200mV brick line down to ~100mV. Although it's not super significant, I left it in because it didn't do any harm and definitely does help smooth the noise. </p>
+<h2>Done setting up the microcontroller?</h2>
+<p>It should look something like this:</p>
+<p class ="caption"> schematic of microcontroller for the infoglobe. </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="schematic of microcontroller for the infoglobe." src="/static/igt2_microwiringdiagram.jpg" /></p>
+
+<p class ="caption"> View of the bottom of the infoglobe's new brain, the ESP8266 </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="View of the bottom of the infoglobe&#39;s new brain, the ESP8266" src="/static/igt2_equippedesp.jpg" /></p>
+
+<h2>Finishing touches</h2>
+<p>Once you've wired everything, tape up the inside of the AAA backup power supply so we can put our ESP in there without shorting it out.</p>
+<p>Why are all those funniny blue wires going though the hole for? Patience, my dear friend. We're getting there.</p>
+<hr>
+
+<h1>Step 2: Finding power on the Infoglobe board</h1>
+<p>When you first open the infoglobe, you get to see its beautiful, unmarred circuit board. We're gonna mess with it immediately. </p>
+<p class ="caption"> The power wires are the red ones. Yes there's 3 sets of red wires wrapped together. No I don't remember which is which. </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="The power wires are the red ones. Yes there&#39;s 3 sets of red wires wrapped together. No I don&#39;t remember which is which." src="/static/igt2_circuitoverhead.jpg" /></p>
+
+<p>We know that the motor probably gets its power from one of the red wires. The only problem is, there's three of them and they're all super tangled up.
+If we look closely, we notice that two of the red wires go to the bottom of the limit switch, the very piece that controls the motor turning on! As it turns out, those ARE the power wires, you just need to figure out which one is "after" the switch (off when switch off, etc.), then connect our ESP's power wire to it somehow. </p>
+<p>Stripping out a section and soldering works, but alternatively, you can use the power wire to do a continuity test and find regions on the board that are connected to it. One probe on the power wire, and with the other probe you just start testing random pads on the infoglobe board. </p>
+<p>Here's where I broke out the voltage. Under the safety switch you can find the V+ connections, both before and after the switch. </p>
+<p class ="caption"> Location of the 5.6V line we'll be using. "After switch" comes on when the safety is down. </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="Location of the 5.6V line we&#39;ll be using. &#34;After switch&#34; comes on when the safety is down." src="/static/igt2_powerlabeled.jpg" /></p>
+
+<p>If you want to check, you can plug the infoglobe in and check if the motor supply voltage is what you want. It should sit at ~6-6.3V when the safety switch is off, and drop to ~5.6V with the rotor on.</p>
+<p class ="caption"> Supply voltage at 5.6V, rotor visibly spinning </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="Supply voltage at 5.6V, rotor visibly spinning" src="/static/igt2_motoronvoltage.jpg" /></p>
+
+<p class ="caption"> With the safety switch untriggered, supply voltage is over 6V </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="With the safety switch untriggered, supply voltage is over 6V" src="/static/igt2_motoroffvoltage.jpg" /></p>
+
+<p>Once you've confirmed that the power lines are giving you what you want, go ahead and solder a long wire to the V+ point. Also solder a similarly long wire to a GND point of the board. You can find these all over, here's the two I used. </p>
+<p class ="caption"> I used the left one for power ground, and the right one to ground my data LED </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="I used the left one for power ground, and the right one to ground my data LED" src="/static/igt2_circuitoverhead_gndlabeled.jpg" /></p>
+
+<p>At this point you should have 2 wires coming from the left side of the board connected to power and ground, with long enough wires to push them into the microcontroller's compartment. </p>
+<hr>
+
+<h1>Step 3: Data routing</h1>
+<p>All that's left is to reroute the data wires that we made earlier. </p>
+<p>Earlier when our computer powered the microcontroller, the microcontroller didn't share a ground with the infoglobe so we had to cut both power and GND on the infoglobe's data LED. Now that the microcontroller is sharing the Infoglobe ground, we can ground the LED near where it stands and just run one wire to the microcontroller, avoiding another messy wire.</p>
+<p>If you look in the ground pic above, you'll see the right connection point is right beside the data LED. I soldered the right leg of the LED to that spot on the board through the current-limiting resistor we had on it before.</p>
+<p class ="caption"> Picture of the right leg of the LED (ground side) connected via resistor to ground </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="Picture of the right leg of the LED (ground side) connected via resistor to ground" src="/static/igt2_ledgrounded1.jpg" /></p>
+<p class ="caption"> Alternate view of the LED's ground side </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="Alternate view of the LED&#39;s ground side" src="/static/igt2_ledgrounded2.jpg" /></p>
+
+<p>Now we have the LED grounded, we want to connect a longer wire to the LED's positive side and run that wire towards our microcontroller compartment. I just cut my old wire and soldered on a longer bit, which can be seen in the pictures above.</p>
+<p>After you've done this, the data LED should have one long wire coming out of it and the power area should have two. Picture below, but the wires need to be elongated to reach the compartment comfortably.</p>
+<p class ="caption"> Completed wiring overhead shot, but the wires are all too short </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="Completed wiring overhead shot, but the wires are all too short" src="/static/igt2_completewiring.jpg" /></p>
+
+<h1><s>Step ? (optional): Add a power switch</s></h1>
+<p><b>EDIT - I don't think this mod is necessary anymore. I was worried that powering the ESP with my computer while it was still connected to the motor's power would run 5V to the motor and and make it spin, or else damage the motor by underpowering it in some way. I checked the resistance across the motor and it seemed pretty high, so I'm no longer worrying about this. </b></p>
+<p><s>Since I wanted to be able to change the code on my ESP after putting it all back together, I connected the microcontroller to power through a little click switch that I left in the bottom. I had to burn a second hole through the casing to do this, but I think it's necessary </s></p>
+<p class ="caption"> Power switch for ESP </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="Power switch for ESP" src="/static/igt2_powerswitch.jpg" /></p>
+
+<!-- - explain flyback - online graphic -->
+<!-- - explain capacitor - 2x images of noise before and after if we have them, otws dwai -->
+<!-- - explain compartment photo -->
+<!-- - circuit diagram?  -->
+
+<!-- - icture for searching for power -->
+<!-- - picture of voltage on the lines -->
+<!-- - picture of power before and after the switch -->
+<!-- - picture of startup kicking -->
+<!-- - overhead shot of the power connections and where the wires are going and overall -->
+
+<!-- # Step 2: Data -->
+<!-- - picture for LED ground connection -->
+<!-- - picture for wiring high line, leave it long -->
+<!-- - overhead shot of the data connections -->
+<!-- - burn hole for the data wires -->
+
+<h1>Step 4: Finish routing the wires to the compartment</h1>
+<p>You'll need your soldering iron again for this part. The battery compartment at the bottom of the infoglobe does not have a hole to the inside, so we're going to add one by melting the plastic with our soldering iron. If you have a drill, it'll work but probably not well. </p>
+<p>The spot I chose is next to the safety switch on the left side of the Infoglobe, and is the only side of the battery compartment visible from the top without removing the PCB. Clear the area of wires and make sure the other side is clean, then get to a soldering filter fan. You'll just push the soldering iron tip into the plastic casing slowly, and voila! A hole for our wires!</p>
+<p class ="caption"> Internal hole for wires going to the microcontroller </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="Internal hole for wires going to the microcontroller" src="/static/igt2_burnhole_inside.jpg" /></p>
+
+<p class ="caption"> Corresponding external hole </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="Corresponding external hole" src="/static/igt2_burnhole_outside.jpg" /></p>
+
+<p>We are gonna push three wires through this hole, mine happened to all look the same so I had to mark each one so I could tell them apart. On the other side, you'll solder the power to 5V, ground to GND, and the data line to D2 or whatever pin you're using in your code to control the infoglobe.</p>
+<p>Your microcontroller should sit nicely if it's got the Wemos D1 Mini shape. </p>
+<h1>Step 7: Put everything back together.</h1>
+<p>Secure the wires internally, then put the grey shell back on, then screw the rotor back on, then put the dome back on. </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/igt2_tolife.jpg" /></p>
+
+<p>And we're done! You are now the proud owner of a modded Infoglobe. Now get out there and make it say some cool stuff!</p>
+<h1>Cya later!</h1>
+<p>Let me know if I've left out details or you need any clarification, my email is listed above.</p>
+
+    
+        <hr>
+        <p style="line-height:250%;">
+        <a class="btn btn-info" href="/tagged/template/">template</a>
+
+        
+        </p> 
+    
+</div>
+
+
+
+
+                    </div>
+                    <br>
+        <!-- </div> -->
+</div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

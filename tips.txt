@@ -40,3 +40,4 @@ MAKING HTML TABLE  - use this style
 BASH - Double quotes make the shell expand variables, single quotes do no such thing. Thanks sed and https://askubuntu.com/questions/76808/how-do-i-use-variables-in-a-sed-command
 JINJA/FLASK - utility_processor requires a newline between unique lines, or else it adds random apostrophes to some of the tags. Weird ass error. Using Markup(render_template_string()) instead of render_template() also fixes this problem.
 HTML - using float:left and float:right are all fine and good, but if you want the next element to ignore these two block elements, you can use clear:left or right to remove the float and have the next elem appear after it.
+MARKDOWN - Numbered lists with indents that have bullets, reference /infoglobetutorial2. You need 7 spaces indentation for it not to add an extra line break

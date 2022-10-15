@@ -1,4 +1,4 @@
-title: Infoglobe Tutorial Pt 1 — Hardware
+title: Infoglobe Tutorial Pt 1 — Hardware Prototyping
 date: 2022-10-01
 label: blog
 tags: [infoglobe, hardware]
