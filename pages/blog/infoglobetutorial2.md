@@ -1,8 +1,8 @@
 title: Infoglobe Tutorial Pt. 2 — Hardware Integration
-date: 2022-10-13
+date: 2022-10-15
 label: blog
-tags: [template]
-snippet: Internalized electronics
+tags: [infoglobe, hardware, electronics]
+snippet: Letting go of externalized electronics
 
 Hello! We're still hacking the Infoglobe. This post is about internalizing the external electronics we were using in the [first tutorial](../infoglobetutorial1), as well as powering our microcontroller using voltage from sources inside the infoglobe so we don't need two power lines. 
 

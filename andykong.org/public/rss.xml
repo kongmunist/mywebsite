@@ -6,7 +6,7 @@
     <description>Thoughts and Work</description>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
-    <lastBuildDate>Sat, 15 Oct 2022 16:14:19 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 23 Oct 2022 18:23:56 +0000</lastBuildDate>
     <item>
       <title>First Post!</title>
       <link>blog/first</link>
@@ -4298,7 +4298,7 @@ Happy searching!
     <item>
       <title>Infoglobe Tutorial Pt 1 — Hardware Prototyping</title>
       <link>blog/infoglobetutorial1</link>
-      <description>Hacking the brain of the Infoglobe</description>
+      <description>Hacking a new brain into the Infoglobe</description>
       <content:encoded>&lt;style&gt;
     image{
         max-width: 100%;
@@ -4519,7 +4519,7 @@ I'm trying to make a circular laser, and I fear this is easily done with some ho
     <item>
       <title>Infoglobe Tutorial Pt. 2 — Hardware Integration</title>
       <link>blog/infoglobetutorial2</link>
-      <description>Internalized electronics</description>
+      <description>Letting go of externalized electronics</description>
       <content:encoded>Hello! We're still hacking the Infoglobe. This post is about internalizing the external electronics we were using in the [first tutorial](../infoglobetutorial1), as well as powering our microcontroller using voltage from sources inside the infoglobe so we don't need two power lines. 
 
 &lt;hr&gt;
@@ -4711,7 +4711,7 @@ Let me know if I've left out details or you need any clarification, my email is 
 
 </content:encoded>
       <author>andyking99@gmail.com (Andy Kong)</author>
-      <pubDate>Thu, 13 Oct 2022 00:00:00 -0400</pubDate>
+      <pubDate>Sat, 15 Oct 2022 00:00:00 -0400</pubDate>
     </item>
   </channel>
 </rss>
