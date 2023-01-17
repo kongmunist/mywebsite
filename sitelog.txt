@@ -2,8 +2,8 @@ TODO:
 - make GIFs into videos
 - Make the images on the front page snap into position following a random path
 - Add a now page
-- Add image size constraints to projects page
 
+November 25, 2022 - Downloaded the jquery and other stuff at the bottom so it loads locally. Thank you Jeff Huang @ Brown. Also added goatcounter analytics to try it out. Also realized the font-awesome pack is actually downloading the sprites from the website even though I'm hosting the .js file. Need to move away from that
 October 13, 2022 - Added image max width to projects page, also made H1 and H2 a darker color on blog posts. Also removed margin-top of 1em from all h1 h2 in blogs, just added it to the first one. Also on blog posts page, I made all the text a brighter color that darkens when hovered. Also I rearranged the title/snippet/date etxt so the date is now inline with everything on the right.
 October 4, 2022 - Fixed how images are sized on blog posts, hopefully for the last time. Making great use of the max-width and max-height features, constraining them to be no bigger than 1/4 of the screen at any point. Should do this to projects page as well.
 July 14, 2022 - Excited for L to get here. Uploaded Igneous, in the process made a YouTube video CSS tag, a Youtube container tag, fixed how images are sized on projects for mobile and web, and re-centered the projects images. Also made images center by default, which could bring problems. Keep an eye out.
