@@ -1,5 +1,5 @@
 from flask import Flask, render_template, url_for, render_template_string, Markup, \
-        redirect,make_response
+        redirect,make_response,send_from_directory
 from flask_flatpages import FlatPages, pygmented_markdown
 # from flask_bootstrap import Bootstrap
 from flask_frozen import Freezer
@@ -218,11 +218,23 @@ def mainproject():
 @app.route('/projects/<string:project>/')
 def project(project):
     print("project " + project)
+    if project == "facemeshdemos":
+        return redirect(url_for("static", filename="FaceMeshMedium/index.html"))
+
     page = [pages.get("projects/" + project)]
     if page[0] is None:
         return mainproject()
     return render_template('projects.html', page = page[0])
 
+
+# Serving another website as a suburl from flask
+@app.route("/tester/")
+def tester():
+    print("tester")
+    # url =
+    # return render_template(url_for("static", filename=url)) # template not found
+    # return send_from_directory("static", url) # url_for("static", filename=url)) # static resources not loaded properly
+    return redirect(url_for("static", filename="FaceMeshMedium/index.html")) # works, but now I have to add index.html to the url
 
 @app.route("/friends/")
 def friends():
