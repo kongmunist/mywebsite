@@ -218,8 +218,8 @@ def mainproject():
 @app.route('/projects/<string:project>/')
 def project(project):
     print("project " + project)
-    if project == "facemeshdemos":
-        return redirect(url_for("static", filename="FaceMeshMedium/index.html"))
+    # if project == "facemeshdemos":
+    #     return redirect(url_for("static", filename="FaceMeshMedium/index.html"))
 
     page = [pages.get("projects/" + project)]
     if page[0] is None:
