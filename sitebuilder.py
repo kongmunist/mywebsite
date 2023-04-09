@@ -48,9 +48,8 @@ def prerender_jinja(text):
 app.config['FLATPAGES_HTML_RENDERER'] = prerender_jinja
 
 def dateconvert(str):
-    return str.strftime("%B %d, %Y")
+    return str.strftime("%B %-d, %Y") # Andy, if you read this in the future, -d is said not to be portable between OSs, and on windows # might work instead. Otherwise we go back to dates with leading zeros
 app.jinja_env.globals.update(dateconvert=dateconvert)
-
 
 @app.context_processor
 def utility_processor():
