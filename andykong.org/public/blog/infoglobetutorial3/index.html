@@ -8,6 +8,13 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    
+        <meta name="author" content="Andy Kong">
+        <meta name="title" content="Infoglobe Tutorial Pt. 3 — Software">
+        <meta name="description" content="Adding bits to our atoms">
+        <meta name="keywords" content=" infoglobe,  software,  gist,  tutorial, ">
+    
+
 
 
 
@@ -237,90 +244,97 @@ code {
 </nav>
 
 
-<div class="row justify-content-center" style = "height:100vh; width: 100vw;padding-left:25px; padding-right:0px">
-    <div class="col-xl-3 col-lg-4 col-md-11 col-11" style="padding-left:2%; padding-right:2%;">
+    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+<!-- padding-left:20px; padding-right:20px -->
+            <div class="col-md-8 col-11 p-0" style="">
+                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
 
-        <a href="/"> <img class="media-object mx-auto d-block rounded-circle " style="margin-bottom:0px; max-height:20vh;" src="/static/merock_square.jpg"/></a>
-        <h1 class="text-center" style="font-size: 2em; margin-top:0.5em;">Hi, I'm Andy!</h1>
-        <p class="text-center"  style="font-size: 1.5em; margin-bottom:0px;"></p>
+                
 
-        <div class="links text-center" style="margin:5px; font-size:2.5em;">
-            <a href="https://critiquefood.blogspot.com/" target="_blank" title="Food For Thought"><i class="fas fa-ice-cream"></i></a>&nbsp
-            <!--<a href="https://github.com/kongmunist" target="_blank" title="Github"><i class="fab fa-github-square fa-2x"></i></a>&nbsp-->
-            <!--<a href="mailto:andyking99@gmail.com" target="_blank" title="Email"><i class="far fa-paper-plane fa-2x"></i></a>&nbsp-->
-            <a href="https://www.youtube.com/channel/UC8hEr0FkB5i-gQC4b7b5fvg" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>&nbsp
-            <a href="https://kongmunist.medium.com/" target="_blank" title="Medium"><i class="fab fa-medium"></i></a>&nbsp
-            <a href="/rss.xml" title="RSS"><img src="/static/rss.svg" style = "height:1em;"></a>&nbsp
-        </div>
-<!--        <img style="background:white; padding:5px;"width="100%" src="http://ghchart.rshah.org/409ba5/kongmunist" alt="2016rshah's Github chart" />-->
-    </div>
+<!--<style>-->
+<!--    h1{-->
+<!--  margin-top: 1em;-->
+<!--}-->
+<!--</style>-->
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        
 
 
+<div class="blogpage overflow-hidden">
+    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Infoglobe Tutorial Pt. 3 — Software</h1>
+            <p style="font-size:0.8em;"> Published April 09, 2023</p>
+<hr>
+            <style>
+    /* Limit height. Show scrollbars when exceeding height */
+.gist .blob-wrapper.data {
+   max-height:40vh;
+   overflow:auto;
+}
+    </style>
 
-    <div class="col-xl-7 col-lg-7 col-md-11 col-11 p-0" style="">
-        <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
+<p>Ok, welcome back for our final installment of the infoglobe tutorial series. If you've not been following along, here's links to the hardware mods that you'll need to have done before this post will be useful to you — <a href="../infoglobetutorial1">part 1</a> and <a href="../infoglobetutorial2">part 2</a>.</p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/igt1_hero.jpeg" /></p>
 
-            
-    <div>
-    <h2>List of stuff tagged <em>infoglobe</em></h2>
+<p>If you've forgotten, here's the device we're hacking - the Olympia Infoglobe. I have described it too often, so we're gonna get right into the meat of this post. </p>
+<hr>
+
+<h1>Code</h1>
+<p>We're using the Wemos D1 mini ESP8266/ESP32 breakout board to control our globe, it looks like this.</p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/igt3_wemos.png" /></p>
+
+<p>Boot up your Arduino IDE and download the "IRremoteESP8266" library from the Tools-&gt;Manage Libraries-&gt; then search for IRremoteESP8266. This library should be supported for ESP32s as well. Hit install, and twiddle your thumbs for a bit as it installs.</p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/igt3_irlib.png" /></p>
+
+<p>Now, copy past <a href="https://gist.github.com/kongmunist/a8bdadbacda4bcb129cd183f2f0fffc5">this gist</a> into a new Arduino file and upload it to your ESP board. </p>
+<script src="https://gist.github.com/kongmunist/a8bdadbacda4bcb129cd183f2f0fffc5.js"></script>
+
+<p>This script is a demo showing the usage of all the functions we have to make controlling the Infoglobe easier. If you read through the <code>loop()</code> function, then you'll begin to understand the code and become able to extend it to your own beneficial/nefarious purposes.</p>
+<p>If all went well and your ESP and Infoglobe are both powered up, you should see a "Hello World" message swirling around. You can change the default message on line 47, or you can open the Serial Monitor to upload a message to the Infoglobe immediately. </p>
+<h2>Example use case</h2>
+<p>I've personally written some code which lets the Infoglobe connect to my wifi and access <a href="https://aksuper7.pythonanywhere.com/">this website</a> I made for receiving notes from my friends. If you type a message and my globe is plugged in, I'll be able to see the message right on my Infoglobe. Pretty cool, right? </p>
+<p class ="caption"> Website to connect digital friends to my physical environment </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="Website to connect digital friends to my physical environment" src="/static/igt3_example1.png" /></p>
+
+<p>I know of other people using their infoglobes as a weather/disaster reporting station, or a way to visualize Alexa messages. </p>
+<h2>Alternatives to ESP</h2>
+<p>It should be possible to substitute in any microcontroller which is supported by one of the IRremote libraries, since it should work as long as the function names are identical.</p>
+<h2>More code?</h2>
+<p>There are some cool folks working on a more sophisticated platform for interacting with the Infoglobe, but I don't currently have the link for that. Hopefully I can update this soon with the link.</p>
+<h1>That's all folks!</h1>
+<p>What will you do with your Infoglobe? I'd love to see it! Please feel free to email me if you get it working :)</p>
+<p>Happy hacking!</p>
+
+    
         <hr>
-    
-        <ul>
+        <p style="line-height:250%;">
+        <a class="btn btn-info" href="/tagged/infoglobe/">infoglobe</a>
 
-    <li>
-        <a href="/blog/infoglobetutorial2/">Infoglobe Tutorial Pt. 2 — Hardware Integration</a>
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/software/">software</a>
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/gist/">gist</a>
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/tutorial/">tutorial</a>
+        
+        </p> 
     
-        | Tagged:
-        
-            <a href="/tagged/infoglobe/">infoglobe</a>
-        
-            <a href="/tagged/hardware/">hardware</a>
-        
-            <a href="/tagged/electronics/">electronics</a>
-        
-    
-    </li>
-
-    <li>
-        <a href="/blog/infoglobetutorial3/">Infoglobe Tutorial Pt. 3 — Software</a>
-    
-        | Tagged:
-        
-            <a href="/tagged/infoglobe/">infoglobe</a>
-        
-            <a href="/tagged/software/">software</a>
-        
-            <a href="/tagged/gist/">gist</a>
-        
-            <a href="/tagged/tutorial/">tutorial</a>
-        
-    
-    </li>
-
-    <li>
-        <a href="/blog/infoglobetutorial1/">Infoglobe Tutorial Pt 1 — Hardware Prototyping</a>
-    
-        | Tagged:
-        
-            <a href="/tagged/infoglobe/">infoglobe</a>
-        
-            <a href="/tagged/hardware/">hardware</a>
-        
-            <a href="/tagged/electronics/">electronics</a>
-        
-    
-    </li>
-
-</div>
-    
-    </div>
-
-            <!-- </div> -->
-    </div>
-    <div class="col-xl-2 col-lg-1 col-0"></div>
 </div>
 
-    
+
+
+
+                    </div>
+                    <br>
+        <!-- </div> -->
+</div>
+
+
 
 
 <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
