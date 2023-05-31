@@ -1,3 +1,4 @@
+BASH - Using Processing/Python to launch exec() functions only works for redirections (>, < ) if there is a shell. Otherwise they will not work. 
 MARKDOWN JINJA - Used some workaround I found on Stack Overflow to render jinja templates ({{}}) before rendering markdown for the project and blog posts. now i can use url_for on images in .md files
 IMAGES - mx-auto centers, d-block prevents it from being inline. SOMETIMES YOU NEED BOTH, using class="d-block mx-auto" for <img>
 IMAGE TEXT - Images in md have to be beside a text block (touching, 1 \n) or else the headers (###) will attach to the sides -.-
@@ -10,7 +11,7 @@ METADATA YML - Calling page.meta.date renders automatically as a datetime.date o
 HTML - you wrote a <p class="caption"> for making captions below images. It's hella useful
 BLOG IMAGES - TEMPLATE is <img class="d-block mx-auto" src="{{ url_for('static',filename='filename.png') }}"/>
 BOOTSTRAP - if you want to center text, use class=text-center and don't put a row around it
-YOUTUBE EMBEDDED - to center it, make a div around it with style="text-align:center;" and class="d-block mx-auto", i don't know which one is necessary. EDIT it's the first one, the text-align center.
+YOUTUBE EMBEDDED VIDEO - to center it, make a div around it with style="text-align:center;" and class="d-block mx-auto", i don't know which one is necessary. EDIT it's the first one, the text-align center.
 HTML - On a new page (like tagmain), if the bat content doesn't have an additional div all the formatting goes to hell. Place a div as the first thing in {{} bat_content} or whatever
 HTML/JS - if you try to set the style by doing elem.style.fontSize = "100%";, make SURE you don't put "100%;" with a semicolon inside the thing. It'll terminate it all on its own, but you putting the ; makes it reject the string. So much for being concientious :(.
 CSS - Need both "backdrop-filter: blur(4px)" and "-webkit-backdrop-filter: blur(4px)" to make the blur happen in Safari.

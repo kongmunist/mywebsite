@@ -6,6 +6,10 @@
         <meta name="title" content="{{ p.title }}">
         <meta name="description" content="{{ p.snippet }}">
         <meta name="keywords" content="{% for tag in p.tags %} {{tag}}, {% endfor %}">
+
+        <title>
+            {{p.title}} | Andy Kong
+        </title>
     {% endfor %}
 {% endblock %}
 

@@ -2,15 +2,17 @@
 <html lang="en">
 <head>
 
-<title>
+<!-- <title>
     Andy Kong!
-</title>
+</title> -->
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="author" content="Andy Kong">
     <meta name="title" content="Meiger Counters">
     <meta name="description" content="Geiger&#39;s 2nd most famous counter, the electromagnetic radiation detector">
+
+<title> Meiger Counters | Andy Kong</title>
 
 
 
@@ -250,24 +252,52 @@ code {
         <h1 style="text-center; margin-bottom: 5px">Meiger Counters</h1>
             <i><p style="margin-bottom: 5px; margin-top: 0px">Geiger&#39;s 2nd most famous counter, the electromagnetic radiation detector</p></i>
             <p style="margin-bottom: 0px; margin-top: 0px">Timespan: October - November 2021</p>
-            <p style="margin-bottom: 5px; margin-top: 0px">Published: 2023-07-18</p>
+            <p style="margin-bottom: 5px; margin-top: 0px">Published: 2023-05-30</p>
 
             <hr>
-        <p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/meiger_presentation.png" /></p>
+        <p style="text-align: center;"><i>
+    Artsy project done with the F21 Electronic Logics && Creative Practice class in IDeATe.
+Not medical advice. </i></p>
 
-<p>Living in developed countries means constant exposure to all kinds of dirty electrical noise and strong magnetic fields. While the human body mostly signals with chemicals and ions, our brain — the intellectual center and chief information processor — communicates via electricity. In the prescence of electromagnetic (EM) fields, these signals and pathways can become muddled and interfere with maintenance and development of new neural pathways. </p>
-<p>That's why I invented the Meiger Counter, the first handheld device used by reasonable, cautious people all over the world to detect and isolate dangerous sources of electromagnetic noise that could be putting you or your loved ones at a higher risk for cancer <a href="https://www.sciencedirect.com/science/article/abs/pii/S0013935121012883">[1]</a>. </p>
+<hr>
+
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/meiger_presentation.png" /></p>
+
+<p>Living in developed countries means constant exposure to all kinds of dirty electrical noise and strong magnetic fields. While the human body mostly signals with chemicals and ions, our brain — the intellectual center and chief information processor — communicates via electricity. </p>
+<p>In the presence of electromagnetic (EM) fields, these signals and pathways can become muddled and interfere with maintenance and development of new neural pathways. </p>
+<p>That's why I invented the <strong>Meiger Counter</strong>, the first handheld device used by reasonable, cautious people all over the world to detect and isolate dangerous sources of electromagnetic noise that could be putting you or your loved ones at a higher risk for cancer <a href="https://www.sciencedirect.com/science/article/abs/pii/S0013935121012883">[1]</a>. </p>
 <p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/meiger_main.jpg" /></p>
 
-<p>I built a pseudo-historical scientific device that can detect EMI/RF noise in your local environment. It's pseudo because the historical part is faked (I made it a week before presenting it), but the science part is true! Presenting, the Meiger counter: </p>
-<p>One commenter noted that it was almost too subtle, he couldn't tell if I was joking. Mission accomplished. </p>
+<p>Each Meiger counter comes with a dial and speaker to alert you whenever a strong electrical field is nearby. Simply press the trigger while pointing our proprietary directional Efield Antenna at a source you suspect is poisoning the environment around you, and the rate of clicking will tell you the strength of the source.</p>
 <p class ="caption"> Meiger Counters in carrying case, v1 on the left and v2 on the right  </p>
 <p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="Meiger Counters in carrying case, v1 on the left and v2 on the right " src="/static/meiger_case.jpg" /></p>
 
-<p class ="caption"> caption </p>
-<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="caption" src="/static/file" /></p>
+<p>The device is lightweight, portable, and easily rechargable. Each counter comes with a lifetime guarantee, no electrical field-induced death-causing cancer or your money back!</p>
+<div class="video-container">
+        <iframe class="youtubevideo" src="https://www.youtube.com/embed/iLK8d7VIhHs"allowfullscreen></iframe>
+</div>
 
-<p><a href="https://andykong.org">Link example</a></p>
+<p><br><hr><br></p>
+<h1>Build details</h1>
+<p>The carrying case was scavenged from a Roboclub cleaning, it's a DeWalt case with no tools in it. Foam is from the cleaning as well. I cut it with a package opener, which is why it looks rather rough. </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/meiger_dewalt.jpg" /></p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/meiger_foamcase.jpg" /></p>
+
+<p>Meiger counter handles are made from the case of a Metrologic MH290 handheld barcode scanner, one of the <a href="../../blog/barcodehistory/">first ones ever sold commercially</a>. The top part is 3D printed on an SLS printer. To try and make it look vintage, I printed it out of a clear resin and then overexposed it in UV light. My post-processing was pretty crude, but I think it looks pretty good. </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/meiger_closeup1.jpg" /></p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/meiger_closeup2.jpg" /></p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/meiger_closeup3.jpg" /></p>
+
+<p>The Meiger counter ticks according to a Poissonian distribution, same as a Geiger counter. This makes the clicks sound eerily similar, and create a similar feeling of danger. The lambda of the Poisson distribution is determined by the variance of the analog readings on a wire antenna inside the counter. The higher the variance, the more frequent the clicks. This works pretty well for picking up electrical noise from power hubs, overhead lights, and large electronic devices. </p>
+<h1>Informational details</h1>
+<p>To make the presentation more convincing, I read several articles about the relationship between electromagnetic fields and various medical conditions. They presented some compelling correlations between weak magnetic fields and rates of leukemia in children, and many other conditions. The audience believed I had invented these studies, but they were quite real. Here are some screenshots from my slides:</p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/meiger_bees.png" /></p>
+
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/meiger_humans.png" /></p>
+
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/meiger_iarc.png" /></p>
+
+<p>Adding this to the list of things that make you go "huh!"</p>
             </div>
         <div class="col-lg-2"></div>
         <p style="line-height:300%;">&nbsp;</p>
