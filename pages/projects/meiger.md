@@ -18,10 +18,11 @@ Living in developed countries means constant exposure to all kinds of dirty elec
 
 In the presence of electromagnetic (EM) fields, these signals and pathways can become muddled and interfere with maintenance and development of new neural pathways. 
 
+{{ add_pic("meiger_hero.jpg", "", True) }}
+
 That's why I invented the __Meiger Counter__, the first handheld device used by reasonable, cautious people all over the world to detect and isolate dangerous sources of electromagnetic noise that could be putting you or your loved ones at a higher risk for cancer [[1]](https://www.sciencedirect.com/science/article/abs/pii/S0013935121012883). 
 
-
-{{ add_pic("meiger_main.jpg", "", True) }}
+{{ add_pic("meiger_andypresent1.jpg", "", True) }}
 
 Each Meiger counter comes with a dial and speaker to alert you whenever a strong electrical field is nearby. Simply press the trigger while pointing our proprietary directional Efield Antenna at a source you suspect is poisoning the environment around you, and the rate of clicking will tell you the strength of the source.
 
@@ -61,6 +62,8 @@ To make the presentation more convincing, I read several articles about the rela
 {{ add_pic("meiger_humans.png", "") }}
 
 {{ add_pic("meiger_iarc.png", "") }}
+
+{{ add_pic("meiger_andypresent2.jpg", "") }}
 
 Adding this to the list of things that make you go "huh!"
 

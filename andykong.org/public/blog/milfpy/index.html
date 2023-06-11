@@ -8,6 +8,17 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    
+        <meta name="author" content="Andy Kong">
+        <meta name="title" content="Average Clip Duration In Milf Manor">
+        <meta name="description" content="Gauging the preferred attention span on TLC dating shows">
+        <meta name="keywords" content=" python,  clipduration,  milf, ">
+
+        <title>
+            Average Clip Duration In Milf Manor | Andy Kong
+        </title>
+    
+
 
 
 
@@ -237,91 +248,73 @@ code {
 </nav>
 
 
-<div class="row justify-content-center" style = "height:100vh; width: 100vw;padding-left:25px; padding-right:0px">
-    <div class="col-xl-3 col-lg-4 col-md-11 col-11" style="padding-left:2%; padding-right:2%;">
+    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+<!-- padding-left:20px; padding-right:20px -->
+            <div class="col-md-8 col-11 p-0" style="">
+                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
 
-        <a href="/"> <img class="media-object mx-auto d-block rounded-circle " style="margin-bottom:0px; max-height:20vh;" src="/static/merock_square.jpg"/></a>
-        <h1 class="text-center" style="font-size: 2em; margin-top:0.5em;">Hi, I'm Andy!</h1>
-        <p class="text-center"  style="font-size: 1.5em; margin-bottom:0px;"></p>
+                
 
-        <div class="links text-center" style="margin:5px; font-size:2.5em;">
-            <a href="https://critiquefood.blogspot.com/" target="_blank" title="Food For Thought"><i class="fas fa-ice-cream"></i></a>&nbsp
-            <!--<a href="https://github.com/kongmunist" target="_blank" title="Github"><i class="fab fa-github-square fa-2x"></i></a>&nbsp-->
-            <!--<a href="mailto:andyking99@gmail.com" target="_blank" title="Email"><i class="far fa-paper-plane fa-2x"></i></a>&nbsp-->
-            <a href="https://www.youtube.com/channel/UC8hEr0FkB5i-gQC4b7b5fvg" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>&nbsp
-            <a href="https://kongmunist.medium.com/" target="_blank" title="Medium"><i class="fab fa-medium"></i></a>&nbsp
-            <a href="/rss.xml" title="RSS"><img src="/static/rss.svg" style = "height:1em;"></a>&nbsp
-        </div>
-<!--        <img style="background:white; padding:5px;"width="100%" src="http://ghchart.rshah.org/409ba5/kongmunist" alt="2016rshah's Github chart" />-->
-    </div>
+<!--<style>-->
+<!--    h1{-->
+<!--  margin-top: 1em;-->
+<!--}-->
+<!--</style>-->
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        
 
 
+<div class="blogpage overflow-hidden">
+    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Average Clip Duration In Milf Manor</h1>
+            <p style="font-size:0.8em;"> Published June 11, 2023</p>
+<hr>
+            <p>Whenever I'm watching unpretentious TV like sports or reality TV, I calculate the average clip length. I get my phone stopwatch out, and enter a lap whenever a cut happens. </p>
+<p>Do this maybe 20 times, and you usually get some idea of the distribution. Usually the cuts happen so quickly and fluidly that you may notice yourself <em>missing</em> a few cuts, even though every pixel on the screen dramatically changes and it seems like something you'd notice. </p>
+<p>Recently I watched Milf Manor, a "reality" dating show where older women seeking younger men are paired with younger men seeking older women on a fancy island. The twist is that every young man is the child of one of the older women. Hilarity ensues (?). </p>
+<p class ="caption"> The complicated feature I used for detecting jump cuts </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="The complicated feature I used for detecting jump cuts" src="/static/milf_cutfeature.jpg" /></p>
 
-    <div class="col-xl-7 col-lg-7 col-md-11 col-11 p-0" style="">
-        <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
+<p>Common decency aside, this show jump-cuts like nothing else. I did my stopwatch thing but didn't want to stop there — I really wanted to know all about the cut length distribution. I downloaded an episode and used the change in standard deviation of the absolute color difference of two adjacent frames. When this number crossed ~30, I called it a cut and recorded the frame number.</p>
+<p>Then I calculated a few stats about it. Here they are:</p>
+<p class ="caption"> Avg clip length is 2.48 sec, with the median at 1.92 sec </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="Avg clip length is 2.48 sec, with the median at 1.92 sec" src="/static/milf_stats.png" /></p>
 
-            
-<title>
-    Posts tagged 'python' | Andy Kong
-</title>
-    <div>
-    <h2>List of stuff tagged <em>python</em></h2>
+<p>While the average clip length is 2.5 seconds, the median is only 2 seconds. I also find it interesting that the average human blink rate is 1 blink per 4-5 seconds, which means we can see around two clips between blinks. Since the average blink takes ~0.3 seconds, we also won't miss much of a clip while blinking.</p>
+<p class ="caption"> Milf Manor clip duration histogram </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="Milf Manor clip duration histogram" src="/static/milf_cutdistro.jpg" /></p>
+
+<h1>Conclusion</h1>
+<p>The difficulty of identifying a cut in a video surprised me, but it makes sense if you consider all the possible transitions (fade to black, fade to another clip, slo-mo transition to real-time, etc.). There is even a library in Python called <a href="https://pypi.org/project/scenedetect/">scenedetect</a> which identifies these for you. Next time I will definitely use that for cut detection instead of making my own feature. </p>
+<p>I have completely satisfied my curiousity about Milf Manor at this time. </p>
+
+    
         <hr>
-    
-        <ul>
+        <p style="line-height:250%;">
+        <a class="btn btn-info" href="/tagged/python/">python</a>
 
-    <li>
-        <a href="/blog/workingwithbrainflow1/">Working with BrainFlow pt. 1</a>
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/clipduration/">clipduration</a>
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/milf/">milf</a>
+        
+        </p> 
     
-        | Tagged:
-        
-            <a href="/tagged/projectlog/">projectlog</a>
-        
-            <a href="/tagged/EEG/">EEG</a>
-        
-            <a href="/tagged/Python/">Python</a>
-        
-    
-    </li>
-
-    <li>
-        <a href="/blog/milfpy/">Average Clip Duration In Milf Manor</a>
-    
-        | Tagged:
-        
-            <a href="/tagged/python/">python</a>
-        
-            <a href="/tagged/clipduration/">clipduration</a>
-        
-            <a href="/tagged/milf/">milf</a>
-        
-    
-    </li>
-
-    <li>
-        <a href="/blog/replacingtiming/">Replacing Timing</a>
-    
-        | Tagged:
-        
-            <a href="/tagged/quantifiedself/">quantifiedself</a>
-        
-            <a href="/tagged/applescript/">applescript</a>
-        
-            <a href="/tagged/python/">python</a>
-        
-    
-    </li>
-
-</div>
-    
-    </div>
-
-            <!-- </div> -->
-    </div>
-    <div class="col-xl-2 col-lg-1 col-0"></div>
 </div>
 
-    
+
+
+
+                    </div>
+                    <br>
+        <!-- </div> -->
+</div>
+
+
 
 
 <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
