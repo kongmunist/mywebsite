@@ -1,8 +1,8 @@
-title: Quantifying Interface Speeds
+title: How Fast Is Your Keyboard?
 date: 2021-01-21
 label: blog
 tags: [bci, hci, interfaces]
-snippet: Comparing the information transfer rate of the keyboard, mouse, and other input devices.
+snippet: Calculating the human bandwidth of the keyboard, mouse, and other input devices using information transfer rate
 
 A lot of brain-computer interface(BCI) researchers will express their results in terms of how much information the user can input in one minute, known as information transfer rate (ITR), measured in bits per minute.
 
