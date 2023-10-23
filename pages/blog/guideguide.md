@@ -1,7 +1,7 @@
 title: How To Choose Stuff
 date: 2023-08-09
 label: blog
-tags: [design, thoughts]
+tags: [design, thoughts, wip]
 snippet: Wouldn't it be cool if we knew how to look for what we needed? 
 
 I've been thinking about Guides for selecting stuff. More concretely, I want a centralized website that hosts "how to pick an X" guides for choosing stuff that people use — USB hubs, fishing rods, humidifiers, etc.
