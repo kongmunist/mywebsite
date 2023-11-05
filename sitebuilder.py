@@ -5,7 +5,7 @@ from flask_flatpages import FlatPages, pygmented_markdown
 from flask_frozen import Freezer
 from feedgen.feed import FeedGenerator
 
-from datetime import datetime
+from datetime import datetime, timedelta
 import pytz
 import sys
 import subprocess
@@ -98,7 +98,7 @@ def index():
     projPages.sort(reverse=True)
 
     # filter out projects that are in the future
-    today = datetime.date(datetime.now())
+    today = datetime.date(datetime.now()) + timedelta(days=1)
     projPages = filter(lambda x: x[0] < today, projPages)
 
     # Extract out the pages only
