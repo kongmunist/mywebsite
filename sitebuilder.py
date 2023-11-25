@@ -95,7 +95,7 @@ def index():
     print("about me + projects main page")
     projPages = [p for p in pages if "project" == p.meta.get('label')]
     projPages = [(x.meta.get('date'), x) for x in projPages]
-    projPages.sort(reverse=True)
+    projPages.sort(reverse=True, key=lambda x: x[0])
 
     # filter out projects that are in the future
     today = datetime.date(datetime.now()) + timedelta(days=1)
@@ -207,8 +207,7 @@ def mainproject():
     print("main project page")
     projPages = [p for p in pages if "project" == p.meta.get('label')]
     projPages = [(x.meta.get('date'), x) for x in projPages]
-    # print(projPages)
-    projPages.sort(reverse=True)
+    projPages.sort(reverse=True, key=lambda x: x[0])
     projPages = [x[1] for x in projPages]
 
     # projPages = [x.path[9:] for x in projPages]

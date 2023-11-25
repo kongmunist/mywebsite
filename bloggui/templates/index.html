@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask-CKEditor Demo</title>
+	<style>
+		img {
+			max-width: 100%;
+			height: auto !important;
+		}
+	</style>
+</head>
+<body>
+	<div class="warpper" style="width: 80%; margin: auto;">
+		<h1>Flask-CKEditor: Blog Post</h1>
+
+		<form method="post">
+			Title<br>
+			<input type="text" name="title" placeholder="Title"><br><br>
+			<input type="text" name="postname" placeholder="blogpost3000"><br><br>
+<!--			<input type="text" name="date" placeholder="Date"><br><br>-->
+			<input type="text" name="tags" placeholder="Tags"><br><br>
+			<input type="text" name="snippet" placeholder="Brief description"><br><br>
+			<label for="ckeditor">Post</label>
+			{{ ckeditor.create() }}<br>
+			<input type="submit" value="Submit">
+		</form>
+	</div>
+	{{ ckeditor.load() }}
+	{{ ckeditor.config() }}
+
+<!--	config.contentsCss = '/css/mysitestyles.css';-->
+
+
+	<script>
+		// Wait until DOM loaded
+		// document.addEventListener("DOMContentLoaded", function(event) {
+
+		setTimeout(function() {
+				// Initialize CKEditor
+				a = document.querySelector('iframe').contentWindow.document.body;
+				let config = { attributes: true, childList: true, subtree: true };
+
+				let callback = function(mutationsList) {
+					// If mutation is an image, add css object fit contain
+					for (let mutation of mutationsList) {
+						if (mutation.type === 'childList') {
+							console.log("mut 1");
+							for (let node of mutation.addedNodes) {
+								if (node.nodeName === 'IMG') {
+									node.style.objectFit = 'contain';
+									node.style.width = '100%';
+									node.style.maxHeight = '20em';
+									console.log('added');
+								}
+							}
+						}
+					};
+				}
+
+				let observer = new MutationObserver(callback);
+				observer.observe(a, config);
+		//});
+		}, 300);
+
+
+
+	</script>
+</body>
+</html>
+

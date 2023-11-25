@@ -1,5 +1,5 @@
 title: Grid World
-date: 2023-11-05
+date: 2024-11-05
 label: project
 timespan: June - November 2023
 pic: infoglobe_hero.png
