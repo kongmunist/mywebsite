@@ -3,6 +3,7 @@ TODO:
 - Make the images on the front page snap into position following a random path
 - Add a now page
 
+Nov 25, 2023 - Sitting in C.Muller's room, finished adding the CKEditor page, plenty of jankness in there. Essentially, text is taken via the GUI, re-parsed into the .md format we've been using before, then the images are moved into a new folder in static/ and the post is moved into pages/blog.
 November 19, 2023 - China to Munich flight, sitting whole-row thanks to Michael. Adding CKEditor page to make it easier to write blog posts
 Sept 19, 2023 - added rounded corners and some more padding on my main headshot image. Our projects page looks really shit, the images are always taking up the whole width and we can't round the corners because of this overlay stuff.
 May 31, 2022 - No longer in Direct Doctorate, looking for a job now. Probably just gonna go with Karan. Hope I figure out another alternative. Finished Meiger and added custom titles to each page. We may have missed a few though, forgive me and fix them.

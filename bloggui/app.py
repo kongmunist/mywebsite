@@ -8,6 +8,9 @@ from copy import copy
 from flask_ckeditor import CKEditor, CKEditorField, upload_fail, upload_success
 basedir = os.path.abspath(os.path.dirname(__file__))
 
+from html.parser import HTMLParser
+parser = HTMLParser()
+
 app = Flask(__name__)
 app.config['CKEDITOR_SERVE_LOCAL'] = True
 app.config['CKEDITOR_HEIGHT'] = 400
@@ -44,31 +47,31 @@ def index():
         body = body.replace("\r\n&nbsp;\r\n", "")
         body = body.replace("\r\n", "\n")
 
+        # Replace HTML chars with normal chars
+        body = parser.unescape(body)
+
+
+
         # Replace all <img> tags with {{ add_pic("file", "caption") }}
         newLines = []
         imIndex = 0
         for line in body.split("\n"):
             if line.startswith("<img"):
                 # imFile = imgs[imIndex]
-                newLines.append("{{ add_pic(\"" + f"{blogPostName}/{imIndex}." + imgexts[imIndex] + "\", \"caption\") }}")
+                newLines.append("{{ add_pic(\"" + f"{blogPostName}/{imIndex}." + imgexts[imIndex] + "\", \"\") }}")
                 imIndex += 1
             else:
                 newLines.append(line)
         body = "\n".join(newLines)
-
-        # img tags must become {{ add_pic("file", "caption") }}
-        # body: '<pre>\r\nimgs</pre>\r\n\r\n<p><img src="/files/imageTNPRQXNRMN.png" style="height:232px; width:426px" /></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>asd</p>\r\n\r\n<p><img src="/files/imageIVQCMUCVHM.png" style="height:538px; width:530px" /></p>\r\n\r\n<p>asd</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n'
-
-        # body = '\r\nimgs\r\n\r\n<img src="/files/imageTNPRQXNRMN.png" style="height:232px; width:426px" />\r\n\r\n&nbsp;\r\n\r\nasd\r\n\r\n<img src="/files/imageIVQCMUCVHM.png" style="height:538px; width:530px" />\r\n\r\nasd\r\n\r\n&nbsp;\r\n\r\n&nbsp;\r\n'
-
-
-
         print("new body:", repr(body))
         # WARNING: use bleach or something similar to clean the data (escape JavaScript code)
         # You may need to store the data in database here
 
-        # Generate the old blog post format .md file using the CK editor info
+        # If any of the headers are empty we redirect to a page that says "Please fill in all the fields"
+        if title == "" or blogPostName == "" or tags == "" or snippet == "" or body == "":
+            return "You are missing some fields! Please go back and fill them in"
 
+        # Generate the old blog post format .md file using the CK editor info
         with open(saveFilename, "w+") as f:
             f.write(f"title: \"{title}\"\n")
             f.write(f"date: {date}\n")
