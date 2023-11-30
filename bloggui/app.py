@@ -49,6 +49,7 @@ def index():
 
         # Replace HTML chars with normal chars
         body = parser.unescape(body)
+        body = body.replace("&nbsp;", " ")
 
 
 

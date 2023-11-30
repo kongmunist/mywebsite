@@ -3,7 +3,7 @@ date: 2023-11-26
 label: project
 timespan: June - November 2023
 pic: gridworldherovid.mov
-description: r/place in real life
+description: Collaborative online pixel canvas with a physical display in my room
 
 Hello! Welcome to my 2nd attempt at giving the Internet a physical form.
 

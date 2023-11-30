@@ -57,12 +57,6 @@ def utility_processor():
         # format for image:
         # < p class ="caption" > Desc < / p > ![Caption]({{url_for('static', filename='badglasses.png')}})
 
-        # Add centering: 
-        # if (center):
-        #     print(filename, "center true")
-        # print(center, type(center))
-        
-
         overallString = ""
         mdstuff = "![%s]({{url_for(\"static\", filename=\"%s\")}})" % (captionalt, filename)
 
@@ -84,7 +78,23 @@ def utility_processor():
                 # print(pyg[:imgInd], "AIDNWIN", pyg[imgInd:])
         return overallString
 
-    return dict(add_pic=add_pic)
+    def add_vid(filename, width="75%", speed=1.0, autoplay=False):
+        srcName = " src=\"{{url_for(\"static\", filename=\"%s\")}}\"" % filename
+        srcName = render_template_string(srcName)
+        fString = ""
+        fString += "<video width=\"%s\" controls" % width
+        fString += srcName
+        fString += " style=\"display: block; margin-left: auto; margin-right: auto;\""
+        if speed != 1.0:
+            fString += " onloadstart=\"this.playbackRate=%s;\"" % speed
+        if autoplay:
+            fString += " autoplay"
+        fString += ">" + "</video>"
+        return Markup(fString)
+
+
+
+    return dict(add_pic=add_pic, add_vid=add_vid)
 
 
 

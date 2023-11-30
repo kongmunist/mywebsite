@@ -9,10 +9,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="author" content="Andy Kong">
-    <meta name="title" content="Grid World">
-    <meta name="description" content="Collaborative online pixel canvas with a physical display in my room">
+    <meta name="title" content="Tongue Mouse">
+    <meta name="description" content="A mouse for your mouth">
 
-<title> Grid World | Andy Kong</title>
+<title> Tongue Mouse | Andy Kong</title>
 
 
 
@@ -249,20 +249,57 @@ code {
 <div class="row overflow-hidden" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
         <div class="col-lg-2"></div>
         <div class="col-12 col-lg-8 projectpage" style="max-width:1000px;">
-        <h1 style="text-center; margin-bottom: 5px">Grid World</h1>
-            <i><p style="margin-bottom: 5px; margin-top: 0px">Collaborative online pixel canvas with a physical display in my room</p></i>
-            <p style="margin-bottom: 0px; margin-top: 0px">Timespan: June - November 2023</p>
-            <p style="margin-bottom: 5px; margin-top: 0px">Published: 2023-11-26</p>
+        <h1 style="text-center; margin-bottom: 5px">Tongue Mouse</h1>
+            <i><p style="margin-bottom: 5px; margin-top: 0px">A mouse for your mouth</p></i>
+            <p style="margin-bottom: 0px; margin-top: 0px">Timespan: March 2021</p>
+            <p style="margin-bottom: 5px; margin-top: 0px">Published: 2024-11-29</p>
 
             <hr>
-        <p>Hello! Welcome to my 2nd attempt at giving the Internet a physical form.</p>
-<p>Grid World is a 64x64 RGB LED matrix which anyone on the internet can modify. You can draw pictures, write messages, or scribble random pixels. </p>
+        <p>Hello! Wouldn't it be cool to be able to control your computer without (visibly) touching it? I thought so too.</p>
+<p class ="caption"> The Tongue Mouse </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="The Tongue Mouse" src="/static/tm_hero_elio.jpg" /></p>
+
+<p><br><hr><br>
+A while back, I wrote up <a href="../blog/mpr121passthrough">a blog post</a> about the MPR121 capacitive touch sensors and how they perform under different surface coverings. Those experiments were the precursor for the Tongue Mouse. </p>
+<h2>The Idea</h2>
+<p>One day, my roommates and I were discussing the next generation of computer input devices. What would we use after the mouse and keyboard? How could we communicate more smoothly with our devices? One potential way was to use the mouth. The tongue is an actuator with fine motor control that is only rarely used to communicate with computers (not counting voice control!). </p>
+<p>We thought that by adding a trackpad to the mouth, we could use both the mouse and keyboard simultaneously, thus increasing the speed of computer interactions. From the outside, it would appear as if you "magically" controlled your computer!</p>
+<p>While we found papers exploring mouth-computer interaction devices, most groups used a custom-fit touchscreen that sits on the roof of the mouth. We initially tried that location too, but found it to be much more comfortable to keep a trackpad in the side of the cheek. Maybe this is due to our lack of a custom mouthpiece.</p>
+<p class ="caption"> The roof of the mouth is a common location for mouth-computer interaction devices, but I didn't find one that used the cheek </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="The roof of the mouth is a common location for mouth-computer interaction devices, but I didn&#39;t find one that used the cheek" src="/static/tm_mouthrooftopmouse.jpg" /></p>
+
+<p class ="caption"> We found the side of the cheek to be more comfortable </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="We found the side of the cheek to be more comfortable" src="/static/tm_mouthsidemouse.jpg" /></p>
+
+<p>To make a touchpad, you just need to detect touch location on a surface. The easiest way is to use capacitive touch, which relies on the human body adding capacitance to a pad which is being charged and discharged quickly.</p>
+<p class ="caption"> Capacitive touch works by detecting the change in capacitance on a conductive pad </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="Capacitive touch works by detecting the change in capacitance on a conductive pad" src="/static/tm_capacitivetouch.png" /></p>
+
+<p>While most microcontrollers can natively do [touch detection on their pins], we needed a bit more resolution and chose to use the MPR121. It comes with 12 inputs, and we arranged 8 of them into a 4x4 grid of overlapping copper strips to get 16 points of contact. Out of the mouth, it worked just like any other capacitive touchscreen; here I am using my finger to control it.</p>
+<video width="75%" controls src="/static/tonguemouse_finger.mp4" style="display: block; margin-left: auto; margin-right: auto;"></video>
+
+<p>There were some challenges with moving the touchscreen to the mouth. </p>
+<h2>Water</h2>
+<p>The mouth is a wet place, and the liquids there are conductive. We pre-emptively waterproofed the whole touchpad because we were worried that the water might bridge between the different copper strips and hamper our ability to distinguish between different touch locations. We used tape with the sticky side facing inwards to waterproof the sensor.</p>
+<p class ="caption"> We waterproofed the sensor by sandwiching it between two layers of tape </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="We waterproofed the sensor by sandwiching it between two layers of tape" src="/static/tm_waterproofing.jpg" /></p>
+
+<h2>Stray capacitance from the mouth</h2>
+<p>Besides water, there is also the problem of the mouth itself. To the capacitive touchscreen, tucking it in the mouth meant the cheek acts as one huge touch that covers every part of the grid simultaneously. We didn't want to worry about this pre-emptively, so we hoped that the <em>relative</em> sensor values would still be able to stand out enough for us to detect them. </p>
+<p>We did consider a strategy where the device's backplane could be covered entirely in copper tape, which could then be grounded. I think this would reduce the cheek's touch interference through the backplane, but probably not completely.</p>
+<p>After some rudimentary waterproofing, we were able to use it with our tongues without the taste of copper. Here's a video of my friend Elio using v1, which was waterproof but not enough to enter the mouth.</p>
+<video width="75%" controls src="/static/tonguemouse_elio.mp4" style="display: block; margin-left: auto; margin-right: auto;"></video>
+
+<p>When it came time to make the 2nd prototype, we committed a fatal error — the waterproofing method we used relied on two squares of tape sandwiching the sensor, but little did we know that we had left some gaps in the taping. As soon as the sensor entered the mouth, the inputs were all swarmed with maximum capacitance.</p>
+<p>Hello! Welcome to my 2nd attempt at giving the Internet a physical form.</p>
+<video width="75%" controls src="/static/gridworldherovid.mov" style="display: block; margin-left: auto; margin-right: auto;" onloadstart="this.playbackRate=0.5;"></video>
+
+<p>Grid World is a 64x64 RGB LED matrix which anyone on the internet can modify. You can draw pictures, write messages, or scribble random pixels.</p>
 <p><br></p>
 <p><video
     src="/static/gridworldherovid.mov"
     style="display: block; margin-left: auto; margin-right: auto;"
-    width="75%" 
-    loop
+    width="75%"
     controls
     muted
     playsinline
@@ -272,11 +309,11 @@ code {
 <p><br></p>
 <hr>
 
-<p>Reddit's April Fool's event from 2011 (<a href="https://www.reddit.com/r/place">r/place</a>) partly inspired this project. During the event, every registered user could change a pixel on a huge, shared canvas once every 5-10 minutes. The results were beautiful and chaotic, and the open-ended nature of the interactions left plenty of room for unexpected, emergent behavior. </p>
+<p>Reddit's April Fool's event from 2011 (<a href="https://www.reddit.com/r/place">r/place</a>) partly inspired this project. During the event, every registered user could change a pixel on a huge, shared canvas once every 5-10 minutes. The results were beautiful and chaotic, and the open-ended nature of the interactions left plenty of room for unexpected, emergent behavior.</p>
 <p class ="caption"> Reddit's r/place </p>
 <p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="Reddit&#39;s r/place" src="/static/gw_rplace.gif" /></p>
 
-<p>Around 2021, I bought this RGB LED display on AliExpress, intending to mount it in a picture frame and showcase some cool generative art, moving or stationary. Mulling it over, I realized I would quickly get bored of seeing it unless I constantly maintained it — changing what program is drawing, randomly switching images, etc.</p>
+<p>Around 2021, I bought this RGB LED display on AliExpress, intending to mount it in a picture frame and showcase some cool gen‰erative art, moving or stationary. Mulling it over, I realized I would quickly get bored of seeing it unless I constantly maintained it — changing what program is drawing, randomly switching images, etc.</p>
 <p class ="caption"> In frame, canvas off </p>
 <p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="In frame, canvas off" src="/static/gw_frame_off.JPG" /></p>
 
@@ -289,7 +326,7 @@ code {
 <p class ="caption"> Nice, random, coherent drawings </p>
 <p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="Nice, random, coherent drawings" src="/static/gw_elio_cleanup.JPG" /></p>
 
-<p>And it kinda worked! People were uploading like crazy after I posted it on my Tiktok. Visitors coded bots to draw images into the pixels, and someone even wrote a bot which displayed a live clock. </p>
+<p>And it kinda worked! People were uploading like crazy after I posted it on my Tiktok. Visitors coded bots to draw images into the pixels, and someone even wrote a bot which displayed a live clock.</p>
 <p class ="caption"> My favorite drawing so far </p>
 <p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="My favorite drawing so far" src="/static/gw_greatart.JPG" /></p>
 
@@ -299,7 +336,7 @@ code {
 <p><video
     src="/static/gw_wolfandclock.mp4"
     style="display: block; margin-left: auto; margin-right: auto;"
-    width="75%" 
+    width="75%"
     loop
     controls
     playsinline
@@ -307,7 +344,7 @@ code {
     onloadstart="this.playbackRate = 2.0;">
 </video>
 </p>
-<p>So, here is the website where you, dear reader, can draw on my grid: 
+<p>So, here is the website where you, dear reader, can draw on my grid:
 <a href="https://aksuper7.pythonanywhere.com/gridworld" target="_blank">bit.ly/andygrid</a></p>
 <p><br><hr></p>
 <h1>Technical Details</h1>
@@ -317,11 +354,11 @@ code {
 <p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="The Raspberry Pi + Hat, dongle, power supply, and RGB display" src="/static/gw_hardwarebuild.JPG" /></p>
 
 <h2>Software</h2>
-<p>For the website to work properly across multiple users at once, I am calling fetch every few seconds from the client-side since my hosting provider does not allow any real-time messaging like Websockets or Server-Sent Events. To avoid conflicting states, I am using a changes-only <a href="https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type">CRDT</a> model on the server. Users can only push updates to pixels, and cannot overwrite the server's grid with their own. The current Grid World canvas is saved to disk every 5 seconds if any edits were made, and the server's python instance maintains the true grid in memory. </p>
+<p>For the website to work properly across multiple users at once, I am calling fetch every few seconds from the client-side since my hosting provider does not allow any real-time messaging like Websockets or Server-Sent Events. To avoid conflicting states, I am using a changes-only <a href="https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type">CRDT</a> model on the server. Users can only push updates to pixels, and cannot overwrite the server's grid with their own. The current Grid World canvas is saved to disk every 5 seconds if any edits were made, and the server's python instance maintains the true grid in memory.</p>
 <p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/gw_website.png" /></p>
 
 <h2>Social Considerations</h2>
-<p>I also had to add some social barriers. In Grid World, drawing is done by clicking, but when debugging I wrote code which allowed drawing via mouse hold-and-drag. When deploying the website, I left this in the code and some people uncommented it for extra privileges. This quickly creates ugly noise marks over everything, so I removed that bit of code. I also had to add a rate limit because within a week the first bots were already being annoying — erasing people's work and filling the whole canvas with a single color. </p>
+<p>I also had to add some social barriers. In Grid World, drawing is done by clicking, but when debugging I wrote code which allowed drawing via mouse hold-and-drag. When deploying the website, I left this in the code and some people uncommented it for extra privileges. This quickly creates ugly noise marks over everything, so I removed that bit of code. I also had to add a rate limit because within a week the first bots were already being annoying — erasing people's work and filling the whole canvas with a single color.</p>
 <p class ="caption"> Camera feed of the physical Grid World </p>
 <p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="Camera feed of the physical Grid World" src="/static/gw_camerafeed.png" /></p>
 
@@ -342,7 +379,7 @@ Because the camera uses an open endpoint in the server, I added an auth key so o
 <p>Grid World is great for me because I don't have to go online to receive messages from people, but other people still have to go online to send messages to me. How cool would it be to have a smaller, tactile Grid World that you share with a more intimate group? Think you and your parents, or you and your partner, or a gaggle of friends who are working in different cities. A shared canvas that everyone can draw on without going on the phone or computer. I think that would be really cool.</p>
 <p>If you (yes you, dear reader) have any comments/critiques/suggestions for the current Grid World, I am all ears! Shoot me an email, DM, or write me a message on Grid World.</p>
 <p>And if you can think of any other ways you would enjoy sharing presence digitally, please let me know and maybe I can build it for you.</p>
-<p>Finally, if you control a source of money and are interested, I would love to make a huge one of these. Think, you could have one in your main office that all your employees can participate in, creating a shared sense of space. </p>
+<p>Finally, if you control a source of money and are interested, I would love to make a huge one of these. Think, you could have one in your main office that all your employees can participate in, creating a shared sense of space.</p>
             </div>
         <div class="col-lg-2"></div>
         <p style="line-height:300%;">&nbsp;</p>
