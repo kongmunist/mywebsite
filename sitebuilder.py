@@ -144,7 +144,11 @@ def sitemap():
                 ims[i] = ims[i].split(" ")[0]
         post.meta['images'] = ims
         print(ims)
-    return render_template("sitemap.xml", posts=posts, baseURL="https://andykong.org")
+    temp = render_template("sitemap.xml", posts=posts, baseURL="https://andykong.org")
+    response = make_response(temp)
+    response.headers["Content-Type"] = "application/xml"
+
+    return response
 
 @app.route("/rss.xml")
 def rss():
