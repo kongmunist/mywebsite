@@ -1,0 +1,3612 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>http://localhost/</loc>
+  </url>
+  <br>
+  <url>
+    <loc>http://localhost/blog/</loc>
+  </url>
+  <br>
+  <url>
+    <loc>http://localhost/projects/</loc>
+  </url>
+
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/fitbitsleeptzcorrection/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/fitbitsleeptzcorrection/0.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/fitbitsleeptzcorrection/1.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/fitbitsleeptzcorrection/2.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/fitbitsleeptzcorrection/3.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/fitbitsleeptzcorrection/4.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/fitbitsleeptzcorrection/5.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/fitbitsleeptzcorrection/6.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/fitbitsleeptzcorrection/7.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/alfredworth/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/alfredworth/0.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/alfredworth/1.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/alfredworth/2.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/alfredworth/3.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/alfredworth/4.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/alfredworth/5.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/alfredworth/6.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/alfredworth/7.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/alfredworth/8.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/alfredworth/9.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/alfredworth/10.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/projects/gridworld/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/gw_rplace.gif
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/gw_frame_off.JPG
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/gw_planets.JPG
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/gw_elio_cleanup.JPG
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/gw_greatart.JPG
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/gw_andyface.PNG
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/gw_hardwarebuild.JPG
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/gw_website.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/gw_camerafeed.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/gw_bigbuttons.jpg
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/projects/infoglobe/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/infoglobe_hero.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/infoglobe_earlytry.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/infoglobe_booyah.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/infoglobe_websiteex.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/infoglobe_newsite.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/milfpy/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/milf_cutfeature.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/milf_stats.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/milf_cutdistro.jpg
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/icloudconfusion/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ic_appleemail.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ic_photosbysize.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ic_icloudphotos.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ic_icloudphotoshighlighted.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ic_dl1info.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ic_dl1afterdelete.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ic_dl2storagebefore.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ic_dl2storageafter.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ic_dl3icloudinfo.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ic_dl3download.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ic_dl3storagebefore.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ic_dl3storageafter.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/noisyneopixels/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/nn_ferritebead.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/nn_dbvslight.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/nn_points.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/projects/meiger/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/meiger_presentation.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/meiger_hero.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/meiger_andypresent1.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/meiger_case.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/meiger_dewalt.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/meiger_foamcase.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/meiger_closeup1.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/meiger_closeup2.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/meiger_closeup3.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/meiger_bees.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/meiger_humans.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/meiger_iarc.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/meiger_andypresent2.jpg
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/calendarmemories/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/cm_150th.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/cm_firststiches.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/infoglobetutorial3/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/igt1_hero.jpeg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/igt3_wemos.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/igt3_irlib.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/igt3_example1.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/projects/facemeshdemos/</loc>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/infoglobetutorial2/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/igt1_testingsetup.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/igt2_motorstartupnoise.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/igt2_motorkickback.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/igt2_filtercapworks.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/igt2_microwiringdiagram.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/igt2_equippedesp.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/igt2_circuitoverhead.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/igt2_powerlabeled.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/igt2_motoronvoltage.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/igt2_motoroffvoltage.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/igt2_circuitoverhead_gndlabeled.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/igt2_ledgrounded1.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/igt2_ledgrounded2.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/igt2_completewiring.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/igt2_powerswitch.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/igt2_burnhole_inside.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/igt2_burnhole_outside.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/igt2_tolife.jpg
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/cleargelatin1/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/cg1_jellohero.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/cg1_jellolens.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/cg1_composite.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/cg1_soaked.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/gc1_bothcups.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/gc1_preset.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/gc1_postset.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/gc1_meholding.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/cg1_laser.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/cg1_laser2.jpg
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/infoglobetutorial1/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/igt1_hero.jpeg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/igt1_tools.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/igt1_screws.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/igt1_latches.jpeg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/igt1_bottomclasp.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/igt1_topclasp.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/igt1_propellerscrews.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/igt1_dataLED.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/igt1_bothcut.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/igt1_onecut.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/igt1_reass1.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/igt1_reass2.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/igt1_safeswitch.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/igt1_reass3.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/igt1_reass4.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/igt1_testingsetup2.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/igt1_testingsetup.jpg
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/projects/igneous/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_waxy20.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_backstory.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_giantscauseway.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_orig1.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_orig2.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_orig3.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_orig4.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_orig5.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_orig6.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_assem1.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_assem2.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_assem3.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_assem4.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_assem5.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_assem7.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_assem6.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_assem8.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_exhib0.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_exhib11.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_exhib1.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_exhib2.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_exhib3.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_exhib4.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_exhib5.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_exhib6.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_exhib7.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_exhib8.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_exhib9.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_exhib10.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_waxy1.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_waxy9.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_waxy2.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_waxy3.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_waxy4.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_waxy5.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_waxy6.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_waxy7.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_waxy8.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_waxy10.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_waxy11.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_waxy13.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_waxy12.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_waxy14.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_waxy15.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_waxy17.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_waxy18.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ign_waxy19.jpg
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/settingupelectrictables/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/rt_timingdashboard.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/et_googlescript1.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/et_googlescript2.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/et_googlescript3.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/et_googlesheet.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/et_bmtesting.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/et_newrow.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/et_handbookmark.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/et_bookmarklet.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/supercap2lipo/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/cap2lipo_capsize.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/cap2lipo_board.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/cap2lipo_testsetup.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/cap2lipo_currentout.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/cap2lipo_efficiency.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/replacingtiming/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/rt_timingdashboard.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/rt_cputesttiming.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/rt_cputestcasey.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/rt_stotestcasey.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/rt_stotimingrecords.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/applescripts1/</loc>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/taxonomyofautomation/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/tlpmerchant.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/watchlists1/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/wl1_sept.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/wl1_weedsept.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/wl1_dec.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/wl1_weedclose.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/wl1_weedopen.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/projects/eyemu/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/eyemuhero.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/howtreesfallapart/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/topdown2.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/insideout.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/outside_in1.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/allatonce.jpg
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/projects/BCC/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc_alansonsketch.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc_alansonsketch.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc_sharedground.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc_cleansigsg.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc_noisysigsg.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc_transmitter.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc_transmittersch.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc_receiver.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc_receiversch.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc_doorlockdemo.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc_calendardemo.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc_transmittedsig.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc_receivedsig.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/fourieraperture/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/fa_textrotation.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/fa_kallardbook.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/fa_kallardapparatus.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/fa_kallardexample.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/fa_circles.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/fa_spiral.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/highcurrentsource/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/mk750_backonly.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/mk750_ebaypage.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/mk750_5vconfirmed.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/mk750_thinwire.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/mk750_thickwire.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/mk750_threestrandbefore.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/mk750_threestrandduring.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/mk750_hotwire.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/mk750_twostrandduring.jpg
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/superchargingcaps/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/sc1_setup.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/sc1_chargeto4with5.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/sc1_chargeto4with10.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/sc1_chargeto4with20.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/sc1_chargeto4with30.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/sc1_chargeVeq.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/sc1_chargeTeq.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/firstwatermelon/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/wm1_watemelonrefract.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/wm1_lycheepic.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/wm1_lycheesugar.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/wm1_longan.jpg
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/fitbit1/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/fitbit1_register.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/fitbit1_heartrateout.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/refractometertesting/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/refractest_displaypic.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/refractest_showcase.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/refractest_caprisun.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/refractest_izze.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/refractest_coke.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/refractest_peach.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/refractest_hershey.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/sinepaper/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/sinu_singlenervefirings.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/sinu_stimulus.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/sinu_PCchart.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/mechanoreceptor2/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/mech2_pacinian.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/mech2_pacstim.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/mech2_pacback.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/mech2_pacpalm.jpg
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/traxionreproduction/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/traxion_setup.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/traxion_linearact.jpg
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/macgyver1/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/mcg1_ringlight.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/mcg1_battery.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/mcg1_circuit.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/mcg1_alligator.jpg
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/mechanoreceptor1/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/mr1_pacinian.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/mr1_tens.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/mr1_elecplacement.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/bcc3/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc3_caldemosmall.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc2_every50msIS.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc3_transmitter.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc3_raw.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc3_transmittercircuit.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc3_receiver.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc3_receivercircuit.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc3_transmittedraw.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc3_receivedraw.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/woodworkingday2/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/wood2_breadshelfwithoutbread.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/wood2_breadshelfwithbread.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/wood2_crate.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/wood2_crate2.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/wood2_stool1.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/wood2_stool2.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/wood2_stool3.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/wood2_roboclublogo.jpg
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/bcc2/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc1_connectedground.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc2_every50msIS.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc2_everyhalfsecondIR.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc2_withinlinecapIR.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc2_withoutinlinecapIR.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc2_withsmoothingIR.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc2_countingfilterIS.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc2_every10msIR.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/bcc1/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc1_signaloverskin.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc1_sender.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc1_receiver.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc1_baselineanalognoise.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc1_baselinewithwire.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc1_baselinetouchinganalognoise.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc1_connectedground.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc1_signaloverskin.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc1_signaloverskin1.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc1_nosignaloverskin.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc1_connectednoground.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc1_ngvsg.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc1_ng_touchvsnotouch.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bcc1_ng_touchvsnotouch2.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/woodworkingday1/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bananastand.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/mpr121passthrough/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/mpr121glamour.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/mpr121chart.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/mpr121saran.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/led5050teardown/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/led5050_lit.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/led5050_reel.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/led5050_powersupply.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/led5050_controlboard.jpg
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/blinkdetectioninitial/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/blinktrack1_reflectancesensor.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/palotteryexpectedvalue/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/palotterychances.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/wordlengthneonsign/</loc>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/IFproblems/</loc>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/touchreactiveLEDs/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/touchLEDs1toppic.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/touchLEDs1resistorunderside.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/oversamplingvsaveraging/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ovacombined.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ova1kvs200zoomout.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ova1kvs200.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ovadownsample.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ovaavgvsdown.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ovaavgvsdownplusorig.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ovalowfreq.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/interfacespeeds/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bpmITRCommon.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bpmthermostat.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bpmtvremote.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bpmmicrowave.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bpmgamecontroller.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bpmiphone11.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bpmphoneminsize10075.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bpmdiction.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bpmmacbookair.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bpmmouseminsize3030.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bpmfirstmouse.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bpmkeyboard.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bpmITRResearch.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bpmdiction.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bpmtobii.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bpmssvep.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bpmITRCommon.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/bpmITRResearch.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/ssveppeakdetect/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/PSD5secwindow.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/SCA5secwindow.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/PRSA5secwindow.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/PRSA10secwindow.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/SCAfilterordercomparison.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/SCAvsPRSA5secwindow.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/EMIvsBCI/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/aptblinker.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/emialphaspike.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/barcodehistory/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/barcodescannerls1000.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/mh290.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/barcodescannerlaseron.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/PRSAhighlight/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/prsaoriginal.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/5WLEDprelimtests/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/5Watters.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/5W_setup.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/5W_tightcircles.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/5W_circles.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/5W_bigcircle.jpg
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/fresnellens/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/fresnel_creditcard.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/fresnel_magnify.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/fresnel_reflectproject.jpg
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/bcieyeclosedetection/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/alphawaves_electrodes.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/alphawaves_eyesopen.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/alphawaves_eyesclosed.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/workingwithbrainflow1/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/brainflowgraphoverwriting.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/brainflowvsscipy3.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/brainflowvsscipy4.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/LEDs3W6piece/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/LED3W_poweringsetup.JPG
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/LED3W_projected.JPG
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/easybutton1/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/easybuttonday1.jpg
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/arduinodutycyclesquare/</loc>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/eegsinglechannelavg/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/tradeeg.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/35_full_noavg.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/35_full_04window.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/35_3sec_noavg.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/35_3sec_06window.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/padright.gif
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/35_padboth2.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/projects/directionofvoice/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/dov_hero.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/projects/eyecatcher/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/eyecatchergif.gif
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/coinvibrationmotor/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/surroundhaptics.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/coinvibrationmotors.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/arduinodirect2wav/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/direct2wav_fullsetup.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/direct2wav_library.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/wav2c_online.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/projects/analogscalingcalculator/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/analogscalinggraphic.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/scalingvoltage_nonumbers.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/analogscalingvoltages/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/analogscalinggraphic.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/voltagescalingmath1.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/diffamp1.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/analogscaling_shitsoln.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/scalingvoltageschematic.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/analogscaling_fullsoln.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/voltagescalingmath2.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/analogscale_eq1.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/analogscale_eq2.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/wolframquery.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/wolframanswer.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/analogscaling_r.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/analogscaling_vref.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/analogscaling_solutionpos.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/analogscaling_solutionneg.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/PPG_tutorial/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ppg.gif
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/PPG_forehead.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/PPG_forehead.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/USBA_exploration/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ThanksIBM.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/USBA_realvoltage.jpg
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/sleddingontable/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/tableforsledding.JPG
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/myo3_noisespecs/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/myo3_board.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/myo3_100hz.JPG
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/myo3_noiseboardsetup.JPG
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/myo3_out3noise.JPG
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/jslibraries/</loc>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/teensydaq/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/teensydaq_ADCoutput.jpeg
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/myo3_initialtesting/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/myo3_schematicflippedpower.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/myo3_fixingpower.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/myo3_shortednoise.jpg
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/speedcheck_listlen/</loc>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/myo3_assembly/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/myo3front.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/myo3back.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/histogram/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/breadsong.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/breadsong_histogram.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/breadsong_overexposed.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/breadsong_overexposed_histogram.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/histeqbeforeafter.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/histogram_eye.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/histogram_blackeye.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/panoramas2/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/panorama2_betterstitch.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/panorama2_keypointcrossanalysis.jpg
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/panoramas1/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/panoramassplit.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/panorama1_view1.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/panorama1_view2.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/panorama1_combined.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/panorama1_glitchart.jpg
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/eyetoypscam/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/playstationeye.jpg%20width%3D
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/projects/myo2/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/myo2tensingcropped.gif
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/myo2boardpic.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/myo2output1.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/myo2musclebelly.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/myo2badschematic.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/myo2RLD.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/spudging/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/spudge1.JPG%20width%3D
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/spudge2.JPG%20width%3D
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/spudge3.JPG%20width%3D
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/spudge4.JPG%20width%3D
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/spudge5.JPG%20width%3D
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/spudge6.JPG%20width%3D
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/spudge7.JPG%20width%3D
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/privacyscreen/</loc>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/projects/heartratemonitor/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/heartratemainpage.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/heartratebloodcolor.jpeg%20class%3D
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/heartratemainpage.png%20class%3D
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/digitalholo1/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/digitalholocube.png%20width%3D
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/projects/carnegiecalendar/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/CCmain.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/CCurllist.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/CCzoomout.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/CCzoomin.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/speedcheckpybuiltins/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/speedcheckpybuiltinscode.png%20width%3D
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/speedcheckpybuiltinstimings.png%20width%3D
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/velostatlinqstat/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/velostat.jpg%20width%3D
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/velostatnormal2.jpg%20width%3D
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/velostat180.jpg%20width%3D
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/velostattwist.png%20width%3D
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/velostatbend.jpg%20width%3D
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/velostatbend.png%20width%3D
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/velostatpull.png%20width%3D
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/velostattouch.png%20width%3D
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/velostatfoldtouch.png%20width%3D
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/velostatheating.png%20width%3D
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/velostatcrimp.jpg%20width%3D
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/speedcheckwritingstrings/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/speedcheckStringWrite.png%20width%3D
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/projects/asciizoom/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/chickensidecomparison.jpeg
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/projects/alteredperceptions/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/alteredibis.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/alteredpsvr.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/alteredadaptivethresh.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/altereddeepdreamdog.jpg
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/alteredperceptions0/</loc>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/projects/ampbox/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ampbox.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/ampboxcircuit.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/projects/manualbackprop/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/manualbackpropcode.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/projects/spintank/</loc>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/spintank1/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/spintankabrams.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/spintankantitankmissile.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/spintankmechanismdrawing.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/spintank3dmodel.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/spintankmounted.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/spintankstationaryshot.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/spintankspinningshot.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/advancedaddition1/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/advancedaddition1symboliceqn.png%20width%3D
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/advancedaddition1numericeqn.png%20width%3D
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/projects/forcequeue/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/fqspotifyapichart.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/kerokerokerokerokerokero.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/fqspotipy.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/extraarms/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/extraarmeeg.jpg%20width%3D
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/advancedaddition/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/advancedadditiontraining.png%20width%3D
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/aasimpleexamples.png%20width%3D
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/aasimpleweights.png%20width%3D
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/aaboiled.png%20width%3D
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/advancedadditionexamples.png%20width%3D
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/aabignetexamples.png%20width%3D
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/aabignetgoodexamples.png%20width%3D
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/aanoncommutativity.png%20width%3D
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/projects/eyetracker/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/badglasses.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/eyedrawnname.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/stareye.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/unexplorable/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/dreammagnet.png%20width%3D
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/projects/personalwebsite/</loc>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/websitev3.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/websitev2.png%20class%3D
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            http://localhost/static/websitev1.png%20class%3D
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+  <br>
+    <url>
+    <loc>http://localhost/blog/first/</loc>
+      
+    </url>
+  
+
+</urlset>

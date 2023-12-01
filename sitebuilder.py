@@ -1,3 +1,5 @@
+import re
+
 from flask import Flask, render_template, url_for, render_template_string, Markup, \
         redirect,make_response,send_from_directory
 from flask_flatpages import FlatPages, pygmented_markdown
@@ -117,6 +119,35 @@ def index():
     return render_template('main.html', pages = projPages)
 
 
+@app.route("/sitemap.xml")
+def sitemap():
+    blogPosts = [p for p in pages if "blog" == p.meta.get('label')]
+    projPosts = [p for p in pages if "project" == p.meta.get('label')]
+
+
+    # Remove projects whose date is in the future
+    today = datetime.date(datetime.now())
+    projPosts = filter(lambda x: x['date'] < today, projPosts)
+    # Remove blog posts whose tags have wip
+    blogPosts = filter(lambda x: x.meta.get('label') == 'blog' and 'wip' not in x.meta.get('tags'), blogPosts)
+
+    posts = list(blogPosts) + list(projPosts)
+    posts.sort(reverse=True, key=lambda x: x['date'])
+
+
+    print(posts[0], posts[0].meta, posts[0].meta.keys())
+    print(posts[0].html)
+    pa = '/<img.*?src="(.*?)"/g'
+    pa2 = '<img.*?src\s*=\s*"?(.+?)"'
+    print("REGEX:", re.findall(pa, posts[0].html))
+    print("REGEX2:", re.findall(pa2, posts[0].html))
+
+    for post in posts:
+        ims = re.findall(pa2, post.html)
+        ims = [x.split("/static/")[1] for x in ims if "static" in x]
+        post.meta['images'] = ims
+    return render_template("sitemap.xml", posts=posts)
+
 @app.route("/rss.xml")
 def rss():
     print("rss page")
@@ -218,9 +249,14 @@ def mainproject():
     projPages = [p for p in pages if "project" == p.meta.get('label')]
     projPages = [(x.meta.get('date'), x) for x in projPages]
     projPages.sort(reverse=True, key=lambda x: x[0])
+
+    # filter out projects that are in the future
+    today = datetime.date(datetime.now()) + timedelta(days=1)
+    projPages = filter(lambda x: x[0] < today, projPages)
+
+    # take just page
     projPages = [x[1] for x in projPages]
 
-    # projPages = [x.path[9:] for x in projPages]
     return render_template('projectsmain.html', pages = projPages)
 
 @app.route('/projects/<string:project>/')
