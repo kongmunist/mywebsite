@@ -2,25 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>{{ url_for("page", path="", _external=True) }}</loc>
+    <loc>{{baseURL}}{{ url_for("page", path="") }}</loc>
   </url>
-  <br>
   <url>
-    <loc>{{ url_for("page", path="blog", _external=True) }}</loc>
+    <loc>{{baseURL}}{{ url_for("page", path="blog") }}</loc>
   </url>
-  <br>
   <url>
-    <loc>{{ url_for("page", path="projects", _external=True) }}</loc>
+    <loc>{{baseURL}}{{ url_for("page", path="projects") }}</loc>
   </url>
 
   {% for post in posts %}
-  <br>
     <url>
-    <loc>{{ url_for("page", path=post.path, _external=True) }}</loc>
+    <loc>{{baseURL}}{{ url_for("page", path=post.path) }}</loc>
       {% for im in post.meta.images %}
         <image:image>
           <image:loc>
-            {{ url_for("static", filename=im, _external=True) }}
+            {{baseURL}}{{ url_for("static", filename=im) }}
           </image:loc>
         </image:image>
       {% endfor %}

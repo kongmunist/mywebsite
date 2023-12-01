@@ -134,19 +134,17 @@ def sitemap():
     posts = list(blogPosts) + list(projPosts)
     posts.sort(reverse=True, key=lambda x: x['date'])
 
-
-    print(posts[0], posts[0].meta, posts[0].meta.keys())
-    print(posts[0].html)
-    pa = '/<img.*?src="(.*?)"/g'
-    pa2 = '<img.*?src\s*=\s*"?(.+?)"'
-    print("REGEX:", re.findall(pa, posts[0].html))
-    print("REGEX2:", re.findall(pa2, posts[0].html))
+    pattern = '<img.*?src\s*=\s*"?(.+?)"'
 
     for post in posts:
-        ims = re.findall(pa2, post.html)
+        ims = re.findall(pattern, post.html)
         ims = [x.split("/static/")[1] for x in ims if "static" in x]
+        for i in range(len(ims)):
+            if " " in ims[i]:
+                ims[i] = ims[i].split(" ")[0]
         post.meta['images'] = ims
-    return render_template("sitemap.xml", posts=posts)
+        print(ims)
+    return render_template("sitemap.xml", posts=posts, baseURL="https://andykong.org")
 
 @app.route("/rss.xml")
 def rss():

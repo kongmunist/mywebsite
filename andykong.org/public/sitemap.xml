@@ -2,3609 +2,3503 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>http://localhost/</loc>
+    <loc>https://andykong.org/</loc>
   </url>
-  <br>
   <url>
-    <loc>http://localhost/blog/</loc>
+    <loc>https://andykong.org/blog/</loc>
   </url>
-  <br>
   <url>
-    <loc>http://localhost/projects/</loc>
+    <loc>https://andykong.org/projects/</loc>
   </url>
 
   
-  <br>
     <url>
-    <loc>http://localhost/blog/fitbitsleeptzcorrection/</loc>
+    <loc>https://andykong.org/blog/fitbitsleeptzcorrection/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/fitbitsleeptzcorrection/0.png
+            https://andykong.org/static/fitbitsleeptzcorrection/0.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/fitbitsleeptzcorrection/1.png
+            https://andykong.org/static/fitbitsleeptzcorrection/1.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/fitbitsleeptzcorrection/2.png
+            https://andykong.org/static/fitbitsleeptzcorrection/2.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/fitbitsleeptzcorrection/3.png
+            https://andykong.org/static/fitbitsleeptzcorrection/3.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/fitbitsleeptzcorrection/4.png
+            https://andykong.org/static/fitbitsleeptzcorrection/4.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/fitbitsleeptzcorrection/5.png
+            https://andykong.org/static/fitbitsleeptzcorrection/5.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/fitbitsleeptzcorrection/6.png
+            https://andykong.org/static/fitbitsleeptzcorrection/6.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/fitbitsleeptzcorrection/7.png
+            https://andykong.org/static/fitbitsleeptzcorrection/7.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/alfredworth/</loc>
+    <loc>https://andykong.org/blog/alfredworth/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/alfredworth/0.png
+            https://andykong.org/static/alfredworth/0.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/alfredworth/1.png
+            https://andykong.org/static/alfredworth/1.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/alfredworth/2.png
+            https://andykong.org/static/alfredworth/2.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/alfredworth/3.png
+            https://andykong.org/static/alfredworth/3.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/alfredworth/4.png
+            https://andykong.org/static/alfredworth/4.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/alfredworth/5.png
+            https://andykong.org/static/alfredworth/5.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/alfredworth/6.png
+            https://andykong.org/static/alfredworth/6.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/alfredworth/7.png
+            https://andykong.org/static/alfredworth/7.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/alfredworth/8.png
+            https://andykong.org/static/alfredworth/8.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/alfredworth/9.png
+            https://andykong.org/static/alfredworth/9.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/alfredworth/10.png
+            https://andykong.org/static/alfredworth/10.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/projects/gridworld/</loc>
+    <loc>https://andykong.org/projects/gridworld/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/gw_rplace.gif
+            https://andykong.org/static/gw_rplace.gif
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/gw_frame_off.JPG
+            https://andykong.org/static/gw_frame_off.JPG
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/gw_planets.JPG
+            https://andykong.org/static/gw_planets.JPG
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/gw_elio_cleanup.JPG
+            https://andykong.org/static/gw_elio_cleanup.JPG
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/gw_greatart.JPG
+            https://andykong.org/static/gw_greatart.JPG
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/gw_andyface.PNG
+            https://andykong.org/static/gw_andyface.PNG
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/gw_hardwarebuild.JPG
+            https://andykong.org/static/gw_hardwarebuild.JPG
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/gw_website.png
+            https://andykong.org/static/gw_website.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/gw_camerafeed.png
+            https://andykong.org/static/gw_camerafeed.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/gw_bigbuttons.jpg
+            https://andykong.org/static/gw_bigbuttons.jpg
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/projects/infoglobe/</loc>
+    <loc>https://andykong.org/projects/infoglobe/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/infoglobe_hero.png
+            https://andykong.org/static/infoglobe_hero.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/infoglobe_earlytry.jpg
+            https://andykong.org/static/infoglobe_earlytry.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/infoglobe_booyah.png
+            https://andykong.org/static/infoglobe_booyah.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/infoglobe_websiteex.jpg
+            https://andykong.org/static/infoglobe_websiteex.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/infoglobe_newsite.png
+            https://andykong.org/static/infoglobe_newsite.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/milfpy/</loc>
+    <loc>https://andykong.org/blog/milfpy/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/milf_cutfeature.jpg
+            https://andykong.org/static/milf_cutfeature.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/milf_stats.png
+            https://andykong.org/static/milf_stats.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/milf_cutdistro.jpg
+            https://andykong.org/static/milf_cutdistro.jpg
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/icloudconfusion/</loc>
+    <loc>https://andykong.org/blog/icloudconfusion/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ic_appleemail.jpg
+            https://andykong.org/static/ic_appleemail.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ic_photosbysize.png
+            https://andykong.org/static/ic_photosbysize.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ic_icloudphotos.png
+            https://andykong.org/static/ic_icloudphotos.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ic_icloudphotoshighlighted.png
+            https://andykong.org/static/ic_icloudphotoshighlighted.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ic_dl1info.png
+            https://andykong.org/static/ic_dl1info.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ic_dl1afterdelete.png
+            https://andykong.org/static/ic_dl1afterdelete.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ic_dl2storagebefore.png
+            https://andykong.org/static/ic_dl2storagebefore.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ic_dl2storageafter.png
+            https://andykong.org/static/ic_dl2storageafter.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ic_dl3icloudinfo.png
+            https://andykong.org/static/ic_dl3icloudinfo.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ic_dl3download.png
+            https://andykong.org/static/ic_dl3download.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ic_dl3storagebefore.png
+            https://andykong.org/static/ic_dl3storagebefore.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ic_dl3storageafter.png
+            https://andykong.org/static/ic_dl3storageafter.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/noisyneopixels/</loc>
+    <loc>https://andykong.org/blog/noisyneopixels/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/nn_ferritebead.jpg
+            https://andykong.org/static/nn_ferritebead.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/nn_dbvslight.png
+            https://andykong.org/static/nn_dbvslight.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/nn_points.png
+            https://andykong.org/static/nn_points.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/projects/meiger/</loc>
+    <loc>https://andykong.org/projects/meiger/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/meiger_presentation.png
+            https://andykong.org/static/meiger_presentation.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/meiger_hero.jpg
+            https://andykong.org/static/meiger_hero.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/meiger_andypresent1.jpg
+            https://andykong.org/static/meiger_andypresent1.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/meiger_case.jpg
+            https://andykong.org/static/meiger_case.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/meiger_dewalt.jpg
+            https://andykong.org/static/meiger_dewalt.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/meiger_foamcase.jpg
+            https://andykong.org/static/meiger_foamcase.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/meiger_closeup1.jpg
+            https://andykong.org/static/meiger_closeup1.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/meiger_closeup2.jpg
+            https://andykong.org/static/meiger_closeup2.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/meiger_closeup3.jpg
+            https://andykong.org/static/meiger_closeup3.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/meiger_bees.png
+            https://andykong.org/static/meiger_bees.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/meiger_humans.png
+            https://andykong.org/static/meiger_humans.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/meiger_iarc.png
+            https://andykong.org/static/meiger_iarc.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/meiger_andypresent2.jpg
+            https://andykong.org/static/meiger_andypresent2.jpg
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/calendarmemories/</loc>
+    <loc>https://andykong.org/blog/calendarmemories/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/cm_150th.png
+            https://andykong.org/static/cm_150th.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/cm_firststiches.png
+            https://andykong.org/static/cm_firststiches.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/infoglobetutorial3/</loc>
+    <loc>https://andykong.org/blog/infoglobetutorial3/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/igt1_hero.jpeg
+            https://andykong.org/static/igt1_hero.jpeg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/igt3_wemos.png
+            https://andykong.org/static/igt3_wemos.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/igt3_irlib.png
+            https://andykong.org/static/igt3_irlib.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/igt3_example1.png
+            https://andykong.org/static/igt3_example1.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/projects/facemeshdemos/</loc>
+    <loc>https://andykong.org/projects/facemeshdemos/</loc>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/infoglobetutorial2/</loc>
+    <loc>https://andykong.org/blog/infoglobetutorial2/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/igt1_testingsetup.jpg
+            https://andykong.org/static/igt1_testingsetup.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/igt2_motorstartupnoise.jpg
+            https://andykong.org/static/igt2_motorstartupnoise.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/igt2_motorkickback.jpg
+            https://andykong.org/static/igt2_motorkickback.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/igt2_filtercapworks.jpg
+            https://andykong.org/static/igt2_filtercapworks.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/igt2_microwiringdiagram.jpg
+            https://andykong.org/static/igt2_microwiringdiagram.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/igt2_equippedesp.jpg
+            https://andykong.org/static/igt2_equippedesp.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/igt2_circuitoverhead.jpg
+            https://andykong.org/static/igt2_circuitoverhead.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/igt2_powerlabeled.jpg
+            https://andykong.org/static/igt2_powerlabeled.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/igt2_motoronvoltage.jpg
+            https://andykong.org/static/igt2_motoronvoltage.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/igt2_motoroffvoltage.jpg
+            https://andykong.org/static/igt2_motoroffvoltage.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/igt2_circuitoverhead_gndlabeled.jpg
+            https://andykong.org/static/igt2_circuitoverhead_gndlabeled.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/igt2_ledgrounded1.jpg
+            https://andykong.org/static/igt2_ledgrounded1.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/igt2_ledgrounded2.jpg
+            https://andykong.org/static/igt2_ledgrounded2.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/igt2_completewiring.jpg
+            https://andykong.org/static/igt2_completewiring.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/igt2_powerswitch.jpg
+            https://andykong.org/static/igt2_powerswitch.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/igt2_burnhole_inside.jpg
+            https://andykong.org/static/igt2_burnhole_inside.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/igt2_burnhole_outside.jpg
+            https://andykong.org/static/igt2_burnhole_outside.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/igt2_tolife.jpg
+            https://andykong.org/static/igt2_tolife.jpg
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/cleargelatin1/</loc>
+    <loc>https://andykong.org/blog/cleargelatin1/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/cg1_jellohero.jpg
+            https://andykong.org/static/cg1_jellohero.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/cg1_jellolens.jpg
+            https://andykong.org/static/cg1_jellolens.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/cg1_composite.jpg
+            https://andykong.org/static/cg1_composite.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/cg1_soaked.jpg
+            https://andykong.org/static/cg1_soaked.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/gc1_bothcups.jpg
+            https://andykong.org/static/gc1_bothcups.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/gc1_preset.jpg
+            https://andykong.org/static/gc1_preset.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/gc1_postset.jpg
+            https://andykong.org/static/gc1_postset.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/gc1_meholding.jpg
+            https://andykong.org/static/gc1_meholding.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/cg1_laser.jpg
+            https://andykong.org/static/cg1_laser.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/cg1_laser2.jpg
+            https://andykong.org/static/cg1_laser2.jpg
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/infoglobetutorial1/</loc>
+    <loc>https://andykong.org/blog/infoglobetutorial1/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/igt1_hero.jpeg
+            https://andykong.org/static/igt1_hero.jpeg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/igt1_tools.jpg
+            https://andykong.org/static/igt1_tools.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/igt1_screws.jpg
+            https://andykong.org/static/igt1_screws.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/igt1_latches.jpeg
+            https://andykong.org/static/igt1_latches.jpeg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/igt1_bottomclasp.jpg
+            https://andykong.org/static/igt1_bottomclasp.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/igt1_topclasp.jpg
+            https://andykong.org/static/igt1_topclasp.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/igt1_propellerscrews.jpg
+            https://andykong.org/static/igt1_propellerscrews.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/igt1_dataLED.jpg
+            https://andykong.org/static/igt1_dataLED.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/igt1_bothcut.jpg
+            https://andykong.org/static/igt1_bothcut.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/igt1_onecut.jpg
+            https://andykong.org/static/igt1_onecut.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/igt1_reass1.jpg
+            https://andykong.org/static/igt1_reass1.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/igt1_reass2.jpg
+            https://andykong.org/static/igt1_reass2.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/igt1_safeswitch.jpg
+            https://andykong.org/static/igt1_safeswitch.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/igt1_reass3.jpg
+            https://andykong.org/static/igt1_reass3.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/igt1_reass4.jpg
+            https://andykong.org/static/igt1_reass4.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/igt1_testingsetup2.jpg
+            https://andykong.org/static/igt1_testingsetup2.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/igt1_testingsetup.jpg
+            https://andykong.org/static/igt1_testingsetup.jpg
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/projects/igneous/</loc>
+    <loc>https://andykong.org/projects/igneous/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_waxy20.jpg
+            https://andykong.org/static/ign_waxy20.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_backstory.jpg
+            https://andykong.org/static/ign_backstory.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_giantscauseway.jpg
+            https://andykong.org/static/ign_giantscauseway.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_orig1.jpg
+            https://andykong.org/static/ign_orig1.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_orig2.jpg
+            https://andykong.org/static/ign_orig2.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_orig3.jpg
+            https://andykong.org/static/ign_orig3.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_orig4.jpg
+            https://andykong.org/static/ign_orig4.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_orig5.jpg
+            https://andykong.org/static/ign_orig5.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_orig6.jpg
+            https://andykong.org/static/ign_orig6.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_assem1.jpg
+            https://andykong.org/static/ign_assem1.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_assem2.jpg
+            https://andykong.org/static/ign_assem2.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_assem3.jpg
+            https://andykong.org/static/ign_assem3.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_assem4.jpg
+            https://andykong.org/static/ign_assem4.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_assem5.jpg
+            https://andykong.org/static/ign_assem5.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_assem7.jpg
+            https://andykong.org/static/ign_assem7.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_assem6.jpg
+            https://andykong.org/static/ign_assem6.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_assem8.jpg
+            https://andykong.org/static/ign_assem8.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_exhib0.png
+            https://andykong.org/static/ign_exhib0.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_exhib11.jpg
+            https://andykong.org/static/ign_exhib11.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_exhib1.jpg
+            https://andykong.org/static/ign_exhib1.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_exhib2.jpg
+            https://andykong.org/static/ign_exhib2.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_exhib3.jpg
+            https://andykong.org/static/ign_exhib3.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_exhib4.jpg
+            https://andykong.org/static/ign_exhib4.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_exhib5.jpg
+            https://andykong.org/static/ign_exhib5.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_exhib6.jpg
+            https://andykong.org/static/ign_exhib6.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_exhib7.jpg
+            https://andykong.org/static/ign_exhib7.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_exhib8.jpg
+            https://andykong.org/static/ign_exhib8.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_exhib9.jpg
+            https://andykong.org/static/ign_exhib9.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_exhib10.jpg
+            https://andykong.org/static/ign_exhib10.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_waxy1.jpg
+            https://andykong.org/static/ign_waxy1.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_waxy9.jpg
+            https://andykong.org/static/ign_waxy9.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_waxy2.jpg
+            https://andykong.org/static/ign_waxy2.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_waxy3.jpg
+            https://andykong.org/static/ign_waxy3.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_waxy4.jpg
+            https://andykong.org/static/ign_waxy4.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_waxy5.jpg
+            https://andykong.org/static/ign_waxy5.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_waxy6.jpg
+            https://andykong.org/static/ign_waxy6.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_waxy7.jpg
+            https://andykong.org/static/ign_waxy7.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_waxy8.jpg
+            https://andykong.org/static/ign_waxy8.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_waxy10.jpg
+            https://andykong.org/static/ign_waxy10.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_waxy11.jpg
+            https://andykong.org/static/ign_waxy11.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_waxy13.jpg
+            https://andykong.org/static/ign_waxy13.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_waxy12.jpg
+            https://andykong.org/static/ign_waxy12.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_waxy14.jpg
+            https://andykong.org/static/ign_waxy14.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_waxy15.jpg
+            https://andykong.org/static/ign_waxy15.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_waxy17.jpg
+            https://andykong.org/static/ign_waxy17.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_waxy18.jpg
+            https://andykong.org/static/ign_waxy18.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ign_waxy19.jpg
+            https://andykong.org/static/ign_waxy19.jpg
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/settingupelectrictables/</loc>
+    <loc>https://andykong.org/blog/settingupelectrictables/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/rt_timingdashboard.png
+            https://andykong.org/static/rt_timingdashboard.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/et_googlescript1.png
+            https://andykong.org/static/et_googlescript1.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/et_googlescript2.png
+            https://andykong.org/static/et_googlescript2.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/et_googlescript3.png
+            https://andykong.org/static/et_googlescript3.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/et_googlesheet.png
+            https://andykong.org/static/et_googlesheet.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/et_bmtesting.png
+            https://andykong.org/static/et_bmtesting.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/et_newrow.png
+            https://andykong.org/static/et_newrow.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/et_handbookmark.png
+            https://andykong.org/static/et_handbookmark.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/et_bookmarklet.png
+            https://andykong.org/static/et_bookmarklet.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/supercap2lipo/</loc>
+    <loc>https://andykong.org/blog/supercap2lipo/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/cap2lipo_capsize.jpg
+            https://andykong.org/static/cap2lipo_capsize.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/cap2lipo_board.jpg
+            https://andykong.org/static/cap2lipo_board.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/cap2lipo_testsetup.jpg
+            https://andykong.org/static/cap2lipo_testsetup.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/cap2lipo_currentout.png
+            https://andykong.org/static/cap2lipo_currentout.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/cap2lipo_efficiency.png
+            https://andykong.org/static/cap2lipo_efficiency.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/replacingtiming/</loc>
+    <loc>https://andykong.org/blog/replacingtiming/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/rt_timingdashboard.png
+            https://andykong.org/static/rt_timingdashboard.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/rt_cputesttiming.png
+            https://andykong.org/static/rt_cputesttiming.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/rt_cputestcasey.png
+            https://andykong.org/static/rt_cputestcasey.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/rt_stotestcasey.png
+            https://andykong.org/static/rt_stotestcasey.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/rt_stotimingrecords.png
+            https://andykong.org/static/rt_stotimingrecords.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/applescripts1/</loc>
+    <loc>https://andykong.org/blog/applescripts1/</loc>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/taxonomyofautomation/</loc>
+    <loc>https://andykong.org/blog/taxonomyofautomation/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/tlpmerchant.png
+            https://andykong.org/static/tlpmerchant.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/watchlists1/</loc>
+    <loc>https://andykong.org/blog/watchlists1/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/wl1_sept.png
+            https://andykong.org/static/wl1_sept.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/wl1_weedsept.png
+            https://andykong.org/static/wl1_weedsept.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/wl1_dec.png
+            https://andykong.org/static/wl1_dec.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/wl1_weedclose.png
+            https://andykong.org/static/wl1_weedclose.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/wl1_weedopen.png
+            https://andykong.org/static/wl1_weedopen.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/projects/eyemu/</loc>
+    <loc>https://andykong.org/projects/eyemu/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/eyemuhero.png
+            https://andykong.org/static/eyemuhero.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/howtreesfallapart/</loc>
+    <loc>https://andykong.org/blog/howtreesfallapart/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/topdown2.jpg
+            https://andykong.org/static/topdown2.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/insideout.jpg
+            https://andykong.org/static/insideout.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/outside_in1.jpg
+            https://andykong.org/static/outside_in1.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/allatonce.jpg
+            https://andykong.org/static/allatonce.jpg
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/projects/BCC/</loc>
+    <loc>https://andykong.org/projects/BCC/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc_alansonsketch.jpg
+            https://andykong.org/static/bcc_alansonsketch.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc_alansonsketch.jpg
+            https://andykong.org/static/bcc_alansonsketch.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc_sharedground.png
+            https://andykong.org/static/bcc_sharedground.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc_cleansigsg.png
+            https://andykong.org/static/bcc_cleansigsg.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc_noisysigsg.png
+            https://andykong.org/static/bcc_noisysigsg.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc_transmitter.png
+            https://andykong.org/static/bcc_transmitter.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc_transmittersch.png
+            https://andykong.org/static/bcc_transmittersch.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc_receiver.png
+            https://andykong.org/static/bcc_receiver.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc_receiversch.png
+            https://andykong.org/static/bcc_receiversch.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc_doorlockdemo.png
+            https://andykong.org/static/bcc_doorlockdemo.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc_calendardemo.png
+            https://andykong.org/static/bcc_calendardemo.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc_transmittedsig.png
+            https://andykong.org/static/bcc_transmittedsig.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc_receivedsig.png
+            https://andykong.org/static/bcc_receivedsig.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/fourieraperture/</loc>
+    <loc>https://andykong.org/blog/fourieraperture/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/fa_textrotation.png
+            https://andykong.org/static/fa_textrotation.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/fa_kallardbook.png
+            https://andykong.org/static/fa_kallardbook.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/fa_kallardapparatus.jpg
+            https://andykong.org/static/fa_kallardapparatus.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/fa_kallardexample.png
+            https://andykong.org/static/fa_kallardexample.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/fa_circles.png
+            https://andykong.org/static/fa_circles.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/fa_spiral.png
+            https://andykong.org/static/fa_spiral.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/highcurrentsource/</loc>
+    <loc>https://andykong.org/blog/highcurrentsource/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/mk750_backonly.jpg
+            https://andykong.org/static/mk750_backonly.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/mk750_ebaypage.png
+            https://andykong.org/static/mk750_ebaypage.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/mk750_5vconfirmed.jpg
+            https://andykong.org/static/mk750_5vconfirmed.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/mk750_thinwire.jpg
+            https://andykong.org/static/mk750_thinwire.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/mk750_thickwire.jpg
+            https://andykong.org/static/mk750_thickwire.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/mk750_threestrandbefore.jpg
+            https://andykong.org/static/mk750_threestrandbefore.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/mk750_threestrandduring.jpg
+            https://andykong.org/static/mk750_threestrandduring.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/mk750_hotwire.jpg
+            https://andykong.org/static/mk750_hotwire.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/mk750_twostrandduring.jpg
+            https://andykong.org/static/mk750_twostrandduring.jpg
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/superchargingcaps/</loc>
+    <loc>https://andykong.org/blog/superchargingcaps/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/sc1_setup.jpg
+            https://andykong.org/static/sc1_setup.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/sc1_chargeto4with5.jpg
+            https://andykong.org/static/sc1_chargeto4with5.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/sc1_chargeto4with10.jpg
+            https://andykong.org/static/sc1_chargeto4with10.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/sc1_chargeto4with20.jpg
+            https://andykong.org/static/sc1_chargeto4with20.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/sc1_chargeto4with30.jpg
+            https://andykong.org/static/sc1_chargeto4with30.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/sc1_chargeVeq.png
+            https://andykong.org/static/sc1_chargeVeq.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/sc1_chargeTeq.png
+            https://andykong.org/static/sc1_chargeTeq.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/firstwatermelon/</loc>
+    <loc>https://andykong.org/blog/firstwatermelon/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/wm1_watemelonrefract.jpg
+            https://andykong.org/static/wm1_watemelonrefract.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/wm1_lycheepic.jpg
+            https://andykong.org/static/wm1_lycheepic.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/wm1_lycheesugar.jpg
+            https://andykong.org/static/wm1_lycheesugar.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/wm1_longan.jpg
+            https://andykong.org/static/wm1_longan.jpg
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/fitbit1/</loc>
+    <loc>https://andykong.org/blog/fitbit1/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/fitbit1_register.png
+            https://andykong.org/static/fitbit1_register.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/fitbit1_heartrateout.png
+            https://andykong.org/static/fitbit1_heartrateout.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/refractometertesting/</loc>
+    <loc>https://andykong.org/blog/refractometertesting/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/refractest_displaypic.png
+            https://andykong.org/static/refractest_displaypic.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/refractest_showcase.jpg
+            https://andykong.org/static/refractest_showcase.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/refractest_caprisun.png
+            https://andykong.org/static/refractest_caprisun.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/refractest_izze.png
+            https://andykong.org/static/refractest_izze.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/refractest_coke.png
+            https://andykong.org/static/refractest_coke.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/refractest_peach.png
+            https://andykong.org/static/refractest_peach.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/refractest_hershey.png
+            https://andykong.org/static/refractest_hershey.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/sinepaper/</loc>
+    <loc>https://andykong.org/blog/sinepaper/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/sinu_singlenervefirings.png
+            https://andykong.org/static/sinu_singlenervefirings.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/sinu_stimulus.png
+            https://andykong.org/static/sinu_stimulus.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/sinu_PCchart.png
+            https://andykong.org/static/sinu_PCchart.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/mechanoreceptor2/</loc>
+    <loc>https://andykong.org/blog/mechanoreceptor2/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/mech2_pacinian.png
+            https://andykong.org/static/mech2_pacinian.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/mech2_pacstim.jpg
+            https://andykong.org/static/mech2_pacstim.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/mech2_pacback.jpg
+            https://andykong.org/static/mech2_pacback.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/mech2_pacpalm.jpg
+            https://andykong.org/static/mech2_pacpalm.jpg
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/traxionreproduction/</loc>
+    <loc>https://andykong.org/blog/traxionreproduction/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/traxion_setup.jpg
+            https://andykong.org/static/traxion_setup.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/traxion_linearact.jpg
+            https://andykong.org/static/traxion_linearact.jpg
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/macgyver1/</loc>
+    <loc>https://andykong.org/blog/macgyver1/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/mcg1_ringlight.jpg
+            https://andykong.org/static/mcg1_ringlight.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/mcg1_battery.jpg
+            https://andykong.org/static/mcg1_battery.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/mcg1_circuit.jpg
+            https://andykong.org/static/mcg1_circuit.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/mcg1_alligator.jpg
+            https://andykong.org/static/mcg1_alligator.jpg
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/mechanoreceptor1/</loc>
+    <loc>https://andykong.org/blog/mechanoreceptor1/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/mr1_pacinian.png
+            https://andykong.org/static/mr1_pacinian.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/mr1_tens.jpg
+            https://andykong.org/static/mr1_tens.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/mr1_elecplacement.png
+            https://andykong.org/static/mr1_elecplacement.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/bcc3/</loc>
+    <loc>https://andykong.org/blog/bcc3/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc3_caldemosmall.png
+            https://andykong.org/static/bcc3_caldemosmall.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc2_every50msIS.png
+            https://andykong.org/static/bcc2_every50msIS.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc3_transmitter.jpg
+            https://andykong.org/static/bcc3_transmitter.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc3_raw.jpg
+            https://andykong.org/static/bcc3_raw.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc3_transmittercircuit.jpg
+            https://andykong.org/static/bcc3_transmittercircuit.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc3_receiver.jpg
+            https://andykong.org/static/bcc3_receiver.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc3_receivercircuit.jpg
+            https://andykong.org/static/bcc3_receivercircuit.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc3_transmittedraw.png
+            https://andykong.org/static/bcc3_transmittedraw.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc3_receivedraw.png
+            https://andykong.org/static/bcc3_receivedraw.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/woodworkingday2/</loc>
+    <loc>https://andykong.org/blog/woodworkingday2/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/wood2_breadshelfwithoutbread.jpg
+            https://andykong.org/static/wood2_breadshelfwithoutbread.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/wood2_breadshelfwithbread.jpg
+            https://andykong.org/static/wood2_breadshelfwithbread.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/wood2_crate.jpg
+            https://andykong.org/static/wood2_crate.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/wood2_crate2.jpg
+            https://andykong.org/static/wood2_crate2.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/wood2_stool1.jpg
+            https://andykong.org/static/wood2_stool1.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/wood2_stool2.jpg
+            https://andykong.org/static/wood2_stool2.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/wood2_stool3.jpg
+            https://andykong.org/static/wood2_stool3.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/wood2_roboclublogo.jpg
+            https://andykong.org/static/wood2_roboclublogo.jpg
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/bcc2/</loc>
+    <loc>https://andykong.org/blog/bcc2/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc1_connectedground.jpg
+            https://andykong.org/static/bcc1_connectedground.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc2_every50msIS.png
+            https://andykong.org/static/bcc2_every50msIS.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc2_everyhalfsecondIR.png
+            https://andykong.org/static/bcc2_everyhalfsecondIR.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc2_withinlinecapIR.png
+            https://andykong.org/static/bcc2_withinlinecapIR.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc2_withoutinlinecapIR.png
+            https://andykong.org/static/bcc2_withoutinlinecapIR.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc2_withsmoothingIR.png
+            https://andykong.org/static/bcc2_withsmoothingIR.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc2_countingfilterIS.png
+            https://andykong.org/static/bcc2_countingfilterIS.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc2_every10msIR.png
+            https://andykong.org/static/bcc2_every10msIR.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/bcc1/</loc>
+    <loc>https://andykong.org/blog/bcc1/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc1_signaloverskin.png
+            https://andykong.org/static/bcc1_signaloverskin.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc1_sender.jpg
+            https://andykong.org/static/bcc1_sender.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc1_receiver.jpg
+            https://andykong.org/static/bcc1_receiver.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc1_baselineanalognoise.png
+            https://andykong.org/static/bcc1_baselineanalognoise.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc1_baselinewithwire.png
+            https://andykong.org/static/bcc1_baselinewithwire.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc1_baselinetouchinganalognoise.png
+            https://andykong.org/static/bcc1_baselinetouchinganalognoise.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc1_connectedground.jpg
+            https://andykong.org/static/bcc1_connectedground.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc1_signaloverskin.png
+            https://andykong.org/static/bcc1_signaloverskin.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc1_signaloverskin1.png
+            https://andykong.org/static/bcc1_signaloverskin1.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc1_nosignaloverskin.png
+            https://andykong.org/static/bcc1_nosignaloverskin.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc1_connectednoground.jpg
+            https://andykong.org/static/bcc1_connectednoground.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc1_ngvsg.png
+            https://andykong.org/static/bcc1_ngvsg.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc1_ng_touchvsnotouch.png
+            https://andykong.org/static/bcc1_ng_touchvsnotouch.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bcc1_ng_touchvsnotouch2.png
+            https://andykong.org/static/bcc1_ng_touchvsnotouch2.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/woodworkingday1/</loc>
+    <loc>https://andykong.org/blog/woodworkingday1/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bananastand.png
+            https://andykong.org/static/bananastand.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/mpr121passthrough/</loc>
+    <loc>https://andykong.org/blog/mpr121passthrough/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/mpr121glamour.png
+            https://andykong.org/static/mpr121glamour.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/mpr121chart.png
+            https://andykong.org/static/mpr121chart.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/mpr121saran.png
+            https://andykong.org/static/mpr121saran.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/led5050teardown/</loc>
+    <loc>https://andykong.org/blog/led5050teardown/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/led5050_lit.png
+            https://andykong.org/static/led5050_lit.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/led5050_reel.jpg
+            https://andykong.org/static/led5050_reel.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/led5050_powersupply.jpg
+            https://andykong.org/static/led5050_powersupply.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/led5050_controlboard.jpg
+            https://andykong.org/static/led5050_controlboard.jpg
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/blinkdetectioninitial/</loc>
+    <loc>https://andykong.org/blog/blinkdetectioninitial/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/blinktrack1_reflectancesensor.png
+            https://andykong.org/static/blinktrack1_reflectancesensor.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/palotteryexpectedvalue/</loc>
+    <loc>https://andykong.org/blog/palotteryexpectedvalue/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/palotterychances.png
+            https://andykong.org/static/palotterychances.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/wordlengthneonsign/</loc>
+    <loc>https://andykong.org/blog/wordlengthneonsign/</loc>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/IFproblems/</loc>
+    <loc>https://andykong.org/blog/IFproblems/</loc>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/touchreactiveLEDs/</loc>
+    <loc>https://andykong.org/blog/touchreactiveLEDs/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/touchLEDs1toppic.png
+            https://andykong.org/static/touchLEDs1toppic.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/touchLEDs1resistorunderside.png
+            https://andykong.org/static/touchLEDs1resistorunderside.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/oversamplingvsaveraging/</loc>
+    <loc>https://andykong.org/blog/oversamplingvsaveraging/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ovacombined.png
+            https://andykong.org/static/ovacombined.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ova1kvs200zoomout.png
+            https://andykong.org/static/ova1kvs200zoomout.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ova1kvs200.png
+            https://andykong.org/static/ova1kvs200.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ovadownsample.png
+            https://andykong.org/static/ovadownsample.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ovaavgvsdown.png
+            https://andykong.org/static/ovaavgvsdown.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ovaavgvsdownplusorig.png
+            https://andykong.org/static/ovaavgvsdownplusorig.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ovalowfreq.png
+            https://andykong.org/static/ovalowfreq.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/interfacespeeds/</loc>
+    <loc>https://andykong.org/blog/interfacespeeds/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bpmITRCommon.png
+            https://andykong.org/static/bpmITRCommon.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bpmthermostat.jpg
+            https://andykong.org/static/bpmthermostat.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bpmtvremote.png
+            https://andykong.org/static/bpmtvremote.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bpmmicrowave.png
+            https://andykong.org/static/bpmmicrowave.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bpmgamecontroller.png
+            https://andykong.org/static/bpmgamecontroller.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bpmiphone11.jpg
+            https://andykong.org/static/bpmiphone11.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bpmphoneminsize10075.png
+            https://andykong.org/static/bpmphoneminsize10075.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bpmdiction.jpg
+            https://andykong.org/static/bpmdiction.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bpmmacbookair.png
+            https://andykong.org/static/bpmmacbookair.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bpmmouseminsize3030.png
+            https://andykong.org/static/bpmmouseminsize3030.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bpmfirstmouse.jpg
+            https://andykong.org/static/bpmfirstmouse.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bpmkeyboard.jpg
+            https://andykong.org/static/bpmkeyboard.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bpmITRResearch.png
+            https://andykong.org/static/bpmITRResearch.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bpmdiction.jpg
+            https://andykong.org/static/bpmdiction.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bpmtobii.png
+            https://andykong.org/static/bpmtobii.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bpmssvep.jpg
+            https://andykong.org/static/bpmssvep.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bpmITRCommon.png
+            https://andykong.org/static/bpmITRCommon.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/bpmITRResearch.png
+            https://andykong.org/static/bpmITRResearch.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/ssveppeakdetect/</loc>
+    <loc>https://andykong.org/blog/ssveppeakdetect/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/PSD5secwindow.png
+            https://andykong.org/static/PSD5secwindow.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/SCA5secwindow.png
+            https://andykong.org/static/SCA5secwindow.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/PRSA5secwindow.png
+            https://andykong.org/static/PRSA5secwindow.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/PRSA10secwindow.png
+            https://andykong.org/static/PRSA10secwindow.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/SCAfilterordercomparison.png
+            https://andykong.org/static/SCAfilterordercomparison.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/SCAvsPRSA5secwindow.png
+            https://andykong.org/static/SCAvsPRSA5secwindow.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/EMIvsBCI/</loc>
+    <loc>https://andykong.org/blog/EMIvsBCI/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/aptblinker.jpg
+            https://andykong.org/static/aptblinker.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/emialphaspike.png
+            https://andykong.org/static/emialphaspike.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/barcodehistory/</loc>
+    <loc>https://andykong.org/blog/barcodehistory/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/barcodescannerls1000.jpg
+            https://andykong.org/static/barcodescannerls1000.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/mh290.jpg
+            https://andykong.org/static/mh290.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/barcodescannerlaseron.png
+            https://andykong.org/static/barcodescannerlaseron.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/PRSAhighlight/</loc>
+    <loc>https://andykong.org/blog/PRSAhighlight/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/prsaoriginal.png
+            https://andykong.org/static/prsaoriginal.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/5WLEDprelimtests/</loc>
+    <loc>https://andykong.org/blog/5WLEDprelimtests/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/5Watters.jpg
+            https://andykong.org/static/5Watters.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/5W_setup.jpg
+            https://andykong.org/static/5W_setup.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/5W_tightcircles.jpg
+            https://andykong.org/static/5W_tightcircles.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/5W_circles.jpg
+            https://andykong.org/static/5W_circles.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/5W_bigcircle.jpg
+            https://andykong.org/static/5W_bigcircle.jpg
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/fresnellens/</loc>
+    <loc>https://andykong.org/blog/fresnellens/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/fresnel_creditcard.jpg
+            https://andykong.org/static/fresnel_creditcard.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/fresnel_magnify.jpg
+            https://andykong.org/static/fresnel_magnify.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/fresnel_reflectproject.jpg
+            https://andykong.org/static/fresnel_reflectproject.jpg
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/bcieyeclosedetection/</loc>
+    <loc>https://andykong.org/blog/bcieyeclosedetection/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/alphawaves_electrodes.jpg
+            https://andykong.org/static/alphawaves_electrodes.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/alphawaves_eyesopen.png
+            https://andykong.org/static/alphawaves_eyesopen.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/alphawaves_eyesclosed.png
+            https://andykong.org/static/alphawaves_eyesclosed.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/workingwithbrainflow1/</loc>
+    <loc>https://andykong.org/blog/workingwithbrainflow1/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/brainflowgraphoverwriting.png
+            https://andykong.org/static/brainflowgraphoverwriting.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/brainflowvsscipy3.png
+            https://andykong.org/static/brainflowvsscipy3.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/brainflowvsscipy4.png
+            https://andykong.org/static/brainflowvsscipy4.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/LEDs3W6piece/</loc>
+    <loc>https://andykong.org/blog/LEDs3W6piece/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/LED3W_poweringsetup.JPG
+            https://andykong.org/static/LED3W_poweringsetup.JPG
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/LED3W_projected.JPG
+            https://andykong.org/static/LED3W_projected.JPG
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/easybutton1/</loc>
+    <loc>https://andykong.org/blog/easybutton1/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/easybuttonday1.jpg
+            https://andykong.org/static/easybuttonday1.jpg
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/arduinodutycyclesquare/</loc>
+    <loc>https://andykong.org/blog/arduinodutycyclesquare/</loc>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/eegsinglechannelavg/</loc>
+    <loc>https://andykong.org/blog/eegsinglechannelavg/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/tradeeg.png
+            https://andykong.org/static/tradeeg.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/35_full_noavg.png
+            https://andykong.org/static/35_full_noavg.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/35_full_04window.png
+            https://andykong.org/static/35_full_04window.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/35_3sec_noavg.png
+            https://andykong.org/static/35_3sec_noavg.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/35_3sec_06window.png
+            https://andykong.org/static/35_3sec_06window.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/padright.gif
+            https://andykong.org/static/padright.gif
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/35_padboth2.png
+            https://andykong.org/static/35_padboth2.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/projects/directionofvoice/</loc>
+    <loc>https://andykong.org/projects/directionofvoice/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/dov_hero.png
+            https://andykong.org/static/dov_hero.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/projects/eyecatcher/</loc>
+    <loc>https://andykong.org/projects/eyecatcher/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/eyecatchergif.gif
+            https://andykong.org/static/eyecatchergif.gif
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/coinvibrationmotor/</loc>
+    <loc>https://andykong.org/blog/coinvibrationmotor/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/surroundhaptics.png
+            https://andykong.org/static/surroundhaptics.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/coinvibrationmotors.png
+            https://andykong.org/static/coinvibrationmotors.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/arduinodirect2wav/</loc>
+    <loc>https://andykong.org/blog/arduinodirect2wav/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/direct2wav_fullsetup.jpg
+            https://andykong.org/static/direct2wav_fullsetup.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/direct2wav_library.png
+            https://andykong.org/static/direct2wav_library.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/wav2c_online.png
+            https://andykong.org/static/wav2c_online.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/projects/analogscalingcalculator/</loc>
+    <loc>https://andykong.org/projects/analogscalingcalculator/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/analogscalinggraphic.png
+            https://andykong.org/static/analogscalinggraphic.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/scalingvoltage_nonumbers.png
+            https://andykong.org/static/scalingvoltage_nonumbers.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/analogscalingvoltages/</loc>
+    <loc>https://andykong.org/blog/analogscalingvoltages/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/analogscalinggraphic.png
+            https://andykong.org/static/analogscalinggraphic.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/voltagescalingmath1.png
+            https://andykong.org/static/voltagescalingmath1.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/diffamp1.png
+            https://andykong.org/static/diffamp1.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/analogscaling_shitsoln.png
+            https://andykong.org/static/analogscaling_shitsoln.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/scalingvoltageschematic.png
+            https://andykong.org/static/scalingvoltageschematic.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/analogscaling_fullsoln.png
+            https://andykong.org/static/analogscaling_fullsoln.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/voltagescalingmath2.png
+            https://andykong.org/static/voltagescalingmath2.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/analogscale_eq1.png
+            https://andykong.org/static/analogscale_eq1.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/analogscale_eq2.png
+            https://andykong.org/static/analogscale_eq2.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/wolframquery.png
+            https://andykong.org/static/wolframquery.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/wolframanswer.png
+            https://andykong.org/static/wolframanswer.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/analogscaling_r.png
+            https://andykong.org/static/analogscaling_r.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/analogscaling_vref.png
+            https://andykong.org/static/analogscaling_vref.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/analogscaling_solutionpos.png
+            https://andykong.org/static/analogscaling_solutionpos.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/analogscaling_solutionneg.png
+            https://andykong.org/static/analogscaling_solutionneg.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/PPG_tutorial/</loc>
+    <loc>https://andykong.org/blog/PPG_tutorial/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ppg.gif
+            https://andykong.org/static/ppg.gif
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/PPG_forehead.png
+            https://andykong.org/static/PPG_forehead.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/PPG_forehead.png
+            https://andykong.org/static/PPG_forehead.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/USBA_exploration/</loc>
+    <loc>https://andykong.org/blog/USBA_exploration/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ThanksIBM.jpg
+            https://andykong.org/static/ThanksIBM.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/USBA_realvoltage.jpg
+            https://andykong.org/static/USBA_realvoltage.jpg
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/sleddingontable/</loc>
+    <loc>https://andykong.org/blog/sleddingontable/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/tableforsledding.JPG
+            https://andykong.org/static/tableforsledding.JPG
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/myo3_noisespecs/</loc>
+    <loc>https://andykong.org/blog/myo3_noisespecs/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/myo3_board.png
+            https://andykong.org/static/myo3_board.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/myo3_100hz.JPG
+            https://andykong.org/static/myo3_100hz.JPG
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/myo3_noiseboardsetup.JPG
+            https://andykong.org/static/myo3_noiseboardsetup.JPG
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/myo3_out3noise.JPG
+            https://andykong.org/static/myo3_out3noise.JPG
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/jslibraries/</loc>
+    <loc>https://andykong.org/blog/jslibraries/</loc>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/teensydaq/</loc>
+    <loc>https://andykong.org/blog/teensydaq/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/teensydaq_ADCoutput.jpeg
+            https://andykong.org/static/teensydaq_ADCoutput.jpeg
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/myo3_initialtesting/</loc>
+    <loc>https://andykong.org/blog/myo3_initialtesting/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/myo3_schematicflippedpower.png
+            https://andykong.org/static/myo3_schematicflippedpower.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/myo3_fixingpower.jpg
+            https://andykong.org/static/myo3_fixingpower.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/myo3_shortednoise.jpg
+            https://andykong.org/static/myo3_shortednoise.jpg
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/speedcheck_listlen/</loc>
+    <loc>https://andykong.org/blog/speedcheck_listlen/</loc>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/myo3_assembly/</loc>
+    <loc>https://andykong.org/blog/myo3_assembly/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/myo3front.jpg
+            https://andykong.org/static/myo3front.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/myo3back.png
+            https://andykong.org/static/myo3back.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/histogram/</loc>
+    <loc>https://andykong.org/blog/histogram/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/breadsong.jpg
+            https://andykong.org/static/breadsong.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/breadsong_histogram.png
+            https://andykong.org/static/breadsong_histogram.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/breadsong_overexposed.jpg
+            https://andykong.org/static/breadsong_overexposed.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/breadsong_overexposed_histogram.png
+            https://andykong.org/static/breadsong_overexposed_histogram.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/histeqbeforeafter.png
+            https://andykong.org/static/histeqbeforeafter.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/histogram_eye.png
+            https://andykong.org/static/histogram_eye.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/histogram_blackeye.png
+            https://andykong.org/static/histogram_blackeye.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/panoramas2/</loc>
+    <loc>https://andykong.org/blog/panoramas2/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/panorama2_betterstitch.jpg
+            https://andykong.org/static/panorama2_betterstitch.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/panorama2_keypointcrossanalysis.jpg
+            https://andykong.org/static/panorama2_keypointcrossanalysis.jpg
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/panoramas1/</loc>
+    <loc>https://andykong.org/blog/panoramas1/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/panoramassplit.png
+            https://andykong.org/static/panoramassplit.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/panorama1_view1.png
+            https://andykong.org/static/panorama1_view1.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/panorama1_view2.png
+            https://andykong.org/static/panorama1_view2.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/panorama1_combined.png
+            https://andykong.org/static/panorama1_combined.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/panorama1_glitchart.jpg
+            https://andykong.org/static/panorama1_glitchart.jpg
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/eyetoypscam/</loc>
+    <loc>https://andykong.org/blog/eyetoypscam/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/playstationeye.jpg%20width%3D
+            https://andykong.org/static/playstationeye.jpg
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/projects/myo2/</loc>
+    <loc>https://andykong.org/projects/myo2/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/myo2tensingcropped.gif
+            https://andykong.org/static/myo2tensingcropped.gif
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/myo2boardpic.png
+            https://andykong.org/static/myo2boardpic.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/myo2output1.png
+            https://andykong.org/static/myo2output1.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/myo2musclebelly.png
+            https://andykong.org/static/myo2musclebelly.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/myo2badschematic.png
+            https://andykong.org/static/myo2badschematic.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/myo2RLD.png
+            https://andykong.org/static/myo2RLD.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/spudging/</loc>
+    <loc>https://andykong.org/blog/spudging/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/spudge1.JPG%20width%3D
+            https://andykong.org/static/spudge1.JPG
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/spudge2.JPG%20width%3D
+            https://andykong.org/static/spudge2.JPG
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/spudge3.JPG%20width%3D
+            https://andykong.org/static/spudge3.JPG
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/spudge4.JPG%20width%3D
+            https://andykong.org/static/spudge4.JPG
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/spudge5.JPG%20width%3D
+            https://andykong.org/static/spudge5.JPG
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/spudge6.JPG%20width%3D
+            https://andykong.org/static/spudge6.JPG
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/spudge7.JPG%20width%3D
+            https://andykong.org/static/spudge7.JPG
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/privacyscreen/</loc>
+    <loc>https://andykong.org/blog/privacyscreen/</loc>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/projects/heartratemonitor/</loc>
+    <loc>https://andykong.org/projects/heartratemonitor/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/heartratemainpage.png
+            https://andykong.org/static/heartratemainpage.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/heartratebloodcolor.jpeg%20class%3D
+            https://andykong.org/static/heartratebloodcolor.jpeg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/heartratemainpage.png%20class%3D
+            https://andykong.org/static/heartratemainpage.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/digitalholo1/</loc>
+    <loc>https://andykong.org/blog/digitalholo1/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/digitalholocube.png%20width%3D
+            https://andykong.org/static/digitalholocube.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/projects/carnegiecalendar/</loc>
+    <loc>https://andykong.org/projects/carnegiecalendar/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/CCmain.png
+            https://andykong.org/static/CCmain.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/CCurllist.png
+            https://andykong.org/static/CCurllist.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/CCzoomout.png
+            https://andykong.org/static/CCzoomout.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/CCzoomin.png
+            https://andykong.org/static/CCzoomin.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/speedcheckpybuiltins/</loc>
+    <loc>https://andykong.org/blog/speedcheckpybuiltins/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/speedcheckpybuiltinscode.png%20width%3D
+            https://andykong.org/static/speedcheckpybuiltinscode.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/speedcheckpybuiltinstimings.png%20width%3D
+            https://andykong.org/static/speedcheckpybuiltinstimings.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/velostatlinqstat/</loc>
+    <loc>https://andykong.org/blog/velostatlinqstat/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/velostat.jpg%20width%3D
+            https://andykong.org/static/velostat.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/velostatnormal2.jpg%20width%3D
+            https://andykong.org/static/velostatnormal2.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/velostat180.jpg%20width%3D
+            https://andykong.org/static/velostat180.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/velostattwist.png%20width%3D
+            https://andykong.org/static/velostattwist.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/velostatbend.jpg%20width%3D
+            https://andykong.org/static/velostatbend.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/velostatbend.png%20width%3D
+            https://andykong.org/static/velostatbend.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/velostatpull.png%20width%3D
+            https://andykong.org/static/velostatpull.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/velostattouch.png%20width%3D
+            https://andykong.org/static/velostattouch.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/velostatfoldtouch.png%20width%3D
+            https://andykong.org/static/velostatfoldtouch.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/velostatheating.png%20width%3D
+            https://andykong.org/static/velostatheating.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/velostatcrimp.jpg%20width%3D
+            https://andykong.org/static/velostatcrimp.jpg
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/speedcheckwritingstrings/</loc>
+    <loc>https://andykong.org/blog/speedcheckwritingstrings/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/speedcheckStringWrite.png%20width%3D
+            https://andykong.org/static/speedcheckStringWrite.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/projects/asciizoom/</loc>
+    <loc>https://andykong.org/projects/asciizoom/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/chickensidecomparison.jpeg
+            https://andykong.org/static/chickensidecomparison.jpeg
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/projects/alteredperceptions/</loc>
+    <loc>https://andykong.org/projects/alteredperceptions/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/alteredibis.png
+            https://andykong.org/static/alteredibis.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/alteredpsvr.jpg
+            https://andykong.org/static/alteredpsvr.jpg
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/alteredadaptivethresh.png
+            https://andykong.org/static/alteredadaptivethresh.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/altereddeepdreamdog.jpg
+            https://andykong.org/static/altereddeepdreamdog.jpg
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/alteredperceptions0/</loc>
+    <loc>https://andykong.org/blog/alteredperceptions0/</loc>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/projects/ampbox/</loc>
+    <loc>https://andykong.org/projects/ampbox/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ampbox.png
+            https://andykong.org/static/ampbox.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/ampboxcircuit.png
+            https://andykong.org/static/ampboxcircuit.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/projects/manualbackprop/</loc>
+    <loc>https://andykong.org/projects/manualbackprop/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/manualbackpropcode.png
+            https://andykong.org/static/manualbackpropcode.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/projects/spintank/</loc>
+    <loc>https://andykong.org/projects/spintank/</loc>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/spintank1/</loc>
+    <loc>https://andykong.org/blog/spintank1/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/spintankabrams.png
+            https://andykong.org/static/spintankabrams.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/spintankantitankmissile.png
+            https://andykong.org/static/spintankantitankmissile.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/spintankmechanismdrawing.png
+            https://andykong.org/static/spintankmechanismdrawing.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/spintank3dmodel.png
+            https://andykong.org/static/spintank3dmodel.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/spintankmounted.png
+            https://andykong.org/static/spintankmounted.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/spintankstationaryshot.png
+            https://andykong.org/static/spintankstationaryshot.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/spintankspinningshot.png
+            https://andykong.org/static/spintankspinningshot.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/advancedaddition1/</loc>
+    <loc>https://andykong.org/blog/advancedaddition1/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/advancedaddition1symboliceqn.png%20width%3D
+            https://andykong.org/static/advancedaddition1symboliceqn.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/advancedaddition1numericeqn.png%20width%3D
+            https://andykong.org/static/advancedaddition1numericeqn.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/projects/forcequeue/</loc>
+    <loc>https://andykong.org/projects/forcequeue/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/fqspotifyapichart.png
+            https://andykong.org/static/fqspotifyapichart.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/kerokerokerokerokerokero.png
+            https://andykong.org/static/kerokerokerokerokerokero.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/fqspotipy.png
+            https://andykong.org/static/fqspotipy.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/extraarms/</loc>
+    <loc>https://andykong.org/blog/extraarms/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/extraarmeeg.jpg%20width%3D
+            https://andykong.org/static/extraarmeeg.jpg
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/advancedaddition/</loc>
+    <loc>https://andykong.org/blog/advancedaddition/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/advancedadditiontraining.png%20width%3D
+            https://andykong.org/static/advancedadditiontraining.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/aasimpleexamples.png%20width%3D
+            https://andykong.org/static/aasimpleexamples.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/aasimpleweights.png%20width%3D
+            https://andykong.org/static/aasimpleweights.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/aaboiled.png%20width%3D
+            https://andykong.org/static/aaboiled.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/advancedadditionexamples.png%20width%3D
+            https://andykong.org/static/advancedadditionexamples.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/aabignetexamples.png%20width%3D
+            https://andykong.org/static/aabignetexamples.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/aabignetgoodexamples.png%20width%3D
+            https://andykong.org/static/aabignetgoodexamples.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/aanoncommutativity.png%20width%3D
+            https://andykong.org/static/aanoncommutativity.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/projects/eyetracker/</loc>
+    <loc>https://andykong.org/projects/eyetracker/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/badglasses.png
+            https://andykong.org/static/badglasses.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/eyedrawnname.png
+            https://andykong.org/static/eyedrawnname.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/stareye.png
+            https://andykong.org/static/stareye.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/unexplorable/</loc>
+    <loc>https://andykong.org/blog/unexplorable/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/dreammagnet.png%20width%3D
+            https://andykong.org/static/dreammagnet.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/projects/personalwebsite/</loc>
+    <loc>https://andykong.org/projects/personalwebsite/</loc>
       
         <image:image>
           <image:loc>
-            http://localhost/static/websitev3.png
+            https://andykong.org/static/websitev3.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/websitev2.png%20class%3D
+            https://andykong.org/static/websitev2.png
           </image:loc>
         </image:image>
       
         <image:image>
           <image:loc>
-            http://localhost/static/websitev1.png%20class%3D
+            https://andykong.org/static/websitev1.png
           </image:loc>
         </image:image>
       
     </url>
   
-  <br>
     <url>
-    <loc>http://localhost/blog/first/</loc>
+    <loc>https://andykong.org/blog/first/</loc>
       
     </url>
   
