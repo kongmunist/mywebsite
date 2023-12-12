@@ -10,11 +10,12 @@ from feedgen.feed import FeedGenerator
 from datetime import datetime, timedelta
 import pytz
 import sys
-import subprocess
+import subprocess as sp
 import os
 import time
 
-
+# Dec 1 2023 TODO: Add pdf and other static non-image files to the sitemap
+# Dec 1 2023 TODO: Add lazy loading to blog images
 
 
 # run "python sitebuilder.py build" in shell to build to the build folder
@@ -208,6 +209,10 @@ def blog(title):
     page = [pages.get("blog/" + title)]
     blogPages = [p for p in pages if "blog"==p.meta.get('label')]
 
+    # Add loading="lazy" to all images
+    pattern = '<img'
+    for p in page:
+        p.html = re.sub(pattern, '<img loading="lazy"', p.html)
 
     if page[0] is None:
         return mainblog()
@@ -293,6 +298,11 @@ def vday2020():
     print("vday2020")
     return render_template("vday2020.html")
 
+@app.route("/leavingzurich/")
+def leavingzurich():
+    print("leavingzurich")
+    return render_template("leavingzurich.html")
+
 @app.route('/<path:path>/')
 def page(path):
     print("page " + path)
@@ -325,6 +335,12 @@ if __name__ == "__main__":
             os.system("git stage -A")
             os.system("git commit -m \"blog update " + time.ctime() + "\"")
             os.system("git push origin master")
+
+            # Make HTTP request to update sitemap on google, get response. Use blue
+            blue = "\033[0;34m"
+            endc = "\033[0m"
+            print(blue + "Updating sitemap on google" + endc)
+            sp.run(["wget", "https://www.google.com/ping?sitemap=https://andykong.org/sitemap.xml"])
 
             # Deploy build file to firebase — effective 10/4 no more firebase.
             # os.system("(cd andykong.org && firebase deploy)")

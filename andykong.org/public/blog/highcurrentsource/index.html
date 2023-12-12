@@ -275,7 +275,7 @@ code {
 <p>Typical bench power supplies will go up to about 30V, and output 3A at most. For more powerful power supplies, their focus will usually be on voltage, going up to kilovolts at only a few amps or milliamps. </p>
 <p>I recently had the need for the opposite kind of power supply, a high current and low voltage one, up to 200A at around 3V. I found this one on Ebay which seemed the fit the bill. Let me tell you all about it!</p>
 <p class="caption">What could it be?</p>
-<p><img alt="What could it be?" src="/static/mk750_backonly.jpg" /></p>
+<p><img loading="lazy" alt="What could it be?" src="/static/mk750_backonly.jpg" /></p>
 <h1>How do you make 200A?</h1>
 <p>Before I bought this, I had juggled a few alternatives. There are many sketchy ways you can generate huge currents. A few I considered were: </p>
 <ul>
@@ -294,40 +294,40 @@ code {
 </ul>
 <p>Option D beat out the others in terms of reliability, but those niche power supplies are quite expensive, even on eBay. Luckily, I found an older one that seemed to do exactly what I wanted. </p>
 <p class="MK750 eBay page. I may have bought the last one"></p>
-<p><img alt="MK750 eBay page. I may have bought the last one" src="/static/mk750_ebaypage.png" /></p>
+<p><img loading="lazy" alt="MK750 eBay page. I may have bought the last one" src="/static/mk750_ebaypage.png" /></p>
 <p>The NJE Corp. MK750, MK1000, and MK1500 were power supplies at their eponymous wattage, which output anything from 2V to 48V at massive currents. The only datasheet I could find was <a href="/static/mk750_datasheet.pdf" target="_blank">this one</a>, and there's not a ton of information on there (like what those 6 pins are for). But I needed this power supply, so I went ahead and ordered it. </p>
 <h1>Voltage Testing</h1>
 <p>The first thing I checked was the voltage. After wiring the AC, ACC, and GND pins (3 prong power), I plugged it into a wall meter and checked the output. It looked good, almost perfectly 5V. With no load, the power supply drew around 70W, or 0.5A from the wall. </p>
 <p class="caption">MK750 outputting 5V, as it should</p>
-<p><img alt="MK750 outputting 5V, as it should" src="/static/mk750_5vconfirmed.jpg" /></p>
+<p><img loading="lazy" alt="MK750 outputting 5V, as it should" src="/static/mk750_5vconfirmed.jpg" /></p>
 <h1>Current Testing</h1>
 <p>What I <em>really</em> wanted to know was if the MK750 could output the massive currents its manual had promised. This was a bit trickier. I could have used a clamp, but I didn't think of that. Instead, I watched an ElectroBOOM <a href="https://www.youtube.com/watch?v=j4u8fl31sgQ">video</a> about DIY current shunts and decided to use one of those.</p>
 <p>Really, a DIY current shunt is just a wire. At 5V, to output 150A you need a load of </p>
 <p>$$ 5V/150A = 0.033Ω = 33mΩ $$</p>
 <p>This is usually the resistance of a few feet of wire. Mehdi talks about how multimeters suck at measuring low resistances, but they are good at voltage. I cut a random length of a random wire off the wall, and passed 1A constant-current through it to find the resistance. The measured mV corresponded directly to the mΩ of the wire. </p>
 <p class="Thin wire of a good resistance, but not nearly enough current capacity"></p>
-<p><img alt="Thin wire of a good resistance, but not nearly enough current capacity" src="/static/mk750_thinwire.jpg" /></p>
+<p><img loading="lazy" alt="Thin wire of a good resistance, but not nearly enough current capacity" src="/static/mk750_thinwire.jpg" /></p>
 <p>This bit of wire happened to be around 48mΩ, which was nearly perfect. However, just before I plugged it in, I realized that the entire output 750W of the MK750 would pass through this tiny 18 AWG  wire and vaporize it instantly. Immediately I threw the thin wire away, and went foraging for some thicker power wires. </p>
 <p class="Thicker wire of a perfect resistance"></p>
-<p><img alt="Thicker wire of a perfect resistance" src="/static/mk750_thickwire.jpg" /></p>
+<p><img loading="lazy" alt="Thicker wire of a perfect resistance" src="/static/mk750_thickwire.jpg" /></p>
 <p>We cleaned the club a few days ago, and had thrown out some chunky orange power cables. Each cable had 3 conductors, so I took a length of this and crimped alternating ends together to make a triply long cable in the length of one. I did the same test as before, passing 1A through the combined cable. This resistance turned out to be actually perfect, at 34mΩ. </p>
 <h1>Using the 3-wire shunt (34mΩ)</h1>
 <p class="3-strand shunt resistor all set up, multimeter right next to it"></p>
-<p><img alt="3-strand shunt resistor all set up, multimeter right next to it" src="/static/mk750_threestrandbefore.jpg" /></p>
+<p><img loading="lazy" alt="3-strand shunt resistor all set up, multimeter right next to it" src="/static/mk750_threestrandbefore.jpg" /></p>
 <p>I connected our shunt to the power supply, then clipped my multimeter to the output. I'm measuring voltage to get the current. Since Ohm's law always holds, if we already calculated the resistance and then measure the voltage, we have everything we need. Time to plug it in!</p>
 <p class="3-strand shunt resistor under test. Multimeter reads 5.14V"></p>
-<p><img alt="3-strand shunt resistor under test. Multimeter reads 5.14V" src="/static/mk750_threestrandduring.jpg" /></p>
+<p><img loading="lazy" alt="3-strand shunt resistor under test. Multimeter reads 5.14V" src="/static/mk750_threestrandduring.jpg" /></p>
 <p>And the MK750 delivers! Across our 35mΩ wire we see a drop of 5.14V, which works out to
 $$\frac{5.14V}{0.035Ω} = 147.7 \text{Amps}$$
 Woohoo! Almost exactly 150 amps at 5V. The readout from the wall meter said around 900W, so approximately the baseline 50W + 150Ax5V. Not bad for efficiency.</p>
 <p>Oh, and the wires got HOT. I only left it on for a few seconds for safety, but even then the thermometer said the wire got over 100F. Crazy!</p>
 <p class="Our shunt temperature after only 10 seconds of 150A"></p>
-<p><img alt="Our shunt temperature after only 10 seconds of 150A" src="/static/mk750_hotwire.jpg" /></p>
+<p><img loading="lazy" alt="Our shunt temperature after only 10 seconds of 150A" src="/static/mk750_hotwire.jpg" /></p>
 <h1>Using a 2-wire shunt (23mΩ)</h1>
 <p>I wanted to see what this power supply was really capable of. I had avoided using a shunt lower than 33mΩ because I was afraid that shorting out the power supply would break it. Thinking further, I realized that 33mΩ is already considered a dead short in any other application, so it probably wasn't a concern. </p>
 <p>In our 3-stranded shunt, each wire was around 11mΩ. I moved the crimps so that it only used two wires, for a new shunt resistance of around 23.2mΩ. I reconnected everything to this smaller shunt, and switched it on. </p>
 <p class="A snapshot of the rising voltage of our 2-strand shunt"></p>
-<p><img alt="A snapshot of the rising voltage of our 2-strand shunt" src="/static/mk750_twostrandduring.jpg" /></p>
+<p><img loading="lazy" alt="A snapshot of the rising voltage of our 2-strand shunt" src="/static/mk750_twostrandduring.jpg" /></p>
 <p>As expected, the output voltage dropped a bit to compensate for the short. However, the voltage reading on my multimeter immediately started shooting up, beginning at 4.3V and climbing to 4.9V in the space of a few seconds. I assume this is from heat increasing the resistance of the wire, and shut it off quickly. </p>
 <p>Using the initial reading of 4.3V, Ohm's law says the MK750 output 185A at first, and a clamp meter agreed at around 170A. The wall meter read 1120W during this test.</p>
 <video src="/static/mk750_vid3.mov" controls></video>

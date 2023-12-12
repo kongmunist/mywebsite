@@ -275,20 +275,20 @@ code {
 <h1>Backstory</h1>
 <p>When I was still a wee boy, my computational photography professor mentioned that a lens performs a Fourier Transform on light that enters it. A Fourier transform of light is a frequency domain representation of the image, and captures the exact same information as the regular picture. We don't usually notice this property of lenses because it only happens to coherent light, like a laser. One example of this is how a bright image (the sun) becomes a single point at the focus of the lens, because there is a 0-frequency component to the brightness entering the lens. </p>
 <p class="caption">Example Fourier Transform of an image, specifically showing a text rotation application <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/fourier.htm">(source)</a></p>
-<p><img alt="Example Fourier Transform of an image, specifically showing a text rotation application" src="/static/fa_textrotation.png" /></p>
+<p><img loading="lazy" alt="Example Fourier Transform of an image, specifically showing a text rotation application" src="/static/fa_textrotation.png" /></p>
 <p>Anyway, I noted this cool fact and carried on with my life</p>
 <hr>
 <h1>1 Year Ago</h1>
 <p>About a year ago, I bought a coffee table book called "Laser Art and Optical Transforms", by a Mr. Thomas Kallard. The book contained a ton of photos of interesting laser effects that the author had created over his career as a lighting designer, and were catalogued down to the equipment he had used to make them. </p>
 <p class="caption">A copy of the book, mine is black</p>
-<p><img alt="A copy of the book, mine is black" src="/static/fa_kallardbook.png" /></p>
+<p><img loading="lazy" alt="A copy of the book, mine is black" src="/static/fa_kallardbook.png" /></p>
 <p>I read the whole book (looked at pictures), and noticed that the back half of the book was entirely these aperture pictures. </p>
 <p>To make these aperture photos, Kallard took a laser beam that was spread out by a filter, then shot through a sheet of paper with a shape cut out. The resulting image on the far wall did not resemble the hole at all, due to the self-interference of the laser light shooting through the paper cut-out. If the light source were an incoherent light source like a lamp or projector, this resulting image would look very different, but we don't have to worry about that since Mr. Kallard did use a laser.</p>
 <p class="caption">Mr. Kallard's setup</p>
-<p><img alt="Mr. Kallard's setup" src="/static/fa_kallardapparatus.jpg" /></p>
+<p><img loading="lazy" alt="Mr. Kallard's setup" src="/static/fa_kallardapparatus.jpg" /></p>
 <p>Here's an example from the book, showing how changing the laser aperture shape changes the resulting image. The transform is slightly intuitive, but this reasoning breaks down with more complex apertures. </p>
 <p class="caption">Two dots vertically stacked make a circle with horizontal lines, two dots stacked top right and bottom left create a circle with diagonal lines.</p>
-<p><img alt="Two dots vertically stacked make a circle with horizontal lines, two dots stacked top right and bottom left create a circle with diagonal lines." src="/static/fa_kallardexample.png" /></p>
+<p><img loading="lazy" alt="Two dots vertically stacked make a circle with horizontal lines, two dots stacked top right and bottom left create a circle with diagonal lines." src="/static/fa_kallardexample.png" /></p>
 <hr>
 <h1>Last Week</h1>
 <p>I showed a friend my book, and he wondered aloud how the output images were being formed by the light's interference. Using what I learned from computational photography, I assumed that this was a similar principle, and that changing the aperture and changing the "image" coming into a lens were nearly the same thing. This would mean that the aperture pictures that Kallard had captured were probably just the Fourier Transforms of the apertures he was using. </p>
@@ -296,11 +296,11 @@ code {
 <h2>1. Circles</h2>
 <p>Here's some overlapping circles. The left image is the shape of the laser aperture, and the top-right image is the output that Kallard photographed. You can see the X and the overlapping arcs that face opposite directions on both, but the scale of the image is the only thing that changes.</p>
 <p class="caption">Circle aperture + FFT</p>
-<p><img alt="Circle aperture + FFT" src="/static/fa_circles.png" /></p>
+<p><img loading="lazy" alt="Circle aperture + FFT" src="/static/fa_circles.png" /></p>
 <h2>2. Spiral-y thing</h2>
 <p>Similarly here, it's clear that the aperture on the left creates features like the 4 bright quadrant and the surrounding "fan" shapes in both the web and real world version, though they are a bit harder to see.</p>
 <p class="caption">Spiral aperture + FFT</p>
-<p><img alt="Spiral aperture + FFT" src="/static/fa_spiral.png" /></p>
+<p><img loading="lazy" alt="Spiral aperture + FFT" src="/static/fa_spiral.png" /></p>
 <hr>
 
 <p>Kinda crazy! I'm surprised that taking the FFT of a photo worked so well, considering that the photo has all sorts of distortion and noise from the paper warp and real world effects.</p>

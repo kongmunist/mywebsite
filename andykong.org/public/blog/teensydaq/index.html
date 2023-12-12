@@ -273,7 +273,7 @@ code {
 <hr>
             <p>I recently wrote a <a href="https://github.com/kongmunist/TeensyDAQ-Fast">Teensy Data Acquisition GUI</a> for recording data from a microcontroller/sensor onto the computer. It's pretty simple, just a Python QT5 GUI that has a plot of the data as it comes in over the serial and writes it into a list as fast as it can. After you hit 'stop recording', it writes it into a text file. And yes, this order was the fastest. I checked.</p>
 <p>I felt wasteful when first using it because I only wanted to get signals at around 1kHz at most, while the Teensy analog-digital converter running at full-tilt with some averaging (noise reduction) still sampled at well over 200 kHz. What to do with these extra samples? Get extra bits, of course!</p>
-<p><img alt="Free-running ADC goes at 362kHz" src="/static/teensydaq_ADCoutput.jpeg" /></p>
+<p><img loading="lazy" alt="Free-running ADC goes at 362kHz" src="/static/teensydaq_ADCoutput.jpeg" /></p>
 <p class="caption">Free-running Teensy ADC goes at 362kHz — and it's got two of 'em!</p>
 
 <p>So while you can average 2<sup>n</sup> samples to reduce the Noise Power by a factor of n, you can't quite do the same with bits of resolution from your ADC. Turns out when you sum two measurements, their noise magnitude grows by a factor of sqrt(n), while your signal magnitude only grows by a factor of n. The SNR only improves by sqrt(n), since n/sqrt(n)... well, you understand. More on that <a href="https://en.wikipedia.org/wiki/Oversampling#Resolution">here</a>. Basically, you need to sample 4 times per bit of extra resolution you want to get. So if you wanted one more bit, you'd oversample at 4x the Nyquist frequency, if you wanted two you'd have to sample at 4<sup>2</sup>, etc.</p>

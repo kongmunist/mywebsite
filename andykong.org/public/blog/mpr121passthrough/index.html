@@ -273,18 +273,18 @@ code {
 <hr>
             <p>Hello! Today I received the MPR121, a nifty little 12-channel touch sensor:</p>
 <p class="caption">Glamour shot of the MPR121 touch sensor</p>
-<p><img alt="Glamour shot of the MPR121 touch sensor" src="/static/mpr121glamour.png" /></p>
+<p><img loading="lazy" alt="Glamour shot of the MPR121 touch sensor" src="/static/mpr121glamour.png" /></p>
 <p>The chip is pretty simple, uses I2C to measure each pin's capacitance using the charge then discharge trick I used <a href="../touchreactiveLEDs/">here</a>. It gives a touch/no touch output, or the raw sensor values per each pin (ranges from 0-400ish). Also has a built-in filtered output that provides smoother data if you want it. </p>
 <p>The setup is easy and not very interesting since the chip is so single-purpose. I'm much more interested in showing you how well the sensor detects touch through a barrier. </p>
 <h2>Testing materials</h2>
 <p>I used what I had near me, and those were: saran wrap, masking tape, and two kinds of Scotch tape. Here's the table.</p>
 <p class="caption"></p>
-<p><img alt="Table of sensor outputs for the MPR121" src="/static/mpr121chart.png" /></p>
+<p><img loading="lazy" alt="Table of sensor outputs for the MPR121" src="/static/mpr121chart.png" /></p>
 <p>As mentioned before, the sensor values range from 0-400. On the bare surface I was able to get down to 48, which is a big SNR! None of the others even came close to that, only dipping 10% of the max value for the Saran wrap. This was probably the thinnest barrier I tried, and even that was too much. Despite the low SNR, the sensor still detected my touches consistently when separated by most of the materials I tried. Works great! :)</p>
 <p>The capacititance didn't drift that much across my trials (~15 minutes), so I'm not so worried about needing to recalibrate very frequently. These types of biosensors are usually pretty finicky in that regard, so I'm glad. I also didn't try fabric or any porous material because I needed this to be waterproof, but it'd be cool if YOU (dear reader) did, and then told me about it!</p>
 <p>That's all for now! Cya!</p>
 <p class="caption">MPR121 wrapped in saran wrap during testing</p>
-<p><img alt="MPR121 wrapped in saran wrap during testing" src="/static/mpr121saran.png" /></p>
+<p><img loading="lazy" alt="MPR121 wrapped in saran wrap during testing" src="/static/mpr121saran.png" /></p>
 
     
         <hr>

@@ -8,6 +8,8 @@ On September 26, 2023, I spent 34 British pounds on a software license for Alfre
 
 {{ add_pic("alfredworth/0.png", "") }}
 
+<hr>
+
 Over time, I realized Alfred just makes a lot of little things easier, and we do a lot of those little things pretty often. Here's my Workflow list:
 
 {{ add_pic("alfredworth/1.png", "") }}

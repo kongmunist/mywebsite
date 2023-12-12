@@ -295,11 +295,11 @@ code {
 </li>
 </ul>
 <p class="caption">Graph of power spectral distribution of a 35Hz signal, fed in 5s increments and peak detected from 10-60Hz</p>
-<p><img alt="Graph of power spectral distribution of a 35Hz signal, fed in 5s increments and peak detected from 10-60Hz" src="/static/PSD5secwindow.png" /></p>
+<p><img loading="lazy" alt="Graph of power spectral distribution of a 35Hz signal, fed in 5s increments and peak detected from 10-60Hz" src="/static/PSD5secwindow.png" /></p>
 <p class="caption">Graph of power spectral distribution of a single-channel averaged 35Hz signal, split in 5s increments and peak detected from 10-60Hz</p>
-<p><img alt="Graph of power spectral distribution of a single-channel averaged 35Hz signal, split in 5s increments and peak detected from 10-60Hz" src="/static/SCA5secwindow.png" /></p>
+<p><img loading="lazy" alt="Graph of power spectral distribution of a single-channel averaged 35Hz signal, split in 5s increments and peak detected from 10-60Hz" src="/static/SCA5secwindow.png" /></p>
 <p class="caption">Graph of power spectral distribution of a PRSA 35Hz signal, split in 5s increments and peak detected from 10-60Hz</p>
-<p><img alt="Graph of power spectral distribution of a PRSA 35Hz signal, split in 5s increments and peak detected from 10-60Hz" src="/static/PRSA5secwindow.png" /></p>
+<p><img loading="lazy" alt="Graph of power spectral distribution of a PRSA 35Hz signal, split in 5s increments and peak detected from 10-60Hz" src="/static/PRSA5secwindow.png" /></p>
 <p>The SNRs are as follows, though from the graph it's pretty clear which one has the best line around 35 Hz (It's the PRSA, the line is clearly there and it's not as noisy as SCA).</p>
 <ul>
 <li>
@@ -315,11 +315,11 @@ code {
 <p>Bonus - Autocorrelation + PSD (Not shown)      # SNR 1.35 at 10 sec, 1.1 at 5 sec</p>
 <p>Here's the picture of the PRSA working on a 10 second window of data. It's almost a solid bar, concentrated around 35Hz. This was the best result I got.</p>
 <p class="caption">Graph of power spectral distribution of a PRSA 35Hz signal, split in 10s increments and peak detected from 10-60Hz. Notice how much nicer it is than the noisy messes above.</p>
-<p><img alt="Graph of power spectral distribution of a PRSA 35Hz signal, split in 10s increments and peak detected from 10-60Hz. Notice how much nicer it is than the noisy messes above." src="/static/PRSA10secwindow.png" /></p>
+<p><img loading="lazy" alt="Graph of power spectral distribution of a PRSA 35Hz signal, split in 10s increments and peak detected from 10-60Hz. Notice how much nicer it is than the noisy messes above." src="/static/PRSA10secwindow.png" /></p>
 <h3>Does order of filtering matter for single-channel averaging?</h3>
 <p>No, except for the notch filter. Here, the blue line shows filtering before averaging, and the orange shows filtering afterwards. We see that the 60Hz makes a comeback if you average after filtering, but it doesn't really affect the rest of the graph at all. </p>
 <p class="caption">Single channel averaging comparison between filtering before (orange) and after (blue)</p>
-<p><img alt="Single channel averaging comparison between filtering before (orange) and after (blue)" src="/static/SCAfilterordercomparison.png" /></p>
+<p><img loading="lazy" alt="Single channel averaging comparison between filtering before (orange) and after (blue)" src="/static/SCAfilterordercomparison.png" /></p>
 <h3>Can you use overlapping windows for single-channel averaging?</h3>
 <p>No. It really heavily concentrates the frequency band you allow it to have (If you do 40 length windows at a sample rate of 200Hz, you get heavy power at ALL multiples of 5Hz, and nowhere else). Completely unusable. The power of each peak isn't even a metric for anything either. </p>
 <h3>Does autocorrelation improve the ability of the other methods mentioned above, applied before or after?</h3>
@@ -330,7 +330,7 @@ code {
 <p>The PRSA definitely takes the cake for best peak detection method I looked at today, but I think that they all suck for short data lengths (&lt;=5 sec). It's quite difficult to get any of them to be consistently active, especially since the SSVEP is so temporally varying anyway. </p>
 <p>I think I'm going with the PRSA for now, since it appears to be sort of consistent. Maybe I can do a history-based voting system or something...</p>
 <p class="caption">Comparison of SCA and PRSA for a 5 second sliding window. SCA is much noisier, and doesn't always help fill in the gaps left by PRSA</p>
-<p><img alt="Comparison of SCA and PRSA for a 5 second sliding window. SCA is much noisier, and doesn't always help fill in the gaps left by PRSA" src="/static/SCAvsPRSA5secwindow.png" /></p>
+<p><img loading="lazy" alt="Comparison of SCA and PRSA for a 5 second sliding window. SCA is much noisier, and doesn't always help fill in the gaps left by PRSA" src="/static/SCAvsPRSA5secwindow.png" /></p>
 <h2>Takeaways</h2>
 <p>These techniques work great for me for more than 10 seconds of data, but that just isn't feasible for real usage. Also it's annoying for me to look at a light for that long. </p>
 <h2>Next steps</h2>

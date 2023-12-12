@@ -278,16 +278,16 @@ code {
 <p>Ideally, we'd use some massive voltage source for charging, and then turn it off immediately when our capacitor hits the final voltage. We only use the previous method because we humans have slow reaction times, and can't turn off the voltage source quickly enough to avoid a potential capacitor explosion.</p>
 <p>But I'm <em>pretty sure</em> we've invented faster voltage switches than the human hand.</p>
 <h1>Enter, the humble microcontroller</h1>
-<p><img alt="Arduino-enabled fast off switch" src="/static/sc1_setup.jpg" /></p>
+<p><img loading="lazy" alt="Arduino-enabled fast off switch" src="/static/sc1_setup.jpg" /></p>
 <p>All I did was connect an Arduino-controlled MOSFET to a 2200µF capacitor. The Arduino reads the voltage of the capacitor, and shuts off the MOSFET when the voltage gets past our set point (4V). I used 5V, 10V, 20V, and 30V for charging. Here's how long each one took:</p>
 <p class="caption">Charging with 5V</p>
-<p><img alt="Charging with 5V" src="/static/sc1_chargeto4with5.jpg" /></p>
+<p><img loading="lazy" alt="Charging with 5V" src="/static/sc1_chargeto4with5.jpg" /></p>
 <p class="caption">Charging with 10V</p>
-<p><img alt="Charging with 10V" src="/static/sc1_chargeto4with10.jpg" /></p>
+<p><img loading="lazy" alt="Charging with 10V" src="/static/sc1_chargeto4with10.jpg" /></p>
 <p class="caption">Charging with 20V</p>
-<p><img alt="Charging with 20V" src="/static/sc1_chargeto4with20.jpg" /></p>
+<p><img loading="lazy" alt="Charging with 20V" src="/static/sc1_chargeto4with20.jpg" /></p>
 <p class="caption">Charging with 30V</p>
-<p><img alt="Charging with 30V" src="/static/sc1_chargeto4with30.jpg" /></p>
+<p><img loading="lazy" alt="Charging with 30V" src="/static/sc1_chargeto4with30.jpg" /></p>
 <p>In text form, charging a 2200µF capacitor to 4V took:</p>
 <ul>
 <li>
@@ -308,9 +308,9 @@ code {
 <p>We've seen how the real world does it; how about comparing it to theory?</p>
 <p>Here's the equation that governs how fast a capacitor charges. It calculates the cap's voltage given some time <em>t</em> connected to a voltage source Vs.</p>
 <p class="caption">Capacitor voltage after some time t, charging with a voltage Vsource</p>
-<p><img alt="Capacitor voltage after some time t, charging with a voltage Vsource" src="/static/sc1_chargeVeq.png" /></p>
+<p><img loading="lazy" alt="Capacitor voltage after some time t, charging with a voltage Vsource" src="/static/sc1_chargeVeq.png" /></p>
 <p>Solving this backwards for <em>t</em>, we have some terrible looking equation for how long it would take to charge a capacitor given a source voltage.</p>
-<p><img alt="Above equation solved for time t" src="/static/sc1_chargeTeq.png" /></p>
+<p><img loading="lazy" alt="Above equation solved for time t" src="/static/sc1_chargeTeq.png" /></p>
 <p>Plugging in our previous charging voltages and magically using R=1.5Ω, we get the following charge times:</p>
 <ul>
 <li>

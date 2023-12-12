@@ -272,7 +272,7 @@ code {
             <p style="font-size:0.8em;"> Published November 15, 2020</p>
 <hr>
             <p>I wasted like an hour and a half today trying to get this Playstation 3 camera working on my Mac:</p>
-<p><img src=/static/playstationeye.jpg width="300" class="d-block mx-auto"/></p>
+<p><img loading="lazy" src=/static/playstationeye.jpg width="300" class="d-block mx-auto"/></p>
 <p>Let me tell you how I debugged it.</p>
 <p>After plugging in, the USB name identifies it as a USB Webcam, but simply refuses to recognize its data like one. Apparently this is a problem with many USB webcams and Mac, necessitating the invention of the <a href="http://webcam-osx.sourceforge.net/">macam project</a>, which exists specifically for installing drivers for USB webcams. It was only maintained from 2006-2007, explaining why it doesn't have a github repo (git was invented 2005), but good thing those drivers don't change! </p>
 <p>Except I'm running Catalina, and they wrote their code in 32-bit :(. Someone has been kind enough to port it to GitHub as <a href="https://github.com/smokris/macam64">macam64</a>. </p>

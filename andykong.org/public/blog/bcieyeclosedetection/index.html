@@ -281,16 +281,16 @@ code {
 <p>Data are being recorded on a single channel of the OpenBCI Ganglion EEG board. The electrode placements are as follows: GND on right earlobe, Channel 1 (-) on left earlobe, and Channel 1 (+) on position Oz of the 10-20 international system. </p>
 <p>Oz is right over the occipital region of the brain, near the bump on the middle-back of your head (this is called the inion). Sample rate is 200Hz, safety from being shocked in the brain by mains insured by the board streaming samples to my laptop over Bluetooth.</p>
 <p class="caption">Picture of the Ganglion board, with two earlobe electrodes and the scalp electrode. It's spiky to go through hair</p>
-<p><img alt="Picture of the Ganglion board, with two earlobe electrodes and the scalp electrode. It's spiky to go through hair" src="/static/alphawaves_electrodes.jpg" /></p>
+<p><img loading="lazy" alt="Picture of the Ganglion board, with two earlobe electrodes and the scalp electrode. It's spiky to go through hair" src="/static/alphawaves_electrodes.jpg" /></p>
 <p>Once streamed onto the computer over BrainFlow (I made <a href="../workingwithbrainflow1" target="_blank">another blog post</a> about that), the data are filtered using SciPy's IIR filters. Mainly, a 60Hz notch filter and 5-75Hz bandpass filter, with 40dB attenuation for the stopband. These are applied with the <code>scipy.signal.filtfilt()</code> function. I don't know if the dB number is like power (div by 20 then take the logarithm) or normal (div by 10 then take the logarithm), but the stopband is completely flat either way so I don't really mind. </p>
 <p>FFT is calculated using <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.welch.html">Welch's method</a>. Alpha band integration is as simple as adding up all the magnitude contributions from frequencies in the band 7-13Hz, but Brainflow has a built-in function for doing this (if you use this, make sure you feed in the tuple as (power, freqs) instead of the (freqs, power) that <code>scipy.signal.welch()</code> gives you). That's it!</p>
 <p>Implementation: I'm creating a live plot using a matplotlib animation. The indicator is drawn on-graph as both text and an emoji. </p>
 <h2>Results</h2>
 <p>Eyes closed are pretty reliably detected by a spike, with a lag of about a second. Eyes opening, the alpha waves drop about as fast as they rise. This is probably due to my EEG data window being 5 seconds, since I'm not doing any averaging that would otherwise slow it down. </p>
 <p class="caption">Graph of baseline alpha wave activity</p>
-<p><img alt="Graph of baseline alpha wave activity" src="/static/alphawaves_eyesopen.png" /></p>
+<p><img loading="lazy" alt="Graph of baseline alpha wave activity" src="/static/alphawaves_eyesopen.png" /></p>
 <p class="caption">Vastly increased alpha wave activity when user's eyes are closed</p>
-<p><img alt="Vastly increased alpha wave activity when user's eyes are closed" src="/static/alphawaves_eyesclosed.png" /></p>
+<p><img loading="lazy" alt="Vastly increased alpha wave activity when user's eyes are closed" src="/static/alphawaves_eyesclosed.png" /></p>
 <h2>Reliability problems</h2>
 <p><em>Within session</em>, I had no problems with reliability. I saw my average alpha activity around 8 uV^2, and it went above 12 or so with my eyes closed so I set that as the breakpoint. However, alpha activity also decreases with increase in drowsiness, and I finished this pretty late last night, so it could not work for me right now (not drowsy) the way the breakpoints are set.</p>
 <p>I believe the baseline alpha activity varies from person to person, so the threshold would probably have to be adjusted for new people. </p>
