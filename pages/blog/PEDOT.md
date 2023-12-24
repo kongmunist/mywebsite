@@ -1,4 +1,4 @@
-title: Everything I Know About PEDOT:PSS
+mtitle: Everything I Know About PEDOT:PSS
 date: 2021-08-05
 label: blog
 tags: [wip, knowledge]

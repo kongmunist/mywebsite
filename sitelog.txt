@@ -3,6 +3,8 @@ TODO:
 - Make the images on the front page snap into position following a random path
 - Add a now page
 
+Dec 23, 2023 - slightly updated front page's headshot rendering stuff. Also added other NBSP removal string.
+Dec 18, 2023 - encountering some issue with running newblogGUI.sh, it appears to be in the wrong directory so it can't properly generate a markdown file
 Dec 1, 2023 - Added lazy loading to the blog posts so they load faster.
 Nov 30, 2023 - added sitemap and auto-sitemap-uploading to Google. My blog pages weren't indexing before :(
 Nov 25, 2023 - Sitting in C.Muller's room, finished adding the CKEditor page, plenty of jankness in there. Essentially, text is taken via the GUI, re-parsed into the .md format we've been using before, then the images are moved into a new folder in static/ and the post is moved into pages/blog.

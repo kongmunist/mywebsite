@@ -45,6 +45,7 @@ def index():
 
         # Remove all "\r\n&nbsp;\r\n" from the body
         body = body.replace("\r\n&nbsp;\r\n", "")
+        body = body.replace("\xa0", " ")
         body = body.replace("\r\n", "\n")
 
         # Replace HTML chars with normal chars

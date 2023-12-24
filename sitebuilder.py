@@ -340,7 +340,7 @@ if __name__ == "__main__":
             blue = "\033[0;34m"
             endc = "\033[0m"
             print(blue + "Updating sitemap on google" + endc)
-            sp.run(["wget", "https://www.google.com/ping?sitemap=https://andykong.org/sitemap.xml"])
+            sp.run(["wget", "-qO-", "https://www.google.com/ping?sitemap=https://andykong.org/sitemap.xml"])
 
             # Deploy build file to firebase — effective 10/4 no more firebase.
             # os.system("(cd andykong.org && firebase deploy)")
