@@ -14,6 +14,47 @@
 
   
     <url>
+    <loc>https://andykong.org/blog/packingtips/</loc>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/packingtips/0.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/packingtips/1.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/packingtips/2.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/packingtips/3.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/packingtips/4.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/packingtips/5.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+    <url>
     <loc>https://andykong.org/blog/phonecamvsrealcam/</loc>
       
         <image:image>
