@@ -3,6 +3,7 @@ TODO:
 - Make the images on the front page snap into position following a random path
 - Add a now page
 
+Jan 1, 2024 - GUI removed all NBSPs, and added ability to do Ctrl+K for the links in the GUI without them getting removed. Images are still getting dropped when I copy+paste them tho.
 Dec 23, 2023 - slightly updated front page's headshot rendering stuff. Also added other NBSP removal string.
 Dec 18, 2023 - encountering some issue with running newblogGUI.sh, it appears to be in the wrong directory so it can't properly generate a markdown file
 Dec 1, 2023 - Added lazy loading to the blog posts so they load faster.

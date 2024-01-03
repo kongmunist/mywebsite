@@ -37,8 +37,11 @@ def index():
 
 
         print("body:", repr(body))
-        pattern = re.compile(r'(?i)<(?!img|/img).*?>')
+        # pattern = re.compile(r'(?i)<(?!img|/img).*?>')
+        pattern = re.compile(r'(?i)<(?!img|a).*?>') # Remove all html tags except <img> and <a>
         body = pattern.sub('', body)
+
+        # Get all the image names and extensions
         imgs = re.findall(r'src="([^"]+)"', body)
         imgs = [img.split("/")[-1] for img in imgs]
         imgexts = [img.split(".")[-1] for img in imgs]
@@ -55,6 +58,7 @@ def index():
 
 
         # Replace all <img> tags with {{ add_pic("file", "caption") }}
+        print("back1: ", body)
         newLines = []
         imIndex = 0
         for line in body.split("\n"):
@@ -93,13 +97,14 @@ def index():
             # Move .md file
             sp.run(["cp", saveFilename, f"../pages/blog/{saveFilename}"])
             # move images
-            os.makedirs(f"../static/{blogPostName}", exist_ok=True)
-            for i,im in enumerate(imgs):
-                if os.path.exists(f"../static/{blogPostName}/{i}.{imgexts[i]}"):
-                    print("Image already exists, moving it but doubling the name")
-                    sp.run(["cp", f"uploads/{im}", f"../static/{blogPostName}/{i}_2.{imgexts[i]}"])
-                else:
-                    sp.run(["cp", f"uploads/{im}", f"../static/{blogPostName}/{i}.{imgexts[i]}"])
+            if len(imgs) > 0:
+                os.makedirs(f"../static/{blogPostName}", exist_ok=True)
+                for i,im in enumerate(imgs):
+                    if os.path.exists(f"../static/{blogPostName}/{i}.{imgexts[i]}"):
+                        print("Image already exists, moving it but doubling the name")
+                        sp.run(["cp", f"uploads/{im}", f"../static/{blogPostName}/{i}_2.{imgexts[i]}"])
+                    else:
+                        sp.run(["cp", f"uploads/{im}", f"../static/{blogPostName}/{i}.{imgexts[i]}"])
         # Clear images folder
         # sp.run(["rm", "-r" "uploads/*"])
         # sp.run(["mkdir", "uploads"])
@@ -181,4 +186,4 @@ def upload():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    app.run(debug=True, port=5001)
