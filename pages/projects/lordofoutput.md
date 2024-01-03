@@ -30,6 +30,9 @@ My daily units of output will span my web presence. I will be active on YouTube,
 
 You can follow along via this monthly newsletter I'm starting. I'll post a monthly progress report and retrospective, and it'll also be a good way for me to review. It'll be posted in the updated version of this blog post in a day or two. If you're reading this and there's no link, congrats on being one of the first readers of this post!
 
+<div class="ml-embedded" data-form="FriVFn"></div>
+
+<br>
 I'm also considering starting a Patreon/Kofi. I'm hesitant because I'm planning to work on a variety of things, and my perception of Patreon is that it's more for fans of people working in only one topic for a sustained period. I also don't know how I feel about private content, but it could make for an interesting little subsection of community. If I do start one, it will be posted below. 
 
 For accountability, I will maintain the list of outputs below, though this project page may not update every day. I'm also thinking about mirroring the list to the front page of my site to see it better — you'll know it if you see it.
@@ -44,3 +47,12 @@ For accountability, I will maintain the list of outputs below, though this proje
 
 
  
+<!-- MailerLite Universal -->
+<script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '752117');
+</script>
+<!-- End MailerLite Universal -->
