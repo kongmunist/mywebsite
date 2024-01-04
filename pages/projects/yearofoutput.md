@@ -35,13 +35,14 @@ You can follow along via this monthly newsletter I'm starting. I'll post a month
 <br>
 I'm also considering starting a Patreon/Kofi. I'm hesitant because I'm planning to work on a variety of things, and my perception of Patreon is that it's more for fans of people working in only one topic for a sustained period. I also don't know how I feel about private content, but it could make for an interesting little subsection of community. If I do start one, it will be posted below. 
 
-For accountability, I will maintain the list of outputs below, though this project page may not update every day. I'm also thinking about mirroring the list to the front page of my site to see it better — you'll know it if you see it.
-
 <hr>
+
+For accountability, I will maintain the list of outputs below, though this project page may not update every day. I'm also thinking about mirroring the list to the front page of my site to see it better — you'll know it if you see it.
 
 # 2024 Year Of Output
 - Jan 1: [Gaming travel blog post](../../blog/packingtips/)
-- Jan 2: Year Of Output project page (this one!)
+- Jan 2: Year Of Output project page (this one!), newsletter
+- Jan 3: [Wallet weight tweet thread](https://twitter.com/oldestasian/status/1742769447587246088)
 
 
 
