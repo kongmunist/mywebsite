@@ -30,7 +30,9 @@ My daily units of output will span my web presence. I will be active on YouTube,
 
 You can follow along via this monthly newsletter I'm starting. I'll post a monthly progress report and retrospective, and it'll also be a good way for me to review. It'll be posted in the updated version of this blog post in a day or two. If you're reading this and there's no link, congrats on being one of the first readers of this post!
 
-<div class="ml-embedded" data-form="FriVFn"></div>
+<div style="display: flex; justify-content: center; width:100%; flex-direction: row;">
+<script async data-uid="bc53dedea2" src="https://andy-kong.ck.page/bc53dedea2/index.js"></script>
+</div>
 
 <br>
 I'm also considering starting a Patreon/Kofi. I'm hesitant because I'm planning to work on a variety of things, and my perception of Patreon is that it's more for fans of people working in only one topic for a sustained period. I also don't know how I feel about private content, but it could make for an interesting little subsection of community. If I do start one, it will be posted below. 
@@ -42,18 +44,7 @@ For accountability, I will maintain the list of outputs below, though this proje
 # 2024 Year Of Output
 - Jan 1: [Gaming travel blog post](../../blog/packingtips/)
 - Jan 2: Year Of Output project page (this one!), newsletter
-- Jan 3: [Wallet weight tweet thread](https://twitter.com/oldestasian/status/1742769447587246088)
+- Jan 3: [Wallet weight tweet thread](https://twitter.com/oldestasian/status/1742769447587246088), [newsletter landing page](https://andy-kong.ck.page/d0e99a7179)
 
 
 
-
- 
-<!-- MailerLite Universal -->
-<script>
-    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-    ml('account', '752117');
-</script>
-<!-- End MailerLite Universal -->
