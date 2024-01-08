@@ -5,9 +5,11 @@ timespan: 2024
 pic: yearofoutput/andylookingeeg.jpg
 description: What is Andy doing in 2024?
 
-It is 2024, and I am leaving my grad studies. I have no job prospects, and no startup monies. I have enough savings for a year of living. If my life were a company, this would be my runway. To extend the analogy, I am trying to find Andy-Market Fit.
+It is 2024, and I am leaving my grad studies. I have no job prospects, and no startup money. I have enough savings for a year of living. If my life were a company, this would be my runway. To extend the analogy, I am trying to find Andy-Market Fit.
 
-I always felt that if I were given free rein to follow my curiosity for a while, I would be able to make something cool and useful. At the end of high school, I tried to take a gap year. My parents told me to do it after I finished college. As college ended and I considered grad school, I wanted to take a year off to work on personal projects. My parents encouraged me to get my graduate degree first. Now, after a year of graduate studies, I realize this will never end. I wanted security, and there is no final security. There is always more school to finish, more money to save, more career to further before making any leap. I am going to use what I know now to sustain myself. I am going to stop sinning.
+I always felt that if I were given free rein to follow my curiosity for a while, I would be able to make something cool and useful. At the end of high school, I tried to take a gap year. My parents told me to do it after I finished college. As college ended and I considered grad school, I wanted to take a year off to work on personal projects. My parents encouraged me to get my graduate degree first.
+
+Now, after a year of graduate studies, I realize this will never end. I wanted security, and there is never enough security. There is always more school to finish, more money to save, more career to further before making any leap. I am going to use what I know now to sustain myself. I am going to stop sinning.
 
 {{ add_pic("yearofoutput/img_3.png", "") }}
 
@@ -24,7 +26,7 @@ We are calling 2024 the Year of Output.
 
 # Keeping up with Andy
 
-My daily units of output will span my web presence. I will be active on YouTube, TikTok, Instagram, Medium, my website, Github, Stack Overflow, Twitter, and any other website with audiences and a post button. 
+My daily units of output will span my web presence. I will be active on YouTube, TikTok, Instagram, Medium, my website, Github, Stack Overflow, Twitter, and any other website with an audience and a post button. 
 
 You can follow along via this monthly newsletter I'm starting. I'll post a monthly progress report and retrospective, and it'll also be a good way for me to review. It'll be posted in the updated version of this blog post in a day or two. If you're reading this and there's no link, congrats on being one of the first readers of this post!
 
@@ -51,4 +53,4 @@ For accountability, I will maintain the list of outputs below, though this proje
 {{ add_pic("yearofoutput/jan6.png", "hamster tweet") }}
 - Jan 7: Shots for a long video, Colpitts oscillator which doesn't work
 {{ add_pic("yearofoutput/jan7.jpg", "A sneak peak") }}
-
+- Jan 8: [Strooper project post](../strooper) ([extension here!](https://chromewebstore.google.com/detail/strooper/bmpmimimabakkagnniammiljclhjcmgi))

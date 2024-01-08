@@ -261,21 +261,31 @@ code {
         <p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/strooper/strooper_storepage.png" /></p>
 
 <p>Strooper is the first Chrome extension I've ever made that worked. It pops up a Stroop test which you must complete whenever you visit a user-specified list of websites, and logs your performance to the localStorage. Check it out <a href="https://chromewebstore.google.com/detail/strooper/bmpmimimabakkagnniammiljclhjcmgi">here</a>!</p>
-<h1>Background</h1>
-<p>The Stroop test is a cognitive performance test invented by John Ridley Stroop in 1935. Participants are shown a list of 100 color words (red, blue, green, etc.) which are colored in a different color from the word itself ("blue" would never show up blue). </p>
-<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/strooper/img_1.png" /></p>
+<h1>Motivation</h1>
+<p>I wanted to track my cognitive performance to see if I suffer any terrible effects from sleep deprivation, caffeine intake, etc. Since I was previously using <a href="https://kongmunist.medium.com/playing-faster-tetris-by-sleeping-less-3d9b04d30349">Tetris</a> as a cognitive proxy, taking the Stroop test seemed like a nice step-up. </p>
+<p class ="caption"> Sleep duration does NOT affect my Tetris performance </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="Sleep duration does NOT affect my Tetris performance" src="/static/strooper/img_3.png" /></p>
 
-<p>If you give it a try with the list above, you'll notice it's pretty confusing. Here's a graph from the original paper where 1 is the time to name a color shown in its own color (congruent, no interference) and 2 is naming the color shown in a different color (incongruent, interference). 2 takes longer than 1, and their difference is the Stroop effect.</p>
-<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/strooper/img_2.png" /></p>
+<h1>Background</h1>
+<p class ="caption"> Example of a stroop test. The participant would be tasked with reading out the color of the word instead of the word itself. </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="Example of a stroop test. The participant would be tasked with reading out the color of the word instead of the word itself." src="/static/strooper/img_1.png" /></p>
+
+<p>The Stroop test is a cognitive performance test invented by John Ridley Stroop in 1935. If you give it a try with the list above, you'll notice it's pretty confusing. Here's a graph from the original paper. 2 takes longer than 1, and their difference is the Stroop effect.</p>
+<p class ="caption"> Task 1 is to name a color shown in its own color (non-interference), task 2 is to name a color shown in a different color (interference) </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="Task 1 is to name a color shown in its own color (non-interference), task 2 is to name a color shown in a different color (interference)" src="/static/strooper/img_2.png" /></p>
 
 <p>Psychologists use the Stroop test as a measure for executive function and selective attention because they believe that a test participant must suppress their stronger urge to read the word in order to say the color instead. Here's <a href="https://psycnet.apa.org/doiLanding?doi=10.1037%2F0894-4105.21.2.251">the first article</a> I found about people with ADHD doing worse on the Stroop test, but there are many, many more about other conditions and variants.</p>
-<h1>Motivation</h1>
-<p>I wanted to track my cognitive performance to see if I got any terrible effects from sleep deprivation, caffeine intake, etc. Since I was previously using <a href="https://kongmunist.medium.com/playing-faster-tetris-by-sleeping-less-3d9b04d30349">Tetris</a> as a cognitive proxy, taking the Stroop test seemed like a nice step-up. </p>
-<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/strooper/img_3.png" /></p>
-
-<p>While researching, I found only terrible Stroop tests online (click instead of keyboard button, no logging), and felt the strong desire to make my own.</p>
+<h1>Motivation 2</h1>
+<p>While searching for suitable tracking solutions, I found only terrible Stroop tests online (click instead of keyboard button, no logging), and felt the strong desire to make my own.</p>
 <p>I had a lot of Tetris data because I played it a few times a day, and I wanted the Stroop data at the same frequency. But I knew that taking the Stroop isn't as fun as playing Tetris, so I wouldn't be able to displace it directly.</p>
 <p>Instead, I needed to hijack my Tetris play time with the Stroop test, using the Stroop as a gate that needed to be passed each time if I wanted to play Tetris. It needed to be a Chrome extension.</p>
+<h1>Usage</h1>
+<p>Here is a demo video using Strooper. I complete a test gatekeeping my Tetris website, then I see the result in the popup.</p>
+<div class="video-container">
+    <iframe class="youtubevideo" src="https://www.youtube.com/embed/2bOjkHnEKlU" allowfullscreen></iframe>
+</div>
+
+<p><br></p>
 <h1>Development</h1>
 <p>I spent four hours failing to figure out how to make a <code>manifest.json</code> for a Chrome extension, then paid a Moroccan guy 13 dollars on Fiverr to write the skeleton code. Shoutout to <a href="https://www.fiverr.com/autowebsy">Mohammed</a>!</p>
 <p>The true Stroop test has three separate subsections to adjust the Stroop effect score by individual color naming and reading speeds. I've incorporated all three of these for more data. I think the color naming and reading tests are basically reaction time tests, and the Stroop effect gives a less low-level measurement of cognitive control.</p>
@@ -284,12 +294,6 @@ code {
 <h1>Privacy</h1>
 <p>All your data is stored in the localStorage, so it's device-only. </p>
 <p>There are many permissions required for the extension because it must inject HTML/JS into any website in order for you to be able to use it on any website. If it helps, I don't really want to have to house your data along with mine — there's really nothing interesting/profitable I can do with it. </p>
-<h1>Usage</h1>
-<p>Here is a demo video using Strooper. I complete a test gatekeeping my Tetris website, then I see the result in the popup.</p>
-<div class="video-container">
-    <iframe class="youtubevideo" src="https://www.youtube.com/embed/2bOjkHnEKlU" allowfullscreen></iframe>
-</div>
-
 <hr>
 <h1>Pre-emptive FAQ</h1>
 <h2>Does short stroop even measure anything?</h2>
