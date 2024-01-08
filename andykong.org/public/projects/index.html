@@ -155,7 +155,10 @@ a:hover {
 
 .blogpage h1, .blogpage h2{
     color: #D49E68;
-    margin-top:
+}
+
+.projectpage h1, .projectpage h2{
+    color: #D49E68;
 }
 
 hr{
@@ -330,11 +333,31 @@ code {
 
         
 
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/strooper/'">
+    <div class="hovereffect" >
+<!--    using jinja conditionals, if p.pic has a .mov or .mp4 ending, we use a video instead    -->
+        
+        <img class="img mx-auto d-block" src="/static/strooper/strooper_icon.png" height="400vw" loading="lazy">
+        
+
+        <div class="overlay">
+           <h2>Strooper</h2>
+           <a class="info" href="/projects/strooper/">A Chrome extension for tracking your cognitive performance whenever you visit particular websites</a>
+        </div>
+    </div>
+    </div>
+
+<!--        <br>-->
+
+
+
+        
+
         <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/yearofoutput/'">
     <div class="hovereffect" >
 <!--    using jinja conditionals, if p.pic has a .mov or .mp4 ending, we use a video instead    -->
         
-        <img class="img mx-auto d-block" src="/static/andylookingeeg.jpg" height="400vw" loading="lazy">
+        <img class="img mx-auto d-block" src="/static/yearofoutput/andylookingeeg.jpg" height="400vw" loading="lazy">
         
 
         <div class="overlay">

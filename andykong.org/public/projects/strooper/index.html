@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- <title>
+    Andy Kong!
+</title> -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Andy Kong">
+    <meta name="title" content="Strooper">
+    <meta name="description" content="A Chrome extension for tracking your cognitive performance whenever you visit particular websites">
+
+<title> Strooper | Andy Kong</title>
+
+
+
+
+
+
+    
+    <!-- Bootstrap -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap.min.css">
+
+    <style type="text/css">
+        /* Atkinson Hyperlegible */
+        /* latin-ext */
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url("/static/atkhyp_latext.woff2") format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* latin */
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url("/static/atkhyp_lat.woff2") format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        /* Ubuntu */
+        /* latin-ext */
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url("/static/ubuntu_latext.woff2") format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* latin */
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url("/static/ubuntu_lat.woff2") format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+    </style>
+
+    <script src="/static/fontawesome.js" defer></script>
+    <!-- <script src="https://kit.fontawesome.com/c62dcd5933.js"></script> -->
+
+    <!-- Instant Page inlined - source is instant.page/5.1.0 -->
+    <script src="/static/instantpage-5.1.0.js" type="module" defer></script>
+
+
+
+
+    <style>
+body {
+background: #202222;
+font-size:1.2em;
+font-family: 'Ubuntu', sans-serif;
+}
+
+.navlinks{
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-size: 1.2em;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+}
+
+
+a {
+    transition: color .2s linear;
+    color:#00B4CC;
+}
+
+a:hover {
+    color:#00DFFC;
+    text-decoration: none;
+}
+
+.navbar-custom {
+    font-size: 22px;
+    background-color: #202222 !important;
+}
+
+.navbar-custom .navbar-brand{
+    font-size: 30px;
+    color: #00dffc !important;
+}
+
+.navbar-custom .navitem{
+    color:#00dffc !important;
+}
+
+.navitem:hover{
+    color:#00b4cc !important;
+    text-decoration: none;
+}
+
+.hidden{
+  display: none;
+}
+
+.navbar-toggler-icon {
+  border: none;
+  outline: none;
+}
+
+.caption{
+    font-size:12px;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: .2em;
+    margin-top: 1em;
+}
+
+.projectpage img{
+    max-width: 100%;
+    max-height: 50vh;
+    height: auto;
+    width: auto;
+}
+
+.blogpage img{
+    max-width: 100%;
+    max-height: 50vh;
+    height: auto;
+    width: auto;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+.blogpage h1, .blogpage h2{
+    color: #D49E68;
+}
+
+.projectpage h1, .projectpage h2{
+    color: #D49E68;
+}
+
+hr{
+    background-color:white !important;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+
+.youtubevideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+code {
+  font-family: Consolas,"courier new";
+  color: #110000;
+  background-color: #AFAFAF;
+  padding: 2px;
+  font-size: 105%;
+}
+
+</style>
+
+    <link rel="icon" type="image/png" href=" /static/aklogo.png " />
+
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YNX5JQZWHT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YNX5JQZWHT');
+</script>
+<script data-goatcounter="https://kong.goatcounter.com/count"
+                    async src="//gc.zgo.at/count.js"></script>
+    
+</head>
+
+
+
+<body style="color:#F8E0CB;overflow-x: hidden;">
+
+
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
+      <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
+          </span>
+        </i>
+    </button>
+
+    <div class="collapse navbar-collapse " id="navbarSupportedContent" style="margin-left:25px;margin-top:10px">
+        <ul class="navbar-nav ml-auto navlinks">
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/static/AndyKongCV.pdf ">CV/Resume</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://github.com/kongmunist" target="_blank" title="Github">GitHub</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://twitter.com/oldestasian" target="_blank" title="Twitter">Twitter</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="mailto:andyking99@gmail.com" target="_blank" title="Email">Email</a>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/blog/">[Blog]</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+
+<!--    <div class="row justify-content-center">-->
+<div class="row overflow-hidden" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+        <div class="col-lg-2"></div>
+        <div class="col-12 col-lg-8 projectpage" style="max-width:1000px;">
+        <h1 style="text-center; margin-bottom: 5px">Strooper</h1>
+            <i><p style="margin-bottom: 5px; margin-top: 0px">A Chrome extension for tracking your cognitive performance whenever you visit particular websites</p></i>
+            <p style="margin-bottom: 0px; margin-top: 0px">Timespan: October 2023</p>
+            <p style="margin-bottom: 5px; margin-top: 0px">Published: 2024-01-08</p>
+
+            <hr>
+        <p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/strooper/strooper_storepage.png" /></p>
+
+<p>Strooper is the first Chrome extension I've ever made that worked. It pops up a Stroop test which you must complete whenever you visit a user-specified list of websites, and logs your performance to the localStorage. Check it out <a href="https://chromewebstore.google.com/detail/strooper/bmpmimimabakkagnniammiljclhjcmgi">here</a>!</p>
+<h1>Background</h1>
+<p>The Stroop test is a cognitive performance test invented by John Ridley Stroop in 1935. Participants are shown a list of 100 color words (red, blue, green, etc.) which are colored in a different color from the word itself ("blue" would never show up blue). </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/strooper/img_1.png" /></p>
+
+<p>If you give it a try with the list above, you'll notice it's pretty confusing. Here's a graph from the original paper where 1 is the time to name a color shown in its own color (congruent, no interference) and 2 is naming the color shown in a different color (incongruent, interference). 2 takes longer than 1, and their difference is the Stroop effect.</p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/strooper/img_2.png" /></p>
+
+<p>Psychologists use the Stroop test as a measure for executive function and selective attention because they believe that a test participant must suppress their stronger urge to read the word in order to say the color instead. Here's <a href="https://psycnet.apa.org/doiLanding?doi=10.1037%2F0894-4105.21.2.251">the first article</a> I found about people with ADHD doing worse on the Stroop test, but there are many, many more about other conditions and variants.</p>
+<h1>Motivation</h1>
+<p>I wanted to track my cognitive performance to see if I got any terrible effects from sleep deprivation, caffeine intake, etc. Since I was previously using <a href="https://kongmunist.medium.com/playing-faster-tetris-by-sleeping-less-3d9b04d30349">Tetris</a> as a cognitive proxy, taking the Stroop test seemed like a nice step-up. </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/strooper/img_3.png" /></p>
+
+<p>While researching, I found only terrible Stroop tests online (click instead of keyboard button, no logging), and felt the strong desire to make my own.</p>
+<p>I had a lot of Tetris data because I played it a few times a day, and I wanted the Stroop data at the same frequency. But I knew that taking the Stroop isn't as fun as playing Tetris, so I wouldn't be able to displace it directly.</p>
+<p>Instead, I needed to hijack my Tetris play time with the Stroop test, using the Stroop as a gate that needed to be passed each time if I wanted to play Tetris. It needed to be a Chrome extension.</p>
+<h1>Development</h1>
+<p>I spent four hours failing to figure out how to make a <code>manifest.json</code> for a Chrome extension, then paid a Moroccan guy 13 dollars on Fiverr to write the skeleton code. Shoutout to <a href="https://www.fiverr.com/autowebsy">Mohammed</a>!</p>
+<p>The true Stroop test has three separate subsections to adjust the Stroop effect score by individual color naming and reading speeds. I've incorporated all three of these for more data. I think the color naming and reading tests are basically reaction time tests, and the Stroop effect gives a less low-level measurement of cognitive control.</p>
+<p>Since taking the full Stroop test takes around 3 minutes, I also shortened each subtask down to 4 trials administered with four colors — the overall test should take less than 10 seconds.</p>
+<p>Finally, an unintended side effect is as a focusing agent. Currently, I have Strooper set to open on YouTube. If I ever open the homepage to browse for anything, I have to do a Stroop. This is annoying, and means that sometimes I just leave without ever watching anything. Great for productivity!</p>
+<h1>Privacy</h1>
+<p>All your data is stored in the localStorage, so it's device-only. </p>
+<p>There are many permissions required for the extension because it must inject HTML/JS into any website in order for you to be able to use it on any website. If it helps, I don't really want to have to house your data along with mine — there's really nothing interesting/profitable I can do with it. </p>
+<h1>Usage</h1>
+<p>Here is a demo video using Strooper. I complete a test gatekeeping my Tetris website, then I see the result in the popup.</p>
+<div class="video-container">
+    <iframe class="youtubevideo" src="https://www.youtube.com/embed/2bOjkHnEKlU" allowfullscreen></iframe>
+</div>
+
+<hr>
+<h1>Pre-emptive FAQ</h1>
+<h2>Does short stroop even measure anything?</h2>
+<p>Taking the test needs to be easy, and for me that meant keeping it brief. Prior research has generally stuck with 20-100 item Stroop tests, but I see no reason why the Stroop effect will not be exhibited on a 4-item test. Of course, it will be noiser, but better noisy data for years than great data for a week.</p>
+<h2>Why are there three scores?</h2>
+<p>I got this from reading <a href="https://psycnet.apa.org/record/1966-02137-001">"Scoring the Stroop Test"</a> by Arthur Jensen. </p>
+<p>Basically, there were a lot of different score calculation methods floating around and he wanted to figure out which ones were actually useful. He got a big batch of data, calculated all the different scoring methods, and noted which ones were redundant using PCA. That left us with scores B, D, and E. </p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/strooper/img_5.png" /></p>
+
+<p>Scores A, B, and C are the scores of the three subtasks in order. B is the reading speed, D = A/(A+B) (color naming score regularized by reading speed), and E = C-A (Stroop effect score)</p>
+<p>I enjoyed this paper, really I just love reading old research to see how the wording and procedures have evolved. </p>
+<h2>Does it work if we hit/click the buttons instead of saying it out loud?</h2>
+<p>Manually doing the Stroop gets just as much interference as verbally doing it, according to a few papers I found <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5686059/">here</a> and <a href="https://journals.sagepub.com/doi/abs/10.2466/pms.1977.45.1.11">here</a>. </p>
+<h2>Stroop sucks, it doesn't really measure anything</h2>
+<p>As mentioned above, even if the Stroop effect itself is not useful, the approximate reaction time scores can be useful anyway. But please email me with your proposed alternative, I am eager to consider new tests.</p>
+<hr>
+
+<h1>Prior work in n=1 cognitive performance tracking</h1>
+<ul>
+<li>Dynomight's <a href="https://dynomight.net/puzzle-storm/">Puzzle Storm improvement</a> article - Dyno, if you're reading this, you owe me an email!</li>
+<li>ACX <a href="https://www.astralcodexten.com/p/eight-hundred-slightly-poisoned-word">WordTwist vs. CO2</a></li>
+<li>My <a href="https://kongmunist.medium.com/playing-faster-tetris-by-sleeping-less-3d9b04d30349">Tetris vs. Sleep article</a></li>
+<li>Alexey Guzey's <a href="https://guzey.com/science/sleep/14-day-sleep-deprivation-self-experiment/">Aim Trainer vs. Sleep</a> experiment</li>
+<li>No results, but KPier's <a href="https://www.lesswrong.com/posts/nvRauqCD3u5hdkLm9/chess-and-cheap-ways-to-check-day-to-day-variance-in">Chess</a> article</li>
+</ul>
+<p>Here's a graphic I made for my email to Mr. Mite comparing the different tests.</p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/strooper/img_4.png" /></p>
+
+<p><br></p>
+            </div>
+        <div class="col-lg-2"></div>
+        <p style="line-height:300%;">&nbsp;</p>
+</div>
+
+
+
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
+<script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
+<script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

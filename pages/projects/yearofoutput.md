@@ -2,7 +2,7 @@ title: Year of Output
 date: 2024-01-02
 label: project
 timespan: 2024
-pic: andylookingeeg.jpg
+pic: yearofoutput/andylookingeeg.jpg
 description: What is Andy doing in 2024?
 
 It is 2024, and I am leaving my grad studies. I have no job prospects, and no startup monies. I have enough savings for a year of living. If my life were a company, this would be my runway. To extend the analogy, I am trying to find Andy-Market Fit.

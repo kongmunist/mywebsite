@@ -21,7 +21,7 @@ I led this project starting last last summer. I had actually begun coding a smar
 
 As far as takeaways, I learned how to train huge neural networks on massive data, how to deploy them on smartphones through Tensorflow.JS, and how to ask other researchers for help implementing their papers. 
 
-I also learned to make a conference submission: paper writing and figure generation, coding up demos and recording me using them, video editing software, responding to peer reviews, and the bureacratic stuff.
+I also learned to make a conference submission: paper writing and figure generation, coding up demos and recording me using them, video editing software, responding to peer reviews, and the bureaucratic stuff.
 
 As far as attending the conference, I had a great time in Montreal (ICMI '21) and met some kind Germans. Good views, and not much research discussion (though maybe enough to be useful).
 
