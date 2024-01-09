@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- <title>
+    Andy Kong!
+</title> -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+        <meta name="author" content="Andy Kong">
+        <meta name="title" content="Reflecting on Percy Jackson, And Reading Speed on Print vs. Digital Screens">
+        <meta name="description" content="tl;dr screens are faster">
+        <meta name="keywords" content=" reading,  personalinformatics,  thoughts, ">
+
+        <title>
+            Reflecting on Percy Jackson, And Reading Speed on Print vs. Digital Screens | Andy Kong
+        </title>
+    
+
+
+
+
+
+
+    
+    <!-- Bootstrap -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap.min.css">
+
+    <style type="text/css">
+        /* Atkinson Hyperlegible */
+        /* latin-ext */
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url("/static/atkhyp_latext.woff2") format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* latin */
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url("/static/atkhyp_lat.woff2") format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        /* Ubuntu */
+        /* latin-ext */
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url("/static/ubuntu_latext.woff2") format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* latin */
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url("/static/ubuntu_lat.woff2") format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+    </style>
+
+    <script src="/static/fontawesome.js" defer></script>
+    <!-- <script src="https://kit.fontawesome.com/c62dcd5933.js"></script> -->
+
+    <!-- Instant Page inlined - source is instant.page/5.1.0 -->
+    <script src="/static/instantpage-5.1.0.js" type="module" defer></script>
+
+
+
+
+    <style>
+body {
+background: #202222;
+font-size:1.2em;
+font-family: 'Ubuntu', sans-serif;
+}
+
+.navlinks{
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-size: 1.2em;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+}
+
+
+a {
+    transition: color .2s linear;
+    color:#00B4CC;
+}
+
+a:hover {
+    color:#00DFFC;
+    text-decoration: none;
+}
+
+.navbar-custom {
+    font-size: 22px;
+    background-color: #202222 !important;
+}
+
+.navbar-custom .navbar-brand{
+    font-size: 30px;
+    color: #00dffc !important;
+}
+
+.navbar-custom .navitem{
+    color:#00dffc !important;
+}
+
+.navitem:hover{
+    color:#00b4cc !important;
+    text-decoration: none;
+}
+
+.hidden{
+  display: none;
+}
+
+.navbar-toggler-icon {
+  border: none;
+  outline: none;
+}
+
+.caption{
+    font-size:12px;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: .2em;
+    margin-top: 1em;
+}
+
+.projectpage img{
+    max-width: 100%;
+    max-height: 50vh;
+    height: auto;
+    width: auto;
+}
+
+.blogpage img{
+    max-width: 100%;
+    max-height: 50vh;
+    height: auto;
+    width: auto;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+.blogpage h1, .blogpage h2{
+    color: #D49E68;
+}
+
+.projectpage h1, .projectpage h2{
+    color: #D49E68;
+}
+
+hr{
+    background-color:white !important;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+
+.youtubevideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+code {
+  font-family: Consolas,"courier new";
+  color: #110000;
+  background-color: #AFAFAF;
+  padding: 2px;
+  font-size: 105%;
+}
+
+</style>
+
+    <link rel="icon" type="image/png" href=" /static/aklogo.png " />
+
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YNX5JQZWHT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YNX5JQZWHT');
+</script>
+<script data-goatcounter="https://kong.goatcounter.com/count"
+                    async src="//gc.zgo.at/count.js"></script>
+    
+</head>
+
+
+
+<body style="color:#F8E0CB;overflow-x: hidden;">
+
+
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
+      <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
+          </span>
+        </i>
+    </button>
+
+    <div class="collapse navbar-collapse " id="navbarSupportedContent" style="margin-left:25px;margin-top:10px">
+        <ul class="navbar-nav ml-auto navlinks">
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/static/AndyKongCV.pdf ">CV/Resume</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://github.com/kongmunist" target="_blank" title="Github">GitHub</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://twitter.com/oldestasian" target="_blank" title="Twitter">Twitter</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="mailto:andyking99@gmail.com" target="_blank" title="Email">Email</a>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/blog/">[Blog]</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+<!-- padding-left:20px; padding-right:20px -->
+            <div class="col-md-8 col-11 p-0" style="">
+                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
+
+                
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        
+
+
+<div class="blogpage overflow-hidden" style="margin-bottom:4em;">
+    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Reflecting on Percy Jackson, And Reading Speed on Print vs. Digital Screens</h1>
+            <p style="font-size:0.8em;"> Published January 9, 2024</p>
+<hr>
+            <p>I recently re-read the first five books of the Percy Jackson series. I'll share some of my thoughts on the series after reading them as a child and re-reading as an adult, and then there will be some data on reading speed at the end.</p>
+<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/printvsdigital/0.jpg" /></p>
+
+<hr>
+
+<h1>Thoughts</h1>
+<p>I remember receiving the first three books in a box set from a family friend. I don't remember a ton about them, but I still recalled the general plot and twists. Percy Jackson is comfort reading to me since I've read them before, and because they're targeted at young teenagers the language and speech mannerisms are simpler than some adult-er books I've read. For instance, sentences were often just simple ones for paragraphs on end. </p>
+<p>Something I found annoying about the books this time is the constant topic switches — two characters get alone, they're about to exchange important info or a secret, and then a third character always butts in with an urgent message or incoming threat. The main character consistently mentions his ADHD, which seems to tie in with the pacing of events in his story — maybe this book is targeted at children with ADHD as a way of making them feel seen?</p>
+<p>Another element in the books that may be a reflection of the teenage audience is the cagey romantic bits — they dance around the main character's romance without resolution for the entirety of five books, probably matching pace with the romantic expectations of much of the audience. I guess it would be hard for teens to empathize with a book character's emotional life if they were far more advanced than their own experience. </p>
+<p>I felt a similar annoyance at the Fantastic Beasts movie series — the two main characters are always interrupted before they can really talk to each other, and the audience is let in on a bit of information that isn't really shared. I forget the word for this concept, when the audience knows something that the characters don't, but the movies really abuse it. I think Fantastic Beasts relies on the audience's desire to see the romance blossom in order to get them to come back and watch the next one. Alas, the romance here has not advanced after 3 movies, and I resent the usage of this trick. </p>
+<h1>Data</h1>
+<p>Ok, I promised you data. I read most of the PJ series on my computer, and use Timing to log the time spent reading each one. However, I happened to find my old physical copy of the third book on my shelf, and read that one on paper — since I used my computer right before and after reading it, we also have the time spent on that one. I'm getting word counts of each book from <a href="https://www.reddit.com/r/camphalfblood/comments/hm3gh8/numbers_the_length_of_percy_jackson/"> this reddit post </a>.</p>
+<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/printvsdigital/1.png" /></p>
+
+<p>All in all, it took me 503 minutes to read all of them:</p>
+<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/printvsdigital/2.png" /></p>
+
+<p>Now, the difference is not huge, but the only book where I read the physical copy was also the slowest read. Weird! Originally the difference was bigger because I overzealously counted how long it took me to finish book 3, but it is slow even after correction. This made me think about potential reasons — extra sleepy while reading, bad lighting, etc.</p>
+<p>Then I thought that the page turning time was adding to the read time. Since I always scroll extra far down, I never have to wait to turn a page while reading on my computer.</p>
+<p>To test this, I timed how long it took to turn 10 pages and read the first word on each page. For physical books, this took 15.8 seconds, and on my books app, it takes 7.32 seconds. Book 3 is 300 pages, so I can estimate wasted page turning time at ~254 seconds, which is not large enough to have affected the above graph (only 0.5% of the total read time). Still, interesting. </p>
+<p>That's all, cya next time!</p>
+
+    
+        <hr>
+        <p style="line-height:250%;">
+        <a class="btn btn-info" href="/tagged/reading/">reading</a>
+
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/personalinformatics/">personalinformatics</a>
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/thoughts/">thoughts</a>
+        
+        </p> 
+    
+</div>
+
+
+
+
+                    </div>
+                    <br>
+        <!-- </div> -->
+</div>
+
+
+
+
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
+<script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
+<script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

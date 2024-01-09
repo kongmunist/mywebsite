@@ -54,3 +54,5 @@ For accountability, I will maintain the list of outputs below, though this proje
 - Jan 7: Shots for a long video, Colpitts oscillator which doesn't work
 {{ add_pic("yearofoutput/jan7.jpg", "A sneak peak") }}
 - Jan 8: [Strooper project post](../strooper) ([extension here!](https://chromewebstore.google.com/detail/strooper/bmpmimimabakkagnniammiljclhjcmgi))
+- Jan 9: [Blog post comparing my reading speed on paper vs. screen](../../blog/printvsdigital/)
+

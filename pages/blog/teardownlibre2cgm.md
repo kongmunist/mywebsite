@@ -1,7 +1,7 @@
 title: "Teardown of the Freestyle Libre 2"
 date: 2023-12-18
 label: blog
-tags: [electronics, teardown]
+tags: [electronics, teardown, personalinformatics]
 snippet: "What's inside a continuous glucose monitor?"
 
 Hello! Recently I wore a Freestyle Libre 2 continuous glucose monitor for two weeks. They're sold over-the-counter in France for about 40 Euros a pop, and I was curious about what my glucose data could tell me about my other bodily functions.

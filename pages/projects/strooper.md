@@ -3,7 +3,7 @@ date: 2024-01-08
 label: project
 timespan: October 2023
 pic: strooper/strooper_storepage.png
-description: A Chrome extension for tracking your cognitive performance whenever you visit particular websites
+description: A Chrome extension to track your cognitive performance when visiting particular websites
 
 {{ add_pic("strooper/strooper_storepage.png", "") }}
 

@@ -14,20 +14,13 @@
 {% endblock %}
 
 {% block batcontent %}
-
-<!--<style>-->
-<!--    h1{-->
-<!--  margin-top: 1em;-->
-<!--}-->
-<!--</style>-->
-
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
         {% for p in page %}
 
 
-<div class="blogpage overflow-hidden">
+<div class="blogpage overflow-hidden" style="margin-bottom:4em;">
     <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">{{ p.title }}</h1>
             <p style="font-size:0.8em;"> Published {{ dateconvert(p.meta.date) }}</p>
 <hr>

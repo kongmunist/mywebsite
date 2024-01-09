@@ -14,6 +14,70 @@
 
   
     <url>
+    <loc>https://andykong.org/blog/printvsdigital/</loc>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/printvsdigital/0.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/printvsdigital/1.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/printvsdigital/2.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+    <url>
+    <loc>https://andykong.org/projects/strooper/</loc>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/strooper/strooper_storepage.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/strooper/img_3.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/strooper/img_1.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/strooper/img_2.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/strooper/img_5.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/strooper/img_4.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+    <url>
     <loc>https://andykong.org/projects/yearofoutput/</loc>
       
         <image:image>
