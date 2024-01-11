@@ -3,6 +3,7 @@ TODO:
 - Make the images on the front page snap into position following a random path
 - Add a now page
 
+Jan 11, 2024 - added blog bubbles instead of <hr> between each one. Reading is a bit easier. Also went through and changed a bunch of names of old blog posts. I noticed the recent blog posts have much less "raw" titles, which actually makes them less informative.
 Jan 10, 2024 - fixed blog gui to also leave </a> in addition to <a>, so now Cmd+K works for links.
 Jan 9, 2024 - Realized I couldn't Shift+Click projects because I used some hacky onclick stuff to make the div into a link. I fixed this by stealing Mitxela's <a> css code for their portfolio — replaced divs with spans, put them inside the <a>. The HTML code is a bit neater now. Also added a bit of a footer space to the projects and blogs page because we need the breathing room.
 Jan 8, 2024 - Adding stroop project. Gave projects the same h1 h2 header coloring as the blogs, helps readability imo.

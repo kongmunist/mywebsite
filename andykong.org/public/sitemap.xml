@@ -14,6 +14,47 @@
 
   
     <url>
+    <loc>https://andykong.org/blog/bionicreadingtest/</loc>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/printvsdigital/2.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/bionicreadingtest/0.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/bionicreadingtest/1.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/bionicreadingtest/2.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/bionicreadingtest/3.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/bionicreadingtest/4.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+    <url>
     <loc>https://andykong.org/blog/stroopvssleep/</loc>
       
         <image:image>
