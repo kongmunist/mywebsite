@@ -8,6 +8,17 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    
+        <meta name="author" content="Andy Kong">
+        <meta name="title" content="Sleep duration&#39;s effects on my Stroop interference scores">
+        <meta name="description" content="Preliminary results from collecting too much personal data">
+        <meta name="keywords" content=" personalinformatics,  quantifiedself,  data, ">
+
+        <title>
+            Sleep duration&#39;s effects on my Stroop interference scores | Andy Kong
+        </title>
+    
+
 
 
 
@@ -240,121 +251,58 @@ code {
 </nav>
 
 
-<div class="row justify-content-center" style = "height:100vh; width: 100vw;padding-left:25px; padding-right:0px">
-    <div class="col-xl-3 col-lg-4 col-md-11 col-11" style="padding-left:2%; padding-right:2%;">
+    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+<!-- padding-left:20px; padding-right:20px -->
+            <div class="col-md-8 col-11 p-0" style="">
+                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
 
-        <a href="/"> <img class="media-object mx-auto d-block rounded-circle " style="margin-bottom:0px; max-height:20vh;" src="/static/merock_square.jpg"/></a>
-        <h1 class="text-center" style="font-size: 2em; margin-top:0.5em;">Hi, I'm Andy!</h1>
-        <p class="text-center"  style="font-size: 1.5em; margin-bottom:0px;"></p>
+                
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-        <div class="links text-center" style="margin:5px; font-size:2.5em;">
-            <a href="https://critiquefood.blogspot.com/" target="_blank" title="Food For Thought"><i class="fas fa-ice-cream"></i></a>&nbsp
-            <!--<a href="https://github.com/kongmunist" target="_blank" title="Github"><i class="fab fa-github-square fa-2x"></i></a>&nbsp-->
-            <!--<a href="mailto:andyking99@gmail.com" target="_blank" title="Email"><i class="far fa-paper-plane fa-2x"></i></a>&nbsp-->
-            <a href="https://www.youtube.com/channel/UC8hEr0FkB5i-gQC4b7b5fvg" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>&nbsp
-            <a href="https://kongmunist.medium.com/" target="_blank" title="Medium"><i class="fab fa-medium"></i></a>&nbsp
-            <a href="/rss.xml" title="RSS"><img src="/static/rss.svg" style = "height:1em;"></a>&nbsp
-        </div>
-<!--        <img style="background:white; padding:5px;"width="100%" src="http://ghchart.rshah.org/409ba5/kongmunist" alt="2016rshah's Github chart" />-->
-    </div>
+        
 
 
+<div class="blogpage overflow-hidden" style="margin-bottom:4em;">
+    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Sleep duration&#39;s effects on my Stroop interference scores</h1>
+            <p style="font-size:0.8em;"> Published January 10, 2024</p>
+<hr>
+            <p>Hello! I have been collecting my Stroop effect data for about three months now, and I have my Fitbit data spanning the whole period. A friend asked me how my sleep affects my Stroop data, and I decided to go ahead and set up the analysis because I was also curious. </p>
+<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/stroopvssleep/top.png" /></p>
+<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/stroopvssleep/bottom.png" /></p>
 
-    <div class="col-xl-7 col-lg-7 col-md-11 col-11 p-0" style="">
-        <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
+<p>When doing any personal data analysis, we must try to be scientific about it. I'm not gonna just throw up a random best-fit line and ask you to trust the coefficients — there's also the p-value for the probability that the slope is that value by random chance. I have also <a href="https://en.wikipedia.org/wiki/Bonferroni_correction">Bonferroni-corrected</a> the threshold value, though I think this boundary is a bit arbitrary (we pick p=5% arbitarily like everyone else, then divide by 12 to Bonferroni correct. p&lt;.00416 is significant).</p>
+<p>As you can see, while there are some data series which appear to be related (most notably Stroop score vs. sleep duration), but they are not actually by our experiment. I would need more data to confirm, and there are only 27 days of data here because I have not been collecting Stroop for long. </p>
+<p>Now, if the top-right graph were significant, then it would show that my Stroop interference time goes down with the more sleep I have. Stroop interference should go higher with less executive function, and so we see the expected relationship in my data if we believe more sleep good. However, I've been pondering <a href="https://guzey.com/theses-on-sleep/">Guzey</a>'s work lately in the realm of sleep deprivation, and I hoped to see something surprising. Alas, we will wait for me to generate more data. </p>
+<hr>
+<h1>Aside or Favor</h1>
+<p>I'm working on a Quantified Self dashboard with the ability to upload any time series data and see how it correlates with your other data. As part of this, I've written a lot of basic OOP-y code which allows large scale analysis — this code is not good, but it is generalizable enough for now. If you're interested in using the same structures to analyze your data (code request) or working on this project and have the time to commit to it (collaboration), please email me! I am trying to bring this to fruition for others to use. In particular, please contact me if you know anything about modern software best practices, because I do not. </p>
 
-            
-<title>
-    Posts tagged 'thoughts' | Andy Kong
-</title>
-    <div>
-    <h2>List of stuff tagged <em>thoughts</em></h2>
+    
         <hr>
-    
-        <ul>
+        <p style="line-height:250%;">
+        <a class="btn btn-info" href="/tagged/personalinformatics/">personalinformatics</a>
 
-    <li>
-        <a href="/blog/taxonomyofautomation/">Examples from the Taxonomy of Automation</a>
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/quantifiedself/">quantifiedself</a>
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/data/">data</a>
+        
+        </p> 
     
-        | Tagged:
-        
-            <a href="/tagged/automation/">automation</a>
-        
-            <a href="/tagged/thoughts/">thoughts</a>
-        
-    
-    </li>
-
-    <li>
-        <a href="/blog/printvsdigital/">Reading Print vs. Digital, also Reflections on Percy Jackson</a>
-    
-        | Tagged:
-        
-            <a href="/tagged/reading/">reading</a>
-        
-            <a href="/tagged/personalinformatics/">personalinformatics</a>
-        
-            <a href="/tagged/thoughts/">thoughts</a>
-        
-    
-    </li>
-
-    <li>
-        <a href="/blog/IFproblems/">Detecting instantaneous frequency is hard</a>
-    
-        | Tagged:
-        
-            <a href="/tagged/thoughts/">thoughts</a>
-        
-            <a href="/tagged/bci/">bci</a>
-        
-            <a href="/tagged/dsp/">dsp</a>
-        
-            <a href="/tagged/fft/">fft</a>
-        
-    
-    </li>
-
-    <li>
-        <a href="/blog/EMIvsBCI/">EEG fails in the prescence of household EMI</a>
-    
-        | Tagged:
-        
-            <a href="/tagged/eeg/">eeg</a>
-        
-            <a href="/tagged/bci/">bci</a>
-        
-            <a href="/tagged/emi/">emi</a>
-        
-            <a href="/tagged/thoughts/">thoughts</a>
-        
-    
-    </li>
-
-    <li>
-        <a href="/blog/guideguide/">How To Choose Stuff</a>
-    
-        | Tagged:
-        
-            <a href="/tagged/design/">design</a>
-        
-            <a href="/tagged/thoughts/">thoughts</a>
-        
-            <a href="/tagged/wip/">wip</a>
-        
-    
-    </li>
-
-</div>
-    
-    </div>
-
-            <!-- </div> -->
-    </div>
-    <div class="col-xl-2 col-lg-1 col-0"></div>
 </div>
 
-    
+
+
+
+                    </div>
+                    <br>
+        <!-- </div> -->
+</div>
+
+
 
 
 <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->

@@ -38,7 +38,7 @@ def index():
 
         print("body:", repr(body))
         # pattern = re.compile(r'(?i)<(?!img|/img).*?>')
-        pattern = re.compile(r'(?i)<(?!img|a).*?>') # Remove all html tags except <img> and <a>
+        pattern = re.compile(r'(?i)<(?!img|a|/a).*?>') # Remove all html tags except <img> and <a>
         body = pattern.sub('', body)
 
         # Get all the image names and extensions
@@ -52,8 +52,9 @@ def index():
 
         # Replace HTML chars with normal chars
         body = parser.unescape(body)
-        body = body.replace("&nbsp;", " ")
-        body = body.replace("\xa0", " ")
+        body = body.replace("&nbsp;", " ") # non-breaking space
+        body = body.replace("\xa0", " ") # other non-breaking space
+        body = body.replace("\u200b", "") # zero width space
 
 
 

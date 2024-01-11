@@ -14,6 +14,23 @@
 
   
     <url>
+    <loc>https://andykong.org/blog/stroopvssleep/</loc>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/stroopvssleep/top.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/stroopvssleep/bottom.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+    <url>
     <loc>https://andykong.org/blog/printvsdigital/</loc>
       
         <image:image>

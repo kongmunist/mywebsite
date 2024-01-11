@@ -1,8 +1,8 @@
-title: "Reflecting on Percy Jackson, And Reading Speed on Print vs. Digital Screens"
+title: "Reading Print vs. Digital, also Reflections on Percy Jackson"
 date: 2024-01-09
 label: blog
 tags: [reading, personalinformatics, thoughts]
-snippet: "tl;dr screens are faster"
+snippet: "tl;dr screens may be faster"
 
 I recently re-read the first five books of the Percy Jackson series. I'll share some of my thoughts on the series after reading them as a child and re-reading as an adult, and then there will be some data on reading speed at the end.
 
