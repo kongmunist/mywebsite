@@ -1,4 +1,4 @@
-title: Making Clear Gelatin From Porcine Sheets
+title: Making clear gelatin from porcine sheets
 date: 2022-10-04
 label: blog
 tags: [gelatin, lasers]
@@ -6,12 +6,12 @@ snippet: From Jello you came, and to Jello you shall return
 
 Hello! I have recently moved to Switzerland. I'll be writing some smaller posts to encourage myself to get back into this blogging thing, and this is the first. We'll see if it works.
 
-Before coming to Switzerland, I thought a bit about the things I'd miss about America. According to forum posts from other expats, the Swiss had no mint chocolate (still true), nor peanut butter (untrue as of now), nor chocolate chips (still true), nor Jell-O and some of the other brands of random snacks. That's all find and good since most snacks have substitutes, but Jello??? There's no equivalent for this clear, jiggly snack!
+Before coming to Switzerland, I thought a bit about the things I'd miss about America. According to forum posts from other expats, the Swiss had no mint chocolate (still true), nor peanut butter (untrue as of now), nor chocolate chips (still true), nor Jell-O and some of the other brands of random snacks. That's all fine and good since most snacks have substitutes, but Jello??? There's no equivalent for this clear, jiggly snack!
 
 {{ add_pic("cg1_jellohero.jpg", "Look at that Joggly ") }}
 
 Luckily, I was able to find some sheets of pure-ish gelatin in the supermarket baking section, which is (I think) the core ingredient of Jello. Since I've only ever had colored, sweetened Jello, I decided my first time making it I would see how gross the unsweetened version is, as well as checking the clarity of it without any coloring.
-kes
+
 {{ add_pic("cg1_jellolens.jpg", "Partially inspired by my discovery that science classes will use gelatin casts to teach optics") }}
 
 
@@ -52,7 +52,7 @@ The gelatin is super stiff after setting, and on measuring, I realized I used 4 
 <hr>
 # Flavor
 
-The taste is completely neutral. There is a tiny or no taste added from the gelatin, it just feels wrong to be eating water. The mouthfeel is that of Jell-O, but there is no flavor. It's really weird, and feels almost like you shouldn't be eating it. 
+The taste is completely neutral. The mouthfeel is that of Jell-O and there is a tiny or no taste added from the gelatin, but it feels wrong to be eating water. It's really weird!
 
 Since you can just reheat gelatin to make it liquid again, I made another batch with sugar. I heard that sucrose actually helps the gelatinization process, and wanted to check if that was true. I must say I didn't notice it being any stiffer, but it definitely tasted much better. 
 

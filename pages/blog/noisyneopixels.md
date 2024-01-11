@@ -1,4 +1,4 @@
-title: Noisy NeoPixels
+title: How to stop noisy NeoPixels
 date: 2023-05-31
 label: blog
 tags: [electronics]

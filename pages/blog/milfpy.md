@@ -1,8 +1,8 @@
-title: Average Clip Duration In Milf Manor
+title: Average clip duration in MILF Manor
 date: 2023-06-11
 label: blog
 tags: [python, clipduration, milf]
-snippet: Gauging the preferred attention span on TLC dating shows
+snippet: Gauging the audience attention span from TLC dating shows
 
 Whenever I'm watching unpretentious TV like sports or reality TV, I calculate the average clip length. I get my phone stopwatch out, and enter a lap whenever a cut happens. 
 

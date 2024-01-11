@@ -1,4 +1,4 @@
-title: Speed Check (calling Python Built-in functions)
+title: Speed checking Python built-in functions
 date: 2020-05-25
 label: blog
 tags: [speedcheck]

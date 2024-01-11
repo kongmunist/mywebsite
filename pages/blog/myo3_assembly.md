@@ -1,8 +1,8 @@
-title: Myo3 Assembly
+title: Putting together Myo3, the 3rd iteration of my EMG sensor
 date: 2020-11-22
 label: blog
 tags: [projectlog, myo, PCB]
-snippet: Putting together the 3rd iteration of my EMG sensor
+snippet: My third PCB!
 
 The PCBs came sometime last week, and I got the rest of my resistors and passives today. Time to construct!
 

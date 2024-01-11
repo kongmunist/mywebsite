@@ -6,7 +6,7 @@
     <description>Thoughts and Work</description>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
-    <lastBuildDate>Thu, 11 Jan 2024 04:53:46 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jan 2024 06:05:33 +0000</lastBuildDate>
     <item>
       <title>First Post!</title>
       <link>blog/first</link>
@@ -355,7 +355,7 @@ That's all! I'm probably going to stick with pressure sensing with my folded she
       <pubDate>Sun, 17 May 2020 00:00:00 -0400</pubDate>
     </item>
     <item>
-      <title>Speed Check (calling Python Built-in functions)</title>
+      <title>Speed checking Python built-in functions</title>
       <link>blog/speedcheckpybuiltins</link>
       <description>Calling str, type, etc. is free... right?</description>
       <content:encoded>I found this cool [blog post](http://blog.kevmod.com/2020/05/python-performance-its-not-just-the-interpreter) that was trying to show Python's slower execution time does not just come from its interpreter, and instead was more interested in the benchmark that they ran converting ints to strings as a toy example.
@@ -686,7 +686,7 @@ I guess divide and conquer really has its merits. </content:encoded>
     <item>
       <title>Histogram Equalization</title>
       <link>blog/histogram</link>
-      <description>Using all your dynamic range to make black and white images look sssickkk</description>
+      <description>Using all your dynamic range to make black and white images look sick!</description>
       <content:encoded>I recently found out about histogram equalization. Let me tell you about it! So first, 
 
 ### What's a histogram?
@@ -734,9 +734,9 @@ That's all for now. Cya!
       <pubDate>Fri, 20 Nov 2020 00:00:00 -0500</pubDate>
     </item>
     <item>
-      <title>Myo3 Assembly</title>
+      <title>Putting together Myo3, the 3rd iteration of my EMG sensor</title>
       <link>blog/myo3_assembly</link>
-      <description>Putting together the 3rd iteration of my EMG sensor</description>
+      <description>My third PCB!</description>
       <content:encoded>The PCBs came sometime last week, and I got the rest of my resistors and passives today. Time to construct!
 
 My housemates still are quarantining, so I was trying to stay out of the hallways and common areas (like the workshop we have -.-). I moved all parts into my room, but my desk definitely wasn't bright enough. We make do though. Big shoutout to [HTMLBom](https://github.com/openscopeproject/InteractiveHtmlBom) for enabling my board construction, it's a super useful plugin for KiCAD and you should get it immediately.
@@ -781,7 +781,7 @@ Gonna spec its noise and stuff soon!
       <pubDate>Sun, 22 Nov 2020 00:00:00 -0500</pubDate>
     </item>
     <item>
-      <title>Speed Check — Generating a list out of a range out of a len</title>
+      <title>Speed Check — Generating a list of a range of a len</title>
       <link>blog/speedcheck_listlen</link>
       <description>Why does matplotlib set_data not take an iterable :(</description>
       <content:encoded>As part of my [PPG project](https://twitter.com/redlightguru/status/1331513267697676289?s=20), I had to create a live-updating plot. I'm most familiar with the matplotlib library, which has the same color scheme as MATLAB, so I'm using that. One problem is that they try to make a general-purpose plotting tool (matplotlib.pyplot) that also leaves you free to not worry about which window holds which figure and which renderer is drawing what, when. This is really bad because more general tools are more complex to use, and this is definitely the case here.
@@ -857,7 +857,7 @@ Turns out the naive `list(range(len(x)))` solution was the fastest! Until next t
       <pubDate>Wed, 25 Nov 2020 00:00:00 -0500</pubDate>
     </item>
     <item>
-      <title>Myo3 initial tests</title>
+      <title>Myo3 EMG sensor initial tests</title>
       <link>blog/myo3_initialtesting</link>
       <description>It's like they always say, the hard part's the software</description>
       <content:encoded>
@@ -932,7 +932,7 @@ Anyway. I'll try it later, but this is what I've been exploring for now.
       <pubDate>Fri, 27 Nov 2020 00:00:00 -0500</pubDate>
     </item>
     <item>
-      <title>Javascript Libraries</title>
+      <title>Why are Javascript libraries so annoying</title>
       <link>blog/jslibraries</link>
       <description>What do you mean everything is a global???</description>
       <content:encoded>I am writing a rather complex Javascript project at the moment, and needed to include two different Javascript libraries. One is [p5.js](https://p5js.org/), which is just Processing ported to HTML and used for drawing and a lot of visual display stuff. The other is [mlweb](https://mlweb.loria.fr/), which is a machine learning library written in pure Javascript. 
@@ -973,7 +973,7 @@ A Javascript encapsulator script would be really useful if Javascript continues 
     <item>
       <title>Myo3 Noise Specs</title>
       <link>blog/myo3_noisespecs</link>
-      <description>1.24µV of noise at 500,000x gain</description>
+      <description>1.24µV of noise at 500,000x gain on a DIY electromyography sensor</description>
       <content:encoded>Today I tested the third iteration of my DIY EMG sensor. 
 
 ![Fresh myo3 boards from the oven]({{ url_for('static', filename = 'myo3_board.png')}})
@@ -1055,7 +1055,7 @@ I expected these batteries to be more regulated, though I suppose there aren't m
       <pubDate>Fri, 04 Dec 2020 00:00:00 -0500</pubDate>
     </item>
     <item>
-      <title>Photoplethysmography (PPG) Tutorial</title>
+      <title>Remote Photoplethysmography (PPG) Tutorial</title>
       <link>blog/PPG_tutorial</link>
       <description>A guide on how to pronounce the word, and how to implement it in Python</description>
       <content:encoded>Here's the code if you want to give it a shot yourself: [gist](https://gist.github.com/kongmunist/ba659019a483117a846dc2101e27f13d). You will need to download the Haar cascades yourself though.
@@ -1099,7 +1099,7 @@ That's all for now. Cya next time!
     <item>
       <title>Analog Electronics Basics: Scaling Voltage Rails</title>
       <link>blog/analogscalingvoltages</link>
-      <description>What to do when your circuit outputs ±5V but your ADC only takes 0-5V</description>
+      <description>What to do when your circuit outputs -5V to +5V but your ADC only takes 0-5V</description>
       <content:encoded>The problem I'm going to be talking about today is how to translate an analog signal from one range to another. I have dealt with this problem three times now, each time was more unintuitive than the last so I thought it'd be useful if I wrote down my process for other people to see what's going on and solve their similar problems. 
 
 ![Mapping analog voltages between two rails]({{ url_for('static', filename = 'analogscalinggraphic.png')}})
@@ -1614,7 +1614,7 @@ Hopefully it'll be alright. Cya next time!</content:encoded>
       <pubDate>Wed, 06 Jan 2021 00:00:00 -0500</pubDate>
     </item>
     <item>
-      <title>New EEG Technique: Phase-rectified signal averaging</title>
+      <title>My new favorite EEG technique: Phase-rectified signal averaging</title>
       <link>blog/PRSAhighlight</link>
       <description>Basic method of aligning waves helps when averaging out noise from long time-series</description>
       <content:encoded>Today I'm going to tell you about the technique of phase-rectified signal averaging, or PRSA, applied to EEG signals. I stumbled upon [this](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.160.879&amp;rep=rep1&amp;type=pdf) paper talking about it. Originally the technique was applied to like astronomy data or something, you can find that here, ["Phase-rectified signal averaging detects quasi-periodicities in non-stationary
@@ -1635,7 +1635,7 @@ I can't wait to try it. Looks like it won't work, but it seems stupid enough tha
       <pubDate>Wed, 13 Jan 2021 00:00:00 -0500</pubDate>
     </item>
     <item>
-      <title>The first generation of handheld barcode scanners — with laser tubes</title>
+      <title>The first generation of handheld barcode scanners had laser tubes</title>
       <link>blog/barcodehistory</link>
       <description>History of the LS1000 and MH290, and a demo of the 2nd!</description>
       <content:encoded>Hi! Today we have a history lesson! I'm going to tell you the history of the handheld barcode scanner, and how to use one if you have one lying around. 
@@ -1812,9 +1812,9 @@ Ok! Cool, cya around.</content:encoded>
       <pubDate>Mon, 18 Jan 2021 00:00:00 -0500</pubDate>
     </item>
     <item>
-      <title>How Fast Is Your Keyboard?</title>
+      <title>Comparing the interface speed of a thermostat to a keyboard</title>
       <link>blog/interfacespeeds</link>
-      <description>Calculating the human bandwidth of the keyboard, mouse, and other input devices using information transfer rate</description>
+      <description>Calculating the human-computer bandwidth of common and uncommon input devices using information transfer rate</description>
       <content:encoded>A lot of brain-computer interface(BCI) researchers will express their results in terms of how much information the user can input in one minute, known as information transfer rate (ITR), measured in bits per minute.
 
 I haven't yet seen a compiled list of the ITR of common household interfaces, so I thought I'd make one. This list will only cover INPUT bits/min, so I'm not going to be calculating how much text you can read off a screen or a number readout since that's OUTPUT information.
@@ -2434,94 +2434,6 @@ Bye!</content:encoded>
       <pubDate>Sun, 31 Jan 2021 00:00:00 -0500</pubDate>
     </item>
     <item>
-      <title>Physical Word Length Calculator</title>
-      <link>blog/wordlengthneonsign</link>
-      <description>Determine how much string you'll need to spell out a phrase</description>
-      <content:encoded>Hi! I'm making a neon sign with cursive on it, and wanted to know how much neon I'd need to spell out all the letters. To do this in real life, you'd need to cover each letter in string and measure the string, or draw it on a computer and count how long the curve was. 
-
-I wasn't able to find the latter calculator anywhere, so I wrote this little p5.js sketch that you draw a letter onto and it tells you how many pixels long it is. Using this total pixel length and your neon wire length, you can calculate the inches/pixel and figure out how large your letters can be. 
-
-## Instructions
-Draw on this canvas and when you release the letter it'll tell you how many pixels long you drew. It doesn't matter how fast you draw, it'll be about the same length either way.
-
-The old shapes are drawn in light grey so you can draw them to scale with each other. Press k to delete the last saved shape, or tap if you're on mobile.
-
-&lt;div id="sketch-holder"&gt;
-&lt;/div&gt;
-
-&lt;script src=https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js&gt;&lt;/script&gt;
-
-&lt;script type="text/javascript"&gt;
-	var drawPt = [];
-	var drawPtHistory = [];
-	var dragged = false;
-	var totalDist = 0;
-
-	function setup() {
-	  canvas = createCanvas(640, 360);
-	  canvas.parent('sketch-holder');
-
-	  textAlign(CENTER, CENTER);
-	}
-
-	function draw() {
-	  background(255);
-	  fill(0);
-	  text("Press z or tap to erase the last shape", width/2, 40);
-
-	  if (drawPt.length == 0){
-	      text("Total length: " + nf(totalDist,0,2) + " pixels", width/2, 20);
-	  } else {
-	      stroke(0);
-	      for (let i = 0; i &lt; drawPt.length-1; i++){
-	          line(drawPt[i][0], drawPt[i][1], drawPt[i+1][0], drawPt[i+1][1]);
-	      }
-	  }
-	  
-	  for (let i = 0; i &lt; drawPtHistory.length; i++){
-	      stroke(200);
-
-	      let mhm = drawPtHistory[i];
-	      //prletln("mhm len", mhm.createCanvas());
-	      for (let j = 0; j &lt; mhm.length-1; j++){
-	          line(mhm[j][0], mhm[j][1], mhm[j+1][0], mhm[j+1][1]);
-	      }
-	  }
-	}
-
-	function keyPressed(){
-	    if (key == 'z'){
-	        drawPtHistory = drawPtHistory.slice(0,drawPtHistory.length-1)
-	    }
-	}
-
-	function mouseDragged(){
-	    drawPt.push([mouseX, mouseY]);
-	}
-
-	function mouseReleased(){
-	    totalDist = 0;
-	    for (let i = 0; i &lt; drawPt.length-1; i++){
-	        totalDist += dist(drawPt[i][0], drawPt[i][1],
-	                          drawPt[i+1][0], drawPt[i+1][1]);
-	    }
-
-	    if (totalDist &lt; 10){ // Remove on tap for mobile users
-			drawPtHistory = drawPtHistory.slice(0,drawPtHistory.length-1)
-	    } else{
-	    	console.log("Total dist: " + totalDist);
-		    drawPtHistory.push(drawPt);
-		    drawPt = [];
-	    }
-	}
-
-&lt;/script&gt;
-
-</content:encoded>
-      <author>andyking99@gmail.com (Andy Kong)</author>
-      <pubDate>Mon, 01 Feb 2021 00:00:00 -0500</pubDate>
-    </item>
-    <item>
       <title>Calculating the expected value of the PA scratch offs</title>
       <link>blog/palotteryexpectedvalue</link>
       <description>It's ok, all proceeds pay for the benefits of older residents of Pennsylvania</description>
@@ -2624,7 +2536,7 @@ Weirdly enough, it seems that the loss from $1 games is the same as loss from $5
     <item>
       <title>Blink Detection Using Infrared Reflective Sensors</title>
       <link>blog/blinkdetectioninitial</link>
-      <description>Preliminary experiments in focus tracking.</description>
+      <description>Experiments in focus tracking.</description>
       <content:encoded>Hello! 
 
 Recently I found out that blink frequency is associated with focus — when shown a more engaging and interesting video, participants tended to blink less. Intuitively this makes sense; if you want to see something, you'll naturally spend less time closing your eyes. I wanted to apply this principle to something more general: living life. But I didn't want to use computer vision! First, face detection is hard to do well, and runs pretty slowly if you also include closed vs. open eyes. I also wouldn't be able to track my blink rate while doing things away from the computer (and believe it or not, much of my life *is* spent away from the computer). So CV was out. 
@@ -3126,7 +3038,7 @@ If you have questions about implementing this yourself, reach out via email or T
       <pubDate>Sat, 15 May 2021 00:00:00 -0400</pubDate>
     </item>
     <item>
-      <title>Stimulating the Merkel Discs: Nerve stimulation using TENS</title>
+      <title>Stimulating the Merkel Discs: selective nerve stimulation with a TENS unit</title>
       <link>blog/mechanoreceptor1</link>
       <description>The Firm Handshake-inator 3000</description>
       <content:encoded>Hello! As you may know, there are 4 mechanoreceptors in the skin.
@@ -3211,7 +3123,7 @@ Cya next time!</content:encoded>
       <pubDate>Mon, 31 May 2021 00:00:00 -0400</pubDate>
     </item>
     <item>
-      <title>Recreating Traxion</title>
+      <title>Recreating the Traxion psychophysics effect</title>
       <link>blog/traxionreproduction</link>
       <description>Only 8 years late!</description>
       <content:encoded>Hello! I recently learned of this paper called [Traxion](https://lab.rekimoto.org/projects/traxion/), wherein a genius visionary named Rekimoto discovered that asymmetrical vibration with a linear vibration motor caused a "pulling sensation" on a user's finger. A fake force that feels 32 grams of real force! Amazing!
@@ -3369,7 +3281,7 @@ I think it's some combination of latency across multiple populations, and maybe 
       <pubDate>Tue, 22 Jun 2021 00:00:00 -0400</pubDate>
     </item>
     <item>
-      <title>Comparing The Sugar Percentage Of A Peach vs. Sugary Drinks</title>
+      <title>Comparing The Sugar Percentage Of Peach Juice vs. Sugary Drinks</title>
       <link>blog/refractometertesting</link>
       <description>Testing out a sweet scientific instrument</description>
       <content:encoded>It's a shame: I've met many smart people who were never educated in the fine art of slapping a watermelon to determine their ripeness by their (usually immigrant) parents. I thought I could do these poor folks a great service by using technology to help them figure out a watermelon's sweetness for them.
@@ -3457,7 +3369,7 @@ Now, onto the humble watermelon!
       <pubDate>Fri, 23 Jul 2021 00:00:00 -0400</pubDate>
     </item>
     <item>
-      <title>How to get access to your Fitbit data</title>
+      <title>How to get access to your Fitbit data (API tutorial)</title>
       <link>blog/fitbit1</link>
       <description>Navigating a slightly complicated process for API noobs</description>
       <content:encoded>I bought a Fitbit to access my heartrate live, or at least to track the way it changes over time. After wearing it for about two weeks, I figured I had enough data to begin requesting it through their API. However, I got confused because there's a bunch of different API names and webpages. I figured it out, and here's how you do the same.
@@ -3538,7 +3450,46 @@ Cya with my next watermelon!</content:encoded>
       <pubDate>Tue, 27 Jul 2021 00:00:00 -0400</pubDate>
     </item>
     <item>
-      <title>Supercharging Capacitors</title>
+      <title>Everything I Know About PEDOT:PSS</title>
+      <link>blog/PEDOT</link>
+      <description>For now...</description>
+      <content:encoded>I've been reading about PEDOT, which is a conductive polymer. 
+
+I first heard about its use in making flexible, tissue-conforming electrodes for EMG and EEG, but it is apparently good for making electro-osmotic devices as well (as well as a whole host of other things).
+
+## Conductivity
+The conductivity is quite good relative to other organic polymers, with several papers reaching a sheet resistance of 20Ω/sq [[1]](https://sci-hub.st/10.1016/j.orgel.2019.105451)[[2]](https://sci-hub.st/10.1002/elps.201000617). Compare this to a 1oz sheet of copper's sheet resistance of 0.5Ω/sq, and it's about the resistivity of titanium or lead. Raw PEDOT:PSS is something like 100kΩ/sq, so the dopants are really necessary.
+
+## Usual forms
+Usually aqeous solutions are around 1-4% PEDOT:PSS by weight, with some adding 5% diethylene glycol to increase the conductivity. The PSS is needed for enhanced solubility, though it negatively impacts the conductivity. The reference [1] above adds a graphene oxide solution as well, also to increase conductivity. It's sometimes confusing because they give the conductivity instead of the resistance, but I'm sure it's convertible.
+
+Sigma-Aldrich sells it in dried pellets as well. Some guy on the cyan site said dissolving it in water will destroy its conductivity, but that's what [this paper](https://www.nature.com/articles/srep17045#Sec4) did with no problem. About a gram of this stuff costs $50, and people on ebay are no kinder ($50 for 30g of 1.1%)
+
+## Working with it
+Sheets of this stuff are made by pouring out a solution and letting it dry. Some people will fire it in an oven at 60C for a few hours to get all the water out. In the end, you get a flexible sheet of it. Kinda cool!
+
+You can also remove the PSS after drying to increase conductivity. Dipping it in a solvent does the trick [here](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8071320/)
+
+You can add PDMS to make it stretchier (up to 80%!), but you'll need to add this surfactant with the dope name Triton X-100. [Reference](https://sci-hub.st/10.1016/j.orgel.2019.105451)
+
+## What I want to do with it
+1. I want to deposit some and do a sheet resistance test, maybe with diethylene glycol or ethylene glycol
+2. Since ethylene glycol does approximately the same thing as the much more poisonous diethylene glycol, maybe do a test with that instead [[paper]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8071320/)
+3. Maybe since propylene glycol is even less poisonous than that, use it instead? It seems to work for conductvity if you soak PEDOT in it after drying it. 
+
+&lt;p class="caption"&gt;Ethylene Glycol &gt; Diethylene Glycol&lt;/p&gt;
+![Ethylene Glycol &gt; Diethylene Glycol]({{ url_for('static', filename = 'pedot_EGoverDEG.png')}})
+
+## Conclusions
+
+Ok so it's not much, but I hope it gives you some good leads. 
+
+</content:encoded>
+      <author>andyking99@gmail.com (Andy Kong)</author>
+      <pubDate>Thu, 05 Aug 2021 00:00:00 -0400</pubDate>
+    </item>
+    <item>
+      <title>Fast-charging capacitors</title>
       <link>blog/superchargingcaps</link>
       <description>Who has time for 5RC?</description>
       <content:encoded>I recently thought about a way to charge capacitors really quickly. 
@@ -3910,7 +3861,7 @@ Cya next time!
     <item>
       <title>Examples from the Taxonomy of Automation</title>
       <link>blog/taxonomyofautomation</link>
-      <description>Is convenience pleasure?</description>
+      <description>Summary and thoughts on the convenience of interfaces</description>
       <content:encoded>Hello y'all. I've been thinking about automation, specifically, intuitive interaction design's role in coddling people. 
 
 My lab is called the Future Interfaces Group. We abuse hardware and software to make predictive interfaces and new interactions between users and technology. Every project needs a user study to verify usability or reliability — does the user like the interaction? How does the device compare to other ones like it? We think about these things to make devices that hopefully feel a bit magical, like they can tell what you're going to do before you do them.
@@ -3987,7 +3938,7 @@ Until then, cya around!
     <item>
       <title>Learning AppleScript</title>
       <link>blog/applescripts1</link>
-      <description>Go Go Mac Powers</description>
+      <description>Several examples of AppleScripts for Spotify, current app, etc.</description>
       <content:encoded>Hello. I've always wanted to learn AppleScript in order to replace my Mac tracking apps and save a bit of money. Over this break, I had time to do that. And it seems to be about as hard as I expected it to be, which is to say it's simple to the point of being hard to learn. Here's an example
 
 Applescripts is written in this natural language sort of format. You expect that makes it easier to learn and read and write, but it doesn't unless you know the syntax. Much like how a Python aficionado would find it difficult to explain to a newbie how they know of all the different built-in functions, I find it similarly hard to learn the types and values that variables can take on in an AppleScript. 
@@ -4083,9 +4034,9 @@ That's all I got for now. I'm going to try to run a continuous log of my current
       <pubDate>Wed, 05 Jan 2022 00:00:00 -0500</pubDate>
     </item>
     <item>
-      <title>Replacing Timing</title>
+      <title>Replacing Timing.app</title>
       <link>blog/replacingtiming</link>
-      <description>I promise I'm not trying to be more productive</description>
+      <description>Doing self-logging</description>
       <content:encoded>I have been working on replacing a piece of software I use on a weekly basis. The Mac app [Timing](https://timingapp.com/) is a computer context tracker, which is to say it logs what windows have been open as long as you're using it. It even offers you a beautiful interface to interact with your data through.
 
 &lt;p class="caption"&gt;My Timing history for the past year&lt;/p&gt;
@@ -4441,17 +4392,17 @@ Update 10/13: There's a part two [here](../infoglobetutorial2)!
       <pubDate>Sat, 01 Oct 2022 00:00:00 -0400</pubDate>
     </item>
     <item>
-      <title>Making Clear Gelatin From Porcine Sheets</title>
+      <title>Making clear gelatin from porcine sheets</title>
       <link>blog/cleargelatin1</link>
       <description>From Jello you came, and to Jello you shall return</description>
       <content:encoded>Hello! I have recently moved to Switzerland. I'll be writing some smaller posts to encourage myself to get back into this blogging thing, and this is the first. We'll see if it works.
 
-Before coming to Switzerland, I thought a bit about the things I'd miss about America. According to forum posts from other expats, the Swiss had no mint chocolate (still true), nor peanut butter (untrue as of now), nor chocolate chips (still true), nor Jell-O and some of the other brands of random snacks. That's all find and good since most snacks have substitutes, but Jello??? There's no equivalent for this clear, jiggly snack!
+Before coming to Switzerland, I thought a bit about the things I'd miss about America. According to forum posts from other expats, the Swiss had no mint chocolate (still true), nor peanut butter (untrue as of now), nor chocolate chips (still true), nor Jell-O and some of the other brands of random snacks. That's all fine and good since most snacks have substitutes, but Jello??? There's no equivalent for this clear, jiggly snack!
 
 {{ add_pic("cg1_jellohero.jpg", "Look at that Joggly ") }}
 
 Luckily, I was able to find some sheets of pure-ish gelatin in the supermarket baking section, which is (I think) the core ingredient of Jello. Since I've only ever had colored, sweetened Jello, I decided my first time making it I would see how gross the unsweetened version is, as well as checking the clarity of it without any coloring.
-kes
+
 {{ add_pic("cg1_jellolens.jpg", "Partially inspired by my discovery that science classes will use gelatin casts to teach optics") }}
 
 
@@ -4492,7 +4443,7 @@ The gelatin is super stiff after setting, and on measuring, I realized I used 4 
 &lt;hr&gt;
 # Flavor
 
-The taste is completely neutral. There is a tiny or no taste added from the gelatin, it just feels wrong to be eating water. The mouthfeel is that of Jell-O, but there is no flavor. It's really weird, and feels almost like you shouldn't be eating it. 
+The taste is completely neutral. The mouthfeel is that of Jell-O and there is a tiny or no taste added from the gelatin, but it feels wrong to be eating water. It's really weird!
 
 Since you can just reheat gelatin to make it liquid again, I made another batch with sugar. I heard that sucrose actually helps the gelatinization process, and wanted to check if that was true. I must say I didn't notice it being any stiffer, but it definitely tasted much better. 
 
@@ -4783,7 +4734,7 @@ Happy hacking!
 
 As I got older, specific times took on meaning. Classes starting and ending times, lunchtime, and school letting out were all hard-coded in my head, and I would think about them every time I glanced at the time. Over time, it only got worse. In college, I started keeping a calendar to track my courses and their locations. If a clock is a machine that produces time, a calendar is a factory. It is the ultimate time-keeping tool, containing every minute of your life and your past, theoretically forever in both directions if its electronic. Isn't that incredible? 
 
-You may not think so, but try this. One day while working on [Carnegie Calendar](../projects/carnegiecalendar), I realized that you could put in ANY date you wanted for an event. 
+You may not think so, but try this. One day while working on [Carnegie Calendar](../../projects/carnegiecalendar), I realized that you could put in ANY date you wanted for an event. 
 
 I scheduled a meeting for April 9th, 2150 that I probably won't be attending. I scrolled on my calendar to make sure the event showed up, and it was there, sitting as innocently as any other calendar event. Then I navigated to my 150th birthday, and that event was there too. I probably won't make it to that either. 
 
@@ -4812,7 +4763,7 @@ Give it a go!</content:encoded>
       <pubDate>Sun, 09 Apr 2023 00:00:00 -0400</pubDate>
     </item>
     <item>
-      <title>Noisy NeoPixels</title>
+      <title>How to stop noisy NeoPixels</title>
       <link>blog/noisyneopixels</link>
       <description>Audible annoyance from WS2812B LEDs</description>
       <content:encoded>_When I was small, I visited my friend whose dad was an electrical engineer. I got to talking with him, and asked "Hey, what's the point of that thick bit on my cables?"_
@@ -4948,9 +4899,9 @@ Cya later!</content:encoded>
       <pubDate>Tue, 06 Jun 2023 00:00:00 -0400</pubDate>
     </item>
     <item>
-      <title>Average Clip Duration In Milf Manor</title>
+      <title>Average clip duration in MILF Manor</title>
       <link>blog/milfpy</link>
-      <description>Gauging the preferred attention span on TLC dating shows</description>
+      <description>Gauging the audience attention span from TLC dating shows</description>
       <content:encoded>Whenever I'm watching unpretentious TV like sports or reality TV, I calculate the average clip length. I get my phone stopwatch out, and enter a lap whenever a cut happens. 
 
 Do this maybe 20 times, and you usually get some idea of the distribution. Usually the cuts happen so quickly and fluidly that you may notice yourself _missing_ a few cuts, even though every pixel on the screen dramatically changes and it seems like something you'd notice. 
@@ -4978,7 +4929,7 @@ I have completely satisfied my curiousity about Milf Manor at this time.
       <pubDate>Sun, 11 Jun 2023 00:00:00 -0400</pubDate>
     </item>
     <item>
-      <title>My Most-Used Alfred Workflows</title>
+      <title>Breakdown of my most used Alfred Workflows</title>
       <link>blog/alfredworth</link>
       <description>Is Alfred worth buying?</description>
       <content:encoded>On September 26, 2023, I spent 34 British pounds on a software license for Alfred 5, giving me access to some extra features like Workflows and Remote execution. This post is going to tell you about the Workflows that I've found, written, or co-opted to be useful to me.
@@ -5053,9 +5004,9 @@ I'm not going to do a dry, EA-style calculation of time saved, but I estimate Al
       <pubDate>Sun, 26 Nov 2023 00:00:00 -0500</pubDate>
     </item>
     <item>
-      <title>Timezone Correction For Exported Fitbit Sleep Data</title>
+      <title>Timezone correcting Fitbit sleep data</title>
       <link>blog/fitbitsleeptzcorrection</link>
-      <description>How to get your Fitbit data in UTC so you can actually do anything with it</description>
+      <description>How to get your sleep data in UTC so you can actually do anything with it</description>
       <content:encoded>Hello, dear Reader. 
 
 You’re probably here because you exported your Fitbit data so you could make some cool visualizations, and then realized that all the nights of sleep are recorded in device-local timestamps instead of UTC/GMT. I’m here to show you a way to convert most of that data to UTC so you can analyze it properly. 
@@ -5130,9 +5081,9 @@ Good luck, it is a pretty straightforward script but I did not tidy it up at all
       <pubDate>Thu, 30 Nov 2023 00:00:00 -0500</pubDate>
     </item>
     <item>
-      <title>Teardown of the Freestyle Libre 2</title>
+      <title>Teardown of the Freestyle Libre 2 Continuous Glucose Monitor</title>
       <link>blog/teardownlibre2cgm</link>
-      <description>What's inside a continuous glucose monitor?</description>
+      <description>Pictures and wild speculation</description>
       <content:encoded>Hello! Recently I wore a Freestyle Libre 2 continuous glucose monitor for two weeks. They're sold over-the-counter in France for about 40 Euros a pop, and I was curious about what my glucose data could tell me about my other bodily functions.
 
 {{ add_pic("teardownlibre2cgm/0.jpg", "") }}
@@ -5204,9 +5155,9 @@ Anyway, that's all for now. I will be posting the results I got from the glucose
       <pubDate>Mon, 18 Dec 2023 00:00:00 -0500</pubDate>
     </item>
     <item>
-      <title>iPhone camera vs. real camera</title>
+      <title>Shot comparisons between an iPhone and digital camera</title>
       <link>blog/phonecamvsrealcam</link>
-      <description>Learning about sensor size</description>
+      <description>Sensor size matters!</description>
       <content:encoded>Recently Frido got a nice camera and took some photos of me. They looked great, with nice color and incredible close-up detail. However, when I imported them into my photos library, I saw that the shots were only in 2K (1920x1080). My phone camera consistently shoots photos in 4K, but doesn't look nearly as good. What gives?
 
 We talked about it on a tram and took some side-by-side shots, him with his camera and me with my phone. Even from his camera's tiny LCD screen, the closeup detail in the camera shot was incredibly clear compared to mine, which looked dusty and blurry. Unfortunately we have lost those test photos, but luckily I borrowed a similar camera to take comparison shots with.
@@ -5248,9 +5199,9 @@ Cya next time!</content:encoded>
       <pubDate>Sat, 23 Dec 2023 00:00:00 -0500</pubDate>
     </item>
     <item>
-      <title>Gaming cross-continental travel</title>
+      <title>Shipping from Europe to America from 2.3$/kg</title>
       <link>blog/packingtips</link>
-      <description>EU to US shipping for 2.3$/kg</description>
+      <description>How to game cross-continental travel</description>
       <content:encoded>Hello! After my undergrad, I moved from the US to Europe, taking all my earthly possessions. A year later, I have moved back to the US, taking, again, all my earthly possessions. I am extremely susceptible to the [endowment effect](https://en.wikipedia.org/wiki/Endowment_effect) and I'm not rich yet, so I put in a lot of effort and moved back nearly everything I took there and then some without paying much extra — the process took quite a bit of repacking and rethinking, so I'd like to share my insights with you, dear reader. 
 
 {{ add_pic("packingtips/0.png", "Interesting endowment effect factoid, usually people use the analogy that a mug you own is worth much more to you than the value of the mug. I did not manage to take my ThorLabs mug back to America with me :(") }}
@@ -5317,9 +5268,9 @@ Cya around!
       <pubDate>Mon, 01 Jan 2024 00:00:00 -0500</pubDate>
     </item>
     <item>
-      <title>Reading Print vs. Digital, also Reflections on Percy Jackson</title>
+      <title>Reading speed comparison on paper vs screens</title>
       <link>blog/printvsdigital</link>
-      <description>tl;dr screens may be faster</description>
+      <description>Also reflections on the Percy Jackson series</description>
       <content:encoded>I recently re-read the first five books of the Percy Jackson series. I'll share some of my thoughts on the series after reading them as a child and re-reading as an adult, and then there will be some data on reading speed at the end.
 
 {{ add_pic("printvsdigital/0.jpg", "") }}
@@ -5357,24 +5308,36 @@ That's all, cya next time!
       <pubDate>Tue, 09 Jan 2024 00:00:00 -0500</pubDate>
     </item>
     <item>
-      <title>Sleep duration's effects on my Stroop interference scores</title>
+      <title>How sleep deprivation affects my cognition</title>
       <link>blog/stroopvssleep</link>
-      <description>Preliminary results from collecting too much personal data</description>
-      <content:encoded>Hello! I have been collecting my Stroop effect data for about three months now, and I have my Fitbit data spanning the whole period. A friend asked me how my sleep affects my Stroop data, and I decided to go ahead and set up the analysis because I was also curious. 
+      <description>Correlating my Stroop with sleep data</description>
+      <content:encoded>Hello! I've been collecting my [Stroop effect data](../../projects/strooper) for about three months now, and I also have my Fitbit collecting sleep data from the whole period. A friend asked me how sleep affects my Stroop scores, and I went ahead and set up the analysis.
+
+{{ add_pic("strooper/img_1.png", "Stroop effect — quick, name the colors of the words") }}
+
+# Methods and Results
+
+Here is a lot of scatterplots where my three Stroop scores (please see above link for more info) are arranged according to some sleep variables (total time in bed, sleep efficiency, time asleep, time awake), and then I do a linear regression for each one.
 
 {{ add_pic("stroopvssleep/top.png", "") }}
 {{ add_pic("stroopvssleep/bottom.png", "") }}
 
-When doing any personal data analysis, we must try to be scientific about it. I'm not gonna just throw up a random best-fit line and ask you to trust the coefficients — there's also the p-value for the probability that the slope is that value by random chance. I have also [Bonferroni-corrected](https://en.wikipedia.org/wiki/Bonferroni_correction) the threshold value, though I think this boundary is a bit arbitrary (we pick p=5% arbitarily like everyone else, then divide by 12 to Bonferroni correct. p&lt;.00416 is significant).
+I'm not just gonna throw a best-fit line on there and call it a day — I want to know how real that line is. I've also calculated a p-value which is the probability that the best-fit line slope is that value by random chance. I also [Bonferroni-corrected](https://en.wikipedia.org/wiki/Bonferroni_correction) the threshold value, though I think this boundary is a bit arbitrary (we pick p=5% arbitarily like everyone else, then divide by 12 to Bonferroni correct. p&lt;.00416 is significant).
 
-As you can see, while there are some data series which appear to be related (most notably Stroop score vs. sleep duration), but they are not actually by our experiment. I would need more data to confirm, and there are only 27 days of data here because I have not been collecting Stroop for long. 
+# Discussion 
 
-Now, if the top-right graph were significant, then it would show that my Stroop interference time goes down with the more sleep I have. Stroop interference should go higher with less executive function, and so we see the expected relationship in my data if we believe more sleep good. However, I've been pondering &lt;a href="https://guzey.com/theses-on-sleep/"&gt;Guzey&lt;/a&gt;'s work lately in the realm of sleep deprivation, and I hoped to see something surprising. Alas, we will wait for me to generate more data. 
+As you can see, a few variables appear to be related (most notably Stroop score vs. sleep duration), but aren't actually by our experiment standards. I would need more data to confirm, and I only have 27 days of data because Stroop data is relatively new in my stack of tracked personal info. 
+
+If the top-right graph were significant, then we could say that my Stroop interference time goes down with a longer sleep duration. We expect smarter people to have a lower Stroop interference, so if we believe more sleep good then my data shows the expected relationship. However, I've been pondering &lt;a href="https://guzey.com/theses-on-sleep/"&gt;Guzey&lt;/a&gt;'s work lately re:sleep deprivation is good, and I hoped to see something surprising. Alas, we will wait for me to generate more data. 
 
 &lt;hr&gt;
 # Aside or Favor
 
-I'm working on a Quantified Self dashboard with the ability to upload any time series data and see how it correlates with your other data. As part of this, I've written a lot of basic OOP-y code which allows large scale analysis — this code is not good, but it is generalizable enough for now. If you're interested in using the same structures to analyze your data (code request) or working on this project and have the time to commit to it (collaboration), please email me! I am trying to bring this to fruition for others to use. In particular, please contact me if you know anything about modern software best practices, because I do not. 
+I need people like you, dear reader, to help me with a project.
+
+If Quantified Self is your thing, I'm working on a dashboard with the ability to upload arbitrary time series data and see how it correlates with your other data. There's other dashboards, but they only accept API-integrated data — our project will be for the [people who track their nightly erection duration](https://www.businessinsider.com/bryan-johnson-sleeps-with-small-device-on-penis-track-erections-2023-9) in an Excel spreadsheet and want to see how their water intake changes the next day.
+
+I've written a bit of framework code for this, OOPy stuff — the code is generalizable enough to work across diverse data, but it lacks polish. If you're interested in using what I've written to analyze your data (code request) or are interested in working on this project and have the time to commit to it (collaboration), please email me! I am trying to bring this dash to fruition for others to use. In particular, please contact me if you know anything about modern software best practices, because I do not. 
 </content:encoded>
       <author>andyking99@gmail.com (Andy Kong)</author>
       <pubDate>Wed, 10 Jan 2024 00:00:00 -0500</pubDate>

@@ -2,7 +2,7 @@ title: Examples from the Taxonomy of Automation
 date: 2022-01-03
 label: blog
 tags: [automation, thoughts]
-snippet: Is convenience pleasure?
+snippet: Summary and thoughts on the convenience of interfaces
 
 Hello y'all. I've been thinking about automation, specifically, intuitive interaction design's role in coddling people. 
 

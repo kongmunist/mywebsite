@@ -1,4 +1,4 @@
-title: "New EEG Technique: Phase-rectified signal averaging"
+title: "My new favorite EEG technique: Phase-rectified signal averaging"
 date: 2021-01-13
 label: blog
 tags: [ssvep, bci, eeg, paperhighlight]

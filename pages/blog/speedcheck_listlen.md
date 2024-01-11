@@ -1,4 +1,4 @@
-title: Speed Check — Generating a list out of a range out of a len
+title: Speed Check — Generating a list of a range of a len
 date: 2020-11-25
 label: blog
 tags: [speedcheck, matplotlib]

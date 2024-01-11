@@ -18,6 +18,12 @@
       
         <image:image>
           <image:loc>
+            https://andykong.org/static/strooper/img_1.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
             https://andykong.org/static/stroopvssleep/top.png
           </image:loc>
         </image:image>
@@ -1792,6 +1798,17 @@
     </url>
   
     <url>
+    <loc>https://andykong.org/blog/PEDOT/</loc>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/pedot_EGoverDEG.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+    <url>
     <loc>https://andykong.org/blog/firstwatermelon/</loc>
       
         <image:image>
@@ -2345,7 +2362,7 @@
     </url>
   
     <url>
-    <loc>https://andykong.org/blog/wordlengthneonsign/</loc>
+    <loc>https://andykong.org/projects/wordlengthneonsign/</loc>
       
     </url>
   

@@ -1,4 +1,4 @@
-title: Recreating Traxion
+title: Recreating the Traxion psychophysics effect
 date: 2021-06-02
 label: blog
 tags: [electronics, haptics]

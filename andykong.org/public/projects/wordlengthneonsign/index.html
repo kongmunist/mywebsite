@@ -8,6 +8,12 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta name="author" content="Andy Kong">
+    <meta name="title" content="Physical Word Length Calculator">
+    <meta name="description" content="Calculator to determine how much string you need to spell a word">
+
+<title> Physical Word Length Calculator | Andy Kong</title>
+
 
 
 
@@ -240,63 +246,99 @@ code {
 </nav>
 
 
-<div class="row justify-content-center" style = "height:100vh; width: 100vw;padding-left:25px; padding-right:0px">
-    <div class="col-xl-3 col-lg-4 col-md-11 col-11" style="padding-left:2%; padding-right:2%;">
-
-        <a href="/"> <img class="media-object mx-auto d-block rounded-circle " style="margin-bottom:0px; max-height:20vh;" src="/static/merock_square.jpg"/></a>
-        <h1 class="text-center" style="font-size: 2em; margin-top:0.5em;">Hi, I'm Andy!</h1>
-        <p class="text-center"  style="font-size: 1.5em; margin-bottom:0px;"></p>
-
-        <div class="links text-center" style="margin:5px; font-size:2.5em;">
-            <a href="https://critiquefood.blogspot.com/" target="_blank" title="Food For Thought"><i class="fas fa-ice-cream"></i></a>&nbsp
-            <!--<a href="https://github.com/kongmunist" target="_blank" title="Github"><i class="fab fa-github-square fa-2x"></i></a>&nbsp-->
-            <!--<a href="mailto:andyking99@gmail.com" target="_blank" title="Email"><i class="far fa-paper-plane fa-2x"></i></a>&nbsp-->
-            <a href="https://www.youtube.com/channel/UC8hEr0FkB5i-gQC4b7b5fvg" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>&nbsp
-            <a href="https://kongmunist.medium.com/" target="_blank" title="Medium"><i class="fab fa-medium"></i></a>&nbsp
-            <a href="/rss.xml" title="RSS"><img src="/static/rss.svg" style = "height:1em;"></a>&nbsp
-        </div>
-<!--        <img style="background:white; padding:5px;"width="100%" src="http://ghchart.rshah.org/409ba5/kongmunist" alt="2016rshah's Github chart" />-->
-    </div>
 
 
+<!--    <div class="row justify-content-center">-->
+<!--<div class="row overflow-hidden" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">-->
+<div class="row overflow-hidden" style = "height:100vh; width: 100vw; padding: 0px 30px 0px 30px;">
+        <div class="col-lg-2"></div>
+        <div class="col-12 col-lg-8 projectpage" style="max-width:1000px; margin-bottom:4em;">
+        <h1 style="text-center; margin-bottom: 5px">Physical Word Length Calculator</h1>
+            <i><p style="margin-bottom: 5px; margin-top: 0px">Calculator to determine how much string you need to spell a word</p></i>
+            <p style="margin-bottom: 0px; margin-top: 0px">Timespan: February 2021</p>
+            <p style="margin-bottom: 5px; margin-top: 0px">Published: 2021-02-01</p>
 
-    <div class="col-xl-7 col-lg-7 col-md-11 col-11 p-0" style="">
-        <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
-
-            
-<title>
-    Posts tagged 'calculator' | Andy Kong
-</title>
-    <div>
-    <h2>List of stuff tagged <em>calculator</em></h2>
-        <hr>
-    
-        <ul>
-
-    <li>
-        <a href="/blog/wordlengthneonsign/">Physical Word Length Calculator</a>
-    
-        | Tagged:
-        
-            <a href="/tagged/calculator/">calculator</a>
-        
-            <a href="/tagged/p5js/">p5js</a>
-        
-            <a href="/tagged/cursive/">cursive</a>
-        
-    
-    </li>
-
-</div>
-    
-    </div>
-
-            <!-- </div> -->
-    </div>
-    <div class="col-xl-2 col-lg-1 col-0"></div>
+            <hr>
+        <p>Hi! I'm making a neon sign with cursive on it, and wanted to know how much neon I'd need to spell out all the letters. To do this in real life, you'd need to cover each letter in string and measure the string, or draw it on a computer and count how long the curve was. </p>
+<p>I wasn't able to find the latter calculator anywhere, so I wrote this little p5.js sketch that you draw a letter onto and it tells you how many pixels long it is. Using this total pixel length and your neon wire length, you can calculate the inches/pixel and figure out how large your letters can be. </p>
+<h2>Instructions</h2>
+<p>Draw on this canvas and when you release the letter it'll tell you how many pixels long you drew. It doesn't matter how fast you draw, it'll be about the same length either way.</p>
+<p>The old shapes are drawn in light grey so you can draw them to scale with each other. Press k to delete the last saved shape, or tap if you're on mobile.</p>
+<div id="sketch-holder">
 </div>
 
-    
+<script src=https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js></script>
+
+<script type="text/javascript">
+    var drawPt = [];
+    var drawPtHistory = [];
+    var dragged = false;
+    var totalDist = 0;
+
+    function setup() {
+      canvas = createCanvas(640, 360);
+      canvas.parent('sketch-holder');
+
+      textAlign(CENTER, CENTER);
+    }
+
+    function draw() {
+      background(255);
+      fill(0);
+      text("Press z or tap to erase the last shape", width/2, 40);
+
+      if (drawPt.length == 0){
+          text("Total length: " + nf(totalDist,0,2) + " pixels", width/2, 20);
+      } else {
+          stroke(0);
+          for (let i = 0; i < drawPt.length-1; i++){
+              line(drawPt[i][0], drawPt[i][1], drawPt[i+1][0], drawPt[i+1][1]);
+          }
+      }
+
+      for (let i = 0; i < drawPtHistory.length; i++){
+          stroke(200);
+
+          let mhm = drawPtHistory[i];
+          //prletln("mhm len", mhm.createCanvas());
+          for (let j = 0; j < mhm.length-1; j++){
+              line(mhm[j][0], mhm[j][1], mhm[j+1][0], mhm[j+1][1]);
+          }
+      }
+    }
+
+    function keyPressed(){
+        if (key == 'z'){
+            drawPtHistory = drawPtHistory.slice(0,drawPtHistory.length-1)
+        }
+    }
+
+    function mouseDragged(){
+        drawPt.push([mouseX, mouseY]);
+    }
+
+    function mouseReleased(){
+        totalDist = 0;
+        for (let i = 0; i < drawPt.length-1; i++){
+            totalDist += dist(drawPt[i][0], drawPt[i][1],
+                              drawPt[i+1][0], drawPt[i+1][1]);
+        }
+
+        if (totalDist < 10){ // Remove on tap for mobile users
+            drawPtHistory = drawPtHistory.slice(0,drawPtHistory.length-1)
+        } else{
+            console.log("Total dist: " + totalDist);
+            drawPtHistory.push(drawPt);
+            drawPt = [];
+        }
+    }
+
+</script>
+            </div>
+        <div class="col-lg-2"></div>
+        <p style="line-height:300%;">&nbsp;</p>
+</div>
+
 
 
 <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->

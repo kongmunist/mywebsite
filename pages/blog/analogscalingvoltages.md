@@ -2,7 +2,7 @@ title: "Analog Electronics Basics: Scaling Voltage Rails"
 date: 2020-12-08
 label: blog
 tags: [analog, electronics, opamps]
-snippet: What to do when your circuit outputs ±5V but your ADC only takes 0-5V
+snippet: What to do when your circuit outputs -5V to +5V but your ADC only takes 0-5V
 
 The problem I'm going to be talking about today is how to translate an analog signal from one range to another. I have dealt with this problem three times now, each time was more unintuitive than the last so I thought it'd be useful if I wrote down my process for other people to see what's going on and solve their similar problems. 
 

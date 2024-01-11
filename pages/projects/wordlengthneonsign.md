@@ -1,8 +1,9 @@
 title: Physical Word Length Calculator 
 date: 2021-02-01
-label: blog
-tags: [calculator, p5js, cursive]
-snippet: Determine how much string you'll need to spell out a phrase
+label: project
+timespan: February 2021
+pic: physicalwordlength.png
+description: Calculator to determine how much string you need to spell a word
 
 Hi! I'm making a neon sign with cursive on it, and wanted to know how much neon I'd need to spell out all the letters. To do this in real life, you'd need to cover each letter in string and measure the string, or draw it on a computer and count how long the curve was. 
 

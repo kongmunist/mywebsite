@@ -1,4 +1,4 @@
-title: Comparing The Sugar Percentage Of A Peach vs. Sugary Drinks
+title: Comparing The Sugar Percentage Of Peach Juice vs. Sugary Drinks
 date: 2021-07-23
 label: blog
 tags: [refractometer, experiment, sugarinfruit]

@@ -1,4 +1,4 @@
-title: Javascript Libraries
+title: Why are Javascript libraries so annoying
 date: 2020-11-28
 label: blog
 tags: [webdev, javascript]

@@ -1,4 +1,4 @@
-title: "Stimulating the Merkel Discs: Nerve stimulation using TENS"
+title: "Stimulating the Merkel Discs: selective nerve stimulation with a TENS unit"
 date: 2021-05-23
 label: blog
 tags: [EMS, TENS]

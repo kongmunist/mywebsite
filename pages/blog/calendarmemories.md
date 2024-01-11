@@ -8,7 +8,7 @@ When I first began my life, time was nothing to me. I did not notice it passing,
 
 As I got older, specific times took on meaning. Classes starting and ending times, lunchtime, and school letting out were all hard-coded in my head, and I would think about them every time I glanced at the time. Over time, it only got worse. In college, I started keeping a calendar to track my courses and their locations. If a clock is a machine that produces time, a calendar is a factory. It is the ultimate time-keeping tool, containing every minute of your life and your past, theoretically forever in both directions if its electronic. Isn't that incredible? 
 
-You may not think so, but try this. One day while working on [Carnegie Calendar](../projects/carnegiecalendar), I realized that you could put in ANY date you wanted for an event. 
+You may not think so, but try this. One day while working on [Carnegie Calendar](../../projects/carnegiecalendar), I realized that you could put in ANY date you wanted for an event. 
 
 I scheduled a meeting for April 9th, 2150 that I probably won't be attending. I scrolled on my calendar to make sure the event showed up, and it was there, sitting as innocently as any other calendar event. Then I navigated to my 150th birthday, and that event was there too. I probably won't make it to that either. 
 

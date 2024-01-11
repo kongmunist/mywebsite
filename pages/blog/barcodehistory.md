@@ -1,4 +1,4 @@
-title: The first generation of handheld barcode scanners — with laser tubes
+title: The first generation of handheld barcode scanners had laser tubes
 date: 2021-01-14
 label: blog
 tags: [history, electronics]

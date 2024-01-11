@@ -1,8 +1,8 @@
-title: "iPhone camera vs. real camera"
+title: "Shot comparisons between an iPhone and digital camera"
 date: 2023-12-23
 label: blog
 tags: [photography, optics]
-snippet: "Learning about sensor size"
+snippet: "Sensor size matters!"
 
 Recently Frido got a nice camera and took some photos of me. They looked great, with nice color and incredible close-up detail. However, when I imported them into my photos library, I saw that the shots were only in 2K (1920x1080). My phone camera consistently shoots photos in 4K, but doesn't look nearly as good. What gives?
 

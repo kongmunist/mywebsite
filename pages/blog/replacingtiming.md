@@ -1,8 +1,8 @@
-title: Replacing Timing
+title: "Replacing Timing.app"
 date: 2022-01-09
 label: blog
 tags: [quantifiedself, applescript, python]
-snippet: I promise I'm not trying to be more productive
+snippet: Doing self-logging 
 
 I have been working on replacing a piece of software I use on a weekly basis. The Mac app [Timing](https://timingapp.com/) is a computer context tracker, which is to say it logs what windows have been open as long as you're using it. It even offers you a beautiful interface to interact with your data through.
 

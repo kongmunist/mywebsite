@@ -1,4 +1,4 @@
-title: Myo3 initial tests
+title: Myo3 EMG sensor initial tests
 date: 2020-11-26
 label: blog
 tags: [myo3, projectlog, PCB]

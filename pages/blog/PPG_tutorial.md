@@ -1,4 +1,4 @@
-title: Photoplethysmography (PPG) Tutorial
+title: Remote Photoplethysmography (PPG) Tutorial
 date: 2020-12-07
 label: blog
 tags: [tutorial, CV, heartrate]

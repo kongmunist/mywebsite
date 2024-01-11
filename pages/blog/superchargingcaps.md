@@ -1,4 +1,4 @@
-title: Supercharging Capacitors
+title: Fast-charging capacitors
 date: 2021-08-09
 label: blog
 tags: [electronics]

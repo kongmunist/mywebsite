@@ -1,4 +1,4 @@
-title: "My Most-Used Alfred Workflows"
+title: "Breakdown of my most used Alfred Workflows"
 date: 2023-11-26
 label: blog
 tags: [mac, alfred, productivity]

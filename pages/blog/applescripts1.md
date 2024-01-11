@@ -2,7 +2,7 @@ title: Learning AppleScript
 date: 2022-01-05
 label: blog
 tags: [applescript, scripting, quantifiedself]
-snippet: Go Go Mac Powers
+snippet: Several examples of AppleScripts for Spotify, current app, etc.
 
 Hello. I've always wanted to learn AppleScript in order to replace my Mac tracking apps and save a bit of money. Over this break, I had time to do that. And it seems to be about as hard as I expected it to be, which is to say it's simple to the point of being hard to learn. Here's an example
 

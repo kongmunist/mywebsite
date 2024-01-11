@@ -1,7 +1,7 @@
-mtitle: Everything I Know About PEDOT:PSS
+title: Everything I Know About PEDOT:PSS
 date: 2021-08-05
 label: blog
-tags: [wip, knowledge]
+tags: [knowledge]
 snippet: For now...
 
 I've been reading about PEDOT, which is a conductive polymer. 
@@ -31,5 +31,7 @@ You can add PDMS to make it stretchier (up to 80%!), but you'll need to add this
 <p class="caption">Ethylene Glycol > Diethylene Glycol</p>
 ![Ethylene Glycol > Diethylene Glycol]({{ url_for('static', filename = 'pedot_EGoverDEG.png')}})
 
-4. I also want to try the electro-osmotic pump using a sheet of it. Apparently it's quite good, but we'll see.
+## Conclusions
+
+Ok so it's not much, but I hope it gives you some good leads. 
 
