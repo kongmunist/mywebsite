@@ -8,6 +8,17 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    
+        <meta name="author" content="Andy Kong">
+        <meta name="title" content="Myo3 EMG sensor initial tests">
+        <meta name="description" content="It&#39;s like they always say, the hard part&#39;s the software">
+        <meta name="keywords" content=" myo3,  projectlog,  PCB, ">
+
+        <title>
+            Myo3 EMG sensor initial tests | Andy Kong
+        </title>
+    
+
 
 
 
@@ -240,19 +251,34 @@ code {
 </nav>
 
 
-    <h2>Myo3 EMG sensor initial tests</h2>
-    <p>I finally got around to powering on those EMG circuits I made. </p>
+    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+<!-- padding-left:20px; padding-right:20px -->
+            <div class="col-md-8 col-11 p-0" style="">
+                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
+
+                
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        
+
+
+<div class="blogpage overflow-hidden" style="margin-bottom:4em;">
+    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Myo3 EMG sensor initial tests</h1>
+            <p style="font-size:0.8em;"> Published November 26, 2020</p>
+<hr>
+            <p>I finally got around to powering on those EMG circuits I made. </p>
 <h2>Initial test</h2>
 <p>For an initial test of any circuit, I was taught to flick the power on and then immediately off. If the current indicator spikes, you know there's a path error, but it might not have burnt out the chip just yet. The idea being not enough power has passed through and messed up the delicate silicon in the chip. I did just this flick trick, and saw a massive current jump immediately :(.</p>
 <p>I wracked my brains and traces for any mistakes I could've made in the wiring, but failed to find anything. Went back to the schematic, because maybe I had put in a path to ground somehow? Maybe switched out a bypass capacitor for a bypass resistor? I saw nothing of the sort.</p>
 <p>A day later, I looked again at the behest of a friend helping me debug, and found this:</p>
-<p><img alt="Flipping the positive and negative supplies is a big no-no" src="/static/myo3_schematicflippedpower.png" /></p>
+<p><img loading="lazy" alt="Flipping the positive and negative supplies is a big no-no" src="/static/myo3_schematicflippedpower.png" /></p>
 <p class="caption">Flipping the positive and negative supplies on anything is a big no-no</p>
 
 <h2>Fixing the problems</h2>
 <p>Luckily, I had only messed up on one chip, a quad op-amp. I was able to just rotate it 180° and have all the same inputs and outputs. Unluckily, it was on the TSSOP|16 package. Excuse the flux everywhere, but here's the chip after fixing.</p>
 <p>I also had no solder-wicking braid, so had to fashion some out of a flux pen and some stripped, stranded wire. Worked surprisingly well, but went through wire rather quickly compared to the braided stuff. Wire's cheap anyway. </p>
-<p><img alt="Fixed the power on this quad amplifier" src="/static/myo3_fixingpower.jpg" /></p>
+<p><img loading="lazy" alt="Fixed the power on this quad amplifier" src="/static/myo3_fixingpower.jpg" /></p>
 <h2>Actual initial test</h2>
 <p>My function generator set to 100 Hz sine wave has a minimum output voltage of 20 mV peak-peak. I'm trying to measure a signal approximately 5 uV p-p in size, so I made a voltage divider from a 50kΩ and 10Ω resistor. 20 mV becomes around 4 uV, and I have a high resistance measuring path to simulate the skin impedance. </p>
 <h3>First stage, G = 1000</h3>
@@ -260,8 +286,33 @@ code {
 ~</p>
 <h3>Shorted inputs noise</h3>
 <p>With inputs shorted with a wire, there's a little bit of 60Hz line pickup. That aside, the noise p-p appears to be 70 mV after a 1000x gain, putting the initial, full spectrum noise at 70 uV. As it stands, much of the signal is very high frequency noise. After the RFI/EMI filtering it should be much better since the bandwidth gets heavily reduced, down to around 300Hz. </p>
-<p><img alt="Shorted inputs signal on INA output" src="/static/myo3_shortednoise.jpg" /></p>
+<p><img loading="lazy" alt="Shorted inputs signal on INA output" src="/static/myo3_shortednoise.jpg" /></p>
 <p>I'll post further updates after I fix the filters. No board ever works its first time, but it gets there if you want it to!</p>
+
+    
+        <hr>
+        <p style="line-height:250%;">
+        <a class="btn btn-info" href="/tagged/myo3/">myo3</a>
+
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/projectlog/">projectlog</a>
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/PCB/">PCB</a>
+        
+        </p> 
+    
+</div>
+
+
+
+
+                    </div>
+                    <br>
+        <!-- </div> -->
+</div>
+
 
 
 

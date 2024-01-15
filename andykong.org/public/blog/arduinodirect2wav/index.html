@@ -8,6 +8,17 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    
+        <meta name="author" content="Andy Kong">
+        <meta name="title" content="Playing sounds with an Arduino, speaker, and no amplifier">
+        <meta name="description" content="LM386 audio amplifier? I &#39;ardly know her!">
+        <meta name="keywords" content=" arduino,  microcontroller,  audio,  hack, ">
+
+        <title>
+            Playing sounds with an Arduino, speaker, and no amplifier | Andy Kong
+        </title>
+    
+
 
 
 
@@ -240,15 +251,30 @@ code {
 </nav>
 
 
-    <h2>Playing sounds with an Arduino, speaker, and no amplifier</h2>
-    <p>Today in Being Lazy With Andy, I'm gonna show you how to play audio directly from a microcontroller's output pins — no op amp, no transistor.</p>
+    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+<!-- padding-left:20px; padding-right:20px -->
+            <div class="col-md-8 col-11 p-0" style="">
+                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
+
+                
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        
+
+
+<div class="blogpage overflow-hidden" style="margin-bottom:4em;">
+    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Playing sounds with an Arduino, speaker, and no amplifier</h1>
+            <p style="font-size:0.8em;"> Published December 13, 2020</p>
+<hr>
+            <p>Today in Being Lazy With Andy, I'm gonna show you how to play audio directly from a microcontroller's output pins — no op amp, no transistor.</p>
 <p class="caption">LED for kicks</p>
-<p><img alt="LED for kicks" src="/static/direct2wav_fullsetup.jpg" /></p>
+<p><img loading="lazy" alt="LED for kicks" src="/static/direct2wav_fullsetup.jpg" /></p>
 <h2>Context</h2>
 <p>I'm currently doing an Easy button hack-apart, which I'll showcase later. As an intermediate step, I wanted to play custom sounds from the speaker. I don't have any audio amplifiers lying around, and besides, there's not a ton of room in the button itself to fit that. I will probably end up using a transistor, but at the moment I just wanted to test the feasability of playing audio without anything except the speaker and Arduino. The results are useable — loud enough to be heard in a bedroom and passable for voices.</p>
 <p>It makes sense for a microcontroller to play WAVs — they're already just pressure levels, so you should be able to play each pressure level as a tone with a set time. Luckily many people have thought of this, and have written lovely libraries for it. Primarily, this relies on some Arduino Playground code written by Michael Smith, and the lovely tutorial by <a href="http://highlowtech.org/?p=1963">High-Low Tech Group</a> at MIT Media Lab. You can also find this library from Arduino's IDE directly by searching PCM Audio in the Tools-&gt;Manage Libraries... window. </p>
 <p class="caption">PCM Library at the click of a button</p>
-<p><img alt="PCM Library at the click of a button" src="/static/direct2wav_library.png" /></p>
+<p><img loading="lazy" alt="PCM Library at the click of a button" src="/static/direct2wav_library.png" /></p>
 <h2>Basic Setup Instructions</h2>
 <p>Hardware-wise you need to connect the GND to GND, and pin 11 of your Arduino to the V+ of the speaker. I actually think the speaker is voltage polarity agnostic, so either direction should work. I also added a 330Ω resistor in series with the speaker to limit the current draw from the Arduino's pins. I think their max safe draw is 20mA, and this speaker is probably 8Ω and would draw 5V/8Ω = 625mA at max output. With the resistor, this is limited to 5V/338 ≈ 15 mA. </p>
 <p>For the software, the starter code from high-low tech should boot directly and work. When it starts, you should hear a lady's voice say "Arduino Demilvinove" or however you spell it. </p>
@@ -259,7 +285,7 @@ code {
 <p>I used QuickTime to record some brief audio, and then converted the .aifc file to .wav using <a href="https://audio.online-convert.com/convert/aifc-to-wav">this site</a>, which is handy because it has many of the downsampling options I wanted. </p>
 <p>I then tried to use their Processing script to copy a .wav to my clipboard, but could't run it because it was outdated. I tried to modify it in Processing to compile, but for some reason it wouldn't parse the .wav properly :(. Instead, I found <a href="https://guilhermerodrigues680.github.io/wav2c-online/">this web version</a> of wav2c. Turns out lots of people have solved this problem, it's just very difficult to find a web version that will do it for you in JS. </p>
 <p>Anyway, it gives you a nice long text of values you can copy and paste into your code. I would like this better if it were all on one line, but that might be a personal preference. </p>
-<p><img alt="Image Caption" src="/static/wav2c_online.png" /></p>
+<p><img loading="lazy" alt="Image Caption" src="/static/wav2c_online.png" /></p>
 <p>Paste it in the example code, comment out or delete the old line with all the values, and hit start! Your Arduino should play your sound file!</p>
 <h1>Additional things you can try</h1>
 <h3>Optimizing for voice</h3>
@@ -270,6 +296,34 @@ code {
 <h3>Playback from SD card</h3>
 <p>I haven't tried this, but I hope to soon!</p>
 <p>That's all for now, have fun!</p>
+
+    
+        <hr>
+        <p style="line-height:250%;">
+        <a class="btn btn-info" href="/tagged/arduino/">arduino</a>
+
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/microcontroller/">microcontroller</a>
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/audio/">audio</a>
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/hack/">hack</a>
+        
+        </p> 
+    
+</div>
+
+
+
+
+                    </div>
+                    <br>
+        <!-- </div> -->
+</div>
+
 
 
 

@@ -8,6 +8,17 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    
+        <meta name="author" content="Andy Kong">
+        <meta name="title" content="Comparing the interface speed of a thermostat to a keyboard">
+        <meta name="description" content="Calculating the human-computer bandwidth of common and uncommon input devices using information transfer rate">
+        <meta name="keywords" content=" bci,  hci,  interfaces, ">
+
+        <title>
+            Comparing the interface speed of a thermostat to a keyboard | Andy Kong
+        </title>
+    
+
 
 
 
@@ -240,22 +251,37 @@ code {
 </nav>
 
 
-    <h2>Comparing the interface speed of a thermostat to a keyboard</h2>
-    <p>A lot of brain-computer interface(BCI) researchers will express their results in terms of how much information the user can input in one minute, known as information transfer rate (ITR), measured in bits per minute.</p>
+    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+<!-- padding-left:20px; padding-right:20px -->
+            <div class="col-md-8 col-11 p-0" style="">
+                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
+
+                
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        
+
+
+<div class="blogpage overflow-hidden" style="margin-bottom:4em;">
+    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Comparing the interface speed of a thermostat to a keyboard</h1>
+            <p style="font-size:0.8em;"> Published January 21, 2021</p>
+<hr>
+            <p>A lot of brain-computer interface(BCI) researchers will express their results in terms of how much information the user can input in one minute, known as information transfer rate (ITR), measured in bits per minute.</p>
 <p>I haven't yet seen a compiled list of the ITR of common household interfaces, so I thought I'd make one. This list will only cover INPUT bits/min, so I'm not going to be calculating how much text you can read off a screen or a number readout since that's OUTPUT information.</p>
 <p>I'll list each device, explain its peculiarities and any choices I made regarding number of inputs, then give the stats. Here's a table of the results, read on for how I came to each number!</p>
 <h3>Definition of bits for ITR</h3>
 <p>Before we start, it may seem strange to quantify the mouse or touchscreen in terms of bits, since they're almost continuous input devices. Here, "bits" refers to the log2 of the number of options available. For example, if a user in a BCI trial is trying to select one button when there are two available to pick, then they transmit one "bit" of information per correct choice they make. If choosing a button takes the user 5 seconds, then they'll be able to make 12 choices in a minute. making 12 bits per minute the ITR.</p>
 <h2>Compiled Tables (Both available at page bottom)</h2>
 <p class="caption">Table of information transfer rates of all common devices</p>
-<p><img alt="Table of information transfer rates of all common devices" src="/static/bpmITRCommon.png" /></p>
+<p><img loading="lazy" alt="Table of information transfer rates of all common devices" src="/static/bpmITRCommon.png" /></p>
 <p>Let's get into it!</p>
 <h1>List of Common Input Devices</h1>
 <hr>
 
 <h2>Thermostat</h2>
 <p class="caption">Picture of a thermostat</p>
-<p><img alt="Picture of a thermostat" src="/static/bpmthermostat.jpg" /></p>
+<p><img loading="lazy" alt="Picture of a thermostat" src="/static/bpmthermostat.jpg" /></p>
 <p>I pressed 10 buttons in 6.4 seconds. </p>
 <h5># of Inputs: 5</h5>
 <h5>Input Speed: 1.5/sec</h5>
@@ -264,7 +290,7 @@ code {
 
 <h2>TV Remote</h2>
 <p class="caption">Generic TV remote</p>
-<p><img alt="Generic TV remote" src="/static/bpmtvremote.png" /></p>
+<p><img loading="lazy" alt="Generic TV remote" src="/static/bpmtvremote.png" /></p>
 <p>Since TV remotes have notoriously gummy buttons, they're a lot slower than the microwave. I pressed 10 buttons in 7.13 seconds. I used a slightly different television remote than the one pictured, which is why the # of inputs may not line up. </p>
 <h5># of Inputs: 42</h5>
 <h5>Input Speed: 1.4/sec</h5>
@@ -273,7 +299,7 @@ code {
 
 <h2>Microwave</h2>
 <p class="caption">Common Household Microwave</p>
-<p><img alt="Household Microwave" src="/static/bpmmicrowave.png" /></p>
+<p><img loading="lazy" alt="Household Microwave" src="/static/bpmmicrowave.png" /></p>
 <p>Starting with common household electronics, the humble microwave. Though I've never used any button besides the numpad, start, and cancel, there are many more buttons which configure the microwave. I count 25 buttons, plus the trigger that opens the door. </p>
 <p>I can hit 10 buttons in 4.5 seconds (2.2/sec), but they were all sequential and next to each other so I'll say 2 buttons/sec. Log2(26) = 4.7, 4.7 bits/input * 2 inputs/sec * 60 sec/min = 564. Evidently, I did great in high school chemistry.</p>
 <h5># of Inputs: 26</h5>
@@ -283,7 +309,7 @@ code {
 
 <h2>Game Controller</h2>
 <p class="caption">They control nuclear submarines with these!</p>
-<p><img alt="They control nuclear submarines with these!" src="/static/bpmgamecontroller.png" /></p>
+<p><img loading="lazy" alt="They control nuclear submarines with these!" src="/static/bpmgamecontroller.png" /></p>
 <p>We're starting to get complicated. As anyone who has played Smash knows, single button presses do very little — combinations of keys are necessary to even play. I will count single button presses, joystick positions, and a joystick position + button press. </p>
 <p>There are 4 bumpers, 4 positions on the left pad (D-pad), 4 buttons on the right, and four in the center. Joysticks are analog, but we're going to discretize them as 8 edge positions and the neutral position. They also have an inward click, which I'm going to count as a button. Buttons alone, there are 18 total. There are 9 joystick positions per side, and moving between any two of them gives you 9 choose 2, or 36 unique joystick movements.</p>
 <p>Combining them gets complicated. Using the left joystick, you can't press anything on the D-pad or left-center, since your thumb covers that. You can, however, still use the bumper/trigger on the left side. So for the left joystick, you have access to 12 buttons. Doing this calculation for the right joystick, you get 13 buttons to work with. Since we already counted the neutral position + buttons in the single button presses, we have 8 joystick positions. For the left and right joystick respectively, that gives us 96 and 104 combination presses. </p>
@@ -330,10 +356,10 @@ code {
 
 <h2>Touchscreen</h2>
 <p class="caption">The Apple iPhone 11, most sold phone in 2019.</p>
-<p><img alt="The Apple iPhone 11, most sold phone in 2019." src="/static/bpmiphone11.jpg" /></p>
+<p><img loading="lazy" alt="The Apple iPhone 11, most sold phone in 2019." src="/static/bpmiphone11.jpg" /></p>
 <p>I'm using an Apple iPhone 11 as my reference phone since it's the most sold smartphone of 2019, according to Wikipedia. There are a lot of possible input gestures on the phone, and the touchscreen enables them to be fast. I'll count each input separately to make the count more accurate. However, I'm not counting pinches, so this will be a bit of an underestimate. </p>
 <p class="caption">Icons from the navigation bar on Instagram. Green box is 100 by 75 pixels. Note how it's rectangular in the x-axis. It's much easier to press very wide, short buttons than very tall, skinny buttons on a smartphone, which I didn't realize before.</p>
-<p><img alt="Icons from the navigation bar on Instagram. Green box is 100 by 75 pixels. Note how it's rectangular in the x-axis. It's much easier to press very wide, short buttons than very tall, skinny buttons on a smartphone, which I didn't realize before." src="/static/bpmphoneminsize10075.png" /></p>
+<p><img loading="lazy" alt="Icons from the navigation bar on Instagram. Green box is 100 by 75 pixels. Note how it's rectangular in the x-axis. It's much easier to press very wide, short buttons than very tall, skinny buttons on a smartphone, which I didn't realize before." src="/static/bpmphoneminsize10075.png" /></p>
 <p>For smallest input size with the finger, I used the sizes of the icon set from Instagram since they're quite reliable (I don't remember ever misclicking one). These also match the icon sizes in the footer of the iPhone clock app. The green square shown is 100x75 pixels. This divides into the iPhone 11 screen resolution of 1792x828, giving us around 198 non-overlapping rectangles. </p>
 <p>There are also 4 buttons around the phone, two of which can be pressed at once to trigger a different event (screenshot, shutdown, etc.). 4 choose 2 is 6, so that adds 10 inputs for a total of 208.</p>
 <p>I pressed on the screen 10 times in 4 seconds. It's not noticeably faster using two fingers. I held down 20 icons on my home screen in 27.55 seconds and dragged 20 times around the screen in 17.8 seconds. Each drag is from one square to any other square, making it 330x329. That's a lot of inputs, but the log2 takes it down. And there are 4 swipes, which can be done in the center or from the edge of the screen. I did 20 swipes in 15.5 seconds. </p>
@@ -432,7 +458,7 @@ code {
 
 <h2>Touchscreen (Keyboard)</h2>
 <p class="caption">Picture of the iPhone keyboard, with diction key highlighted. I didn't want to find another picture so I reused this one</p>
-<p><img alt="Picture of the iPhone keyboard, with diction key highlighted. I didn't want to find another picture so I reused this one" src="/static/bpmdiction.jpg" /></p>
+<p><img loading="lazy" alt="Picture of the iPhone keyboard, with diction key highlighted. I didn't want to find another picture so I reused this one" src="/static/bpmdiction.jpg" /></p>
 <p>I'm using my iPhone 6s keyboard for this one. I'll count each page of keys separately, since they're harder to get to. I'm doing phone keyboard separately because A) we have a lot of muscle memory for it, which lets us input keys a lot faster than a usual interface, and B) to double check my numbers, the final bits/min of this should be bounded by the total bits/min of the touschreen.</p>
 <p>There are 29 typing keys on the primary keyboard, plus 26 for capital letters for a total of 55 keys. I type at 45 WPM on the phone, which is 225 characters/min. Including the space after ever word, that's actually 270 characters/min, or 4.5/sec.</p>
 <p>On the second page, there are 25 keys (I'm not recounting the delete, return, or spacebar), which can be pressed to your heart's desire, except when the spacebar happens. Since the spacebar is essential to typing, I'm going to count my typing speed with a spacebar after every character, giving us 18 keys in 20.29 seconds. I'll also count the space after each key, so 36 keys.</p>
@@ -478,14 +504,14 @@ code {
 
 <h2>Mouse/trackpad + Screen</h2>
 <p class="caption">Macbook Air</p>
-<p><img alt="Macbook Air" src="/static/bpmmacbookair.png" /></p>
+<p><img loading="lazy" alt="Macbook Air" src="/static/bpmmacbookair.png" /></p>
 <p>I'll be using my Macbook Air screen and touchpad as the reference for this one. With a screen resolution of 1440x900, it's worse than the smartphones we just saw, but I think the finger has a broader input area than the mouse pointer. For inputs, I'm counting clicks, double clicks, right clicks, drags, and swipes (scrolling included). </p>
 <p>For smallest reliable click size, I'm using the geometric mean of the icons from Google Chrome and the icons on the MacOS desktop. The green square shown is 30x30 and the desktop icons on MacOS are a slightly larger 70x70, for a combined 45x45. I spend more than half my time on Chrome, and the file icons in Finder are the same size as their icons, but dragging that small an icon is difficult. </p>
 <p class="caption">Smaller of the "smallest reliable click size" bounding boxes. This is from the Chrome toolbar, and has size 30x30 pixels.</p>
-<p><img alt="Smaller of the &quot;smallest reliable click size&quot; bounding boxes. This is from the Chrome toolbar, and has size 30x30 pixels." src="/static/bpmmouseminsize3030.png" /></p>
+<p><img loading="lazy" alt="Smaller of the &quot;smallest reliable click size&quot; bounding boxes. This is from the Chrome toolbar, and has size 30x30 pixels." src="/static/bpmmouseminsize3030.png" /></p>
 <p>This divides into the screen to give us 640 clickable squares, which I use for single click, double click, and right click. Drag is from any square to another, so 640x639 = 408,960. There's 2 finger swipes and three finger swipes (from any side or center of the touchpad), and a pinch for a total of 19 potential swipes.</p>
 <p class="caption">Picture of the first mouse</p>
-<p><img alt="Picture of the first mouse" src="/static/bpmfirstmouse.jpg" /></p>
+<p><img loading="lazy" alt="Picture of the first mouse" src="/static/bpmfirstmouse.jpg" /></p>
 <p>I clicked 20 times in 18.20 seconds, double clicked 20 times in 19 seconds, right clicked 18 times in 18.24 seconds, dragged 20 times in 26.15 seconds, and swiped 20 times in 20 seconds. </p>
 <table class="tg" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -535,7 +561,7 @@ code {
 
 <h2>Keyboard</h2>
 <p class="caption">Physical keyboard, reduced because it doesn't have the numpad on the right.</p>
-<p><img alt="Physical keyboard, reduced because it doesn't have the numpad on the right." src="/static/bpmkeyboard.jpg" /></p>
+<p><img loading="lazy" alt="Physical keyboard, reduced because it doesn't have the numpad on the right." src="/static/bpmkeyboard.jpg" /></p>
 <p>I'll be using my Macbook Air keyboard, which is quite similar to the one shown above. I'm counting single keypresses for typing and not typing separately, and also combination keypresses (Control, Alt/Option, Command, Function, or Shift + any other keys).</p>
 <p>Believe it or not, there are 78 keys on the keyboard! I expected way less. I can type at 80 WPM on a good day, which is 400 keys/min assuming an average word length of 5 characters a word. I'm going to count each key that actually types a symbol in a normal text editor, which is 49 keys. Since holding shift doubles each key, this makes 98 inputs at 400 keys/min. Including the spacebar after every word, that's 480 keys/min, or 8/sec.</p>
 <p>That leaves 14 function keys, which I can press 20 times in 5 seconds. </p>
@@ -580,14 +606,14 @@ code {
 <hr>
 
 <p class="caption">Table of information transfer rates of all research devices</p>
-<p><img alt="Table of information transfer rates of all research devices" src="/static/bpmITRResearch.png" /></p>
+<p><img loading="lazy" alt="Table of information transfer rates of all research devices" src="/static/bpmITRResearch.png" /></p>
 <h1>List of Experimental Input Devices</h1>
 <p>These are research devices that are still working out the kinks, and don't work incredibly reliably yet. I'm including voice control because it's a biometric device instead of a button input like the earlier ones, and doesn't work for everyone's voice yet.</p>
 <hr>
 
 <h2>Voice Control (Diction)</h2>
 <p class="caption">Voice control or diction button on an iPhone keyboard</p>
-<p><img alt="Voice control or diction button on an iPhone keyboard" src="/static/bpmdiction.jpg" /></p>
+<p><img loading="lazy" alt="Voice control or diction button on an iPhone keyboard" src="/static/bpmdiction.jpg" /></p>
 <p>I used Google's voice to text function to dictate the sentence "Google's free service instantly translates words, phrases, and web pages between English and over 100 other languages." At 114 characters (118 with punctuation) in 7.37 seconds, this yields a whopping 165 WPM, or 957 characters/min. Apple's diction feature took the same amount of time, which was how long it took me to read the sentence.</p>
 <p>Since voice diction cannot detect punctuation or capital letters (except at the beginning of sentences), this is out of the 10 numbers, 26 letters, and spacebar. That leaves us with 37 unique input keys. </p>
 <h5># of Inputs: 37</h5>
@@ -611,7 +637,7 @@ code {
 
 <h2>Eye tracking</h2>
 <p class="caption">Screenshot of someone using a Tobii Eye Tracker. The big blob is the predicted gaze location, which takes up about 10% of the screen</p>
-<p><img alt="Screenshot of someone using a Tobii Eye Tracker. The big blob is the predicted gaze location, which takes up about 10% of the screen" src="/static/bpmtobii.png" /></p>
+<p><img loading="lazy" alt="Screenshot of someone using a Tobii Eye Tracker. The big blob is the predicted gaze location, which takes up about 10% of the screen" src="/static/bpmtobii.png" /></p>
 <p>Eye tracking uses your gaze location as input, usually to steer your cursor, but also for indicating attention. Tobii is one of the largest eye-tracking companies, selling hardware that just plugs into your computer and reports your gaze. However, it has a large inaccuracy which isn't mentioned on the website, and refuses to even mention accuracy specs for any of their products. </p>
 <p>If you watch anybody using it on YouTube like <a href="https://www.youtube.com/watch?v=uM0QtujhjcA">here</a>, you'll see the large spot size which indicates its approximate confidence zone. The frame was originally 850x475 pixels, and the size of the green square is 75x60 for an error margin of about 15% (geometric mean of x and y error). </p>
 <p>If this is the minimum spot size, we can do a similar calculation to the touchscreen section and find that there are around 90 differentiable squares on the screen. However, this doesn't include clicking, and the number of flicks an eye can do in a second. If I use my touchpad click, then I can look and click at 10 locations in 9.34 seconds. If I use a blink (which some eye trackers do use), then I can do 10 blinks in 6.68 seconds. </p>
@@ -627,7 +653,7 @@ code {
 <p>The <a href="https://en.wikipedia.org/wiki/P300_(neuroscience)">P300</a> is a signal that arises when your expectation of what you're seeing is different from what you expect it to be. These BCIs work by flashing a grid of objects (letters, labeled buttons) and removing one object each time. If you ever don't see the one you're trying to select, then your brain emits a P300. It needs a lot of averaging across many trials to be done reliably though, and it's a very unintuitive way to select things. </p>
 <p>From this <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5924393/">review paper from 2018</a>, the average bits/min of P300 BCIs is around 30. The <a href="https://pubmed.ncbi.nlm.nih.gov/25080406/">best one</a> incorporated your brain's reaction to a familiar face to help you select a target more robustly, and hit 80 bits/min with an accuracy of 81.25%. </p>
 <p class="caption">A flowchart of SSVEP brain signal processing</p>
-<p><img alt="A flowchart of SSVEP brain signal processing" src="/static/bpmssvep.jpg" /></p>
+<p><img loading="lazy" alt="A flowchart of SSVEP brain signal processing" src="/static/bpmssvep.jpg" /></p>
 <h3>SSVEP</h3>
 <p>The <a href="https://en.wikipedia.org/wiki/Steady_state_visually_evoked_potential">SSVEP</a> is a signal that is also evoked by visual stimulus, but in this case it's caused by repeated flashes of light. It can be reliably detected for flickering between 10 and 20Hz. To use the SSVEP as input, you create an LED display or use a monitor with many buttons on it which are each flashing at a different frequency. Then, you look at the buttons for a short window of time. The frequency spectrum of the recorded EEG signal will have a peak at the frequency of the button you were focusing on, and the computer will know which one you want to select.</p>
 <p>The tradeoff here is a longer window raises accuracy but lowers the bits/min transferred, with a minimum of about 3s of data needed to detect it reliably. The best SSVEP ITR I found is from <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5783827/">this paper</a>, where they reached a mean of 325 bits/min. I believe this is the offline ITR though, so when they actually measured people using it live they got an ITR of 199 bits/min.</p>
@@ -642,9 +668,34 @@ code {
 <p>BCIs really need some work, seeing as their best technique clocks in under a thermostat. </p>
 <h1>Both Tables</h1>
 <p class="caption">Table of information transfer rates of all common devices</p>
-<p><img alt="Table of information transfer rates of all common devices" src="/static/bpmITRCommon.png" /></p>
+<p><img loading="lazy" alt="Table of information transfer rates of all common devices" src="/static/bpmITRCommon.png" /></p>
 <p class="caption">Table of information transfer rates of all research devices</p>
-<p><img alt="Table of information transfer rates of all research devices" src="/static/bpmITRResearch.png" /></p>
+<p><img loading="lazy" alt="Table of information transfer rates of all research devices" src="/static/bpmITRResearch.png" /></p>
+
+    
+        <hr>
+        <p style="line-height:250%;">
+        <a class="btn btn-info" href="/tagged/bci/">bci</a>
+
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/hci/">hci</a>
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/interfaces/">interfaces</a>
+        
+        </p> 
+    
+</div>
+
+
+
+
+                    </div>
+                    <br>
+        <!-- </div> -->
+</div>
+
 
 
 

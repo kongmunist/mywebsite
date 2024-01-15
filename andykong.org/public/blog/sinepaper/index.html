@@ -8,6 +8,17 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    
+        <meta name="author" content="Andy Kong">
+        <meta name="title" content="Paper Delivery: Sinusoidal Skin Displacements">
+        <meta name="description" content="Retro papers you probably missed, but shouldn&#39;t have!">
+        <meta name="keywords" content=" mechanoreceptors,  litsearch, ">
+
+        <title>
+            Paper Delivery: Sinusoidal Skin Displacements | Andy Kong
+        </title>
+    
+
 
 
 
@@ -240,15 +251,30 @@ code {
 </nav>
 
 
-    <h2>Paper Delivery: Sinusoidal Skin Displacements</h2>
-    <p>I've been reading a ton of research about how our touch receptors work. You may think it's simple, and it's not. I'm gonna show y'all a seminal paper on how our nerves react to mechanical sensation. When they dropped this supa hot fire in 1982, it inspired a lot of research which underlies our current understanding of how our brain processes touch.</p>
+    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+<!-- padding-left:20px; padding-right:20px -->
+            <div class="col-md-8 col-11 p-0" style="">
+                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
+
+                
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        
+
+
+<div class="blogpage overflow-hidden" style="margin-bottom:4em;">
+    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Paper Delivery: Sinusoidal Skin Displacements</h1>
+            <p style="font-size:0.8em;"> Published June 22, 2021</p>
+<hr>
+            <p>I've been reading a ton of research about how our touch receptors work. You may think it's simple, and it's not. I'm gonna show y'all a seminal paper on how our nerves react to mechanical sensation. When they dropped this supa hot fire in 1982, it inspired a lot of research which underlies our current understanding of how our brain processes touch.</p>
 <h1>They're made of meat</h1>
 <p>Quick recap: there's 4 mechanoreceptors in our skin, and they each detect something different; low and high frequency vibrations, pressure, and skin stretching. Each receptor is a special structure specially designed to release ions in response to a very narrow kind of stimulus. </p>
 <p>Each receptor is attached to a nerve cell, and triggers action potentials in the nerve only when their stimulus occurs. The stronger the stimulus, the faster the receptor dumps ions onto the nerve, and the more often their action potentials get fired. </p>
 <p>These nerves follow a direct path to the brain, and each nerve gets its own "column"-ish of brain cells that receive and process its impulses. So when someone touches your finger, they are firing neurons in on particular, consistent location on your brain's surface. This is how our brains know where we were touched. </p>
 <p>But how do our brains know <em>what</em> we touched? How do our neurons interpret that chain of action potentials from the hand's receptors into the sensation of touching fabric, or holding a wooden block? </p>
 <p class="caption">Is this a response from touching a cat, or a dog? Your brain knows, even if you might not!</p>
-<p><img alt="Is this a response from touching a cat, or a dog? Your brain knows, even if you might not!" src="/static/sinu_singlenervefirings.png" /></p>
+<p><img loading="lazy" alt="Is this a response from touching a cat, or a dog? Your brain knows, even if you might not!" src="/static/sinu_singlenervefirings.png" /></p>
 <h1>Old news</h1>
 <p>Because the fire rate was the most obvious change in response to stronger stimulus, scientists used to think that the neurons talked to each other using average firing frequency. This is called a rate code. </p>
 <p>However, this hypothesis is being challenged today. The brain can react to certain stimulus faster than it takes for a receptor to fire twice, for instance in reflexes. Since the neuron needs at least two firings to determine a "rate", researchers guess that there must be some other information present in a single firing spike besides just how many there are. </p>
@@ -257,13 +283,13 @@ code {
 <p>Research papers always take a long time to get to the point. In this paper, they poked a plastic rod into a participant's skin, directly over one of the four mechanoreceptors. </p>
 <p>They modulated the rod in a sinusoid, and kept halving its total movement length, starting at 1mm and stopping at 0.125mm peak-to-peak total travel. 1mm is considered 0dB, 0.5mm is -6dB, and so on.</p>
 <p class="caption">Sinusoidal stimulus used to move the rod, and the action potentials produced</p>
-<p><img alt="Sinusoidal stimulus used to move the rod, and the action potentials produced" src="/static/sinu_stimulus.png" /></p>
+<p><img loading="lazy" alt="Sinusoidal stimulus used to move the rod, and the action potentials produced" src="/static/sinu_stimulus.png" /></p>
 <p>The rod was moved for 5 periods of a sinusoid, at a bunch of different frequencies (powers of 2 from 0.5 to 256Hz, then also one at 400Hz). </p>
 <p>How'd they find these mechanoreceptors anyway? They used something called microneurography, or "stab tiny needle into the nerve repeatedly until you only see one mechanoreceptor spiking when we poke the victim's hand with a stiff hair". Kinda cool that our body just works like that, and we can exploit it so well. </p>
 <h1>Graphs please?</h1>
 <p>Alright, alright! Here's the averaged responses for the PC, or Pacinian corpuscle. These are egg-shaped receptors that sense high frequency vibrations. The field typically uses 1 impulse/stimulus as a breakpoint to indicate the active range of a mechanoreceptor. For the PCs at full amplitude, they are all-sensitive.</p>
 <p class="caption">Responses per sinusoidal period for all recorded Pacinians</p>
-<p><img alt="Responses per sinusoidal period for all recorded Pacinians" src="/static/sinu_PCchart.png" /></p>
+<p><img loading="lazy" alt="Responses per sinusoidal period for all recorded Pacinians" src="/static/sinu_PCchart.png" /></p>
 <p>This graph is what provides the really good reason against the rate coding hypothesis. Consider the 0dB line for 1Hz and the -6dB for 16Hz (marked in orange). The firing rates are nearly the same, yet we can clearly tell the difference between a 1Hz and 16Hz movement! </p>
 <p>Clearly, there is a little more going on than simple rate coding. </p>
 <h1>If Not Rate, What Else?</h1>
@@ -273,6 +299,28 @@ code {
 
 <p>Other peeps are using the interspike period, or burst gap, or silent gap between series of nerve firings from a single nerve to determine the frequency of vibration or texture that's being touched.</p>
 <p>I think it's some combination of latency across multiple populations, and maybe the number of spikes being sent. But what do I know? Just that there's a lot more to learn about one of our most foundational senses! Cya later!</p>
+
+    
+        <hr>
+        <p style="line-height:250%;">
+        <a class="btn btn-info" href="/tagged/mechanoreceptors/">mechanoreceptors</a>
+
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/litsearch/">litsearch</a>
+        
+        </p> 
+    
+</div>
+
+
+
+
+                    </div>
+                    <br>
+        <!-- </div> -->
+</div>
+
 
 
 

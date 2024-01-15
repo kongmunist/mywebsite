@@ -6,7 +6,7 @@
     <description>Thoughts and Work</description>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
-    <lastBuildDate>Mon, 15 Jan 2024 08:39:35 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 15 Jan 2024 08:54:56 +0000</lastBuildDate>
     <item>
       <title>First Post!</title>
       <link>blog/first</link>
@@ -1371,18 +1371,6 @@ I haven't seen this mentioned in the literature (if you had, please email it to 
 </content:encoded>
       <author>andyking99@gmail.com (Andy Kong)</author>
       <pubDate>Fri, 18 Dec 2020 00:00:00 -0500</pubDate>
-    </item>
-    <item>
-      <title>Arduino Function Generator: Square Wave with Variable Duty Cycle</title>
-      <link>blog/arduinodutycyclesquare</link>
-      <description>How to make a free, customizable square wave generator from a microcontroller you already have</description>
-      <content:encoded>Redirecting you to the [post...](https://kongmunist.medium.com/	arduino-function-generator-square-wave-with-variable-duty-cycle-c186e53e860a)
-
-&lt;script type="text/javascript"&gt;
-	document.location.href = "https://kongmunist.medium.com/	arduino-function-generator-square-wave-with-variable-duty-cycle-c186e53e860a";
-&lt;/script&gt;</content:encoded>
-      <author>andyking99@gmail.com (Andy Kong)</author>
-      <pubDate>Wed, 23 Dec 2020 00:00:00 -0500</pubDate>
     </item>
     <item>
       <title>Easy Button Hack Pt. 1</title>

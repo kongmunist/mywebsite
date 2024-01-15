@@ -8,6 +8,17 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    
+        <meta name="author" content="Andy Kong">
+        <meta name="title" content="How to stop noisy NeoPixels">
+        <meta name="description" content="Audible annoyance from WS2812B LEDs">
+        <meta name="keywords" content=" electronics, ">
+
+        <title>
+            How to stop noisy NeoPixels | Andy Kong
+        </title>
+    
+
 
 
 
@@ -240,10 +251,25 @@ code {
 </nav>
 
 
-    <h2>How to stop noisy NeoPixels</h2>
-    <p><em>When I was small, I visited my friend whose dad was an electrical engineer. I got to talking with him, and asked "Hey, what's the point of that thick bit on my cables?"</em></p>
+    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+<!-- padding-left:20px; padding-right:20px -->
+            <div class="col-md-8 col-11 p-0" style="">
+                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
+
+                
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        
+
+
+<div class="blogpage overflow-hidden" style="margin-bottom:4em;">
+    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">How to stop noisy NeoPixels</h1>
+            <p style="font-size:0.8em;"> Published May 31, 2023</p>
+<hr>
+            <p><em>When I was small, I visited my friend whose dad was an electrical engineer. I got to talking with him, and asked "Hey, what's the point of that thick bit on my cables?"</em></p>
 <p class ="caption"> Big chunky cylinder on a charging cable </p>
-<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="Big chunky cylinder on a charging cable" src="/static/nn_ferritebead.jpg" /></p>
+<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="Big chunky cylinder on a charging cable" src="/static/nn_ferritebead.jpg" /></p>
 
 <p><em>He said "that's a ferrite bead, it reduces noise," and I nodded in understanding — that explained why my cables never made noise.</em></p>
 <p><em>About a decade later, I learned about electrical noise.</em></p>
@@ -257,7 +283,7 @@ code {
 <p>I'm quite sensitive to noise, and I noticed a slight buzzing coming from my Neopixels when setting the brightness higher than 5/255. Since I'm making a desktop doohickey, I wanted to learn more about the noise, particularly how it changes with brightness. </p>
 <p>In a stroke of luck, the Circuit Playground board comes with a microphone! I wrote a small script to vary the brightness and recorded sound pressure levels (SPL) for a 0.5 second window at each level. My board has a small cover which probably amplified the measured noise. </p>
 <p class ="caption"> Graph of NeoPixel noise in dB as brightness increases </p>
-<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="Graph of NeoPixel noise in dB as brightness increases" src="/static/nn_dbvslight.png" /></p>
+<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="Graph of NeoPixel noise in dB as brightness increases" src="/static/nn_dbvslight.png" /></p>
 
 <p>Each line is represented by the LED color that produced it. Since white is produced by keeping all three LEDs on, it makes sense for it to be higher than all the others. </p>
 <p>Now I could target low and high brightness to cause the least amount of noise.</p>
@@ -265,11 +291,30 @@ code {
 <p>One factor I forgot to test is the pitch of the whining at each brightness. Some brightness levels sound more annoying than other levels, even with a lower SPL. This is probably related to the nonlinearity of human hearing. </p>
 <p>With my NeoPixels on, I recorded the audio spectra to see where the whining lay. It turns out to be much lower than the PWM frequency of the Neopixels, which means I do not understand the root causes of the noise very well. </p>
 <p class ="caption"> The three noisiest frequencies are all much lower than the PWM frequency of the NeoPixels. Vertical lines are the whining, and horizontal ones are me dropping my phone </p>
-<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="The three noisiest frequencies are all much lower than the PWM frequency of the NeoPixels. Vertical lines are the whining, and horizontal ones are me dropping my phone" src="/static/nn_points.png" /></p>
+<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="The three noisiest frequencies are all much lower than the PWM frequency of the NeoPixels. Vertical lines are the whining, and horizontal ones are me dropping my phone" src="/static/nn_points.png" /></p>
 
 <h1>Conclusion</h1>
 <p>The Circuit Playground mic also has an FFT function, and someday I will get around to recording the spectrum along with the SPL. For now, I have minimized the overall sound, and that is enough. </p>
 <p>Cya later!</p>
+
+    
+        <hr>
+        <p style="line-height:250%;">
+        <a class="btn btn-info" href="/tagged/electronics/">electronics</a>
+
+        
+        </p> 
+    
+</div>
+
+
+
+
+                    </div>
+                    <br>
+        <!-- </div> -->
+</div>
+
 
 
 

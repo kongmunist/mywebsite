@@ -8,6 +8,17 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    
+        <meta name="author" content="Andy Kong">
+        <meta name="title" content="Implementing Body Channel Communication Pt. 3">
+        <meta name="description" content="Reinventing the radio and using touch as the antenna">
+        <meta name="keywords" content=" hci,  bcc,  microcontroller,  biosig, ">
+
+        <title>
+            Implementing Body Channel Communication Pt. 3 | Andy Kong
+        </title>
+    
+
 
 
 
@@ -240,8 +251,23 @@ code {
 </nav>
 
 
-    <h2>Implementing Body Channel Communication Pt. 3</h2>
-    <div style="font-size:.75em;"> Previous posts here: <a href="../bcc1">[Part 1]</a> and <a href="../bcc2"> [Part 2] </a> </div>
+    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+<!-- padding-left:20px; padding-right:20px -->
+            <div class="col-md-8 col-11 p-0" style="">
+                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
+
+                
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        
+
+
+<div class="blogpage overflow-hidden" style="margin-bottom:4em;">
+    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Implementing Body Channel Communication Pt. 3</h1>
+            <p style="font-size:0.8em;"> Published May 15, 2021</p>
+<hr>
+            <div style="font-size:.75em;"> Previous posts here: <a href="../bcc1">[Part 1]</a> and <a href="../bcc2"> [Part 2] </a> </div>
 
 <hr>
 
@@ -249,13 +275,13 @@ code {
 <p><br>
 Here's a demo showing a reactive calendar. When a user touches the pad, their smart watch transmits their encoded ID to the computer. When decoded, the computer knows who is touching it, and can show that user's calendar. </p>
 <p class="caption">Calendar that detects user identity through their touch</p>
-<p><img alt="Calendar that detects user identity through their touch" src="/static/bcc3_caldemosmall.png" /></p>
+<p><img loading="lazy" alt="Calendar that detects user identity through their touch" src="/static/bcc3_caldemosmall.png" /></p>
 <hr>
 
 <h1>Recap of what doesn't work</h1>
 <p><a href="../bcc2">Last time</a> I showed that high frequency switching on a transmitter could be received as "spikes" of voltage on the receiver side. </p>
 <p class="caption">Dense, thin groups of spikes are digital 1s, thick spikes of noise are the 60Hz leaking in to our 0 signal</p>
-<p><img alt="Dense, thin groups of spikes are digital 1s, thick spikes of noise are the 60Hz leaking in to our 0 signal" src="/static/bcc2_every50msIS.png" /></p>
+<p><img loading="lazy" alt="Dense, thin groups of spikes are digital 1s, thick spikes of noise are the 60Hz leaking in to our 0 signal" src="/static/bcc2_every50msIS.png" /></p>
 <p>It turns out I was wrong; the spikes are only visible because the grounds were galvanically linked. I had done the separation of receiver and transmitter using a USB isolator, which produces its own ground from the laptop's USB power. This ground happens to be produced at the same potential as the transmitter's ground, so they still share the reference. </p>
 <p>When I powered the transmitter with a battery pack, the spikes dropped down to the level of the noise. They were still visible to the eye as higher movement bits of noise, but definitely impossible to detect computationally. Time to try something else.</p>
 <hr>
@@ -264,28 +290,28 @@ Here's a demo showing a reactive calendar. When a user touches the pad, their sm
 <p>I'm using a high frequency carrier wave to carry the bits, and an amp to detect the signal in the specific frequency band of the carrier wave. This is basically how radios work. The transmitter uses the digitally-modulated clock signal of the Arduino(8 MHz) to send 0s and 1s. The receiver is a passive RC high-pass filter, followed by an amplifier stage before the ADC.</p>
 <h2>Transmitter</h2>
 <p class="caption">Picture of the transmitter</p>
-<p><img alt="Picture of the transmitter" src="/static/bcc3_transmitter.jpg" /></p>
+<p><img loading="lazy" alt="Picture of the transmitter" src="/static/bcc3_transmitter.jpg" /></p>
 <p>I was lazy with the earlier prototype and tried to transmit bits using the output from flipping a pin in the <code>loop()</code> of the Arduino as fast as possible. This technique caps out at a frequency of around 100kHz, but I wanted to go higher. </p>
 <p>I found a <a href="https://arduino.stackexchange.com/questions/16698/arduino-constant-clock-output">way</a> to output the Arduino's clock signal (16MHz square wave) on a pin. Connecting that to the input of a transistor, I could then turn the clock signal on and off using another pin on the base/gate. This became the transmitter signal: high frequency clock when on, grounded when off. </p>
 <p class="caption">Raw signal from the transmitter</p>
-<p><img alt="Raw signal from the transmitter" src="/static/bcc3_raw.jpg" /></p>
+<p><img loading="lazy" alt="Raw signal from the transmitter" src="/static/bcc3_raw.jpg" /></p>
 <p>This turned out to be even easier to implement than what I tried in Pt. 2, since I only had to turn on and off a digital pin in the middle loop.</p>
 <p class="caption">Circuit for the transmitter, which is just a modulated clock signal</p>
-<p><img alt="Circuit for the transmitter, which is just a modulated clock signal" src="/static/bcc3_transmittercircuit.jpg" /></p>
+<p><img loading="lazy" alt="Circuit for the transmitter, which is just a modulated clock signal" src="/static/bcc3_transmittercircuit.jpg" /></p>
 <h2>Receiver</h2>
 <p class="caption">Picture of the receiver</p>
-<p><img alt="Picture of the receiver" src="/static/bcc3_receiver.jpg" />
+<p><img loading="lazy" alt="Picture of the receiver" src="/static/bcc3_receiver.jpg" />
 The receiver side swamps with 60Hz when I touch the input pin. This is both because the human body is a big antenna for all EMI pickup, and because the Arduino's ADC draws current from the source to measure voltages. </p>
 <p>To get rid of the 60Hz noise, we built an RC high-pass filter at 159Hz. It works surprisingly well for how close the cutoff frequency is to the noise frequency. After that, we had to add a lot of gain (300x) on the signal to see the square wave being modulated. We also built an artificial ground at 2.5V to act as the central reference for the op amp. </p>
 <p class="caption">Circuit for the reciever, composed of the stages in the above paragraph</p>
-<p><img alt="Circuit for the reciever, composed of the stages in the above paragraph" src="/static/bcc3_receivercircuit.jpg" /></p>
+<p><img loading="lazy" alt="Circuit for the reciever, composed of the stages in the above paragraph" src="/static/bcc3_receivercircuit.jpg" /></p>
 <h2>Transmitted signal</h2>
 <p>Here's what we're sending. A header of 10 so the reciever knows a signal's coming, then an ASCII character. </p>
 <p class="caption">Raw output from the transmitter with labeled sections of the data</p>
-<p><img alt="Raw output from the transmitter with labeled sections of the data" src="/static/bcc3_transmittedraw.png" /></p>
+<p><img loading="lazy" alt="Raw output from the transmitter with labeled sections of the data" src="/static/bcc3_transmittedraw.png" /></p>
 <p>And on the receiving side, the signal appears perfectly among all the 60Hz noise. </p>
 <p class="caption">Input on the receiving side, after filtering and gain. The bits are clearly visible</p>
-<p><img alt="Input on the receiving side, after filtering and gain. The bits are clearly visible" src="/static/bcc3_receivedraw.png" /></p>
+<p><img loading="lazy" alt="Input on the receiving side, after filtering and gain. The bits are clearly visible" src="/static/bcc3_receivedraw.png" /></p>
 <h2>Code</h2>
 <p>The repo can be found <a href="https://github.com/kongmunist/BCC">here</a>. The transmitter code is very simple, just a digital write and some array reading. The receiver is a little more complex, and a bit hacky to read bitstrings. Works surprisingly well though. </p>
 <h2>Final Demo</h2>
@@ -301,6 +327,34 @@ The receiver side swamps with 60Hz when I touch the input pin. This is both beca
 <h3>Cool factor</h3>
 <p>It's dope that the hardware is so simple. One microcontroller, an op amp, and some passives, and your devices can detect not only touch but also WHO touched it. Very powerful, and quite simple to add to a smartwatch *hint hint wink wink*.</p>
 <p>If you have questions about implementing this yourself, reach out via email or Twitter. BCC has some dope applications, and I'd love to create more demos using it. </p>
+
+    
+        <hr>
+        <p style="line-height:250%;">
+        <a class="btn btn-info" href="/tagged/hci/">hci</a>
+
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/bcc/">bcc</a>
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/microcontroller/">microcontroller</a>
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/biosig/">biosig</a>
+        
+        </p> 
+    
+</div>
+
+
+
+
+                    </div>
+                    <br>
+        <!-- </div> -->
+</div>
+
 
 
 

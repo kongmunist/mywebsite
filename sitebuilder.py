@@ -145,16 +145,21 @@ def sitemap():
     posts = list(blogPosts) + list(projPosts)
     posts.sort(reverse=True, key=lambda x: x['date'])
 
+    # Add images to sitemap
     pattern = '<img.*?src\s*=\s*"?(.+?)"'
-
-    for post in posts:
+    for i,post in enumerate(posts):
         ims = re.findall(pattern, post.html)
         ims = [x.split("/static/")[1] for x in ims if "static" in x]
         for i in range(len(ims)):
             if " " in ims[i]:
                 ims[i] = ims[i].split(" ")[0]
         post.meta['images'] = ims
-        print(ims)
+        # print(ims)
+
+        # Remove trailing slash from sitemap # did it in the template using string slicing. Not the cleanest method.
+        # print(post)
+        # print(post.path)
+        # print(post.meta)
     temp = render_template("sitemap.xml", posts=posts, baseURL="https://andykong.org")
     response = make_response(temp)
     response.headers["Content-Type"] = "application/xml"
@@ -211,9 +216,12 @@ def mainblog():
 
     blogPages.sort(reverse=True, key= lambda x: x[0])
     blogPages=[x[1] for x in blogPages]
+    # pageLens = [len(x.body.split(" ")) for x in blogPages]
+    for page in blogPages:
+        page.meta['len'] = len(page.body.split(" "))
     return render_template('blogmain.html', page=[], pages=blogPages)
 
-@app.route("/blog/<string:title>")
+@app.route("/blog/<string:title>/")
 def blog(title):
     print("blog page " + title)
     page = [pages.get("blog/" + title)]

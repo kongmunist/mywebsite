@@ -8,6 +8,17 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    
+        <meta name="author" content="Andy Kong">
+        <meta name="title" content="My new favorite EEG technique: Phase-rectified signal averaging">
+        <meta name="description" content="Basic method of aligning waves helps when averaging out noise from long time-series">
+        <meta name="keywords" content=" ssvep,  bci,  eeg,  paperhighlight, ">
+
+        <title>
+            My new favorite EEG technique: Phase-rectified signal averaging | Andy Kong
+        </title>
+    
+
 
 
 
@@ -240,14 +251,57 @@ code {
 </nav>
 
 
-    <h2>My new favorite EEG technique: Phase-rectified signal averaging</h2>
-    <p>Today I'm going to tell you about the technique of phase-rectified signal averaging, or PRSA, applied to EEG signals. I stumbled upon <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.160.879&amp;rep=rep1&amp;type=pdf">this</a> paper talking about it. Originally the technique was applied to like astronomy data or something, you can find that here, <a href="https://www.sciencedirect.com/science/article/pii/S037843710501006X">"Phase-rectified signal averaging detects quasi-periodicities in non-stationary
+    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+<!-- padding-left:20px; padding-right:20px -->
+            <div class="col-md-8 col-11 p-0" style="">
+                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
+
+                
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        
+
+
+<div class="blogpage overflow-hidden" style="margin-bottom:4em;">
+    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">My new favorite EEG technique: Phase-rectified signal averaging</h1>
+            <p style="font-size:0.8em;"> Published January 13, 2021</p>
+<hr>
+            <p>Today I'm going to tell you about the technique of phase-rectified signal averaging, or PRSA, applied to EEG signals. I stumbled upon <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.160.879&amp;rep=rep1&amp;type=pdf">this</a> paper talking about it. Originally the technique was applied to like astronomy data or something, you can find that here, <a href="https://www.sciencedirect.com/science/article/pii/S037843710501006X">"Phase-rectified signal averaging detects quasi-periodicities in non-stationary
 data"</a>. This guy who used to be at Philips Research wrote it, he now works at some Mattress company's research department doing sleep EEG to determine how comfy their products are. Interesting career path.</p>
 <h2>What's all this PRSA stuff anyway?</h2>
 <p>Anyway, onto the good stuff. Basically, sometimes your SSVEP signal is dispersed along a time series — maybe it's not always coherent, and it comes and goes and the phase is not directly sequential. When you average your data, you find that a lot of the signal was overlapping, and not in the good way. It averages to zero, and your signal is worse than the noise previously was. </p>
-<p><img alt="Graphs from original PRSA paper" src="/static/prsaoriginal.png" /></p>
+<p><img loading="lazy" alt="Graphs from original PRSA paper" src="/static/prsaoriginal.png" /></p>
 <p>This technique relies on the waveform <em>usually</em> lining up within the noisy signal. Which is to say, when the waveform of interest goes up, the noise+signal overall should go up too, at least for a majority of the times you check it. So you average a big window around all "up" or "down" points, and might be able to pull out the original signal. The original paper uses some jank original signal, so it looks atrocious even after averaging. I'm told this was on purpose. Why couldn't they just use a sine wave?</p>
 <p>I can't wait to try it. Looks like it won't work, but it seems stupid enough that it just might.</p>
+
+    
+        <hr>
+        <p style="line-height:250%;">
+        <a class="btn btn-info" href="/tagged/ssvep/">ssvep</a>
+
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/bci/">bci</a>
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/eeg/">eeg</a>
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/paperhighlight/">paperhighlight</a>
+        
+        </p> 
+    
+</div>
+
+
+
+
+                    </div>
+                    <br>
+        <!-- </div> -->
+</div>
+
 
 
 

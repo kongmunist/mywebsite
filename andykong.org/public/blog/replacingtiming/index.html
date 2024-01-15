@@ -8,6 +8,17 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    
+        <meta name="author" content="Andy Kong">
+        <meta name="title" content="Replacing Timing.app">
+        <meta name="description" content="Doing self-logging">
+        <meta name="keywords" content=" quantifiedself,  applescript,  python, ">
+
+        <title>
+            Replacing Timing.app | Andy Kong
+        </title>
+    
+
 
 
 
@@ -240,10 +251,25 @@ code {
 </nav>
 
 
-    <h2>Replacing Timing.app</h2>
-    <p>I have been working on replacing a piece of software I use on a weekly basis. The Mac app <a href="https://timingapp.com/">Timing</a> is a computer context tracker, which is to say it logs what windows have been open as long as you're using it. It even offers you a beautiful interface to interact with your data through.</p>
+    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+<!-- padding-left:20px; padding-right:20px -->
+            <div class="col-md-8 col-11 p-0" style="">
+                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
+
+                
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        
+
+
+<div class="blogpage overflow-hidden" style="margin-bottom:4em;">
+    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Replacing Timing.app</h1>
+            <p style="font-size:0.8em;"> Published January 9, 2022</p>
+<hr>
+            <p>I have been working on replacing a piece of software I use on a weekly basis. The Mac app <a href="https://timingapp.com/">Timing</a> is a computer context tracker, which is to say it logs what windows have been open as long as you're using it. It even offers you a beautiful interface to interact with your data through.</p>
 <p class="caption">My Timing history for the past year</p>
-<p><img alt="Screencap of my Timing history for the past year" src="/static/rt_timingdashboard.png" /></p>
+<p><img loading="lazy" alt="Screencap of my Timing history for the past year" src="/static/rt_timingdashboard.png" /></p>
 <p>Timing has cost me $8.50 a month for the past 6 months, and they primarily target freelancers who bill clients by the hour. Unfortunately, I am not a contractor, and Timing does not help me track hours. Timing just offers me a cool composite of time as I've spent it on my laptop in the past day/week/month. And though I can't justify its cost,  I still love the functionality. So I've been trying to replace it. </p>
 <h1>General plan</h1>
 <p>Timing calls itself a time tracker, but I don't think that's really what I want. I want to know how I'm using my laptop during the course of a day, and make adjustments based on whatever I happen to want to change.</p>
@@ -259,26 +285,51 @@ code {
 <h2>Performance</h2>
 <p>Here's a photo of the two programs in the activity monitor, monitoring the same stretch of 16 minutes.  </p>
 <p class="caption">CPU time for Timing</p>
-<p><img alt="CPU time for Timing" src="/static/rt_cputesttiming.png" /></p>
+<p><img loading="lazy" alt="CPU time for Timing" src="/static/rt_cputesttiming.png" /></p>
 <p>vs.</p>
 <p class="caption">CPU time for Casey</p>
-<p><img alt="CPU time for Casey" src="/static/rt_cputestcasey.png" /></p>
+<p><img loading="lazy" alt="CPU time for Casey" src="/static/rt_cputestcasey.png" /></p>
 <p>We see the CPU time of Casey is 5.66 seconds compared to Timing's 7.68, around a 25% reduction. </p>
 <p>The memory footprint of Casey is also lower, sitting at 27.4 MB vs. 48.1 MB for Timing, representing a savings of 22.2%. </p>
 <hr>
 
 <h2>Storage</h2>
 <p>Casey retrieves user context every second, and accumulated 1033 new lines and 179kB of extra storage during the test. Each record takes up around 173 bytes pre-compression. After compression, the total storage is only 6kB, putting each log entry at 5.8 bytes for Casey. </p>
-<p><img alt="Compressed and uncompressed log sizes for Casey, Finder screenshot" src="/static/rt_stotestcasey.png" /></p>
+<p><img loading="lazy" alt="Compressed and uncompressed log sizes for Casey, Finder screenshot" src="/static/rt_stotestcasey.png" /></p>
 <p>I planned on comparing this to Timing's 12kB + 235kB in the sync.db and wal.db respectively (they do not immediately store it into a sqlite database), assuming the same logging rate.  But I personally can't believe that Timing could be so terribly inefficient. At 239 bytes/log, it's worse than Casey when naively storing everything as text directly. I'll instead refer to the 2400 hours of data it has recorded into a storage folder only 320MB in size, including backups. This means it sits at 2346 hours/320.8 MB = 38 bytes/sec. A much more reasonable quantity, still beaten handily by Casey's 5.8 bytes/log.</p>
 <p class="caption">My Timing records and how much space they take up</p>
-<p><img alt="My Timing records and how much space they take up" src="/static/rt_stotimingrecords.png" /></p>
+<p><img loading="lazy" alt="My Timing records and how much space they take up" src="/static/rt_stotimingrecords.png" /></p>
 <h1>Shortcomings</h1>
 <p>Casey does not yet have a GUI, or a plan for long-term backup storage. The lookup and indexing system is still not in place, nor is the aggregation of data. Casey also lacks the periodic reminder system that I want it to have through emails. But it's a WIP, so I'm happy to document its baby steps.</p>
 <h1>Conclusion</h1>
 <p>I want to conclude by saying that Timing is a beautifully polished piece of software. I applaud the Timing team for making such a smooth application that does one job and does it well. But it isn't what I wanted, and it's a bit expensive for me. </p>
 <p>The storage and performance don't matter so much since we're talking about such small beans (7 secs on 16 minutes is around 0.7%, 320MB vs 3.2GB is not such a big swing for a year of data), but this is my current optimization. </p>
 <p>More progress tomorrow. </p>
+
+    
+        <hr>
+        <p style="line-height:250%;">
+        <a class="btn btn-info" href="/tagged/quantifiedself/">quantifiedself</a>
+
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/applescript/">applescript</a>
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/python/">python</a>
+        
+        </p> 
+    
+</div>
+
+
+
+
+                    </div>
+                    <br>
+        <!-- </div> -->
+</div>
+
 
 
 

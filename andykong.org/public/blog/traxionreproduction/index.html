@@ -8,6 +8,17 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    
+        <meta name="author" content="Andy Kong">
+        <meta name="title" content="Recreating the Traxion psychophysics effect">
+        <meta name="description" content="Only 8 years late!">
+        <meta name="keywords" content=" electronics,  haptics, ">
+
+        <title>
+            Recreating the Traxion psychophysics effect | Andy Kong
+        </title>
+    
+
 
 
 
@@ -240,20 +251,57 @@ code {
 </nav>
 
 
-    <h2>Recreating the Traxion psychophysics effect</h2>
-    <p>Hello! I recently learned of this paper called <a href="https://lab.rekimoto.org/projects/traxion/">Traxion</a>, wherein a genius visionary named Rekimoto discovered that asymmetrical vibration with a linear vibration motor caused a "pulling sensation" on a user's finger. A fake force that feels 32 grams of real force! Amazing!</p>
+    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+<!-- padding-left:20px; padding-right:20px -->
+            <div class="col-md-8 col-11 p-0" style="">
+                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
+
+                
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        
+
+
+<div class="blogpage overflow-hidden" style="margin-bottom:4em;">
+    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Recreating the Traxion psychophysics effect</h1>
+            <p style="font-size:0.8em;"> Published June 2, 2021</p>
+<hr>
+            <p>Hello! I recently learned of this paper called <a href="https://lab.rekimoto.org/projects/traxion/">Traxion</a>, wherein a genius visionary named Rekimoto discovered that asymmetrical vibration with a linear vibration motor caused a "pulling sensation" on a user's finger. A fake force that feels 32 grams of real force! Amazing!</p>
 <p>To tell the truth, I straight-up couldn't believe it until I tried it. With my limited setup, I produced 3V using an LM317 (powered by a 9V I acquired), then drove a transistor with an Arduino to generate the ramp/square wave I needed. </p>
 <p class="caption">Traxion setup</p>
-<p><img alt="Traxion setup" src="/static/traxion_setup.jpg" /></p>
+<p><img loading="lazy" alt="Traxion setup" src="/static/traxion_setup.jpg" /></p>
 <p>Inside the linear actuator, there's a little weight anchored by spring to the center position of the body. This weight is what moves forward when we give the device a HIGH voltage, and it jerks back when we leave it unpowered. This "asymmetry" is what creates the sensation of a force. </p>
 <p>According to this more recent <a href="https://sci-hub.st/10.1109/HAPTICS.2016.7463151">paper</a>, the effect is caused by the skin dragging more in ON direction than when it turns OFF. This is due to the forward ON happening faster than the spring can pull it OFF. Something about detectable vs. unnoticeable acceleration. </p>
 <p>The authors drive their device with a high plateau, followed by a slow ramp down. This eases the spring-back while keeping the ON switch waaay fast. They claim the effect is strongest at 40Hz, but I found that just a simple duty cycled square wave (100Hz, 20% duty cycle) does the effect too, just less. </p>
 <p class="caption">Linear actuator I used. The little white pin is the weight, and it creates the force sensation in the length-wise axis</p>
-<p><img alt="Linear actuator I used. The little white pin is the weight, and it creates the force sensation in the length-wise axis" src="/static/traxion_linearact.jpg" /></p>
+<p><img loading="lazy" alt="Linear actuator I used. The little white pin is the weight, and it creates the force sensation in the length-wise axis" src="/static/traxion_linearact.jpg" /></p>
 <h2>Note</h2>
 <p>This may sound silly, but I was surprised to feel vibration. Yea, yea, the thing is turning on and off really fast, but the paper only ever mentioned the force that it produced! I can't be blamed for wanting the vibration to go away to leave us with a free, fake force produced by a tiny vibrating motor. Maybe that's too easy though.</p>
 <p>I want to see if this can be done on a larger scale, maybe from a handheld object? (VR controller would be cool). Though vibrating things are hard to hold onto. </p>
 <p>That's all for now, cya later!</p>
+
+    
+        <hr>
+        <p style="line-height:250%;">
+        <a class="btn btn-info" href="/tagged/electronics/">electronics</a>
+
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/haptics/">haptics</a>
+        
+        </p> 
+    
+</div>
+
+
+
+
+                    </div>
+                    <br>
+        <!-- </div> -->
+</div>
+
 
 
 

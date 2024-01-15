@@ -8,6 +8,17 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    
+        <meta name="author" content="Andy Kong">
+        <meta name="title" content="Implementing Body Channel Communication Pt. 2">
+        <meta name="description" content="Look Ma, no shared ground!">
+        <meta name="keywords" content=" hci,  bcc,  microcontroller,  biosig, ">
+
+        <title>
+            Implementing Body Channel Communication Pt. 2 | Andy Kong
+        </title>
+    
+
 
 
 
@@ -240,14 +251,29 @@ code {
 </nav>
 
 
-    <h2>Implementing Body Channel Communication Pt. 2</h2>
-    <p>Continuing from <a href="../bcc1">last time</a>, I'm trying to make our body channel communication system work without requiring a shared ground between the two devices. And I got it working in a very bootstrapped way, which may be usable for our class demo. Read on for more!</p>
+    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+<!-- padding-left:20px; padding-right:20px -->
+            <div class="col-md-8 col-11 p-0" style="">
+                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
+
+                
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        
+
+
+<div class="blogpage overflow-hidden" style="margin-bottom:4em;">
+    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Implementing Body Channel Communication Pt. 2</h1>
+            <p style="font-size:0.8em;"> Published April 27, 2021</p>
+<hr>
+            <p>Continuing from <a href="../bcc1">last time</a>, I'm trying to make our body channel communication system work without requiring a shared ground between the two devices. And I got it working in a very bootstrapped way, which may be usable for our class demo. Read on for more!</p>
 <hr>
 
 <h1>Recap</h1>
 <p>You may remember my two-Arduino setup from last time, using one as a transmitter and the other as a receiver. Ideally you'd want either uC to work for both functions, but that's easily tackled later. The previous setup utilized the shared ground of my computer's chassis to transmit signal reliably. I also showed some experiments I tried without shared ground, and they didn't work as well. The signals sent without shared ground had a lot of 60Hz noise, and the added signal square wave signal swamped the ADC's input range. </p>
 <p class="caption">Shared ground BCC setup from last post</p>
-<p><img alt="Shared ground BCC setup from last post" src="/static/bcc1_connectedground.jpg" /></p>
+<p><img loading="lazy" alt="Shared ground BCC setup from last post" src="/static/bcc1_connectedground.jpg" /></p>
 <hr>
 
 <h1>Propagating higher frequency signals without a ground</h1>
@@ -259,10 +285,10 @@ code {
 <h1>Picking up the spikes</h1>
 <p>When I first started testing, I realized that there was a great asymmetry depending on what powered the board. I used a USB isolator to "separate" the grounds, and initially I had the transmitter plugged into the isolated USB port. The signals I got had awful 60Hz noise, but when the train of square waves was transmitted you could still clearly see it. If I had stopped here, I would have to deal with a mediocre bitrate and a terrible filtering problem. </p>
 <p class="caption">The little solid spikes are 60Hz noise, and the denser, thin spikes are periods of transmission.</p>
-<p><img alt="Graph of serial plotter. The little solid spikes are 60Hz noise, and the denser, thin spikes are periods of transmission. " src="/static/bcc2_every50msIS.png" /></p>
+<p><img loading="lazy" alt="Graph of serial plotter. The little solid spikes are 60Hz noise, and the denser, thin spikes are periods of transmission. " src="/static/bcc2_every50msIS.png" /></p>
 <p>Then, I had the thought to switch them. Now the receiver was isolated, and my laptop powered the transmitter. Voila! Immediately the 60Hz pickup disappeared, and the spikes were now even larger. Win-win!</p>
 <p class="caption">Receiver readings. Spikes are 1s, and flat bits are 0s. Note the lack of 60Hz noise: when it's flat, it's flat. </p>
-<p><img alt="Receiver readings. Spikes are 1s, and flat bits are 0s. Note the lack of 60Hz noise: when it's flat, it's flat. " src="/static/bcc2_everyhalfsecondIR.png" /></p>
+<p><img loading="lazy" alt="Receiver readings. Spikes are 1s, and flat bits are 0s. Note the lack of 60Hz noise: when it's flat, it's flat. " src="/static/bcc2_everyhalfsecondIR.png" /></p>
 <p>I think that the chassis/external cabling of my laptop allowed it to pick up a lot more noise than the isolated Arduino on its own. When the computer powered the receiver, the reciever gets a lot of that noise passed into it. However in this second config, the receiver seems to not pick up much noise on its own.</p>
 <hr>
 
@@ -270,23 +296,51 @@ code {
 <h3>Through in-line capacitor vs. without</h3>
 <p>If you recall, I'm linking my receiver's analog input with GND with a high value resistor. I wanted to compare touching the analog pin directly with touching it through a capacitor. I expected to be able to charge the capacitor and sort of integrate the spikes into a more digital looking bit, but it seems to not help that much.</p>
 <p class="caption">Receiver readings when touching through in-line capacitor</p>
-<p><img alt="Receiver readings when touching through in-line capacitor" src="/static/bcc2_withinlinecapIR.png" /></p>
+<p><img loading="lazy" alt="Receiver readings when touching through in-line capacitor" src="/static/bcc2_withinlinecapIR.png" /></p>
 <p class="caption">Receiver readings when touching analog pin directly</p>
-<p><img alt="Receiver readings when touching analog pin directly" src="/static/bcc2_withoutinlinecapIR.png" /></p>
+<p><img loading="lazy" alt="Receiver readings when touching analog pin directly" src="/static/bcc2_withoutinlinecapIR.png" /></p>
 <p>Using a capacitor first seems to increase the overall signal by a tiny amount. Or it could be selection bias! Either way, I don't think it matters too much. </p>
 <h3>Software integration</h3>
 <p>I then tried to just keep a moving average of the analog readings. This is a 10-sample ring buffer that only averages the past 10 readings. The noise on the 0s has decreased a bit in the averaged output. The spike clusters are also now clearer, but at what cost? The highest point is now around 150 instead of 250. Not so bad. I'll probably choose a max filter instead to better approximate a logic signal.</p>
 <p class="caption">Short-term moving average</p>
-<p><img alt="Short-term moving average" src="/static/bcc2_withsmoothingIR.png" /></p>
+<p><img loading="lazy" alt="Short-term moving average" src="/static/bcc2_withsmoothingIR.png" /></p>
 <p>I also tried a counting filter which output 700 if there were more than 5 samples &gt; 100 in the past 10 seconds, and 0 otherwise. </p>
 <p class="caption">Boolean filter of (num samples > 100) > 5</p>
-<p><img alt="Boolean filter of (num samples &gt; 100) &gt; 5" src="/static/bcc2_countingfilterIS.png" /></p>
+<p><img loading="lazy" alt="Boolean filter of (num samples &gt; 100) &gt; 5" src="/static/bcc2_countingfilterIS.png" /></p>
 <h1>Highest speed</h1>
 <p>The fastest speed I tried was a bitrate of 50Hz. A pulse train was sent every 10ms, then not sent out for 10ms. Looks good, there are at least 5 received bits within each window, and I think a human would be able to pretty clearly differentiate between 1s and 0s. </p>
 <p class="caption">50Hz train of pulses transferring between the transmitter and reciever</p>
-<p><img alt="50Hz train of pulses transferring between the transmitter and reciever" src="/static/bcc2_every10msIR.png" /></p>
+<p><img loading="lazy" alt="50Hz train of pulses transferring between the transmitter and reciever" src="/static/bcc2_every10msIR.png" /></p>
 <h1>Conclusion and next steps</h1>
 <p>I just want to make it clear, this method sucks. It's really hacky, and the receiver needs to have a much better and faster analog-to-digital converter for it to properly receive the spikes. I'm trying it out with a better microcontroller soon, and we'll see if the spikes can be made even tighter. I want a data rate of at least 1000 bits/sec, and it would be <em>amazing</em> to hit 40 kilobits/sec since that's a typical RFID data transfer rate. But at least it works without a shared ground now!</p>
+
+    
+        <hr>
+        <p style="line-height:250%;">
+        <a class="btn btn-info" href="/tagged/hci/">hci</a>
+
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/bcc/">bcc</a>
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/microcontroller/">microcontroller</a>
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/biosig/">biosig</a>
+        
+        </p> 
+    
+</div>
+
+
+
+
+                    </div>
+                    <br>
+        <!-- </div> -->
+</div>
+
 
 
 

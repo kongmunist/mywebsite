@@ -8,6 +8,17 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    
+        <meta name="author" content="Andy Kong">
+        <meta name="title" content="Trying out various peak detection techniques for the SSVEP">
+        <meta name="description" content="Garbage in, garbage out.">
+        <meta name="keywords" content=" ssvep,  eeg,  bci,  dsp, ">
+
+        <title>
+            Trying out various peak detection techniques for the SSVEP | Andy Kong
+        </title>
+    
+
 
 
 
@@ -240,8 +251,23 @@ code {
 </nav>
 
 
-    <h2>Trying out various peak detection techniques for the SSVEP</h2>
-    <p>Today I tried a bunch of techniques to try and detect SSVEP peaks in long streams of EEG data. </p>
+    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+<!-- padding-left:20px; padding-right:20px -->
+            <div class="col-md-8 col-11 p-0" style="">
+                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
+
+                
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        
+
+
+<div class="blogpage overflow-hidden" style="margin-bottom:4em;">
+    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Trying out various peak detection techniques for the SSVEP</h1>
+            <p style="font-size:0.8em;"> Published January 18, 2021</p>
+<hr>
+            <p>Today I tried a bunch of techniques to try and detect SSVEP peaks in long streams of EEG data. </p>
 <p>My data came from three trials were all around 40 seconds long, and involved me staring at an LED blinking at a duty cycle of 50% and frequencies of 18, 35, and 65Hz. The techniques I used were (broadly): single-channel averaging (SCA), phase-rectified signal averaging (PRSA), autocorrelation (AC), and plain ol' power spectral distribution (PSD). Lots of three letter agencies. </p>
 <h2>Procedure</h2>
 <h3>Data</h3>
@@ -265,11 +291,11 @@ code {
 </li>
 </ul>
 <p class="caption">Graph of power spectral distribution of a 35Hz signal, fed in 5s increments and peak detected from 10-60Hz</p>
-<p><img alt="Graph of power spectral distribution of a 35Hz signal, fed in 5s increments and peak detected from 10-60Hz" src="/static/PSD5secwindow.png" /></p>
+<p><img loading="lazy" alt="Graph of power spectral distribution of a 35Hz signal, fed in 5s increments and peak detected from 10-60Hz" src="/static/PSD5secwindow.png" /></p>
 <p class="caption">Graph of power spectral distribution of a single-channel averaged 35Hz signal, split in 5s increments and peak detected from 10-60Hz</p>
-<p><img alt="Graph of power spectral distribution of a single-channel averaged 35Hz signal, split in 5s increments and peak detected from 10-60Hz" src="/static/SCA5secwindow.png" /></p>
+<p><img loading="lazy" alt="Graph of power spectral distribution of a single-channel averaged 35Hz signal, split in 5s increments and peak detected from 10-60Hz" src="/static/SCA5secwindow.png" /></p>
 <p class="caption">Graph of power spectral distribution of a PRSA 35Hz signal, split in 5s increments and peak detected from 10-60Hz</p>
-<p><img alt="Graph of power spectral distribution of a PRSA 35Hz signal, split in 5s increments and peak detected from 10-60Hz" src="/static/PRSA5secwindow.png" /></p>
+<p><img loading="lazy" alt="Graph of power spectral distribution of a PRSA 35Hz signal, split in 5s increments and peak detected from 10-60Hz" src="/static/PRSA5secwindow.png" /></p>
 <p>The SNRs are as follows, though from the graph it's pretty clear which one has the best line around 35 Hz (It's the PRSA, the line is clearly there and it's not as noisy as SCA).</p>
 <ul>
 <li>
@@ -285,11 +311,11 @@ code {
 <p>Bonus - Autocorrelation + PSD (Not shown)      # SNR 1.35 at 10 sec, 1.1 at 5 sec</p>
 <p>Here's the picture of the PRSA working on a 10 second window of data. It's almost a solid bar, concentrated around 35Hz. This was the best result I got.</p>
 <p class="caption">Graph of power spectral distribution of a PRSA 35Hz signal, split in 10s increments and peak detected from 10-60Hz. Notice how much nicer it is than the noisy messes above.</p>
-<p><img alt="Graph of power spectral distribution of a PRSA 35Hz signal, split in 10s increments and peak detected from 10-60Hz. Notice how much nicer it is than the noisy messes above." src="/static/PRSA10secwindow.png" /></p>
+<p><img loading="lazy" alt="Graph of power spectral distribution of a PRSA 35Hz signal, split in 10s increments and peak detected from 10-60Hz. Notice how much nicer it is than the noisy messes above." src="/static/PRSA10secwindow.png" /></p>
 <h3>Does order of filtering matter for single-channel averaging?</h3>
 <p>No, except for the notch filter. Here, the blue line shows filtering before averaging, and the orange shows filtering afterwards. We see that the 60Hz makes a comeback if you average after filtering, but it doesn't really affect the rest of the graph at all. </p>
 <p class="caption">Single channel averaging comparison between filtering before (orange) and after (blue)</p>
-<p><img alt="Single channel averaging comparison between filtering before (orange) and after (blue)" src="/static/SCAfilterordercomparison.png" /></p>
+<p><img loading="lazy" alt="Single channel averaging comparison between filtering before (orange) and after (blue)" src="/static/SCAfilterordercomparison.png" /></p>
 <h3>Can you use overlapping windows for single-channel averaging?</h3>
 <p>No. It really heavily concentrates the frequency band you allow it to have (If you do 40 length windows at a sample rate of 200Hz, you get heavy power at ALL multiples of 5Hz, and nowhere else). Completely unusable. The power of each peak isn't even a metric for anything either. </p>
 <h3>Does autocorrelation improve the ability of the other methods mentioned above, applied before or after?</h3>
@@ -300,7 +326,7 @@ code {
 <p>The PRSA definitely takes the cake for best peak detection method I looked at today, but I think that they all suck for short data lengths (&lt;=5 sec). It's quite difficult to get any of them to be consistently active, especially since the SSVEP is so temporally varying anyway. </p>
 <p>I think I'm going with the PRSA for now, since it appears to be sort of consistent. Maybe I can do a history-based voting system or something...</p>
 <p class="caption">Comparison of SCA and PRSA for a 5 second sliding window. SCA is much noisier, and doesn't always help fill in the gaps left by PRSA</p>
-<p><img alt="Comparison of SCA and PRSA for a 5 second sliding window. SCA is much noisier, and doesn't always help fill in the gaps left by PRSA" src="/static/SCAvsPRSA5secwindow.png" /></p>
+<p><img loading="lazy" alt="Comparison of SCA and PRSA for a 5 second sliding window. SCA is much noisier, and doesn't always help fill in the gaps left by PRSA" src="/static/SCAvsPRSA5secwindow.png" /></p>
 <h2>Takeaways</h2>
 <p>These techniques work great for me for more than 10 seconds of data, but that just isn't feasible for real usage. Also it's annoying for me to look at a light for that long. </p>
 <h2>Next steps</h2>
@@ -308,6 +334,34 @@ code {
 <p>I also want to try the different wavelength LEDs again. With peak detection, it might be better than just amplitude thresholding or something.</p>
 <p>As far as new research goes, I want to try using the Stability Coefficient, empirical mode decomposition, and similary of background. Those are next. EMD removes noise, SC offers decent SSVEP identification accuracy at short data chunks around 1 second (voting system!), and similarity of background is close to SC. I also want to try multiple electrodes, and concat their data as if it's one stream. Then I could use PRSA and get great results from "10 seconds of data". </p>
 <p>Ok! Cool, cya around.</p>
+
+    
+        <hr>
+        <p style="line-height:250%;">
+        <a class="btn btn-info" href="/tagged/ssvep/">ssvep</a>
+
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/eeg/">eeg</a>
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/bci/">bci</a>
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/dsp/">dsp</a>
+        
+        </p> 
+    
+</div>
+
+
+
+
+                    </div>
+                    <br>
+        <!-- </div> -->
+</div>
+
 
 
 

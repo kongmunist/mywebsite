@@ -14,7 +14,7 @@
 
   {% for post in posts %}
     <url>
-    <loc>{{baseURL}}{{ url_for("page", path=post.path) }}</loc>
+    <loc>{{baseURL}}{{ url_for("page", path=post.path)[:-1] }}</loc>
       {% for im in post.meta.images %}
         <image:image>
           <image:loc>

@@ -8,6 +8,17 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    
+        <meta name="author" content="Andy Kong">
+        <meta name="title" content="Why are Javascript libraries so annoying">
+        <meta name="description" content="What do you mean everything is a global???">
+        <meta name="keywords" content=" webdev,  javascript, ">
+
+        <title>
+            Why are Javascript libraries so annoying | Andy Kong
+        </title>
+    
+
 
 
 
@@ -240,8 +251,23 @@ code {
 </nav>
 
 
-    <h2>Why are Javascript libraries so annoying</h2>
-    <p>I am writing a rather complex Javascript project at the moment, and needed to include two different Javascript libraries. One is <a href="https://p5js.org/">p5.js</a>, which is just Processing ported to HTML and used for drawing and a lot of visual display stuff. The other is <a href="https://mlweb.loria.fr/">mlweb</a>, which is a machine learning library written in pure Javascript. </p>
+    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+<!-- padding-left:20px; padding-right:20px -->
+            <div class="col-md-8 col-11 p-0" style="">
+                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
+
+                
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        
+
+
+<div class="blogpage overflow-hidden" style="margin-bottom:4em;">
+    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Why are Javascript libraries so annoying</h1>
+            <p style="font-size:0.8em;"> Published November 28, 2020</p>
+<hr>
+            <p>I am writing a rather complex Javascript project at the moment, and needed to include two different Javascript libraries. One is <a href="https://p5js.org/">p5.js</a>, which is just Processing ported to HTML and used for drawing and a lot of visual display stuff. The other is <a href="https://mlweb.loria.fr/">mlweb</a>, which is a machine learning library written in pure Javascript. </p>
 <p><u><strong>One of the cursed things about using Javascript is that most libraries are written exclusively as a global import</strong></u>, so importing two large libraries is a nightmare if any of their functions overlap. While the ES6 standard (2015 major update to Javascript) recommends libraries encapsulate their functions into their own namespace, older ones or lazy ones still don't do it.</p>
 <p>This is annoying in Javascript, but isn't a problem at all in Python. Importing a library by default forces you to use their import name before any function or variable from that library (think <code>cv2.imread()</code> from <code>import cv2</code>, or <code>os.walk</code> from <code>import os</code>). </p>
 <p>In my case, <code>sin</code> and <code>tan</code> and a few other math functions overlapped. Though both functions do the same thing, the problem arises because of the format that they each return. If the p5.js function returns their own P5 class of int or Array, then the mlweb function calling it wouldn't be able to parse its output and crash. </p>
@@ -259,6 +285,28 @@ code {
 <h3>Final fix</h3>
 <p>In the end, it turns out p5.js DOES conform to ES6, and can be wrapped in a big function wherever you call its functions and variables to not leak into the global namespace. With this solution, I stopped looking further into it. You can also invoke p5.js whenever you want in your javascript, if the problem is just the order in which the functions overlap (lazier, but easier).</p>
 <p>A Javascript encapsulator script would be really useful if Javascript continues being the norm for web stuff and people push more and more code into Javascript. It doesn't seem super hard, but for now there's not much of a fix and I'm busy. Summer project, anyone?</p>
+
+    
+        <hr>
+        <p style="line-height:250%;">
+        <a class="btn btn-info" href="/tagged/webdev/">webdev</a>
+
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/javascript/">javascript</a>
+        
+        </p> 
+    
+</div>
+
+
+
+
+                    </div>
+                    <br>
+        <!-- </div> -->
+</div>
+
 
 
 

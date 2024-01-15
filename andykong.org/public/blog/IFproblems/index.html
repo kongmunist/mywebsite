@@ -8,6 +8,17 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    
+        <meta name="author" content="Andy Kong">
+        <meta name="title" content="Detecting instantaneous frequency is hard">
+        <meta name="description" content="Major blockades to fast, effective BCI">
+        <meta name="keywords" content=" thoughts,  bci,  dsp,  fft, ">
+
+        <title>
+            Detecting instantaneous frequency is hard | Andy Kong
+        </title>
+    
+
 
 
 
@@ -240,8 +251,23 @@ code {
 </nav>
 
 
-    <h2>Detecting instantaneous frequency is hard</h2>
-    <p>Hi! Today we're going to be talking about FFT bins and time. </p>
+    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+<!-- padding-left:20px; padding-right:20px -->
+            <div class="col-md-8 col-11 p-0" style="">
+                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
+
+                
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        
+
+
+<div class="blogpage overflow-hidden" style="margin-bottom:4em;">
+    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Detecting instantaneous frequency is hard</h1>
+            <p style="font-size:0.8em;"> Published January 31, 2021</p>
+<hr>
+            <p>Hi! Today we're going to be talking about FFT bins and time. </p>
 <p>When you first take an FFT, whether it be <code>scipy.fft.rfft</code> or MATLAB's built-in, you may have had to convert from a "bin number" to the frequency range that bin represented. This formula is pretty simple, but might've been tricky to google initially; the Nth bin contains frequencies from N x (sample rate/sample length) to (N+1) x (sample rate/sample length). </p>
 <p>If you were like me, you spent some time staring at the constant (sample rate/sample length) term that each bin was getting multiplied by. The surprising part was that this ratio was independent of sample rate, meaning that the frequency resolution you got from the FFT is entirely dependent on how long the signal is sampled and nothing else. Of course, the total NUMBER of bins you can get is increased if the sample rate goes up (up to the Nyquist frequency of sample rate/2), but that doesn't help you if your signal is in the low Hz. </p>
 <p>Now, if you do RF stuff, this hardly matters. FM radio operates on increments of 0.1Mhz, so a 10 µs sample length is sufficient to get the bin resolution you need. This is basically finding the instantaneously frequency of a signal — we don't notice 10 µs at all. </p>
@@ -249,6 +275,34 @@ code {
 <p>Besides that, the number of inputs is reduced, since only 1 Hz differences can be detected. This leaves us with the whole Hz increments from 10-20Hz, which is only about 10 options. If the possible frequency bins were doubled, then there would be twice inputs; however, to get 0.5Hz bins you'd need 2 seconds of data. These are hardly instantaneous methods now, and EEG doesn't become any more reliable with tighter frequency bins.</p>
 <p>And don't even get me started on the time-frequency resolution tradeoff. EEG signals are incredibly temporal, meaning a 10Hz signal may only exist for a second within a longer period of recorded data. This is why techniques like phase-rectified signal averaging work so well for it. But that's another post.</p>
 <p>Bye!</p>
+
+    
+        <hr>
+        <p style="line-height:250%;">
+        <a class="btn btn-info" href="/tagged/thoughts/">thoughts</a>
+
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/bci/">bci</a>
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/dsp/">dsp</a>
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/fft/">fft</a>
+        
+        </p> 
+    
+</div>
+
+
+
+
+                    </div>
+                    <br>
+        <!-- </div> -->
+</div>
+
 
 
 

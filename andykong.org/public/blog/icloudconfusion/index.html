@@ -8,6 +8,17 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    
+        <meta name="author" content="Andy Kong">
+        <meta name="title" content="iCloud Cleanup">
+        <meta name="description" content="Script for highlighting large videos in iCloud and a storage discrepancy">
+        <meta name="keywords" content=" javascript,  icloud,  storage,  mysteriesoflife, ">
+
+        <title>
+            iCloud Cleanup | Andy Kong
+        </title>
+    
+
 
 
 
@@ -240,30 +251,45 @@ code {
 </nav>
 
 
-    <h2>iCloud Cleanup</h2>
-    <p>Hello!</p>
+    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+<!-- padding-left:20px; padding-right:20px -->
+            <div class="col-md-8 col-11 p-0" style="">
+                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
+
+                
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        
+
+
+<div class="blogpage overflow-hidden" style="margin-bottom:4em;">
+    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">iCloud Cleanup</h1>
+            <p style="font-size:0.8em;"> Published June 6, 2023</p>
+<hr>
+            <p>Hello!</p>
 <p>Recently I received an email from Apple letting me know that my iCloud storage was full. </p>
 <p class ="caption"> Kind letter from Apple requesting I purchase more storage </p>
-<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="Kind letter from Apple requesting I purchase more storage" src="/static/ic_appleemail.jpg" /></p>
+<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="Kind letter from Apple requesting I purchase more storage" src="/static/ic_appleemail.jpg" /></p>
 
 <p>Since the cost of 200GB vs. 1TB jumps more than threefold, I embarked on a great exploration of alternatives. Since photos made up the majority of my storage (~127GB), I figured I could just go into my Photos album and click Sort By File Size.</p>
 <p>...</p>
 <p>Except this is not a feature offered by Apple. It's not even a feature in the iCloud browser. I guess it's a bit too technical for Apple Photos, and unfortunately it would also make it too easy to avoid paying for more iCloud storage. </p>
 <p>Whatever the reason, I still wanted to go through my photos by file size. Several apps exist for going through your photos and highlighting duplicates, or into your videos and showing you the file size. The only problem — photos that have been offloaded to iCloud do not show up in these apps, so they're not actually super useful. Also, would you really want random apps to scan through all your photos? </p>
 <p class ="caption"> Screenshot from a photo file size viewing app, with non-downloaded photos represented as 0B </p>
-<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="Screenshot from a photo file size viewing app, with non-downloaded photos represented as 0B" src="/static/ic_photosbysize.png" /></p>
+<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="Screenshot from a photo file size viewing app, with non-downloaded photos represented as 0B" src="/static/ic_photosbysize.png" /></p>
 
 <h2>Janky JS solution</h2>
 <p>Instead, I went to the iCloud website and thought about what was possible. I navigated to Photos-&gt;Media Types-&gt;Videos, and zoomed out as far as I could. </p>
 <p class ="caption"> Videos anonymized by slow internet loading </p>
-<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="Videos anonymized by slow internet loading" src="/static/ic_icloudphotos.png" /></p>
+<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="Videos anonymized by slow internet loading" src="/static/ic_icloudphotos.png" /></p>
 
 <p>We can see that each video has an accompanying duration box — as long as it's an HTML element, we can use JS to search and filter them. I found that every runtime box has the class <code>video-text-badge</code>. From there is was a simple matter to find all of them in the page, sort by their duration, and highlight the ones that were past some threshold. Here's the code:</p>
 <script src="https://gist.github.com/kongmunist/a598bcdd8c226c3a3159b1a918344977.js"></script>
 
 <p>Because iCloud only loads the elements that are on the page, I've made this into a function that runs on a timer so new elements get highlighted as they get scrolled into. Here's what it looks like:</p>
 <p class ="caption"> Videos bigger than 20s are surrounded by a red box, making them much easy to pick out </p>
-<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="Videos bigger than 20s are surrounded by a red box, making them much easy to pick out" src="/static/ic_icloudphotoshighlighted.png" /></p>
+<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="Videos bigger than 20s are surrounded by a red box, making them much easy to pick out" src="/static/ic_icloudphotoshighlighted.png" /></p>
 
 <p>To use it, just open the Javascript console (right click page -&gt; Inspect Element) and paste in the entire gist. Now you can easily select multiple big videos from iCloud and download them before deleting, moving them into longer-term storage: secret HDD under your mattress, other cloud storage, etc etc. </p>
 <hr>
@@ -271,36 +297,36 @@ code {
 <h1>The Mystery</h1>
 <p>So, I used this script to remove all my iCloud videos &gt;30s. The interesting thing is, after I had removed all the "big videos" and downloaded them, it cleared ~55GB from my iCloud <em>despite only downloading 7GB of videos.</em> Herein lies the mystery.</p>
 <p class ="caption"> All downloaded videos take up 8GB of disk space </p>
-<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="All downloaded videos take up 8GB of disk space" src="/static/ic_dl1info.png" /></p>
+<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="All downloaded videos take up 8GB of disk space" src="/static/ic_dl1info.png" /></p>
 
 <p class ="caption"> iCloud storage reduces from 199GB to 143GB after downloading 7GB of videos </p>
-<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="iCloud storage reduces from 199GB to 143GB after downloading 7GB of videos" src="/static/ic_dl1afterdelete.png" /></p>
+<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="iCloud storage reduces from 199GB to 143GB after downloading 7GB of videos" src="/static/ic_dl1afterdelete.png" /></p>
 
 <p>Somehow, those 7GB of video took up way more space in the cloud than on my hard drive. Interesting...</p>
 <h1>Experiment 1</h1>
 <p>I wanted to test this further. First, I uploaded a 4K video with a lot of motion. This took up 281 MB. My storage looked like this after uploading it:</p>
 <p class ="caption"> 4K video uploaded, iCloud says 145.33 GB used </p>
-<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="4K video uploaded, iCloud says 145.33 GB used" src="/static/ic_dl2storagebefore.png" /></p>
+<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="4K video uploaded, iCloud says 145.33 GB used" src="/static/ic_dl2storagebefore.png" /></p>
 
 <p>Then I downloaded it and deleted it. The file was still 281 MB. Here is the storage afterwards:</p>
 <p class ="caption"> 4K video deleted, iCloud says 145.6 GB used </p>
-<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="4K video deleted, iCloud says 145.6 GB used" src="/static/ic_dl2storageafter.png" /></p>
+<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="4K video deleted, iCloud says 145.6 GB used" src="/static/ic_dl2storageafter.png" /></p>
 
 <p>Removing a 281MB video frees up ~270MB. This adds up, which is puzzling. What about the other, older videos? </p>
 <h1>Experiment 2</h1>
 <p>I thought that maybe older videos could have multiple copies saved in iCloud, so I searched through my videos to see if I could find a shorter one that takes up a lot of storage space. I found one with a lot of graphs, iCloud said it took up 128 MB.</p>
 <p class ="caption"> Older big video that takes up 128 MB </p>
-<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="Older big video that takes up 128 MB" src="/static/ic_dl3icloudinfo.png" /></p>
+<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="Older big video that takes up 128 MB" src="/static/ic_dl3icloudinfo.png" /></p>
 
 <p>When I downloaded it, the file was only 47 MB!</p>
 <p class ="caption"> Downloaded video file is 47 MB </p>
-<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="Downloaded video file is 47 MB" src="/static/ic_dl3download.png" /></p>
+<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="Downloaded video file is 47 MB" src="/static/ic_dl3download.png" /></p>
 
 <p>And here is my iCloud storage before and after</p>
 <p class ="caption"> iCloud storage before deleting the old video, 145.29 GB used </p>
-<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="iCloud storage before deleting the old video, 145.29 GB used" src="/static/ic_dl3storagebefore.png" /></p>
+<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="iCloud storage before deleting the old video, 145.29 GB used" src="/static/ic_dl3storagebefore.png" /></p>
 <p class ="caption"> iCloud storage before deleting the old video, 145.12 GB used, reduction of 170MB </p>
-<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="iCloud storage before deleting the old video, 145.12 GB used, reduction of 170MB" src="/static/ic_dl3storageafter.png" /></p>
+<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="iCloud storage before deleting the old video, 145.12 GB used, reduction of 170MB" src="/static/ic_dl3storageafter.png" /></p>
 
 <p>So iCloud says the video is 128MB, I download it and the video is actually 48MB, and my free storage increases by ~170MB when I deleted it. Interesting!</p>
 <h1>Conclusion</h1>
@@ -308,6 +334,34 @@ code {
 <p>I am mildly interested in finding out why this happens, but I am not interested/bored enough to do it myself. If one of you fine people figure it out, please let me know by emailing me.</p>
 <p>Anyway, I have freed up &gt;50GB to fill with more inane videos, and written a small script that allows me to do it again in the future. Hope this proves helpful to you, dear reader.</p>
 <p>Cya later!</p>
+
+    
+        <hr>
+        <p style="line-height:250%;">
+        <a class="btn btn-info" href="/tagged/javascript/">javascript</a>
+
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/icloud/">icloud</a>
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/storage/">storage</a>
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/mysteriesoflife/">mysteriesoflife</a>
+        
+        </p> 
+    
+</div>
+
+
+
+
+                    </div>
+                    <br>
+        <!-- </div> -->
+</div>
+
 
 
 

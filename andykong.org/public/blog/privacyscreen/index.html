@@ -8,6 +8,17 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    
+        <meta name="author" content="Andy Kong">
+        <meta name="title" content="Privacy screen">
+        <meta name="description" content="Only cool kids can see this laptop!">
+        <meta name="keywords" content=" facerecognition,  miniprojectlog, ">
+
+        <title>
+            Privacy screen | Andy Kong
+        </title>
+    
+
 
 
 
@@ -240,8 +251,23 @@ code {
 </nav>
 
 
-    <h2>Privacy screen</h2>
-    <p>Howdy! I saw a meme when I was in high school that was a picture of a man. Superimposed onto his bottom text was the phrase "This meme is a red square when you're not looking," the joke being that you wouldn't be able to see it if you weren't looking. Anyway, since then I've had this desire to really implement it, to make some kind of billboard/house sign that nonresidents wouldn't be able to see, perhaps to display the weekly dinner schedule or WiFi password.</p>
+    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+<!-- padding-left:20px; padding-right:20px -->
+            <div class="col-md-8 col-11 p-0" style="">
+                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
+
+                
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        
+
+
+<div class="blogpage overflow-hidden" style="margin-bottom:4em;">
+    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Privacy screen</h1>
+            <p style="font-size:0.8em;"> Published September 9, 2020</p>
+<hr>
+            <p>Howdy! I saw a meme when I was in high school that was a picture of a man. Superimposed onto his bottom text was the phrase "This meme is a red square when you're not looking," the joke being that you wouldn't be able to see it if you weren't looking. Anyway, since then I've had this desire to really implement it, to make some kind of billboard/house sign that nonresidents wouldn't be able to see, perhaps to display the weekly dinner schedule or WiFi password.</p>
 <p>Using a Raspberry Pi, raspicam, and downloading dlib's face recognition models, we were able to get it to run at <b>0.5 FPS</b>. When someone it recognized from the "VIP Faces" folder was in view of the camera, it would turn the screen back on. Otherwise, the Raspberry Pi would black out the screen using some display power management functions invoked from the command. </p>
 <p>This FPS is a little useless since it can't black out the screen fast enough, so I ported it over to my Mac. Here, it runs at \~10 FPS, so it can feasibly block out someone trying to view your screen. Another benefit is it blacks out the screen while you aren't looking at it (since it can't see your face), saving power (Assuming the display turn off and turn on don't cost any extra energy, which they probably do). Anyway, it only took a few hours to write, so here's all the code: </p>
 <!-- HTML generated using hilite.me -->
@@ -372,6 +398,28 @@ turned_off <span style="color: #333333">=</span> <span style="color: #007020">Fa
 
 <p><br></p>
 <p>That's all! Pretty simple program, but taught me some stuff about display power management and the trickiness of installing dlib. Also, writing this post taught me about HTML formatting (<a href="http://hilite.me/">hilite.me</a> is kinda nice)</p>
+
+    
+        <hr>
+        <p style="line-height:250%;">
+        <a class="btn btn-info" href="/tagged/facerecognition/">facerecognition</a>
+
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/miniprojectlog/">miniprojectlog</a>
+        
+        </p> 
+    
+</div>
+
+
+
+
+                    </div>
+                    <br>
+        <!-- </div> -->
+</div>
+
 
 
 
