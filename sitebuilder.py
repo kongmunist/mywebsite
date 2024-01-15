@@ -33,12 +33,22 @@ freezer = Freezer(app)
 #bootstrap = Bootstrap(app)
 
 
+
 # FLATPAGES_EXTENSION = '.md'
 # app.FLATPAGES_EXTENSION = '.md'
 app.config['FLATPAGES_EXTENSION'] = '.md'
 print(app.config['FLATPAGES_EXTENSION'])
 
+## Solution to redirect URLs that end with / to the same URL without the /
+# From https://stackoverflow.com/questions/25494223/redirecting-urls-that-end-with-a-slash-in-flask
+app.url_map.strict_slashes = False
+@app.before_request
+def clear_trailing():
+    from flask import redirect, request
 
+    rp = request.path
+    if rp != '/' and rp.endswith('/'):
+        return redirect(rp[:-1])
 
 
 # Allows markdown to do flask functions before the site's HTML renders. INTEGRAL. SO IMPORTANT.

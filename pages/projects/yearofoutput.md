@@ -55,4 +55,10 @@ For accountability, I will maintain the list of outputs below, though this proje
 {{ add_pic("yearofoutput/jan7.jpg", "A sneak peak") }}
 - Jan 8: [Strooper project post](../strooper) ([extension here!](https://chromewebstore.google.com/detail/strooper/bmpmimimabakkagnniammiljclhjcmgi))
 - Jan 9: [Blog post comparing my reading speed on paper vs. screen](../../blog/printvsdigital/)
-
+- Jan 10: Editing long video, [Stroop vs Sleep graph](../../blog/stroopvssleep)
+{{ add_pic("stroopvssleep/img.png", "Stroop performance gets better if I sleep more. As my mom would say, Duh!") }}
+- Jan 11: [Checking if Bionic Reading helps you read faster](../../blog/bionicreadingtest)
+- Jan 12: Shots for 18-wheeler-tailgating video.
+- Jan 13: Big sheet
+- Jan 14: Blog updates - added word count to the title 
+- Jan 15: 
