@@ -8,17 +8,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    
-        <meta name="author" content="Andy Kong">
-        <meta name="title" content="Creating panorama images manually">
-        <meta name="description" content="Experiments in holography">
-        <meta name="keywords" content=" CV,  OpenCV, ">
-
-        <title>
-            Creating panorama images manually | Andy Kong
-        </title>
-    
-
 
 
 
@@ -251,32 +240,17 @@ code {
 </nav>
 
 
-    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
-<!-- padding-left:20px; padding-right:20px -->
-            <div class="col-md-8 col-11 p-0" style="">
-                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
-
-                
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-        
-
-
-<div class="blogpage overflow-hidden" style="margin-bottom:4em;">
-    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Creating panorama images manually</h1>
-            <p style="font-size:0.8em;"> Published November 17, 2020</p>
-<hr>
-            <p>Howdy y'all! I think everyone knows what a panorama is so I'll jump right into it. </p>
+    <h2>Creating panorama images manually</h2>
+    <p>Howdy y'all! I think everyone knows what a panorama is so I'll jump right into it. </p>
 <h2>What's going on?</h2>
 <p>I'm working on a problem where I need to stitch together 4 images in a 2x2 pattern, into a big panorama/composite image. The image sets look something like this: </p>
-<p><img loading="lazy" alt="My messy, feature-full desk" src="/static/panoramassplit.png" /></p>
+<p><img alt="My messy, feature-full desk" src="/static/panoramassplit.png" /></p>
 <h2>How do you do it?</h2>
 <p>I started from a simpler problem of stitching just two images together. At first I thought I could do some naive image stitching — i.e. find the row for both images that have the least difference, and just splice at that spot. However, I realized that is probably too naive, and decided to do some Googling.</p>
 <p>So instead, it turns out, you can find "corners"/keypoints/features within an image that are distinctive in angle/size/shape. Given two images with a bit of overlap, you can just find the features for either one. The feature detectors can also generate some 128 or 32-vector embedding of each keypoint, which is then used to compare each keypoint to every other keypoint using some "distance" metric, usually euclidean distance. </p>
 <p>Afterwards, you'll have some set of key points that are shared between both images, and the XY locations within both images. These XY points can then be correlated to find some affine transform that... OK, too complicated. Basically, imagine your two images each have a triangle in them. You can find the corners in both, figure out which corner in image1 maps to which corner in image2, and skew your view of one of the images so that the triangles will line up. Then all you gotta do is add the images! Here's an example:</p>
-<p><img loading="lazy" alt="View 1 of our shapes" src="/static/panorama1_view1.png" /></p>
-<p><img loading="lazy" alt="View 2 of our shapes" src="/static/panorama1_view2.png" /></p>
+<p><img alt="View 1 of our shapes" src="/static/panorama1_view1.png" /></p>
+<p><img alt="View 2 of our shapes" src="/static/panorama1_view2.png" /></p>
 <p>Intuitively, you know that in the 2nd image, you're looking at the 1st image from a different viewpoint. Namely, from the bottom up. You also know that, as an approximation, transforming the bottom square into the top one will sorta transform everything else as well to match the top. </p>
 <h2>Implementation details</h2>
 <ol>
@@ -287,7 +261,7 @@ code {
 <li>Combine the images together.</li>
 </ol>
 <p>Voila!</p>
-<p><img loading="lazy" alt="Combined pic" src="/static/panorama1_combined.png" /></p>
+<p><img alt="Combined pic" src="/static/panorama1_combined.png" /></p>
 <h2>Problems</h2>
 <h5>Seams</h5>
 <p>There's weird border/seam issues where the images come together, which I anticipated. I didn't control the ISO precisely on my phone, so there's bound to be issues there. Seam finding is for later, but I think it's possible to apply a uniform shift for every added image to make their borders line up.</p>
@@ -295,29 +269,7 @@ code {
 <p>You can clearly see which image was first (top left), and which ones were warped and then added on. I think this is a problem because features become harder to detect after a few images get added, and the last one barely makes it on there in a coherent manner at all. I may be able to do some like detect all shared features before, then transform each set one at a time in order to get better results. Otherwise the alignment is all messed up. Problem for later though!</p>
 <h2>Bonus</h2>
 <p>In the course of messing with <code>cv2.warpPerspective</code>, I also made some cool glitch art. Enjoy! Until next time ~</p>
-<p><img loading="lazy" alt="Glitch art" src="/static/panorama1_glitchart.jpg" /></p>
-
-    
-        <hr>
-        <p style="line-height:250%;">
-        <a class="btn btn-info" href="/tagged/CV/">CV</a>
-
-        
-            &nbsp;
-            <a class="btn btn-info" href="/tagged/OpenCV/">OpenCV</a>
-        
-        </p> 
-    
-</div>
-
-
-
-
-                    </div>
-                    <br>
-        <!-- </div> -->
-</div>
-
+<p><img alt="Glitch art" src="/static/panorama1_glitchart.jpg" /></p>
 
 
 

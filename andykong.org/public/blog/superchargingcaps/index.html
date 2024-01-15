@@ -8,17 +8,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    
-        <meta name="author" content="Andy Kong">
-        <meta name="title" content="Fast-charging capacitors">
-        <meta name="description" content="Who has time for 5RC?">
-        <meta name="keywords" content=" electronics, ">
-
-        <title>
-            Fast-charging capacitors | Andy Kong
-        </title>
-    
-
 
 
 
@@ -251,39 +240,24 @@ code {
 </nav>
 
 
-    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
-<!-- padding-left:20px; padding-right:20px -->
-            <div class="col-md-8 col-11 p-0" style="">
-                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
-
-                
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-        
-
-
-<div class="blogpage overflow-hidden" style="margin-bottom:4em;">
-    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Fast-charging capacitors</h1>
-            <p style="font-size:0.8em;"> Published August 9, 2021</p>
-<hr>
-            <p>I recently thought about a way to charge capacitors really quickly. </p>
+    <h2>Fast-charging capacitors</h2>
+    <p>I recently thought about a way to charge capacitors really quickly. </p>
 <p>If you think about it, capacitors are sort of like buckets that you can fill with electrons. Their peak level is their voltage rating, and if you keep filling them they explode. Usually this means you only charge capacitors using a voltage less than or equal to their max voltage, to avoid the explosion.</p>
 <p>But! This method sucks, and it's slow. As your cap fills up, the voltage difference between your source and the capacitor goes down, which makes your charging current go down too. Diminishing returns means that really big capacitors can take several seconds to charge up to a desired voltage. </p>
 <h1>Better method</h1>
 <p>Ideally, we'd use some massive voltage source for charging, and then turn it off immediately when our capacitor hits the final voltage. We only use the previous method because we humans have slow reaction times, and can't turn off the voltage source quickly enough to avoid a potential capacitor explosion.</p>
 <p>But I'm <em>pretty sure</em> we've invented faster voltage switches than the human hand.</p>
 <h1>Enter, the humble microcontroller</h1>
-<p><img loading="lazy" alt="Arduino-enabled fast off switch" src="/static/sc1_setup.jpg" /></p>
+<p><img alt="Arduino-enabled fast off switch" src="/static/sc1_setup.jpg" /></p>
 <p>All I did was connect an Arduino-controlled MOSFET to a 2200µF capacitor. The Arduino reads the voltage of the capacitor, and shuts off the MOSFET when the voltage gets past our set point (4V). I used 5V, 10V, 20V, and 30V for charging. Here's how long each one took:</p>
 <p class="caption">Charging with 5V</p>
-<p><img loading="lazy" alt="Charging with 5V" src="/static/sc1_chargeto4with5.jpg" /></p>
+<p><img alt="Charging with 5V" src="/static/sc1_chargeto4with5.jpg" /></p>
 <p class="caption">Charging with 10V</p>
-<p><img loading="lazy" alt="Charging with 10V" src="/static/sc1_chargeto4with10.jpg" /></p>
+<p><img alt="Charging with 10V" src="/static/sc1_chargeto4with10.jpg" /></p>
 <p class="caption">Charging with 20V</p>
-<p><img loading="lazy" alt="Charging with 20V" src="/static/sc1_chargeto4with20.jpg" /></p>
+<p><img alt="Charging with 20V" src="/static/sc1_chargeto4with20.jpg" /></p>
 <p class="caption">Charging with 30V</p>
-<p><img loading="lazy" alt="Charging with 30V" src="/static/sc1_chargeto4with30.jpg" /></p>
+<p><img alt="Charging with 30V" src="/static/sc1_chargeto4with30.jpg" /></p>
 <p>In text form, charging a 2200µF capacitor to 4V took:</p>
 <ul>
 <li>
@@ -304,9 +278,9 @@ code {
 <p>We've seen how the real world does it; how about comparing it to theory?</p>
 <p>Here's the equation that governs how fast a capacitor charges. It calculates the cap's voltage given some time <em>t</em> connected to a voltage source Vs.</p>
 <p class="caption">Capacitor voltage after some time t, charging with a voltage Vsource</p>
-<p><img loading="lazy" alt="Capacitor voltage after some time t, charging with a voltage Vsource" src="/static/sc1_chargeVeq.png" /></p>
+<p><img alt="Capacitor voltage after some time t, charging with a voltage Vsource" src="/static/sc1_chargeVeq.png" /></p>
 <p>Solving this backwards for <em>t</em>, we have some terrible looking equation for how long it would take to charge a capacitor given a source voltage.</p>
-<p><img loading="lazy" alt="Above equation solved for time t" src="/static/sc1_chargeTeq.png" /></p>
+<p><img alt="Above equation solved for time t" src="/static/sc1_chargeTeq.png" /></p>
 <p>Plugging in our previous charging voltages and magically using R=1.5Ω, we get the following charge times:</p>
 <ul>
 <li>
@@ -344,25 +318,6 @@ code {
 <p>This post is actually about supercapacitors. Why go through the trouble to find a high current 3V source when you could just use any old voltage source and turn it off in time? </p>
 <p>Hell, for a large supercap, it'd charge slowly enough that you could probably disconnect it yourself. Just make sure you don't exceed your source or capacitor's current limit. I AM NOT RESPONSIBLE FOR BURNT CAPACITORS / FINGERS / HOUSES. </p>
 <p>Be safe. Cya around!</p>
-
-    
-        <hr>
-        <p style="line-height:250%;">
-        <a class="btn btn-info" href="/tagged/electronics/">electronics</a>
-
-        
-        </p> 
-    
-</div>
-
-
-
-
-                    </div>
-                    <br>
-        <!-- </div> -->
-</div>
-
 
 
 

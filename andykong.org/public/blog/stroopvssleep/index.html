@@ -8,17 +8,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    
-        <meta name="author" content="Andy Kong">
-        <meta name="title" content="How sleep deprivation affects my cognition">
-        <meta name="description" content="Correlating my Stroop with sleep data">
-        <meta name="keywords" content=" personalinformatics,  quantifiedself,  data, ">
-
-        <title>
-            How sleep deprivation affects my cognition | Andy Kong
-        </title>
-    
-
 
 
 
@@ -251,30 +240,15 @@ code {
 </nav>
 
 
-    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
-<!-- padding-left:20px; padding-right:20px -->
-            <div class="col-md-8 col-11 p-0" style="">
-                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
-
-                
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-        
-
-
-<div class="blogpage overflow-hidden" style="margin-bottom:4em;">
-    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">How sleep deprivation affects my cognition</h1>
-            <p style="font-size:0.8em;"> Published January 10, 2024</p>
-<hr>
-            <p>Hello! I've been collecting my <a href="../../projects/strooper">Stroop effect data</a> for about three months now, and I also have my Fitbit collecting sleep data from the whole period. A friend asked me how sleep affects my Stroop scores, and I went ahead and set up the analysis.</p>
+    <h2>How sleep deprivation affects my cognition</h2>
+    <p>Hello! I've been collecting my <a href="../../projects/strooper">Stroop effect data</a> for about three months now, and I also have my Fitbit collecting sleep data from the whole period. A friend asked me how sleep affects my Stroop scores, and I went ahead and set up the analysis.</p>
 <p class ="caption"> Stroop effect — quick, name the colors of the words </p>
-<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="Stroop effect — quick, name the colors of the words" src="/static/strooper/img_1.png" /></p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="Stroop effect — quick, name the colors of the words" src="/static/strooper/img_1.png" /></p>
 
 <h1>Methods and Results</h1>
 <p>Here is a lot of scatterplots where my three Stroop scores (please see above link for more info) are arranged according to some sleep variables (total time in bed, sleep efficiency, time asleep, time awake), and then I do a linear regression for each one.</p>
-<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/stroopvssleep/top.png" /></p>
-<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/stroopvssleep/bottom.png" /></p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/stroopvssleep/top.png" /></p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/stroopvssleep/bottom.png" /></p>
 
 <p>I'm not just gonna throw a best-fit line on there and call it a day — I want to know how real that line is. I've also calculated a p-value which is the probability that the best-fit line slope is that value by random chance. I also <a href="https://en.wikipedia.org/wiki/Bonferroni_correction">Bonferroni-corrected</a> the threshold value, though I think this boundary is a bit arbitrary (we pick p=5% arbitarily like everyone else, then divide by 12 to Bonferroni correct. p&lt;.00416 is significant).</p>
 <h1>Discussion</h1>
@@ -285,31 +259,6 @@ code {
 <p>I need people like you, dear reader, to help me with a project.</p>
 <p>If Quantified Self is your thing, I'm working on a dashboard with the ability to upload arbitrary time series data and see how it correlates with your other data. There's other dashboards, but they only accept API-integrated data — our project will be for the <a href="https://www.businessinsider.com/bryan-johnson-sleeps-with-small-device-on-penis-track-erections-2023-9">people who track their nightly erection duration</a> in an Excel spreadsheet and want to see how their water intake changes the next day.</p>
 <p>I've written a bit of framework code for this, OOPy stuff — the code is generalizable enough to work across diverse data, but it lacks polish. If you're interested in using what I've written to analyze your data (code request) or are interested in working on this project and have the time to commit to it (collaboration), please email me! I am trying to bring this dash to fruition for others to use. In particular, please contact me if you know anything about modern software best practices, because I do not. </p>
-
-    
-        <hr>
-        <p style="line-height:250%;">
-        <a class="btn btn-info" href="/tagged/personalinformatics/">personalinformatics</a>
-
-        
-            &nbsp;
-            <a class="btn btn-info" href="/tagged/quantifiedself/">quantifiedself</a>
-        
-            &nbsp;
-            <a class="btn btn-info" href="/tagged/data/">data</a>
-        
-        </p> 
-    
-</div>
-
-
-
-
-                    </div>
-                    <br>
-        <!-- </div> -->
-</div>
-
 
 
 

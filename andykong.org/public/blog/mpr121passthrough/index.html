@@ -8,17 +8,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    
-        <meta name="author" content="Andy Kong">
-        <meta name="title" content="MPR121 Touch Sensing Across Barriers">
-        <meta name="description" content="Testing capacitive coupling across various barriers">
-        <meta name="keywords" content=" mpr121,  touchsensitive,  sensor,  hardware, ">
-
-        <title>
-            MPR121 Touch Sensing Across Barriers | Andy Kong
-        </title>
-    
-
 
 
 
@@ -251,64 +240,21 @@ code {
 </nav>
 
 
-    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
-<!-- padding-left:20px; padding-right:20px -->
-            <div class="col-md-8 col-11 p-0" style="">
-                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
-
-                
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-        
-
-
-<div class="blogpage overflow-hidden" style="margin-bottom:4em;">
-    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">MPR121 Touch Sensing Across Barriers</h1>
-            <p style="font-size:0.8em;"> Published March 13, 2021</p>
-<hr>
-            <p>Hello! Today I received the MPR121, a nifty little 12-channel touch sensor:</p>
+    <h2>MPR121 Touch Sensing Across Barriers</h2>
+    <p>Hello! Today I received the MPR121, a nifty little 12-channel touch sensor:</p>
 <p class="caption">Glamour shot of the MPR121 touch sensor</p>
-<p><img loading="lazy" alt="Glamour shot of the MPR121 touch sensor" src="/static/mpr121glamour.png" /></p>
+<p><img alt="Glamour shot of the MPR121 touch sensor" src="/static/mpr121glamour.png" /></p>
 <p>The chip is pretty simple, uses I2C to measure each pin's capacitance using the charge then discharge trick I used <a href="../touchreactiveLEDs/">here</a>. It gives a touch/no touch output, or the raw sensor values per each pin (ranges from 0-400ish). Also has a built-in filtered output that provides smoother data if you want it. </p>
 <p>The setup is easy and not very interesting since the chip is so single-purpose. I'm much more interested in showing you how well the sensor detects touch through a barrier. </p>
 <h2>Testing materials</h2>
 <p>I used what I had near me, and those were: saran wrap, masking tape, and two kinds of Scotch tape. Here's the table.</p>
 <p class="caption"></p>
-<p><img loading="lazy" alt="Table of sensor outputs for the MPR121" src="/static/mpr121chart.png" /></p>
+<p><img alt="Table of sensor outputs for the MPR121" src="/static/mpr121chart.png" /></p>
 <p>As mentioned before, the sensor values range from 0-400. On the bare surface I was able to get down to 48, which is a big SNR! None of the others even came close to that, only dipping 10% of the max value for the Saran wrap. This was probably the thinnest barrier I tried, and even that was too much. Despite the low SNR, the sensor still detected my touches consistently when separated by most of the materials I tried. Works great! :)</p>
 <p>The capacititance didn't drift that much across my trials (~15 minutes), so I'm not so worried about needing to recalibrate very frequently. These types of biosensors are usually pretty finicky in that regard, so I'm glad. I also didn't try fabric or any porous material because I needed this to be waterproof, but it'd be cool if YOU (dear reader) did, and then told me about it!</p>
 <p>That's all for now! Cya!</p>
 <p class="caption">MPR121 wrapped in saran wrap during testing</p>
-<p><img loading="lazy" alt="MPR121 wrapped in saran wrap during testing" src="/static/mpr121saran.png" /></p>
-
-    
-        <hr>
-        <p style="line-height:250%;">
-        <a class="btn btn-info" href="/tagged/mpr121/">mpr121</a>
-
-        
-            &nbsp;
-            <a class="btn btn-info" href="/tagged/touchsensitive/">touchsensitive</a>
-        
-            &nbsp;
-            <a class="btn btn-info" href="/tagged/sensor/">sensor</a>
-        
-            &nbsp;
-            <a class="btn btn-info" href="/tagged/hardware/">hardware</a>
-        
-        </p> 
-    
-</div>
-
-
-
-
-                    </div>
-                    <br>
-        <!-- </div> -->
-</div>
-
+<p><img alt="MPR121 wrapped in saran wrap during testing" src="/static/mpr121saran.png" /></p>
 
 
 

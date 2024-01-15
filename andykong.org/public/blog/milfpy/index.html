@@ -8,17 +8,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    
-        <meta name="author" content="Andy Kong">
-        <meta name="title" content="Average clip duration in MILF Manor">
-        <meta name="description" content="Gauging the audience attention span from TLC dating shows">
-        <meta name="keywords" content=" python,  clipduration,  milf, ">
-
-        <title>
-            Average clip duration in MILF Manor | Andy Kong
-        </title>
-    
-
 
 
 
@@ -251,65 +240,25 @@ code {
 </nav>
 
 
-    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
-<!-- padding-left:20px; padding-right:20px -->
-            <div class="col-md-8 col-11 p-0" style="">
-                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
-
-                
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-        
-
-
-<div class="blogpage overflow-hidden" style="margin-bottom:4em;">
-    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Average clip duration in MILF Manor</h1>
-            <p style="font-size:0.8em;"> Published June 11, 2023</p>
-<hr>
-            <p>Whenever I'm watching unpretentious TV like sports or reality TV, I calculate the average clip length. I get my phone stopwatch out, and enter a lap whenever a cut happens. </p>
+    <h2>Average clip duration in MILF Manor</h2>
+    <p>Whenever I'm watching unpretentious TV like sports or reality TV, I calculate the average clip length. I get my phone stopwatch out, and enter a lap whenever a cut happens. </p>
 <p>Do this maybe 20 times, and you usually get some idea of the distribution. Usually the cuts happen so quickly and fluidly that you may notice yourself <em>missing</em> a few cuts, even though every pixel on the screen dramatically changes and it seems like something you'd notice. </p>
 <p>Recently I watched Milf Manor, a "reality" dating show where older women seeking younger men are paired with younger men seeking older women on a fancy island. The twist is that every young man is the child of one of the older women. Hilarity ensues (?). </p>
 <p class ="caption"> The complicated feature I used for detecting jump cuts </p>
-<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="The complicated feature I used for detecting jump cuts" src="/static/milf_cutfeature.jpg" /></p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="The complicated feature I used for detecting jump cuts" src="/static/milf_cutfeature.jpg" /></p>
 
 <p>Common decency aside, this show jump-cuts like nothing else. I did my stopwatch thing but didn't want to stop there — I really wanted to know all about the cut length distribution. I downloaded an episode and used the change in standard deviation of the absolute color difference of two adjacent frames. When this number crossed ~30, I called it a cut and recorded the frame number.</p>
 <p>Then I calculated a few stats about it. Here they are:</p>
 <p class ="caption"> Avg clip length is 2.48 sec, with the median at 1.92 sec </p>
-<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="Avg clip length is 2.48 sec, with the median at 1.92 sec" src="/static/milf_stats.png" /></p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="Avg clip length is 2.48 sec, with the median at 1.92 sec" src="/static/milf_stats.png" /></p>
 
 <p>While the average clip length is 2.5 seconds, the median is only 2 seconds. I also find it interesting that the average human blink rate is 1 blink per 4-5 seconds, which means we can see around two clips between blinks. Since the average blink takes ~0.3 seconds, we also won't miss much of a clip while blinking.</p>
 <p class ="caption"> Milf Manor clip duration histogram </p>
-<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="Milf Manor clip duration histogram" src="/static/milf_cutdistro.jpg" /></p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="Milf Manor clip duration histogram" src="/static/milf_cutdistro.jpg" /></p>
 
 <h1>Conclusion</h1>
 <p>The difficulty of identifying a cut in a video surprised me, but it makes sense if you consider all the possible transitions (fade to black, fade to another clip, slo-mo transition to real-time, etc.). There is even a library in Python called <a href="https://pypi.org/project/scenedetect/">scenedetect</a> which identifies these for you. Next time I will definitely use that for cut detection instead of making my own feature. </p>
 <p>I have completely satisfied my curiousity about Milf Manor at this time. </p>
-
-    
-        <hr>
-        <p style="line-height:250%;">
-        <a class="btn btn-info" href="/tagged/python/">python</a>
-
-        
-            &nbsp;
-            <a class="btn btn-info" href="/tagged/clipduration/">clipduration</a>
-        
-            &nbsp;
-            <a class="btn btn-info" href="/tagged/milf/">milf</a>
-        
-        </p> 
-    
-</div>
-
-
-
-
-                    </div>
-                    <br>
-        <!-- </div> -->
-</div>
-
 
 
 

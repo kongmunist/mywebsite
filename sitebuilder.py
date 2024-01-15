@@ -41,7 +41,7 @@ print(app.config['FLATPAGES_EXTENSION'])
 
 ## Solution to redirect URLs that end with / to the same URL without the /
 # From https://stackoverflow.com/questions/25494223/redirecting-urls-that-end-with-a-slash-in-flask
-app.url_map.strict_slashes = True
+# app.url_map.strict_slashes = True
 # @app.before_request
 # def clear_trailing():
 #     from flask import redirect, request
@@ -213,7 +213,7 @@ def mainblog():
     blogPages=[x[1] for x in blogPages]
     return render_template('blogmain.html', page=[], pages=blogPages)
 
-@app.route("/blog/<string:title>/")
+@app.route("/blog/<string:title>")
 def blog(title):
     print("blog page " + title)
     page = [pages.get("blog/" + title)]
@@ -226,7 +226,7 @@ def blog(title):
 
     if page[0] is None:
         return mainblog()
-    return render_template('blog.html', page=page, pages = blogPages)
+    return render_template('blog.html', page=page, pages=blogPages)
 
 
 @app.route('/tagged/')

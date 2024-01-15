@@ -8,17 +8,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    
-        <meta name="author" content="Andy Kong">
-        <meta name="title" content="Advanced addition and speedup of neural network evaluation">
-        <meta name="description" content="Linear functions and what it means for Neural Network acceleration">
-        <meta name="keywords" content=" projectlog,  advancedaddition, ">
-
-        <title>
-            Advanced addition and speedup of neural network evaluation | Andy Kong
-        </title>
-    
-
 
 
 
@@ -251,55 +240,18 @@ code {
 </nav>
 
 
-    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
-<!-- padding-left:20px; padding-right:20px -->
-            <div class="col-md-8 col-11 p-0" style="">
-                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
-
-                
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-        
-
-
-<div class="blogpage overflow-hidden" style="margin-bottom:4em;">
-    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Advanced addition and speedup of neural network evaluation</h1>
-            <p style="font-size:0.8em;"> Published August 1, 2019</p>
-<hr>
-            <p>Hello! I've been doing some more work on the advanced addition project.</p>
+    <h2>Advanced addition and speedup of neural network evaluation</h2>
+    <p>Hello! I've been doing some more work on the advanced addition project.</p>
 <p><a href="https://andykong.org/blog/advancedaddition/">Last time</a>, I had just created some silly neural networks that added two numbers. The evaluation was trivial, but I was able to make the simple one explainable by boiling it down to the literal equation with the two inputs. I've made progress on this front.</p>
 <p>I was able to break down the fully connected 2-10-1 neuron network (Model C) into its respective equation. Evaluated in order, this looks something like this:</p>
-<p><img loading="lazy" src=/static/advancedaddition1symboliceqn.png width="400" class="d-block mx-auto"/></p>
+<p><img src=/static/advancedaddition1symboliceqn.png width="400" class="d-block mx-auto"/></p>
 <p>Since each variable is just a matrix of some size, and I've nicely arranged them in a way that allows multiplication, we can precompute some of the matrix multiplications for the final equation and arrive at a shortened form of the neural network for implementation purposes. You can think of this shortened form as a much easier model to evaluate for low power, discreet package sizes in remote areas without large computing pools. </p>
 <p>The sizes of each variable are not exactly clear from this LaTeX equation, but trust me when I say its just simple matrix multiplication. Nothing fancy. Depending on the initial setup, the final equation for Model C reduces to something like this:</p>
-<p><img loading="lazy" src=/static/advancedaddition1numericeqn.png width="400" class="d-block mx-auto"/></p>
+<p><img src=/static/advancedaddition1numericeqn.png width="400" class="d-block mx-auto"/></p>
 <p>We can see that the equation is very similar to Model A's original equation from <a href="https://andykong.org/blog/advancedaddition/">this post</a>, despite Model C's <strong>30 multiplications</strong> and <strong>20 additions</strong> against Model A's <strong>two multiplications</strong> and <strong>two additions</strong>. This got me thinking; why can't we do this to every model? Why can't we precompute the matrix multiplications for every neural network, like those built for edge-computing on cameras or speakers?</p>
 <p>I thought I was clever for a second, but then I realized that my models would only be able to approximate linear functions. The only features taken for input would be x<subscript>1</subscript>,x<subscript>2</subscript>,...x<subscript>n</subscript>, and they would just come out with some coefficient but no additional features. This is a formidable technique for simpler functions, but more complex hypotheses would require the activation functions (Sigmoid, Rectified Linear Unit, etc), which cannot be precomputed because they depend on the values of their inputs! </p>
 <p>Activation functions could be broken down some more, but I would have to spend a little more time with it. I think that the individual nature of the function means that a simple precomputation wouldn't be allowed. We could threshold the inputs by backtracking the minimum value required to overcome the ReLU or something, and that would save a bit of time.</p>
 <p>So, the takeaway is that most neural networks cannot be sped up using precomputation, since every layer usually has a nonlinear activation function. But in any model with multiple matrix multiplications or additions done in succession, the evaluation of the two matrices can be precomputed to speed up the model. </p>
-
-    
-        <hr>
-        <p style="line-height:250%;">
-        <a class="btn btn-info" href="/tagged/projectlog/">projectlog</a>
-
-        
-            &nbsp;
-            <a class="btn btn-info" href="/tagged/advancedaddition/">advancedaddition</a>
-        
-        </p> 
-    
-</div>
-
-
-
-
-                    </div>
-                    <br>
-        <!-- </div> -->
-</div>
-
 
 
 

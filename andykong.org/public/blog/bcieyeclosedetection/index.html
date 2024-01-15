@@ -8,17 +8,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    
-        <meta name="author" content="Andy Kong">
-        <meta name="title" content="Hello World for Brain-Computer Interfaces">
-        <meta name="description" content="Detecting alpha wave activity with EEG to predict whether my eyes are open or closed">
-        <meta name="keywords" content=" BCI,  EEG, ">
-
-        <title>
-            Hello World for Brain-Computer Interfaces | Andy Kong
-        </title>
-    
-
 
 
 
@@ -251,23 +240,8 @@ code {
 </nav>
 
 
-    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
-<!-- padding-left:20px; padding-right:20px -->
-            <div class="col-md-8 col-11 p-0" style="">
-                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
-
-                
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-        
-
-
-<div class="blogpage overflow-hidden" style="margin-bottom:4em;">
-    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Hello World for Brain-Computer Interfaces</h1>
-            <p style="font-size:0.8em;"> Published December 31, 2020</p>
-<hr>
-            <p>Hello! I'm gonna tell you everything I know about the most consistently evoked signal in all of EEG and how to detect it — the closed-eye <a href="https://en.wikipedia.org/wiki/Alpha_wave">alpha wave</a> spike.</p>
+    <h2>Hello World for Brain-Computer Interfaces</h2>
+    <p>Hello! I'm gonna tell you everything I know about the most consistently evoked signal in all of EEG and how to detect it — the closed-eye <a href="https://en.wikipedia.org/wiki/Alpha_wave">alpha wave</a> spike.</p>
 <blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">Detecting whether eyes are open/closed using <a href="https://twitter.com/hashtag/EEG?src=hash&amp;ref_src=twsrc%5Etfw">#EEG</a> alpha wave activity<a href="https://t.co/OnwhTsJSsa">pic.twitter.com/OnwhTsJSsa</a></p>&mdash; Andy (@redlightguru) <a href="https://twitter.com/redlightguru/status/1344538994235875328?ref_src=twsrc%5Etfw">December 31, 2020</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <p><br></p>
@@ -277,42 +251,20 @@ code {
 <p>Data are being recorded on a single channel of the OpenBCI Ganglion EEG board. The electrode placements are as follows: GND on right earlobe, Channel 1 (-) on left earlobe, and Channel 1 (+) on position Oz of the 10-20 international system. </p>
 <p>Oz is right over the occipital region of the brain, near the bump on the middle-back of your head (this is called the inion). Sample rate is 200Hz, safety from being shocked in the brain by mains insured by the board streaming samples to my laptop over Bluetooth.</p>
 <p class="caption">Picture of the Ganglion board, with two earlobe electrodes and the scalp electrode. It's spiky to go through hair</p>
-<p><img loading="lazy" alt="Picture of the Ganglion board, with two earlobe electrodes and the scalp electrode. It's spiky to go through hair" src="/static/alphawaves_electrodes.jpg" /></p>
+<p><img alt="Picture of the Ganglion board, with two earlobe electrodes and the scalp electrode. It's spiky to go through hair" src="/static/alphawaves_electrodes.jpg" /></p>
 <p>Once streamed onto the computer over BrainFlow (I made <a href="../workingwithbrainflow1" target="_blank">another blog post</a> about that), the data are filtered using SciPy's IIR filters. Mainly, a 60Hz notch filter and 5-75Hz bandpass filter, with 40dB attenuation for the stopband. These are applied with the <code>scipy.signal.filtfilt()</code> function. I don't know if the dB number is like power (div by 20 then take the logarithm) or normal (div by 10 then take the logarithm), but the stopband is completely flat either way so I don't really mind. </p>
 <p>FFT is calculated using <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.welch.html">Welch's method</a>. Alpha band integration is as simple as adding up all the magnitude contributions from frequencies in the band 7-13Hz, but Brainflow has a built-in function for doing this (if you use this, make sure you feed in the tuple as (power, freqs) instead of the (freqs, power) that <code>scipy.signal.welch()</code> gives you). That's it!</p>
 <p>Implementation: I'm creating a live plot using a matplotlib animation. The indicator is drawn on-graph as both text and an emoji. </p>
 <h2>Results</h2>
 <p>Eyes closed are pretty reliably detected by a spike, with a lag of about a second. Eyes opening, the alpha waves drop about as fast as they rise. This is probably due to my EEG data window being 5 seconds, since I'm not doing any averaging that would otherwise slow it down. </p>
 <p class="caption">Graph of baseline alpha wave activity</p>
-<p><img loading="lazy" alt="Graph of baseline alpha wave activity" src="/static/alphawaves_eyesopen.png" /></p>
+<p><img alt="Graph of baseline alpha wave activity" src="/static/alphawaves_eyesopen.png" /></p>
 <p class="caption">Vastly increased alpha wave activity when user's eyes are closed</p>
-<p><img loading="lazy" alt="Vastly increased alpha wave activity when user's eyes are closed" src="/static/alphawaves_eyesclosed.png" /></p>
+<p><img alt="Vastly increased alpha wave activity when user's eyes are closed" src="/static/alphawaves_eyesclosed.png" /></p>
 <h2>Reliability problems</h2>
 <p><em>Within session</em>, I had no problems with reliability. I saw my average alpha activity around 8 uV^2, and it went above 12 or so with my eyes closed so I set that as the breakpoint. However, alpha activity also decreases with increase in drowsiness, and I finished this pretty late last night, so it could not work for me right now (not drowsy) the way the breakpoints are set.</p>
 <p>I believe the baseline alpha activity varies from person to person, so the threshold would probably have to be adjusted for new people. </p>
 <p>I think that's it for now. Follow me on <a href="https://twitter.com/redlightguru">Twitter</a>!</p>
-
-    
-        <hr>
-        <p style="line-height:250%;">
-        <a class="btn btn-info" href="/tagged/BCI/">BCI</a>
-
-        
-            &nbsp;
-            <a class="btn btn-info" href="/tagged/EEG/">EEG</a>
-        
-        </p> 
-    
-</div>
-
-
-
-
-                    </div>
-                    <br>
-        <!-- </div> -->
-</div>
-
 
 
 

@@ -8,17 +8,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    
-        <meta name="author" content="Andy Kong">
-        <meta name="title" content="Infoglobe Tutorial Pt. 3 — Software">
-        <meta name="description" content="Adding bits to our atoms">
-        <meta name="keywords" content=" infoglobe,  software,  gist,  tutorial, ">
-
-        <title>
-            Infoglobe Tutorial Pt. 3 — Software | Andy Kong
-        </title>
-    
-
 
 
 
@@ -251,23 +240,8 @@ code {
 </nav>
 
 
-    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
-<!-- padding-left:20px; padding-right:20px -->
-            <div class="col-md-8 col-11 p-0" style="">
-                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
-
-                
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-        
-
-
-<div class="blogpage overflow-hidden" style="margin-bottom:4em;">
-    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Infoglobe Tutorial Pt. 3 — Software</h1>
-            <p style="font-size:0.8em;"> Published April 9, 2023</p>
-<hr>
-            <style>
+    <h2>Infoglobe Tutorial Pt. 3 — Software</h2>
+    <style>
     /* Limit height. Show scrollbars when exceeding height */
 .gist .blob-wrapper.data {
    max-height:40vh;
@@ -276,17 +250,17 @@ code {
     </style>
 
 <p>Ok, welcome back for our final installment of the infoglobe tutorial series. If you've not been following along, here's links to the hardware mods that you'll need to have done before this post will be useful to you — <a href="../infoglobetutorial1">part 1</a> and <a href="../infoglobetutorial2">part 2</a>.</p>
-<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/igt1_hero.jpeg" /></p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/igt1_hero.jpeg" /></p>
 
 <p>If you've forgotten, here's the device we're hacking - the Olympia Infoglobe. I have described it too often, so we're gonna get right into the meat of this post. </p>
 <hr>
 
 <h1>Code</h1>
 <p>We're using the Wemos D1 mini ESP8266/ESP32 breakout board to control our globe, it looks like this.</p>
-<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/igt3_wemos.png" /></p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/igt3_wemos.png" /></p>
 
 <p>Boot up your Arduino IDE and download the "IRremoteESP8266" library from the Tools-&gt;Manage Libraries-&gt; then search for IRremoteESP8266. This library should be supported for ESP32s as well. Hit install, and twiddle your thumbs for a bit as it installs.</p>
-<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/igt3_irlib.png" /></p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/igt3_irlib.png" /></p>
 
 <p>Now, copy past <a href="https://gist.github.com/kongmunist/a8bdadbacda4bcb129cd183f2f0fffc5">this gist</a> into a new Arduino file and upload it to your ESP board. </p>
 <script src="https://gist.github.com/kongmunist/a8bdadbacda4bcb129cd183f2f0fffc5.js"></script>
@@ -296,7 +270,7 @@ code {
 <h2>Example use case</h2>
 <p>I've personally written some code which lets the Infoglobe connect to my wifi and access <a href="https://aksuper7.pythonanywhere.com/">this website</a> I made for receiving notes from my friends. If you type a message and my globe is plugged in, I'll be able to see the message right on my Infoglobe. Pretty cool, right? </p>
 <p class ="caption"> Website to connect digital friends to my physical environment </p>
-<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="Website to connect digital friends to my physical environment" src="/static/igt3_example1.png" /></p>
+<p><img style="display: block; margin-left: auto;margin-right: auto;"  alt="Website to connect digital friends to my physical environment" src="/static/igt3_example1.png" /></p>
 
 <p>I know of other people using their infoglobes as a weather/disaster reporting station, or a way to visualize Alexa messages. </p>
 <h2>Alternatives to ESP</h2>
@@ -306,34 +280,6 @@ code {
 <h1>That's all folks!</h1>
 <p>What will you do with your Infoglobe? I'd love to see it! Please feel free to email me if you get it working :)</p>
 <p>Happy hacking!</p>
-
-    
-        <hr>
-        <p style="line-height:250%;">
-        <a class="btn btn-info" href="/tagged/infoglobe/">infoglobe</a>
-
-        
-            &nbsp;
-            <a class="btn btn-info" href="/tagged/software/">software</a>
-        
-            &nbsp;
-            <a class="btn btn-info" href="/tagged/gist/">gist</a>
-        
-            &nbsp;
-            <a class="btn btn-info" href="/tagged/tutorial/">tutorial</a>
-        
-        </p> 
-    
-</div>
-
-
-
-
-                    </div>
-                    <br>
-        <!-- </div> -->
-</div>
-
 
 
 

@@ -8,17 +8,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    
-        <meta name="author" content="Andy Kong">
-        <meta name="title" content="Implementing Body Channel Communication Pt. 1">
-        <meta name="description" content="Harnessing the body&#39;s conductivity as a signal path">
-        <meta name="keywords" content=" hci,  microcontroller,  bcc, ">
-
-        <title>
-            Implementing Body Channel Communication Pt. 1 | Andy Kong
-        </title>
-    
-
 
 
 
@@ -251,25 +240,10 @@ code {
 </nav>
 
 
-    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
-<!-- padding-left:20px; padding-right:20px -->
-            <div class="col-md-8 col-11 p-0" style="">
-                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
-
-                
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-        
-
-
-<div class="blogpage overflow-hidden" style="margin-bottom:4em;">
-    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Implementing Body Channel Communication Pt. 1</h1>
-            <p style="font-size:0.8em;"> Published April 17, 2021</p>
-<hr>
-            <p>Hello! Today I'm going to be talking about some preliminary experiments I did involving body channel communication, or BCC. BCC is a technique that uses the body's natural conductivity as a signal path, allowing your devices to talk to anything you touch. I implemented a basic version that requires a shared ground, some experiments from an implementation without a shared ground, and show practical techniques that worked for me. </p>
+    <h2>Implementing Body Channel Communication Pt. 1</h2>
+    <p>Hello! Today I'm going to be talking about some preliminary experiments I did involving body channel communication, or BCC. BCC is a technique that uses the body's natural conductivity as a signal path, allowing your devices to talk to anything you touch. I implemented a basic version that requires a shared ground, some experiments from an implementation without a shared ground, and show practical techniques that worked for me. </p>
 <p class="caption">Transmitting signal over the skin</p>
-<p><img loading="lazy" alt="Serial plotter transmitting signal over the skin" src="/static/bcc1_signaloverskin.png" /></p>
+<p><img alt="Serial plotter transmitting signal over the skin" src="/static/bcc1_signaloverskin.png" /></p>
 <p><br></p>
 <h1>Background</h1>
 <hr>
@@ -290,75 +264,50 @@ code {
 <p>My setup is very simple. I used two Arduinos, two 180kΩ resistors, and two jumper wires. There is a "sender" Arduino imitating a smartwatch, and a receiver Arduino imitating a payment terminal or another interactive device. </p>
 <p>The sender has just a single jumper out, and it's digital writing a 10Hz square wave to the jumper wire.</p>
 <p class="caption">Sender Arduino</p>
-<p><img loading="lazy" alt="Arduino with jumper wire outputting the digital signal" src="/static/bcc1_sender.jpg" /></p>
+<p><img alt="Arduino with jumper wire outputting the digital signal" src="/static/bcc1_sender.jpg" /></p>
 <p>The receiver has a jumper wire on analog pin 0 which is reading at 100Hz. A 360kΩ resistor connects that pin to the ground pin. The extra resistor at the bottom is for measuring a ground truth analog reading, which I'll talk about later.</p>
 <p class="caption">Receiver Arduino</p>
-<p><img loading="lazy" alt="Arduino with jumper wire on analog pin, which is connected to the ground by resistor" src="/static/bcc1_receiver.jpg" /></p>
+<p><img alt="Arduino with jumper wire on analog pin, which is connected to the ground by resistor" src="/static/bcc1_receiver.jpg" /></p>
 <p>The resistor is necessary because of the EMI pickup when I added the jumper wire to the analog pin. Here's the noise on the analog pin, then with the jumper, then when I hold the jumper with my finger. </p>
 <p class="caption">Baseline analog pin readings</p>
-<p><img loading="lazy" alt="Serial plotter of baseline analog pin readings" src="/static/bcc1_baselineanalognoise.png" /></p>
+<p><img alt="Serial plotter of baseline analog pin readings" src="/static/bcc1_baselineanalognoise.png" /></p>
 <p class="caption">Analog pin readings with jumper wire attached</p>
-<p><img loading="lazy" alt="Serial plotter of analog pin readings with jumper wire attached" src="/static/bcc1_baselinewithwire.png" /></p>
+<p><img alt="Serial plotter of analog pin readings with jumper wire attached" src="/static/bcc1_baselinewithwire.png" /></p>
 <p class="caption">Analog pin readings with human holding jumper wire</p>
-<p><img loading="lazy" alt="Serial plotter of analog pin readings with human holding jumper wire" src="/static/bcc1_baselinetouchinganalognoise.png" /></p>
+<p><img alt="Serial plotter of analog pin readings with human holding jumper wire" src="/static/bcc1_baselinetouchinganalognoise.png" /></p>
 <p>The human body acts as an antenna for 60Hz noise, and my body is no different. The spikes you see in the last image are from my environment, and would destroy our signal without the resistor to ground. The smaller the resistor, the easier the environment's noise gets leaked away from the pin. However, this easier leakage also reduces our overall signal more, so I picked a large resistor that approximately matched my skin's resistance. </p>
 <p><br></p>
 <h2>Signal (Shared Ground)</h2>
 <p class="caption">Shared ground BCC setup (technically they're already connected through the laptop's ground)</p>
-<p><img loading="lazy" alt="Shared ground setup (technically they're already connected through the laptop's ground)" src="/static/bcc1_connectedground.jpg" /></p>
+<p><img alt="Shared ground setup (technically they're already connected through the laptop's ground)" src="/static/bcc1_connectedground.jpg" /></p>
 <p>To transfer the signal, I touched the output jumper of the sending Arduino, then touched the input jumper of the receiving Arduino. I also pressed the output jumper directly against my other input, to capture a reference for what the output pin's signal looks like directly. </p>
 <p class="caption">Square wave being transferred over human touch. Green is the pin I'm touching, red is the reference pin</p>
-<p><img loading="lazy" alt="Serial plotter of square wave being transferred over human touch" src="/static/bcc1_signaloverskin.png" /></p>
+<p><img alt="Serial plotter of square wave being transferred over human touch" src="/static/bcc1_signaloverskin.png" /></p>
 <p>The signal transfer is pretty clear. The green line is what the receiver reads from my finger, and the red is the actual output of the pin. There's a bit of interference from the ADC, but even without the reference pin the signal transfers really cleanly.</p>
 <p class="caption">Square wave being transferred over human touch sans reference</p>
-<p><img loading="lazy" alt="Square wave being transferred over human touch without reference" src="/static/bcc1_signaloverskin1.png" /></p>
+<p><img alt="Square wave being transferred over human touch without reference" src="/static/bcc1_signaloverskin1.png" /></p>
 <p>Here's what the noise looks like in the setup if I hold the receiving pin without touching the signal pin. </p>
 <p class="caption">Noise when touching receiver pin without touching signal pin</p>
-<p><img loading="lazy" alt="Noise when touching receiver pin without touching signal pin" src="/static/bcc1_nosignaloverskin.png" /></p>
+<p><img alt="Noise when touching receiver pin without touching signal pin" src="/static/bcc1_nosignaloverskin.png" /></p>
 <p>The no-touch signal is a bit noisier than I would like, but definitely different enough from the touching signal that we would be able to detect it. </p>
 <p><br></p>
 <h2>Signal (No Shared Ground)</h2>
 <p>I connected the sending Arduino to another computer when I did this experiment. The receiver is plugged into my laptop, which was not connected to the wall outlet at the time.</p>
 <p class="caption">No shared ground BCC setup</p>
-<p><img loading="lazy" alt="No shared ground setup" src="/static/bcc1_connectednoground.jpg" /></p>
+<p><img alt="No shared ground setup" src="/static/bcc1_connectednoground.jpg" /></p>
 <p>Without the shared ground of my laptop, the problem gets a lot harder. I first tried holding the signal and receiving wires to compare the shared vs unshared grounds. The square wave is lost in big noise of a completely different frequency, and comes straight back when I connect the grounds again.</p>
 <p class="caption">Unconnected vs. connected ground BCC signal</p>
-<p><img loading="lazy" alt="Unconnected vs. connected ground BCC signal" src="/static/bcc1_ngvsg.png" /></p>
+<p><img alt="Unconnected vs. connected ground BCC signal" src="/static/bcc1_ngvsg.png" /></p>
 <p>I was worried that the signal wasn't actually getting through at all, but it does. I tried holding the signal wire, then dropping it but still touching the receiving wire. </p>
 <p class="caption">Received signal while I hold the signal wire then release it</p>
-<p><img loading="lazy" alt="Received signal while I hold the signal wire vs when I don't" src="/static/bcc1_ng_touchvsnotouch.png" /></p>
+<p><img alt="Received signal while I hold the signal wire vs when I don't" src="/static/bcc1_ng_touchvsnotouch.png" /></p>
 <p>And when I hold the receiving wire, then drop it, the signal goes to our nice analog baseline. </p>
 <p class="caption">Received signal while I hold the receiving wire then release it</p>
-<p><img loading="lazy" alt="Received signal while I hold the receiving wire then release it" src="/static/bcc1_ng_touchvsnotouch2.png" /></p>
+<p><img alt="Received signal while I hold the receiving wire then release it" src="/static/bcc1_ng_touchvsnotouch2.png" /></p>
 <p>The detection is sizing up to be fairly tricky, but I think that we should be able to detect the signal even when the grounds are not shared. There's already a clear difference between touching signal and not, but we need to do some work on conditioning the signal to better cross the human-pin divide.</p>
 <h1>Next steps</h1>
 <p>This is a 10Hz signal, which is fairly slow. We can make it much higher, but I needed to go low to show the plots properly on the serial plotter. However, we're limited by the ADC time, which is middling on an Arduino. We may need to switch to another microcontroller if we want more speed. With a higher frequency, we also get better coupling to ground, which hopefully gives us a better transferred signal.</p>
 <p>We're gonna try bits next! Cya then!</p>
-
-    
-        <hr>
-        <p style="line-height:250%;">
-        <a class="btn btn-info" href="/tagged/hci/">hci</a>
-
-        
-            &nbsp;
-            <a class="btn btn-info" href="/tagged/microcontroller/">microcontroller</a>
-        
-            &nbsp;
-            <a class="btn btn-info" href="/tagged/bcc/">bcc</a>
-        
-        </p> 
-    
-</div>
-
-
-
-
-                    </div>
-                    <br>
-        <!-- </div> -->
-</div>
-
 
 
 

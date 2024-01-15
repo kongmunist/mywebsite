@@ -8,17 +8,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    
-        <meta name="author" content="Andy Kong">
-        <meta name="title" content="Working with BrainFlow pt. 1">
-        <meta name="description" content="A new way to stream OpenBCI data to Python">
-        <meta name="keywords" content=" projectlog,  EEG,  Python, ">
-
-        <title>
-            Working with BrainFlow pt. 1 | Andy Kong
-        </title>
-    
-
 
 
 
@@ -251,23 +240,8 @@ code {
 </nav>
 
 
-    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
-<!-- padding-left:20px; padding-right:20px -->
-            <div class="col-md-8 col-11 p-0" style="">
-                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
-
-                
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-        
-
-
-<div class="blogpage overflow-hidden" style="margin-bottom:4em;">
-    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Working with BrainFlow pt. 1</h1>
-            <p style="font-size:0.8em;"> Published December 30, 2020</p>
-<hr>
-            <p>TL;DR: The OpenBCI GUI sucks, I show you how to stream <a href="https://shop.openbci.com/products/ganglion-board">Ganglion</a> data to Python through BrainFlow to make your own GUI. </p>
+    <h2>Working with BrainFlow pt. 1</h2>
+    <p>TL;DR: The OpenBCI GUI sucks, I show you how to stream <a href="https://shop.openbci.com/products/ganglion-board">Ganglion</a> data to Python through BrainFlow to make your own GUI. </p>
 <hr>
 
 <h3>Why would you want to make your own?</h3>
@@ -279,7 +253,7 @@ code {
 <h3>GUI Setup</h3>
 <p>I wrangled some matplotlib plots and added them to an animation so they'd update live. Turns out calling <code>fig.tight_layout()</code> takes like 80ms, which really slowed down my plotting time (10FPS tops). However, if you take out <code>fig.tight_layout()</code> from your animation loop, the plot axes start drawing over themselves! </p>
 <p class="caption">Plot axes overlapping, making your plot an illegible mess from hell</p>
-<p><img loading="lazy" alt="Plot axes overlapping, making your plot an illegible mess from hell" src="/static/brainflowgraphoverwriting.png" /></p>
+<p><img alt="Plot axes overlapping, making your plot an illegible mess from hell" src="/static/brainflowgraphoverwriting.png" /></p>
 <p>Turns out the <code>tight_layout()</code> call notifies the figure that the background is stale (literally a boolean attribute of <code>matplotlib.Figure</code> called <code>stale</code>) and needs to be redrawn. I had left blit=True because I wanted good speed, and I guess that makes the background not redraw every loop. IDK, I read the code and it still didn't make sense. </p>
 <p>I solved this by calling <code>fig.set_visible(True)</code>, which conveniently turns <code>stale=True</code> and fixes the background. Tada! Now I'm at 50Hz update rate on the graph. Excellent. Now let's see how the filters do</p>
 <h3>Brainflow params</h3>
@@ -290,37 +264,12 @@ code {
 <p>I started off just comparing the FFTs. I used a window of 256, an overlap of 128, and a Blackman Harris window (Scipy's was 256, but I feel like I used that wrong...). The results were.... complicated. </p>
 <p>Sometimes the peaks were comparable, but Scipy's would be much clearer among the taller peaks of noise</p>
 <p class="caption">BrainFlow vs. Scipy PSD/FFT using Welch's method</p>
-<p><img loading="lazy" alt="BrainFlow vs. Scipy PSD/FFT using Welch's method" src="/static/brainflowvsscipy3.png" /></p>
+<p><img alt="BrainFlow vs. Scipy PSD/FFT using Welch's method" src="/static/brainflowvsscipy3.png" /></p>
 <p>Other times, the BrainFlow plot would have higher peaks for some frequencies, and lower peaks for others. </p>
 <p class="caption">BrainFlow vs. Scipy PSD/FFT using Welch's method</p>
-<p><img loading="lazy" alt="BrainFlow vs. Scipy PSD/FFT using Welch's method" src="/static/brainflowvsscipy4.png" /></p>
+<p><img alt="BrainFlow vs. Scipy PSD/FFT using Welch's method" src="/static/brainflowvsscipy4.png" /></p>
 <p>I think Scipy's graphs looked cleaner, even if they were a little noisier. The peaks were higher, which is what I really wanted. I would've liked to quantitatively chosen, but since I just sampled the air, I couldn't get SNR of anything since there was no signal to compare to. Oh well. It's small dice anyway, considering if the signal is awfully noisy we can't get anything out anyway.</p>
 <p>Until next time!</p>
-
-    
-        <hr>
-        <p style="line-height:250%;">
-        <a class="btn btn-info" href="/tagged/projectlog/">projectlog</a>
-
-        
-            &nbsp;
-            <a class="btn btn-info" href="/tagged/EEG/">EEG</a>
-        
-            &nbsp;
-            <a class="btn btn-info" href="/tagged/Python/">Python</a>
-        
-        </p> 
-    
-</div>
-
-
-
-
-                    </div>
-                    <br>
-        <!-- </div> -->
-</div>
-
 
 
 

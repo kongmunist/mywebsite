@@ -8,17 +8,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    
-        <meta name="author" content="Andy Kong">
-        <meta name="title" content="Myo3 Noise Specs">
-        <meta name="description" content="1.24µV of noise at 500,000x gain on a DIY electromyography sensor">
-        <meta name="keywords" content=" myo3,  projectlog, ">
-
-        <title>
-            Myo3 Noise Specs | Andy Kong
-        </title>
-    
-
 
 
 
@@ -251,69 +240,32 @@ code {
 </nav>
 
 
-    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
-<!-- padding-left:20px; padding-right:20px -->
-            <div class="col-md-8 col-11 p-0" style="">
-                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
-
-                
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-        
-
-
-<div class="blogpage overflow-hidden" style="margin-bottom:4em;">
-    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Myo3 Noise Specs</h1>
-            <p style="font-size:0.8em;"> Published November 29, 2020</p>
-<hr>
-            <p>Today I tested the third iteration of my DIY EMG sensor. </p>
-<p><img loading="lazy" alt="Fresh myo3 boards from the oven" src="/static/myo3_board.png" /></p>
+    <h2>Myo3 Noise Specs</h2>
+    <p>Today I tested the third iteration of my DIY EMG sensor. </p>
+<p><img alt="Fresh myo3 boards from the oven" src="/static/myo3_board.png" /></p>
 <p class="caption">Fresh myo3 boards from the oven</p>
 
 <h3>Measuring the total gain</h3>
 <p>My function generator only goes down to 20 mV p-p, I'm using a 50kΩ and 10Ω resistor to make a voltage divier to divide my input signal by 5000.</p>
 <p>I'm using a 200Hz sine wave, since that's the center frequency of all my filtering. Its amplitude is 50 mV p-p. Afte the voltage divider, the signal actually going into the board is a 10 µV p-p sine wave. After the first stage, the output becomes 50 mV on the scope. It's like a magic trick — first we disappear the signal, then we make it reappear again!</p>
 <p>I lowered my output amplitude to as low as it could go, 20 mV p-p. This becomes 4 µV p-p after the divider, which becomes 20 mV after the first stage. What happens after the second stage? Glad you asked:</p>
-<p><img loading="lazy" alt="A choppy 2V sine wave, produced from a 4µV signal" src="/static/myo3_100hz.JPG" /></p>
+<p><img alt="A choppy 2V sine wave, produced from a 4µV signal" src="/static/myo3_100hz.JPG" /></p>
 <p class="caption">A choppy 2V sine wave, amplified from a 4µV input signal</p>
 
 <p>We see that the 20mV signal becomes 2V, a gain of 100. After both stages, the total gain of a myo3 board is 500,000x, or 114 dB of gain. But that's not impressive if the noise is high — so what <em>is</em> the noise?</p>
 <h3>Noise measuring setup</h3>
 <p>I'm connecting the two inputs to the INA, and then grounding them to the center voltage of the power rails. </p>
-<p><img loading="lazy" alt="Noise testing setup for myo3" src="/static/myo3_noiseboardsetup.JPG" /></p>
+<p><img alt="Noise testing setup for myo3" src="/static/myo3_noiseboardsetup.JPG" /></p>
 <p class="caption">Noise testing setup for myo3</p>
 
 <p>And here's what the output looks like after both stages:</p>
-<p><img loading="lazy" alt="Output signal of the myo3 after shorting its inputs. Peak to peak noise is 620 mV" src="/static/myo3_out3noise.JPG" /></p>
+<p><img alt="Output signal of the myo3 after shorting its inputs. Peak to peak noise is 620 mV" src="/static/myo3_out3noise.JPG" /></p>
 <p class="caption">Output signal of the myo3 after shorting its inputs. Peak to peak noise is 620 mV</p>
 
 <p>Looks bad right? Well, let's do the calculation. </p>
 <p>After 500,000x gain, the output noise has a peak-to-peak voltage of 600-900mV. 0.62V/500000 = 0.00000124, or <em>1.24 µV</em>. </p>
 <p>The total noise on the inputs is under 2 µV, before any digital filtering or averaging. Wow! And that's across 50kΩ of resistance, meaning its got low current noise AND voltage noise. For reference, that's less than the thermal noise on a 100kΩ resistor at 20C and 1000Hz bandwidth. </p>
 <p>I think this circuit definitely achieves my original goal of making a biosensing board that doesn't have awful noise dwarfing the measurements. We'll see how it fares in a real test when my USB isolator arrives.</p>
-
-    
-        <hr>
-        <p style="line-height:250%;">
-        <a class="btn btn-info" href="/tagged/myo3/">myo3</a>
-
-        
-            &nbsp;
-            <a class="btn btn-info" href="/tagged/projectlog/">projectlog</a>
-        
-        </p> 
-    
-</div>
-
-
-
-
-                    </div>
-                    <br>
-        <!-- </div> -->
-</div>
-
 
 
 

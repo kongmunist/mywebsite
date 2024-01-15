@@ -8,17 +8,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    
-        <meta name="author" content="Andy Kong">
-        <meta name="title" content="Speed Check">
-        <meta name="description" content="What&#39;s the fastest way to record a stream of strings in Python?">
-        <meta name="keywords" content=" projectlog,  speedcheck, ">
-
-        <title>
-            Speed Check | Andy Kong
-        </title>
-    
-
 
 
 
@@ -251,50 +240,13 @@ code {
 </nav>
 
 
-    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
-<!-- padding-left:20px; padding-right:20px -->
-            <div class="col-md-8 col-11 p-0" style="">
-                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
-
-                
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-        
-
-
-<div class="blogpage overflow-hidden" style="margin-bottom:4em;">
-    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Speed Check</h1>
-            <p style="font-size:0.8em;"> Published May 10, 2020</p>
-<hr>
-            <p>I'm trying to record a stream of string data coming from a Teensy microcontroller over USB Serial. I chose a high baud rate so I can transfer and save the data quickly, but I don't want to drop any elements from the stream while I'm trying to write it down. So I wrote a little test script to see which method is fastest. </p>
+    <h2>Speed Check</h2>
+    <p>I'm trying to record a stream of string data coming from a Teensy microcontroller over USB Serial. I chose a high baud rate so I can transfer and save the data quickly, but I don't want to drop any elements from the stream while I'm trying to write it down. So I wrote a little test script to see which method is fastest. </p>
 <h3>Results</h3>
 <p>For each method, I wrote the string "yaga," 10,000 times. </p>
 <p>Setting elements of a prealloc'd Python list works the fastest. I thought writing to a file would take less time, but it's actually around 3x slower. Python append works pretty fast too, but has the overhead of a list of changing size</p>
-<p><img loading="lazy" src=/static/speedcheckStringWrite.png width="400" class="d-block mx-auto"/></p>
+<p><img src=/static/speedcheckStringWrite.png width="400" class="d-block mx-auto"/></p>
 <p><a href=/static/speedcheckStringWrite.py>Link to code</a> </p>
-
-    
-        <hr>
-        <p style="line-height:250%;">
-        <a class="btn btn-info" href="/tagged/projectlog/">projectlog</a>
-
-        
-            &nbsp;
-            <a class="btn btn-info" href="/tagged/speedcheck/">speedcheck</a>
-        
-        </p> 
-    
-</div>
-
-
-
-
-                    </div>
-                    <br>
-        <!-- </div> -->
-</div>
-
 
 
 
