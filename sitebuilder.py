@@ -41,14 +41,14 @@ print(app.config['FLATPAGES_EXTENSION'])
 
 ## Solution to redirect URLs that end with / to the same URL without the /
 # From https://stackoverflow.com/questions/25494223/redirecting-urls-that-end-with-a-slash-in-flask
-app.url_map.strict_slashes = False
-@app.before_request
-def clear_trailing():
-    from flask import redirect, request
-
-    rp = request.path
-    if rp != '/' and rp.endswith('/'):
-        return redirect(rp[:-1])
+app.url_map.strict_slashes = True
+# @app.before_request
+# def clear_trailing():
+#     from flask import redirect, request
+#
+#     rp = request.path
+#     if rp != '/' and rp.endswith('/'):
+#         return redirect(rp[:-1])
 
 
 # Allows markdown to do flask functions before the site's HTML renders. INTEGRAL. SO IMPORTANT.
@@ -191,7 +191,7 @@ def rss():
             fe.pubDate(timezone.localize(dt))
 
     response = make_response(fg.rss_str(pretty=True))
-    response.headers.set('Content-Type', 'application/rss+xml')
+    response.headers.set('Content-Type', 'application/xml')
 
     return response
 
