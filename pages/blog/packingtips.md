@@ -1,4 +1,4 @@
-title: "Shipping from Europe to America from 2.3$/kg"
+title: "Shipping from Europe to America from $2.30/kg"
 date: 2024-01-01
 label: blog
 tags: [life]

@@ -14,6 +14,17 @@
 
   
     <url>
+    <loc>https://andykong.org/blog/fitbittsproblem</loc>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/fitbittsproblem/0.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+    <url>
     <loc>https://andykong.org/blog/bionicreadingtest</loc>
       
         <image:image>

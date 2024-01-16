@@ -52,13 +52,13 @@ For accountability, I will maintain the list of outputs below, though this proje
 - Jan 6: [Hamster research](https://twitter.com/oldestasian/status/1744230730513694916)
 {{ add_pic("yearofoutput/jan6.png", "hamster tweet") }}
 - Jan 7: Shots for a long video, Colpitts oscillator which doesn't work
-{{ add_pic("yearofoutput/jan7.jpg", "A sneak peak") }}
+{{ add_pic("yearofoutput/jan7.jpg", "A sneak peek") }}
 - Jan 8: [Strooper project post](../strooper) ([extension here!](https://chromewebstore.google.com/detail/strooper/bmpmimimabakkagnniammiljclhjcmgi))
 - Jan 9: [Blog post comparing my reading speed on paper vs. screen](../../blog/printvsdigital/)
 - Jan 10: Editing long video, [Stroop vs Sleep graph](../../blog/stroopvssleep)
 {{ add_pic("stroopvssleep/img.png", "Stroop performance gets better if I sleep more. As my mom would say, Duh!") }}
 - Jan 11: [Checking if Bionic Reading helps you read faster](../../blog/bionicreadingtest)
 - Jan 12: Shots for 18-wheeler-tailgating video.
-- Jan 13: Big sheet
-- Jan 14: Blog updates - added word count to the title 
-- Jan 15: 
+- Jan 13: Planning - big sheet
+- Jan 14: Website update (added word count to blog posts) 
+- Jan 15: New circuit. Blog post about Fitbit's terrible data practices.
