@@ -19,6 +19,33 @@
         </title>
     
 
+    <style>
+        body {
+            counter-reset: h1counter h2counter;
+        }
+
+        h1:not(.title) {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+
+            counter-reset: h2counter;
+        }
+
+        h1:not(.title) {
+            counter-increment: h1counter;
+            content: counter(h1counter) ". ";
+        }
+
+        h2::before {
+            counter-increment: h2counter;
+            content: counter(h1counter) "." counter(h2counter) " ";
+        }
+
+    </style>
+
+
+
 
     <style type="text/css">
         /* Atkinson Hyperlegible */
@@ -152,11 +179,11 @@ a:hover {
 }
 
 .blogpage h1, .blogpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 .projectpage h1, .projectpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 hr{
@@ -206,7 +233,7 @@ code {
 
 
 
-<body style="color:#F8E0CB;overflow-x: hidden;">
+<body style="color:#FAEADB;overflow-x: hidden;">
 
 
 
@@ -256,7 +283,7 @@ code {
 
 
 <div class="blogpage overflow-hidden" style="margin-bottom:4em;">
-    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Preliminary 5W LED Tests</h1>
+    <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Preliminary 5W LED Tests</h1>
             <p style="font-size:0.8em;"> Published January 6, 2021</p>
 <hr>
             <p>I show you tests of some 5W LEDs I bought off Amazon, and how they look projected onto a wall that's far away.</p>
@@ -281,16 +308,16 @@ code {
 <p>One problem is that the Fresnel lens has distortion issues, and doesn't focus very well at all. The edges of shadows projected are all blurry, probably partially because of diffraction around my finger. Maybe I should collimate the light somehow before I shine it through the screen (I want this to show text eventually), but we'll see what problems I run into with the lens I currently have before I come up with new solutions.</p>
 <p>Hopefully it'll be alright. Cya next time!</p>
 
+
+
     
         <hr>
         <p style="line-height:250%;">
         <a class="btn btn-info" href="/tagged/projector/">projector</a>
 
         
-            &nbsp;
             <a class="btn btn-info" href="/tagged/projectlog/">projectlog</a>
         
-            &nbsp;
             <a class="btn btn-info" href="/tagged/LED/">LED</a>
         
         </p> 

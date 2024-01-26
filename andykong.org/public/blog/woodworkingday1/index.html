@@ -19,6 +19,33 @@
         </title>
     
 
+    <style>
+        body {
+            counter-reset: h1counter h2counter;
+        }
+
+        h1:not(.title) {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+
+            counter-reset: h2counter;
+        }
+
+        h1:not(.title) {
+            counter-increment: h1counter;
+            content: counter(h1counter) ". ";
+        }
+
+        h2::before {
+            counter-increment: h2counter;
+            content: counter(h1counter) "." counter(h2counter) " ";
+        }
+
+    </style>
+
+
+
 
     <style type="text/css">
         /* Atkinson Hyperlegible */
@@ -152,11 +179,11 @@ a:hover {
 }
 
 .blogpage h1, .blogpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 .projectpage h1, .projectpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 hr{
@@ -206,7 +233,7 @@ code {
 
 
 
-<body style="color:#F8E0CB;overflow-x: hidden;">
+<body style="color:#FAEADB;overflow-x: hidden;">
 
 
 
@@ -256,7 +283,7 @@ code {
 
 
 <div class="blogpage overflow-hidden" style="margin-bottom:4em;">
-    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Intro to Intro to Woodworking</h1>
+    <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Intro to Intro to Woodworking</h1>
             <p style="font-size:0.8em;"> Published March 24, 2021</p>
 <hr>
             <p>Yesterday I had my 2nd in-person class this semester. We met a nice man in Techspark and he showed us the woodshop. The walls were covered in covered plywood shelves and things. We saw a few demo projects that we'd be doing during the course, like a folding stool, push stick, and crate. </p>
@@ -267,13 +294,14 @@ code {
 <p>Finally, I used a hand sander which had a velcro pad of sandpaper that was a little off center to smooth the rough wooden surface. It looks quite weird when it moves, wagon-wheeling before your eyes. </p>
 <p>It's amazing how much scrap wood they have in there. The shop goes through a lot just for demonstrations, and then thick plates are just free for anyone to use in the refuse pile. Good news for me! I'm not sure what to make next — it would be cool to recreate a lamp of mine, or a new wooden spoon. So many possibilities!</p>
 
+
+
     
         <hr>
         <p style="line-height:250%;">
         <a class="btn btn-info" href="/tagged/woodworking/">woodworking</a>
 
         
-            &nbsp;
             <a class="btn btn-info" href="/tagged/cmu/">cmu</a>
         
         </p> 

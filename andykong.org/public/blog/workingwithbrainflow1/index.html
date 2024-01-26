@@ -19,6 +19,33 @@
         </title>
     
 
+    <style>
+        body {
+            counter-reset: h1counter h2counter;
+        }
+
+        h1:not(.title) {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+
+            counter-reset: h2counter;
+        }
+
+        h1:not(.title) {
+            counter-increment: h1counter;
+            content: counter(h1counter) ". ";
+        }
+
+        h2::before {
+            counter-increment: h2counter;
+            content: counter(h1counter) "." counter(h2counter) " ";
+        }
+
+    </style>
+
+
+
 
     <style type="text/css">
         /* Atkinson Hyperlegible */
@@ -152,11 +179,11 @@ a:hover {
 }
 
 .blogpage h1, .blogpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 .projectpage h1, .projectpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 hr{
@@ -206,7 +233,7 @@ code {
 
 
 
-<body style="color:#F8E0CB;overflow-x: hidden;">
+<body style="color:#FAEADB;overflow-x: hidden;">
 
 
 
@@ -256,7 +283,7 @@ code {
 
 
 <div class="blogpage overflow-hidden" style="margin-bottom:4em;">
-    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Working with BrainFlow pt. 1</h1>
+    <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Working with BrainFlow pt. 1</h1>
             <p style="font-size:0.8em;"> Published December 30, 2020</p>
 <hr>
             <p>TL;DR: The OpenBCI GUI sucks, I show you how to stream <a href="https://shop.openbci.com/products/ganglion-board">Ganglion</a> data to Python through BrainFlow to make your own GUI. </p>
@@ -289,16 +316,16 @@ code {
 <p>I think Scipy's graphs looked cleaner, even if they were a little noisier. The peaks were higher, which is what I really wanted. I would've liked to quantitatively chosen, but since I just sampled the air, I couldn't get SNR of anything since there was no signal to compare to. Oh well. It's small dice anyway, considering if the signal is awfully noisy we can't get anything out anyway.</p>
 <p>Until next time!</p>
 
+
+
     
         <hr>
         <p style="line-height:250%;">
         <a class="btn btn-info" href="/tagged/projectlog/">projectlog</a>
 
         
-            &nbsp;
             <a class="btn btn-info" href="/tagged/EEG/">EEG</a>
         
-            &nbsp;
             <a class="btn btn-info" href="/tagged/Python/">Python</a>
         
         </p> 

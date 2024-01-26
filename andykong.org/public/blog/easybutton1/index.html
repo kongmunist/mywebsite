@@ -19,6 +19,33 @@
         </title>
     
 
+    <style>
+        body {
+            counter-reset: h1counter h2counter;
+        }
+
+        h1:not(.title) {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+
+            counter-reset: h2counter;
+        }
+
+        h1:not(.title) {
+            counter-increment: h1counter;
+            content: counter(h1counter) ". ";
+        }
+
+        h2::before {
+            counter-increment: h2counter;
+            content: counter(h1counter) "." counter(h2counter) " ";
+        }
+
+    </style>
+
+
+
 
     <style type="text/css">
         /* Atkinson Hyperlegible */
@@ -152,11 +179,11 @@ a:hover {
 }
 
 .blogpage h1, .blogpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 .projectpage h1, .projectpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 hr{
@@ -206,7 +233,7 @@ code {
 
 
 
-<body style="color:#F8E0CB;overflow-x: hidden;">
+<body style="color:#FAEADB;overflow-x: hidden;">
 
 
 
@@ -256,7 +283,7 @@ code {
 
 
 <div class="blogpage overflow-hidden" style="margin-bottom:4em;">
-    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Easy Button Hack Pt. 1</h1>
+    <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Easy Button Hack Pt. 1</h1>
             <p style="font-size:0.8em;"> Published December 24, 2020</p>
 <hr>
             <p>WOOO. In sort-of order, today I learned: how to read from SD cards, how to play wavs from SD cards, how to boost speaker volume using a transistor, how to limit transistor current using a resistor, how to trigger interrupts for Arduino sleep modes, how to change what shape causes an interrupt, which pins are and AREN'T interrupt pins, how to hijack the button on an Easy button (not easy, actually).</p>
@@ -277,22 +304,20 @@ code {
 <li>The UNO is pin-by-pin compatible with the Nano. </li>
 </ul>
 
+
+
     
         <hr>
         <p style="line-height:250%;">
         <a class="btn btn-info" href="/tagged/projectlog/">projectlog</a>
 
         
-            &nbsp;
             <a class="btn btn-info" href="/tagged/easybutton/">easybutton</a>
         
-            &nbsp;
             <a class="btn btn-info" href="/tagged/arduino/">arduino</a>
         
-            &nbsp;
             <a class="btn btn-info" href="/tagged/microcontroller/">microcontroller</a>
         
-            &nbsp;
             <a class="btn btn-info" href="/tagged/audio/">audio</a>
         
         </p> 

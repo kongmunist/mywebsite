@@ -19,6 +19,33 @@
         </title>
     
 
+    <style>
+        body {
+            counter-reset: h1counter h2counter;
+        }
+
+        h1:not(.title) {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+
+            counter-reset: h2counter;
+        }
+
+        h1:not(.title) {
+            counter-increment: h1counter;
+            content: counter(h1counter) ". ";
+        }
+
+        h2::before {
+            counter-increment: h2counter;
+            content: counter(h1counter) "." counter(h2counter) " ";
+        }
+
+    </style>
+
+
+
 
     <style type="text/css">
         /* Atkinson Hyperlegible */
@@ -152,11 +179,11 @@ a:hover {
 }
 
 .blogpage h1, .blogpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 .projectpage h1, .projectpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 hr{
@@ -206,7 +233,7 @@ code {
 
 
 
-<body style="color:#F8E0CB;overflow-x: hidden;">
+<body style="color:#FAEADB;overflow-x: hidden;">
 
 
 
@@ -256,7 +283,7 @@ code {
 
 
 <div class="blogpage overflow-hidden" style="margin-bottom:4em;">
-    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">5050 LED Strip Teardown</h1>
+    <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">5050 LED Strip Teardown</h1>
             <p style="font-size:0.8em;"> Published February 20, 2021</p>
 <hr>
             <p>Hello! I purchased some LED strips off Amazon. I've always wanted some more lighting, but more importantly, I also wanted to set up some interactive visuals in my room! </p>
@@ -279,16 +306,16 @@ code {
 <p><img loading="lazy" alt="Controlling board for the LED light strip. Was previously just dangling in the power brick..." src="/static/led5050_controlboard.jpg" /></p>
 <p>Looks good. Next step, find a 5V microcontroller and hook it up! We'll see how hard the controls are, depending on the voltage-to-brightness conversion on the transistor.</p>
 
+
+
     
         <hr>
         <p style="line-height:250%;">
         <a class="btn btn-info" href="/tagged/LEDs/">LEDs</a>
 
         
-            &nbsp;
             <a class="btn btn-info" href="/tagged/teardown/">teardown</a>
         
-            &nbsp;
             <a class="btn btn-info" href="/tagged/electronics/">electronics</a>
         
         </p> 

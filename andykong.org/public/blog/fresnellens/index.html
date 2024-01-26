@@ -19,6 +19,33 @@
         </title>
     
 
+    <style>
+        body {
+            counter-reset: h1counter h2counter;
+        }
+
+        h1:not(.title) {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+
+            counter-reset: h2counter;
+        }
+
+        h1:not(.title) {
+            counter-increment: h1counter;
+            content: counter(h1counter) ". ";
+        }
+
+        h2::before {
+            counter-increment: h2counter;
+            content: counter(h1counter) "." counter(h2counter) " ";
+        }
+
+    </style>
+
+
+
 
     <style type="text/css">
         /* Atkinson Hyperlegible */
@@ -152,11 +179,11 @@ a:hover {
 }
 
 .blogpage h1, .blogpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 .projectpage h1, .projectpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 hr{
@@ -206,7 +233,7 @@ code {
 
 
 
-<body style="color:#F8E0CB;overflow-x: hidden;">
+<body style="color:#FAEADB;overflow-x: hidden;">
 
 
 
@@ -256,7 +283,7 @@ code {
 
 
 <div class="blogpage overflow-hidden" style="margin-bottom:4em;">
-    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Fresnel Lens</h1>
+    <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Fresnel Lens</h1>
             <p style="font-size:0.8em;"> Published January 5, 2021</p>
 <hr>
             <p>Hi! Today I'm going to tell you a bit about these really cool lenses that use angled surfaces to achieve magnification and other lens effects in a flat form factor instead of a curved one. I also show you some big ones I bought, and what they're useful for. We're talking about <a href="https://en.wikipedia.org/wiki/Fresnel_lens">Fresnel Lenses</a>!</p>
@@ -277,16 +304,16 @@ code {
 <p><img loading="lazy" alt="Fresnel lens projecting an image of my ceiling lamp onto the wall" src="/static/fresnel_reflectproject.jpg" /></p>
 <p>I'm going to use this to try and make a wall projection. Cya!</p>
 
+
+
     
         <hr>
         <p style="line-height:250%;">
         <a class="btn btn-info" href="/tagged/optics/">optics</a>
 
         
-            &nbsp;
             <a class="btn btn-info" href="/tagged/lenses/">lenses</a>
         
-            &nbsp;
             <a class="btn btn-info" href="/tagged/projectlog/">projectlog</a>
         
         </p> 

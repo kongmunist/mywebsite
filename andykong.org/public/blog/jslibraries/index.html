@@ -19,6 +19,33 @@
         </title>
     
 
+    <style>
+        body {
+            counter-reset: h1counter h2counter;
+        }
+
+        h1:not(.title) {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+
+            counter-reset: h2counter;
+        }
+
+        h1:not(.title) {
+            counter-increment: h1counter;
+            content: counter(h1counter) ". ";
+        }
+
+        h2::before {
+            counter-increment: h2counter;
+            content: counter(h1counter) "." counter(h2counter) " ";
+        }
+
+    </style>
+
+
+
 
     <style type="text/css">
         /* Atkinson Hyperlegible */
@@ -152,11 +179,11 @@ a:hover {
 }
 
 .blogpage h1, .blogpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 .projectpage h1, .projectpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 hr{
@@ -206,7 +233,7 @@ code {
 
 
 
-<body style="color:#F8E0CB;overflow-x: hidden;">
+<body style="color:#FAEADB;overflow-x: hidden;">
 
 
 
@@ -256,7 +283,7 @@ code {
 
 
 <div class="blogpage overflow-hidden" style="margin-bottom:4em;">
-    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Why are Javascript libraries so annoying</h1>
+    <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Why are Javascript libraries so annoying</h1>
             <p style="font-size:0.8em;"> Published November 28, 2020</p>
 <hr>
             <p>I am writing a rather complex Javascript project at the moment, and needed to include two different Javascript libraries. One is <a href="https://p5js.org/">p5.js</a>, which is just Processing ported to HTML and used for drawing and a lot of visual display stuff. The other is <a href="https://mlweb.loria.fr/">mlweb</a>, which is a machine learning library written in pure Javascript. </p>
@@ -278,13 +305,14 @@ code {
 <p>In the end, it turns out p5.js DOES conform to ES6, and can be wrapped in a big function wherever you call its functions and variables to not leak into the global namespace. With this solution, I stopped looking further into it. You can also invoke p5.js whenever you want in your javascript, if the problem is just the order in which the functions overlap (lazier, but easier).</p>
 <p>A Javascript encapsulator script would be really useful if Javascript continues being the norm for web stuff and people push more and more code into Javascript. It doesn't seem super hard, but for now there's not much of a fix and I'm busy. Summer project, anyone?</p>
 
+
+
     
         <hr>
         <p style="line-height:250%;">
         <a class="btn btn-info" href="/tagged/webdev/">webdev</a>
 
         
-            &nbsp;
             <a class="btn btn-info" href="/tagged/javascript/">javascript</a>
         
         </p> 

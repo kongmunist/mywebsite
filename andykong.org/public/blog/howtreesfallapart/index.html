@@ -19,6 +19,33 @@
         </title>
     
 
+    <style>
+        body {
+            counter-reset: h1counter h2counter;
+        }
+
+        h1:not(.title) {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+
+            counter-reset: h2counter;
+        }
+
+        h1:not(.title) {
+            counter-increment: h1counter;
+            content: counter(h1counter) ". ";
+        }
+
+        h2::before {
+            counter-increment: h2counter;
+            content: counter(h1counter) "." counter(h2counter) " ";
+        }
+
+    </style>
+
+
+
 
     <style type="text/css">
         /* Atkinson Hyperlegible */
@@ -152,11 +179,11 @@ a:hover {
 }
 
 .blogpage h1, .blogpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 .projectpage h1, .projectpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 hr{
@@ -206,7 +233,7 @@ code {
 
 
 
-<body style="color:#F8E0CB;overflow-x: hidden;">
+<body style="color:#FAEADB;overflow-x: hidden;">
 
 
 
@@ -256,7 +283,7 @@ code {
 
 
 <div class="blogpage overflow-hidden" style="margin-bottom:4em;">
-    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">How Trees Fall Apart</h1>
+    <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">How Trees Fall Apart</h1>
             <p style="font-size:0.8em;"> Published November 13, 2021</p>
 <hr>
             <p>You only get to experience 1 fall a year, and by the time you read this you're probably older than 15. This means you probably have only 65 falls left in you — remember to do your best to enjoy each one. </p>
@@ -276,6 +303,8 @@ code {
 <p class="caption">No regard for order! All leaves turn red at the same time, perfect example of communism</p>
 <p><img loading="lazy" alt="No regard for order! All leaves turn red at the same time, perfect example of communism" src="/static/allatonce.jpg" /></p>
 <p>Evolutionarily, I'm not sure the decaying has a rhyme or reason. Maybe it makes sense to keep the outer ones green since they receive the most sunlight, but maybe it doesn't matter because red leaves can collect energy as well. Whatever the reason, it makes a beautiful sight. </p>
+
+
 
     
         <hr>

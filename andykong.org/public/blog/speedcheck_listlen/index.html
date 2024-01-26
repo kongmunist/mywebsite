@@ -19,6 +19,33 @@
         </title>
     
 
+    <style>
+        body {
+            counter-reset: h1counter h2counter;
+        }
+
+        h1:not(.title) {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+
+            counter-reset: h2counter;
+        }
+
+        h1:not(.title) {
+            counter-increment: h1counter;
+            content: counter(h1counter) ". ";
+        }
+
+        h2::before {
+            counter-increment: h2counter;
+            content: counter(h1counter) "." counter(h2counter) " ";
+        }
+
+    </style>
+
+
+
 
     <style type="text/css">
         /* Atkinson Hyperlegible */
@@ -152,11 +179,11 @@ a:hover {
 }
 
 .blogpage h1, .blogpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 .projectpage h1, .projectpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 hr{
@@ -206,7 +233,7 @@ code {
 
 
 
-<body style="color:#F8E0CB;overflow-x: hidden;">
+<body style="color:#FAEADB;overflow-x: hidden;">
 
 
 
@@ -256,7 +283,7 @@ code {
 
 
 <div class="blogpage overflow-hidden" style="margin-bottom:4em;">
-    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Speed Check — Generating a list of a range of a len</h1>
+    <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Speed Check — Generating a list of a range of a len</h1>
             <p style="font-size:0.8em;"> Published November 25, 2020</p>
 <hr>
             <p>As part of my <a href="https://twitter.com/redlightguru/status/1331513267697676289?s=20">PPG project</a>, I had to create a live-updating plot. I'm most familiar with the matplotlib library, which has the same color scheme as MATLAB, so I'm using that. One problem is that they try to make a general-purpose plotting tool (matplotlib.pyplot) that also leaves you free to not worry about which window holds which figure and which renderer is drawing what, when. This is really bad because more general tools are more complex to use, and this is definitely the case here.</p>
@@ -324,13 +351,14 @@ timesEach <span style="color: #333333">=</span> <span style="color: #0000DD; fon
 
 <p>Turns out the naive <code>list(range(len(x)))</code> solution was the fastest! Until next time, cya!</p>
 
+
+
     
         <hr>
         <p style="line-height:250%;">
         <a class="btn btn-info" href="/tagged/speedcheck/">speedcheck</a>
 
         
-            &nbsp;
             <a class="btn btn-info" href="/tagged/matplotlib/">matplotlib</a>
         
         </p> 

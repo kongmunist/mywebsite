@@ -19,6 +19,33 @@
         </title>
     
 
+    <style>
+        body {
+            counter-reset: h1counter h2counter;
+        }
+
+        h1:not(.title) {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+
+            counter-reset: h2counter;
+        }
+
+        h1:not(.title) {
+            counter-increment: h1counter;
+            content: counter(h1counter) ". ";
+        }
+
+        h2::before {
+            counter-increment: h2counter;
+            content: counter(h1counter) "." counter(h2counter) " ";
+        }
+
+    </style>
+
+
+
 
     <style type="text/css">
         /* Atkinson Hyperlegible */
@@ -152,11 +179,11 @@ a:hover {
 }
 
 .blogpage h1, .blogpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 .projectpage h1, .projectpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 hr{
@@ -206,7 +233,7 @@ code {
 
 
 
-<body style="color:#F8E0CB;overflow-x: hidden;">
+<body style="color:#FAEADB;overflow-x: hidden;">
 
 
 
@@ -256,7 +283,7 @@ code {
 
 
 <div class="blogpage overflow-hidden" style="margin-bottom:4em;">
-    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Calculating the expected value of the PA scratch offs</h1>
+    <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Calculating the expected value of the PA scratch offs</h1>
             <p style="font-size:0.8em;"> Published February 4, 2021</p>
 <hr>
             <p>Hi! Yesterday I had a dream where I won a math prize (unlikely) and received a prize of 200 million dollars (even more unlikely). I then woke up, and decided that I needed to lose 20 dollars immediately on the Pennsylvania lottery (I think the odds of this one are the most unlikely out of all three occurences). </p>
@@ -340,16 +367,16 @@ code {
 <p>Results seem as expected, the more you pay, the less you lose proportionally, though not in raw cash. And, of course, house always wins. The calculated chances also reflect this, with the $30 dollar games offering the highest chances of winning anything. </p>
 <p>Weirdly enough, it seems that the loss from $1 games is the same as loss from $5 games, which makes you feel like you should buy 5x 1$ games instead of 1x 5$ game. Whatever gets you going, I guess. You lose money either way.</p>
 
+
+
     
         <hr>
         <p style="line-height:250%;">
         <a class="btn btn-info" href="/tagged/lottery/">lottery</a>
 
         
-            &nbsp;
             <a class="btn btn-info" href="/tagged/wasteofmoney/">wasteofmoney</a>
         
-            &nbsp;
             <a class="btn btn-info" href="/tagged/probability/">probability</a>
         
         </p> 

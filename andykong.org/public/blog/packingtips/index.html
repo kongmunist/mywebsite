@@ -19,6 +19,33 @@
         </title>
     
 
+    <style>
+        body {
+            counter-reset: h1counter h2counter;
+        }
+
+        h1:not(.title) {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+
+            counter-reset: h2counter;
+        }
+
+        h1:not(.title) {
+            counter-increment: h1counter;
+            content: counter(h1counter) ". ";
+        }
+
+        h2::before {
+            counter-increment: h2counter;
+            content: counter(h1counter) "." counter(h2counter) " ";
+        }
+
+    </style>
+
+
+
 
     <style type="text/css">
         /* Atkinson Hyperlegible */
@@ -152,11 +179,11 @@ a:hover {
 }
 
 .blogpage h1, .blogpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 .projectpage h1, .projectpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 hr{
@@ -206,7 +233,7 @@ code {
 
 
 
-<body style="color:#F8E0CB;overflow-x: hidden;">
+<body style="color:#FAEADB;overflow-x: hidden;">
 
 
 
@@ -256,7 +283,7 @@ code {
 
 
 <div class="blogpage overflow-hidden" style="margin-bottom:4em;">
-    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Shipping from Europe to America from $2.30/kg</h1>
+    <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Shipping from Europe to America from $2.30/kg</h1>
             <p style="font-size:0.8em;"> Published January 1, 2024</p>
 <hr>
             <p>Hello! After my undergrad, I moved from the US to Europe, taking all my earthly possessions. A year later, I have moved back to the US, taking, again, all my earthly possessions. I am extremely susceptible to the <a href="https://en.wikipedia.org/wiki/Endowment_effect">endowment effect</a> and I'm not rich yet, so I put in a lot of effort and moved back nearly everything I took there and then some without paying much extra — the process took quite a bit of repacking and rethinking, so I'd like to share my insights with you, dear reader. </p>
@@ -300,6 +327,8 @@ code {
 <h1>Conclusion</h1>
 <p>If you don't want to <a href="https://vitalik.eth.limo/general/2022/06/20/backpack.html">remodel your whole life around travelling</a>, keeping these lessons in mind is a nice compromise. Hope you enjoyed reading, and that my painful insights become your pro-tips.</p>
 <p>Cya around!</p>
+
+
 
     
         <hr>

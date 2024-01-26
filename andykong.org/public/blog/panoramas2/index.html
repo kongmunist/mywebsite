@@ -19,6 +19,33 @@
         </title>
     
 
+    <style>
+        body {
+            counter-reset: h1counter h2counter;
+        }
+
+        h1:not(.title) {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+
+            counter-reset: h2counter;
+        }
+
+        h1:not(.title) {
+            counter-increment: h1counter;
+            content: counter(h1counter) ". ";
+        }
+
+        h2::before {
+            counter-increment: h2counter;
+            content: counter(h1counter) "." counter(h2counter) " ";
+        }
+
+    </style>
+
+
+
 
     <style type="text/css">
         /* Atkinson Hyperlegible */
@@ -152,11 +179,11 @@ a:hover {
 }
 
 .blogpage h1, .blogpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 .projectpage h1, .projectpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 hr{
@@ -206,7 +233,7 @@ code {
 
 
 
-<body style="color:#F8E0CB;overflow-x: hidden;">
+<body style="color:#FAEADB;overflow-x: hidden;">
 
 
 
@@ -256,7 +283,7 @@ code {
 
 
 <div class="blogpage overflow-hidden" style="margin-bottom:4em;">
-    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Creating panorama images manually, pt 2!</h1>
+    <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Creating panorama images manually, pt 2!</h1>
             <p style="font-size:0.8em;"> Published November 18, 2020</p>
 <hr>
             <p>Late last night I was greeted in my dreams by a green, ghastly spectre, who said unto me: "Instead of adding 1 image at a time, did you try stitching 2 and 2, then the two composites? This would greatly reduce the distortion suffered by the latter images," in a spooky voice. I said "No I didn't think of that," then woke up and tried it. It immediately looked way better. Here's the results</p>
@@ -265,13 +292,14 @@ code {
 <p><img loading="lazy" alt="Keypoints comparison across the new method" src="/static/panorama2_keypointcrossanalysis.jpg" /></p>
 <p>I guess divide and conquer really has its merits. </p>
 
+
+
     
         <hr>
         <p style="line-height:250%;">
         <a class="btn btn-info" href="/tagged/CV/">CV</a>
 
         
-            &nbsp;
             <a class="btn btn-info" href="/tagged/OpenCV/">OpenCV</a>
         
         </p> 

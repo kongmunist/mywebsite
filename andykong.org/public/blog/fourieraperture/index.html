@@ -19,6 +19,33 @@
         </title>
     
 
+    <style>
+        body {
+            counter-reset: h1counter h2counter;
+        }
+
+        h1:not(.title) {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+
+            counter-reset: h2counter;
+        }
+
+        h1:not(.title) {
+            counter-increment: h1counter;
+            content: counter(h1counter) ". ";
+        }
+
+        h2::before {
+            counter-increment: h2counter;
+            content: counter(h1counter) "." counter(h2counter) " ";
+        }
+
+    </style>
+
+
+
 
     <style type="text/css">
         /* Atkinson Hyperlegible */
@@ -152,11 +179,11 @@ a:hover {
 }
 
 .blogpage h1, .blogpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 .projectpage h1, .projectpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 hr{
@@ -206,7 +233,7 @@ code {
 
 
 
-<body style="color:#F8E0CB;overflow-x: hidden;">
+<body style="color:#FAEADB;overflow-x: hidden;">
 
 
 
@@ -256,7 +283,7 @@ code {
 
 
 <div class="blogpage overflow-hidden" style="margin-bottom:4em;">
-    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Real Time Fourier Transform Using Shaped Aperture</h1>
+    <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Real Time Fourier Transform Using Shaped Aperture</h1>
             <p style="font-size:0.8em;"> Published September 20, 2021</p>
 <hr>
             <p>Hello! I'm going to tell you something cool about light. Specifically, how to use apertures and lenses to perform the Fourier Transform of a 2D image at the speed of light.  </p>
@@ -295,16 +322,16 @@ code {
 <p>I'm still not sure why the scale of the image was so zoomed for Kallard's images. The spread of the light depends on your angle, and Kallard had quite a large distance between his lens and the photographing wall. Perhaps if you were to recreate this using a closer camera, you'd get the same thing we got.</p>
 <p>Either way, pretty dope. </p>
 
+
+
     
         <hr>
         <p style="line-height:250%;">
         <a class="btn btn-info" href="/tagged/light/">light</a>
 
         
-            &nbsp;
             <a class="btn btn-info" href="/tagged/fourier/">fourier</a>
         
-            &nbsp;
             <a class="btn btn-info" href="/tagged/optics/">optics</a>
         
         </p> 

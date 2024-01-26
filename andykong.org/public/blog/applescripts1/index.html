@@ -19,6 +19,33 @@
         </title>
     
 
+    <style>
+        body {
+            counter-reset: h1counter h2counter;
+        }
+
+        h1:not(.title) {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+
+            counter-reset: h2counter;
+        }
+
+        h1:not(.title) {
+            counter-increment: h1counter;
+            content: counter(h1counter) ". ";
+        }
+
+        h2::before {
+            counter-increment: h2counter;
+            content: counter(h1counter) "." counter(h2counter) " ";
+        }
+
+    </style>
+
+
+
 
     <style type="text/css">
         /* Atkinson Hyperlegible */
@@ -152,11 +179,11 @@ a:hover {
 }
 
 .blogpage h1, .blogpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 .projectpage h1, .projectpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 hr{
@@ -206,7 +233,7 @@ code {
 
 
 
-<body style="color:#F8E0CB;overflow-x: hidden;">
+<body style="color:#FAEADB;overflow-x: hidden;">
 
 
 
@@ -256,7 +283,7 @@ code {
 
 
 <div class="blogpage overflow-hidden" style="margin-bottom:4em;">
-    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Learning AppleScript</h1>
+    <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Learning AppleScript</h1>
             <p style="font-size:0.8em;"> Published January 5, 2022</p>
 <hr>
             <p>Hello. I've always wanted to learn AppleScript in order to replace my Mac tracking apps and save a bit of money. Over this break, I had time to do that. And it seems to be about as hard as I expected it to be, which is to say it's simple to the point of being hard to learn. Here's an example</p>
@@ -342,16 +369,16 @@ code {
 <h1>Conclusion</h1>
 <p>That's all I got for now. I'm going to try to run a continuous log of my current laptop's "context", so I need file appending eventually. Until then, cya later!</p>
 
+
+
     
         <hr>
         <p style="line-height:250%;">
         <a class="btn btn-info" href="/tagged/applescript/">applescript</a>
 
         
-            &nbsp;
             <a class="btn btn-info" href="/tagged/scripting/">scripting</a>
         
-            &nbsp;
             <a class="btn btn-info" href="/tagged/quantifiedself/">quantifiedself</a>
         
         </p> 

@@ -19,6 +19,33 @@
         </title>
     
 
+    <style>
+        body {
+            counter-reset: h1counter h2counter;
+        }
+
+        h1:not(.title) {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+
+            counter-reset: h2counter;
+        }
+
+        h1:not(.title) {
+            counter-increment: h1counter;
+            content: counter(h1counter) ". ";
+        }
+
+        h2::before {
+            counter-increment: h2counter;
+            content: counter(h1counter) "." counter(h2counter) " ";
+        }
+
+    </style>
+
+
+
 
     <style type="text/css">
         /* Atkinson Hyperlegible */
@@ -152,11 +179,11 @@ a:hover {
 }
 
 .blogpage h1, .blogpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 .projectpage h1, .projectpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 hr{
@@ -206,7 +233,7 @@ code {
 
 
 
-<body style="color:#F8E0CB;overflow-x: hidden;">
+<body style="color:#FAEADB;overflow-x: hidden;">
 
 
 
@@ -256,7 +283,7 @@ code {
 
 
 <div class="blogpage overflow-hidden" style="margin-bottom:4em;">
-    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Sugar-Metering My First Watermelon</h1>
+    <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Sugar-Metering My First Watermelon</h1>
             <p style="font-size:0.8em;"> Published July 27, 2021</p>
 <hr>
             <p>I recently <a href="../refractometertesting">bought and tested</a> a refractometer's ability to determine the sugar content of various drinks to gain a better awareness of the stuff I eat. As promised, I have returned with more stats on fruit!</p>
@@ -283,13 +310,14 @@ code {
 <p>Amazing sugar levels in Longan and Lychee though. They are sure worth the price! I'm sure the actual sugar percentage including fruit solids is lower, but the juice is super high in sugar.</p>
 <p>Cya with my next watermelon!</p>
 
+
+
     
         <hr>
         <p style="line-height:250%;">
         <a class="btn btn-info" href="/tagged/refractometer/">refractometer</a>
 
         
-            &nbsp;
             <a class="btn btn-info" href="/tagged/sugarinfruit/">sugarinfruit</a>
         
         </p> 

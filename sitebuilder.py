@@ -105,10 +105,11 @@ def utility_processor():
         fString += ">" + "</video>"
         return Markup(fString)
 
-    def tableofcontents():
-        src
+    def tableofcontents(yes):
+        print(yes)
 
     return dict(add_pic=add_pic, add_vid=add_vid, tableofcontents=tableofcontents)
+    # return dict(add_pic=add_pic, add_vid=add_vid)
 
 
 

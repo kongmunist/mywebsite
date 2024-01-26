@@ -19,6 +19,33 @@
         </title>
     
 
+    <style>
+        body {
+            counter-reset: h1counter h2counter;
+        }
+
+        h1:not(.title) {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+
+            counter-reset: h2counter;
+        }
+
+        h1:not(.title) {
+            counter-increment: h1counter;
+            content: counter(h1counter) ". ";
+        }
+
+        h2::before {
+            counter-increment: h2counter;
+            content: counter(h1counter) "." counter(h2counter) " ";
+        }
+
+    </style>
+
+
+
 
     <style type="text/css">
         /* Atkinson Hyperlegible */
@@ -152,11 +179,11 @@ a:hover {
 }
 
 .blogpage h1, .blogpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 .projectpage h1, .projectpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 hr{
@@ -206,7 +233,7 @@ code {
 
 
 
-<body style="color:#F8E0CB;overflow-x: hidden;">
+<body style="color:#FAEADB;overflow-x: hidden;">
 
 
 
@@ -256,7 +283,7 @@ code {
 
 
 <div class="blogpage overflow-hidden" style="margin-bottom:4em;">
-    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Simple arithmetic addition with neural networks</h1>
+    <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Simple arithmetic addition with neural networks</h1>
             <p style="font-size:0.8em;"> Published July 17, 2019</p>
 <hr>
             <p>Before we start, I want to clarify that I am not just some neural network script kiddie, and that my blog is not going to be just a personal log of all the neural networks I make. I also enjoy electronics and hardware design. That being said, check out this neural network I made!</p>
@@ -288,16 +315,16 @@ Becomes
 <p>Bonus: Addition using any of these models is not commutative, which was really funny to me. I think this has applications for curing the boredom once mathematicians and kindergarteners get tired of adding 1 and 1 together. They can now do it in new ways!</p>
 <p><img loading="lazy" src=/static/aanoncommutativity.png width="300" class="d-block mx-auto"/></p>
 
+
+
     
         <hr>
         <p style="line-height:250%;">
         <a class="btn btn-info" href="/tagged/projectlog/">projectlog</a>
 
         
-            &nbsp;
             <a class="btn btn-info" href="/tagged/advancedaddition/">advancedaddition</a>
         
-            &nbsp;
             <a class="btn btn-info" href="/tagged/new/">new</a>
         
         </p> 

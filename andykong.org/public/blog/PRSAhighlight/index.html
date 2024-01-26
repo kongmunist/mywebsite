@@ -19,6 +19,33 @@
         </title>
     
 
+    <style>
+        body {
+            counter-reset: h1counter h2counter;
+        }
+
+        h1:not(.title) {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+
+            counter-reset: h2counter;
+        }
+
+        h1:not(.title) {
+            counter-increment: h1counter;
+            content: counter(h1counter) ". ";
+        }
+
+        h2::before {
+            counter-increment: h2counter;
+            content: counter(h1counter) "." counter(h2counter) " ";
+        }
+
+    </style>
+
+
+
 
     <style type="text/css">
         /* Atkinson Hyperlegible */
@@ -152,11 +179,11 @@ a:hover {
 }
 
 .blogpage h1, .blogpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 .projectpage h1, .projectpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 hr{
@@ -206,7 +233,7 @@ code {
 
 
 
-<body style="color:#F8E0CB;overflow-x: hidden;">
+<body style="color:#FAEADB;overflow-x: hidden;">
 
 
 
@@ -256,7 +283,7 @@ code {
 
 
 <div class="blogpage overflow-hidden" style="margin-bottom:4em;">
-    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">My new favorite EEG technique: Phase-rectified signal averaging</h1>
+    <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">My new favorite EEG technique: Phase-rectified signal averaging</h1>
             <p style="font-size:0.8em;"> Published January 13, 2021</p>
 <hr>
             <p>Today I'm going to tell you about the technique of phase-rectified signal averaging, or PRSA, applied to EEG signals. I stumbled upon <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.160.879&amp;rep=rep1&amp;type=pdf">this</a> paper talking about it. Originally the technique was applied to like astronomy data or something, you can find that here, <a href="https://www.sciencedirect.com/science/article/pii/S037843710501006X">"Phase-rectified signal averaging detects quasi-periodicities in non-stationary
@@ -267,19 +294,18 @@ data"</a>. This guy who used to be at Philips Research wrote it, he now works at
 <p>This technique relies on the waveform <em>usually</em> lining up within the noisy signal. Which is to say, when the waveform of interest goes up, the noise+signal overall should go up too, at least for a majority of the times you check it. So you average a big window around all "up" or "down" points, and might be able to pull out the original signal. The original paper uses some jank original signal, so it looks atrocious even after averaging. I'm told this was on purpose. Why couldn't they just use a sine wave?</p>
 <p>I can't wait to try it. Looks like it won't work, but it seems stupid enough that it just might.</p>
 
+
+
     
         <hr>
         <p style="line-height:250%;">
         <a class="btn btn-info" href="/tagged/ssvep/">ssvep</a>
 
         
-            &nbsp;
             <a class="btn btn-info" href="/tagged/bci/">bci</a>
         
-            &nbsp;
             <a class="btn btn-info" href="/tagged/eeg/">eeg</a>
         
-            &nbsp;
             <a class="btn btn-info" href="/tagged/paperhighlight/">paperhighlight</a>
         
         </p> 

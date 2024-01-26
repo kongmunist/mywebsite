@@ -19,6 +19,33 @@
         </title>
     
 
+    <style>
+        body {
+            counter-reset: h1counter h2counter;
+        }
+
+        h1:not(.title) {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+
+            counter-reset: h2counter;
+        }
+
+        h1:not(.title) {
+            counter-increment: h1counter;
+            content: counter(h1counter) ". ";
+        }
+
+        h2::before {
+            counter-increment: h2counter;
+            content: counter(h1counter) "." counter(h2counter) " ";
+        }
+
+    </style>
+
+
+
 
     <style type="text/css">
         /* Atkinson Hyperlegible */
@@ -152,11 +179,11 @@ a:hover {
 }
 
 .blogpage h1, .blogpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 .projectpage h1, .projectpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 hr{
@@ -206,7 +233,7 @@ code {
 
 
 
-<body style="color:#F8E0CB;overflow-x: hidden;">
+<body style="color:#FAEADB;overflow-x: hidden;">
 
 
 
@@ -256,7 +283,7 @@ code {
 
 
 <div class="blogpage overflow-hidden" style="margin-bottom:4em;">
-    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Playstation Eye does not work for MacOS!</h1>
+    <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Playstation Eye does not work for MacOS!</h1>
             <p style="font-size:0.8em;"> Published November 15, 2020</p>
 <hr>
             <p>I wasted like an hour and a half today trying to get this Playstation 3 camera working on my Mac:</p>
@@ -267,13 +294,14 @@ code {
 <p>I tried to follow their steps but my CMake version was out of date. I then tried to use homebrew to update my CMake. It took 20 minutes, updating and installing all sorts of other things, and even had the audacity to tell me it had agreed to qt's user agreement on my behalf (threatening that if I disagreed with its decision, I should uninstall QT immediately). When I ran CMake again, I found that the original CMake location was not the one Homebrew had updated. </p>
 <p>I stopped here. I hate dealing with pathing issues. If I have it, just go find it!!! Maybe one day I will muster the vernacular to venture forth, but today I sighed, and gave up on this webcam. </p>
 
+
+
     
         <hr>
         <p style="line-height:250%;">
         <a class="btn btn-info" href="/tagged/problems/">problems</a>
 
         
-            &nbsp;
             <a class="btn btn-info" href="/tagged/hardware/">hardware</a>
         
         </p> 

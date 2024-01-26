@@ -19,6 +19,33 @@
         </title>
     
 
+    <style>
+        body {
+            counter-reset: h1counter h2counter;
+        }
+
+        h1:not(.title) {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+
+            counter-reset: h2counter;
+        }
+
+        h1:not(.title) {
+            counter-increment: h1counter;
+            content: counter(h1counter) ". ";
+        }
+
+        h2::before {
+            counter-increment: h2counter;
+            content: counter(h1counter) "." counter(h2counter) " ";
+        }
+
+    </style>
+
+
+
 
     <style type="text/css">
         /* Atkinson Hyperlegible */
@@ -152,11 +179,11 @@ a:hover {
 }
 
 .blogpage h1, .blogpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 .projectpage h1, .projectpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 hr{
@@ -206,7 +233,7 @@ code {
 
 
 
-<body style="color:#F8E0CB;overflow-x: hidden;">
+<body style="color:#FAEADB;overflow-x: hidden;">
 
 
 
@@ -256,7 +283,7 @@ code {
 
 
 <div class="blogpage overflow-hidden" style="margin-bottom:4em;">
-    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Implementing Body Channel Communication Pt. 3</h1>
+    <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Implementing Body Channel Communication Pt. 3</h1>
             <p style="font-size:0.8em;"> Published May 15, 2021</p>
 <hr>
             <div style="font-size:.75em;"> Previous posts here: <a href="../bcc1">[Part 1]</a> and <a href="../bcc2"> [Part 2] </a> </div>
@@ -320,19 +347,18 @@ The receiver side swamps with 60Hz when I touch the input pin. This is both beca
 <p>It's dope that the hardware is so simple. One microcontroller, an op amp, and some passives, and your devices can detect not only touch but also WHO touched it. Very powerful, and quite simple to add to a smartwatch *hint hint wink wink*.</p>
 <p>If you have questions about implementing this yourself, reach out via email or Twitter. BCC has some dope applications, and I'd love to create more demos using it. </p>
 
+
+
     
         <hr>
         <p style="line-height:250%;">
         <a class="btn btn-info" href="/tagged/hci/">hci</a>
 
         
-            &nbsp;
             <a class="btn btn-info" href="/tagged/bcc/">bcc</a>
         
-            &nbsp;
             <a class="btn btn-info" href="/tagged/microcontroller/">microcontroller</a>
         
-            &nbsp;
             <a class="btn btn-info" href="/tagged/biosig/">biosig</a>
         
         </p> 

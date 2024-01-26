@@ -11,6 +11,33 @@
             {{p.title}} | Andy Kong
         </title>
     {% endfor %}
+
+    <style>
+        body {
+            counter-reset: h1counter h2counter;
+        }
+
+        h1:not(.title) {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+
+            counter-reset: h2counter;
+        }
+
+        h1:not(.title) {
+            counter-increment: h1counter;
+            content: counter(h1counter) ". ";
+        }
+
+        h2::before {
+            counter-increment: h2counter;
+            content: counter(h1counter) "." counter(h2counter) " ";
+        }
+
+    </style>
+
+
 {% endblock %}
 
 {% block batcontent %}
@@ -21,10 +48,12 @@
 
 
 <div class="blogpage overflow-hidden" style="margin-bottom:4em;">
-    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">{{ p.title }}</h1>
+    <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">{{ p.title }}</h1>
             <p style="font-size:0.8em;"> Published {{ dateconvert(p.meta.date) }}</p>
 <hr>
             {{ p.html|safe }}
+
+
 
     {% if p.meta.tags|length %}
         <hr>
@@ -32,7 +61,6 @@
         <a class="btn btn-info" href="{{ url_for("tag", tag= p.meta.tags.0  ) }}">{{ p.meta.tags.0 }}</a>
 
         {% for page_tag in p.meta.tags[1:] %}
-            &nbsp;
             <a class="btn btn-info" href="{{ url_for("tag", tag=page_tag) }}">{{page_tag}}</a>
         {% endfor %}
         </p> 

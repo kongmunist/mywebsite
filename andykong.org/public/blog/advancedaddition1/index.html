@@ -19,6 +19,33 @@
         </title>
     
 
+    <style>
+        body {
+            counter-reset: h1counter h2counter;
+        }
+
+        h1:not(.title) {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+
+            counter-reset: h2counter;
+        }
+
+        h1:not(.title) {
+            counter-increment: h1counter;
+            content: counter(h1counter) ". ";
+        }
+
+        h2::before {
+            counter-increment: h2counter;
+            content: counter(h1counter) "." counter(h2counter) " ";
+        }
+
+    </style>
+
+
+
 
     <style type="text/css">
         /* Atkinson Hyperlegible */
@@ -152,11 +179,11 @@ a:hover {
 }
 
 .blogpage h1, .blogpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 .projectpage h1, .projectpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 hr{
@@ -206,7 +233,7 @@ code {
 
 
 
-<body style="color:#F8E0CB;overflow-x: hidden;">
+<body style="color:#FAEADB;overflow-x: hidden;">
 
 
 
@@ -256,7 +283,7 @@ code {
 
 
 <div class="blogpage overflow-hidden" style="margin-bottom:4em;">
-    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Advanced addition and speedup of neural network evaluation</h1>
+    <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Advanced addition and speedup of neural network evaluation</h1>
             <p style="font-size:0.8em;"> Published August 1, 2019</p>
 <hr>
             <p>Hello! I've been doing some more work on the advanced addition project.</p>
@@ -271,13 +298,14 @@ code {
 <p>Activation functions could be broken down some more, but I would have to spend a little more time with it. I think that the individual nature of the function means that a simple precomputation wouldn't be allowed. We could threshold the inputs by backtracking the minimum value required to overcome the ReLU or something, and that would save a bit of time.</p>
 <p>So, the takeaway is that most neural networks cannot be sped up using precomputation, since every layer usually has a nonlinear activation function. But in any model with multiple matrix multiplications or additions done in succession, the evaluation of the two matrices can be precomputed to speed up the model. </p>
 
+
+
     
         <hr>
         <p style="line-height:250%;">
         <a class="btn btn-info" href="/tagged/projectlog/">projectlog</a>
 
         
-            &nbsp;
             <a class="btn btn-info" href="/tagged/advancedaddition/">advancedaddition</a>
         
         </p> 

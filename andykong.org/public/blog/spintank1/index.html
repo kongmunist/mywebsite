@@ -19,6 +19,33 @@
         </title>
     
 
+    <style>
+        body {
+            counter-reset: h1counter h2counter;
+        }
+
+        h1:not(.title) {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+
+            counter-reset: h2counter;
+        }
+
+        h1:not(.title) {
+            counter-increment: h1counter;
+            content: counter(h1counter) ". ";
+        }
+
+        h2::before {
+            counter-increment: h2counter;
+            content: counter(h1counter) "." counter(h2counter) " ";
+        }
+
+    </style>
+
+
+
 
     <style type="text/css">
         /* Atkinson Hyperlegible */
@@ -152,11 +179,11 @@ a:hover {
 }
 
 .blogpage h1, .blogpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 .projectpage h1, .projectpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 hr{
@@ -206,7 +233,7 @@ code {
 
 
 
-<body style="color:#F8E0CB;overflow-x: hidden;">
+<body style="color:#FAEADB;overflow-x: hidden;">
 
 
 
@@ -256,7 +283,7 @@ code {
 
 
 <div class="blogpage overflow-hidden" style="margin-bottom:4em;">
-    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Spin Tank Proof-of-Concept Test</h1>
+    <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Spin Tank Proof-of-Concept Test</h1>
             <p style="font-size:0.8em;"> Published August 20, 2019</p>
 <hr>
             <p>The problem with modern day tank armor is that it relies too heavily on brute strength for defense. Armor can be made to actively resist attacks by means of a light, rapidly rotating hull that deflects projectiles instead of the heavy armor plates used today that simply endure every hit thrown at them.</p>
@@ -284,13 +311,14 @@ code {
 <p>I need to experiment more with which latitude I'm shooting, since the hull strength changes at different heights. I should also use different lengths and weights of projectiles, since the chopstick is incredibly narrow compared to the dome itself. Some shots on the spinning hull also tore a larger hole than the one on the stationary hull, which I think is caused by a chopstick penetrating the hull followed by the rotation ripping it out.</p>
 <p>At the very least, the spin tank reduces the total target size of the same tank, since hitting the edges of the spin tank with a projectile proves to be entirely useless.</p>
 
+
+
     
         <hr>
         <p style="line-height:250%;">
         <a class="btn btn-info" href="/tagged/projectlog/">projectlog</a>
 
         
-            &nbsp;
             <a class="btn btn-info" href="/tagged/spintank/">spintank</a>
         
         </p> 

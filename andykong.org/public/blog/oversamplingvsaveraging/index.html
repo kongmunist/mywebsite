@@ -19,6 +19,33 @@
         </title>
     
 
+    <style>
+        body {
+            counter-reset: h1counter h2counter;
+        }
+
+        h1:not(.title) {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+
+            counter-reset: h2counter;
+        }
+
+        h1:not(.title) {
+            counter-increment: h1counter;
+            content: counter(h1counter) ". ";
+        }
+
+        h2::before {
+            counter-increment: h2counter;
+            content: counter(h1counter) "." counter(h2counter) " ";
+        }
+
+    </style>
+
+
+
 
     <style type="text/css">
         /* Atkinson Hyperlegible */
@@ -152,11 +179,11 @@ a:hover {
 }
 
 .blogpage h1, .blogpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 .projectpage h1, .projectpage h2{
-    color: #D49E68;
+    color: #E0B890;
 }
 
 hr{
@@ -206,7 +233,7 @@ code {
 
 
 
-<body style="color:#F8E0CB;overflow-x: hidden;">
+<body style="color:#FAEADB;overflow-x: hidden;">
 
 
 
@@ -256,7 +283,7 @@ code {
 
 
 <div class="blogpage overflow-hidden" style="margin-bottom:4em;">
-    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Oversampling vs. Averaging for Noise Reduction</h1>
+    <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Oversampling vs. Averaging for Noise Reduction</h1>
             <p style="font-size:0.8em;"> Published January 24, 2021</p>
 <hr>
             <p>Hi! Today I was curious about the effects of oversampling a single, high sample frequency channel of data vs 4 simultaneously sampling channels of the same data, and which would give better data. This ties into my work on EEG processing, where I have the chance to use up to 4 channels but don't want to just average all of them because that seems too simplistic. </p>
@@ -289,13 +316,14 @@ code {
 <p>If we imagine a 1kHz sampled signal, what we did to generate the 200Hz signal was take 1 of every five sample points. This means if we had 5 “channels” (each offset by 1 from the beginning), then its equivalent to down sampling the 1khz signal. But it’s weird that using 4 I didn’t have nearly the same effect, and I don't expect going to 5 channels to change much. </p>
 <p>It might be different because our 200Hz channels were taken from the original signal, which was created at a much higher sample rate (100kHz), instead of taking them frmo the 1kHz signal. But it seems like a minor difference, honestly. </p>
 
+
+
     
         <hr>
         <p style="line-height:250%;">
         <a class="btn btn-info" href="/tagged/dsp/">dsp</a>
 
         
-            &nbsp;
             <a class="btn btn-info" href="/tagged/eeg/">eeg</a>
         
         </p> 
