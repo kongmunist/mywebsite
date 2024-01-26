@@ -27,7 +27,7 @@
         h1:not(.title) {
             padding-left: 12px;
             margin-left: -12px;
-            border-left: 8px ridge #DBAD80;
+            border-left: 8px groove #DBAD80;
 
             counter-reset: h2counter;
         }
@@ -37,9 +37,29 @@
             content: counter(h1counter) ". ";
         }
 
-        h2::before {
+/*
+        .blogpage > h2 {
+            text-decoration: underline wavy #DBAD80;
+            text-underline-thickness: 1px;
+        }
+        */
+
+        .blogpage > h2::before {
             counter-increment: h2counter;
-            content: counter(h1counter) "." counter(h2counter) " ";
+            content: counter(h1counter) "." counter(h2counter) "  ";
+            /*
+            text-decoration: none;
+            display: inline-block;
+            */
+        }
+
+
+        .toc {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+            color: inherit;
+            text-decoration: none;
         }
 
     </style>
@@ -286,7 +306,7 @@ code {
     <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Outro to Intro to Woodworking</h1>
             <p style="font-size:0.8em;"> Published April 29, 2021</p>
 <hr>
-            <p>Hello! I have finished up this class (and with it, the last semester of junior year ;(). In the past 3-4 weeks, I have learned how to use many other woodworking implements, some of which I could've figured out and some of which I couldn't've. The wood glue and nailgun were pretty intuitive, but the flush saw and forstner bits less so. </p>
+            <html><body><p>Hello! I have finished up this class (and with it, the last semester of junior year ;(). In the past 3-4 weeks, I have learned how to use many other woodworking implements, some of which I could've figured out and some of which I couldn't've. The wood glue and nailgun were pretty intuitive, but the flush saw and forstner bits less so. </p>
 <p>I have messed up a few times, and I'm putting these mistakes in public so you know what I won't mess up on again. </p>
 <ul>
 <li>
@@ -305,34 +325,33 @@ code {
 <p>Nailgun'd nonperpendicularly so the nail stuck out of the wood piece</p>
 </li>
 </ul>
-<hr>
-
-<h1>What I made in the process</h1>
+<hr/>
+<h1 id="what-i-made-in-the-process">What I made in the process</h1>
 <h2>Bread Shelf</h2>
 <p>This shelf was made so we could stop keeping bread on top of the fridge, where it blocked some cabinets. We had some preexisting screws in the wall which I measured, and then I made the decorative wall legs too short :(. I could only put one set of screws so the shelf is very weak. Holds bread good though. </p>
 <p class="caption">Bread shelf without bread</p>
-<p><img loading="lazy" alt="Bread shelf without bread" src="/static/wood2_breadshelfwithoutbread.jpg" /></p>
+<p><img loading="lazy" alt="Bread shelf without bread" src="/static/wood2_breadshelfwithoutbread.jpg"/></p>
 <p class="caption">Bread shelf with bread</p>
-<p><img loading="lazy" alt="Bread shelf with bread" src="/static/wood2_breadshelfwithbread.jpg" /></p>
+<p><img loading="lazy" alt="Bread shelf with bread" src="/static/wood2_breadshelfwithbread.jpg"/></p>
 <h2>Crate</h2>
 <p>The crate was for an assignment. Very bulky, hard to store, but makes a good stool. </p>
 <p class="caption">Crate assembled</p>
-<p><img loading="lazy" alt="Crate assembled" src="/static/wood2_crate.jpg" /></p>
+<p><img loading="lazy" alt="Crate assembled" src="/static/wood2_crate.jpg"/></p>
 <p class="caption">Crate holding Yerba Mate</p>
-<p><img loading="lazy" alt="Crate holding Yerba Mate" src="/static/wood2_crate2.jpg" /></p>
+<p><img loading="lazy" alt="Crate holding Yerba Mate" src="/static/wood2_crate2.jpg"/></p>
 <h2>Unfoldable Stool</h2>
 <p>The camping stool was our final assignment. It’s meant to be foldable but I messed up the tolerances. Many stool jokes were made in the process. Anyway, seats one. </p>
 <p class="caption">Pieces of the stool</p>
-<p><img loading="lazy" alt="Pieces of the stool" src="/static/wood2_stool1.jpg" /></p>
+<p><img loading="lazy" alt="Pieces of the stool" src="/static/wood2_stool1.jpg"/></p>
 <p class="caption">Stool parts fit check</p>
-<p><img loading="lazy" alt="Stool parts fit check" src="/static/wood2_stool2.jpg" /></p>
+<p><img loading="lazy" alt="Stool parts fit check" src="/static/wood2_stool2.jpg"/></p>
 <p class="caption">Completed seat!</p>
-<p><img loading="lazy" alt="Completed seat!" src="/static/wood2_stool3.jpg" /></p>
+<p><img loading="lazy" alt="Completed seat!" src="/static/wood2_stool3.jpg"/></p>
 <h2>For Fun</h2>
 <p>Me and Elio also redesigned our club logo, and made it out of wood. Looks better on paper, but worth a shot.</p>
 <p class="caption">Completed seat!</p>
-<p><img loading="lazy" alt="Completed seat!" src="/static/wood2_roboclublogo.jpg" /></p>
-<p>Cya around next time I make stuff out of wood!</p>
+<p><img loading="lazy" alt="Completed seat!" src="/static/wood2_roboclublogo.jpg"/></p>
+<p>Cya around next time I make stuff out of wood!</p></body></html>
 
 
 

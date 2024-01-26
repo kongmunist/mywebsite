@@ -27,7 +27,7 @@
         h1:not(.title) {
             padding-left: 12px;
             margin-left: -12px;
-            border-left: 8px ridge #DBAD80;
+            border-left: 8px groove #DBAD80;
 
             counter-reset: h2counter;
         }
@@ -37,9 +37,29 @@
             content: counter(h1counter) ". ";
         }
 
-        h2::before {
+/*
+        .blogpage > h2 {
+            text-decoration: underline wavy #DBAD80;
+            text-underline-thickness: 1px;
+        }
+        */
+
+        .blogpage > h2::before {
             counter-increment: h2counter;
-            content: counter(h1counter) "." counter(h2counter) " ";
+            content: counter(h1counter) "." counter(h2counter) "  ";
+            /*
+            text-decoration: none;
+            display: inline-block;
+            */
+        }
+
+
+        .toc {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+            color: inherit;
+            text-decoration: none;
         }
 
     </style>
@@ -286,29 +306,29 @@ code {
     <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Sugar-Metering My First Watermelon</h1>
             <p style="font-size:0.8em;"> Published July 27, 2021</p>
 <hr>
-            <p>I recently <a href="../refractometertesting">bought and tested</a> a refractometer's ability to determine the sugar content of various drinks to gain a better awareness of the stuff I eat. As promised, I have returned with more stats on fruit!</p>
-<h1>Watermelon Sugar - high!</h1>
+            <html><body><p>I recently <a href="../refractometertesting">bought and tested</a> a refractometer's ability to determine the sugar content of various drinks to gain a better awareness of the stuff I eat. As promised, I have returned with more stats on fruit!</p>
+<h1 id="watermelon-sugar--high">Watermelon Sugar - high!</h1>
 <p>I bought a small watermelon and cut it up into bowls, which are by far the most fun way to eat a watermelon. I ate about half the bowl, then separately juiced up part of watermelon flesh in the very center and some near the wall (still red, but right beside the white flesh). </p>
 <p>The accumulated juice from each part of the watermelon was collected and measured visually in my refractometer. Since each watermelon gives two bowls, I tested both regions in both bowls to have more precise numbers. Here's the refractometer pics:</p>
 <p class="caption">Watermelon center and edge sugar concentrations</p>
-<p><img loading="lazy" alt="Watermelon center and edge sugar concentrations" src="/static/wm1_watemelonrefract.jpg" /></p>
+<p><img loading="lazy" alt="Watermelon center and edge sugar concentrations" src="/static/wm1_watemelonrefract.jpg"/></p>
 <p>The juice near the center of the watermelon was around 7.9% and 8.1%, which is about the same as the Capri-sun I measured last time. The juice near the edges was 6.4% and 5.8%, so a few percentage points lower than the center. </p>
-<h1>Bonus, Lychee and Longan</h1>
+<h1 id="bonus-lychee-and-longan">Bonus, Lychee and Longan</h1>
 <p>I also had some Asian fruit on-hand, the juicy lychee and longan. I could taste that the Longan were a bit sweeter, but I wasn't sure how much. </p>
 <p class="caption">Tasty Lychee fruit</p>
-<p><img loading="lazy" alt="Tasty Lychee fruit" src="/static/wm1_lycheepic.jpg" /></p>
+<p><img loading="lazy" alt="Tasty Lychee fruit" src="/static/wm1_lycheepic.jpg"/></p>
 <p>They turned out incredibly high, with the longan juice twice as sweet as Coke!</p>
 <p class="caption">Lychee refractometer photo, 18.8% sugar</p>
-<p><img loading="lazy" alt="Lychee refractometer photo, 18.8% sugar" src="/static/wm1_lycheesugar.jpg" /></p>
+<p><img loading="lazy" alt="Lychee refractometer photo, 18.8% sugar" src="/static/wm1_lycheesugar.jpg"/></p>
 <p class="caption">Longan refractometer photo, 20.8% sugar</p>
-<p><img loading="lazy" alt="Longan refractometer photo, 20.8% sugar" src="/static/wm1_longan.jpg" /></p>
+<p><img loading="lazy" alt="Longan refractometer photo, 20.8% sugar" src="/static/wm1_longan.jpg"/></p>
 <p>The Lychee are 18.8% sugar, and the Longan are 20.8%! Off by 2%, but on a whole different level. I'm sure I'm getting extra nutrients with these fruits, but that's a lot of sugar for a plant! How'd they figure out how to do that? Was it selective breeding? Incredible. We're lucky the Americans haven't found out about these <em>en masse</em>!</p>
 <h2>Brief Discussion</h2>
 <p>This watermelon tasted regular sweet to me, maybe a bit on the light side. IMO, a good watermelon would taste like the center of this one, but throughout the whole fruit. I'm just spoiled by my ability to pick good watermelon. </p>
 <p>It's interesting that such a sugar concentration gradient (6% and 8%) can exist in a medium that is mostly water; maybe over time the concentration stabilizes from center to edge? Does the watermelon get sweeter too, as it ripens further? </p>
 <p>I forgot to pat the melon before cutting it up, so I get no data points about how the sound correlates to the watermelon's sweetness. I'll have to buy another and record it.</p>
 <p>Amazing sugar levels in Longan and Lychee though. They are sure worth the price! I'm sure the actual sugar percentage including fruit solids is lower, but the juice is super high in sugar.</p>
-<p>Cya with my next watermelon!</p>
+<p>Cya with my next watermelon!</p></body></html>
 
 
 

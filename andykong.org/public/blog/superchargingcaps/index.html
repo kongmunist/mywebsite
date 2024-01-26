@@ -27,7 +27,7 @@
         h1:not(.title) {
             padding-left: 12px;
             margin-left: -12px;
-            border-left: 8px ridge #DBAD80;
+            border-left: 8px groove #DBAD80;
 
             counter-reset: h2counter;
         }
@@ -37,9 +37,29 @@
             content: counter(h1counter) ". ";
         }
 
-        h2::before {
+/*
+        .blogpage > h2 {
+            text-decoration: underline wavy #DBAD80;
+            text-underline-thickness: 1px;
+        }
+        */
+
+        .blogpage > h2::before {
             counter-increment: h2counter;
-            content: counter(h1counter) "." counter(h2counter) " ";
+            content: counter(h1counter) "." counter(h2counter) "  ";
+            /*
+            text-decoration: none;
+            display: inline-block;
+            */
+        }
+
+
+        .toc {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+            color: inherit;
+            text-decoration: none;
         }
 
     </style>
@@ -286,23 +306,23 @@ code {
     <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Fast-charging capacitors</h1>
             <p style="font-size:0.8em;"> Published August 9, 2021</p>
 <hr>
-            <p>I recently thought about a way to charge capacitors really quickly. </p>
+            <html><body><p>I recently thought about a way to charge capacitors really quickly. </p>
 <p>If you think about it, capacitors are sort of like buckets that you can fill with electrons. Their peak level is their voltage rating, and if you keep filling them they explode. Usually this means you only charge capacitors using a voltage less than or equal to their max voltage, to avoid the explosion.</p>
 <p>But! This method sucks, and it's slow. As your cap fills up, the voltage difference between your source and the capacitor goes down, which makes your charging current go down too. Diminishing returns means that really big capacitors can take several seconds to charge up to a desired voltage. </p>
-<h1>Better method</h1>
+<h1 id="better-method">Better method</h1>
 <p>Ideally, we'd use some massive voltage source for charging, and then turn it off immediately when our capacitor hits the final voltage. We only use the previous method because we humans have slow reaction times, and can't turn off the voltage source quickly enough to avoid a potential capacitor explosion.</p>
 <p>But I'm <em>pretty sure</em> we've invented faster voltage switches than the human hand.</p>
-<h1>Enter, the humble microcontroller</h1>
-<p><img loading="lazy" alt="Arduino-enabled fast off switch" src="/static/sc1_setup.jpg" /></p>
+<h1 id="enter-the-humble-microcontroller">Enter, the humble microcontroller</h1>
+<p><img loading="lazy" alt="Arduino-enabled fast off switch" src="/static/sc1_setup.jpg"/></p>
 <p>All I did was connect an Arduino-controlled MOSFET to a 2200µF capacitor. The Arduino reads the voltage of the capacitor, and shuts off the MOSFET when the voltage gets past our set point (4V). I used 5V, 10V, 20V, and 30V for charging. Here's how long each one took:</p>
 <p class="caption">Charging with 5V</p>
-<p><img loading="lazy" alt="Charging with 5V" src="/static/sc1_chargeto4with5.jpg" /></p>
+<p><img loading="lazy" alt="Charging with 5V" src="/static/sc1_chargeto4with5.jpg"/></p>
 <p class="caption">Charging with 10V</p>
-<p><img loading="lazy" alt="Charging with 10V" src="/static/sc1_chargeto4with10.jpg" /></p>
+<p><img loading="lazy" alt="Charging with 10V" src="/static/sc1_chargeto4with10.jpg"/></p>
 <p class="caption">Charging with 20V</p>
-<p><img loading="lazy" alt="Charging with 20V" src="/static/sc1_chargeto4with20.jpg" /></p>
+<p><img loading="lazy" alt="Charging with 20V" src="/static/sc1_chargeto4with20.jpg"/></p>
 <p class="caption">Charging with 30V</p>
-<p><img loading="lazy" alt="Charging with 30V" src="/static/sc1_chargeto4with30.jpg" /></p>
+<p><img loading="lazy" alt="Charging with 30V" src="/static/sc1_chargeto4with30.jpg"/></p>
 <p>In text form, charging a 2200µF capacitor to 4V took:</p>
 <ul>
 <li>
@@ -319,13 +339,13 @@ code {
 </li>
 </ul>
 <p>My power supply caps out at 30V, and that gives you a <strong>13x speedup</strong> in capacitor charging time!</p>
-<h1>Theoretical speedup</h1>
+<h1 id="theoretical-speedup">Theoretical speedup</h1>
 <p>We've seen how the real world does it; how about comparing it to theory?</p>
 <p>Here's the equation that governs how fast a capacitor charges. It calculates the cap's voltage given some time <em>t</em> connected to a voltage source Vs.</p>
 <p class="caption">Capacitor voltage after some time t, charging with a voltage Vsource</p>
-<p><img loading="lazy" alt="Capacitor voltage after some time t, charging with a voltage Vsource" src="/static/sc1_chargeVeq.png" /></p>
+<p><img loading="lazy" alt="Capacitor voltage after some time t, charging with a voltage Vsource" src="/static/sc1_chargeVeq.png"/></p>
 <p>Solving this backwards for <em>t</em>, we have some terrible looking equation for how long it would take to charge a capacitor given a source voltage.</p>
-<p><img loading="lazy" alt="Above equation solved for time t" src="/static/sc1_chargeTeq.png" /></p>
+<p><img loading="lazy" alt="Above equation solved for time t" src="/static/sc1_chargeTeq.png"/></p>
 <p>Plugging in our previous charging voltages and magically using R=1.5Ω, we get the following charge times:</p>
 <ul>
 <li>
@@ -342,7 +362,7 @@ code {
 </li>
 </ul>
 <p>Greater than 10x theoretical speedup at 30V! And pretty good agreement with the numbers I measured. </p>
-<h1>Theoretical mismatch</h1>
+<h1 id="theoretical-mismatch">Theoretical mismatch</h1>
 <p>Some of my times were faster than the theoretical times. What could cause these faster-than-theoretical real world charging times? </p>
 <ul>
 <li>
@@ -355,14 +375,14 @@ code {
 <p>Perhaps the Arduino got a bit overzealous and cut off the capacitor before it truly charged to 4V? This seems like the case from some of the charging graphs &gt; 10V. For some reason, the reached voltage hit 4V, the Arduino shut off the MOSFET, and then the capacitor voltage dropped a bit. I'm not quite sure why this happened.</p>
 </li>
 </ul>
-<h1>Conclusions</h1>
+<h1 id="conclusions">Conclusions</h1>
 <p>I used an Arduino for reading voltage, meaning that I only have an effective range of 0-5V. I can get a higher effective voltage range if I buffer and divide the capacitor voltage down before <code>analogRead</code>ing it. Maybe even a resistor divider would work.</p>
 <p>The only way my program was able to run fast enough on the Arduino is because there was nothing in the loop except the voltage checking. With that, it was able to stop the capacitor under a few hundred us. With a faster µC, we could use even higher charge voltages and still be sure we'd turn it off in time.</p>
 <p>A friend suggested I use voltage prediction to get a more precise turn-off time for the capacitor, sorta like an instant-read thermometer. I forgot about that until after I finished, but it's probably a good idea.</p>
-<h1>Head Fake</h1>
+<h1 id="head-fake">Head Fake</h1>
 <p>This post is actually about supercapacitors. Why go through the trouble to find a high current 3V source when you could just use any old voltage source and turn it off in time? </p>
 <p>Hell, for a large supercap, it'd charge slowly enough that you could probably disconnect it yourself. Just make sure you don't exceed your source or capacitor's current limit. I AM NOT RESPONSIBLE FOR BURNT CAPACITORS / FINGERS / HOUSES. </p>
-<p>Be safe. Cya around!</p>
+<p>Be safe. Cya around!</p></body></html>
 
 
 

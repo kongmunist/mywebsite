@@ -251,21 +251,21 @@ code {
             <p style="margin-bottom: 5px; margin-top: 0px">Published: 2020-04-25</p>
 
             <hr>
-        <h3>Video</h3>
-<div style="text-align:center;" class="d-block mx-auto"><iframe width="560" height="315" src="https://www.youtube.com/embed/g4YCxM5STj0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-<p><br><br></p>
-<hr>
+        <html><body><h3>Video</h3>
+<div class="d-block mx-auto" style="text-align:center;"><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/g4YCxM5STj0" width="560"></iframe></div>
+<p><br/><br/></p>
+<hr/>
 <h3>Background</h3>
 <p>Because of security concerns over the use of Zoom (<a href="https://theintercept.com/2020/03/31/zoom-meeting-encryption/">here</a> and <a href="https://en.wikipedia.org/wiki/Zoom_Video_Communications#Security">here</a>) and its inability to be invoked from the commmand line, me and a friend decided to get together to make a more secure version. </p>
-<hr>
+<hr/>
 <h3>Video Encoding</h3>
 <p>Since we didn't want to eat up all the bandwidth on our server, we decided the most efficient way to send each frame of video was to pack it into a single TCP packet. You might be wondering how we fit a full image in under 50 kilobytes: with text! Through the magic of ascii art, we were able to re-encode a frame as pure text characters, packaging a single pixel into 8 bits instead of the traditional 24. Since we only used 4 unique "characters," we could have further reduced this down to 2 bits if we were really pressed for space, but the additional processing on either end would have led to additional latency.</p>
 <p><img class="d-block mx-auto" src="/static/chickensidecomparison.jpeg"/></p>
 <p>There's plenty of example code online for asciifying an image, but the code is <a href="https://github.com/kongmunist/asciiZOOM">here</a> for both asciifization and transmitting. This text-based image sending also makes encryption easier, since we can just caesar cipher with a predetermined shift and the image is ruined. </p>
-<hr>
+<hr/>
 <h3>Networking</h3>
 <p>We used TCP sockets to transfer the frames of video. In hindsight, we probably should have used UDP, since we don't want dropped frames to accumulate latency. TCP's guaranteed packet delivery means that delays in sending one frame end up delaying every subsequent frame. We set up a server on our school's publicly exposed servers (it's exposed online if you can ssh into it even while not on school wifi) and both connected from our local terminals. The server then coordinates, sending one person's packets to the other person and vice versa. </p>
-<p>And if you want audio, use Discord or something :P</p>
+<p>And if you want audio, use Discord or something :P</p></body></html>
             </div>
         <div class="col-lg-2"></div>
         <p style="line-height:300%;">&nbsp;</p>

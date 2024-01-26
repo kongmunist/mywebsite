@@ -20,7 +20,7 @@
         h1:not(.title) {
             padding-left: 12px;
             margin-left: -12px;
-            border-left: 8px ridge #DBAD80;
+            border-left: 8px groove #DBAD80;
 
             counter-reset: h2counter;
         }
@@ -30,9 +30,29 @@
             content: counter(h1counter) ". ";
         }
 
-        h2::before {
+/*
+        .blogpage > h2 {
+            text-decoration: underline wavy #DBAD80;
+            text-underline-thickness: 1px;
+        }
+        */
+
+        .blogpage > h2::before {
             counter-increment: h2counter;
-            content: counter(h1counter) "." counter(h2counter) " ";
+            content: counter(h1counter) "." counter(h2counter) "  ";
+            /*
+            text-decoration: none;
+            display: inline-block;
+            */
+        }
+
+
+        .toc {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+            color: inherit;
+            text-decoration: none;
         }
 
     </style>

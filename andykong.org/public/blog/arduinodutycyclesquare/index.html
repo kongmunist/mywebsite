@@ -27,7 +27,7 @@
         h1:not(.title) {
             padding-left: 12px;
             margin-left: -12px;
-            border-left: 8px ridge #DBAD80;
+            border-left: 8px groove #DBAD80;
 
             counter-reset: h2counter;
         }
@@ -37,9 +37,29 @@
             content: counter(h1counter) ". ";
         }
 
-        h2::before {
+/*
+        .blogpage > h2 {
+            text-decoration: underline wavy #DBAD80;
+            text-underline-thickness: 1px;
+        }
+        */
+
+        .blogpage > h2::before {
             counter-increment: h2counter;
-            content: counter(h1counter) "." counter(h2counter) " ";
+            content: counter(h1counter) "." counter(h2counter) "  ";
+            /*
+            text-decoration: none;
+            display: inline-block;
+            */
+        }
+
+
+        .toc {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+            color: inherit;
+            text-decoration: none;
         }
 
     </style>
@@ -286,10 +306,10 @@ code {
     <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Arduino Function Generator: Square Wave with Variable Duty Cycle</h1>
             <p style="font-size:0.8em;"> Published December 23, 2020</p>
 <hr>
-            <p>Redirecting you to the <a href="https://kongmunist.medium.com/ arduino-function-generator-square-wave-with-variable-duty-cycle-c186e53e860a">post...</a></p>
+            <html><body><p>Redirecting you to the <a href="https://kongmunist.medium.com/ arduino-function-generator-square-wave-with-variable-duty-cycle-c186e53e860a">post...</a></p>
 <script type="text/javascript">
     document.location.href = "https://kongmunist.medium.com/    arduino-function-generator-square-wave-with-variable-duty-cycle-c186e53e860a";
-</script>
+</script></body></html>
 
 
 

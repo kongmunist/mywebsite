@@ -27,7 +27,7 @@
         h1:not(.title) {
             padding-left: 12px;
             margin-left: -12px;
-            border-left: 8px ridge #DBAD80;
+            border-left: 8px groove #DBAD80;
 
             counter-reset: h2counter;
         }
@@ -37,9 +37,29 @@
             content: counter(h1counter) ". ";
         }
 
-        h2::before {
+/*
+        .blogpage > h2 {
+            text-decoration: underline wavy #DBAD80;
+            text-underline-thickness: 1px;
+        }
+        */
+
+        .blogpage > h2::before {
             counter-increment: h2counter;
-            content: counter(h1counter) "." counter(h2counter) " ";
+            content: counter(h1counter) "." counter(h2counter) "  ";
+            /*
+            text-decoration: none;
+            display: inline-block;
+            */
+        }
+
+
+        .toc {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+            color: inherit;
+            text-decoration: none;
         }
 
     </style>
@@ -286,7 +306,7 @@ code {
     <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Speed Check — Generating a list of a range of a len</h1>
             <p style="font-size:0.8em;"> Published November 25, 2020</p>
 <hr>
-            <p>As part of my <a href="https://twitter.com/redlightguru/status/1331513267697676289?s=20">PPG project</a>, I had to create a live-updating plot. I'm most familiar with the matplotlib library, which has the same color scheme as MATLAB, so I'm using that. One problem is that they try to make a general-purpose plotting tool (matplotlib.pyplot) that also leaves you free to not worry about which window holds which figure and which renderer is drawing what, when. This is really bad because more general tools are more complex to use, and this is definitely the case here.</p>
+            <html><body><p>As part of my <a href="https://twitter.com/redlightguru/status/1331513267697676289?s=20">PPG project</a>, I had to create a live-updating plot. I'm most familiar with the matplotlib library, which has the same color scheme as MATLAB, so I'm using that. One problem is that they try to make a general-purpose plotting tool (matplotlib.pyplot) that also leaves you free to not worry about which window holds which figure and which renderer is drawing what, when. This is really bad because more general tools are more complex to use, and this is definitely the case here.</p>
 <p>It's usually imported as <code>import matplotlib.pyplot as plt</code>. To create a 2-part plot involves creating Axes, which are done by <code>plt.subplot(rows, cols)</code>. Then you write <code>line = ax.plot(x,y)</code>, which doesn't seem bad until you try to <em>use</em> the <code>line</code> object you just created, and then you find out you have to call <code>line, _ = ax.plot(x,y)</code> since it gives multiple things back. </p>
 <p>I won't do a full rant since that's not the point, but basically it's annoying, and if you call <code>ax.plot()</code> again, it creates a new line that overlaps with the old line. It's a pain. I needed two live-updating plots, so you can save the <code>line</code> object as a variable and call <code>line.set_data(x,y)</code> to change the data without adding a new line onto the graph. </p>
 <p>Now, my data was time-series, and I just wanted the index of the array as the x axis. So for data like <code>[0.5, 1.3, 2.4]</code>, I wanted an x list that was <code>[1, 2, 3]</code>. This is easy enough, it's just <code>list(range(len(data)))</code>. And no, I tried using just <code>range(len(data))</code>. It has to be complete. I also thought of using enumerate, and taking only the first element in a list-comprehension. So I decided to compare them.</p>
@@ -346,10 +366,9 @@ timesEach <span style="color: #333333">=</span> <span style="color: #0000DD; fon
     times <span style="color: #333333">=</span> []
     <span style="color: #008800; font-weight: bold">for</span> j <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">range</span>(uniqueTimes):
         times<span style="color: #333333">.</span>append(timeit<span style="color: #333333">.</span>timeit(functs[i], number<span style="color: #333333">=</span>timesEach))
-    <span style="color: #008800; font-weight: bold">print</span>(i, <span style="background-color: #fff0f0">&quot;ns/elem:&quot;</span>, <span style="color: #007020">sum</span>(times)<span style="color: #333333">/</span>timesEach<span style="color: #333333">*</span><span style="color: #6600EE; font-weight: bold">1e6</span><span style="color: #333333">/</span><span style="color: #007020">len</span>(b))
+    <span style="color: #008800; font-weight: bold">print</span>(i, <span style="background-color: #fff0f0">"ns/elem:"</span>, <span style="color: #007020">sum</span>(times)<span style="color: #333333">/</span>timesEach<span style="color: #333333">*</span><span style="color: #6600EE; font-weight: bold">1e6</span><span style="color: #333333">/</span><span style="color: #007020">len</span>(b))
 </pre></td></tr></table></div>
-
-<p>Turns out the naive <code>list(range(len(x)))</code> solution was the fastest! Until next time, cya!</p>
+<p>Turns out the naive <code>list(range(len(x)))</code> solution was the fastest! Until next time, cya!</p></body></html>
 
 
 

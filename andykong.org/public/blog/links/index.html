@@ -27,7 +27,7 @@
         h1:not(.title) {
             padding-left: 12px;
             margin-left: -12px;
-            border-left: 8px ridge #DBAD80;
+            border-left: 8px groove #DBAD80;
 
             counter-reset: h2counter;
         }
@@ -37,9 +37,29 @@
             content: counter(h1counter) ". ";
         }
 
-        h2::before {
+/*
+        .blogpage > h2 {
+            text-decoration: underline wavy #DBAD80;
+            text-underline-thickness: 1px;
+        }
+        */
+
+        .blogpage > h2::before {
             counter-increment: h2counter;
-            content: counter(h1counter) "." counter(h2counter) " ";
+            content: counter(h1counter) "." counter(h2counter) "  ";
+            /*
+            text-decoration: none;
+            display: inline-block;
+            */
+        }
+
+
+        .toc {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+            color: inherit;
+            text-decoration: none;
         }
 
     </style>
@@ -286,7 +306,7 @@ code {
     <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Interesting Links and Descriptions</h1>
             <p style="font-size:0.8em;"> Published June 10, 2021</p>
 <hr>
-            <ul>
+            <html><body><ul>
 <li>
 <p>On the unreasonable effectiveness of data
 "So, follow the data. Choose a representation that can use unsupervised learning on unlabeled data, which is so much more plentiful than labeled data. Represent all the data with a nonparametric model rather than trying to summarize it with a parametric model, because with very large data sources, the data holds a lot of detail.
@@ -298,7 +318,7 @@ For natural language applications, trust that human language has already evolved
 "Consumer goods suck. You keep buying them."
 <a href="https://neil.computer/notes/overkill-objects-for-everyday-life/">https://neil.computer/notes/overkill-objects-for-everyday-life/</a></p>
 </li>
-</ul>
+</ul></body></html>
 
 
 

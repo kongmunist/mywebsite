@@ -27,7 +27,7 @@
         h1:not(.title) {
             padding-left: 12px;
             margin-left: -12px;
-            border-left: 8px ridge #DBAD80;
+            border-left: 8px groove #DBAD80;
 
             counter-reset: h2counter;
         }
@@ -37,9 +37,29 @@
             content: counter(h1counter) ". ";
         }
 
-        h2::before {
+/*
+        .blogpage > h2 {
+            text-decoration: underline wavy #DBAD80;
+            text-underline-thickness: 1px;
+        }
+        */
+
+        .blogpage > h2::before {
             counter-increment: h2counter;
-            content: counter(h1counter) "." counter(h2counter) " ";
+            content: counter(h1counter) "." counter(h2counter) "  ";
+            /*
+            text-decoration: none;
+            display: inline-block;
+            */
+        }
+
+
+        .toc {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+            color: inherit;
+            text-decoration: none;
         }
 
     </style>
@@ -286,52 +306,40 @@ code {
     <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Breakdown of my most used Alfred Workflows</h1>
             <p style="font-size:0.8em;"> Published November 26, 2023</p>
 <hr>
-            <p>On September 26, 2023, I spent 34 British pounds on a software license for Alfred 5, giving me access to some extra features like Workflows and Remote execution. This post is going to tell you about the Workflows that I've found, written, or co-opted to be useful to me.</p>
-<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/alfredworth/0.png" /></p>
-
-<hr>
-
+            <html><body><p>On September 26, 2023, I spent 34 British pounds on a software license for Alfred 5, giving me access to some extra features like Workflows and Remote execution. This post is going to tell you about the Workflows that I've found, written, or co-opted to be useful to me.</p>
+<p><img loading="lazy" alt="" src="/static/alfredworth/0.png" style="display: block; margin-left: auto;margin-right: auto;"/></p>
+<hr/>
 <p>Over time, I realized Alfred just makes a lot of little things easier, and we do a lot of those little things pretty often. Here's my Workflow list:</p>
-<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/alfredworth/1.png" /></p>
-
+<p><img loading="lazy" alt="" src="/static/alfredworth/1.png" style="display: block; margin-left: auto;margin-right: auto;"/></p>
 <h2>1. Quit Arena, or "All but messages and Opera"</h2>
 <p>This workflow is derived from <a href="https://github.com/vitorgalvao/alfred-workflows/tree/master/QuitArena">this other workflow called QuitArena</a>, and just closes all my apps except a preset few (Chrome, Messages, Opera, Spotify). It's nice for clearing my screen before a presentation, or just to context-switch to working on another project. Used about 2x per month</p>
-<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/alfredworth/2.png" /></p>
-
+<p><img loading="lazy" alt="" src="/static/alfredworth/2.png" style="display: block; margin-left: auto;margin-right: auto;"/></p>
 <h2>2. Change Audio To Airpods</h2>
 <p>Runs two CLI scripts, one that Bluetooth connects to my Airpods (via their hard-coded MAC address) and another that switches the sound output to my Airpods. I use this about once a day, since they tend to connect to my phone first.</p>
-<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/alfredworth/3.png" /></p>
-
+<p><img loading="lazy" alt="" src="/static/alfredworth/3.png" style="display: block; margin-left: auto;margin-right: auto;"/></p>
 <h2>3. <a href="https://github.com/kongmunist/alfred_clippaster_workflow">ClipPaster</a></h2>
 <p>ClipPaster pastes the last $n$ screenshots from my clipboard history to whatever application is focused. It's nice for copying relevant parts of several screens or pictures at once and then putting them all into a doc at once. I use it about once a week. Modified from ClipSaver by luckman212 (next one!)</p>
-<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/alfredworth/4.png" /></p>
-
+<p><img loading="lazy" alt="" src="/static/alfredworth/4.png" style="display: block; margin-left: auto;margin-right: auto;"/></p>
 <h2>4. <a href="https://github.com/luckman212/alfred_clipsaver_workflow">ClipSaver</a></h2>
 <p>ClipSaver does the same as above, but saves them to desktop instead of pasting them. I use it slightly less than once per week.</p>
-<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/alfredworth/5.png" /></p>
-
+<p><img loading="lazy" alt="" src="/static/alfredworth/5.png" style="display: block; margin-left: auto;margin-right: auto;"/></p>
 <h2>5. Email Myself</h2>
 <p>When I write "m mdmaowaodijwaojdwoaij", this workflow shoots off my "mdmaowaodijwaojdwoai" message to my mailbox. Good for quick reminders, but I don't use it that often.</p>
-<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/alfredworth/6.png" /></p>
-
+<p><img loading="lazy" alt="" src="/static/alfredworth/6.png" style="display: block; margin-left: auto;margin-right: auto;"/></p>
 <h2>6. Launch Apps</h2>
 <p>While it's kind of silly or trivial, I find it way easier to bind hotkeys using Alfred than using the Settings-&gt;Keyboard-&gt;Keyboard Shortcuts method that's built-in to the Mac. This workflow surfaces some of my most-used applications. I use it a few times a day.</p>
-<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/alfredworth/7.png" /></p>
-
+<p><img loading="lazy" alt="" src="/static/alfredworth/7.png" style="display: block; margin-left: auto;margin-right: auto;"/></p>
 <h2>7. <a href="https://github.com/alfredapp/system-settings-workflow/">System Settings</a></h2>
 <p>Surfaces the MacOS system settings menus and makes them searchable in Alfred. Really nice, I use it about once a day.</p>
-<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/alfredworth/8.png" /></p>
-
+<p><img loading="lazy" alt="" src="/static/alfredworth/8.png" style="display: block; margin-left: auto;margin-right: auto;"/></p>
 <h2>8. translate hotkey</h2>
 <p>I type "t something" and the "something" is immediately opened in Google Translate. 1-2x a day, but only because I live in a German-speaking area at the moment.</p>
-<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/alfredworth/9.png" /></p>
-
+<p><img loading="lazy" alt="" src="/static/alfredworth/9.png" style="display: block; margin-left: auto;margin-right: auto;"/></p>
 <h2>9. URL Handler</h2>
 <p>I wrote this to handle arbitrary strings. YouTube links get downloaded as videos, Github links get downloaded as zips, other websites get turned into ".webarchive" pages. Pretty generically useful, I use it about once a week.</p>
-<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/alfredworth/10.png" /></p>
-
-<h1>Worth it?</h1>
-<p>I'm not going to do a dry, EA-style calculation of time saved, but I estimate Alfred saves me about 30s of annoying, flow-breaking tasks every day. And that number can only ever improve, so I think Alfred is a good purchase if you plan on using your computer a lot.</p>
+<p><img loading="lazy" alt="" src="/static/alfredworth/10.png" style="display: block; margin-left: auto;margin-right: auto;"/></p>
+<h1 id="worth-it">Worth it?</h1>
+<p>I'm not going to do a dry, EA-style calculation of time saved, but I estimate Alfred saves me about 30s of annoying, flow-breaking tasks every day. And that number can only ever improve, so I think Alfred is a good purchase if you plan on using your computer a lot.</p></body></html>
 
 
 

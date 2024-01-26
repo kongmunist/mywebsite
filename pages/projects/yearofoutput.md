@@ -66,4 +66,5 @@ For accountability, I will maintain the list of outputs below, though this proje
 - Jan 17: main project 1, updated Strooper extension (removed colors from test buttons)
 - Jan 18: AMAZING meeting with Mr. Guzey, various logistical comms re: main project 1
 - Jan 19: Correspondence
-- Jan 20: Blog post on main project 2: 
+- Jan 20 - Jan 25: Incapacitated by personal matter.
+- Jan 26: [Blog post on main project 2](../../blog/allmydata), added counters to blog.

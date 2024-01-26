@@ -27,7 +27,7 @@
         h1:not(.title) {
             padding-left: 12px;
             margin-left: -12px;
-            border-left: 8px ridge #DBAD80;
+            border-left: 8px groove #DBAD80;
 
             counter-reset: h2counter;
         }
@@ -37,9 +37,29 @@
             content: counter(h1counter) ". ";
         }
 
-        h2::before {
+/*
+        .blogpage > h2 {
+            text-decoration: underline wavy #DBAD80;
+            text-underline-thickness: 1px;
+        }
+        */
+
+        .blogpage > h2::before {
             counter-increment: h2counter;
-            content: counter(h1counter) "." counter(h2counter) " ";
+            content: counter(h1counter) "." counter(h2counter) "  ";
+            /*
+            text-decoration: none;
+            display: inline-block;
+            */
+        }
+
+
+        .toc {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+            color: inherit;
+            text-decoration: none;
         }
 
     </style>
@@ -286,70 +306,56 @@ code {
     <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Setting up Electric Tables v0.2</h1>
             <p style="font-size:0.8em;"> Published April 22, 2022</p>
 <hr>
-            <p>Hello everyone! I've recently been thinking about how much time I spend on my computer, and I've gotten gotten into activity logging so I can reflect on the countless hours spent on here. There are other tools out there, but many are manual and many are paid, and I just can't be bothered with either. </p>
-<hr>
-
+            <html><body><p>Hello everyone! I've recently been thinking about how much time I spend on my computer, and I've gotten gotten into activity logging so I can reflect on the countless hours spent on here. There are other tools out there, but many are manual and many are paid, and I just can't be bothered with either. </p>
+<hr/>
 <h2>Browser as a Memex</h2>
-<p class ="caption"> Screenshot from my Timing dashboard, back in my period of riches </p>
-<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="Screenshot from my Timing dashboard, back in my period of riches" src="/static/rt_timingdashboard.png" /></p>
-
+<p class="caption"> Screenshot from my Timing dashboard, back in my period of riches </p>
+<p><img loading="lazy" alt="Screenshot from my Timing dashboard, back in my period of riches" src="/static/rt_timingdashboard.png" style="display: block; margin-left: auto;margin-right: auto;"/></p>
 <p>Over half of all my computer activity happens in the browser, so I've decided to start with indexing browser activity automatically. </p>
 <p><a href="https://tomcritchlow.com/">Tom Critchlow</a> recently released this great bookmarklet tool he calls <a href="https://tomcritchlow.com/2022/02/07/electric-tables-v2/">Electric Tables</a>, which template matches onto author names, titles, dates, and more to index a website as a row in a spreadsheet. Previously, this used the browser's <code>localStorage</code>, but it has since moved to Google Sheets. </p>
 <p>I think this is a great development, and wanted to set up Electric Tables myself. The <a href="https://gist.github.com/tomcritchlow/cbb06a9298fb6cc0804372552fda1f96">gist</a> that Tom posted with the code had instructions for each step of the way, but silly coder I am, I ran into some trouble setting it up. This post is to clarify what exactly needs to be done so future Andy (and others!) can have less trouble in the future. </p>
 <p>If you're reading this, thanks Tom! </p>
-<h1>Let's begin!</h1>
+<h1 id="lets-begin">Let's begin!</h1>
 <p>So, theres three things to set up: the Google Script, the Google Sheet, and the Javascript bookmarklet. </p>
-<hr>
-
+<hr/>
 <h2>Google Script</h2>
 <p>Go to <a href="https://script.google.com/home">script.google.com</a> and sign in, then click "New project" in the top left. It should take you to this blank page</p>
-<p class ="caption"> Blank Google Script </p>
-<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="Blank Google Script" src="/static/et_googlescript1.png" /></p>
-
+<p class="caption"> Blank Google Script </p>
+<p><img loading="lazy" alt="Blank Google Script" src="/static/et_googlescript1.png" style="display: block; margin-left: auto;margin-right: auto;"/></p>
 <p>Name your project, then paste in the code from Tom's <a href="https://gist.github.com/tomcritchlow/cbb06a9298fb6cc0804372552fda1f96">gist</a> under <code>electrict-tables-v0.2.gs</code>. Feel free to delete the starter <code>myFunction</code>. </p>
 <p>We need to add a dependency called Cheerio which scrapes the text from websites. Hit the plus icon next to "Libraries" on the left panel, and include <a href="https://github.com/tani/cheeriogs">Cheerio</a> by looking up the Script ID: <code>1ReeQ6WO8kKNxoaA_O0XEQ589cIrRvEBA9qcWpNqdOP17i47u6N9M5Xh0</code>. Hit "Add" to include it.</p>
-<p class ="caption"> Google Script with code, looking up Cheerio successfully </p>
-<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="Google Script with code, looking up Cheerio successfully" src="/static/et_googlescript2.png" /></p>
-
+<p class="caption"> Google Script with code, looking up Cheerio successfully </p>
+<p><img loading="lazy" alt="Google Script with code, looking up Cheerio successfully" src="/static/et_googlescript2.png" style="display: block; margin-left: auto;margin-right: auto;"/></p>
 <p>Now we just gotta publish it to the web. Click "Deploy -&gt; New deployment", and select "Web app" as the type. I don't think the type matters for functionality, and you can leave the options as default. </p>
 <p>When you click deploy, you'll get a permissions popup screen. Since only you can run this script, it's safe to allow it to edit your spreadsheets, so go ahead and give it permission.</p>
 <p>If you go to Deploy-&gt;Manage deployments, you can grab the Web app URL. We'll need this for our bookmarklet. </p>
-<p class ="caption"> Our script's API endpoint URL </p>
-<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="Our script&#39;s API endpoint URL" src="/static/et_googlescript3.png" /></p>
-
-<hr>
-
+<p class="caption"> Our script's API endpoint URL </p>
+<p><img loading="lazy" alt="Our script's API endpoint URL" src="/static/et_googlescript3.png" style="display: block; margin-left: auto;margin-right: auto;"/></p>
+<hr/>
 <h2>Google Sheet</h2>
 <p>Create a new Google Sheet, making sure it's under the same Google account as your script. We're going to add headers to the file so added rows are properly formatted. The column names are case-sensitive!</p>
-<p class ="caption"> A properly set up Google Sheet </p>
-<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="A properly set up Google Sheet" src="/static/et_googlesheet.png" /></p>
-
+<p class="caption"> A properly set up Google Sheet </p>
+<p><img loading="lazy" alt="A properly set up Google Sheet" src="/static/et_googlesheet.png" style="display: block; margin-left: auto;margin-right: auto;"/></p>
 <p>I've also highlighted the Sheet ID in the URL. We only need this bit for the bookmarklet, not the whole thing. </p>
-<hr>
-
+<hr/>
 <h2>Bookmarklet</h2>
 <p>Last step, the actual trigger for adding pages to Electric Tables. Open your favorite text editor, and paste in <code>bookmarklet.js</code> from Tom's <a href="https://gist.github.com/tomcritchlow/cbb06a9298fb6cc0804372552fda1f96">gist</a>. </p>
 <p>You only need to add the macro URL from step 1 (should look like "<a href="">script.google.com/macros/s/....../exec</a>") and the spreadsheet ID (should look like <code>AodN89ua98dWL12O1oidRTa...</code> and be really long)</p>
 <p>Then head over to a <a href="https://caiorss.github.io/bookmarklet-maker/">bookmarklet generator</a> and copy in your edited <code>bookmarklet.js</code>. Hit "Run Code" to test it out, and the Electric Tables menu should pop up in the top right of your screen. Add a note, then click "Submit". </p>
-<p class ="caption"> Bookmarklet page getting indexed </p>
-<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="Bookmarklet page getting indexed" src="/static/et_bmtesting.png" /></p>
-
+<p class="caption"> Bookmarklet page getting indexed </p>
+<p><img loading="lazy" alt="Bookmarklet page getting indexed" src="/static/et_bmtesting.png" style="display: block; margin-left: auto;margin-right: auto;"/></p>
 <p>Tab over to your Google Sheets page, and you should see a new row with the bookmarklet site and your note appear after a second.</p>
-<p class ="caption"> Successful Electric Tables entry! </p>
-<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="Successful Electric Tables entry!" src="/static/et_newrow.png" /></p>
-
+<p class="caption"> Successful Electric Tables entry! </p>
+<p><img loading="lazy" alt="Successful Electric Tables entry!" src="/static/et_newrow.png" style="display: block; margin-left: auto;margin-right: auto;"/></p>
 <p>Celebrate! Now you can just drag the bookmarklet button onto your bookmarks bar to make a button for it. You can also create a bookmark, then for the URL paste in the "Output" Javascript function. </p>
-<p class ="caption"> Adding bookmarklet manually </p>
-<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="Adding bookmarklet manually" src="/static/et_handbookmark.png" /></p>
-
-<hr>
-
-<h1>Wrapping Up</h1>
+<p class="caption"> Adding bookmarklet manually </p>
+<p><img loading="lazy" alt="Adding bookmarklet manually" src="/static/et_handbookmark.png" style="display: block; margin-left: auto;margin-right: auto;"/></p>
+<hr/>
+<h1 id="wrapping-up">Wrapping Up</h1>
 <p>So, you should have a nifty little bookmark sitting in your bookmarks bar that catalogues interesting pages you find for later, and it's all stored on Google's big boy servers! No need to remember it all yourself anymore (as if you were doing that before 😜)</p>
-<p class ="caption"> Electric Tables bookmarklet </p>
-<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="Electric Tables bookmarklet" src="/static/et_bookmarklet.png" /></p>
-
-<p>Happy searching!</p>
+<p class="caption"> Electric Tables bookmarklet </p>
+<p><img loading="lazy" alt="Electric Tables bookmarklet" src="/static/et_bookmarklet.png" style="display: block; margin-left: auto;margin-right: auto;"/></p>
+<p>Happy searching!</p></body></html>
 
 
 

@@ -27,7 +27,7 @@
         h1:not(.title) {
             padding-left: 12px;
             margin-left: -12px;
-            border-left: 8px ridge #DBAD80;
+            border-left: 8px groove #DBAD80;
 
             counter-reset: h2counter;
         }
@@ -37,9 +37,29 @@
             content: counter(h1counter) ". ";
         }
 
-        h2::before {
+/*
+        .blogpage > h2 {
+            text-decoration: underline wavy #DBAD80;
+            text-underline-thickness: 1px;
+        }
+        */
+
+        .blogpage > h2::before {
             counter-increment: h2counter;
-            content: counter(h1counter) "." counter(h2counter) " ";
+            content: counter(h1counter) "." counter(h2counter) "  ";
+            /*
+            text-decoration: none;
+            display: inline-block;
+            */
+        }
+
+
+        .toc {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+            color: inherit;
+            text-decoration: none;
         }
 
     </style>
@@ -286,68 +306,62 @@ code {
     <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Analog Electronics Basics: Scaling Voltage Rails</h1>
             <p style="font-size:0.8em;"> Published December 8, 2020</p>
 <hr>
-            <p>The problem I'm going to be talking about today is how to translate an analog signal from one range to another. I have dealt with this problem three times now, each time was more unintuitive than the last so I thought it'd be useful if I wrote down my process for other people to see what's going on and solve their similar problems. </p>
-<p><img loading="lazy" alt="Mapping analog voltages between two rails" src="/static/analogscalinggraphic.png" /></p>
+            <html><body><p>The problem I'm going to be talking about today is how to translate an analog signal from one range to another. I have dealt with this problem three times now, each time was more unintuitive than the last so I thought it'd be useful if I wrote down my process for other people to see what's going on and solve their similar problems. </p>
+<p><img loading="lazy" alt="Mapping analog voltages between two rails" src="/static/analogscalinggraphic.png"/></p>
 <p class="caption">Mapping analog voltages between two rails</p>
-
-<hr>
+<hr/>
 <h3>An example of this problem</h3>
 <p>Let's say you're using a complicated device, which takes in some analog/digital signal in order to control some aspect of itself. As an example, let's say it controls its position. You go to measure the device's current position to control what position you actually want it to go to, but discover from the datasheet or your fried microcontroller that the analog signal out from the device has a different rail-to-rail voltage than your microcontroller. It runs at ±15V and your board runs from USB's 0-5V! </p>
-<p><img loading="lazy" alt="Mapping of voltages that would fix your problems" src="/static/voltagescalingmath1.png" /></p>
+<p><img loading="lazy" alt="Mapping of voltages that would fix your problems" src="/static/voltagescalingmath1.png"/></p>
 <p class="caption">Mapping of voltages that would fix your problems</p>
-
 <p>You grab a new Arduino from the scrap heap and think about how to fix this problem. So clearly, if you could just divide all signals by six and then add 2.5V, the rails would match and you would be able to lock onto the signal from the microcontroller. Voila! Easy as cake. Implement an adder op-amp, then have another op amp with feedback resistors so that it divides itself by 6. </p>
 <p>However, you can do it using just one op amp. Introducing, the differential op amp!</p>
-<p><img loading="lazy" alt="Difference op amp, or subtractor op amp schematic" src="/static/diffamp1.png" /></p>
+<p><img loading="lazy" alt="Difference op amp, or subtractor op amp schematic" src="/static/diffamp1.png"/></p>
 <p class="caption">Difference op amp, or subtractor op amp schematic</p>
-
 <h3>What they don't tell you</h3>
 <p>So most of the top Google results that show you how to implement a differential or subtractor op-amp configuration place some limitations on the problem to make it easier to solve. Maybe they say the resistors R1/R3 and R2/R4 have the same ratio, like the first result on Google, the <a href="https://www.electronics-tutorials.ws/opamp/opamp_5.html">electronics-tutorials</a> site.</p>
-<p><img loading="lazy" alt="electronics-tutorials subtractor op-amp configuration" src="https://www.electronicshub.org/wp-content/uploads/2015/01/1.-Differential-amplifier-circuit.jpg" /></p>
+<p><img loading="lazy" alt="electronics-tutorials subtractor op-amp configuration" src="https://www.electronicshub.org/wp-content/uploads/2015/01/1.-Differential-amplifier-circuit.jpg"/></p>
 <p class="caption">Electronics Tutorials subtractor op-amp configuration</p>
-
 <p>Or, they might assume that the signal is zero-centered when telling you the gain. Both the site I cited above and the 2nd result on Google <a href="https://www.electronicshub.org/differential-amplifier/">(this site)</a> assume both of these things. But this isn't necessarily what you're looking for. It doesn't matter if their example op amps solve for </p>
-<p><img loading="lazy" alt="Shitty solution of the differential op-amp" src="/static/analogscaling_shitsoln.png" /></p>
+<p><img loading="lazy" alt="Shitty solution of the differential op-amp" src="/static/analogscaling_shitsoln.png"/></p>
 <p>, that doesn't move the center voltage at all. And it gets worse if you want uneven gain on either side of the center, which may not be zero. What to do?</p>
-<p><br></p>
-<hr>
-
+<p><br/></p>
+<hr/>
 <h3>How to solve this</h3>
 <p>Here's the full solution.</p>
-<p><img loading="lazy" alt="Schematic of the problem statement" src="/static/scalingvoltageschematic.png" /></p>
+<p><img loading="lazy" alt="Schematic of the problem statement" src="/static/scalingvoltageschematic.png"/></p>
 <p>Given this circuit above, </p>
-<p><img loading="lazy" alt="Full solution to the differential op-amp" src="/static/analogscaling_fullsoln.png" /></p>
+<p><img loading="lazy" alt="Full solution to the differential op-amp" src="/static/analogscaling_fullsoln.png"/></p>
 <p>Seems easy, right? It is! And it shouldn't have been so hard for me to figure that out!</p>
 <h3>How's it work?</h3>
 <p>So let's go over it. R1 and R2 are feedback for the Vin, they do the dividing of Vin in the circuit. The tricky part is the Vref, and especially how it interacts with the Vin. It gets subtracted, sure, but if Vref is not zero then it's going to show up in your final output as well. </p>
 <p>You may be saying "Ohh, but Andy, this isn't like a differential op-amp at all! The noninverting input doesn't even have resistors." Well to that I say, how do you expect to make your reference voltage? You'll usually have to make a voltage divider to ground, and voila, the original subtractor structure appears.</p>
 <h3>Example please?</h3>
 <p>Sure! Let's say we're solving the above mapping: from ±15V rails to a 0-5V range. This op-amp is in an inverting configuration (negative feedback), so the higher initial voltage is going to have to map to the lower voltage on the output, and vice versa. Here's what we're trying to accomplish.</p>
-<p><img loading="lazy" alt="Mapping of voltages that would fix your problems, pt. 2" src="/static/voltagescalingmath2.png" /></p>
+<p><img loading="lazy" alt="Mapping of voltages that would fix your problems, pt. 2" src="/static/voltagescalingmath2.png"/></p>
 <p class="caption">Mapping of voltages that would fix your problems, pt. 2</p>
-
 <p>We can just plug in our knowns and solve the linear system of equations for Vref and the resistor ratio. Let's say R2/R1 = r just so we can write it more easily. From the first equation, we have Vin = 15V, Vout = 0V, and the second equation we have Vin = -15V and Vout = 5V. So in LaTeX form:</p>
-<p><img loading="lazy" alt="Equation one" src="/static/analogscale_eq1.png" /></p>
-<p><img loading="lazy" alt="Equation two" src="/static/analogscale_eq2.png" /></p>
+<p><img loading="lazy" alt="Equation one" src="/static/analogscale_eq1.png"/></p>
+<p><img loading="lazy" alt="Equation two" src="/static/analogscale_eq2.png"/></p>
 <p>Then we just ask Wolfram Alpha! I'm using v for Vref to make it easier to type.</p>
-<p><img loading="lazy" alt="Wolfram Query" src="/static/wolframquery.png" /></p>
-<p><img loading="lazy" alt="Wolfram Answer" src="/static/wolframanswer.png" /></p>
+<p><img loading="lazy" alt="Wolfram Query" src="/static/wolframquery.png"/></p>
+<p><img loading="lazy" alt="Wolfram Answer" src="/static/wolframanswer.png"/></p>
 <p>Great! So our R1 has to equal 6*R2, and our reference voltage should be somewhere around 2.14V. </p>
 <h3>Implementing the resistor ratio and voltage divider</h3>
 <p>I want to pick realistic resistors because these circuits are usually needed immediately and in real-life, so I usually use a resistor ratio calculator to make this easier. <a href="http://jansson.us/resistors.html">This site</a> is a godsend. I'm really lazy in real life, so I'm only going to use the single resistor in series option, but the other ones are usually a little or a lot better in terms of error. </p>
 <p>For the resistors with a ratio of 1/6, it seems a good choice is a 56kΩ and 330kΩ resistor. </p>
-<p><img loading="lazy" alt="Resistor ratio solving for r" src="/static/analogscaling_r.png" /></p>
+<p><img loading="lazy" alt="Resistor ratio solving for r" src="/static/analogscaling_r.png"/></p>
 <p>We'll assume we have access to a 5V source since the second set of rails is 0-5V. We can use the handy voltage divider option on the site to solve for this ratio all at once. Looks like a 33kΩ and 47kΩ resistor will do the trick. </p>
-<p><img loading="lazy" alt="Resistor ratio solving for Vref" src="/static/analogscaling_vref.png" /></p>
-<p><br><hr></p>
+<p><img loading="lazy" alt="Resistor ratio solving for Vref" src="/static/analogscaling_vref.png"/></p>
+<p><br/></p><hr/>
 <h2>Does it work?</h2>
 <p>Here's the part values we picked out in simulation:</p>
-<p><img loading="lazy" alt="Vout with +15V is near zero, around -0.1V" src="/static/analogscaling_solutionpos.png" /></p>
-<p><img loading="lazy" alt="Vout with -15V is almost exactly 5V" src="/static/analogscaling_solutionneg.png" /></p>
+<p><img loading="lazy" alt="Vout with +15V is near zero, around -0.1V" src="/static/analogscaling_solutionpos.png"/></p>
+<p><img loading="lazy" alt="Vout with -15V is almost exactly 5V" src="/static/analogscaling_solutionneg.png"/></p>
 <p>The +15V rail becomes -0.13V, so very close to the 0V we wanted it to be. The -15V rail nails 5V almost exactly. So yea, I'd say they work. </p>
 <p>Sometimes the solution with realistic resistors will need some tuning, because negative voltages will usually damage a circuit, but you can just tune the initial parameters on the initial voltage mapping to be a little tighter and solve the problem again. </p>
 <h2>Closing</h2>
-<p>Anyway, I encounter this problem all the time, and as I work more with hardware I think this is an integral "glue" circuit that you should master if you're going to work with hardware of various logical and analog levels. That's all for now, cya next time!</p>
+<p>Anyway, I encounter this problem all the time, and as I work more with hardware I think this is an integral "glue" circuit that you should master if you're going to work with hardware of various logical and analog levels. That's all for now, cya next time!</p></body></html>
 
 
 

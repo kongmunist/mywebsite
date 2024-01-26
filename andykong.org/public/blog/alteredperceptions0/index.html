@@ -27,7 +27,7 @@
         h1:not(.title) {
             padding-left: 12px;
             margin-left: -12px;
-            border-left: 8px ridge #DBAD80;
+            border-left: 8px groove #DBAD80;
 
             counter-reset: h2counter;
         }
@@ -37,9 +37,29 @@
             content: counter(h1counter) ". ";
         }
 
-        h2::before {
+/*
+        .blogpage > h2 {
+            text-decoration: underline wavy #DBAD80;
+            text-underline-thickness: 1px;
+        }
+        */
+
+        .blogpage > h2::before {
             counter-increment: h2counter;
-            content: counter(h1counter) "." counter(h2counter) " ";
+            content: counter(h1counter) "." counter(h2counter) "  ";
+            /*
+            text-decoration: none;
+            display: inline-block;
+            */
+        }
+
+
+        .toc {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+            color: inherit;
+            text-decoration: none;
         }
 
     </style>
@@ -286,19 +306,18 @@ code {
     <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Parts arrived for Altered Perceptions</h1>
             <p style="font-size:0.8em;"> Published November 13, 2019</p>
 <hr>
-            <p>Hello. This is Andy. I'll tell you about my new project, and why I need your help coming up with ideas for it. </p>
+            <html><body><p>Hello. This is Andy. I'll tell you about my new project, and why I need your help coming up with ideas for it. </p>
 <p>Ever since I was young, I have wanted to be able to see the world a bit differently. I'm not sure if I had gotten bored of the way everything looked, or maybe because I knew that I wanted to see old things in a new light. Whether wishing I could change my reds for blues after hearing about "everyone sees colors differently" theory, or wishing I had a real life heads-up display to show me peoples names and subconscious emotions, I always wanted my eyes to be a bit more effective than they were. </p>
 <p>Soon, I hope to make this a reality. Today I received a few boxes in the mail, containing a PlayStation VR, Jetson Nano, Raspicam, and some assorted cables. Can you tell where this is going? I'm going to run the PSVR from the Nano, and wear the Raspicam on the front of the headset to have a POV livestream that I can intercept and play with before sending to the wearer's eyes. The latency might be bad, and the video stream may not trick me into believing its "live live", but it'll emulate a childhood desire of mine. To see things differently with the press of a button. </p>
 <p>We rely so heavily on our eyes for almost everything. Balance, trajectory planning, social interaction, building cool toys, playing video games. The list goes on and on. And soon, I will be able to have more than one pair. Say I wanted to up the contrast of the world, or overlay line detection over my view? Done in a few lines of code. What about the Minecraft nausea effect applied in real time, or even better, Deep Dreaming every frame I see? Easy enough given the level of control over the data that's available. For the first time, I will have granular control over how I see things. It will be glorious.</p>
 <h2>If you find this project interesting and/or think that there's some neat way to edit the visual field that I've missed, don't hesitate to email me to let me know what your idea is, and I'll try to implement it (andyking99@gmail.com).</h2>
-<p><br><br></p>
+<p><br/><br/></p>
 <ul>Filters/new eyes I'm trying to implement
     <li>rainbow cycling the colors</li>
-    <li>inverting the world</li>
-    <li>deepdreaming, live (like this video):</li>
+<li>inverting the world</li>
+<li>deepdreaming, live (like this video):</li>
 </ul>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/DgPaCWJL7XI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/DgPaCWJL7XI" width="560"></iframe></body></html>
 
 
 

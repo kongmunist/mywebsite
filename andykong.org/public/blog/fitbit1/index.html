@@ -27,7 +27,7 @@
         h1:not(.title) {
             padding-left: 12px;
             margin-left: -12px;
-            border-left: 8px ridge #DBAD80;
+            border-left: 8px groove #DBAD80;
 
             counter-reset: h2counter;
         }
@@ -37,9 +37,29 @@
             content: counter(h1counter) ". ";
         }
 
-        h2::before {
+/*
+        .blogpage > h2 {
+            text-decoration: underline wavy #DBAD80;
+            text-underline-thickness: 1px;
+        }
+        */
+
+        .blogpage > h2::before {
             counter-increment: h2counter;
-            content: counter(h1counter) "." counter(h2counter) " ";
+            content: counter(h1counter) "." counter(h2counter) "  ";
+            /*
+            text-decoration: none;
+            display: inline-block;
+            */
+        }
+
+
+        .toc {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+            color: inherit;
+            text-decoration: none;
         }
 
     </style>
@@ -286,20 +306,20 @@ code {
     <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">How to get access to your Fitbit data (API tutorial)</h1>
             <p style="font-size:0.8em;"> Published July 26, 2021</p>
 <hr>
-            <p>I bought a Fitbit to access my heartrate live, or at least to track the way it changes over time. After wearing it for about two weeks, I figured I had enough data to begin requesting it through their API. However, I got confused because there's a bunch of different API names and webpages. I figured it out, and here's how you do the same.</p>
+            <html><body><p>I bought a Fitbit to access my heartrate live, or at least to track the way it changes over time. After wearing it for about two weeks, I figured I had enough data to begin requesting it through their API. However, I got confused because there's a bunch of different API names and webpages. I figured it out, and here's how you do the same.</p>
 <p>My end goal is a command line GET request that dumps my heartrate logs, for use in Python scripts or a website. To get there, we will use the Web API.</p>
-<h1>1. Sign in and register your app <a href="https://dev.fitbit.com/apps/new">here</a></h1>
+<h1 id="1-sign-in-and-register-your-app-here">1. Sign in and register your app <a href="https://dev.fitbit.com/apps/new">here</a></h1>
 <p>Any URL will do for every URL they ask you for. For every URL I just used my personal website (the one you're sitting on now!). This is meant for external users, so when they agree to let you access their data you can get their authorization token. However, I'm just setting it up once, so I'm ok with manually snipping out my keys and such from the URL redirect. </p>
 <p>I also selected "Personal" while registering my app, so I can get higher fidelity heartrate data.</p>
 <p class="caption">Register a Fitbit app page</p>
-<p><img loading="lazy" alt="Register a Fitbit app page" src="/static/fitbit1_register.png" /></p>
-<h1>2. Head to "Manage My Apps" and click on "Oath 2.0 tutorial page" <a href="https://dev.fitbit.com/apps/oauthinteractivetutorial">[link here]</a></h1>
+<p><img loading="lazy" alt="Register a Fitbit app page" src="/static/fitbit1_register.png"/></p>
+<h1 id="2-head-to-manage-my-apps-and-click-on-oath-20-tutorial-page-link-here">2. Head to "Manage My Apps" and click on "Oath 2.0 tutorial page" <a href="https://dev.fitbit.com/apps/oauthinteractivetutorial">[link here]</a></h1>
 <p>I left all the settings default and clicked the link under step 1. Accept the agreement, and you will be redirected to the page you filled in earlier, with a bunch of params after a "#". Copy everything past the "#" and paste it in the "2. Parse response"</p>
 <p>After pasting, the site should auto-generate you an "API endpoint URL: <code>https://api.fitbit.com/1/user/-/profile.json</code>" as a <code>curl</code> command. It redirects to your own profile though. To ask for more useful information, you can check out the Web API reference <a href="https://dev.fitbit.com/build/reference/web-api/heart-rate/">here</a>. For instance, to get heartrate, the API endpoint is <code>https://api.fitbit.com/1/user/-/activities/heart/date/today/1d.json</code>. Paste this in, and you should see the command change. </p>
 <p>I'm not going to show you any commands I ran, that would give away my Auth token. Here's the results of the heartrate one though. Granularity goes down to 1 second, though I'm not sure why you would need that. </p>
 <p class="caption">Successful heartrate output from the terminal</p>
-<p><img loading="lazy" alt="Successful heartrate output from the terminal" src="/static/fitbit1_heartrateout.png" /></p>
-<p>This is a short post, but I wasn't sure what else needed to be done while I was navigating the process. Turns out it's just two things. Cya next time!</p>
+<p><img loading="lazy" alt="Successful heartrate output from the terminal" src="/static/fitbit1_heartrateout.png"/></p>
+<p>This is a short post, but I wasn't sure what else needed to be done while I was navigating the process. Turns out it's just two things. Cya next time!</p></body></html>
 
 
 

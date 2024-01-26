@@ -27,7 +27,7 @@
         h1:not(.title) {
             padding-left: 12px;
             margin-left: -12px;
-            border-left: 8px ridge #DBAD80;
+            border-left: 8px groove #DBAD80;
 
             counter-reset: h2counter;
         }
@@ -37,9 +37,29 @@
             content: counter(h1counter) ". ";
         }
 
-        h2::before {
+/*
+        .blogpage > h2 {
+            text-decoration: underline wavy #DBAD80;
+            text-underline-thickness: 1px;
+        }
+        */
+
+        .blogpage > h2::before {
             counter-increment: h2counter;
-            content: counter(h1counter) "." counter(h2counter) " ";
+            content: counter(h1counter) "." counter(h2counter) "  ";
+            /*
+            text-decoration: none;
+            display: inline-block;
+            */
+        }
+
+
+        .toc {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+            color: inherit;
+            text-decoration: none;
         }
 
     </style>
@@ -286,7 +306,7 @@ code {
     <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Why are Javascript libraries so annoying</h1>
             <p style="font-size:0.8em;"> Published November 28, 2020</p>
 <hr>
-            <p>I am writing a rather complex Javascript project at the moment, and needed to include two different Javascript libraries. One is <a href="https://p5js.org/">p5.js</a>, which is just Processing ported to HTML and used for drawing and a lot of visual display stuff. The other is <a href="https://mlweb.loria.fr/">mlweb</a>, which is a machine learning library written in pure Javascript. </p>
+            <html><body><p>I am writing a rather complex Javascript project at the moment, and needed to include two different Javascript libraries. One is <a href="https://p5js.org/">p5.js</a>, which is just Processing ported to HTML and used for drawing and a lot of visual display stuff. The other is <a href="https://mlweb.loria.fr/">mlweb</a>, which is a machine learning library written in pure Javascript. </p>
 <p><u><strong>One of the cursed things about using Javascript is that most libraries are written exclusively as a global import</strong></u>, so importing two large libraries is a nightmare if any of their functions overlap. While the ES6 standard (2015 major update to Javascript) recommends libraries encapsulate their functions into their own namespace, older ones or lazy ones still don't do it.</p>
 <p>This is annoying in Javascript, but isn't a problem at all in Python. Importing a library by default forces you to use their import name before any function or variable from that library (think <code>cv2.imread()</code> from <code>import cv2</code>, or <code>os.walk</code> from <code>import os</code>). </p>
 <p>In my case, <code>sin</code> and <code>tan</code> and a few other math functions overlapped. Though both functions do the same thing, the problem arises because of the format that they each return. If the p5.js function returns their own P5 class of int or Array, then the mlweb function calling it wouldn't be able to parse its output and crash. </p>
@@ -296,14 +316,14 @@ code {
 <p>And have it callable by module namespace. Wack!</p>
 <h3>Is there anything we can do?</h3>
 <p>For small libraries, it's doable. You can wrap your entire library.js file in a module declaration and then export each function you want to be able to use <a href="https://www.typescriptlang.org/docs/handbook/namespaces-and-modules.html">(source)</a>:</p>
-<p><code>declare module "SomeModule" {</code><br>
-&emsp;<code>export function fn(): string;</code><br>
+<p><code>declare module "SomeModule" {</code><br/>
+ <code>export function fn(): string;</code><br/>
 <code>}</code></p>
 <p>But this doesn't work for large libraries, since there are so many variables and functions and all kinds of stuff, and as far as I know there's no automatic tool for it. However, I think you could write something simple that would just parse a javascript file and export everything for you. </p>
 <p>Now that I think about it, I did something like this for my <a href="https://andykong.org/projects/heartratemonitor/">Webcam Heartrate</a> project. I ported a C++ package to Node.js using Emscripten, then used Browserify to port that to a script that I could just include. Then to call it, I added some lines around the library to expose it as a variable, and had to reference that variable to call its functions. May be useful for me to go back through and see if I can't throw together a quick solution...</p>
 <h3>Final fix</h3>
 <p>In the end, it turns out p5.js DOES conform to ES6, and can be wrapped in a big function wherever you call its functions and variables to not leak into the global namespace. With this solution, I stopped looking further into it. You can also invoke p5.js whenever you want in your javascript, if the problem is just the order in which the functions overlap (lazier, but easier).</p>
-<p>A Javascript encapsulator script would be really useful if Javascript continues being the norm for web stuff and people push more and more code into Javascript. It doesn't seem super hard, but for now there's not much of a fix and I'm busy. Summer project, anyone?</p>
+<p>A Javascript encapsulator script would be really useful if Javascript continues being the norm for web stuff and people push more and more code into Javascript. It doesn't seem super hard, but for now there's not much of a fix and I'm busy. Summer project, anyone?</p></body></html>
 
 
 

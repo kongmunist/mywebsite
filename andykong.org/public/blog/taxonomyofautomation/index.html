@@ -27,7 +27,7 @@
         h1:not(.title) {
             padding-left: 12px;
             margin-left: -12px;
-            border-left: 8px ridge #DBAD80;
+            border-left: 8px groove #DBAD80;
 
             counter-reset: h2counter;
         }
@@ -37,9 +37,29 @@
             content: counter(h1counter) ". ";
         }
 
-        h2::before {
+/*
+        .blogpage > h2 {
+            text-decoration: underline wavy #DBAD80;
+            text-underline-thickness: 1px;
+        }
+        */
+
+        .blogpage > h2::before {
             counter-increment: h2counter;
-            content: counter(h1counter) "." counter(h2counter) " ";
+            content: counter(h1counter) "." counter(h2counter) "  ";
+            /*
+            text-decoration: none;
+            display: inline-block;
+            */
+        }
+
+
+        .toc {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+            color: inherit;
+            text-decoration: none;
         }
 
     </style>
@@ -286,14 +306,14 @@ code {
     <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Examples from the Taxonomy of Automation</h1>
             <p style="font-size:0.8em;"> Published January 3, 2022</p>
 <hr>
-            <p>Hello y'all. I've been thinking about automation, specifically, intuitive interaction design's role in coddling people. </p>
+            <html><body><p>Hello y'all. I've been thinking about automation, specifically, intuitive interaction design's role in coddling people. </p>
 <p>My lab is called the Future Interfaces Group. We abuse hardware and software to make predictive interfaces and new interactions between users and technology. Every project needs a user study to verify usability or reliability — does the user like the interaction? How does the device compare to other ones like it? We think about these things to make devices that hopefully feel a bit magical, like they can tell what you're going to do before you do them.</p>
 <p>I've been thinking about the usefulness of such research, especially since it doesn't feel like anyone's life is particularly impacted by the research we put out. While it's nice that the products we use are smooth and not frustrating, I sometimes feel that nobody would die or hate their lives if we took it all away. Do these things really build up into useful parts of someone's life? Or is it always just cruft, extra features and bloatware that nobody asked for? </p>
 <p>I'm getting off topic. Recently, I read a Tumblr blog called Crap Futures (I'm gonna abbreviate it as CF) which shared many of my thoughts about the apparent shittiness of the future we're creating. IoT devices everywhere that go down every week due to ransomware attacks or server outages does not sound like my idea of a good tech future. </p>
 <p>They wrote one particular post called <a href="https://crapfutures.tumblr.com/post/180304398284/scratch-an-itch-a-taxonomy-of-automation">Scratch an itch: A taxonomy of automation</a> that really got me thinking about the degrees of automation in our lives. I'm going to summarize it here, but you should definitely give it a read too to see where I'm getting these ideas from. </p>
-<h1>Taxonomy of Automation</h1>
+<h1 id="taxonomy-of-automation">Taxonomy of Automation</h1>
 <p>I see automation's actors as the human and the device/tech/automator, and I am going to explain CF's taxonomy of automation in terms of the actions: who does the sensing, and who does the action. And I liked CF's concrete example of scratching an itch, so I'll continue with that as my main focus</p>
-<p><br></p>
+<p><br/></p>
 <h2>Level 1: Human Sensing, Human Doing</h2>
 <p>On automation level 1, the human feels the itch and then reaches over to scratch it</p>
 <h2>Level 2: Human Sensing, Device Doing</h2>
@@ -304,8 +324,8 @@ code {
 <p>The device anticipates an itch, perhaps it occurs on a regular basis or shows a red spot before actually itching. The desire to scratch is circumvented entirely, through early anti-itch cream or pre-scratching. </p>
 <h2>Level 5: Device Omniscience</h2>
 <p>The device anticipates and even pre-supposes an itch. It can do this to sell repairs of itself, or to sell its own usefulness. Complete loss of desire control. </p>
-<p><br></p>
-<h1>Examples</h1>
+<p><br/></p>
+<h1 id="examples">Examples</h1>
 <p>I've mentioned this to a few friends, and each one has thought of a few examples of devices at each level that we already use today. As we'll see, nearly everything sits on level 1 and 2.</p>
 <p>At level 1, we do all the work that we've always done by hand. Scratching, massaging, feeding ourselves.</p>
 <p>Level 2 contains all "dumb" tools - the shovel, the spatula, the TV remote. We sense a boring channel coming on and click the remote to change it. Most of our technology sits at level 2, including our phones and the Roomba.</p>
@@ -322,16 +342,16 @@ code {
 </li>
 </ul>
 <p>And nothing falls beyond that. It's kind of sad that so few things live at Level 3, even given all our crazy machine learning advances in the past twenty years. Our devices stay tools, useful when we use them and not otherwise. </p>
-<p><br></p>
-<h1>Cross-application to people</h1>
+<p><br/></p>
+<h1 id="crossapplication-to-people">Cross-application to people</h1>
 <p>One thing that came up in my discussions is if anything sits past Level 4. I think our friends and family fall past level 3, since they're always looking out for us and can anticipate what we want pretty well (just think of your recent Christmas gifts!). And people besides them can sit anywhere on the spectrum. We can do a task ourselves (us sensing, us doing), tell someone what to do (us sensing, them doing), or tell someone what high-level thing to be working on (them sensing, them doing). Ideally they sit as high as possible on the levels. </p>
-<p><br></p>
-<h1>Conclusion</h1>
+<p><br/></p>
+<h1 id="conclusion">Conclusion</h1>
 <p>I think we should be pushing robots as far up the automation hierarchy as possible. Each layer saves exponentially more time. The question is if the idea being automated is worth doing yourself, and if it is, why automate it? I close with a quote from the little prince</p>
 <p class="caption">The Merchant passage from The Little Prince</p>
-<p><img loading="lazy" alt="The Merchant passage from The Little Prince" src="/static/tlpmerchant.png" /></p>
+<p><img loading="lazy" alt="The Merchant passage from The Little Prince" src="/static/tlpmerchant.png"/></p>
 <p>A question for later: Why do we value human level 3 much more than robot level 3? (I think it's related to the fact that we know humans have opportunity cost but don't really think about computers having the same). What if we reported robot operating cost whenever they did a task for us? </p>
-<p>Until then, cya around!</p>
+<p>Until then, cya around!</p></body></html>
 
 
 

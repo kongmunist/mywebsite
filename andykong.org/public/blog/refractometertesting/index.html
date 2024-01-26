@@ -27,7 +27,7 @@
         h1:not(.title) {
             padding-left: 12px;
             margin-left: -12px;
-            border-left: 8px ridge #DBAD80;
+            border-left: 8px groove #DBAD80;
 
             counter-reset: h2counter;
         }
@@ -37,9 +37,29 @@
             content: counter(h1counter) ". ";
         }
 
-        h2::before {
+/*
+        .blogpage > h2 {
+            text-decoration: underline wavy #DBAD80;
+            text-underline-thickness: 1px;
+        }
+        */
+
+        .blogpage > h2::before {
             counter-increment: h2counter;
-            content: counter(h1counter) "." counter(h2counter) " ";
+            content: counter(h1counter) "." counter(h2counter) "  ";
+            /*
+            text-decoration: none;
+            display: inline-block;
+            */
+        }
+
+
+        .toc {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+            color: inherit;
+            text-decoration: none;
         }
 
     </style>
@@ -286,48 +306,48 @@ code {
     <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Comparing The Sugar Percentage Of Peach Juice vs. Sugary Drinks</h1>
             <p style="font-size:0.8em;"> Published July 23, 2021</p>
 <hr>
-            <p>It's a shame: I've met many smart people who were never educated in the fine art of slapping a watermelon to determine their ripeness by their (usually immigrant) parents. I thought I could do these poor folks a great service by using technology to help them figure out a watermelon's sweetness for them.</p>
+            <html><body><p>It's a shame: I've met many smart people who were never educated in the fine art of slapping a watermelon to determine their ripeness by their (usually immigrant) parents. I thought I could do these poor folks a great service by using technology to help them figure out a watermelon's sweetness for them.</p>
 <p class="caption">Refractometer on the left. The liquid goes on the blue part at the top. The bar chart on the right is what you see through the peephole. </p>
-<p><img loading="lazy" alt="Refractometer on the left. The liquid goes on the blue, tilted part. The bar chart on the right is what you see through the peephole. " src="/static/refractest_displaypic.png" /></p>
+<p><img loading="lazy" alt="Refractometer on the left. The liquid goes on the blue, tilted part. The bar chart on the right is what you see through the peephole. " src="/static/refractest_displaypic.png"/></p>
 <p>The first step is determining how sweet the watermelon is, so of course I had to go buy a refractometer. As it turns out, adding sugar to water changes how much light rays bend when they go through the water, AKA the index of refraction (IOR). A refractometer lets anyone look through a peephole to compare an unknown sugary liquid to water (0% sugar). By looking at where the new line of intersection is on the graph, we can figure out exactly how many degrees Brix there are. Brix is just a complex way to say % sugar by weight. </p>
 <p class="caption">Arrangement of all the liquids I had to try</p>
-<p><img loading="lazy" alt="Arrangement of all the liquids I had to try" src="/static/refractest_showcase.jpg" /></p>
+<p><img loading="lazy" alt="Arrangement of all the liquids I had to try" src="/static/refractest_showcase.jpg"/></p>
 <p>After I got the refractometer, I really wanted to make sure it gave out accurate numbers for both fruit and regular liquids. It just so happened that there were several sugary drinks in my pantry leftover from a club party, which listed their grams of sugar and grams of total mass under Nutrition Facts. Using this, I'd be able to determine the proper sugar content before confirming it with my refractometer. </p>
-<hr>
-<h1>Onto the results!!</h1>
+<hr/>
+<h1 id="onto-the-results">Onto the results!!</h1>
 <p>In all, I measured 3 drinks (Caprisun, Coke, Izze Green Apple), 1 fruit (peach), and 1 syrup (Hershey Caramel). I'll present them in increasing order by sugar content</p>
 <h2>Caprisun (7.9˚ Brix)</h2>
 <p>The refractometer hit this one on the head, which was helped by the fact that the Caprisun is so liquidy and has very few other ingredients</p>
-<p>True sugar: Grams carbs / grams total = 14g / 177g = 7.9%<br>
+<p>True sugar: Grams carbs / grams total = 14g / 177g = 7.9%<br/>
 Refractometer: 7.9% </p>
 <p class="caption">Caprisun, Pacific Cooler edition</p>
-<p><img loading="lazy" alt="Caprisun, Pacific Cooler edition" src="/static/refractest_caprisun.png" /></p>
+<p><img loading="lazy" alt="Caprisun, Pacific Cooler edition" src="/static/refractest_caprisun.png"/></p>
 <h2>Izze Green Apple (9.7˚ Brix)</h2>
 <p>A little further off on this drink. It might have been because of the carbonation forming bubbles in the sample.</p>
-<p>True sugar: 24g / 248g = 9.7% <br>
+<p>True sugar: 24g / 248g = 9.7% <br/>
 Refractometer: 9.4%</p>
 <p class="caption">Izze Green Apple. Tastes like green apple.</p>
-<p><img loading="lazy" alt="Izze Green Apple. Tastes like green apple." src="/static/refractest_izze.png" /></p>
+<p><img loading="lazy" alt="Izze Green Apple. Tastes like green apple." src="/static/refractest_izze.png"/></p>
 <h2>Regular Coke (10.5˚ Brix)</h2>
 <p>This number was a bit harder to find. Turns out a 12oz can of Coke is 355mL, but the density is a bit higher than that of water (1.042 g/mL), which affected the denominator. </p>
 <p>The change in density may also be the reason the Izze's reading is off. Using the density of Coke at the volume of Izze gives a true sugar rating of 9.39%, which is exactly what we got from the refractometer.</p>
-<p>True sugar: 39g / 369.9g = 10.5%<br>
+<p>True sugar: 39g / 369.9g = 10.5%<br/>
 Refractometer: 10.3%</p>
 <p class="caption">Coke had the highest amount of sugar by weight, but not by much (~2.6% higher than the lowest, Caprisun)</p>
-<p><img loading="lazy" alt="Coke had the highest amount of sugar by weight, but not by much (~2.6% higher than the lowest, Caprisun)" src="/static/refractest_coke.png" /></p>
+<p><img loading="lazy" alt="Coke had the highest amount of sugar by weight, but not by much (~2.6% higher than the lowest, Caprisun)" src="/static/refractest_coke.png"/></p>
 <h2>Peach (8.7˚ Brix)</h2>
 <p>I juiced a slice of this peach, but forgot to take a photo before beginning to eat the rest. No ground truth for this one. </p>
 <p>Refractometer: 8.7%</p>
 <p class="caption">So, still think fruit is healthy?</p>
-<p><img loading="lazy" alt="So, still think fruit is healthy?" src="/static/refractest_peach.png" /></p>
+<p><img loading="lazy" alt="So, still think fruit is healthy?" src="/static/refractest_peach.png"/></p>
 <h2>Hershey Caramel (61˚ Brix)</h2>
 <p>Because this liquid is so syrupy (it is syrup), I had to dilute it down. My refractometer range also stops at 38˚ Brix. I added 1 part caramel, 9 parts water and mixed it until uniform. I then added this liquid to the refractometer and read it. </p>
-<p>True sugar: 25g / 40g = 62.5%!<br>
-Diluted 10x: 6.25%<br>
+<p>True sugar: 25g / 40g = 62.5%!<br/>
+Diluted 10x: 6.25%<br/>
 Refractometer: 6.1%</p>
 <p class="caption">Majority sugar caramel syrup</p>
-<p><img loading="lazy" alt="Majority sugar caramel syrup" src="/static/refractest_hershey.png" /></p>
-<h1>Closing notes</h1>
+<p><img loading="lazy" alt="Majority sugar caramel syrup" src="/static/refractest_hershey.png"/></p>
+<h1 id="closing-notes">Closing notes</h1>
 <h2>Refractometer Limitations</h2>
 <p>I had a lot of fun running these experiments, partly because I got to sip sugarly liquids while doing it. I'm also shocked at how accurately my Amazon refractometer performed. However, there were a few challenges with using the refractometer that I want to mention.</p>
 <ol>
@@ -340,7 +360,7 @@ Refractometer: 6.1%</p>
 <h2>Weird findings</h2>
 <p>The variance in the sugar % of drinks is surprisingly small. To be fair, I only did a small number of drinks, but they only varied by 2.6% despite tasting wildly different. </p>
 <p>Also, Caprisun is healthier than peaches if we're going by sugar percentage. Tell that to your mom next time she berates you for picking an "unhealthy" snack!</p>
-<p>Now, onto the humble watermelon!</p>
+<p>Now, onto the humble watermelon!</p></body></html>
 
 
 

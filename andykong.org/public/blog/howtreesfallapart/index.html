@@ -27,7 +27,7 @@
         h1:not(.title) {
             padding-left: 12px;
             margin-left: -12px;
-            border-left: 8px ridge #DBAD80;
+            border-left: 8px groove #DBAD80;
 
             counter-reset: h2counter;
         }
@@ -37,9 +37,29 @@
             content: counter(h1counter) ". ";
         }
 
-        h2::before {
+/*
+        .blogpage > h2 {
+            text-decoration: underline wavy #DBAD80;
+            text-underline-thickness: 1px;
+        }
+        */
+
+        .blogpage > h2::before {
             counter-increment: h2counter;
-            content: counter(h1counter) "." counter(h2counter) " ";
+            content: counter(h1counter) "." counter(h2counter) "  ";
+            /*
+            text-decoration: none;
+            display: inline-block;
+            */
+        }
+
+
+        .toc {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+            color: inherit;
+            text-decoration: none;
         }
 
     </style>
@@ -286,23 +306,22 @@ code {
     <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">How Trees Fall Apart</h1>
             <p style="font-size:0.8em;"> Published November 13, 2021</p>
 <hr>
-            <p>You only get to experience 1 fall a year, and by the time you read this you're probably older than 15. This means you probably have only 65 falls left in you — remember to do your best to enjoy each one. </p>
+            <html><body><p>You only get to experience 1 fall a year, and by the time you read this you're probably older than 15. This means you probably have only 65 falls left in you — remember to do your best to enjoy each one. </p>
 <p>Anyway, this particular fall I took more of a look at the trees around me. I noticed that the green-yellow-red transition of leaves followed different patterns for different trees, and took photos of all the ones I could. Here follows the decay patterns of 4 different trees.</p>
-<hr>
-
-<h1>1. Top down</h1>
+<hr/>
+<h1 id="1-top-down">1. Top down</h1>
 <p class="caption">The decay here happens from the highest leaves to the lowest. </p>
-<p><img loading="lazy" alt="The decay here happens from the highest leaves to the lowest. My favorite tree this year" src="/static/topdown2.jpg" /></p>
-<h1>2. Inside out</h1>
+<p><img loading="lazy" alt="The decay here happens from the highest leaves to the lowest. My favorite tree this year" src="/static/topdown2.jpg"/></p>
+<h1 id="2-inside-out">2. Inside out</h1>
 <p class="caption">Core leaves brown completely while the outer ones are still green</p>
-<p><img loading="lazy" alt="Core leaves brown completely while the outer ones are still green" src="/static/insideout.jpg" /></p>
-<h1>3. Outside in</h1>
+<p><img loading="lazy" alt="Core leaves brown completely while the outer ones are still green" src="/static/insideout.jpg"/></p>
+<h1 id="3-outside-in">3. Outside in</h1>
 <p class="caption">My favorite tree of 2019 and 2020. The outermost leaves redden before the core</p>
-<p><img loading="lazy" alt="My favorite tree of 2019 and 2020. The outermost leaves redden before the core" src="/static/outside_in1.jpg" /></p>
-<h1>4. All at once</h1>
+<p><img loading="lazy" alt="My favorite tree of 2019 and 2020. The outermost leaves redden before the core" src="/static/outside_in1.jpg"/></p>
+<h1 id="4-all-at-once">4. All at once</h1>
 <p class="caption">No regard for order! All leaves turn red at the same time, perfect example of communism</p>
-<p><img loading="lazy" alt="No regard for order! All leaves turn red at the same time, perfect example of communism" src="/static/allatonce.jpg" /></p>
-<p>Evolutionarily, I'm not sure the decaying has a rhyme or reason. Maybe it makes sense to keep the outer ones green since they receive the most sunlight, but maybe it doesn't matter because red leaves can collect energy as well. Whatever the reason, it makes a beautiful sight. </p>
+<p><img loading="lazy" alt="No regard for order! All leaves turn red at the same time, perfect example of communism" src="/static/allatonce.jpg"/></p>
+<p>Evolutionarily, I'm not sure the decaying has a rhyme or reason. Maybe it makes sense to keep the outer ones green since they receive the most sunlight, but maybe it doesn't matter because red leaves can collect energy as well. Whatever the reason, it makes a beautiful sight. </p></body></html>
 
 
 

@@ -27,7 +27,7 @@
         h1:not(.title) {
             padding-left: 12px;
             margin-left: -12px;
-            border-left: 8px ridge #DBAD80;
+            border-left: 8px groove #DBAD80;
 
             counter-reset: h2counter;
         }
@@ -37,9 +37,29 @@
             content: counter(h1counter) ". ";
         }
 
-        h2::before {
+/*
+        .blogpage > h2 {
+            text-decoration: underline wavy #DBAD80;
+            text-underline-thickness: 1px;
+        }
+        */
+
+        .blogpage > h2::before {
             counter-increment: h2counter;
-            content: counter(h1counter) "." counter(h2counter) " ";
+            content: counter(h1counter) "." counter(h2counter) "  ";
+            /*
+            text-decoration: none;
+            display: inline-block;
+            */
+        }
+
+
+        .toc {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+            color: inherit;
+            text-decoration: none;
         }
 
     </style>
@@ -286,11 +306,11 @@ code {
     <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Easy Button Hack Pt. 1</h1>
             <p style="font-size:0.8em;"> Published December 24, 2020</p>
 <hr>
-            <p>WOOO. In sort-of order, today I learned: how to read from SD cards, how to play wavs from SD cards, how to boost speaker volume using a transistor, how to limit transistor current using a resistor, how to trigger interrupts for Arduino sleep modes, how to change what shape causes an interrupt, which pins are and AREN'T interrupt pins, how to hijack the button on an Easy button (not easy, actually).</p>
+            <html><body><p>WOOO. In sort-of order, today I learned: how to read from SD cards, how to play wavs from SD cards, how to boost speaker volume using a transistor, how to limit transistor current using a resistor, how to trigger interrupts for Arduino sleep modes, how to change what shape causes an interrupt, which pins are and AREN'T interrupt pins, how to hijack the button on an Easy button (not easy, actually).</p>
 <p>Here's the end result: An Arduino rig that powers off until the button is pressed, then plays a random sound file from the SD card before powering off again. Gonna solder everything tomorrow and move it to battery power. </p>
-<p><img loading="lazy" alt="Pictured are the audio amplifier, speaker, Arduino Uno, and SD card" src="/static/easybuttonday1.jpg" /></p>
+<p><img loading="lazy" alt="Pictured are the audio amplifier, speaker, Arduino Uno, and SD card" src="/static/easybuttonday1.jpg"/></p>
 <p class="caption">Pictured are the audio amplifier, speaker, Arduino Uno, and SD card</p>
-<p><br><hr></p>
+<p><br/></p><hr/>
 <h3>Things I learned today that each took me at least an hour to figure out</h3>
 <ul>
 <li>SD cards in Arduino can only be a certain length and all caps, called 8.3 format ('YESYESY.WAV' for example)</li>
@@ -302,7 +322,7 @@ code {
 <ul>
 <li>Internal pullup resistors have variable resistance, around 10-50kΩ or so. </li>
 <li>The UNO is pin-by-pin compatible with the Nano. </li>
-</ul>
+</ul></body></html>
 
 
 

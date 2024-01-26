@@ -27,7 +27,7 @@
         h1:not(.title) {
             padding-left: 12px;
             margin-left: -12px;
-            border-left: 8px ridge #DBAD80;
+            border-left: 8px groove #DBAD80;
 
             counter-reset: h2counter;
         }
@@ -37,9 +37,29 @@
             content: counter(h1counter) ". ";
         }
 
-        h2::before {
+/*
+        .blogpage > h2 {
+            text-decoration: underline wavy #DBAD80;
+            text-underline-thickness: 1px;
+        }
+        */
+
+        .blogpage > h2::before {
             counter-increment: h2counter;
-            content: counter(h1counter) "." counter(h2counter) " ";
+            content: counter(h1counter) "." counter(h2counter) "  ";
+            /*
+            text-decoration: none;
+            display: inline-block;
+            */
+        }
+
+
+        .toc {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+            color: inherit;
+            text-decoration: none;
         }
 
     </style>
@@ -286,7 +306,7 @@ code {
     <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Putting together Myo3, the 3rd iteration of my EMG sensor</h1>
             <p style="font-size:0.8em;"> Published November 22, 2020</p>
 <hr>
-            <p>The PCBs came sometime last week, and I got the rest of my resistors and passives today. Time to construct!</p>
+            <html><body><p>The PCBs came sometime last week, and I got the rest of my resistors and passives today. Time to construct!</p>
 <p>My housemates still are quarantining, so I was trying to stay out of the hallways and common areas (like the workshop we have -.-). I moved all parts into my room, but my desk definitely wasn't bright enough. We make do though. Big shoutout to <a href="https://github.com/openscopeproject/InteractiveHtmlBom">HTMLBom</a> for enabling my board construction, it's a super useful plugin for KiCAD and you should get it immediately.</p>
 <h3>Cool parts of the board:</h3>
 <ul>
@@ -310,7 +330,7 @@ code {
 <p>Guard ring 😎 (really it's kind of useless cause I didn't put it on the back as well, but it's the thought that counts (also, I don't really care about input bias current, up until 1 pA or so. Then it generates (G=100000)*1pA*(1 MΩ skin impedance) = 1 V offset at the end of the circuit, which would definitely pin it to the rails!))</p>
 </li>
 </ul>
-<p><br></p>
+<p><br/></p>
 <h3>Problems I ran into:</h3>
 <ul>
 <li>
@@ -326,13 +346,13 @@ code {
 <p>I didn't have 220nF capacitors at all, so I sorta just... skipped it. Luckily, if you know the board, you can just decide whether or not you need a part. This particular one was part of a passive high pass filter, which came before a 2nd order active high pass at the same cutoff frequency. I just removed the cap and resistor, and bridged the resistor pads afterwards. </p>
 </li>
 </ul>
-<p><br></p>
+<p><br/></p>
 <h3>Here's some pics!</h3>
 <h4>Front after spudging</h4>
-<p><img loading="lazy" alt="Front of my EMG v3 board" src="/static/myo3front.jpg" /></p>
+<p><img loading="lazy" alt="Front of my EMG v3 board" src="/static/myo3front.jpg"/></p>
 <h4>Back of board, with integrated pads</h4>
-<p><img loading="lazy" alt="Back of my EMG v3 board" src="/static/myo3back.png" /></p>
-<p>Gonna spec its noise and stuff soon!</p>
+<p><img loading="lazy" alt="Back of my EMG v3 board" src="/static/myo3back.png"/></p>
+<p>Gonna spec its noise and stuff soon!</p></body></html>
 
 
 

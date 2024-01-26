@@ -4,17 +4,19 @@ label: blog
 tags: [quantifiedself, personalinformatics, data, lifelogging]
 snippet: "Many cool self-insights and the data logging methods used"
 
-If you've ever wondered if you sleep worse after drinking coffee in the morning, or how listening to music affects your focus, or if you get weaker after eating a lot, this post is for you. I used to frequently have these musings, and now I just have the data to check for myself. 
+{{ tableofcontents("allmydata.md") }}
 
-In this post I'm going to show a few self-insights I've derived from logging a lot of my personal data. I'll also list all the types of data and how they're collected. 
+If you've ever wondered if you sleep worse after drinking coffee in the morning or how listening to music affects your focus, this post is for you. I used to have these musings, and now I just have the data to check for myself. 
 
-# Why research
+In this post I'm going to show y'all few self-insights I've derived from logging a lot of my personal data. I'll also list all the types of data and how they're collected. 
+
+# Why I collect data
 
 I think it's important to specify "why research" as well as "how research", and this "why" can become insincere when scientists court the big grant-writers in industry and government instead of saying what they really mean. I currently work for myself and will try to be a bit more honest — I like learning how my body and mind interact with my environment to create my lived experience. I also just like to know stuff.
 
 {{ add_pic("allmydata/0.png", "") }}
 
-# What I have found
+# Cool self-insights I've found
 
 
 - My Ritalin blood concentration correlates with better Tetris performance
@@ -38,7 +40,7 @@ Here's a [few](https://medium.com/@kongmunist/playing-faster-tetris-by-sleeping-
 
 <hr>
 
-# How do you collect the data?
+# My data stack
 
 Data that's useful for my analysis is either physical (heart rate, blood glucose, weight), mental (Tetris, Stroop), or environmental (air quality, music, location, computer activity). Data collection can be easy (hard drive space, Google location), or hard (computer activity), or just cost money (Fitbit, Spotify)
 
@@ -46,7 +48,7 @@ Not all the data is obviously useful — some of it is just easy to collect. But
 
 ## Browser Activity
 
-Chrome, websites visited with URL and timestamp. Collected via Tom Critchlow's [JS electric tables script](../settingupelectrictables/)
+Chrome websites visited with URL and timestamp. Collected via Tom Critchlow's [JS electric tables script](../settingupelectrictables/)
 
 {{ add_pic("allmydata/4.png", "") }}
 
@@ -129,9 +131,8 @@ I frequently drink caffeinated beverages, sometimes use nicotine patches, and ra
 # Conclusion
 
 ## Do it now!
-
-Collecting personal data for long periods of time has compounding returns — you'll need to gather enough data points to average out daily fluctuations. So if you're reading this and even slightly curious — set up as many as possible ASAP! Storage is cheap, especially for single-user data like this, and in the worst case you can just delete it all. 
+Collecting personal data for long periods of time has compounding returns — you'll need to gather enough data points to average out daily fluctuations. So if you're reading this and even slightly curious — set up as many as possible ASAP! Storage is cheap, especially for single-user data like this, and in the worst case you can just delete it all. In the best case, you can know yourself a little better numerically!
 
 ## Suggestions?
 
-I hope this gives you some idea of the scope of data that can be collected for minimal effort on your part, and the potential cool graphs you can make from it. If you think of any cool correlations I should do with this, please DM and tell me!
+I hope this gives you some idea of the scope of data that can be collected for minimal effort on your part, and the potential cool graphs you can make from it. If you think of any neat relationships I should look for or other data I could collect, please DM and tell me!

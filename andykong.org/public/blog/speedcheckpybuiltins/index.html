@@ -27,7 +27,7 @@
         h1:not(.title) {
             padding-left: 12px;
             margin-left: -12px;
-            border-left: 8px ridge #DBAD80;
+            border-left: 8px groove #DBAD80;
 
             counter-reset: h2counter;
         }
@@ -37,9 +37,29 @@
             content: counter(h1counter) ". ";
         }
 
-        h2::before {
+/*
+        .blogpage > h2 {
+            text-decoration: underline wavy #DBAD80;
+            text-underline-thickness: 1px;
+        }
+        */
+
+        .blogpage > h2::before {
             counter-increment: h2counter;
-            content: counter(h1counter) "." counter(h2counter) " ";
+            content: counter(h1counter) "." counter(h2counter) "  ";
+            /*
+            text-decoration: none;
+            display: inline-block;
+            */
+        }
+
+
+        .toc {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+            color: inherit;
+            text-decoration: none;
         }
 
     </style>
@@ -286,13 +306,13 @@ code {
     <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Speed checking Python built-in functions</h1>
             <p style="font-size:0.8em;"> Published May 25, 2020</p>
 <hr>
-            <p>I found this cool <a href="http://blog.kevmod.com/2020/05/python-performance-its-not-just-the-interpreter">blog post</a> that was trying to show Python's slower execution time does not just come from its interpreter, and instead was more interested in the benchmark that they ran converting ints to strings as a toy example.</p>
+            <html><body><p>I found this cool <a href="http://blog.kevmod.com/2020/05/python-performance-its-not-just-the-interpreter">blog post</a> that was trying to show Python's slower execution time does not just come from its interpreter, and instead was more interested in the benchmark that they ran converting ints to strings as a toy example.</p>
 <p>They mentioned off-hand that built-in function calls in Python must be traced back to the built-in library by the interpreter, which takes a decent amount of time if most of your code just calls built-in functions. Here's the code: </p>
-<p><img loading="lazy" src=/static/speedcheckpybuiltinscode.png width="400" class="d-block mx-auto"/></p>
+<p><img loading="lazy" class="d-block mx-auto" src="/static/speedcheckpybuiltinscode.png" width="400"/></p>
 <h3>Results</h3>
 <p>All we do is move the str() function into a local variable (allowed since Python is a functional language), but we gain 20-30% speed boost in the total execution times. </p>
-<p><img loading="lazy" src=/static/speedcheckpybuiltinstimings.png width="400" class="d-block mx-auto"/></p>
-<p>Of course, this is a toy example since we're only calling one function, but it might be worthwhile to precompile code like this if you're not uing Pypi or something. </p>
+<p><img loading="lazy" class="d-block mx-auto" src="/static/speedcheckpybuiltinstimings.png" width="400"/></p>
+<p>Of course, this is a toy example since we're only calling one function, but it might be worthwhile to precompile code like this if you're not uing Pypi or something. </p></body></html>
 
 
 

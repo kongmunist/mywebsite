@@ -27,7 +27,7 @@
         h1:not(.title) {
             padding-left: 12px;
             margin-left: -12px;
-            border-left: 8px ridge #DBAD80;
+            border-left: 8px groove #DBAD80;
 
             counter-reset: h2counter;
         }
@@ -37,9 +37,29 @@
             content: counter(h1counter) ". ";
         }
 
-        h2::before {
+/*
+        .blogpage > h2 {
+            text-decoration: underline wavy #DBAD80;
+            text-underline-thickness: 1px;
+        }
+        */
+
+        .blogpage > h2::before {
             counter-increment: h2counter;
-            content: counter(h1counter) "." counter(h2counter) " ";
+            content: counter(h1counter) "." counter(h2counter) "  ";
+            /*
+            text-decoration: none;
+            display: inline-block;
+            */
+        }
+
+
+        .toc {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+            color: inherit;
+            text-decoration: none;
         }
 
     </style>
@@ -286,7 +306,7 @@ code {
     <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">How To Choose Stuff</h1>
             <p style="font-size:0.8em;"> Published August 9, 2023</p>
 <hr>
-            <p>I've been thinking about Guides for selecting stuff. More concretely, I want a centralized website that hosts "how to pick an X" guides for choosing stuff that people use — USB hubs, fishing rods, humidifiers, etc.</p>
+            <html><body><p>I've been thinking about Guides for selecting stuff. More concretely, I want a centralized website that hosts "how to pick an X" guides for choosing stuff that people use — USB hubs, fishing rods, humidifiers, etc.</p>
 <h2>What are you talking about??</h2>
 <p>For example, I wanted to buy an electronics bag to hold my ~5 cables, adaptors, and first-aid kit, and thought I had found the perfect one — plenty of pockets, zippers, and elastic bits to hold miscellaneous stuff. </p>
 <p>When I finally got my hands on it, I realized that I wasn't going to remember where I put everything, so the multitude of opaque, zippered pockets wasn't going to help me at all. It also annoyed me to open more than one zipper to get to something, so I really did not appreciate the excessive recursive compartments. </p>
@@ -321,7 +341,7 @@ code {
 <p>I think this happens because I don't know what I want when I'm buying something for the first time. And this happens even though I thought through my problems first (need to organize) — I just didn't anticipate the new problems that would come with an organized bag.</p>
 <p>This seems like a useless frustration. Needing to buy something once in order to buy the correct one the second time wastes both time and money, not to mention the environmental costs of shipping.</p>
 <p>And I hope it wouldn't need to be extremely personalized — one person's guide is surely useful to another person. </p>
-<p>If you know anything about such a website, please send it along to me!</p>
+<p>If you know anything about such a website, please send it along to me!</p></body></html>
 
 
 

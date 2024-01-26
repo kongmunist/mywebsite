@@ -27,7 +27,7 @@
         h1:not(.title) {
             padding-left: 12px;
             margin-left: -12px;
-            border-left: 8px ridge #DBAD80;
+            border-left: 8px groove #DBAD80;
 
             counter-reset: h2counter;
         }
@@ -37,9 +37,29 @@
             content: counter(h1counter) ". ";
         }
 
-        h2::before {
+/*
+        .blogpage > h2 {
+            text-decoration: underline wavy #DBAD80;
+            text-underline-thickness: 1px;
+        }
+        */
+
+        .blogpage > h2::before {
             counter-increment: h2counter;
-            content: counter(h1counter) "." counter(h2counter) " ";
+            content: counter(h1counter) "." counter(h2counter) "  ";
+            /*
+            text-decoration: none;
+            display: inline-block;
+            */
+        }
+
+
+        .toc {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+            color: inherit;
+            text-decoration: none;
         }
 
     </style>
@@ -286,13 +306,13 @@ code {
     <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Intro to Intro to Woodworking</h1>
             <p style="font-size:0.8em;"> Published March 24, 2021</p>
 <hr>
-            <p>Yesterday I had my 2nd in-person class this semester. We met a nice man in Techspark and he showed us the woodshop. The walls were covered in covered plywood shelves and things. We saw a few demo projects that we'd be doing during the course, like a folding stool, push stick, and crate. </p>
+            <html><body><p>Yesterday I had my 2nd in-person class this semester. We met a nice man in Techspark and he showed us the woodshop. The walls were covered in covered plywood shelves and things. We saw a few demo projects that we'd be doing during the course, like a folding stool, push stick, and crate. </p>
 <p>Our first assignment was to make a little banana stand/hammock thing. We went over 4 machines — the band saw, belt and disk sander, oscillating spindle sander, and drill press. I had never seen a spindle sander before, but it was a really cool machine. It's really good for sanding down interior curves, which neither the belt nor disk sander can reach. </p>
 <p>I ended up using the bandsaw a lot. The cut turn radius is quite good, and I learned about using relief cuts to make the cuts even tighter. The bandsaw is also good for widening slots, and I widened my stand's base a bit too much. Ended up having to glue it in place, using some wood filler to make the seams nicer looking.</p>
 <p class="caption">Photo of my banana stand, hookless and bananaless</p>
-<p><img loading="lazy" alt="Photo of my banana stand, hookless and bananaless" src="/static/bananastand.png" /></p>
+<p><img loading="lazy" alt="Photo of my banana stand, hookless and bananaless" src="/static/bananastand.png"/></p>
 <p>Finally, I used a hand sander which had a velcro pad of sandpaper that was a little off center to smooth the rough wooden surface. It looks quite weird when it moves, wagon-wheeling before your eyes. </p>
-<p>It's amazing how much scrap wood they have in there. The shop goes through a lot just for demonstrations, and then thick plates are just free for anyone to use in the refuse pile. Good news for me! I'm not sure what to make next — it would be cool to recreate a lamp of mine, or a new wooden spoon. So many possibilities!</p>
+<p>It's amazing how much scrap wood they have in there. The shop goes through a lot just for demonstrations, and then thick plates are just free for anyone to use in the refuse pile. Good news for me! I'm not sure what to make next — it would be cool to recreate a lamp of mine, or a new wooden spoon. So many possibilities!</p></body></html>
 
 
 

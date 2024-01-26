@@ -27,7 +27,7 @@
         h1:not(.title) {
             padding-left: 12px;
             margin-left: -12px;
-            border-left: 8px ridge #DBAD80;
+            border-left: 8px groove #DBAD80;
 
             counter-reset: h2counter;
         }
@@ -37,9 +37,29 @@
             content: counter(h1counter) ". ";
         }
 
-        h2::before {
+/*
+        .blogpage > h2 {
+            text-decoration: underline wavy #DBAD80;
+            text-underline-thickness: 1px;
+        }
+        */
+
+        .blogpage > h2::before {
             counter-increment: h2counter;
-            content: counter(h1counter) "." counter(h2counter) " ";
+            content: counter(h1counter) "." counter(h2counter) "  ";
+            /*
+            text-decoration: none;
+            display: inline-block;
+            */
+        }
+
+
+        .toc {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+            color: inherit;
+            text-decoration: none;
         }
 
     </style>
@@ -286,11 +306,11 @@ code {
     <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Creating panorama images manually, pt 2!</h1>
             <p style="font-size:0.8em;"> Published November 18, 2020</p>
 <hr>
-            <p>Late last night I was greeted in my dreams by a green, ghastly spectre, who said unto me: "Instead of adding 1 image at a time, did you try stitching 2 and 2, then the two composites? This would greatly reduce the distortion suffered by the latter images," in a spooky voice. I said "No I didn't think of that," then woke up and tried it. It immediately looked way better. Here's the results</p>
-<p><img loading="lazy" alt="Improved stitching" src="/static/panorama2_betterstitch.jpg" /></p>
+            <html><body><p>Late last night I was greeted in my dreams by a green, ghastly spectre, who said unto me: "Instead of adding 1 image at a time, did you try stitching 2 and 2, then the two composites? This would greatly reduce the distortion suffered by the latter images," in a spooky voice. I said "No I didn't think of that," then woke up and tried it. It immediately looked way better. Here's the results</p>
+<p><img loading="lazy" alt="Improved stitching" src="/static/panorama2_betterstitch.jpg"/></p>
 <p>I think due to the distortion being lessened, the total features being found are much better for the two pairs than for adding one image at a time. Here's an example of the keypoints being connected across. </p>
-<p><img loading="lazy" alt="Keypoints comparison across the new method" src="/static/panorama2_keypointcrossanalysis.jpg" /></p>
-<p>I guess divide and conquer really has its merits. </p>
+<p><img loading="lazy" alt="Keypoints comparison across the new method" src="/static/panorama2_keypointcrossanalysis.jpg"/></p>
+<p>I guess divide and conquer really has its merits. </p></body></html>
 
 
 

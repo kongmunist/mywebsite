@@ -27,7 +27,7 @@
         h1:not(.title) {
             padding-left: 12px;
             margin-left: -12px;
-            border-left: 8px ridge #DBAD80;
+            border-left: 8px groove #DBAD80;
 
             counter-reset: h2counter;
         }
@@ -37,9 +37,29 @@
             content: counter(h1counter) ". ";
         }
 
-        h2::before {
+/*
+        .blogpage > h2 {
+            text-decoration: underline wavy #DBAD80;
+            text-underline-thickness: 1px;
+        }
+        */
+
+        .blogpage > h2::before {
             counter-increment: h2counter;
-            content: counter(h1counter) "." counter(h2counter) " ";
+            content: counter(h1counter) "." counter(h2counter) "  ";
+            /*
+            text-decoration: none;
+            display: inline-block;
+            */
+        }
+
+
+        .toc {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+            color: inherit;
+            text-decoration: none;
         }
 
     </style>
@@ -286,16 +306,16 @@ code {
     <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Coin vibration motors arrived!</h1>
             <p style="font-size:0.8em;"> Published December 14, 2020</p>
 <hr>
-            <p>We were going over a <a href="https://la.disneyresearch.com/publication/surround-haptics-sending-shivers-down-your-spine/">paper by Disney Research</a> in class last week that said two sufficiently close vibration motors on someone's skin created a sensation in a single spot in between them. Then, you could just vary the power to one or the other and "move" the phantom dot back and forth between the two, essentially creating a vibrating line for the price of two motors!</p>
+            <html><body><p>We were going over a <a href="https://la.disneyresearch.com/publication/surround-haptics-sending-shivers-down-your-spine/">paper by Disney Research</a> in class last week that said two sufficiently close vibration motors on someone's skin created a sensation in a single spot in between them. Then, you could just vary the power to one or the other and "move" the phantom dot back and forth between the two, essentially creating a vibrating line for the price of two motors!</p>
 <p class="caption">Image from the Disney Paper "Surround Haptics: Sending Shivers Down Your Spine"</p>
-<p><img loading="lazy" alt="Image from the Disney Paper &quot;Surround Haptics: Sending Shivers Down Your Spine&quot;" src="/static/surroundhaptics.png" /></p>
+<p><img loading="lazy" alt='Image from the Disney Paper "Surround Haptics: Sending Shivers Down Your Spine"' src="/static/surroundhaptics.png"/></p>
 <p>This even extends to two 'virtual' spots, which can create a second phantom vibration spot in their centroid. How cool!</p>
 <h3>I had to try it!</h3>
 <p>So I ordered these tiny coin cell haptics motors off Amazon. 10 for $6, smaller than my pinky fingernail, and powered off 3 volts. Adhesive side and a foamy side. Nominal resistance is 36Ω, I powered them off my Arduino's 3.3V and it worked well. Not insane vibration, but very noticeable! </p>
 <p>The thing started warming up pretty quickly, so I may have to deal with that, but it could just be a lack of current limiting hardware in the way. It also might self-regulate when it gets hot enough, but I don't want it strapped to my arm when I find that out. I'm probably pulling too much current from the Arduino as-is. </p>
 <p class="caption">Me holding one of the tiny coin vibration motors I ordered, foamy side up</p>
-<p><img loading="lazy" alt="Me holding one of the tiny coin vibration motors I ordered, foamy side up" src="/static/coinvibrationmotors.png" /></p>
-<p>I'm gonna try it and let you know how it goes! Be safe!</p>
+<p><img loading="lazy" alt="Me holding one of the tiny coin vibration motors I ordered, foamy side up" src="/static/coinvibrationmotors.png"/></p>
+<p>I'm gonna try it and let you know how it goes! Be safe!</p></body></html>
 
 
 

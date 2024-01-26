@@ -251,13 +251,13 @@ code {
             <p style="margin-bottom: 5px; margin-top: 0px">Published: 2020-03-04</p>
 
             <hr>
-        <p><br></p>
-<div style="text-align:center;" class="d-block mx-auto">
-<iframe width="50%" height="100%" align="middle" src="https://www.youtube.com/embed/k4v0TsgcNes" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <html><body><p><br/></p>
+<div class="d-block mx-auto" style="text-align:center;">
+<iframe align="middle" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="100%" src="https://www.youtube.com/embed/k4v0TsgcNes" width="50%"></iframe>
 </div>
-<p><br></p>
+<p><br/></p>
 <p>This is my first art project, sponsored by the Frank-Ratchye Studio for Creative Inquiry at CMU's School of Fine Arts. Here's the <a href="https://github.com/kongmunist/alteredperceptions">code on GitHub</a>
-<br></p>
+<br/></p>
 <h3>Motivation</h3>
 <p>People at my school are always complaining about how boring campus/Pittsburgh/real life looks. "Wean is too brutalist and all concrete" and "Gates smells like coffee and looks ugly." I think the real problem is that we get so used to the things we see every day that we stop really seeing them; that is to say, the beauty of the world is hidden in plain sight. </p>
 <p>So I wanted to build something to change the way we see things, to edit the way objects appear to us so we can see them as exciting new things instead of boring old things. I wanted to take our eyes, and alter their colors, shapes, and details in some way to make people take a good look at their surroundings. How cool would it be if everything you saw was altered like this ibis below?</p>
@@ -272,12 +272,11 @@ code {
 <p>Depending on the filter number, the processing thread uses a function from neweyes.py. These include thresholding, edge detection, and plain old color swapping. They look pretty cool, and I show off some of them in the video above. </p>
 <p><img class="d-block mx-auto" src="/static/alteredadaptivethresh.png"/></p>
 <p class="caption">Some neighborhood-aware adaptive thresholding, or NYC Line Profile Style</p>
-
 <h3>Future work</h3>
 <p>These are all pretty standard CV techniques that I've just modified to be neat to look at, instead of using them to gain more information about an image. I think they look really cool, but at the same time I understand I'm not playing with the shapes or lines or anything too major. The next step for this project is to make it capable of producing DeepDream images live:</p>
 <p><img class="d-block mx-auto" src="/static/altereddeepdreamdog.jpg"/></p>
 <p>DeepDream is sort of like inverting a neural network; you give it a photo, and tell it to make the photo look <i>more</i> like something, a dog or a dumbell or whatever, instead of asking it what the photo is of. But this inversion takes a long time. For even minor effects on shrunken images, it takes over half a second. I think this is because it's not what neural networks are meant for, so I'm going to work on a Convolutional Neural Network that produces DeepDream images going forwards, instead of going backwards. No more inverting and tracing back. Just propogate forward once and you're done. </p>
-<p>But that's a project for later. If you're interested in collaborating on adding more filters or new kinds (I wanted to use Haar Cascades for eye and mouth detection in order to really mess with how people's faces looked), let me know! I'm always down to work on cool image edits (especially if they run LIVE).</p>
+<p>But that's a project for later. If you're interested in collaborating on adding more filters or new kinds (I wanted to use Haar Cascades for eye and mouth detection in order to really mess with how people's faces looked), let me know! I'm always down to work on cool image edits (especially if they run LIVE).</p></body></html>
             </div>
         <div class="col-lg-2"></div>
         <p style="line-height:300%;">&nbsp;</p>

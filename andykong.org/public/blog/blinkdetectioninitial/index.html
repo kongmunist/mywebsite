@@ -27,7 +27,7 @@
         h1:not(.title) {
             padding-left: 12px;
             margin-left: -12px;
-            border-left: 8px ridge #DBAD80;
+            border-left: 8px groove #DBAD80;
 
             counter-reset: h2counter;
         }
@@ -37,9 +37,29 @@
             content: counter(h1counter) ". ";
         }
 
-        h2::before {
+/*
+        .blogpage > h2 {
+            text-decoration: underline wavy #DBAD80;
+            text-underline-thickness: 1px;
+        }
+        */
+
+        .blogpage > h2::before {
             counter-increment: h2counter;
-            content: counter(h1counter) "." counter(h2counter) " ";
+            content: counter(h1counter) "." counter(h2counter) "  ";
+            /*
+            text-decoration: none;
+            display: inline-block;
+            */
+        }
+
+
+        .toc {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+            color: inherit;
+            text-decoration: none;
         }
 
     </style>
@@ -286,25 +306,24 @@ code {
     <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Blink Detection Using Infrared Reflective Sensors</h1>
             <p style="font-size:0.8em;"> Published February 12, 2021</p>
 <hr>
-            <p>Hello! </p>
+            <html><body><p>Hello! </p>
 <p>Recently I found out that blink frequency is associated with focus — when shown a more engaging and interesting video, participants tended to blink less. Intuitively this makes sense; if you want to see something, you'll naturally spend less time closing your eyes. I wanted to apply this principle to something more general: living life. But I didn't want to use computer vision! First, face detection is hard to do well, and runs pretty slowly if you also include closed vs. open eyes. I also wouldn't be able to track my blink rate while doing things away from the computer (and believe it or not, much of my life <em>is</em> spent away from the computer). So CV was out. </p>
 <p>I had read from a few papers that skin absorbed infrared light super well, so it shows up dark under an infrared camera. I looked around, and sure enough people had been detecting blink with an IR LED and detector situated very closely to the eyes. Since the shiny part of your eyeball is not skin, it reflects a lot of infrared. When you blink, this gets blocked, and the signal you're reading will have a sharp drop. And that's exactly what I did!</p>
 <h2>Setup</h2>
 <p>I ordered some of these IR reflective sensors off Amazon — these are usually used for line following robots or really terrible distance sensors (their output depends on the nearby material's reflectance). </p>
 <p class="caption">IR reflectance sensors. 4 pin, one LED and one phototransistor with a light filter.</p>
-<p><img loading="lazy" alt="IR reflectance sensors. 4 pin, one LED and one phototransistor with a light filter." src="/static/blinktrack1_reflectancesensor.png" /></p>
+<p><img loading="lazy" alt="IR reflectance sensors. 4 pin, one LED and one phototransistor with a light filter." src="/static/blinktrack1_reflectancesensor.png"/></p>
 <p>I then wired it up. LED is current-limited by 100 ohms, phototransistor has 1KΩ in series. I think I can reduce this value to make it more sensitive, since it'll pull down to ground more easily.  </p>
 <p>Here it is at work: (first time I've hosted a video locally on this site!)</p>
 <div style="text-align:center;">
-<video width="320" height="240" controls>
-  <source src="/static/blinktrack1.mp4" type="video/mp4">
+<video controls="" height="240" width="320">
+<source src="/static/blinktrack1.mp4" type="video/mp4">
 Your browser does not support the video tag.
-</video>
+</source></video>
 </div>
-
 <p>Anyway, signal is pretty clear (spans around 1.5V on the 5V ADC), and isn't too noisy. I have to figure out a way to stop my pupil from messing with the signal, but I'll mount it on some glasses first and see how stable it stays. </p>
 <p>Eventually, I want to push these blink timestamps constantly to a database, and have it ping me when it notices me slipping out of focus. I dunno, something can be done with this additional biometric data. </p>
-<p>That's all for now. Cya!</p>
+<p>That's all for now. Cya!</p></body></html>
 
 
 

@@ -27,7 +27,7 @@
         h1:not(.title) {
             padding-left: 12px;
             margin-left: -12px;
-            border-left: 8px ridge #DBAD80;
+            border-left: 8px groove #DBAD80;
 
             counter-reset: h2counter;
         }
@@ -37,9 +37,29 @@
             content: counter(h1counter) ". ";
         }
 
-        h2::before {
+/*
+        .blogpage > h2 {
+            text-decoration: underline wavy #DBAD80;
+            text-underline-thickness: 1px;
+        }
+        */
+
+        .blogpage > h2::before {
             counter-increment: h2counter;
-            content: counter(h1counter) "." counter(h2counter) " ";
+            content: counter(h1counter) "." counter(h2counter) "  ";
+            /*
+            text-decoration: none;
+            display: inline-block;
+            */
+        }
+
+
+        .toc {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+            color: inherit;
+            text-decoration: none;
         }
 
     </style>
@@ -286,43 +306,42 @@ code {
     <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Finding My Pacinian Corpuscles in vivo</h1>
             <p style="font-size:0.8em;"> Published June 16, 2021</p>
 <hr>
-            <style type="text/css">
+            <html><head><style type="text/css">
     p{
         margin-bottom: 1.5em;
     }
 </style>
-
-<p>Hello! I found out you could identify the exact location of one of your mechanoreceptors under the skin without needing a surgeon to cut you open, and I'm gonna show you how it's done. </p>
-<p><br style="line-height: 1.5em;"></p>
+</head><body><p>Hello! I found out you could identify the exact location of one of your mechanoreceptors under the skin without needing a surgeon to cut you open, and I'm gonna show you how it's done. </p>
+<p><br style="line-height: 1.5em;"/></p>
 <h2>Background on mechanoreceptors</h2>
 <p>I have four unique mechanoreceptors embedded in my skin, and you probably do too. These are like little sensors in our skin which detect sensations like pain, hot and cold, vibration, and pressure.</p>
 <p>I read in a psychology textbook that out of the four mechanoreceptors, the two that live in deeper tissue are much less plentiful than the ones that live in the shallow tissue. These deeper ones are the Ruffini endings, which gauge skin stretch near joints, and the Pacinian corpuscles, which detect higher frequency vibrations. They are so sparse, in fact, that you can individually locate them on your skin surface. </p>
-<p class="caption">MRI scan of the Pacinian corpuscles in a corpse. <a target="_blank" href="https://www.semanticscholar.org/paper/Pacinian-corpuscles%3A-an-explanation-for-palmar-on-Rhodes-Murthy/dfc1c17d4cff70596b4bc3c913e5fef8ef69eeaa">Source</a> </p>
-<p><img loading="lazy" alt="MRI scan of the Pacinian corpuscles in a corpse " src="/static/mech2_pacinian.png" /></p>
+<p class="caption">MRI scan of the Pacinian corpuscles in a corpse. <a href="https://www.semanticscholar.org/paper/Pacinian-corpuscles%3A-an-explanation-for-palmar-on-Rhodes-Murthy/dfc1c17d4cff70596b4bc3c913e5fef8ef69eeaa" target="_blank">Source</a> </p>
+<p><img loading="lazy" alt="MRI scan of the Pacinian corpuscles in a corpse " src="/static/mech2_pacinian.png"/></p>
 <p>The Pacinian corpuscles are the focus of this post since their diameter is about 1mm, which makes them visible to the naked eye. I won't add the photo, but if you google it you'll find photos of a dissected hand with the Pacs exposed. They're huge compared to the other receptors!</p>
 <p>I'm abbreviating the Pacinians as Pacs, cause I'm gonna wind up using the word a lot. </p>
 <p>Anyway, My textbook claimed that the Pacs had a big receptive zone that they could sense vibration over, and that they had a peak sensitivity directly over the Pac itself. Looking at this MRI scan, I figured I'd try to find my hand's vibrational "hotspots" using a tiny vibrating wire. </p>
-<p><br></p>
-<h1>Hardware Setup</h1>
+<p><br/></p>
+<h1 id="hardware-setup">Hardware Setup</h1>
 <p>I always keep some linear resonant actuators on me, and they came in handy for generating a vibration of a specific frequency. These are just small, self-contained solenoids. I taped two to a jumper wire, and this acted as my vibrating point. I chose a higher vibration frequency of 500Hz to avoid the receptive ranges of my other mechanoreceptors. </p>
 <p class="caption">Pacinian Stimulator 3000</p>
-<p><img loading="lazy" alt="Pacinian Stimulator 3000" src="/static/mech2_pacstim.jpg" /></p>
+<p><img loading="lazy" alt="Pacinian Stimulator 3000" src="/static/mech2_pacstim.jpg"/></p>
 <p>I then poked this point all over my hand for about 2 hours. The Pacs are "rapidly-adapting" mechanoreceptors, meaning that they only respond to new stimulus and not to sustained stimulation. This meant each time I poked my skin, I felt a vibration sensation which immediately went away within half a second. So I had to do it a lot. </p>
 <p>I had some luck though. By repeating pokes over the same area a few times, I felt certain points that were especially sensitive. Not only would it feel like vibration, it would feel like a little spike or path of sensation travelling up my wrist/hand. I marked these points with a pen tip.</p>
 <p class="caption">Dots of high vibration sensitivity on the back of my hand</p>
-<p><img loading="lazy" alt="Dots of high vibration sensitivity on the back of my hand" src="/static/mech2_pacback.jpg" /></p>
+<p><img loading="lazy" alt="Dots of high vibration sensitivity on the back of my hand" src="/static/mech2_pacback.jpg"/></p>
 <p>Can I confirm that these were where my Pacs lived in my skin? No, I'm not going to actually cut myself and check. But the distribution lines up, and the sensation duration and localization also make sense to me. I don't think that the other mechanoreceptors would have been able to detect the 500Hz vibration frequency super well. </p>
 <p>The palm was a bit harder to feel differences in sensation, since the skin thickness also varies from the pads to the joints. Here's a few spots I found on my palm:</p>
 <p class="caption">Dots of high vibration sensitivity on my palm</p>
-<p><img loading="lazy" alt="Dots of high vibration sensitivity on my palm" src="/static/mech2_pacpalm.jpg" /></p>
-<p><br></p>
-<h1>Aftereffects</h1>
+<p><img loading="lazy" alt="Dots of high vibration sensitivity on my palm" src="/static/mech2_pacpalm.jpg"/></p>
+<p><br/></p>
+<h1 id="aftereffects">Aftereffects</h1>
 <p>I held the spike with my right hand, and stimulated my left. I held it loosely, but still felt vibration in my right hand for a long time. At the end of the trial, my right hand had some weird sensations. For the next 30-45 minutes, whenever I tapped my index finger and thumb together, I felt a bouncing/springy sensation. Like hitting a drum, but the drum is just two of my fingers. It worked when I tapped other surfaces too, like my table. This felt strongest in my index finger, but it also worked for my middle finger and thumb. Really weird feeling, but probably not useful for anything. </p>
-<p><br></p>
-<h1>Closing Notes</h1>
+<p><br/></p>
+<h1 id="closing-notes">Closing Notes</h1>
 <p>Interestingly enough, there were a few spots on my back-hand that felt no vibration at all. Maybe a dead zone with no nearby Pacs? Blame my mom, I guess.</p>
 <p>It was hard to ignore the feeling of the vibrating point poking me. I thought that the sharp-ish point coupled with vibration might actually damage the skin, and my skin did start hurting wherever I poked vertically. I found it hard to separate this sensation from the vibration I was looking for.</p>
-<p>Cool effect! I have now separately stimulated the Pacs and the Merkel discs. Two down, two to go.</p>
+<p>Cool effect! I have now separately stimulated the Pacs and the Merkel discs. Two down, two to go.</p></body></html>
 
 
 

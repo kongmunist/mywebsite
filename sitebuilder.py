@@ -6,6 +6,7 @@ from flask_flatpages import FlatPages, pygmented_markdown
 # from flask_bootstrap import Bootstrap
 from flask_frozen import Freezer
 from feedgen.feed import FeedGenerator
+from bs4 import BeautifulSoup
 
 from datetime import datetime, timedelta
 import pytz
@@ -57,7 +58,15 @@ def prerender_jinja(text):
     # print("PR Body", type(prerendered_body), prerendered_body)
     # pygmented_markdown converts the ~[]() syntax into actual html
     # print("pyg body", type(pygmented_markdown(prerendered_body)), pygmented_markdown(prerendered_body))
-    return pygmented_markdown(prerendered_body)
+
+    # Add name to all h1s, use that as the id for the table of contents
+    page = BeautifulSoup(pygmented_markdown(prerendered_body))
+    for h1 in page.find_all("h1"):
+        tmph1 = re.sub(r'[^\w\s]', '', h1.text)
+        tmph1 = tmph1.strip().lower().replace(" ", "-")
+        h1["id"] = tmph1
+    return str(page)
+    # return pygmented_markdown(prerendered_body)
 app.config['FLATPAGES_HTML_RENDERER'] = prerender_jinja
 
 def dateconvert(str):
@@ -105,8 +114,32 @@ def utility_processor():
         fString += ">" + "</video>"
         return Markup(fString)
 
-    def tableofcontents(yes):
-        print(yes)
+    def tableofcontents(filename):
+        # print(filename, type(filename))
+        curPage = f"pages/blog/{filename}"
+        curPageText = open(curPage, "r").read()
+        # print(curPageText)
+        # print(os.path.exists(yes))
+
+        # Get all H1s with start at the beginning of the line
+        h1s = re.findall(r"^# (.*)", curPageText, re.MULTILINE)
+        print(h1s)
+
+        # These are the headers in the TOC. TOC will be an enumerated list
+        toc = "<div class='toc'>"
+        toc += "<h2 style='margin:0px;'>Table of Contents</h2>"
+        # toc += "<ol>\n"
+        for i,h1 in enumerate(h1s):
+            # remove all punc except spaces
+            h1link = re.sub(r'[^\w\s]', '', h1)
+            h1link = h1link.strip().lower().replace(" ", "-")
+            # Create link
+            toc += f"{i+1}. <a href=\"#{h1link}\">{h1}</a><br>"
+        # toc += "</ol>\n"
+        toc += "</div>"
+        toc += "\n<hr>\n"
+
+        return Markup(toc)
 
     return dict(add_pic=add_pic, add_vid=add_vid, tableofcontents=tableofcontents)
     # return dict(add_pic=add_pic, add_vid=add_vid)

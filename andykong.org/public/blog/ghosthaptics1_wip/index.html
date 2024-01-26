@@ -27,7 +27,7 @@
         h1:not(.title) {
             padding-left: 12px;
             margin-left: -12px;
-            border-left: 8px ridge #DBAD80;
+            border-left: 8px groove #DBAD80;
 
             counter-reset: h2counter;
         }
@@ -37,9 +37,29 @@
             content: counter(h1counter) ". ";
         }
 
-        h2::before {
+/*
+        .blogpage > h2 {
+            text-decoration: underline wavy #DBAD80;
+            text-underline-thickness: 1px;
+        }
+        */
+
+        .blogpage > h2::before {
             counter-increment: h2counter;
-            content: counter(h1counter) "." counter(h2counter) " ";
+            content: counter(h1counter) "." counter(h2counter) "  ";
+            /*
+            text-decoration: none;
+            display: inline-block;
+            */
+        }
+
+
+        .toc {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+            color: inherit;
+            text-decoration: none;
         }
 
     </style>
@@ -286,11 +306,10 @@ code {
     <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Phantom vibration haptics with coin cell vibration motor</h1>
             <p style="font-size:0.8em;"> Published October 10, 1999</p>
 <hr>
-            <p>Late last night I was greeted in my dreams by a green, ghastly spectre. Words words words. </p>
-<p><img loading="lazy" alt="Image Caption" src="/static/badglasses.png" /></p>
+            <html><body><p>Late last night I was greeted in my dreams by a green, ghastly spectre. Words words words. </p>
+<p><img loading="lazy" alt="Image Caption" src="/static/badglasses.png"/></p>
 <p class="caption">Image desc</p>
-
-<p><a href="https://andykong.org">Link example</a></p>
+<p><a href="https://andykong.org">Link example</a></p></body></html>
 
 
 

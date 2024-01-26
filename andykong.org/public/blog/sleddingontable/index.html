@@ -27,7 +27,7 @@
         h1:not(.title) {
             padding-left: 12px;
             margin-left: -12px;
-            border-left: 8px ridge #DBAD80;
+            border-left: 8px groove #DBAD80;
 
             counter-reset: h2counter;
         }
@@ -37,9 +37,29 @@
             content: counter(h1counter) ". ";
         }
 
-        h2::before {
+/*
+        .blogpage > h2 {
+            text-decoration: underline wavy #DBAD80;
+            text-underline-thickness: 1px;
+        }
+        */
+
+        .blogpage > h2::before {
             counter-increment: h2counter;
-            content: counter(h1counter) "." counter(h2counter) " ";
+            content: counter(h1counter) "." counter(h2counter) "  ";
+            /*
+            text-decoration: none;
+            display: inline-block;
+            */
+        }
+
+
+        .toc {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+            color: inherit;
+            text-decoration: none;
         }
 
     </style>
@@ -286,11 +306,10 @@ code {
     <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Sledding on a table</h1>
             <p style="font-size:0.8em;"> Published December 1, 2020</p>
 <hr>
-            <p>First sticking snow in Pittsburgh today! Me and Elio and Jona wanted to sled, but couldn't find a sled equivalent around the house. Cardboard too soggy and small, container lids too flimsy and weak, no detachable thing on those trashcans anymore :(. What to do? We looked around and found this folding table we had!</p>
-<p><img loading="lazy" alt="Place your bets as to whether this table makes a good sled" src="/static/tableforsledding.JPG" /></p>
+            <html><body><p>First sticking snow in Pittsburgh today! Me and Elio and Jona wanted to sled, but couldn't find a sled equivalent around the house. Cardboard too soggy and small, container lids too flimsy and weak, no detachable thing on those trashcans anymore :(. What to do? We looked around and found this folding table we had!</p>
+<p><img loading="lazy" alt="Place your bets as to whether this table makes a good sled" src="/static/tableforsledding.JPG"/></p>
 <p class="caption">Place your bets as to whether this table makes a good sled!</p>
-
-<p>It works! Video on my instagram <a href="https://www.instagram.com/p/CIR1Gn6nJ6u/">here</a>. Not super well since it's so heavy, but you can lift the front and sort of glide down a hill over the ice instead of just plowing into it. Pretty good!</p>
+<p>It works! Video on my instagram <a href="https://www.instagram.com/p/CIR1Gn6nJ6u/">here</a>. Not super well since it's so heavy, but you can lift the front and sort of glide down a hill over the ice instead of just plowing into it. Pretty good!</p></body></html>
 
 
 

@@ -3,7 +3,8 @@ TODO:
 - Make the images on the front page snap into position following a random path
 - Add a now page
 
-Jan 26, 2024 - Added side border to h1 and h2 like Alexey, added counters to each page. Counters will probably mess up some older posts though...
+Jan 26, 2024 - Not sure how to add a TOC, I think it's hard to access the page filename from the page itself. p or page in a blog page returns <class 'jinja2.runtime.Undefined'>. Gonna just do it the brute force way.
+Jan 25, 2024 - Added side border to h1 and h2 like Alexey, added counters to each page. Counters will probably mess up some older posts though... Also made the font colors a bit lighter.
 Jan 15, 2024 - removed trailing slash (hopefully) from URLs to keep them unique online but they still work (hopefully). Also turned rss+xml to just xml in the rss renderer. Removed trailing slash from the sitemap.xml too using jinja string slicing in the template file. This is not graceful. Added blog word length to the main page by adding a meta param. Removed some CLS by changing the font-display to auto.
 Jan 11, 2024 - added blog bubbles instead of <hr> between each one. Reading is a bit easier. Also went through and changed a bunch of names of old blog posts. I noticed the recent blog posts have much less "raw" titles, which actually makes them less informative.
 Jan 10, 2024 - fixed blog gui to also leave </a> in addition to <a>, so now Cmd+K works for links.

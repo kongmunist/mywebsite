@@ -27,7 +27,7 @@
         h1:not(.title) {
             padding-left: 12px;
             margin-left: -12px;
-            border-left: 8px ridge #DBAD80;
+            border-left: 8px groove #DBAD80;
 
             counter-reset: h2counter;
         }
@@ -37,9 +37,29 @@
             content: counter(h1counter) ". ";
         }
 
-        h2::before {
+/*
+        .blogpage > h2 {
+            text-decoration: underline wavy #DBAD80;
+            text-underline-thickness: 1px;
+        }
+        */
+
+        .blogpage > h2::before {
             counter-increment: h2counter;
-            content: counter(h1counter) "." counter(h2counter) " ";
+            content: counter(h1counter) "." counter(h2counter) "  ";
+            /*
+            text-decoration: none;
+            display: inline-block;
+            */
+        }
+
+
+        .toc {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+            color: inherit;
+            text-decoration: none;
         }
 
     </style>
@@ -286,16 +306,16 @@ code {
     <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Creating panorama images manually</h1>
             <p style="font-size:0.8em;"> Published November 17, 2020</p>
 <hr>
-            <p>Howdy y'all! I think everyone knows what a panorama is so I'll jump right into it. </p>
+            <html><body><p>Howdy y'all! I think everyone knows what a panorama is so I'll jump right into it. </p>
 <h2>What's going on?</h2>
 <p>I'm working on a problem where I need to stitch together 4 images in a 2x2 pattern, into a big panorama/composite image. The image sets look something like this: </p>
-<p><img loading="lazy" alt="My messy, feature-full desk" src="/static/panoramassplit.png" /></p>
+<p><img loading="lazy" alt="My messy, feature-full desk" src="/static/panoramassplit.png"/></p>
 <h2>How do you do it?</h2>
 <p>I started from a simpler problem of stitching just two images together. At first I thought I could do some naive image stitching — i.e. find the row for both images that have the least difference, and just splice at that spot. However, I realized that is probably too naive, and decided to do some Googling.</p>
 <p>So instead, it turns out, you can find "corners"/keypoints/features within an image that are distinctive in angle/size/shape. Given two images with a bit of overlap, you can just find the features for either one. The feature detectors can also generate some 128 or 32-vector embedding of each keypoint, which is then used to compare each keypoint to every other keypoint using some "distance" metric, usually euclidean distance. </p>
 <p>Afterwards, you'll have some set of key points that are shared between both images, and the XY locations within both images. These XY points can then be correlated to find some affine transform that... OK, too complicated. Basically, imagine your two images each have a triangle in them. You can find the corners in both, figure out which corner in image1 maps to which corner in image2, and skew your view of one of the images so that the triangles will line up. Then all you gotta do is add the images! Here's an example:</p>
-<p><img loading="lazy" alt="View 1 of our shapes" src="/static/panorama1_view1.png" /></p>
-<p><img loading="lazy" alt="View 2 of our shapes" src="/static/panorama1_view2.png" /></p>
+<p><img loading="lazy" alt="View 1 of our shapes" src="/static/panorama1_view1.png"/></p>
+<p><img loading="lazy" alt="View 2 of our shapes" src="/static/panorama1_view2.png"/></p>
 <p>Intuitively, you know that in the 2nd image, you're looking at the 1st image from a different viewpoint. Namely, from the bottom up. You also know that, as an approximation, transforming the bottom square into the top one will sorta transform everything else as well to match the top. </p>
 <h2>Implementation details</h2>
 <ol>
@@ -306,7 +326,7 @@ code {
 <li>Combine the images together.</li>
 </ol>
 <p>Voila!</p>
-<p><img loading="lazy" alt="Combined pic" src="/static/panorama1_combined.png" /></p>
+<p><img loading="lazy" alt="Combined pic" src="/static/panorama1_combined.png"/></p>
 <h2>Problems</h2>
 <h5>Seams</h5>
 <p>There's weird border/seam issues where the images come together, which I anticipated. I didn't control the ISO precisely on my phone, so there's bound to be issues there. Seam finding is for later, but I think it's possible to apply a uniform shift for every added image to make their borders line up.</p>
@@ -314,7 +334,7 @@ code {
 <p>You can clearly see which image was first (top left), and which ones were warped and then added on. I think this is a problem because features become harder to detect after a few images get added, and the last one barely makes it on there in a coherent manner at all. I may be able to do some like detect all shared features before, then transform each set one at a time in order to get better results. Otherwise the alignment is all messed up. Problem for later though!</p>
 <h2>Bonus</h2>
 <p>In the course of messing with <code>cv2.warpPerspective</code>, I also made some cool glitch art. Enjoy! Until next time ~</p>
-<p><img loading="lazy" alt="Glitch art" src="/static/panorama1_glitchart.jpg" /></p>
+<p><img loading="lazy" alt="Glitch art" src="/static/panorama1_glitchart.jpg"/></p></body></html>
 
 
 
