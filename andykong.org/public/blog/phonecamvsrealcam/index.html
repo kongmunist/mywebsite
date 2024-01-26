@@ -32,7 +32,7 @@
             counter-reset: h2counter;
         }
 
-        h1:not(.title) {
+        h1:not(.title)::before {
             counter-increment: h1counter;
             content: counter(h1counter) ". ";
         }

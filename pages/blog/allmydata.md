@@ -1,4 +1,4 @@
-title: "My Quantified Self Data Stack"
+title: "My Quantified-Self Data Stack"
 date: 2024-01-26
 label: blog
 tags: [quantifiedself, personalinformatics, data, lifelogging]

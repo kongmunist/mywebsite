@@ -6,7 +6,7 @@
     <description>Thoughts and Work</description>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
-    <lastBuildDate>Fri, 26 Jan 2024 06:56:05 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 26 Jan 2024 06:58:57 +0000</lastBuildDate>
     <item>
       <title>First Post!</title>
       <link>blog/first</link>
@@ -5435,7 +5435,7 @@ Anyway, please DM me if you know of an alternative tracker that DOESN'T ruin the
       <pubDate>Mon, 15 Jan 2024 00:00:00 -0500</pubDate>
     </item>
     <item>
-      <title>My Quantified Self Data Stack</title>
+      <title>My Quantified-Self Data Stack</title>
       <link>blog/allmydata</link>
       <description>Many cool self-insights and the data logging methods used</description>
       <content:encoded>If you've ever wondered if you sleep worse after drinking coffee in the morning, or how listening to music affects your focus, or if you get weaker after eating a lot, this post is for you. I used to frequently have these musings, and now I just have the data to check for myself. 
