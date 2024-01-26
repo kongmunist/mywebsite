@@ -61,4 +61,9 @@ For accountability, I will maintain the list of outputs below, though this proje
 - Jan 12: Shots for 18-wheeler-tailgating video.
 - Jan 13: Planning - big sheet
 - Jan 14: Website update (added word count to blog posts) 
-- Jan 15: New circuit. Blog post about Fitbit's terrible data practices.
+- Jan 15: New circuit. Blog post about Fitbit's terrible data practices [(here)](../fitbittsproblem)
+- Jan 16: main project 1
+- Jan 17: main project 1, updated Strooper extension (removed colors from test buttons)
+- Jan 18: AMAZING meeting with Mr. Guzey, various logistical comms re: main project 1
+- Jan 19: Correspondence
+- Jan 20: Blog post on main project 2: 

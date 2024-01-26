@@ -6,7 +6,7 @@
     <description>Thoughts and Work</description>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
-    <lastBuildDate>Tue, 16 Jan 2024 01:32:22 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 26 Jan 2024 06:16:45 +0000</lastBuildDate>
     <item>
       <title>First Post!</title>
       <link>blog/first</link>
@@ -5259,28 +5259,19 @@ Cya around!
       <title>Reading speed comparison on paper vs screens</title>
       <link>blog/printvsdigital</link>
       <description>Also reflections on the Percy Jackson series</description>
-      <content:encoded>I recently re-read the first five books of the Percy Jackson series. I'll share some of my thoughts on the series after reading them as a child and re-reading as an adult, and then there will be some data on reading speed at the end.
+      <content:encoded>I recently re-read the first five books of the Percy Jackson series. I'll share some data on reading speed, as well as my thoughts on the series after re-reading as an adult.
 
 {{ add_pic("printvsdigital/0.jpg", "") }}
 
 &lt;hr&gt;
 
-# Thoughts
-I remember receiving the first three books in a box set from a family friend. I don't remember a ton about them, but I still recalled the general plot and twists. Percy Jackson is comfort reading to me since I've read them before, and because they're targeted at young teenagers the language and speech mannerisms are simpler than some adult-er books I've read. For instance, sentences were often just simple ones for paragraphs on end. 
-
-Something I found annoying about the books this time is the constant topic switches — two characters get alone, they're about to exchange important info or a secret, and then a third character always butts in with an urgent message or incoming threat. The main character consistently mentions his ADHD, which seems to tie in with the pacing of events in his story — maybe this book is targeted at children with ADHD as a way of making them feel seen?
-
-Another element in the books that may be a reflection of the teenage audience is the cagey romantic bits — they dance around the main character's romance without resolution for the entirety of five books, probably matching pace with the romantic expectations of much of the audience. I guess it would be hard for teens to empathize with a book character's emotional life if they were far more advanced than their own experience. 
-
-I felt a similar annoyance at the Fantastic Beasts movie series — the two main characters are always interrupted before they can really talk to each other, and the audience is let in on a bit of information that isn't really shared. I forget the word for this concept, when the audience knows something that the characters don't, but the movies really abuse it. I think Fantastic Beasts relies on the audience's desire to see the romance blossom in order to get them to come back and watch the next one. Alas, the romance here has not advanced after 3 movies, and I resent the usage of this trick. 
-
 # Data
 
-Ok, I promised you data. I read most of the PJ series on my computer, and use Timing to log the time spent reading each one. However, I happened to find my old physical copy of the third book on my shelf, and read that one on paper — since I used my computer right before and after reading it, we also have the time spent on that one. I'm getting word counts of each book from &lt;a href="https://www.reddit.com/r/camphalfblood/comments/hm3gh8/numbers_the_length_of_percy_jackson/"&gt; this reddit post &lt;/a&gt;.
+I read most of the PJ series on my computer, and use Timing to log the time spent reading each one. However, I happened to find my old physical copy of the third book on my shelf, and read that one on paper — since I used my computer right before and after reading it, we also have the time spent on that one. I'm getting word counts of each book from &lt;a href="https://www.reddit.com/r/camphalfblood/comments/hm3gh8/numbers_the_length_of_percy_jackson/"&gt; this reddit post &lt;/a&gt;.
 
 {{ add_pic("printvsdigital/1.png", "") }}
 
-All in all, it took me 503 minutes to read all of them:
+It took me 503 minutes to read all of them:
 
 {{ add_pic("printvsdigital/2.png", "") }}
 
@@ -5289,6 +5280,16 @@ Now, the difference is not huge, but the only book where I read the physical cop
 Then I thought that the page turning time was adding to the read time. Since I always scroll extra far down, I never have to wait to turn a page while reading on my computer.
 
 To test this, I timed how long it took to turn 10 pages and read the first word on each page. For physical books, this took 15.8 seconds, and on my books app, it takes 7.32 seconds. Book 3 is 300 pages, so I can estimate wasted page turning time at ~254 seconds, which is not large enough to have affected the above graph (only 0.5% of the total read time). Still, interesting. 
+
+&lt;hr&gt;
+# Thoughts
+I remember receiving the first three books in a box set from a family friend, and I still recall the general plot and twists. Percy Jackson is comfort reading to me since I've read them before, and since they're targeted at young teenagers, the language and speech mannerisms are simpler than some adult-er books I've read. Sentences were often just simple ones for paragraphs on end. 
+
+Something I found annoying about the books this time is the constant topic switches — two characters get alone, they're about to exchange important info or a secret, and then a third character always butts in with an urgent message or incoming threat. The main character consistently mentions his ADHD, which seems to tie in with the pacing of events in his story — maybe this book is targeted at children with ADHD as a way of making them feel seen?
+
+Another element in the books that may be a reflection of the teenage audience is the cagey romantic bits — they dance around the main character's romance without resolution for the entirety of five books, probably matching pace with the romantic expectations of much of the audience. I guess it would be hard for teens to empathize with a book character's emotional life if they were far more advanced than their own experience. 
+
+I felt a similar annoyance at the Fantastic Beasts movies — the two main characters are always interrupted before they can really talk to each other, and the audience is let in on a bit of information that isn't really shared. I forget the word for this concept, when the audience knows something that the characters don't, but the movies really abuse it. I think Fantastic Beasts relies on the audience's desire to see the romance blossom in order to get them to come back and watch the next one. Alas, the romance here has not advanced after 3 movies, and I resent the usage of this trick.
 
 That's all, cya next time!
 </content:encoded>
@@ -5432,6 +5433,147 @@ Anyway, please DM me if you know of an alternative tracker that DOESN'T ruin the
 </content:encoded>
       <author>andyking99@gmail.com (Andy Kong)</author>
       <pubDate>Mon, 15 Jan 2024 00:00:00 -0500</pubDate>
+    </item>
+    <item>
+      <title>My Quantified Self Data Stack</title>
+      <link>blog/allmydata</link>
+      <description>Many cool self-insights and the data logging methods used</description>
+      <content:encoded>If you've ever wondered if you sleep worse after drinking coffee in the morning, or how listening to music affects your focus, or if you get weaker after eating a lot, this post is for you. I used to frequently have these musings, and now I just have the data to check for myself. 
+
+In this post I'm going to show a few self-insights I've derived from logging a lot of my personal data. I'll also list all the types of data and how they're collected. 
+
+# Why research
+
+I think it's important to specify "why research" as well as "how research", and this "why" can become insincere when scientists court the big grant-writers in industry and government instead of saying what they really mean. I currently work for myself and will try to be a bit more honest — I like learning how my body and mind interact with my environment to create my lived experience. I also just like to know stuff.
+
+{{ add_pic("allmydata/0.png", "") }}
+
+# What I have found
+
+
+- My Ritalin blood concentration correlates with better Tetris performance
+
+
+{{ add_pic("allmydata/1.png", "") }}
+
+
+- I think better with more sleep (actually one of my most burning questions)
+
+
+{{ add_pic("allmydata/2.png", "") }}
+
+
+- My Tetris speed (pieces per second = PPS) correlates slightly with lower humidity
+
+
+{{ add_pic("allmydata/3.png", "") }}
+
+Here's a [few](https://medium.com/@kongmunist/playing-faster-tetris-by-sleeping-less-3d9b04d30349) more [examples](../blog/stroopvssleep/)
+
+&lt;hr&gt;
+
+# How do you collect the data?
+
+Data that's useful for my analysis is either physical (heart rate, blood glucose, weight), mental (Tetris, Stroop), or environmental (air quality, music, location, computer activity). Data collection can be easy (hard drive space, Google location), or hard (computer activity), or just cost money (Fitbit, Spotify)
+
+Not all the data is obviously useful — some of it is just easy to collect. But most data I expect to use as an 'x' or 'y' variable in some future analysis.
+
+## Automatic data
+
+### Electric Tables
+
+Chrome, websites visited with URL and timestamp. Collected via Tom Critchlow's [JS electric tables script](../blog/settingupelectrictables/)
+
+{{ add_pic("allmydata/4.png", "") }}
+
+### Hard Drive
+
+Every 4 hours, a bash script logs my available hard drive space in bytes. 
+
+{{ add_pic("allmydata/5.png", "") }}
+
+### Location 
+
+Google Maps Timeline is enabled on my phone and records my latitude/longitude every few minutes. I have this data going back a couple of years, and it includes the velocity and predicted mode of transport. 
+
+{{ add_pic("allmydata/6.png", "") }}
+
+### Smartwatch Biometrics
+
+Fitbit records a ton of data and multiple granularities. There's tons of problems with the data itself (documented [here](../fitbittsproblem/) and [here](../fitbitsleeptzcorrection/) ), but the majority is usable. Most usable stuff is probably the nightly sleep stats, minutely heart rate + HR variance, and daily step count. Fitbit offers this data export [through the web interface](&lt;a href="https://www.fitbit.com/settings/data/export"&gt;https://www.fitbit.com/settings/data/export&lt;/a&gt;)
+
+{{ add_pic("allmydata/7.png", "") }}
+
+### Music
+
+Spotify! It's a bit complicated and I haven't looked into it, but all the streaming data is there. Spotify offers this data export [through the web interface](&lt;a href="https://support.spotify.com/us/article/understanding-my-data/"&gt;https://support.spotify.com/us/article/understanding-my-data/&lt;/a&gt;)
+
+{{ add_pic("allmydata/8.png", "") }}
+
+### Tweets
+
+Twitter activity, has been used by [ultimape](&lt;a href="https://twitter.com/ultimape/status/1145889385256296449"&gt;https://twitter.com/ultimape/status/1145889385256296449&lt;/a&gt;) to detect their shifting circadian rhythm, has been used by Andy for nothing so far. Twitter offers this data export [through the web interface](&lt;a href="https://help.twitter.com/en/managing-your-account/how-to-download-your-x-archive"&gt;https://help.twitter.com/en/managing-your-account/how-to-download-your-x-archive&lt;/a&gt;)
+
+{{ add_pic("allmydata/9.png", "") }}
+
+### Purchasing data
+
+My Apple Card tracks all my purchases. The data is retrieved by manually hitting the "Export CSV" button on each month, and includes the Merchant and category and date.
+
+{{ add_pic("allmydata/10.png", "") }}
+
+### Glucose
+
+I wore a Freestyle Libre 2 CGM for two weeks and have nearly continuous data from that period (15-min intervals). Export is done through web interface.
+
+{{ add_pic("allmydata/11.png", "") }}
+
+### Air quality
+
+I use a QingPing air quality monitor to track my relative humidity, temperature, CO2, particulates (PM2.5), and tVOC (total volatile organic compounds). Through the QingPing IoT app, we can export the past year of data logged at 15-min intervals. 
+
+{{ add_pic("allmydata/12.png", "") }}
+
+## Manual
+
+### Tetris (cognitive)
+
+I play Tetris for fun a few times a day. The website I play on records the stats and timestamps of each game, and I wrote a little Selenium scraper to retrieve it all. I run this every few months to collate all the data into a CSV.
+
+{{ add_pic("allmydata/13.png", "") }}
+
+### Stroop (cognitive)
+
+I use my Strooper [chrome extension](../../projects/strooper) and complete a mini-Stroop test a few times a day. This gives me a coarse metric of my executive function, reading speed, and reaction time randomly throughout the day. I transfer the results into a spreadsheet monthly. 
+
+{{ add_pic("allmydata/14.png", "") }}
+
+{{ add_pic("allmydata/15.png", "") }}
+
+### Weight and grip strength
+
+Every night I record my weight and fat % with a bioimpedance scale, then record my left and right handed grip strength using a dynamometer. I record these as calendar events and transfer them to spreadsheets monthly. 
+
+{{ add_pic("allmydata/16.png", "") }}
+
+### Dose times
+
+I frequently drink caffeinated beverages, sometimes use nicotine patches, and randomly try out OTC supplements like L-Theanine or magnesium. I update a calendar notebook with my dosage and time, and have gotten pretty good at just noting the time when I take them and logging it later. I transfer this to a spreadsheet every month or so. 
+
+{{ add_pic("allmydata/17.png", "") }}
+
+&lt;hr&gt;
+
+# Do it now!
+
+Collecting personal data for long periods of time has compounding returns — you'll need to gather enough data points to average out daily fluctuations. So if you're reading this and even slightly curious — set up as many as possible ASAP! Storage is cheap, especially for single-user data like this, and in the worst case you can just delete it all. 
+
+# Conclusion
+
+I hope this gives you some idea of the scope of data that can be collected for minimal effort on your part, and the potential cool graphs you can make from it. If you think of any cool correlations I should do with this, please DM and tell me!
+</content:encoded>
+      <author>andyking99@gmail.com (Andy Kong)</author>
+      <pubDate>Fri, 26 Jan 2024 00:00:00 -0500</pubDate>
     </item>
   </channel>
 </rss>

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- <title>
+    Andy Kong!
+</title> -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+        <meta name="author" content="Andy Kong">
+        <meta name="title" content="My Quantified Self Data Stack">
+        <meta name="description" content="Many cool self-insights and the data logging methods used">
+        <meta name="keywords" content=" quantifiedself,  personalinformatics,  data,  lifelogging, ">
+
+        <title>
+            My Quantified Self Data Stack | Andy Kong
+        </title>
+    
+
+
+    <style type="text/css">
+        /* Atkinson Hyperlegible */
+        /* latin-ext
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          src: url("/static/atkhyp_latext.woff2") format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        } */
+        /* latin */
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          src: url("/static/atkhyp_lat.woff2") format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+
+        /* Ubuntu */
+        /* latin-ext
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          src: url("/static/ubuntu_latext.woff2") format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        } */
+        /* latin */
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          src: url("/static/ubuntu_lat.woff2") format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+    </style>
+
+    <!-- Bootstrap -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap.min.css">
+
+    <script src="/static/fontawesome.js" defer></script>
+    <!-- <script src="https://kit.fontawesome.com/c62dcd5933.js"></script> -->
+
+    <!-- Instant Page inlined - source is instant.page/5.1.0 -->
+    <script src="/static/instantpage-5.1.0.js" type="module" defer></script>
+
+
+
+
+    <style>
+body {
+    background: #202222;
+    font-size: 1.2em;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.navlinks{
+    font-family: 'Atkinson Hyperlegible';
+    font-size: 1.2em;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: "Atkinson Hyperlegible";
+}
+
+
+a {
+    transition: color .2s linear;
+    color:#00B4CC;
+}
+
+a:hover {
+    color:#00DFFC;
+    text-decoration: none;
+}
+
+.navbar-custom {
+    font-size: 22px;
+    background-color: #202222 !important;
+}
+
+.navbar-custom .navbar-brand{
+    font-size: 30px;
+    color: #00dffc !important;
+}
+
+.navbar-custom .navitem{
+    color:#00dffc !important;
+}
+
+.navitem:hover{
+    color:#00b4cc !important;
+    text-decoration: none;
+}
+
+.hidden{
+  display: none;
+}
+
+.navbar-toggler-icon {
+  border: none;
+  outline: none;
+}
+
+.caption{
+    font-size:12px;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: .2em;
+    margin-top: 1em;
+}
+
+.projectpage img{
+    max-width: 100%;
+    max-height: 50vh;
+    height: auto;
+    width: auto;
+}
+
+.blogpage img{
+    max-width: 100%;
+    max-height: 50vh;
+    height: auto;
+    width: auto;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+.blogpage h1, .blogpage h2{
+    color: #D49E68;
+}
+
+.projectpage h1, .projectpage h2{
+    color: #D49E68;
+}
+
+hr{
+    background-color:white !important;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+
+.youtubevideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+code {
+  font-family: Consolas,"courier new";
+  color: #110000;
+  background-color: #AFAFAF;
+  padding: 2px;
+  font-size: 105%;
+}
+
+</style>
+
+    <link rel="icon" type="image/png" href=" /static/aklogo.png " />
+
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YNX5JQZWHT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YNX5JQZWHT');
+</script>
+<script data-goatcounter="https://kong.goatcounter.com/count"
+                    async src="//gc.zgo.at/count.js"></script>
+    
+</head>
+
+
+
+<body style="color:#F8E0CB;overflow-x: hidden;">
+
+
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
+      <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
+          </span>
+        </i>
+    </button>
+
+    <div class="collapse navbar-collapse " id="navbarSupportedContent" style="margin-left:25px;margin-top:10px">
+        <ul class="navbar-nav ml-auto navlinks">
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/static/AndyKongCV.pdf ">CV/Resume</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://github.com/kongmunist" target="_blank" title="Github">GitHub</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://twitter.com/oldestasian" target="_blank" title="Twitter">Twitter</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="mailto:andyking99@gmail.com" target="_blank" title="Email">Email</a>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/blog/">[Blog]</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+<!-- padding-left:20px; padding-right:20px -->
+            <div class="col-md-8 col-11 p-0" style="">
+                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
+
+                
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        
+
+
+<div class="blogpage overflow-hidden" style="margin-bottom:4em;">
+    <h1 style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">My Quantified Self Data Stack</h1>
+            <p style="font-size:0.8em;"> Published January 26, 2024</p>
+<hr>
+            <p>If you've ever wondered if you sleep worse after drinking coffee in the morning, or how listening to music affects your focus, or if you get weaker after eating a lot, this post is for you. I used to frequently have these musings, and now I just have the data to check for myself. </p>
+<p>In this post I'm going to show a few self-insights I've derived from logging a lot of my personal data. I'll also list all the types of data and how they're collected. </p>
+<h1>Why research</h1>
+<p>I think it's important to specify "why research" as well as "how research", and this "why" can become insincere when scientists court the big grant-writers in industry and government instead of saying what they really mean. I currently work for myself and will try to be a bit more honest — I like learning how my body and mind interact with my environment to create my lived experience. I also just like to know stuff.</p>
+<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/allmydata/0.png" /></p>
+
+<h1>What I have found</h1>
+<ul>
+<li>My Ritalin blood concentration correlates with better Tetris performance</li>
+</ul>
+<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/allmydata/1.png" /></p>
+
+<ul>
+<li>I think better with more sleep (actually one of my most burning questions)</li>
+</ul>
+<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/allmydata/2.png" /></p>
+
+<ul>
+<li>My Tetris speed (pieces per second = PPS) correlates slightly with lower humidity</li>
+</ul>
+<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/allmydata/3.png" /></p>
+
+<p>Here's a <a href="https://medium.com/@kongmunist/playing-faster-tetris-by-sleeping-less-3d9b04d30349">few</a> more <a href="../blog/stroopvssleep/">examples</a></p>
+<hr>
+
+<h1>How do you collect the data?</h1>
+<p>Data that's useful for my analysis is either physical (heart rate, blood glucose, weight), mental (Tetris, Stroop), or environmental (air quality, music, location, computer activity). Data collection can be easy (hard drive space, Google location), or hard (computer activity), or just cost money (Fitbit, Spotify)</p>
+<p>Not all the data is obviously useful — some of it is just easy to collect. But most data I expect to use as an 'x' or 'y' variable in some future analysis.</p>
+<h2>Automatic data</h2>
+<h3>Electric Tables</h3>
+<p>Chrome, websites visited with URL and timestamp. Collected via Tom Critchlow's <a href="../blog/settingupelectrictables/">JS electric tables script</a></p>
+<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/allmydata/4.png" /></p>
+
+<h3>Hard Drive</h3>
+<p>Every 4 hours, a bash script logs my available hard drive space in bytes. </p>
+<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/allmydata/5.png" /></p>
+
+<h3>Location</h3>
+<p>Google Maps Timeline is enabled on my phone and records my latitude/longitude every few minutes. I have this data going back a couple of years, and it includes the velocity and predicted mode of transport. </p>
+<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/allmydata/6.png" /></p>
+
+<h3>Smartwatch Biometrics</h3>
+<p>Fitbit records a ton of data and multiple granularities. There's tons of problems with the data itself (documented <a href="../fitbittsproblem/">here</a> and <a href="../fitbitsleeptzcorrection/">here</a> ), but the majority is usable. Most usable stuff is probably the nightly sleep stats, minutely heart rate + HR variance, and daily step count. Fitbit offers this data export <a href="&lt;a href=&quot;https://www.fitbit.com/settings/data/export&quot;&gt;https://www.fitbit.com/settings/data/export&lt;/a&gt;">through the web interface</a></p>
+<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/allmydata/7.png" /></p>
+
+<h3>Music</h3>
+<p>Spotify! It's a bit complicated and I haven't looked into it, but all the streaming data is there. Spotify offers this data export <a href="&lt;a href=&quot;https://support.spotify.com/us/article/understanding-my-data/&quot;&gt;https://support.spotify.com/us/article/understanding-my-data/&lt;/a&gt;">through the web interface</a></p>
+<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/allmydata/8.png" /></p>
+
+<h3>Tweets</h3>
+<p>Twitter activity, has been used by <a href="&lt;a href=&quot;https://twitter.com/ultimape/status/1145889385256296449&quot;&gt;https://twitter.com/ultimape/status/1145889385256296449&lt;/a&gt;">ultimape</a> to detect their shifting circadian rhythm, has been used by Andy for nothing so far. Twitter offers this data export <a href="&lt;a href=&quot;https://help.twitter.com/en/managing-your-account/how-to-download-your-x-archive&quot;&gt;https://help.twitter.com/en/managing-your-account/how-to-download-your-x-archive&lt;/a&gt;">through the web interface</a></p>
+<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/allmydata/9.png" /></p>
+
+<h3>Purchasing data</h3>
+<p>My Apple Card tracks all my purchases. The data is retrieved by manually hitting the "Export CSV" button on each month, and includes the Merchant and category and date.</p>
+<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/allmydata/10.png" /></p>
+
+<h3>Glucose</h3>
+<p>I wore a Freestyle Libre 2 CGM for two weeks and have nearly continuous data from that period (15-min intervals). Export is done through web interface.</p>
+<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/allmydata/11.png" /></p>
+
+<h3>Air quality</h3>
+<p>I use a QingPing air quality monitor to track my relative humidity, temperature, CO2, particulates (PM2.5), and tVOC (total volatile organic compounds). Through the QingPing IoT app, we can export the past year of data logged at 15-min intervals. </p>
+<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/allmydata/12.png" /></p>
+
+<h2>Manual</h2>
+<h3>Tetris (cognitive)</h3>
+<p>I play Tetris for fun a few times a day. The website I play on records the stats and timestamps of each game, and I wrote a little Selenium scraper to retrieve it all. I run this every few months to collate all the data into a CSV.</p>
+<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/allmydata/13.png" /></p>
+
+<h3>Stroop (cognitive)</h3>
+<p>I use my Strooper <a href="../../projects/strooper">chrome extension</a> and complete a mini-Stroop test a few times a day. This gives me a coarse metric of my executive function, reading speed, and reaction time randomly throughout the day. I transfer the results into a spreadsheet monthly. </p>
+<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/allmydata/14.png" /></p>
+
+<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/allmydata/15.png" /></p>
+
+<h3>Weight and grip strength</h3>
+<p>Every night I record my weight and fat % with a bioimpedance scale, then record my left and right handed grip strength using a dynamometer. I record these as calendar events and transfer them to spreadsheets monthly. </p>
+<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/allmydata/16.png" /></p>
+
+<h3>Dose times</h3>
+<p>I frequently drink caffeinated beverages, sometimes use nicotine patches, and randomly try out OTC supplements like L-Theanine or magnesium. I update a calendar notebook with my dosage and time, and have gotten pretty good at just noting the time when I take them and logging it later. I transfer this to a spreadsheet every month or so. </p>
+<p><img loading="lazy" style="display: block; margin-left: auto;margin-right: auto;"  alt="" src="/static/allmydata/17.png" /></p>
+
+<hr>
+
+<h1>Do it now!</h1>
+<p>Collecting personal data for long periods of time has compounding returns — you'll need to gather enough data points to average out daily fluctuations. So if you're reading this and even slightly curious — set up as many as possible ASAP! Storage is cheap, especially for single-user data like this, and in the worst case you can just delete it all. </p>
+<h1>Conclusion</h1>
+<p>I hope this gives you some idea of the scope of data that can be collected for minimal effort on your part, and the potential cool graphs you can make from it. If you think of any cool correlations I should do with this, please DM and tell me!</p>
+
+    
+        <hr>
+        <p style="line-height:250%;">
+        <a class="btn btn-info" href="/tagged/quantifiedself/">quantifiedself</a>
+
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/personalinformatics/">personalinformatics</a>
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/data/">data</a>
+        
+            &nbsp;
+            <a class="btn btn-info" href="/tagged/lifelogging/">lifelogging</a>
+        
+        </p> 
+    
+</div>
+
+
+
+
+                    </div>
+                    <br>
+        <!-- </div> -->
+</div>
+
+
+
+
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
+<script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
+<script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>
