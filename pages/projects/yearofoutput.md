@@ -68,3 +68,8 @@ For accountability, I will maintain the list of outputs below, though this proje
 - Jan 19: Correspondence
 - Jan 20 - Jan 25: Incapacitated by personal matter.
 - Jan 26: [Blog post on main project 2](../../blog/allmydata), added counters to blog.
+- Jan 27: Part selection + started PCB for main project 1 rev3.
+- Jan 28: Ordered new PCBs + parts for main project 1. Made pesto pasta.
+- Jan 29: Comms
+- Jan 30: Silly tweet about Apple Watch.
+- Jan 31: First Newsletter!
