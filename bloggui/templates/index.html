@@ -8,7 +8,11 @@
 			max-width: 100%;
 			height: auto !important;
 		}
+
 	</style>
+	<script>
+		window.onbeforeunload = function () {return false;}
+	</script>
 
 <!--	favicon -->
 	<link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon-bloggui.png') }}">

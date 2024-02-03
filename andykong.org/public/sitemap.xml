@@ -14,6 +14,130 @@
 
   
     <url>
+    <loc>https://andykong.org/blog/ard2attiny</loc>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/ard2attiny/0.jpeg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/ard2attiny/1.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/ard2attiny/2.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/ard2attiny/3.jpeg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/ard2attiny/4.jpeg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/ard2attiny/5.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/ard2attiny/6.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/ard2attiny/7.jpeg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/ard2attiny/8.jpeg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/ard2attiny/9.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/ard2attiny/10.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+    <url>
+    <loc>https://andykong.org/projects/headcandles</loc>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/headcandle/hc_bellusmodel.jpeg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/headcandle/hc_moldhalf.jpeg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/headcandle/hc_meltingwax.jpeg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/headcandle/hc_pipebomb.jpeg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/headcandle/hc_secondfail.jpeg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/headcandle/hc_closeupdome.jpeg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/headcandle/hc_lightinghead.jpeg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/headcandle/hc_hero.jpeg
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+    <url>
     <loc>https://andykong.org/blog/allmydata</loc>
       
         <image:image>

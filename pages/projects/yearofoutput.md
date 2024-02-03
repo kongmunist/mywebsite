@@ -71,5 +71,7 @@ For accountability, I will maintain the list of outputs below, though this proje
 - Jan 27: Part selection + started PCB for main project 1 rev3.
 - Jan 28: Ordered new PCBs + parts for main project 1. Made pesto pasta.
 - Jan 29: Comms
-- Jan 30: Silly tweet about Apple Watch.
-- Jan 31: First Newsletter!
+- Jan 30: [Silly tweet about Apple Watch](https://twitter.com/oldestasian/status/1752594889466888589)
+- Jan 31: [Project post for head candles](../../projects/headcandles)
+- Feb 1: [First newsletter!](https://ckarchive.com/b/5quvh7hvxvqk0hp5xxd52arqrl344)
+- Feb 2: [Blog post](../../blog/ard2attiny) on flashing the ATtiny
