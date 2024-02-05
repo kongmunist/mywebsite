@@ -6,7 +6,7 @@
     <description>Thoughts and Work</description>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
-    <lastBuildDate>Mon, 05 Feb 2024 20:47:16 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 05 Feb 2024 20:55:45 +0000</lastBuildDate>
     <item>
       <title>First Post!</title>
       <link>blog/first</link>
@@ -5683,7 +5683,7 @@ Hopefully you know the basics. As [DeepBlueMbedded](&lt;a href="https://www.yout
     <item>
       <title>A computer scientist's guide to I2C</title>
       <link>blog/attinyrtc</link>
-      <description>Illustrated via minimal example of ATtiny85 to DS3231 RTC communication using TinyWireM</description>
+      <description>Illustrated via minimal example of ATtiny85 to DS3231 communication using TinyWireM</description>
       <content:encoded>Hello! I am continuing on my [last post](../ard2attiny), this time we're making an ATtiny do I2C. 
 
 As a CS person, I didn't really need to learn how to do I2C since every chip I've used before came on a breakout board and had a nice GitHub library I could steal. Eventually I needed to learn it myself to use cooler chips, and the post you're reading now is the post I wish I had when I started learning how I2C works.
@@ -5725,99 +5725,9 @@ I've added SoftwareSerial so we can receive the ATtiny messages using an FTDI Fr
 
 {{ add_pic("attinyrtc/5.jpg", "Wiring") }}
 
-Here is the code example. It's simple enough to read and understand, and you can compare it to the [datasheet](https://www.analog.com/media/en/technical-documentation/data-sheets/ds3231.pdf) to understand what registers are being written to and what the intended purpose is.
+Here is the ATtiny code. It's simple enough to read and understand, and you can compare it to the [datasheet](https://www.analog.com/media/en/technical-documentation/data-sheets/ds3231.pdf) to understand what registers are being written to and what the intended purpose is.
 
-&lt;!-- HTML generated using hilite.me --&gt;&lt;div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"&gt;&lt;pre style="margin: 0; line-height: 125%"&gt;&lt;span style="color: #557799"&gt;#include &amp;lt;TinyWireM.h&amp;gt;&lt;/span&gt;
-&lt;span style="color: #557799"&gt;#include &amp;quot;SoftwareSerial.h&amp;quot;&lt;/span&gt;
-byte ss&lt;span style="color: #333333"&gt;=&lt;/span&gt;&lt;span style="color: #0000DD; font-weight: bold"&gt;0&lt;/span&gt;,   mi&lt;span style="color: #333333"&gt;=&lt;/span&gt;&lt;span style="color: #0000DD; font-weight: bold"&gt;0&lt;/span&gt;,   hh&lt;span style="color: #333333"&gt;=&lt;/span&gt;&lt;span style="color: #0000DD; font-weight: bold"&gt;0&lt;/span&gt;,   wd&lt;span style="color: #333333"&gt;=&lt;/span&gt;&lt;span style="color: #0000DD; font-weight: bold"&gt;6&lt;/span&gt;,    dd&lt;span style="color: #333333"&gt;=&lt;/span&gt;&lt;span style="color: #0000DD; font-weight: bold"&gt;1&lt;/span&gt;,   mo&lt;span style="color: #333333"&gt;=&lt;/span&gt;&lt;span style="color: #0000DD; font-weight: bold"&gt;1&lt;/span&gt;,   yy&lt;span style="color: #333333"&gt;=&lt;/span&gt;&lt;span style="color: #0000DD; font-weight: bold"&gt;0&lt;/span&gt;;
-
-&lt;span style="color: #008800; font-weight: bold"&gt;const&lt;/span&gt; &lt;span style="color: #333399; font-weight: bold"&gt;int&lt;/span&gt; Rx &lt;span style="color: #333333"&gt;=&lt;/span&gt; &lt;span style="color: #0000DD; font-weight: bold"&gt;3&lt;/span&gt;; &lt;span style="color: #888888"&gt;// this is physical pin 2&lt;/span&gt;
-&lt;span style="color: #008800; font-weight: bold"&gt;const&lt;/span&gt; &lt;span style="color: #333399; font-weight: bold"&gt;int&lt;/span&gt; Tx &lt;span style="color: #333333"&gt;=&lt;/span&gt; &lt;span style="color: #0000DD; font-weight: bold"&gt;4&lt;/span&gt;; &lt;span style="color: #888888"&gt;// this is physical pin 3&lt;/span&gt;
-SoftwareSerial &lt;span style="color: #0066BB; font-weight: bold"&gt;mySerial&lt;/span&gt;(Rx, Tx);
-
- 
-&lt;span style="color: #333399; font-weight: bold"&gt;void&lt;/span&gt; &lt;span style="color: #0066BB; font-weight: bold"&gt;setup&lt;/span&gt;() {
-    TinyWireM.begin();
-    mySerial.begin(&lt;span style="color: #0000DD; font-weight: bold"&gt;9600&lt;/span&gt;); &lt;span style="color: #888888"&gt;// send serial data at 9600 bits/sec&lt;/span&gt;
-}
-
-&lt;span style="color: #333399; font-weight: bold"&gt;void&lt;/span&gt; &lt;span style="color: #0066BB; font-weight: bold"&gt;loop&lt;/span&gt;() {
-  &lt;span style="color: #888888"&gt;// read the time from the RTC, if we can&lt;/span&gt;
-  boolean gotTheTime &lt;span style="color: #333333"&gt;=&lt;/span&gt; grabTime();
- 
-  &lt;span style="color: #008800; font-weight: bold"&gt;if&lt;/span&gt; (gotTheTime) {
-    &lt;span style="color: #888888"&gt;// if we are here, then the time has been successfully read&lt;/span&gt;
-    &lt;span style="color: #888888"&gt;// and stored in global variables (ss, mi, hh, wd, dd, mo, yy)&lt;/span&gt;
-    mySerial.print(&lt;span style="background-color: #fff0f0"&gt;&amp;quot;Got the time: &amp;quot;&lt;/span&gt;);
-    printTime(); 
-  }
-  &lt;span style="color: #008800; font-weight: bold"&gt;else&lt;/span&gt; {
-    &lt;span style="color: #888888"&gt;// if we are here, then we tried to read the time but couldn&amp;#39;t&lt;/span&gt;
-    mySerial.println(&lt;span style="background-color: #fff0f0"&gt;&amp;quot;Unable to read time from RTC&amp;quot;&lt;/span&gt;);
-  }
- 
-  delay(&lt;span style="color: #0000DD; font-weight: bold"&gt;500&lt;/span&gt;);
-}
-
-
-
-boolean &lt;span style="color: #0066BB; font-weight: bold"&gt;grabTime&lt;/span&gt;() {
-  &lt;span style="color: #888888"&gt;// get time from the RTC and put it in global variables&lt;/span&gt;
-
-  &lt;span style="color: #888888"&gt;// send request to receive data starting at register 0&lt;/span&gt;
-  TinyWireM.beginTransmission(&lt;span style="color: #005588; font-weight: bold"&gt;0x68&lt;/span&gt;); &lt;span style="color: #888888"&gt;// 0x68 is DS3231 device address&lt;/span&gt;
-  TinyWireM.write((byte)&lt;span style="color: #0000DD; font-weight: bold"&gt;0&lt;/span&gt;); &lt;span style="color: #888888"&gt;// start at register 0&lt;/span&gt;
-  TinyWireM.endTransmission();
-  TinyWireM.requestFrom(&lt;span style="color: #005588; font-weight: bold"&gt;0x68&lt;/span&gt;, &lt;span style="color: #0000DD; font-weight: bold"&gt;7&lt;/span&gt;); &lt;span style="color: #888888"&gt;// request seven bytes (ss, mi, hh, wd, dd, mo, yy)&lt;/span&gt;
-  &lt;span style="color: #888888"&gt;// check for a reply from the RTC, and use it if we can&lt;/span&gt;
-  &lt;span style="color: #008800; font-weight: bold"&gt;if&lt;/span&gt; (TinyWireM.available() &lt;span style="color: #333333"&gt;&amp;gt;=&lt;/span&gt; &lt;span style="color: #0000DD; font-weight: bold"&gt;7&lt;/span&gt;) {
-    &lt;span style="color: #888888"&gt;// if we&amp;#39;re here, we got a reply and it is long enough&lt;/span&gt;
-    &lt;span style="color: #888888"&gt;// so now we read the time&lt;/span&gt;
-    ss &lt;span style="color: #333333"&gt;=&lt;/span&gt; bcd2bin(TinyWireM.read()); &lt;span style="color: #888888"&gt;// get seconds&lt;/span&gt;
-    mi &lt;span style="color: #333333"&gt;=&lt;/span&gt; bcd2bin(TinyWireM.read()); &lt;span style="color: #888888"&gt;// get minutes&lt;/span&gt;
-    hh &lt;span style="color: #333333"&gt;=&lt;/span&gt; bcd2bin(TinyWireM.read()); &lt;span style="color: #888888"&gt;// get hours&lt;/span&gt;
-    wd &lt;span style="color: #333333"&gt;=&lt;/span&gt; bcd2bin(TinyWireM.read()); &lt;span style="color: #888888"&gt;// get day of week&lt;/span&gt;
-    dd &lt;span style="color: #333333"&gt;=&lt;/span&gt; bcd2bin(TinyWireM.read()); &lt;span style="color: #888888"&gt;// get day of month&lt;/span&gt;
-    mo &lt;span style="color: #333333"&gt;=&lt;/span&gt; bcd2bin(TinyWireM.read()); &lt;span style="color: #888888"&gt;// get month&lt;/span&gt;
-    yy &lt;span style="color: #333333"&gt;=&lt;/span&gt; bcd2bin(TinyWireM.read()); &lt;span style="color: #888888"&gt;// get year (two digits)&lt;/span&gt;
-    &lt;span style="color: #888888"&gt;// indicate that we successfully got the time&lt;/span&gt;
-    &lt;span style="color: #008800; font-weight: bold"&gt;return&lt;/span&gt; &lt;span style="color: #007020"&gt;true&lt;/span&gt;;
-  }
-  &lt;span style="color: #008800; font-weight: bold"&gt;else&lt;/span&gt; {
-    &lt;span style="color: #888888"&gt;// indicate that we were unable to read the time&lt;/span&gt;
-    &lt;span style="color: #008800; font-weight: bold"&gt;return&lt;/span&gt; &lt;span style="color: #007020"&gt;false&lt;/span&gt;;
-  }
-}
-
-
-byte &lt;span style="color: #0066BB; font-weight: bold"&gt;bcd2bin&lt;/span&gt;(byte x) {
-  &lt;span style="color: #888888"&gt;// converts from binary-coded decimal to a &amp;quot;regular&amp;quot; binary number&lt;/span&gt;
-  &lt;span style="color: #008800; font-weight: bold"&gt;return&lt;/span&gt; ((((x &lt;span style="color: #333333"&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span style="color: #0000DD; font-weight: bold"&gt;4&lt;/span&gt;) &lt;span style="color: #333333"&gt;&amp;amp;&lt;/span&gt; &lt;span style="color: #005588; font-weight: bold"&gt;0xF&lt;/span&gt;) &lt;span style="color: #333333"&gt;*&lt;/span&gt; &lt;span style="color: #0000DD; font-weight: bold"&gt;10&lt;/span&gt;) &lt;span style="color: #333333"&gt;+&lt;/span&gt; (x &lt;span style="color: #333333"&gt;&amp;amp;&lt;/span&gt; &lt;span style="color: #005588; font-weight: bold"&gt;0xF&lt;/span&gt;)) ;
-}
-
-
-&lt;span style="color: #333399; font-weight: bold"&gt;void&lt;/span&gt; &lt;span style="color: #0066BB; font-weight: bold"&gt;printTime&lt;/span&gt;() {
-  &lt;span style="color: #888888"&gt;// just like it says on the tin&lt;/span&gt;
-  mySerial.print (&lt;span style="background-color: #fff0f0"&gt;&amp;quot;&lt;/span&gt;&lt;span style="color: #666666; font-weight: bold; background-color: #fff0f0"&gt;\&amp;#39;&lt;/span&gt;&lt;span style="background-color: #fff0f0"&gt;&amp;quot;&lt;/span&gt;);
-  &lt;span style="color: #008800; font-weight: bold"&gt;if&lt;/span&gt; (yy&lt;span style="color: #333333"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #0000DD; font-weight: bold"&gt;10&lt;/span&gt;) mySerial.print(&lt;span style="background-color: #fff0f0"&gt;&amp;quot;0&amp;quot;&lt;/span&gt;); mySerial.print(yy,DEC); mySerial.print(&lt;span style="background-color: #fff0f0"&gt;&amp;quot;-&amp;quot;&lt;/span&gt;);
-  &lt;span style="color: #008800; font-weight: bold"&gt;if&lt;/span&gt; (mo&lt;span style="color: #333333"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #0000DD; font-weight: bold"&gt;10&lt;/span&gt;) mySerial.print(&lt;span style="background-color: #fff0f0"&gt;&amp;quot;0&amp;quot;&lt;/span&gt;); mySerial.print(mo,DEC); mySerial.print(&lt;span style="background-color: #fff0f0"&gt;&amp;quot;-&amp;quot;&lt;/span&gt;);
-  &lt;span style="color: #008800; font-weight: bold"&gt;if&lt;/span&gt; (dd&lt;span style="color: #333333"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #0000DD; font-weight: bold"&gt;10&lt;/span&gt;) mySerial.print(&lt;span style="background-color: #fff0f0"&gt;&amp;quot;0&amp;quot;&lt;/span&gt;); mySerial.print(dd,DEC); mySerial.print(&lt;span style="background-color: #fff0f0"&gt;&amp;quot;(&amp;quot;&lt;/span&gt;);
-  &lt;span style="color: #008800; font-weight: bold"&gt;switch&lt;/span&gt; (wd) {
-    &lt;span style="color: #008800; font-weight: bold"&gt;case&lt;/span&gt; &lt;span style="color: #0000DD; font-weight: bold"&gt;1&lt;/span&gt;: mySerial.print(&lt;span style="background-color: #fff0f0"&gt;&amp;quot;Mon&amp;quot;&lt;/span&gt;); &lt;span style="color: #008800; font-weight: bold"&gt;break&lt;/span&gt;;
-    &lt;span style="color: #008800; font-weight: bold"&gt;case&lt;/span&gt; &lt;span style="color: #0000DD; font-weight: bold"&gt;2&lt;/span&gt;: mySerial.print(&lt;span style="background-color: #fff0f0"&gt;&amp;quot;Tue&amp;quot;&lt;/span&gt;); &lt;span style="color: #008800; font-weight: bold"&gt;break&lt;/span&gt;;
-    &lt;span style="color: #008800; font-weight: bold"&gt;case&lt;/span&gt; &lt;span style="color: #0000DD; font-weight: bold"&gt;3&lt;/span&gt;: mySerial.print(&lt;span style="background-color: #fff0f0"&gt;&amp;quot;Wed&amp;quot;&lt;/span&gt;); &lt;span style="color: #008800; font-weight: bold"&gt;break&lt;/span&gt;;
-    &lt;span style="color: #008800; font-weight: bold"&gt;case&lt;/span&gt; &lt;span style="color: #0000DD; font-weight: bold"&gt;4&lt;/span&gt;: mySerial.print(&lt;span style="background-color: #fff0f0"&gt;&amp;quot;Thu&amp;quot;&lt;/span&gt;); &lt;span style="color: #008800; font-weight: bold"&gt;break&lt;/span&gt;;
-    &lt;span style="color: #008800; font-weight: bold"&gt;case&lt;/span&gt; &lt;span style="color: #0000DD; font-weight: bold"&gt;5&lt;/span&gt;: mySerial.print(&lt;span style="background-color: #fff0f0"&gt;&amp;quot;Fri&amp;quot;&lt;/span&gt;); &lt;span style="color: #008800; font-weight: bold"&gt;break&lt;/span&gt;;
-    &lt;span style="color: #008800; font-weight: bold"&gt;case&lt;/span&gt; &lt;span style="color: #0000DD; font-weight: bold"&gt;6&lt;/span&gt;: mySerial.print(&lt;span style="background-color: #fff0f0"&gt;&amp;quot;Sat&amp;quot;&lt;/span&gt;); &lt;span style="color: #008800; font-weight: bold"&gt;break&lt;/span&gt;;
-    &lt;span style="color: #008800; font-weight: bold"&gt;case&lt;/span&gt; &lt;span style="color: #0000DD; font-weight: bold"&gt;7&lt;/span&gt;: mySerial.print(&lt;span style="background-color: #fff0f0"&gt;&amp;quot;Sun&amp;quot;&lt;/span&gt;); &lt;span style="color: #008800; font-weight: bold"&gt;break&lt;/span&gt;;
-    &lt;span style="color: #997700; font-weight: bold"&gt;default:&lt;/span&gt; mySerial.print(&lt;span style="background-color: #fff0f0"&gt;&amp;quot;Bad&amp;quot;&lt;/span&gt;); 
-  }
-  mySerial.print(&lt;span style="background-color: #fff0f0"&gt;&amp;quot;) &amp;quot;&lt;/span&gt;);
-  &lt;span style="color: #008800; font-weight: bold"&gt;if&lt;/span&gt; (hh&lt;span style="color: #333333"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #0000DD; font-weight: bold"&gt;10&lt;/span&gt;) mySerial.print(&lt;span style="background-color: #fff0f0"&gt;&amp;quot;0&amp;quot;&lt;/span&gt;); mySerial.print(hh,DEC); mySerial.print(&lt;span style="background-color: #fff0f0"&gt;&amp;quot;:&amp;quot;&lt;/span&gt;);
-  &lt;span style="color: #008800; font-weight: bold"&gt;if&lt;/span&gt; (mi&lt;span style="color: #333333"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #0000DD; font-weight: bold"&gt;10&lt;/span&gt;) mySerial.print(&lt;span style="background-color: #fff0f0"&gt;&amp;quot;0&amp;quot;&lt;/span&gt;); mySerial.print(mi,DEC); mySerial.print(&lt;span style="background-color: #fff0f0"&gt;&amp;quot;:&amp;quot;&lt;/span&gt;);
-  &lt;span style="color: #008800; font-weight: bold"&gt;if&lt;/span&gt; (ss&lt;span style="color: #333333"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #0000DD; font-weight: bold"&gt;10&lt;/span&gt;) mySerial.print(&lt;span style="background-color: #fff0f0"&gt;&amp;quot;0&amp;quot;&lt;/span&gt;); mySerial.print(ss,DEC); mySerial.println(&lt;span style="background-color: #fff0f0"&gt;&amp;quot;&amp;quot;&lt;/span&gt;);
-}
-&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;script src="https://gist.github.com/kongmunist/fb0f0ba41522a056364a2c41e3f1b07e.js"&gt;&lt;/script&gt;
 
 I'm using the Arduino to flash the ATtiny. After flashing, I had to unplug the programming wires from the ATtiny's physical pins 5, 6, 7 or else they interfere with the SDA/SCL messages from the RTC and you get a message like "Time=00:00:00(bad)".
 

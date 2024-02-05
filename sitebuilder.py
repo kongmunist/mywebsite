@@ -60,7 +60,7 @@ def prerender_jinja(text):
     # print("pyg body", type(pygmented_markdown(prerendered_body)), pygmented_markdown(prerendered_body))
 
     # Add name to all h1s, use that as the id for the table of contents
-    page = BeautifulSoup(pygmented_markdown(prerendered_body))
+    page = BeautifulSoup(pygmented_markdown(prerendered_body),features="lxml")
     for h1 in page.find_all("h1"):
         tmph1 = re.sub(r'[^\w\s]', '', h1.text)
         tmph1 = tmph1.strip().lower().replace(" ", "-")
