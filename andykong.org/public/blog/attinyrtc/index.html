@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- <title>
+    Andy Kong!
+</title> -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+        <meta name="author" content="Andy Kong">
+        <meta name="title" content="A computer scientist&#39;s guide to I2C">
+        <meta name="description" content="Illustrated via minimal example of ATtiny85 to DS3231 RTC communication using TinyWireM">
+        <meta name="keywords" content=" electronics,  arduino,  attiny, ">
+
+        <title>
+            A computer scientist&#39;s guide to I2C | Andy Kong
+        </title>
+    
+
+    <style>
+        body {
+            counter-reset: h1counter h2counter;
+        }
+
+        h1:not(.title) {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px groove #DBAD80;
+
+            counter-reset: h2counter;
+        }
+
+        h1:not(.title)::before {
+            counter-increment: h1counter;
+            content: counter(h1counter) ". ";
+        }
+
+/*
+        .blogpage > h2 {
+            text-decoration: underline wavy #DBAD80;
+            text-underline-thickness: 1px;
+        }
+        */
+
+        .blogpage > h2::before {
+            counter-increment: h2counter;
+            content: counter(h1counter) "." counter(h2counter) "  ";
+            /*
+            text-decoration: none;
+            display: inline-block;
+            */
+        }
+
+
+        .toc {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+            color: inherit;
+            text-decoration: none;
+        }
+
+    </style>
+
+
+
+
+    <style type="text/css">
+        /* Atkinson Hyperlegible */
+        /* latin-ext
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          src: url("/static/atkhyp_latext.woff2") format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        } */
+        /* latin */
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          src: url("/static/atkhyp_lat.woff2") format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+
+        /* Ubuntu */
+        /* latin-ext
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          src: url("/static/ubuntu_latext.woff2") format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        } */
+        /* latin */
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          src: url("/static/ubuntu_lat.woff2") format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+    </style>
+
+    <!-- Bootstrap -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap.min.css">
+
+    <script src="/static/fontawesome.js" defer></script>
+    <!-- <script src="https://kit.fontawesome.com/c62dcd5933.js"></script> -->
+
+    <!-- Instant Page inlined - source is instant.page/5.1.0 -->
+    <script src="/static/instantpage-5.1.0.js" type="module" defer></script>
+
+
+
+
+    <style>
+body {
+    background: #202222;
+    font-size: 1.2em;
+    font-family: 'Ubuntu', sans-serif;
+    color: #FAEADB;
+    overflow-x: hidden;
+
+    word-spacing: 0.5px;
+}
+
+.navlinks{
+    font-family: 'Atkinson Hyperlegible';
+    font-size: 1.2em;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: "Atkinson Hyperlegible";
+}
+
+
+a {
+    transition: color .2s linear;
+    color:#00B4CC;
+}
+
+a:hover {
+    color:#00DFFC;
+    text-decoration: none;
+}
+
+.navbar-custom {
+    font-size: 22px;
+    background-color: #202222 !important;
+}
+
+.navbar-custom .navbar-brand{
+    font-size: 30px;
+    color: #00dffc !important;
+}
+
+.navbar-custom .navitem{
+    color:#00dffc !important;
+}
+
+.navitem:hover{
+    color:#00b4cc !important;
+    text-decoration: none;
+}
+
+.hidden{
+  display: none;
+}
+
+.navbar-toggler-icon {
+  border: none;
+  outline: none;
+}
+
+.caption{
+    font-size:12px;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: .2em;
+    margin-top: 1em;
+}
+
+.projectpage img{
+    max-width: 100%;
+    max-height: 50vh;
+    height: auto;
+    width: auto;
+}
+
+.blogpage img{
+    max-width: 100%;
+    max-height: 50vh;
+    height: auto;
+    width: auto;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+.blogpage h1, .blogpage h2{
+    color: #E0B890;
+}
+
+.projectpage h1, .projectpage h2{
+    color: #E0B890;
+}
+
+hr{
+    background-color:white !important;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+
+.youtubevideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+code {
+  font-family: Consolas,"courier new";
+  color: #110000;
+  background-color: #FAEADB;
+  padding: 2px;
+  font-size: 105%;
+}
+
+</style>
+
+    <link rel="icon" type="image/png" href=" /static/aklogo.png " />
+
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YNX5JQZWHT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YNX5JQZWHT');
+</script>
+<script data-goatcounter="https://kong.goatcounter.com/count"
+                    async src="//gc.zgo.at/count.js"></script>
+    
+</head>
+
+
+
+<body style="">
+
+
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
+      <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
+          </span>
+        </i>
+    </button>
+
+    <div class="collapse navbar-collapse " id="navbarSupportedContent" style="margin-left:25px;margin-top:10px">
+        <ul class="navbar-nav ml-auto navlinks">
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/static/AndyKongCV.pdf ">CV/Resume</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://github.com/kongmunist" target="_blank" title="Github">GitHub</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://twitter.com/oldestasian" target="_blank" title="Twitter">Twitter</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="mailto:andyking99@gmail.com" target="_blank" title="Email">Email</a>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/blog/">[Blog]</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+<!-- padding-left:20px; padding-right:20px -->
+            <div class="col-md-8 col-11 p-0" style="">
+                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
+
+                
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        
+
+
+<div class="blogpage overflow-hidden" style="margin-bottom:4em;">
+    <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">A computer scientist&#39;s guide to I2C</h1>
+            <p style="font-size:0.8em;"> Published February 5, 2024</p>
+<hr>
+            <html><body><p>Hello! I am continuing on my <a href="../ard2attiny">last post</a>, this time we're making an ATtiny do I2C. </p>
+<p>As a CS person, I didn't really need to learn how to do I2C since every chip I've used before came on a breakout board and had a nice GitHub library I could steal. Eventually I needed to learn it myself to use cooler chips, and the post you're reading now is the post I wish I had when I started learning how I2C works.</p>
+<p><a href="https://thecavepearlproject.org/2017/11/03/configuring-i2c-sensors-with-arduino/">This post</a> from the Cave Pearl Project initially helped me understand I2C, but it assumes a bit more knowledge than this one.</p>
+<h1 id="i2c-is-like-an-api-for-ics">I2C is like an API for ICs</h1>
+<p>If you've ever worked with big Python libraries with unwieldy documentation and a million functions, it may help you to think of I2C as a similarly big library for hardware. Specifically, I'm thinking of matplotlib. You read and write options using matplotlib functions, you pass data, magical stuff happens internally, and voila, graph! And if it breaks, debugging is confusing because the functionality that breaks is usually buried deep in the library. </p>
+<p><img loading="lazy" alt="" src="/static/attinyrtc/1.jpg" style="display: block; margin-left: auto;margin-right: auto;"/></p>
+<p>I2C has similar functionality, except instead of calling a nice English function like <code>plt.clear()</code>, you need to say "write 0x1 to the SHUTDOWN register at position 0x10". Chips using I2C have a bunch of data and config registers. To access a sensor reading, you say "let me have 8 bytes from register XX". To configure sensor settings, you say "write XX into register YY". This makes it a bit more annoying since register addresses are harder to memorize than function names in English. You will usually be checking the datasheet a lot.</p>
+<p>Normally you need to instruct the microcontroller to bit-shift your message out as bytes, but the Arduino Wire.h library makes this easier by providing functions like <code>Wire.write(0xFE)</code>.</p>
+<p class="caption"> Example table of the register locations from an I2C sensor datasheet </p>
+<p><img loading="lazy" alt="Example table of the register locations from an I2C sensor datasheet" src="/static/attinyrtc/0.png" style="display: block; margin-left: auto;margin-right: auto;"/></p>
+<p class="caption"> Example table describing what the bytes mean in a particular register </p>
+<p><img loading="lazy" alt="Example table describing what the bytes mean in a particular register" src="/static/attinyrtc/2.png" style="display: block; margin-left: auto;margin-right: auto;"/></p>
+<p>Also unlike software, hardware functions cannot be called willy-nilly. Since multiple I2C chips can share the data line, each chip expects the I2C master to say "Hey, I'm gonna write to device address 0x43" or "Hey, I'm gonna read from device address 0x44" before reading or writing. The reads and writes are called "transmissions", so these start and stop messages are called <code>beginTransmission</code> and <code>endTransmission</code>.</p>
+<p class="caption"> An example I2C transmission which tells the sensor which register to send data from </p>
+<p><img loading="lazy" alt="An example I2C transmission which tells the sensor which register to send data from" src="/static/attinyrtc/3.png" style="display: block; margin-left: auto;margin-right: auto;"/></p>
+<p>Since each I2C chip comes with a pre-programmed address, if two of the same device share a data line, you will not be able to communicate with them separately. This is why I2C chips usually come with a shutdown pin, so the main microcontroller can turn off all except one to say "Device 0x43, you are now called device 0x45" to talk to them separately when they're all turned on. </p>
+<h1 id="ok-get-on-with-the-example">Ok, get on with the example!</h1>
+<p>Most popular I2C chips come on a breakout board, and this usually guarantees the existence of at least one GitHub library that makes talking to the sensor easier. These libraries turn "hey device 0x43, read 8 bytes from register 0x42, end transaction" into a handy function like <code>readSensor()</code>. But sometimes, they don't have it. Other times, you want to learn how it works. </p>
+<p class="caption"> Pic from the last post </p>
+<p><img loading="lazy" alt="Pic from the last post" src="/static/ard2attiny/0.jpeg" style="display: block; margin-left: auto;margin-right: auto;"/></p>
+<p>I recently got an ATtiny working on a breadboard using an Arduino Uno as the programmer. Afterwards, I also wanted to use an I2C RTC chip (real-time clock) with the ATtiny — while there are I2C libraries for it, they are written for the Arduino. And since the ATtiny25/45/85 doesn't have hardware I2C support, the <code>Wire.h</code> library that eases I2C transactions doesn't work, so the RTC libraries need a bit of editing. The ATtiny uses the <a href="https://github.com/adafruit/TinyWireM">TinyWireM.h</a> library instead as a (basically) drop-in replacement, you should be able to just replace all <code>Wire</code> with <code>TinyWireM</code>.</p>
+<p>I really wanted to manually understand the I2C stuff, so I found a DS3231 (aka ZS-042) minimal example on the <a href="https://forum.arduino.cc/t/software-i2c-and-ds3231-simple-code/508288">Arduino forums</a> and converted it to use TinyWireM. On the ATtiny, the I2C pins are SDA on physical pin 5 and SCL on physical pin 7 (these are also known as PB0 and PB2 respectively). </p>
+<p><img loading="lazy" alt="" src="/static/attinyrtc/4.png" style="display: block; margin-left: auto;margin-right: auto;"/></p>
+<p>I've added SoftwareSerial so we can receive the ATtiny messages using an FTDI Friend, its RX should go into physical pin 3 (same as my previous post). Wires from the ZS-042 board are SCL -&gt; pin 7 and SDA -&gt; pin 5. V+ and GND also need to be connected. </p>
+<p class="caption"> Wiring </p>
+<p><img loading="lazy" alt="Wiring" src="/static/attinyrtc/5.jpg" style="display: block; margin-left: auto;margin-right: auto;"/></p>
+<p>Here is the code example. It's simple enough to read and understand, and you can compare it to the <a href="https://www.analog.com/media/en/technical-documentation/data-sheets/ds3231.pdf">datasheet</a> to understand what registers are being written to and what the intended purpose is.</p>
+<!-- HTML generated using hilite.me -->
+<div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #557799">#include &lt;TinyWireM.h&gt;</span>
+<span style="color: #557799">#include "SoftwareSerial.h"</span>
+byte ss<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span>,   mi<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span>,   hh<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span>,   wd<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">6</span>,    dd<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">1</span>,   mo<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">1</span>,   yy<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span>;
+
+<span style="color: #008800; font-weight: bold">const</span> <span style="color: #333399; font-weight: bold">int</span> Rx <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">3</span>; <span style="color: #888888">// this is physical pin 2</span>
+<span style="color: #008800; font-weight: bold">const</span> <span style="color: #333399; font-weight: bold">int</span> Tx <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">4</span>; <span style="color: #888888">// this is physical pin 3</span>
+SoftwareSerial <span style="color: #0066BB; font-weight: bold">mySerial</span>(Rx, Tx);
+
+
+<span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">setup</span>() {
+    TinyWireM.begin();
+    mySerial.begin(<span style="color: #0000DD; font-weight: bold">9600</span>); <span style="color: #888888">// send serial data at 9600 bits/sec</span>
+}
+
+<span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">loop</span>() {
+  <span style="color: #888888">// read the time from the RTC, if we can</span>
+  boolean gotTheTime <span style="color: #333333">=</span> grabTime();
+
+  <span style="color: #008800; font-weight: bold">if</span> (gotTheTime) {
+    <span style="color: #888888">// if we are here, then the time has been successfully read</span>
+    <span style="color: #888888">// and stored in global variables (ss, mi, hh, wd, dd, mo, yy)</span>
+    mySerial.print(<span style="background-color: #fff0f0">"Got the time: "</span>);
+    printTime(); 
+  }
+  <span style="color: #008800; font-weight: bold">else</span> {
+    <span style="color: #888888">// if we are here, then we tried to read the time but couldn't</span>
+    mySerial.println(<span style="background-color: #fff0f0">"Unable to read time from RTC"</span>);
+  }
+
+  delay(<span style="color: #0000DD; font-weight: bold">500</span>);
+}
+
+
+
+boolean <span style="color: #0066BB; font-weight: bold">grabTime</span>() {
+  <span style="color: #888888">// get time from the RTC and put it in global variables</span>
+
+  <span style="color: #888888">// send request to receive data starting at register 0</span>
+  TinyWireM.beginTransmission(<span style="color: #005588; font-weight: bold">0x68</span>); <span style="color: #888888">// 0x68 is DS3231 device address</span>
+  TinyWireM.write((byte)<span style="color: #0000DD; font-weight: bold">0</span>); <span style="color: #888888">// start at register 0</span>
+  TinyWireM.endTransmission();
+  TinyWireM.requestFrom(<span style="color: #005588; font-weight: bold">0x68</span>, <span style="color: #0000DD; font-weight: bold">7</span>); <span style="color: #888888">// request seven bytes (ss, mi, hh, wd, dd, mo, yy)</span>
+  <span style="color: #888888">// check for a reply from the RTC, and use it if we can</span>
+  <span style="color: #008800; font-weight: bold">if</span> (TinyWireM.available() <span style="color: #333333">&gt;=</span> <span style="color: #0000DD; font-weight: bold">7</span>) {
+    <span style="color: #888888">// if we're here, we got a reply and it is long enough</span>
+    <span style="color: #888888">// so now we read the time</span>
+    ss <span style="color: #333333">=</span> bcd2bin(TinyWireM.read()); <span style="color: #888888">// get seconds</span>
+    mi <span style="color: #333333">=</span> bcd2bin(TinyWireM.read()); <span style="color: #888888">// get minutes</span>
+    hh <span style="color: #333333">=</span> bcd2bin(TinyWireM.read()); <span style="color: #888888">// get hours</span>
+    wd <span style="color: #333333">=</span> bcd2bin(TinyWireM.read()); <span style="color: #888888">// get day of week</span>
+    dd <span style="color: #333333">=</span> bcd2bin(TinyWireM.read()); <span style="color: #888888">// get day of month</span>
+    mo <span style="color: #333333">=</span> bcd2bin(TinyWireM.read()); <span style="color: #888888">// get month</span>
+    yy <span style="color: #333333">=</span> bcd2bin(TinyWireM.read()); <span style="color: #888888">// get year (two digits)</span>
+    <span style="color: #888888">// indicate that we successfully got the time</span>
+    <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">true</span>;
+  }
+  <span style="color: #008800; font-weight: bold">else</span> {
+    <span style="color: #888888">// indicate that we were unable to read the time</span>
+    <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">false</span>;
+  }
+}
+
+
+byte <span style="color: #0066BB; font-weight: bold">bcd2bin</span>(byte x) {
+  <span style="color: #888888">// converts from binary-coded decimal to a "regular" binary number</span>
+  <span style="color: #008800; font-weight: bold">return</span> ((((x <span style="color: #333333">&gt;&gt;</span> <span style="color: #0000DD; font-weight: bold">4</span>) <span style="color: #333333">&amp;</span> <span style="color: #005588; font-weight: bold">0xF</span>) <span style="color: #333333">*</span> <span style="color: #0000DD; font-weight: bold">10</span>) <span style="color: #333333">+</span> (x <span style="color: #333333">&amp;</span> <span style="color: #005588; font-weight: bold">0xF</span>)) ;
+}
+
+
+<span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">printTime</span>() {
+  <span style="color: #888888">// just like it says on the tin</span>
+  mySerial.print (<span style="background-color: #fff0f0">"</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\'</span><span style="background-color: #fff0f0">"</span>);
+  <span style="color: #008800; font-weight: bold">if</span> (yy<span style="color: #333333">&lt;</span><span style="color: #0000DD; font-weight: bold">10</span>) mySerial.print(<span style="background-color: #fff0f0">"0"</span>); mySerial.print(yy,DEC); mySerial.print(<span style="background-color: #fff0f0">"-"</span>);
+  <span style="color: #008800; font-weight: bold">if</span> (mo<span style="color: #333333">&lt;</span><span style="color: #0000DD; font-weight: bold">10</span>) mySerial.print(<span style="background-color: #fff0f0">"0"</span>); mySerial.print(mo,DEC); mySerial.print(<span style="background-color: #fff0f0">"-"</span>);
+  <span style="color: #008800; font-weight: bold">if</span> (dd<span style="color: #333333">&lt;</span><span style="color: #0000DD; font-weight: bold">10</span>) mySerial.print(<span style="background-color: #fff0f0">"0"</span>); mySerial.print(dd,DEC); mySerial.print(<span style="background-color: #fff0f0">"("</span>);
+  <span style="color: #008800; font-weight: bold">switch</span> (wd) {
+    <span style="color: #008800; font-weight: bold">case</span> <span style="color: #0000DD; font-weight: bold">1</span>: mySerial.print(<span style="background-color: #fff0f0">"Mon"</span>); <span style="color: #008800; font-weight: bold">break</span>;
+    <span style="color: #008800; font-weight: bold">case</span> <span style="color: #0000DD; font-weight: bold">2</span>: mySerial.print(<span style="background-color: #fff0f0">"Tue"</span>); <span style="color: #008800; font-weight: bold">break</span>;
+    <span style="color: #008800; font-weight: bold">case</span> <span style="color: #0000DD; font-weight: bold">3</span>: mySerial.print(<span style="background-color: #fff0f0">"Wed"</span>); <span style="color: #008800; font-weight: bold">break</span>;
+    <span style="color: #008800; font-weight: bold">case</span> <span style="color: #0000DD; font-weight: bold">4</span>: mySerial.print(<span style="background-color: #fff0f0">"Thu"</span>); <span style="color: #008800; font-weight: bold">break</span>;
+    <span style="color: #008800; font-weight: bold">case</span> <span style="color: #0000DD; font-weight: bold">5</span>: mySerial.print(<span style="background-color: #fff0f0">"Fri"</span>); <span style="color: #008800; font-weight: bold">break</span>;
+    <span style="color: #008800; font-weight: bold">case</span> <span style="color: #0000DD; font-weight: bold">6</span>: mySerial.print(<span style="background-color: #fff0f0">"Sat"</span>); <span style="color: #008800; font-weight: bold">break</span>;
+    <span style="color: #008800; font-weight: bold">case</span> <span style="color: #0000DD; font-weight: bold">7</span>: mySerial.print(<span style="background-color: #fff0f0">"Sun"</span>); <span style="color: #008800; font-weight: bold">break</span>;
+    <span style="color: #997700; font-weight: bold">default:</span> mySerial.print(<span style="background-color: #fff0f0">"Bad"</span>); 
+  }
+  mySerial.print(<span style="background-color: #fff0f0">") "</span>);
+  <span style="color: #008800; font-weight: bold">if</span> (hh<span style="color: #333333">&lt;</span><span style="color: #0000DD; font-weight: bold">10</span>) mySerial.print(<span style="background-color: #fff0f0">"0"</span>); mySerial.print(hh,DEC); mySerial.print(<span style="background-color: #fff0f0">":"</span>);
+  <span style="color: #008800; font-weight: bold">if</span> (mi<span style="color: #333333">&lt;</span><span style="color: #0000DD; font-weight: bold">10</span>) mySerial.print(<span style="background-color: #fff0f0">"0"</span>); mySerial.print(mi,DEC); mySerial.print(<span style="background-color: #fff0f0">":"</span>);
+  <span style="color: #008800; font-weight: bold">if</span> (ss<span style="color: #333333">&lt;</span><span style="color: #0000DD; font-weight: bold">10</span>) mySerial.print(<span style="background-color: #fff0f0">"0"</span>); mySerial.print(ss,DEC); mySerial.println(<span style="background-color: #fff0f0">""</span>);
+}
+</pre></div>
+<p><br/></p>
+<p>I'm using the Arduino to flash the ATtiny. After flashing, I had to unplug the programming wires from the ATtiny's physical pins 5, 6, 7 or else they interfere with the SDA/SCL messages from the RTC and you get a message like "Time=00:00:00(bad)".</p>
+<p class="caption"> What your serial monitor should NOT look like </p>
+<p><img loading="lazy" alt="What your serial monitor should NOT look like" src="/static/attinyrtc/6.png" style="display: block; margin-left: auto;margin-right: auto;"/></p>
+<p>Here's what the Serial monitor should look like when it's working properly:</p>
+<p class="caption"> Yay, free time </p>
+<p><img loading="lazy" alt="Yay, free time" src="/static/attinyrtc/7.png" style="display: block; margin-left: auto;margin-right: auto;"/></p>
+<h1 id="conclusion">Conclusion</h1>
+<p>It is annoying and tedious to read the 50-page datasheet and translate all the register addresses and values into functions that can be used for your application, but it is the only way. I got into I2C hoping there was an easier way to convert the datasheet into usable functions, but much like using matplotlib, the easiest way is through. At least we can be thankful for the Wire.h and TinyWireM.h authors who have written the even lower-level functions for us.</p>
+<p>Cya next time!</p></body></html>
+
+
+
+    
+        <hr>
+        <p style="line-height:250%;">
+        <a class="btn btn-info" href="/tagged/electronics/">electronics</a>
+
+        
+            <a class="btn btn-info" href="/tagged/arduino/">arduino</a>
+        
+            <a class="btn btn-info" href="/tagged/attiny/">attiny</a>
+        
+        </p> 
+    
+</div>
+
+
+
+
+                    </div>
+                    <br>
+        <!-- </div> -->
+</div>
+
+
+
+
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
+<script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
+<script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>
