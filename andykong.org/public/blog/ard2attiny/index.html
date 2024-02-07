@@ -127,7 +127,7 @@ body {
     color: #FAEADB;
     overflow-x: hidden;
 
-    word-spacing: 0.5px;
+    word-spacing: 0.03em;
 }
 
 .navlinks{
@@ -311,21 +311,21 @@ code {
             <p style="font-size:0.8em;"> Published February 2, 2024</p>
 <hr>
             <html><body><p>Hello! Today I'm gonna walk you through uploading code to an ATtiny using an Arduino. This was my first time programming a microcontroller off-board, and I got most of the process following <a href="https://www.youtube.com/watch?v=TUlzOD9T3nI">this video</a>. But that video was not sufficient alone, so I'll be describing some of the extra steps in this post.</p>
-<p><img loading="lazy" alt="" src="/static/ard2attiny/0.jpeg" style="display: block; margin-left: auto;margin-right: auto;"/></p>
+<p><img loading="lazy" alt="" src="/static/ard2attiny/0.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <h1 id="ingredients">Ingredients</h1>
 <p>You'll need an ATtiny25/45/85 chip, Arduino, 6 jumper wires, a resistor + LED, and maybe a 10uF capacitor. </p>
 <h1 id="prepping-the-arduino">Prepping the Arduino</h1>
 <p>First we must flash the Arduino with the ArduinoISP sketch (found in File-&gt;Examples-&gt;11.ArduinoISP). We are using the "old style" wiring, so also uncomment line 81 in this sketch. </p>
-<p><img loading="lazy" alt="" src="/static/ard2attiny/1.png" style="display: block; margin-left: auto;margin-right: auto;"/></p>
+<p><img loading="lazy" alt="" src="/static/ard2attiny/1.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <p>We're not going to program the Arduino again, so go ahead and switch the target board to "ATtiny25/45/85" in Tools. If you don't have this option in your boards, follow the instructions in the <a href='&lt;a href="https://github.com/SpenceKonde/ATTinyCore/blob/v2.0.0-devThis-is-the-head-submit-PRs-against-this/Installation.md"&gt;https://github.com/SpenceKonde/ATTinyCore/blob/v2.0.0-devThis-is-the-head-submit-PRs-against-this/Installation.md&lt;/a&gt;'>ATtiny repo</a>. </p>
 <p>Change the programmer to "Arduino as ISP" as in the image below, and we'll be ready to go. </p>
-<p><img loading="lazy" alt="" src="/static/ard2attiny/2.png" style="display: block; margin-left: auto;margin-right: auto;"/></p>
+<p><img loading="lazy" alt="" src="/static/ard2attiny/2.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <h1 id="wiring-the-attiny">Wiring the ATtiny</h1>
 <p>Now we're going to need those jumpers. Follow this wiring diagram from the video above so we can upload code to the ATtiny</p>
 <p class="caption"> [source](https://www.youtube.com/watch?v=TUlzOD9T3nI) </p>
-<p><img loading="lazy" alt="source" src="/static/ard2attiny/3.jpeg" style="display: block; margin-left: auto;margin-right: auto;"/></p>
+<p><img loading="lazy" alt="source" src="/static/ard2attiny/3.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <p>To do the Blink sketch properly, we need to add the LED and resistor across PB0 and GND. Make sure the longer (positive) leg of the LED is on PB0. </p>
-<p><img loading="lazy" alt="" src="/static/ard2attiny/4.jpeg" style="display: block; margin-left: auto;margin-right: auto;"/></p>
+<p><img loading="lazy" alt="" src="/static/ard2attiny/4.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <h1 id="uploading-blink">Uploading Blink</h1>
 <p>If this is the first time your ATtiny is being used or you've changed any build settings, you'll need to hit Tools-&gt;Burn Bootloader. This should work with no errors, but if you get one, make sure you've uncommented that "old style wiring" line in ArduinoISP and that your wire connections are solid. </p>
 <p>Now, open the Blink example sketch. Change all instances of <code>LED_BUILTIN</code> to 0, then upload the sketch. If you have no errors, fortune smiles upon thee. Proceed to the next section. </p>
@@ -333,17 +333,17 @@ code {
 <h1 id="uploading-softwareserial">Uploading SoftwareSerial</h1>
 <p>To test any non-visual functionality, we're going to want to print debug messages over Serial. While we can't do Serial in the ATtiny hardware, we can include the SoftwareSerial library and do it anyway. The following code is derived from an example on this <a href='&lt;a href="https://www.instructables.com/ATtiny85-ATtiny84-Analog-Pins-Serial-Communication/"&gt;https://www.instructables.com/ATtiny85-ATtiny84-Analog-Pins-Serial-Communication/&lt;/a&gt;'>guide</a>, but you can use the sketch in Examples-&gt;SoftwareSerial also. </p>
 <p class="caption"> SoftwareSerial example works, though the pin numbers are all new to me </p>
-<p><img loading="lazy" alt="SoftwareSerial example works, though the pin numbers are all new to me" src="/static/ard2attiny/5.png" style="display: block; margin-left: auto;margin-right: auto;"/></p>
+<p><img loading="lazy" alt="SoftwareSerial example works, though the pin numbers are all new to me" src="/static/ard2attiny/5.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <h2>Sus method</h2>
 <p>If the ATtiny uses SoftwareSerial, you can route the TX physical pin to the Arduino's TX pin and open the Serial monitor. You should see random noise characters, but if you hold down the RESET button, you can get messages from the ATtiny to show up.</p>
 <p class="caption"> Fine for words, but holding down the RESET messed with my ADC values. </p>
-<p><img loading="lazy" alt="Fine for words, but holding down the RESET messed with my ADC values." src="/static/ard2attiny/6.png" style="display: block; margin-left: auto;margin-right: auto;"/></p>
+<p><img loading="lazy" alt="Fine for words, but holding down the RESET messed with my ADC values." src="/static/ard2attiny/6.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <p>The ATtiny's messages are scrambled when we receive them over Serial because the Arduino also uses the RX/TX pins and they're physically routed to the UART-&gt;USB converter chip. By holding down the RESET, we disable the Arduino and get to see the ATtiny messages without any problems.</p>
 <h2>Less sus method</h2>
 <p>The proper way is to get an FTDI Friend or other UART-&gt;USB converter and receive messages using that instead. </p>
-<p><img loading="lazy" alt="" src="/static/ard2attiny/7.jpeg" style="display: block; margin-left: auto;margin-right: auto;"/></p>
+<p><img loading="lazy" alt="" src="/static/ard2attiny/7.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <p>If you go this route, the ATtiny's TX goes into the FTDI Friend's  RX, and the GNDs are connected. The port will have to be changed, and the messages will be received just fine. </p>
-<p><img loading="lazy" alt="" src="/static/ard2attiny/8.jpeg" style="display: block; margin-left: auto;margin-right: auto;"/></p>
+<p><img loading="lazy" alt="" src="/static/ard2attiny/8.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <h1 id="trying-out-the-adc">Trying out the ADC</h1>
 <p>The ATtiny85 is big enough to fit a lot of the Arduino helper functions, so the <code>analogRead</code> function just works like normal. You will need to be careful to pick a pin which can receive analog, so be sure to check. Here's my code to read from pin 2 and print it to Serial. </p>
 <!-- HTML generated using hilite.me -->
@@ -371,10 +371,10 @@ SoftwareSerial <span style="color: #0066BB; font-weight: bold">mySerial</span>(R
 }
 </pre></div>
 <p class="caption"> ADC readings plotted over time </p>
-<p><img loading="lazy" alt="ADC readings plotted over time" src="/static/ard2attiny/9.png" style="display: block; margin-left: auto;margin-right: auto;"/></p>
+<p><img loading="lazy" alt="ADC readings plotted over time" src="/static/ard2attiny/9.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <h1 id="have-fun">Have fun!</h1>
 <p>Hopefully you know the basics. As <a href='&lt;a href="https://www.youtube.com/watch?v=7bZg_GzUbHI&amp;t=1771s"&gt;https://www.youtube.com/watch?v=7bZg_GzUbHI&amp;t=1771s&lt;/a&gt;'>DeepBlueMbedded</a> said, you're basically done once you get blinking.</p>
-<p><img loading="lazy" alt="" src="/static/ard2attiny/10.png" style="display: block; margin-left: auto;margin-right: auto;"/></p></body></html>
+<p><img loading="lazy" alt="" src="/static/ard2attiny/10.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p></body></html>
 
 
 

@@ -127,7 +127,7 @@ body {
     color: #FAEADB;
     overflow-x: hidden;
 
-    word-spacing: 0.5px;
+    word-spacing: 0.03em;
 }
 
 .navlinks{
@@ -312,11 +312,11 @@ code {
 <hr>
             <html><body><p>Hello! I've been collecting my <a href="../../projects/strooper">Stroop effect data</a> for about three months now, and I also have my Fitbit collecting sleep data from the whole period. A friend asked me how sleep affects my Stroop scores, and I went ahead and set up the analysis.</p>
 <p class="caption"> Stroop effect — quick, name the colors of the words </p>
-<p><img loading="lazy" alt="Stroop effect — quick, name the colors of the words" src="/static/strooper/img_1.png" style="display: block; margin-left: auto;margin-right: auto;"/></p>
+<p><img loading="lazy" alt="Stroop effect — quick, name the colors of the words" src="/static/strooper/img_1.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <h1 id="methods-and-results">Methods and Results</h1>
 <p>Here is a lot of scatterplots where my three Stroop scores (please see above link for more info) are arranged according to some sleep variables (total time in bed, sleep efficiency, time asleep, time awake), and then I do a linear regression for each one.</p>
-<p><img loading="lazy" alt="" src="/static/stroopvssleep/top.png" style="display: block; margin-left: auto;margin-right: auto;"/></p>
-<p><img loading="lazy" alt="" src="/static/stroopvssleep/bottom.png" style="display: block; margin-left: auto;margin-right: auto;"/></p>
+<p><img loading="lazy" alt="" src="/static/stroopvssleep/top.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" src="/static/stroopvssleep/bottom.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <p>I'm not just gonna throw a best-fit line on there and call it a day — I want to know how real that line is. I've also calculated a p-value which is the probability that the best-fit line slope is that value by random chance. I also <a href="https://en.wikipedia.org/wiki/Bonferroni_correction">Bonferroni-corrected</a> the threshold value, though I think this boundary is a bit arbitrary (we pick p=5% arbitarily like everyone else, then divide by 12 to Bonferroni correct. p&lt;.00416 is significant).</p>
 <h1 id="discussion">Discussion</h1>
 <p>As you can see, a few variables appear to be related (most notably Stroop score vs. sleep duration), but aren't actually by our experiment standards. I would need more data to confirm, and I only have 27 days of data because Stroop data is relatively new in my stack of tracked personal info. </p>

@@ -75,7 +75,7 @@ app.jinja_env.globals.update(dateconvert=dateconvert)
 
 @app.context_processor
 def utility_processor():
-    def add_pic(filename, captionalt, center=True):
+    def add_pic(filename, captionalt, center=True, width=100):
         # format for image:
         # < p class ="caption" > Desc < / p > ![Caption]({{url_for('static', filename='badglasses.png')}})
 
@@ -95,7 +95,8 @@ def utility_processor():
             if ("<img" in pyg):
                 # print("IMG, ", pyg)
                 imgInd = pyg.find("<img") + 4
-                centerHTML = ' style="display: block; margin-left: auto;margin-right: auto;" '
+                # centerHTML = ' style="display: block; margin-left: auto;margin-right: auto; " '
+                centerHTML = ' style="display: block; margin-left: auto;margin-right: auto; max-width: %s%%;" ' % width
                 overallString = Markup(pyg[:imgInd] + centerHTML + pyg[imgInd:])
                 # print(pyg[:imgInd], "AIDNWIN", pyg[imgInd:])
         return overallString

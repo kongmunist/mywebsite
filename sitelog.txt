@@ -3,7 +3,9 @@ TODO:
 - Make the images on the front page snap into position following a random path
 - Add a now page
 
-Feb 2, 2024 - app.py refresh clears everything :( I added a "confirm refresh" to the refresh but I think it may still happen in the future.
+Feb 7, 2024 - Added width option to add_pic jinja function. It only works when we're also centering, but we're almost always doing that.
+Feb 5, 2024  - Increased word spacing by 0.035em. I think it's barely visible but it does help. I could be psyopping myself though.
+Feb 2, 2024 - app.py refresh clears everything on refresh :( I added a "confirm refresh" to the refresh but I think it may still happen in the future.
 Jan 26, 2024 - Not sure how to add a TOC, I think it's hard to access the page filename from the page itself. p or page in a blog page returns <class 'jinja2.runtime.Undefined'>. Gonna just do it the brute force way.
 Jan 25, 2024 - Added side border to h1 and h2 like Alexey, added counters to each page. Counters will probably mess up some older posts though... Also made the font colors a bit lighter.
 Jan 15, 2024 - removed trailing slash (hopefully) from URLs to keep them unique online but they still work (hopefully). Also turned rss+xml to just xml in the rss renderer. Removed trailing slash from the sitemap.xml too using jinja string slicing in the template file. This is not graceful. Added blog word length to the main page by adding a meta param. Removed some CLS by changing the font-display to auto.

@@ -14,6 +14,47 @@
 
   
     <url>
+    <loc>https://andykong.org/projects/implantables</loc>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/implantables/img_10.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/implantables/img_11.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/implantables/img_1.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/implantables/img_9.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/implantables/img_3.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/implantables/img_7.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+    <url>
     <loc>https://andykong.org/blog/attinyrtc</loc>
       
         <image:image>

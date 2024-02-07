@@ -1,0 +1,37 @@
+
+
+
+# Motivation
+
+![img_1.png](img_1.png)
+
+I've been interested in implants since 2015. At the time, common ones were magnets (party trick, ability to feel electric fields) and RFID/NFC chips (payment, public transport card, ID card replacements). Everything was powered over wirelessly over inductive coils.
+
+![img_4.png](img_4.png)
+
+It is now 2024. We have commercial [LED implants](https://dangerousthings.com/product/xsiid/), [microcontrollers for modern ID](https://dangerousthings.com/product/flexsecure/) , and even an implanted [mini-servers](https://sapiensanonym.blogspot.com/2019/07/grindfest-2019-and-big-ol-prototype.html). Little has changed!!
+
+![img_7.png](img_7.png)
+
+# Limitations
+
+Today's implants have barely developed any new functionality compared to a decade ago, and I think the primary limitation is power delivery. Because human skin is such a good insulator against electrical fields, inductive power transfer is the only way to get enough power into a device to do anything cool electronically.
+
+I'm here to offer an alternative. Here is a demonstration video of power-over-skin. .
+
+Implants have gotten more functional, the tech has developed. But I think we still have a ways to go. One of the primary issues with such small, implanted devices is with power. But they still don't do very much. Even the implanted microcontroller simply offers a more secure and modern implementation of the old-school RFID implants.
+
+I think we need to talk about power. Existing implants rely on inductive power transfer, where electrical current travelling from an external coil couples to the implant's coil to power it. Implant applications are limited because power must be provided when the implant is in use — one-off is built-in. Some implants get around this using batteries, extending the device's on-time, but at the cost of potential leaks and larger implant volume. .
+
+
+
+
+![img_5.png](img_5.png)
+
+If you count externally anchored implants, the North Sense was released in 2017.
+![img_6.png](img_6.png)
+
+https://dangerousthings.com/product/xbt/
+
+
+{{ add_pic("headcandle/hc_hero.jpeg", "") }}
