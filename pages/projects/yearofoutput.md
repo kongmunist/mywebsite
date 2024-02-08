@@ -11,7 +11,7 @@ I always felt that if I were given free rein to follow my curiosity for a while,
 
 Now, after a year of graduate studies, I realize this will never end. I wanted security, and there is never enough security. There is always more school to finish, more money to save, more career to further before making any leap. I am going to use what I know now to sustain myself. I am going to stop sinning.
 
-{{ add_pic("yearofoutput/img_3.png", "") }}
+{{ add_pic("yearofoutput/img_4.png", "", width=75) }}
 
 <hr>
 
