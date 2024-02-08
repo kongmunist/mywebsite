@@ -18,7 +18,7 @@ Now, after a year of graduate studies, I realize this will never end. I wanted s
 # The Plan
 This year has no script. I am going to follow my curiosity and rely on my animal mind to stumble onto something good. 
 
-To save myself from sloth, I am instituting one rule — every day I will make something, anything: a video, two sentence tweet, a blog post, project milestone, a letter to a friend. If I'm not on a path to becoming self-sustaining by 2025, total freedom is not for me, and I'll go ahead and get a job like the promising young man I used to be. 
+To save myself from sloth, I am instituting one rule — every day I will post something, anything: a video, two sentence tweet, a blog post, project milestone, a letter to a friend. If I'm not on a path to becoming self-sustaining by 2025, total freedom is not for me, and I'll go ahead and get a job like the promising young man I used to be. 
 
 We are calling 2024 the Year of Output.
 
@@ -26,7 +26,7 @@ We are calling 2024 the Year of Output.
 
 # Keeping up with Andy
 
-My daily units of output will span my web presence. I will be active on YouTube, TikTok, Instagram, Medium, my website, Github, Stack Overflow, Twitter, and any other website with an audience and a post button. 
+My daily output will span my web presence. I will be active on YouTube, TikTok, Instagram, Medium, my website, Github, Stack Overflow, Twitter — any website with an audience and a post button. 
 
 You can follow along via this monthly newsletter I'm starting. I'll post a monthly progress report and retrospective, and it'll also be a good way for me to review. It'll be posted in the updated version of this blog post in a day or two. If you're reading this and there's no link, congrats on being one of the first readers of this post!
 
@@ -75,3 +75,8 @@ For accountability, I will maintain the list of outputs below, though this proje
 - Jan 31: [Project post for head candles](../../projects/headcandles)
 - Feb 1: [First newsletter!](https://ckarchive.com/b/5quvh7hvxvqk0hp5xxd52arqrl344)
 - Feb 2: [Blog post](../../blog/ard2attiny) on flashing the ATtiny
+- Feb 3: Hosted a party, showed off Grid World.
+- Feb 4: Applied to Vitalia. 
+- Feb 5: Posted YouTube video about brute-forcing Ford cars [here](https://www.youtube.com/watch?v=LdaKsLM5S64&t=1s)
+- Feb 6: Blog post [CS major's guide to I2C](../../blog/attinyrtc)
+- Feb 7: Posted about main project 1, [implantables](../../projects/implantables). Also on Twitter.
