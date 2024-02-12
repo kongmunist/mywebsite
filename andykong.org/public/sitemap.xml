@@ -14,6 +14,29 @@
 
   
     <url>
+    <loc>https://andykong.org/blog/glocfitbittzcorrection</loc>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/glocfitbittzcorrection/0.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/glocfitbittzcorrection/1.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/glocfitbittzcorrection/2.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+    <url>
     <loc>https://andykong.org/projects/implantables</loc>
       
         <image:image>

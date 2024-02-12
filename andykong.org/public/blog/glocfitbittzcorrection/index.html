@@ -8,6 +8,64 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    
+        <meta name="author" content="Andy Kong">
+        <meta name="title" content="Timezone correcting Fitbit sleep data using Google Timeline">
+        <meta name="description" content="My last post on dealing with terrible Fitbit data">
+        <meta name="keywords" content=" fitbit,  quantifiedself,  timezonecorrection, ">
+
+        <title>
+            Timezone correcting Fitbit sleep data using Google Timeline | Andy Kong
+        </title>
+    
+
+    <style>
+        body {
+            counter-reset: h1counter h2counter;
+        }
+
+        h1:not(.title) {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px groove #DBAD80;
+
+            counter-reset: h2counter;
+        }
+
+        h1:not(.title)::before {
+            counter-increment: h1counter;
+            content: counter(h1counter) ". ";
+        }
+
+/*
+        .blogpage > h2 {
+            text-decoration: underline wavy #DBAD80;
+            text-underline-thickness: 1px;
+        }
+        */
+
+        .blogpage > h2::before {
+            counter-increment: h2counter;
+            content: counter(h1counter) "." counter(h2counter) "  ";
+            /*
+            text-decoration: none;
+            display: inline-block;
+            */
+        }
+
+
+        .toc {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+            color: inherit;
+            text-decoration: none;
+        }
+
+    </style>
+
+
+
 
     <style type="text/css">
         /* Atkinson Hyperlegible */
@@ -236,137 +294,65 @@ code {
 </nav>
 
 
-<div class="row justify-content-center" style = "height:100vh; width: 100vw;padding-left:25px; padding-right:0px">
-    <div class="col-xl-3 col-lg-4 col-md-11 col-11" style="padding-left:2%; padding-right:2%;">
+    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+<!-- padding-left:20px; padding-right:20px -->
+            <div class="col-md-8 col-11 p-0" style="">
+                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
 
-        <a href="/"> <img class="media-object mx-auto d-block rounded-circle " style="margin-bottom:0px; max-height:20vh;" src="/static/merock_square.jpg"/></a>
-        <h1 class="text-center" style="font-size: 2em; margin-top:0.5em;">Hi, I'm Andy!</h1>
-        <p class="text-center"  style="font-size: 1.5em; margin-bottom:0px;"></p>
+                
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-        <div class="links text-center" style="margin:5px; font-size:2.5em;">
-            <a href="https://critiquefood.blogspot.com/" target="_blank" title="Food For Thought"><i class="fas fa-ice-cream"></i></a>&nbsp
-            <!--<a href="https://github.com/kongmunist" target="_blank" title="Github"><i class="fab fa-github-square fa-2x"></i></a>&nbsp-->
-            <!--<a href="mailto:andyking99@gmail.com" target="_blank" title="Email"><i class="far fa-paper-plane fa-2x"></i></a>&nbsp-->
-            <a href="https://www.youtube.com/channel/UC8hEr0FkB5i-gQC4b7b5fvg" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>&nbsp
-            <a href="https://kongmunist.medium.com/" target="_blank" title="Medium"><i class="fab fa-medium"></i></a>&nbsp
-            <a href="/rss.xml" title="RSS"><img src="/static/rss.svg" style = "height:1em;"></a>&nbsp
-        </div>
-<!--        <img style="background:white; padding:5px;"width="100%" src="http://ghchart.rshah.org/409ba5/kongmunist" alt="2016rshah's Github chart" />-->
-    </div>
+        
 
 
+<div class="blogpage overflow-hidden" style="margin-bottom:4em;">
+    <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Timezone correcting Fitbit sleep data using Google Timeline</h1>
+            <p style="font-size:0.8em;"> Published February 12, 2024</p>
+<hr>
+            <html><body><p>Hello friends, I purchased an Apple Watch and (hopefully) escaped from the hellhole that is the Fitbit data environment — forever!</p>
+<blockquote class="twitter-tweet" data-media-max-width="560"><p dir="ltr" lang="en">Custom Apple Watch strap that turns it into a tilted driver watch <a href="https://t.co/Ktp1nmskyw">pic.twitter.com/Ktp1nmskyw</a></p>— Andy (@oldestasian) <a href="https://twitter.com/oldestasian/status/1756578851893760155?ref_src=twsrc%5Etfw">February 11, 2024</a></blockquote>
+<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
+<p>To cap off all my Fitbit posting, I exported my data one last time and noticed that they have restructured the data and ruined my <a href="../fitbitsleeptzcorrection">stress method</a> for timezone correction, rendering all my latest data unusable. Since I've collected more Tetris and Stroop data that I wanted to correlate, I decided to try one final method that I've always thought about but never cared enough to do — syncing my Google Location with Fitbit's data to get UTC timestamps. I'll describe the steps verbally and the code will be at the end. </p>
+<h1 id="method">Method</h1>
+<p>First I loaded my Google location data with <a href="https://github.com/Scarygami/location-history-json-converter">this neat tool</a> by Scarygami which produces a massive CSV of all the longitude and latitude and everything else. Here I visualized part of it using plotly's <code>scatter_mapbox</code> function. </p>
+<p><img loading="lazy" alt="" src="/static/glocfitbittzcorrection/0.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p>From each longitude and latitude, you can get the timezone name using the Python library <a href="https://pypi.org/project/timezonefinder/">timezonefinder</a>, which works at a rate of ~2ms/1000 coordinates without needing to do GET requests. I converted the timezone strings into timezone offsets using some code from <a href="https://stackoverflow.com/questions/5537876/get-utc-offset-from-time-zone-name-in-python">this SO post</a>. </p>
+<p>Then I realized that I needed to also account for daylight savings time across two regions, Europe and America, which for some reason have DST dates that are about a week off from each other. I can't wait for them to abolish DST so I'll have to add a bool which determines if DST correction is necessary in my timezone correction pipeline /s</p>
+<p><img loading="lazy" alt="" src="/static/glocfitbittzcorrection/1.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p>Some sleep sessions have no "close" longitude/latitude coordinates, so I toss them. Close is defined arbitrarily, I use 6 hrs as my cutoff. </p>
+<p>My success rate with this method is ~60%, and most of the loss comes from me neglecting to turn on Google Timeline on my iPhone until sometime mid-2021. In total, I recovered 600+ days of <em>accurate</em> Fitbit sleep data and can now produce fun sleep graphs which I can trust. For instance, here is my true Tetris speed vs. sleep graph: </p>
+<p><img loading="lazy" alt="" src="/static/glocfitbittzcorrection/2.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p>Turns out sleep is good for you, actually.</p>
+<h1 id="code">Code</h1>
+<p>Code is provided with no guarantees or user-friendly comments. Use at your own risk, etc. etc.</p>
+<script src="https://gist.github.com/kongmunist/a4945c339b11d4e953e5e806344e42c8.js"></script></body></html>
 
-    <div class="col-xl-7 col-lg-7 col-md-11 col-11 p-0" style="">
-        <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
 
-            
-<title>
-    Posts tagged 'quantifiedself' | Andy Kong
-</title>
-    <div>
-    <h2>List of stuff tagged <em>quantifiedself</em></h2>
+
+    
         <hr>
-    
-        <ul>
+        <p style="line-height:250%;">
+        <a class="btn btn-info" href="/tagged/fitbit/">fitbit</a>
 
-    <li>
-        <a href="/blog/applescripts1/">Learning AppleScript</a>
+        
+            <a class="btn btn-info" href="/tagged/quantifiedself/">quantifiedself</a>
+        
+            <a class="btn btn-info" href="/tagged/timezonecorrection/">timezonecorrection</a>
+        
+        </p> 
     
-        | Tagged:
-        
-            <a href="/tagged/applescript/">applescript</a>
-        
-            <a href="/tagged/scripting/">scripting</a>
-        
-            <a href="/tagged/quantifiedself/">quantifiedself</a>
-        
-    
-    </li>
-
-    <li>
-        <a href="/blog/glocfitbittzcorrection/">Timezone correcting Fitbit sleep data using Google Timeline</a>
-    
-        | Tagged:
-        
-            <a href="/tagged/fitbit/">fitbit</a>
-        
-            <a href="/tagged/quantifiedself/">quantifiedself</a>
-        
-            <a href="/tagged/timezonecorrection/">timezonecorrection</a>
-        
-    
-    </li>
-
-    <li>
-        <a href="/blog/stroopvssleep/">How sleep deprivation affects my cognition</a>
-    
-        | Tagged:
-        
-            <a href="/tagged/personalinformatics/">personalinformatics</a>
-        
-            <a href="/tagged/quantifiedself/">quantifiedself</a>
-        
-            <a href="/tagged/data/">data</a>
-        
-    
-    </li>
-
-    <li>
-        <a href="/blog/replacingtiming/">Replacing Timing.app</a>
-    
-        | Tagged:
-        
-            <a href="/tagged/quantifiedself/">quantifiedself</a>
-        
-            <a href="/tagged/applescript/">applescript</a>
-        
-            <a href="/tagged/python/">python</a>
-        
-    
-    </li>
-
-    <li>
-        <a href="/blog/fitbittsproblem/">Fitbit timestamps cannot be trusted</a>
-    
-        | Tagged:
-        
-            <a href="/tagged/personalinformatics/">personalinformatics</a>
-        
-            <a href="/tagged/quantifiedself/">quantifiedself</a>
-        
-            <a href="/tagged/data/">data</a>
-        
-            <a href="/tagged/complaint/">complaint</a>
-        
-    
-    </li>
-
-    <li>
-        <a href="/blog/allmydata/">My Quantified-Self Data Stack</a>
-    
-        | Tagged:
-        
-            <a href="/tagged/quantifiedself/">quantifiedself</a>
-        
-            <a href="/tagged/personalinformatics/">personalinformatics</a>
-        
-            <a href="/tagged/data/">data</a>
-        
-            <a href="/tagged/lifelogging/">lifelogging</a>
-        
-    
-    </li>
-
-</div>
-    
-    </div>
-
-            <!-- </div> -->
-    </div>
-    <div class="col-xl-2 col-lg-1 col-0"></div>
 </div>
 
-    
+
+
+
+                    </div>
+                    <br>
+        <!-- </div> -->
+</div>
+
+
 
 
 <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->

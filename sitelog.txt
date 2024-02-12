@@ -3,6 +3,7 @@ TODO:
 - Make the images on the front page snap into position following a random path
 - Add a now page
 
+Feb 12, 2024 - fixed blog post length text bleeding over the div, thanks to https://stackoverflow.com/questions/2062258/floating-elements-within-a-div-floats-outside-of-div-why
 Feb 7, 2024 - Added width option to add_pic jinja function. It only works when we're also centering, but we're almost always doing that.
 Feb 5, 2024  - Increased word spacing by 0.035em. I think it's barely visible but it does help. I could be psyopping myself though.
 Feb 2, 2024 - app.py refresh clears everything on refresh :( I added a "confirm refresh" to the refresh but I think it may still happen in the future.

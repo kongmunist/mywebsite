@@ -12,11 +12,7 @@
 
         <h1>Thinking in Progress:</h1>
     {% for p in pages %}
-<!--        <div style="border-radius: 5px; margin-bottom:1em; margin-top:1em; background-color: #ff2222; padding: 1em;">-->
-        <div style="border-radius: 1em; margin-bottom:1em; margin-top:1em; background-color: #353939; padding: 0.75em 1.5em 0.75em 1.5em;">
-
-<!--            <hr style="margin-bottom:.2em; margin-top:1.5em;">-->
-<!--            <hr>-->
+        <div style="border-radius: 1em; margin-bottom:1em; margin-top:1em; background-color: #353939; padding: 0.75em 1.5em 0.75em 1.5em;overflow:auto">
 
     <!--    Title    -->
             <a style="float:left" href="{{ url_for("page", path=p.path) }}" >
