@@ -551,6 +551,30 @@
           </image:loc>
         </image:image>
       
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/yearofoutput/img_1.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/yearofoutput/img.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/yearofoutput/driverapplewatch.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/glocfitbittzcorrection/0.png
+          </image:loc>
+        </image:image>
+      
     </url>
   
     <url>

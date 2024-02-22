@@ -66,8 +66,9 @@ For accountability, I will maintain the list of outputs below, though this proje
 - Jan 17: main project 1, updated Strooper extension (removed colors from test buttons)
 - Jan 18: AMAZING meeting with Mr. Guzey, various logistical comms re: main project 1
 - Jan 19: Correspondence
-- Jan 20 - Jan 25: Incapacitated by personal matter.
-- Jan 26: [Blog post on main project 2](../../blog/allmydata), added counters to blog.
+- Jan 20-Jan 25: Incapacitated by personal matter.
+- Jan 26: [Blog post on main project 2](../../blog/allmydata), added chapter counters to blog.
+{{ add_pic("yearofoutput/img_1.png", "Example of the header chapter counters. I can also add a table of contents") }}
 - Jan 27: Part selection + started PCB for main project 1 rev3.
 - Jan 28: Ordered new PCBs + parts for main project 1. Made pesto pasta.
 - Jan 29: Comms
@@ -77,6 +78,18 @@ For accountability, I will maintain the list of outputs below, though this proje
 - Feb 2: [Blog post](../../blog/ard2attiny) on flashing the ATtiny
 - Feb 3: Hosted a party, showed off Grid World.
 - Feb 4: Applied to Vitalia. 
-- Feb 5: Posted YouTube video about brute-forcing Ford cars [here](https://www.youtube.com/watch?v=LdaKsLM5S64&t=1s)
+- Feb 5: [YouTube video](https://www.youtube.com/watch?v=LdaKsLM5S64&t=1s) about brute-forcing Ford cars 
+{{ add_pic("yearofoutput/img.png", "") }}
 - Feb 6: Blog post [CS major's guide to I2C](../../blog/attinyrtc)
 - Feb 7: Posted about main project 1, [implantables](../../projects/implantables). Also on Twitter.
+- Feb 8: Comm with RF wizard
+- Feb 9: Applied for Flux Capacitor, a 1517 grant
+- Feb 10: Driver Apple Watch [tweet](https://twitter.com/oldestasian/status/1756578851893760155)
+{{ add_pic("yearofoutput/driverapplewatch.png", "") }}
+- Feb 11: ___
+- Feb 12: Last blog post on Fitbit timezone correction, this time using Google location data. [Link](../../blog/glocfitbittzcorrection)
+{{ add_pic("glocfitbittzcorrection/0.png", "") }}
+- Feb 13: Looked into potential research collab
+- Feb 14-21: Trip to [Vitalia.city](vitalia.city) and [shitposted a bit](https://twitter.com/oldestasian/status/1760185015218872437).
+- Feb 22:
+- Feb 23-28: Trip to Boston

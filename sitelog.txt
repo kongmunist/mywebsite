@@ -1,7 +1,8 @@
 TODO:
-- make GIFs into videos
+- make project GIFs into videos, better compression and they look better
 - Make the images on the front page snap into position following a random path
 - Add a now page
+- maybe remove the chapter headers from blog posts where the table of contents doesn't exist?
 
 Feb 12, 2024 - fixed blog post length text bleeding over the div, thanks to https://stackoverflow.com/questions/2062258/floating-elements-within-a-div-floats-outside-of-div-why
 Feb 7, 2024 - Added width option to add_pic jinja function. It only works when we're also centering, but we're almost always doing that.
