@@ -14,6 +14,65 @@
 
   
     <url>
+    <loc>https://andykong.org/blog/vitalia1</loc>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/vitalia1/0.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/vitalia1/2.jpeg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/vitalia1/3.jpeg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/vitalia1/4.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/vitalia1/5.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/vitalia1/6.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/vitalia1/7.jpeg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/vitalia1/8.jpeg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/vitalia1/9.jpg
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+    <url>
     <loc>https://andykong.org/blog/glocfitbittzcorrection</loc>
       
         <image:image>
@@ -572,6 +631,12 @@
         <image:image>
           <image:loc>
             https://andykong.org/static/glocfitbittzcorrection/0.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/yearofoutput/vitalia.png
           </image:loc>
         </image:image>
       

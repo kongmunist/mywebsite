@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- <title>
+    Andy Kong!
+</title> -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+        <meta name="author" content="Andy Kong">
+        <meta name="title" content="My Vitalia Experience">
+        <meta name="description" content="Seven days in a city trying to usurp death">
+        <meta name="keywords" content=" vitalia, ">
+
+        <title>
+            My Vitalia Experience | Andy Kong
+        </title>
+    
+
+    <style>
+        body {
+            counter-reset: h1counter h2counter;
+        }
+
+        h1:not(.title) {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px groove #DBAD80;
+
+            counter-reset: h2counter;
+        }
+
+        h1:not(.title)::before {
+            counter-increment: h1counter;
+            content: counter(h1counter) ". ";
+        }
+
+/*
+        .blogpage > h2 {
+            text-decoration: underline wavy #DBAD80;
+            text-underline-thickness: 1px;
+        }
+        */
+
+        .blogpage > h2::before {
+            counter-increment: h2counter;
+            content: counter(h1counter) "." counter(h2counter) "  ";
+            /*
+            text-decoration: none;
+            display: inline-block;
+            */
+        }
+
+
+        .toc {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+            color: inherit;
+            text-decoration: none;
+        }
+
+    </style>
+
+
+
+
+    <style type="text/css">
+        /* Atkinson Hyperlegible */
+        /* latin-ext
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          src: url("/static/atkhyp_latext.woff2") format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        } */
+        /* latin */
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          src: url("/static/atkhyp_lat.woff2") format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+
+        /* Ubuntu */
+        /* latin-ext
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          src: url("/static/ubuntu_latext.woff2") format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        } */
+        /* latin */
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          src: url("/static/ubuntu_lat.woff2") format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+    </style>
+
+    <!-- Bootstrap -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap.min.css">
+
+    <script src="/static/fontawesome.js" defer></script>
+    <!-- <script src="https://kit.fontawesome.com/c62dcd5933.js"></script> -->
+
+    <!-- Instant Page inlined - source is instant.page/5.1.0 -->
+    <script src="/static/instantpage-5.1.0.js" type="module" defer></script>
+
+
+
+
+    <style>
+body {
+    background: #202222;
+    font-size: 1.2em;
+    font-family: 'Ubuntu', sans-serif;
+    color: #FAEADB;
+    overflow-x: hidden;
+
+    word-spacing: 0.03em;
+}
+
+.navlinks{
+    font-family: 'Atkinson Hyperlegible';
+    font-size: 1.2em;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: "Atkinson Hyperlegible";
+}
+
+
+a {
+    transition: color .2s linear;
+    color:#00B4CC;
+}
+
+a:hover {
+    color:#00DFFC;
+    text-decoration: none;
+}
+
+.navbar-custom {
+    font-size: 22px;
+    background-color: #202222 !important;
+}
+
+.navbar-custom .navbar-brand{
+    font-size: 30px;
+    color: #00dffc !important;
+}
+
+.navbar-custom .navitem{
+    color:#00dffc !important;
+}
+
+.navitem:hover{
+    color:#00b4cc !important;
+    text-decoration: none;
+}
+
+.hidden{
+  display: none;
+}
+
+.navbar-toggler-icon {
+  border: none;
+  outline: none;
+}
+
+.caption{
+    font-size:12px;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: .2em;
+    margin-top: 1em;
+}
+
+.projectpage img{
+    max-width: 100%;
+    max-height: 50vh;
+    height: auto;
+    width: auto;
+}
+
+.blogpage img{
+    max-width: 100%;
+    max-height: 50vh;
+    height: auto;
+    width: auto;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+.blogpage h1, .blogpage h2{
+    color: #E0B890;
+}
+
+.projectpage h1, .projectpage h2{
+    color: #E0B890;
+}
+
+hr{
+    background-color:white !important;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+
+.youtubevideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+code {
+  font-family: Consolas,"courier new";
+  color: #110000;
+  background-color: #FAEADB;
+  padding: 2px;
+  font-size: 105%;
+}
+
+</style>
+
+    <link rel="icon" type="image/png" href=" /static/aklogo.png " />
+
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YNX5JQZWHT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YNX5JQZWHT');
+</script>
+<script data-goatcounter="https://kong.goatcounter.com/count"
+                    async src="//gc.zgo.at/count.js"></script>
+    
+</head>
+
+
+
+<body style="">
+
+
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
+      <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
+          </span>
+        </i>
+    </button>
+
+    <div class="collapse navbar-collapse " id="navbarSupportedContent" style="margin-left:25px;margin-top:10px">
+        <ul class="navbar-nav ml-auto navlinks">
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/static/AndyKongCV.pdf ">CV/Resume</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://github.com/kongmunist" target="_blank" title="Github">GitHub</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://twitter.com/oldestasian" target="_blank" title="Twitter">Twitter</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="mailto:andyking99@gmail.com" target="_blank" title="Email">Email</a>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/blog/">[Blog]</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+<!-- padding-left:20px; padding-right:20px -->
+            <div class="col-md-8 col-11 p-0" style="">
+                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
+
+                
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        
+
+
+<div class="blogpage overflow-hidden" style="margin-bottom:4em;">
+    <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">My Vitalia Experience</h1>
+            <p style="font-size:0.8em;"> Published February 23, 2024</p>
+<hr>
+            <html><body><p>Hello. I just got back from Vitalia, a pop-up city in Prospera, a special economic zone (ZEDE) on Roatán, an island which fields a lot of cruise ship tourists and is part of the nation of Honduras, a country consisting of AT LEAST 99 islands. </p>
+<p><img loading="lazy" alt="" src="/static/vitalia1/0.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p>I'm going to show some highlights and work through a "should I go to Vitalia-like thing in the future" scenario with you.</p>
+<p>Generally, Vitalia felt like a vacation amongst like-minded people. I came during an off-week, so there wasn't a ton of networking or talks going on, but this gave me more time to have good conversations with people with mutual rare interests. I think it's worth going for an on-week, but off-week it's just a very casual gathering + vacation.</p>
+<hr/>
+<h1 id="highlights">Highlights</h1>
+<h2>People</h2>
+<ul>
+<li>
+<p>It surprised me that many people were in their 30s and 40s — I suppose this is when the "I'm gonna die but I'm having too much fun rn" urge kicks in? Towards the end, a few undergraduate students flew in for the conference week, but I did not meet anyone near my age. </p>
+</li>
+<li>
+<p>I came to Vitalia looking for fellow builders. Without counting business builders, these are a rare breed at Vitalia — I'd say only 4 out of the ~50 people I met. I broke in the soldering iron in the Augmentation Lab (first!!), and I came in the 6th week of Vitalia being open.</p>
+</li>
+</ul>
+<p class="caption"> Underutilized electronics workshop at Vitalia </p>
+<p><img loading="lazy" alt="Underutilized electronics workshop at Vitalia" src="/static/vitalia1/2.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<ul>
+<li>There are lots of Quantified Self people, nootropics people, and implant people. These fit my interests pretty well, so I enjoyed talking to these people — I've never found as dense a population as Vitalia. While I was there, the Biohacker DAO ran an intranasal insulin vs. cognition study and let anyone try their hand at analyzing the data. My roommate was into nootropics, and had purchased and tried many of the compounds I asked him about. And the Augmentation Lab, ran by Cassox of <a href="https://augmentationlimitles.ipage.com/">Augmentation Limitless</a> always had a couple cyborgs hanging out that would entertain fun conversations on transhumanism. </li>
+</ul>
+<p class="caption"> Cognitive enhancement / longevity substances table. Only legal stuff of course, and a ton of olive oil. </p>
+<p><img loading="lazy" alt="Cognitive enhancement / longevity substances table. Only legal stuff of course, and a ton of olive oil." src="/static/vitalia1/3.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<ul>
+<li>
+<p>There were also many crypto people. During my stay, there was some kind of fundraiser on Gitcoin for Vitalia which used "quadratic funding" to match donations, and several people were fully interested in making useful cryptocurrencies. I find it hard to talk to those people, but I did like seeing real-world use cases for cryptocurrency. Even then, I thought many of the Gitcoin projects were stupid — IMO, creating some dashboard or display or status token should not require much crowdfunding.</p>
+</li>
+<li>
+<p>Everyone knows everything about Bryan Johnson and his penis. His olive oil takes up half the medicine table — I ate that for lunch most days since it was free. It leaves a spicy feeling in the throat. Since I never drink other olive oil straight, I don't have anything to compare it to, but I did feel satiated afterwards. In high school I tried a tablespoon of medium chain triglycerides (MCTs, fancy oil for your brain promoted by BulletProof coffee guy), which left me on the toilet for a few painful hours — trying the same with olive oil set off warning bells in my head, but nothing happened. </p>
+</li>
+<li>
+<p>Since I went for an off-week, not many short-term people were around and there weren't many planned events. Consequently, I saw everyone going into the gym at least once, every day. Even I went, spurred by my roommate to train just a muscle group a day. We all know how effectively these gateway drugs work, and soon I was spending an hour a day lifting smelly heavy objects with him. Please don't think I'm complaining — I enjoy feeling sore and working out, but weights are always smelly and usually heavy. </p>
+</li>
+</ul>
+<p class="caption"> One of the talks, History of Cybernetics, hosted by Cass and Fraiz </p>
+<p><img loading="lazy" alt="One of the talks, History of Cybernetics, hosted by Cass and Fraiz" src="/static/vitalia1/4.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<ul>
+<li>Most longevity people focused on genetic stuff, altering aging or improving cognition at the DNA level (I think this approach comes from watching Aubrey de Grey?). I find this approach a bit long-winded — highly skeptical that simply switching a fetus's SNPs to the slightly higher IQ ones would lead to any benefit in intelligence without causing some awful incidental genetic mutations. Price of progress or avoidable folly?</li>
+</ul>
+<h2>Honduras</h2>
+<p><img loading="lazy" alt="" src="/static/vitalia1/5.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<h3>Climate</h3>
+<ul>
+<li>
+<p>Man, I've lived somewhere cold for the past 6 years (Pittsburgh then Boston then SF then Seattle then Chicago then Zurich) — it is NICE to go outside wearing only a t-shirt. And pants and stuff, but I mean the one-thin-layer thing. Very comfy aside from the sweat and the AC being too cold sometimes. </p>
+</li>
+<li>
+<p>Oh yea, and I forgot there are also a lot of bugs in warm places. My first night I thought "oh it's so warm, let's sleep on the patio" — woke up when it started pouring, and noticed like 30-some bug bites all over my feet. I had been warned of the sand flies, but I looked with my flashlight whenever I felt something and never saw anything. My roommate referred to these creatures as "no-see-ems".</p>
+</li>
+<li>
+<p>It is beautiful on the island. Birds are making calls I've never heard (there's one that does a proper <a href="https://en.wikipedia.org/wiki/Chirp">chirp</a> like the signals concept), coral reefs that you can just kayak to and look at, and crazy tropical fish. It's interesting to me that fish can be all sorts of gaudy neon colors while birds are advised to be more camoflagued. Also, I didn't notice sexual dimorphism in the fish, which is definitely a phenomena in many bird species (I remember reading that male ducks are shinier so they can distract predators from the female ducks). Possibly this is because the mother fish is not needed for the fish babies to survive, unlike in birds, so fish don't if one sex of adults takes the hit more often.</p>
+</li>
+</ul>
+<p class="caption"> Weird pirates everywhere in my hotel </p>
+<p><img loading="lazy" alt="Weird pirates everywhere in my hotel" src="/static/vitalia1/6.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<h3>Food</h3>
+<ul>
+<li>Food is not cheap. At the resort you have an option of three places, and all the food is... dry? This is the word I'm going with. I felt like all the food I ate parched me. Their rice contains less water than I'm used to, beans are dry, meat is usually dry, fish (fried) is dry. The last day I had a pasta with lobster, that meal really felt good and wet.</li>
+</ul>
+<p class="caption"> We have the same ramen at home, except not the shrimp flavored one. I bought one of those to try </p>
+<p><img loading="lazy" alt="We have the same ramen at home, except not the shrimp flavored one. I bought one of those to try" src="/static/vitalia1/7.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<ul>
+<li>The grocery store nearest my hotel stocked a lot of American goodies, possibly for the tourists to feel at home. I saw several Kirkland branded things, and many familiar canned goods. This kinda took away the appeal of shopping at a local store, but I did find a few items to enjoy. Particularly, this brand of "drinkable" yogurt. The yogurt is basic cup-yogurt consistency in a large water bottle form-factor, and it's delicious though hard to drink. Prices mostly match US groceries. </li>
+</ul>
+<p><img loading="lazy" alt="" src="/static/vitalia1/8.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<h3>Random</h3>
+<ul>
+<li>
+<p>On Roatán, transportation is spotty (flag a taxi and haggle, or flag the bus and haggle, or walk) and WiFi is mid (people complained they couldn't videoconference). I experienced my first rotten egg while cooking one night, which stank up the cooking area and temporarily took my pan out of commission. I float-tested the rest of the eggs and set aside any that even stood up in the water. Luckily I only had one bad egg, and most of the standing ones were ok too (just yolk disintegrated instead of in one blob)</p>
+</li>
+<li>
+<p>Because there is so much tourism, everyone takes payment in USD but gives change in Honduran Limperas so you WILL get a chance to collect bills as souvenirs. No coins due to 1 Limpera = 4 cents</p>
+</li>
+</ul>
+<h1 id="longer-term">Longer term</h1>
+<ul>
+<li>
+<p>I acquired a long reading list through my conversations that I need to work through — I imagine this will be arduous scientific stuff. Some people recommended me various longevity supplements which I'll read more about. </p>
+</li>
+<li>
+<p>I met the implant folks at AugLim, showed them my <a href="../../projects/implantables">demo</a> and joined their Discord group. Hopefully we'll be able to work together synergistically in the future once I get the power delivery sorted out.</p>
+</li>
+<li>
+<p>Quantified Self people made a nice group chat, this will be a neat place to post personal analyses (maybe?) and get feedback or inspiration on self-experiments</p>
+</li>
+<li>
+<p>I got a lot of SF connections so hopefully finding a group house will be easier. </p>
+</li>
+<li>
+<p>Several people asked me to help their project with some electronics, this will fund the Year further. </p>
+</li>
+<li>
+<p>I'm now considering incorporating just so what I'm doing is more legible to other people. When I tell people I'm taking a gap to work on personal projects, sometimes I see them assume I'm just doing nothing and having fun. But that's not the case — I am working hard on stuff I think is useful, I'm just not employed and this is not a startup and it's not a research project. Open-endedness is difficult for people to understand, and even harder for me to convey. So maybe startup? </p>
+</li>
+<li>
+<p>Oh, and I made a great friend :)</p>
+</li>
+</ul>
+<p class="caption"> My new friend James </p>
+<p><img loading="lazy" alt="My new friend James" src="/static/vitalia1/9.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p></body></html>
+
+
+
+    
+        <hr>
+        <p style="line-height:250%;">
+        <a class="btn btn-info" href="/tagged/vitalia/">vitalia</a>
+
+        
+        </p> 
+    
+</div>
+
+
+
+
+                    </div>
+                    <br>
+        <!-- </div> -->
+</div>
+
+
+
+
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
+<script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
+<script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>
