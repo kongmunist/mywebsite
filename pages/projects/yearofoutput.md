@@ -91,6 +91,6 @@ For accountability, I will maintain the list of outputs below, though this proje
 {{ add_pic("glocfitbittzcorrection/0.png", "") }}
 - Feb 13: Looked into potential research collab
 - Feb 14-21: Trip to [Vitalia.city](vitalia.city) and [shitposted a bit](https://twitter.com/oldestasian/status/1760185015218872437).
-- Feb 22: Post about [Vitalia](../../blog/vitalia)
-{{ add_pic("yearofoutput/vitalia.png", "") }}
+- Feb 22: Post about [Vitalia](../../blog/vitalia1)
+{{ add_pic("vitalia1/9.jpg", "") }}
 - Feb 23-28: Trip to Boston
