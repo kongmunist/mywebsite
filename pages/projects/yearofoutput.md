@@ -61,7 +61,7 @@ For accountability, I will maintain the list of outputs below, though this proje
 - Jan 12: Shots for 18-wheeler-tailgating video.
 - Jan 13: Planning - big sheet
 - Jan 14: Website update (added word count to blog posts) 
-- Jan 15: New circuit. Blog post about Fitbit's terrible data practices [(here)](../fitbittsproblem)
+- Jan 15: New circuit. Blog post about Fitbit's terrible data practices [(here)](../../blog/fitbittsproblem)
 - Jan 16: main project 1
 - Jan 17: main project 1, updated Strooper extension (removed colors from test buttons)
 - Jan 18: AMAZING meeting with Mr. Guzey, various logistical comms re: main project 1
@@ -91,6 +91,20 @@ For accountability, I will maintain the list of outputs below, though this proje
 {{ add_pic("glocfitbittzcorrection/0.png", "") }}
 - Feb 13: Looked into potential research collab
 - Feb 14-21: Trip to [Vitalia.city](vitalia.city) and [shitposted a bit](https://twitter.com/oldestasian/status/1760185015218872437).
+    - 14: Arrived, met James and Rochelle
+    - 15: Met Fraiz and Cass, demo'd power over skin
+    - 17: Explored West End
+    - 18: Meat Dinner, met colonist.io guy
+    - 19: Designed implantables rev4
+    - 20: Talked with Fraiz and Cass about possible apps given power constraints. Kayaking with friends
+    - 21: Left
 - Feb 22: Post about [Vitalia](../../blog/vitalia1)
 {{ add_pic("vitalia1/9.jpg", "") }}
 - Feb 23-28: Trip to Boston
+    - 23: Went to NTBOS event, met Max
+    - 24: Free lunch @ Harvard
+    - 25: Met K and talked about beetles
+    - 26: Blink detector [tweet](https://twitter.com/oldestasian/status/1762341673638469972)
+    - 27: Saw Adrian, King Dashboard discussion
+    - 28: Blink rate vs Tetris/Twitter [tweet](https://twitter.com/oldestasian/status/1762868017719894149)
+
