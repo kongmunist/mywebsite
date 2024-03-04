@@ -35,7 +35,8 @@ You can follow along via this monthly newsletter I'm starting. I'll post a month
 </div>
 
 <br>
-I'm also considering starting a Patreon/Kofi. I'm hesitant because I'm planning to work on a variety of things, and my perception of Patreon is that it's more for fans of people working in only one topic for a sustained period. I also don't know how I feel about private content, but it could make for an interesting little subsection of community. If I do start one, it will be posted below. 
+# Supporting Andy
+I started a Patreon, you can subscribe [here](https://www.patreon.com/AndyKongYearOfOutput)! I just need 300 people who think I'm cool and want to give me money every month, and then I can do this forever.
 
 <hr>
 
@@ -98,7 +99,7 @@ For accountability, I will maintain the list of outputs below, though this proje
     - 19: Designed implantables rev4
     - 20: Talked with Fraiz and Cass about possible apps given power constraints. Kayaking with friends
     - 21: Left
-- Feb 22: Post about [Vitalia](../../blog/vitalia1)
+- Feb 22: Post about [Vitalia](../../blog/vitalia1\)
 {{ add_pic("vitalia1/9.jpg", "") }}
 - Feb 23-28: Trip to Boston
     - 23: Went to NTBOS event, met Max
@@ -107,4 +108,9 @@ For accountability, I will maintain the list of outputs below, though this proje
     - 26: Blink detector [tweet](https://twitter.com/oldestasian/status/1762341673638469972)
     - 27: Saw Adrian, King Dashboard discussion
     - 28: Blink rate vs Tetris/Twitter [tweet](https://twitter.com/oldestasian/status/1762868017719894149)
-
+- Feb 29: .
+- Mar 1: Arm-to-arm power delivery working, thanks Chris. Also emailed several people
+- Mar 2: Created a [patreon](https://www.patreon.com/AndyKongYearOfOutput), so far zero dollars.
+- Mar 3: [February Newsletter](https://ckarchive.com/b/gkunh5hd92d0ehzodd9oku5xlkv99)
+- Mar 4: 
+- 
