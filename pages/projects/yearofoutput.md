@@ -112,5 +112,11 @@ For accountability, I will maintain the list of outputs below, though this proje
 - Mar 1: Arm-to-arm power delivery working, thanks Chris. Also emailed several people
 - Mar 2: Created a [patreon](https://www.patreon.com/AndyKongYearOfOutput), so far zero dollars.
 - Mar 3: [February Newsletter](https://ckarchive.com/b/gkunh5hd92d0ehzodd9oku5xlkv99)
-- Mar 4: 
-- 
+- Mar 4: [Blog post about BPW34 and light transmittance of skin](../../blog/testingbpw34/)
+- Mar 5: Collected some data on reading speed, i.e. I read a book for fun. 
+- Mar 6: [Tweeted](https://twitter.com/oldestasian/status/1765444975482044506) about a neat trick for dropping 5V to 3.3V using a red LED 
+- Mar 7: Migrated project logging to Scrintal
+- Mar 8: [Tweeted](https://twitter.com/oldestasian/status/1766163357512749314) about Tetris speed and humidity levels
+- Mar 9: Some creepy [demos](https://twitter.com/oldestasian/status/1766621313437987057) made on Vision Pro as part of a hackathon, day 1.
+- Mar 10: Numerous [tweets](https://twitter.com/oldestasian/status/1767017445620146605) about the Vision Pro Hackathon, day 2.
+- Mar 11: [Medium post](https://kongmunist.medium.com/how-to-set-up-hand-tracking-on-apple-vision-pro-54b7439f888b)) about how to build my Vision Pro Hands demo
