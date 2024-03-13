@@ -310,28 +310,29 @@ code {
     <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Apple Vision Pro Hackathon: A Retrospective</h1>
             <p style="font-size:0.8em;"> Published March 13, 2024</p>
 <hr>
-            <html><body><p>Hello! Last weekend I hosted an Apple Vision Pro Hackathon (aka AVP Hackathon), which simply entailed asking everyone I knew if I could borrow a Vision Pro and then asking everyone if they wanted to develop on it for a couple days.</p>
-<p><img loading="lazy" alt="" src="/static/avph_reflection/0.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
-<p>I think hackathons are a good event for colleges since full-time coders are usually too world-weary to also spend their weekends coding. Nonetheless, I picked a bad time to ask, since I mostly knew researchers and we're a month shy of the next big conference deadline. Anyway, somehow I got a crew of four people and we spent 48 hours building apps and demos for the AVP.</p>
-<p>The main goal was to write app that would make you want to wear the AVP (the most useful are screen-mirroring and web browsing). We also had a rule that someone had to be wearing the AVP at all times —  in the end, this didn't even need enforcing because we were iterating so fast that someone always needed it. In the end, we made 3.5 working apps, which is a pretty good hitrate. </p>
-<div class="toc"><h2 id="table-of-contents" style="margin:0px;">Table of Contents</h2>1. <a href="#day-1">Day 1 </a><br/>2. <a href="#day-2">Day 2</a><br/>3. <a href="#demos">Demos</a><br/>4. <a href="#takeaways">Takeaways</a><br/>   4.1 <a href="#real-device-stuff">Real device stuff</a><br/>   4.2 <a href="#coding-in-swift">Coding in Swift</a><br/>   4.3 <a href="#dev-community">Dev community</a><br/>   4.4 <a href="#idealogical-feedback">Idealogical feedback</a><br/>5. <a href="#conclusion">Conclusion</a><br/></div>
+            <html><body><p>If you have a Vision Pro we could borrow and live in/near Pittsburgh and are free before May 2024, I would be interested in hosting this hackathon again. Please email/DM me if you'd like that, and we can make it happen :)</p>
 <hr/>
-<p>If you have a Vision Pro we could borrow and live in/near Pittsburgh, I would be interested in hosting this hackathon again. Please email/DM me if you'd like that, and we can make it happen :)</p>
+<p>Hello! Last weekend I hosted an Apple Vision Pro Hackathon (aka AVP Hackathon), which simply entailed asking everyone I knew if I could borrow a Vision Pro and then asking everyone if they wanted to develop on it for a couple days.</p>
+<p><img loading="lazy" alt="" src="/static/avph_reflection/0.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p>I think hackathons are a good event for colleges since full-time coders are usually too world-weary to also spend their weekends coding. Nonetheless, I picked a bad time to ask, since I mostly knew researchers and we're a month shy of the next big conference deadline. </p>
+<p>Anyway, somehow I got a crew of four people and we spent 48 hours building apps and demos for the AVP. The main goal was to write app that would make you want to wear the AVP (the most useful are screen-mirroring and web browsing). </p>
+<p>We also had a rule that someone had to be wearing the AVP at all times —  in the end, this didn't even need enforcing because we were iterating so fast that someone always needed it. In the end, we made 3.5 working apps, which is a pretty good hitrate. </p>
+<div class="toc"><h2 id="table-of-contents" style="margin:0px;">Table of Contents</h2>1. <a href="#day-1">Day 1 </a><br/>2. <a href="#day-2">Day 2</a><br/>3. <a href="#demos">Demos</a><br/>4. <a href="#takeaways">Takeaways</a><br/>   4.1 <a href="#real-device-stuff">Real device stuff</a><br/>   4.2 <a href="#coding-in-swift">Coding in Swift</a><br/>   4.3 <a href="#dev-community">Dev community</a><br/>   4.4 <a href="#idealogical-feedback">Idealogical feedback</a><br/>5. <a href="#conclusion">Conclusion</a><br/></div>
 <hr/>
 <h1 id="day-1">Day 1</h1>
 <p>Started at 10am, got to the space around 10:30am. I provided beverages and coffee.</p>
-<p><img loading="lazy" alt="" src="/static/avph_reflection/1.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" src="/static/avph_reflection/1.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <p>We spent most of the day learning Swift. I made and loaded a custom 3D model and then tried to write custom gestures that would spawn/move it around. </p>
-<p><img loading="lazy" alt="" src="/static/avph_reflection/2.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" src="/static/avph_reflection/2.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <p>I cribbed the head/hand tracking from a <a href="https://github.com/FlipByBlink/HandsRuler">Hand Ruler</a> app, then kept cutting the code down until I could understand all of it. I think everyone else had a very similar process, since the default examples that Apple provides are too full-featured to just illustrate single concepts at a time. </p>
-<p><img loading="lazy" alt="" src="/static/avph_reflection/3.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" src="/static/avph_reflection/3.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <p>The AVP is meant to be a single-user device, so it doesn't let you do screen mirroring unless the same user is signed into both the Macbook and the AVP. In order to avoid taking off the headset every time we uploaded code, we spent a lot of time looking through the AVP cameras at our screens trying to make small edits. This is really close to the limit of what the AVP's AR resolution is capable of, and this process would've been much more comfortable if we could just project our displays into AVP space.</p>
 <p>When we wrapped up the day, everyone sort-of understood the Swift structure and had run some example code already. The language is pretty straightforward, and the code completions in the Xcode IDE are more full-featured than any IDE I've used before.</p>
 <h1 id="day-2">Day 2</h1>
 <p>Late start, 11:30am. My roommate had some group project to work on in the morning, and everyone else woke up late.</p>
+<p><img loading="lazy" alt="" src="/static/avph_reflection/4.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <p>Someone else finished their teardown of an example, and made an app where the press of a button opens an immersive video. I finished wrapping up all my code into a simple demo app (<a href="https://github.com/kongmunist/Vision-Pro-Head-Hand-Tracking-Demo">on github here!</a>) and started working on custom gesture recognition. </p>
-<p><img loading="lazy" alt="" src="/static/avph_reflection/4.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
-<blockquote class="twitter-tweet"><p dir="ltr" lang="tl">Italian simulator <a href="https://t.co/TqmlcglZLM">pic.twitter.com/TqmlcglZLM</a></p>— Andy (@oldestasian) <a href="https://twitter.com/oldestasian/status/1767012032132616565?ref_src=twsrc%5Etfw">March 11, 2024</a></blockquote>
+<blockquote class="twitter-tweet tw-align-center"><p dir="ltr" lang="tl">Italian simulator <a href="https://t.co/TqmlcglZLM">pic.twitter.com/TqmlcglZLM</a></p>— Andy (@oldestasian) <a href="https://twitter.com/oldestasian/status/1767012032132616565?ref_src=twsrc%5Etfw">March 11, 2024</a></blockquote>
 <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
 <p>Gestures have no helper functions. Even in the [Happy Beam demo] provided by Apple, to check that the user has formed a heart-shaped hand gesture they just calculate the distance between specific hand joints and use some smoothing to make it a bit nicer looking. I wrote some functions like <code>closeTo(jointnames, threshold)</code> to make simple gestures easy to implement, then used them to detect this Italian pinched fingers gesture. </p>
 <p>By ~3am, everyone had finished their app to a point where we could film it. Due to daylight savings, we thought it was an hour later.</p>
@@ -351,7 +352,7 @@ code {
 <p>Lighter demo like the early iPod apps</p>
 </li>
 </ul>
-<blockquote class="twitter-tweet" data-media-max-width="560"><p dir="ltr" lang="en">Throwback lighter app, made on the <a href="https://twitter.com/hashtag/AppleVisionPro?src=hash&amp;ref_src=twsrc%5Etfw">#AppleVisionPro</a> <a href="https://t.co/y3sJr8NvB9">pic.twitter.com/y3sJr8NvB9</a></p>— Andy (@oldestasian) <a href="https://twitter.com/oldestasian/status/1767978456908968044?ref_src=twsrc%5Etfw">March 13, 2024</a></blockquote>
+<blockquote class="twitter-tweet tw-align-center" data-media-max-width="560"><p dir="ltr" lang="en">Throwback lighter app, made on the <a href="https://twitter.com/hashtag/AppleVisionPro?src=hash&amp;ref_src=twsrc%5Etfw">#AppleVisionPro</a> <a href="https://t.co/y3sJr8NvB9">pic.twitter.com/y3sJr8NvB9</a></p>— Andy (@oldestasian) <a href="https://twitter.com/oldestasian/status/1767978456908968044?ref_src=twsrc%5Etfw">March 13, 2024</a></blockquote>
 <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
 <p>(I don't have all the videos yet so this list will be updated with the missing ones later)</p>
 <h1 id="takeaways">Takeaways</h1>
