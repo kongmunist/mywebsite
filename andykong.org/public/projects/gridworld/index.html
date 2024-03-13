@@ -287,14 +287,14 @@ code {
 <a href="https://aksuper7.pythonanywhere.com/gridworld" target="_blank">bit.ly/andygrid</a></p>
 <p><br/></p><hr/>
 <h1 id="technical-details">Technical Details</h1>
-<h2>Hardware</h2>
+<h2 id="hardware">Hardware</h2>
 <p>The hardware is only minimally interesting. The matrix is an RGB display panel, typically seen making up large indoor screens in malls or airports. Drawing on the matrix is handled by a Raspberry Pi with a special hat made by Adafruit that makes controlling the screen easy. The Pi is connected to the internet via a USB WiFi dongle, and polls the web canvas's server every few seconds to get the real-time state of Grid World.</p>
 <p class="caption"> The Raspberry Pi + Hat, dongle, power supply, and RGB display </p>
 <p><img alt="The Raspberry Pi + Hat, dongle, power supply, and RGB display" src="/static/gw_hardwarebuild.JPG" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
-<h2>Software</h2>
+<h2 id="software">Software</h2>
 <p>For the website to work properly across multiple users at once, I am calling fetch every few seconds from the client-side since my hosting provider does not allow any real-time messaging like Websockets or Server-Sent Events. To avoid conflicting states, I am using a changes-only <a href="https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type">CRDT</a> model on the server. Users can only push updates to pixels, and cannot overwrite the server's grid with their own. The current Grid World canvas is saved to disk every 5 seconds if any edits were made, and the server's python instance maintains the true grid in memory. </p>
 <p><img alt="" src="/static/gw_website.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
-<h2>Social Considerations</h2>
+<h2 id="social-considerations">Social Considerations</h2>
 <p>I also had to add some social barriers. In Grid World, drawing is done by clicking, but when debugging I wrote code which allowed drawing via mouse hold-and-drag. When deploying the website, I left this in the code and some people uncommented it for extra privileges. This quickly creates ugly noise marks over everything, so I removed that bit of code. I also had to add a rate limit because within a week the first bots were already being annoying — erasing people's work and filling the whole canvas with a single color. </p>
 <p class="caption"> Camera feed of the physical Grid World </p>
 <p><img alt="Camera feed of the physical Grid World" src="/static/gw_camerafeed.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
@@ -302,11 +302,11 @@ code {
 Because the camera uses an open endpoint in the server, I added an auth key so only my raspberry pi can upload images. This is also why the code is not available, because I do not want some exploiter uploading inappropriate images.</p>
 <p>I do not moderate the grid, and I never plan to. Generally, offensive symbols are quickly erased by Good Samaritans, and I quite like the unmoderated feeling of the Grid on an increasingly moderated Internet.</p>
 <hr/>
-<h2>Interesting Observations</h2>
+<h2 id="interesting-observations">Interesting Observations</h2>
 <p>The Grid in my room runs almost real-time — so seeing a pixel change means that somewhere in the world, at that exact moment, someone on their computer had browsed to my site and decided to change a few pixels. I could feel their presence so strongly when I saw changes happening live, and I didn't even know who was doing it. Sublime!</p>
 <p>Unlike Reddit, there is no method for communication on Grid World except painstakingly drawing words pixel-by-pixel. However, I hosted Grid World on the same site as my previous project <a href="">(the InfoGlobe)</a>, which featured a text box for uploading messages to my device. I noticed after a few days that Grid World users would talk to each other on the InfoGlobe page using the upload message box, and then go back to Grid World to draw a larger piece together. While not the intended use case, I think it's really cool that the InfoGlobe side gets used that way.</p>
 <hr/>
-<h2>Conclusion &amp; Next Ideas</h2>
+<h2 id="conclusion--next-ideas">Conclusion &amp; Next Ideas</h2>
 <p class="caption"> Tactile pixels for two-way communication </p>
 <p><img alt="Tactile pixels for two-way communication" src="/static/gw_bigbuttons.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <p>Grid World is great for me because I don't have to go online to receive messages from people, but other people still have to go online to send messages to me. How cool would it be to have a smaller, tactile Grid World that you share with a more intimate group? Think you and your parents, or you and your partner, or a gaggle of friends who are working in different cities. A shared canvas that everyone can draw on without going on the phone or computer. I think that would be really cool.</p>

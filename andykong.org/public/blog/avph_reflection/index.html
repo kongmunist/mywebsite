@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- <title>
+    Andy Kong!
+</title> -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+        <meta name="author" content="Andy Kong">
+        <meta name="title" content="Apple Vision Pro Hackathon: A Retrospective">
+        <meta name="description" content="Thoughts on the Vision Pro">
+        <meta name="keywords" content=" avp,  ar,  vr,  mr,  hackathon,  logistics, ">
+
+        <title>
+            Apple Vision Pro Hackathon: A Retrospective | Andy Kong
+        </title>
+    
+
+    <style>
+        body {
+            counter-reset: h1counter h2counter;
+        }
+
+        h1:not(.title) {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px groove #DBAD80;
+
+            counter-reset: h2counter;
+        }
+
+        h1:not(.title)::before {
+            counter-increment: h1counter;
+            content: counter(h1counter) ". ";
+        }
+
+/*
+        .blogpage > h2 {
+            text-decoration: underline wavy #DBAD80;
+            text-underline-thickness: 1px;
+        }
+        */
+
+        .blogpage > h2::before {
+            counter-increment: h2counter;
+            content: counter(h1counter) "." counter(h2counter) "  ";
+            /*
+            text-decoration: none;
+            display: inline-block;
+            */
+        }
+
+
+        .toc {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+            color: inherit;
+            text-decoration: none;
+        }
+
+    </style>
+
+
+
+
+    <style type="text/css">
+        /* Atkinson Hyperlegible */
+        /* latin-ext
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          src: url("/static/atkhyp_latext.woff2") format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        } */
+        /* latin */
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          src: url("/static/atkhyp_lat.woff2") format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+
+        /* Ubuntu */
+        /* latin-ext
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          src: url("/static/ubuntu_latext.woff2") format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        } */
+        /* latin */
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          src: url("/static/ubuntu_lat.woff2") format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+    </style>
+
+    <!-- Bootstrap -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap.min.css">
+
+    <script src="/static/fontawesome.js" defer></script>
+    <!-- <script src="https://kit.fontawesome.com/c62dcd5933.js"></script> -->
+
+    <!-- Instant Page inlined - source is instant.page/5.1.0 -->
+    <script src="/static/instantpage-5.1.0.js" type="module" defer></script>
+
+
+
+
+    <style>
+body {
+    background: #202222;
+    font-size: 1.2em;
+    font-family: 'Ubuntu', sans-serif;
+    color: #FAEADB;
+    overflow-x: hidden;
+
+    word-spacing: 0.03em;
+}
+
+.navlinks{
+    font-family: 'Atkinson Hyperlegible';
+    font-size: 1.2em;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: "Atkinson Hyperlegible";
+}
+
+
+a {
+    transition: color .2s linear;
+    color:#00B4CC;
+}
+
+a:hover {
+    color:#00DFFC;
+    text-decoration: none;
+}
+
+.navbar-custom {
+    font-size: 22px;
+    background-color: #202222 !important;
+}
+
+.navbar-custom .navbar-brand{
+    font-size: 30px;
+    color: #00dffc !important;
+}
+
+.navbar-custom .navitem{
+    color:#00dffc !important;
+}
+
+.navitem:hover{
+    color:#00b4cc !important;
+    text-decoration: none;
+}
+
+.hidden{
+  display: none;
+}
+
+.navbar-toggler-icon {
+  border: none;
+  outline: none;
+}
+
+.caption{
+    font-size:12px;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: .2em;
+    margin-top: 1em;
+}
+
+.projectpage img{
+    max-width: 100%;
+    max-height: 50vh;
+    height: auto;
+    width: auto;
+}
+
+.blogpage img{
+    max-width: 100%;
+    max-height: 50vh;
+    height: auto;
+    width: auto;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+.blogpage h1, .blogpage h2{
+    color: #E0B890;
+}
+
+.projectpage h1, .projectpage h2{
+    color: #E0B890;
+}
+
+hr{
+    background-color:white !important;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+
+.youtubevideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+code {
+  font-family: Consolas,"courier new";
+  color: #110000;
+  background-color: #FAEADB;
+  padding: 2px;
+  font-size: 105%;
+}
+
+</style>
+
+    <link rel="icon" type="image/png" href=" /static/aklogo.png " />
+
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YNX5JQZWHT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YNX5JQZWHT');
+</script>
+<script data-goatcounter="https://kong.goatcounter.com/count"
+                    async src="//gc.zgo.at/count.js"></script>
+    
+</head>
+
+
+
+<body style="">
+
+
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
+      <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
+          </span>
+        </i>
+    </button>
+
+    <div class="collapse navbar-collapse " id="navbarSupportedContent" style="margin-left:25px;margin-top:10px">
+        <ul class="navbar-nav ml-auto navlinks">
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/static/AndyKongCV.pdf ">CV/Resume</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://github.com/kongmunist" target="_blank" title="Github">GitHub</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://twitter.com/oldestasian" target="_blank" title="Twitter">Twitter</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="mailto:andyking99@gmail.com" target="_blank" title="Email">Email</a>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/blog/">[Blog]</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+<!-- padding-left:20px; padding-right:20px -->
+            <div class="col-md-8 col-11 p-0" style="">
+                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
+
+                
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        
+
+
+<div class="blogpage overflow-hidden" style="margin-bottom:4em;">
+    <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Apple Vision Pro Hackathon: A Retrospective</h1>
+            <p style="font-size:0.8em;"> Published March 13, 2024</p>
+<hr>
+            <html><body><p>Hello! Last weekend I hosted an Apple Vision Pro Hackathon (aka AVP Hackathon), which simply entailed asking everyone I knew if I could borrow a Vision Pro and then asking everyone if they wanted to develop on it for a couple days.</p>
+<p><img loading="lazy" alt="" src="/static/avph_reflection/0.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p>I think hackathons are a good event for colleges since full-time coders are usually too world-weary to also spend their weekends coding. Nonetheless, I picked a bad time to ask, since I mostly knew researchers and we're a month shy of the next big conference deadline. Anyway, somehow I got a crew of four people and we spent 48 hours building apps and demos for the AVP.</p>
+<p>The main goal was to write app that would make you want to wear the AVP (the most useful are screen-mirroring and web browsing). We also had a rule that someone had to be wearing the AVP at all times —  in the end, this didn't even need enforcing because we were iterating so fast that someone always needed it. In the end, we made 3.5 working apps, which is a pretty good hitrate. </p>
+<div class="toc"><h2 id="table-of-contents" style="margin:0px;">Table of Contents</h2>1. <a href="#day-1">Day 1 </a><br/>2. <a href="#day-2">Day 2</a><br/>3. <a href="#demos">Demos</a><br/>4. <a href="#takeaways">Takeaways</a><br/>   4.1 <a href="#real-device-stuff">Real device stuff</a><br/>   4.2 <a href="#coding-in-swift">Coding in Swift</a><br/>   4.3 <a href="#dev-community">Dev community</a><br/>   4.4 <a href="#idealogical-feedback">Idealogical feedback</a><br/>5. <a href="#conclusion">Conclusion</a><br/></div>
+<hr/>
+<p>If you have a Vision Pro we could borrow and live in/near Pittsburgh, I would be interested in hosting this hackathon again. Please email/DM me if you'd like that, and we can make it happen :)</p>
+<hr/>
+<h1 id="day-1">Day 1</h1>
+<p>Started at 10am, got to the space around 10:30am. I provided beverages and coffee.</p>
+<p><img loading="lazy" alt="" src="/static/avph_reflection/1.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p>We spent most of the day learning Swift. I made and loaded a custom 3D model and then tried to write custom gestures that would spawn/move it around. </p>
+<p><img loading="lazy" alt="" src="/static/avph_reflection/2.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p>I cribbed the head/hand tracking from a <a href="https://github.com/FlipByBlink/HandsRuler">Hand Ruler</a> app, then kept cutting the code down until I could understand all of it. I think everyone else had a very similar process, since the default examples that Apple provides are too full-featured to just illustrate single concepts at a time. </p>
+<p><img loading="lazy" alt="" src="/static/avph_reflection/3.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p>The AVP is meant to be a single-user device, so it doesn't let you do screen mirroring unless the same user is signed into both the Macbook and the AVP. In order to avoid taking off the headset every time we uploaded code, we spent a lot of time looking through the AVP cameras at our screens trying to make small edits. This is really close to the limit of what the AVP's AR resolution is capable of, and this process would've been much more comfortable if we could just project our displays into AVP space.</p>
+<p>When we wrapped up the day, everyone sort-of understood the Swift structure and had run some example code already. The language is pretty straightforward, and the code completions in the Xcode IDE are more full-featured than any IDE I've used before.</p>
+<h1 id="day-2">Day 2</h1>
+<p>Late start, 11:30am. My roommate had some group project to work on in the morning, and everyone else woke up late.</p>
+<p>Someone else finished their teardown of an example, and made an app where the press of a button opens an immersive video. I finished wrapping up all my code into a simple demo app (<a href="https://github.com/kongmunist/Vision-Pro-Head-Hand-Tracking-Demo">on github here!</a>) and started working on custom gesture recognition. </p>
+<p><img loading="lazy" alt="" src="/static/avph_reflection/4.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<blockquote class="twitter-tweet"><p dir="ltr" lang="tl">Italian simulator <a href="https://t.co/TqmlcglZLM">pic.twitter.com/TqmlcglZLM</a></p>— Andy (@oldestasian) <a href="https://twitter.com/oldestasian/status/1767012032132616565?ref_src=twsrc%5Etfw">March 11, 2024</a></blockquote>
+<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
+<p>Gestures have no helper functions. Even in the [Happy Beam demo] provided by Apple, to check that the user has formed a heart-shaped hand gesture they just calculate the distance between specific hand joints and use some smoothing to make it a bit nicer looking. I wrote some functions like <code>closeTo(jointnames, threshold)</code> to make simple gestures easy to implement, then used them to detect this Italian pinched fingers gesture. </p>
+<p>By ~3am, everyone had finished their app to a point where we could film it. Due to daylight savings, we thought it was an hour later.</p>
+<h1 id="demos">Demos</h1>
+<p>In the end, we had written the following apps: </p>
+<ul>
+<li>
+<p>Gaussian splatting model viewer running on Metal, with hand gesture control</p>
+</li>
+<li>
+<p>Collaborative video upload gallery for AVP/iPhone 15 spatial videos</p>
+</li>
+<li>
+<p>AR interface to control the color and brightness of real-life smart bulbs</p>
+</li>
+<li>
+<p>Lighter demo like the early iPod apps</p>
+</li>
+</ul>
+<blockquote class="twitter-tweet" data-media-max-width="560"><p dir="ltr" lang="en">Throwback lighter app, made on the <a href="https://twitter.com/hashtag/AppleVisionPro?src=hash&amp;ref_src=twsrc%5Etfw">#AppleVisionPro</a> <a href="https://t.co/y3sJr8NvB9">pic.twitter.com/y3sJr8NvB9</a></p>— Andy (@oldestasian) <a href="https://twitter.com/oldestasian/status/1767978456908968044?ref_src=twsrc%5Etfw">March 13, 2024</a></blockquote>
+<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
+<p>(I don't have all the videos yet so this list will be updated with the missing ones later)</p>
+<h1 id="takeaways">Takeaways</h1>
+<h2 id="real-device-stuff">Real device stuff</h2>
+<ul>
+<li>
+<p>At first when I looked through the AVP, I compared the passthrough-AR with other AR headsets I've tried — the AVP is the best I've tried, so I enjoyed it. After a few hours of wearing/developing on the AVP, I began to compare it to no-headset and it loses on every metric. Some LED lights are flickery through the AVP camera, and reflective stuff (screens, windows) looks warped and not flat.</p>
+</li>
+<li>
+<p>The IPD calibration (motor moving lenses closer/further) is required everytime we switched headsets, but that takes only ~10 seconds. I find it weird that I had to hit the Digital Crown button to start the IPD, but maybe this is an Apple-y design principle that nothing physical moves unless the user moves something physically. - Since we couldn't get screen mirroring working, we had to look through the AVP to see my computer screen to edit code and upload stuff. The text is surprisingly legible, but no amount of surprise overcomes the fact that it's not good enough to be comfortable. Two of the hackers couldn't read off their screen through the headset at all, and they don't even wear glasses normally. - AVP is clearly meant for a single owner — I think only 2 user profiles can be added at once. This made the hackathon a bit harder, but not impossible — for instance the eye tracking is only calibrated to one person at a time, but it's good enough that other people could use it without needing to redo the calibration.</p>
+</li>
+<li>
+<p>The device is not socially accessible. All the experiences are kinda "in your head", requiring screen mirroring or recording to get someone else to see it. All the videos I show are shot on-device using Developer Capture in Reality Composer Pro, and a minute-long video takes ~1-2 minutes to transmit to your laptop. </p>
+</li>
+</ul>
+<h2 id="coding-in-swift">Coding in Swift</h2>
+<ul>
+<li>
+<p>Dev time is quick for small apps. A fresh upload required a bit more time, but each iteration of the code only took ~30 seconds from pressing the Xcode Run button to seeing the app in the headset. On my Macbook Pro with an M1 Max, build times were only ~5-10 seconds and barely noticeable.</p>
+</li>
+<li>
+<p>It's possible to upload code through Unity and Swift, and it may be easier for you to get started if you have Unity experience. However, I did hear that there were some features which didn't exist in Unity but did in Swift, so for full features you may want to just bite the bullet and learn Swift. Swift is a great to program in once you get it. Two days after the hackathon, I actually felt an itch to write a Mac app so I could continue using the Xcode IDE. </p>
+</li>
+<li>
+<p>Swift examples provided by Apple are incredibly full-featured, meaning they can put out <a href="https://developer.apple.com/documentation/visionos/world">four example demos</a> and show most features in use in the code. However, this is not super beginner friendly — I'd much rather have single-use example demos. </p>
+</li>
+<li>
+<p>Examples are great for illustrating what is possible. If you see a transparent window with a floating button in the Hello World demo, you know that somewhere in the example project is the code that makes that happen.</p>
+</li>
+<li>
+<p>Xcode is a great IDE, it has both an AVP simulator which launches separately and a containerized one that runs inside the editor. The containerized one does not show windows faithfully, meaning you should always check what they look like in the real simulator</p>
+</li>
+<li>
+<p>The AVP simulator can pretty accurately do windows, buttons, and other functionality, so you don't even need to cough up the cash for a device if you're interested in developing more straightforward apps. The only thing it doesn't have is hands — gestures can only be developed using a real device. I remember seeing a <a href="https://varrall.substack.com/p/hand-tracking-in-vision-pro-simulator">blog post about faking hands</a> in the AVP simulator, but did not try it myself yet. </p>
+</li>
+</ul>
+<p><img loading="lazy" alt="" src="/static/avph_reflection/ide.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<h2 id="dev-community">Dev community</h2>
+<ul>
+<li>Forum posts are lacking, and very few people have posted Vision Pro development questions. If we assume 100k units have been sold, and only 10k to developers, then we can only expect ~100-1000 people active on the developer forums. Consequently, there are very few tutorials — large alpha in this space! Within a few months, you could easily become the foremost authority on VisionOS development. </li>
+</ul>
+<h2 id="idealogical-feedback">Idealogical feedback</h2>
+<ul>
+<li>I think if the AVP is meant to be a work device, then it's going to need something equivalent to hotkeys but for 3D space. Custom gestures are really cool, and they offer a lot of possibilities for new interactions (i.e. subtle hand gestures can trigger web apps or specific programs), but they can only be accessed in an Immersive App meaning no other apps can be open simultaneously, preventing window management or any fun systems-level control using custom gestures. You could make the comparison that iPhone apps are only allowed to recognize custom swipe/tap gestures when their app is open, but I think this limits the AVP much more when the available space of interactions comes from fine-grained continuous hand tracking.</li>
+</ul>
+<hr/>
+<h1 id="conclusion">Conclusion</h1>
+<p>Anyway, super fun weekend, and I'm incredibly happy that everyone got to a working demo despite starting from zero re:Swift. I'll reiterate that I'd love to do this again in April 2024, so if you have a headset or want to join next time, just reach out! Out-of-towners are welcome to stay on my couch.</p></body></html>
+
+
+
+    
+        <hr>
+        <p style="line-height:250%;">
+        <a class="btn btn-info" href="/tagged/avp/">avp</a>
+
+        
+            <a class="btn btn-info" href="/tagged/ar/">ar</a>
+        
+            <a class="btn btn-info" href="/tagged/vr/">vr</a>
+        
+            <a class="btn btn-info" href="/tagged/mr/">mr</a>
+        
+            <a class="btn btn-info" href="/tagged/hackathon/">hackathon</a>
+        
+            <a class="btn btn-info" href="/tagged/logistics/">logistics</a>
+        
+        </p> 
+    
+</div>
+
+
+
+
+                    </div>
+                    <br>
+        <!-- </div> -->
+</div>
+
+
+
+
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
+<script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
+<script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

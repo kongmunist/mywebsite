@@ -311,7 +311,7 @@ code {
             <p style="font-size:0.8em;"> Published January 24, 2021</p>
 <hr>
             <html><body><p>Hi! Today I was curious about the effects of oversampling a single, high sample frequency channel of data vs 4 simultaneously sampling channels of the same data, and which would give better data. This ties into my work on EEG processing, where I have the chance to use up to 4 channels but don't want to just average all of them because that seems too simplistic. </p>
-<h2>What did I try then?</h2>
+<h2 id="what-did-i-try-then">What did I try then?</h2>
 <p>So, I generated a sine wave at a low-ish frequency (50Hz) of amplitude 1, then added Gaussian noise of power 10 to it. It has duration 1 second, but I created it using a 100kHz "sample frequency". Here's what it looks like. </p>
 <p class="caption">Graph of the original and corrupted signal. Orange is the original</p>
 <p><img loading="lazy" alt="Graph of the original and corrupted signal. Orange is the original" src="/static/ovacombined.png"/></p>
@@ -334,7 +334,7 @@ code {
 <p>The orange is actually the averaged one here, it has higher noise peaks than the original signal.</p>
 <p class="caption">At a lower signal frequency, the downsampled 1kHz signal still has the lowest noise (green). The averaged 4-channel signal has even higher noise than the original 200Hz signal actually (orange vs. blue).</p>
 <p><img loading="lazy" alt="At a lower signal frequency, the downsampled 1kHz signal still has the lowest noise (green). The averaged 4-channel signal has even higher noise than the original 200Hz signal actually (orange vs. blue)." src="/static/ovalowfreq.png"/></p>
-<h2>Discussion</h2>
+<h2 id="discussion">Discussion</h2>
 <p>I didn't think the effect would be so drastic, but it seems that sampling at a high rate then downsampling is a very effective strategy compared to averaging all your channels together. But then I don't know what to do with my 4 channels then...</p>
 <p>This result is counterintuitive because having 5, 200Hz channels and averaging them is equivalent to sampling at 1kHz and downsampling. </p>
 <p>If we imagine a 1kHz sampled signal, what we did to generate the 200Hz signal was take 1 of every five sample points. This means if we had 5 “channels” (each offset by 1 from the beginning), then its equivalent to down sampling the 1khz signal. But it’s weird that using 4 I didn’t have nearly the same effect, and I don't expect going to 5 channels to change much. </p>

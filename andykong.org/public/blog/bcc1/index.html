@@ -327,7 +327,7 @@ code {
 <p><br/></p>
 <h1 id="what-i-did">What I did</h1>
 <hr/>
-<h2>Hardware</h2>
+<h2 id="hardware">Hardware</h2>
 <p>My setup is very simple. I used two Arduinos, two 180kΩ resistors, and two jumper wires. There is a "sender" Arduino imitating a smartwatch, and a receiver Arduino imitating a payment terminal or another interactive device. </p>
 <p>The sender has just a single jumper out, and it's digital writing a 10Hz square wave to the jumper wire.</p>
 <p class="caption">Sender Arduino</p>
@@ -344,7 +344,7 @@ code {
 <p><img loading="lazy" alt="Serial plotter of analog pin readings with human holding jumper wire" src="/static/bcc1_baselinetouchinganalognoise.png"/></p>
 <p>The human body acts as an antenna for 60Hz noise, and my body is no different. The spikes you see in the last image are from my environment, and would destroy our signal without the resistor to ground. The smaller the resistor, the easier the environment's noise gets leaked away from the pin. However, this easier leakage also reduces our overall signal more, so I picked a large resistor that approximately matched my skin's resistance. </p>
 <p><br/></p>
-<h2>Signal (Shared Ground)</h2>
+<h2 id="signal-shared-ground">Signal (Shared Ground)</h2>
 <p class="caption">Shared ground BCC setup (technically they're already connected through the laptop's ground)</p>
 <p><img loading="lazy" alt="Shared ground setup (technically they're already connected through the laptop's ground)" src="/static/bcc1_connectedground.jpg"/></p>
 <p>To transfer the signal, I touched the output jumper of the sending Arduino, then touched the input jumper of the receiving Arduino. I also pressed the output jumper directly against my other input, to capture a reference for what the output pin's signal looks like directly. </p>
@@ -358,7 +358,7 @@ code {
 <p><img loading="lazy" alt="Noise when touching receiver pin without touching signal pin" src="/static/bcc1_nosignaloverskin.png"/></p>
 <p>The no-touch signal is a bit noisier than I would like, but definitely different enough from the touching signal that we would be able to detect it. </p>
 <p><br/></p>
-<h2>Signal (No Shared Ground)</h2>
+<h2 id="signal-no-shared-ground">Signal (No Shared Ground)</h2>
 <p>I connected the sending Arduino to another computer when I did this experiment. The receiver is plugged into my laptop, which was not connected to the wall outlet at the time.</p>
 <p class="caption">No shared ground BCC setup</p>
 <p><img loading="lazy" alt="No shared ground setup" src="/static/bcc1_connectednoground.jpg"/></p>

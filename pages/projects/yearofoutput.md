@@ -120,3 +120,5 @@ For accountability, I will maintain the list of outputs below, though this proje
 - Mar 9: Some creepy [demos](https://twitter.com/oldestasian/status/1766621313437987057) made on Vision Pro as part of a hackathon, day 1.
 - Mar 10: Numerous [tweets](https://twitter.com/oldestasian/status/1767017445620146605) about the Vision Pro Hackathon, day 2.
 - Mar 11: [Medium post](https://kongmunist.medium.com/how-to-set-up-hand-tracking-on-apple-vision-pro-54b7439f888b)) about how to build my Vision Pro Hands demo
+- Mar 12:
+- Mar 13: [Reflections on the Vision Pro Hackathon](../../blog/avph_reflection)

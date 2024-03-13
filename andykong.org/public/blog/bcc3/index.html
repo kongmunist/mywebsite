@@ -327,7 +327,7 @@ Here's a demo showing a reactive calendar. When a user touches the pad, their sm
 <hr/>
 <h1 id="how-it-works">How it works</h1>
 <p>I'm using a high frequency carrier wave to carry the bits, and an amp to detect the signal in the specific frequency band of the carrier wave. This is basically how radios work. The transmitter uses the digitally-modulated clock signal of the Arduino(8 MHz) to send 0s and 1s. The receiver is a passive RC high-pass filter, followed by an amplifier stage before the ADC.</p>
-<h2>Transmitter</h2>
+<h2 id="transmitter">Transmitter</h2>
 <p class="caption">Picture of the transmitter</p>
 <p><img loading="lazy" alt="Picture of the transmitter" src="/static/bcc3_transmitter.jpg"/></p>
 <p>I was lazy with the earlier prototype and tried to transmit bits using the output from flipping a pin in the <code>loop()</code> of the Arduino as fast as possible. This technique caps out at a frequency of around 100kHz, but I wanted to go higher. </p>
@@ -337,23 +337,23 @@ Here's a demo showing a reactive calendar. When a user touches the pad, their sm
 <p>This turned out to be even easier to implement than what I tried in Pt. 2, since I only had to turn on and off a digital pin in the middle loop.</p>
 <p class="caption">Circuit for the transmitter, which is just a modulated clock signal</p>
 <p><img loading="lazy" alt="Circuit for the transmitter, which is just a modulated clock signal" src="/static/bcc3_transmittercircuit.jpg"/></p>
-<h2>Receiver</h2>
+<h2 id="receiver">Receiver</h2>
 <p class="caption">Picture of the receiver</p>
 <p><img loading="lazy" alt="Picture of the receiver" src="/static/bcc3_receiver.jpg"/>
 The receiver side swamps with 60Hz when I touch the input pin. This is both because the human body is a big antenna for all EMI pickup, and because the Arduino's ADC draws current from the source to measure voltages. </p>
 <p>To get rid of the 60Hz noise, we built an RC high-pass filter at 159Hz. It works surprisingly well for how close the cutoff frequency is to the noise frequency. After that, we had to add a lot of gain (300x) on the signal to see the square wave being modulated. We also built an artificial ground at 2.5V to act as the central reference for the op amp. </p>
 <p class="caption">Circuit for the reciever, composed of the stages in the above paragraph</p>
 <p><img loading="lazy" alt="Circuit for the reciever, composed of the stages in the above paragraph" src="/static/bcc3_receivercircuit.jpg"/></p>
-<h2>Transmitted signal</h2>
+<h2 id="transmitted-signal">Transmitted signal</h2>
 <p>Here's what we're sending. A header of 10 so the reciever knows a signal's coming, then an ASCII character. </p>
 <p class="caption">Raw output from the transmitter with labeled sections of the data</p>
 <p><img loading="lazy" alt="Raw output from the transmitter with labeled sections of the data" src="/static/bcc3_transmittedraw.png"/></p>
 <p>And on the receiving side, the signal appears perfectly among all the 60Hz noise. </p>
 <p class="caption">Input on the receiving side, after filtering and gain. The bits are clearly visible</p>
 <p><img loading="lazy" alt="Input on the receiving side, after filtering and gain. The bits are clearly visible" src="/static/bcc3_receivedraw.png"/></p>
-<h2>Code</h2>
+<h2 id="code">Code</h2>
 <p>The repo can be found <a href="https://github.com/kongmunist/BCC">here</a>. The transmitter code is very simple, just a digital write and some array reading. The receiver is a little more complex, and a bit hacky to read bitstrings. Works surprisingly well though. </p>
-<h2>Final Demo</h2>
+<h2 id="final-demo">Final Demo</h2>
 <p>Here's a video of the calendar demo. I didn't have time to rig up two "watches" with different IDs, but my friend who is uninstrumented is unable to access a calendar like I am. Sorry buddy, should've been a technlogist!</p>
 <div style="text-align:center;">
 <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/4pwZ0hJcawM" title="YouTube video player" width="560"></iframe></div>

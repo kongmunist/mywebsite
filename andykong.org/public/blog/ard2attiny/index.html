@@ -334,12 +334,12 @@ code {
 <p>To test any non-visual functionality, we're going to want to print debug messages over Serial. While we can't do Serial in the ATtiny hardware, we can include the SoftwareSerial library and do it anyway. The following code is derived from an example on this <a href='&lt;a href="https://www.instructables.com/ATtiny85-ATtiny84-Analog-Pins-Serial-Communication/"&gt;https://www.instructables.com/ATtiny85-ATtiny84-Analog-Pins-Serial-Communication/&lt;/a&gt;'>guide</a>, but you can use the sketch in Examples-&gt;SoftwareSerial also. </p>
 <p class="caption"> SoftwareSerial example works, though the pin numbers are all new to me </p>
 <p><img loading="lazy" alt="SoftwareSerial example works, though the pin numbers are all new to me" src="/static/ard2attiny/5.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
-<h2>Sus method</h2>
+<h2 id="sus-method">Sus method</h2>
 <p>If the ATtiny uses SoftwareSerial, you can route the TX physical pin to the Arduino's TX pin and open the Serial monitor. You should see random noise characters, but if you hold down the RESET button, you can get messages from the ATtiny to show up.</p>
 <p class="caption"> Fine for words, but holding down the RESET messed with my ADC values. </p>
 <p><img loading="lazy" alt="Fine for words, but holding down the RESET messed with my ADC values." src="/static/ard2attiny/6.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <p>The ATtiny's messages are scrambled when we receive them over Serial because the Arduino also uses the RX/TX pins and they're physically routed to the UART-&gt;USB converter chip. By holding down the RESET, we disable the Arduino and get to see the ATtiny messages without any problems.</p>
-<h2>Less sus method</h2>
+<h2 id="less-sus-method">Less sus method</h2>
 <p>The proper way is to get an FTDI Friend or other UART-&gt;USB converter and receive messages using that instead. </p>
 <p><img loading="lazy" alt="" src="/static/ard2attiny/7.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <p>If you go this route, the ATtiny's TX goes into the FTDI Friend's  RX, and the GNDs are connected. The port will have to be changed, and the messages will be received just fine. </p>

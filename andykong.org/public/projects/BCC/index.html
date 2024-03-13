@@ -278,7 +278,7 @@ code {
 <h1 id="implementation-details">Implementation Details</h1>
 <p>Due to time constraints and initial problems with getting unshared ground working, we prototyped using both shared and unshared ground. Both involved complicated signal processing, with shared ground requiring more digital smoothing and unshared ground requiring more analog processing. </p>
 <hr/>
-<h2>Sending and Receiving Digital IDs (Shared Ground)</h2>
+<h2 id="sending-and-receiving-digital-ids-shared-ground">Sending and Receiving Digital IDs (Shared Ground)</h2>
 <p>The shared ground BCC circuits are fairly simple: the transmitter consists of a signal pin (digital out) and the receiver consists of a receiving pin (analog in) tied to ground with a resistor (around 360 kΩ - 1MΩ).</p>
 <p><img class="d-block mx-auto" src="/static/bcc_sharedground.png" style="margin-bottom:0px"/></p>
 <p class="caption">BCC shared ground setup</p>
@@ -290,19 +290,19 @@ code {
 <p class="caption">BCC shared ground, the signal we're receiving is in red, and smoothed in green</p>
 <p>To read the ID from this signal, we wait for the averaged signal to first change value (to synchronize with the transmitter’s clock ticks) and then read values after each period. Each value is then bit shifted into a character so that after at most 7 periods, it should equal the transmitted character.</p>
 <hr/>
-<h2>Sending and Receiving Digital IDs (Unshared Ground)</h2>
+<h2 id="sending-and-receiving-digital-ids-unshared-ground">Sending and Receiving Digital IDs (Unshared Ground)</h2>
 <p>Sending messages between devices usually takes place in the digital domain, and needs at least two wires: One for the ground, and one of the signal. The ground defines the 0 and 1 that both devices share; without it, there is no HIGH or LOW signal, there are just two floating voltages. </p>
 <p>The difficult part of sending signals over the body is that the body is one wire, and without a shared ground it is impossible to transmit DC HIGH and LOW signals directly across it. The body must be treated like an antenna instead, with the signal of interest encoded onto a high frequency carrier wave which needs to be decoded on the other side. </p>
 <p>We present an overview of our groundless system. More details can be found here.</p>
 <hr/>
-<h2>Transmitter circuit</h2>
+<h2 id="transmitter-circuit">Transmitter circuit</h2>
 <p>Using the Arduino’s clock as the carrier, we modulated our bits as the output using a transistor and a digital pin. When the modulation is HIGH, the clock is grounded and the output is nothing. When the modulation is LOW, the output is the clock.</p>
 <p><img class="d-block mx-auto" src="/static/bcc_transmitter.png" style="margin-bottom:0px"/></p>
 <p class="caption">Wrist-worn transmitter, with a conductive band and a transistor acting as a signal modulator</p>
 <p><img class="d-block mx-auto" src="/static/bcc_transmittersch.png" style="margin-bottom:0px"/></p>
 <p class="caption">Transmitter circuit</p>
 <hr/>
-<h2>Receiver circuit</h2>
+<h2 id="receiver-circuit">Receiver circuit</h2>
 <p>The receiver is a passive RC filter at 159 Hz followed by a gain stage set at 300 using a general-purpose op amp. This output is then fed into the Arduino ADC. </p>
 <p><img class="d-block mx-auto" src="/static/bcc_receiver.png" style="margin-bottom:0px"/></p>
 <p class="caption">Receiver setup</p>
@@ -318,7 +318,7 @@ code {
 <p>Another enclosure is mounted on the door to hold the receiving microcontroller. In addition to the simple shared ground circuit with the receiving (input) pin and resistor to ground, we added an LED (Neopixel) to indicate whether access is granted (green light) or denied (red light).</p>
 <p>The enclosures were designed to be 3D-printed on an SLA printer. Because of print failures and time constraints they were ultimately printed on an FDM printer, resulting in some minor tolerance/resolution issues.</p>
 <hr/>
-<h2>User-Aware Calendar</h2>
+<h2 id="useraware-calendar">User-Aware Calendar</h2>
 <p>Our second demo shows the possibilities for personalization with BCC using a wearable device on each user’s wrist, also by transmitting user IDs through touch. In the demo, a calendar display updates to show the personal calendar of the user who has just touched the receiver pad. When user A touches the receiver pad, their ID ‘A’ is parsed by the receiver microcontroller, which communicates over Serial with a Processing script that updates the display to show their personal calendar.</p>
 <p><img class="d-block mx-auto" src="/static/bcc_calendardemo.png" style="margin-bottom:0px"/></p>
 <hr/>

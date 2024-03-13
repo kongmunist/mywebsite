@@ -315,7 +315,7 @@ code {
 <p>We often think of neural networks as endlessly flexible tools. I mean, can't they <a href="https://en.wikipedia.org/wiki/Universal_approximation_theorem">approximate any known function</a>? And while that is mathematically proven to be true, you, as a real-world practitioner of ML, have to consider how much more complicated the cost function gets for every single neuron you add. The already-bumpy landscape of a 3D cost function becomes more wrinkly, and your model has a much higher chance of getting stuck in a local minima. </p>
 <p>This becomes apparent when you train a neural network to do something as simple as addition. I generated 1000 examples of addition of two integers between 0-100, which looks like this</p>
 <p><img loading="lazy" class="d-block mx-auto" src="/static/advancedadditiontraining.png" width="300"/></p>
-<h2>Model A</h2>
+<h2 id="model-a">Model A</h2>
 <p>Using these, I trained a simple neural network with no hidden layers (does that invalidate it as a neural network? I'm not sure the semantics of the name), 2 input nodes, and 1 output node. Let's call it Model A. Here's the results</p>
 <p><img loading="lazy" class="d-block mx-auto" src="/static/aasimpleexamples.png" width="300"/></p>
 <p>As you can see, this model is a little off, but asymptotically correct. The error is nearly constant regardless of the inputs, meaning as the inputs go up, the total percentage error of the model goes to 0. In addition, this model only requires 2 multiplications and 2 additions to perform one addition, which is only a 4x cost computationally. Since our computers are definitely more than 4x faster than they were when addition was invented, this model is feasible for use in modern industry. </p>
@@ -324,11 +324,11 @@ code {
 Becomes
 <img loading="lazy" class="d-block mx-auto" src="/static/aaboiled.png" width="300"/></p>
 <p>This AI model is clearly understandable by any person who knows basic algebra, and therefore can be trusted to perform addition in a transparent method that doesn't involve plotting to kill its human creators with some of its spare neurons. </p>
-<h2>Model B</h2>
+<h2 id="model-b">Model B</h2>
 <p>Now, contrast this simple but effective Model A with a second, more complex Model B. This model has a hidden layer with one neuron in it, in addition to the input 2 nodes and output node. As such, it performs worse addition. </p>
 <p><img loading="lazy" class="d-block mx-auto" src="/static/advancedadditionexamples.png" width="300"/></p>
 <p>We see that the error is significant, definitely not enough to just round away like we could with Model A. This model also took extra time to train, since it had an additional 3 equations to calculate. It is significantly less feasible for use in industry because of its inefficiency and inaccuracy. </p>
-<h2>Model C</h2>
+<h2 id="model-c">Model C</h2>
 <p>"But what about huge inner layers Andy? You're just using one! Won't that solve all our problems like Elon Musk and Andrew Ng promised?" <strong>NO!</strong> Here I've created Model C, which has 10 hidden neurons in its hidden layer. </p>
 <p><img loading="lazy" class="d-block mx-auto" src="/static/aabignetexamples.png" width="300"/></p>
 <p>It's AWFUL! Terrible! Abysmal! A child could do better than that! Whe- oh, we're getting a message from ML themselves. They said to change the learning rate. Whoops. Here's the actual results</p>

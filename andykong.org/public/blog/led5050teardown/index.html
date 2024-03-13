@@ -319,11 +319,11 @@ code {
 <p class="caption">Unlit reel on my desk. Comes with backing and a nice rubber-y cover. </p>
 <p><img loading="lazy" alt="Unlit reel on my desk. Comes with backing and a nice rubber-y cover." src="/static/led5050_reel.jpg"/></p>
 <p>Most of these come with some app, so we know there will be some Bluetooth or otherwise IoT going on inside. The supply is 12V, and claims to source up to 5 amps. At 60mA per LED at full draw, and 300 LEDs/reel (2 reels), that's a max draw of 36 A. Of course, each LED does not draw 60mA, but we are upper bounding. Though that 60mA was for NeoPixels, maybe it's lower for these...</p>
-<h2>Power</h2>
+<h2 id="power">Power</h2>
 <p>Anyway, here's the power supply. Looks like a generic 12V brick, some conversion then a Cockcraft-Walton (I assume that's what the diodes are for?), then another transformer. Take this with a grain of salt, I study computers not circuits. Out comes 14V-ish DC (no load), and 7V goes into the emitter of the transistors in bottom-left.</p>
 <p class="caption">Power supply for the LED lights</p>
 <p><img loading="lazy" alt="Power supply for the LED lights" src="/static/led5050_powersupply.jpg"/></p>
-<h2>Control</h2>
+<h2 id="control">Control</h2>
 <p>Lying next to the power supply board unsecured is the control board. You can see the 3 transistors in the bottom left leading to some FAT traces that go to the RGB channels, as well as the 12V input. There's also the board-trace Bluetooth antenna in the top right-hand side.</p>
 <p>I couldn't find the transistor number online (X0GA 25), but if you apply 4V to the bottom-right pin of the SOT package, it lights. Good enough for me. I may also just turn all the transistors on and then put my own transistors on the output line.</p>
 <p class="caption">Controlling board for the LED light strip. Was previously just dangling in the power brick...</p>

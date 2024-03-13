@@ -311,12 +311,12 @@ code {
             <p style="font-size:0.8em;"> Published December 25, 2021</p>
 <hr>
             <html><body><p>Hello! Long time no see! In this post, I'm going to show y'all the behavior of stocks that were featured on a few of Timothy Sykes' watchlists earlier this year. </p>
-<h2>Background</h2>
+<h2 id="background">Background</h2>
 <p>I've been out for Winter Break for about 2 weeks now, and I've been thinking about a lot of stuff. I'm going to graduate from college after next semester (hopefully), and it's looking like I'll be attending grad school after taking a gap year. In my gap year, I'd like to learn how to make money without working for someone else (aside: if you have any tips for this please let me know). </p>
 <p>One way I'm considering is some algorithmic stock market trading, or at least computer-assisted. While researching this topic online, I stumbled upon several different traders publishing "watchlists" of stocks that they were considering for their own portfolios. These are not guaranteed, but rather stocks that they note as "potentially interesting" for pattern trading. </p>
 <p>Now personally, I think pattern trading is bull since all the graphs look the same to me. But I figured I should give these fellas the benefit of the doubt and at least try out their stock watchlists.</p>
 <p><br/></p>
-<h2>Work</h2>
+<h2 id="work">Work</h2>
 <p>I signed up for <a href="https://alpaca.markets/">Alpaca Markets</a>, an algorithmic trading platform that also has a great Python API for real-time and historical stock data. I also browsed Mr. Sykes' old watchlists to get lists of stocks he had been promoting. Luckily, they had last-edited dates, so I could see the stock as it changed.</p>
 <p>Using the API, I wrote a little scraper that takes a watchlist and startdate and shows the graphs of the stock prices after Mr. Sykes emailed them out to his eager audience. The results are disappointing. </p>
 <p><br/></p>
@@ -335,7 +335,7 @@ We see that his "Top Stocks to Watch Today: Thursday, September 16" watchlist di
 <p>Since only two of the stocks from this watchlist were in Alpaca's records, I made do. His watchlist was published about 3 weeks ago, and it seems that one has been doing very well!
 <img loading="lazy" alt="Regular December Watchlist Price Chart" src="/static/wl1_dec.png"/></p>
 <p><br/></p>
-<h2>Open vs Close</h2>
+<h2 id="open-vs-close">Open vs Close</h2>
 <p>I looked at only three of Tim's watchlists, chosen by order in which I saw them. However, I wasn't sure whether to post the open or closing prices. Here are the weed stocks, one normalized to open and one to close.</p>
 <p class="caption">Price normed to close</p>
 <p><img loading="lazy" alt="Price normed to close" src="/static/wl1_weedclose.png"/></p>

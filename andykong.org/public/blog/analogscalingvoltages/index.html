@@ -358,13 +358,13 @@ code {
 <p>We'll assume we have access to a 5V source since the second set of rails is 0-5V. We can use the handy voltage divider option on the site to solve for this ratio all at once. Looks like a 33kΩ and 47kΩ resistor will do the trick. </p>
 <p><img loading="lazy" alt="Resistor ratio solving for Vref" src="/static/analogscaling_vref.png"/></p>
 <p><br/></p><hr/>
-<h2>Does it work?</h2>
+<h2 id="does-it-work">Does it work?</h2>
 <p>Here's the part values we picked out in simulation:</p>
 <p><img loading="lazy" alt="Vout with +15V is near zero, around -0.1V" src="/static/analogscaling_solutionpos.png"/></p>
 <p><img loading="lazy" alt="Vout with -15V is almost exactly 5V" src="/static/analogscaling_solutionneg.png"/></p>
 <p>The +15V rail becomes -0.13V, so very close to the 0V we wanted it to be. The -15V rail nails 5V almost exactly. So yea, I'd say they work. </p>
 <p>Sometimes the solution with realistic resistors will need some tuning, because negative voltages will usually damage a circuit, but you can just tune the initial parameters on the initial voltage mapping to be a little tighter and solve the problem again. </p>
-<h2>Closing</h2>
+<h2 id="closing">Closing</h2>
 <p>Anyway, I encounter this problem all the time, and as I work more with hardware I think this is an integral "glue" circuit that you should master if you're going to work with hardware of various logical and analog levels. That's all for now, cya next time!</p></body></html>
 
 

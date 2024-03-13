@@ -312,7 +312,7 @@ code {
 <hr>
             <html><body><p>Hello everyone! I've recently been thinking about how much time I spend on my computer, and I've gotten gotten into activity logging so I can reflect on the countless hours spent on here. There are other tools out there, but many are manual and many are paid, and I just can't be bothered with either. </p>
 <hr/>
-<h2>Browser as a Memex</h2>
+<h2 id="browser-as-a-memex">Browser as a Memex</h2>
 <p class="caption"> Screenshot from my Timing dashboard, back in my period of riches </p>
 <p><img loading="lazy" alt="Screenshot from my Timing dashboard, back in my period of riches" src="/static/rt_timingdashboard.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <p>Over half of all my computer activity happens in the browser, so I've decided to start with indexing browser activity automatically. </p>
@@ -322,7 +322,7 @@ code {
 <h1 id="lets-begin">Let's begin!</h1>
 <p>So, theres three things to set up: the Google Script, the Google Sheet, and the Javascript bookmarklet. </p>
 <hr/>
-<h2>Google Script</h2>
+<h2 id="google-script">Google Script</h2>
 <p>Go to <a href="https://script.google.com/home">script.google.com</a> and sign in, then click "New project" in the top left. It should take you to this blank page</p>
 <p class="caption"> Blank Google Script </p>
 <p><img loading="lazy" alt="Blank Google Script" src="/static/et_googlescript1.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
@@ -336,13 +336,13 @@ code {
 <p class="caption"> Our script's API endpoint URL </p>
 <p><img loading="lazy" alt="Our script's API endpoint URL" src="/static/et_googlescript3.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <hr/>
-<h2>Google Sheet</h2>
+<h2 id="google-sheet">Google Sheet</h2>
 <p>Create a new Google Sheet, making sure it's under the same Google account as your script. We're going to add headers to the file so added rows are properly formatted. The column names are case-sensitive!</p>
 <p class="caption"> A properly set up Google Sheet </p>
 <p><img loading="lazy" alt="A properly set up Google Sheet" src="/static/et_googlesheet.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <p>I've also highlighted the Sheet ID in the URL. We only need this bit for the bookmarklet, not the whole thing. </p>
 <hr/>
-<h2>Bookmarklet</h2>
+<h2 id="bookmarklet">Bookmarklet</h2>
 <p>Last step, the actual trigger for adding pages to Electric Tables. Open your favorite text editor, and paste in <code>bookmarklet.js</code> from Tom's <a href="https://gist.github.com/tomcritchlow/cbb06a9298fb6cc0804372552fda1f96">gist</a>. </p>
 <p>You only need to add the macro URL from step 1 (should look like "<a href="">script.google.com/macros/s/....../exec</a>") and the spreadsheet ID (should look like <code>AodN89ua98dWL12O1oidRTa...</code> and be really long)</p>
 <p>Then head over to a <a href="https://caiorss.github.io/bookmarklet-maker/">bookmarklet generator</a> and copy in your edited <code>bookmarklet.js</code>. Hit "Run Code" to test it out, and the Electric Tables menu should pop up in the top right of your screen. Add a note, then click "Submit". </p>

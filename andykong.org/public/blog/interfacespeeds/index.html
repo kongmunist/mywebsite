@@ -315,13 +315,13 @@ code {
 <p>I'll list each device, explain its peculiarities and any choices I made regarding number of inputs, then give the stats. Here's a table of the results, read on for how I came to each number!</p>
 <h3>Definition of bits for ITR</h3>
 <p>Before we start, it may seem strange to quantify the mouse or touchscreen in terms of bits, since they're almost continuous input devices. Here, "bits" refers to the log2 of the number of options available. For example, if a user in a BCI trial is trying to select one button when there are two available to pick, then they transmit one "bit" of information per correct choice they make. If choosing a button takes the user 5 seconds, then they'll be able to make 12 choices in a minute. making 12 bits per minute the ITR.</p>
-<h2>Compiled Tables (Both available at page bottom)</h2>
+<h2 id="compiled-tables-both-available-at-page-bottom">Compiled Tables (Both available at page bottom)</h2>
 <p class="caption">Table of information transfer rates of all common devices</p>
 <p><img loading="lazy" alt="Table of information transfer rates of all common devices" src="/static/bpmITRCommon.png"/></p>
 <p>Let's get into it!</p>
 <h1 id="list-of-common-input-devices">List of Common Input Devices</h1>
 <hr/>
-<h2>Thermostat</h2>
+<h2 id="thermostat">Thermostat</h2>
 <p class="caption">Picture of a thermostat</p>
 <p><img loading="lazy" alt="Picture of a thermostat" src="/static/bpmthermostat.jpg"/></p>
 <p>I pressed 10 buttons in 6.4 seconds. </p>
@@ -329,7 +329,7 @@ code {
 <h5>Input Speed: 1.5/sec</h5>
 <h5>Bits/min: 209</h5>
 <hr/>
-<h2>TV Remote</h2>
+<h2 id="tv-remote">TV Remote</h2>
 <p class="caption">Generic TV remote</p>
 <p><img loading="lazy" alt="Generic TV remote" src="/static/bpmtvremote.png"/></p>
 <p>Since TV remotes have notoriously gummy buttons, they're a lot slower than the microwave. I pressed 10 buttons in 7.13 seconds. I used a slightly different television remote than the one pictured, which is why the # of inputs may not line up. </p>
@@ -337,7 +337,7 @@ code {
 <h5>Input Speed: 1.4/sec</h5>
 <h5>TV Remote Bits/min: 453</h5>
 <hr/>
-<h2>Microwave</h2>
+<h2 id="microwave">Microwave</h2>
 <p class="caption">Common Household Microwave</p>
 <p><img loading="lazy" alt="Household Microwave" src="/static/bpmmicrowave.png"/></p>
 <p>Starting with common household electronics, the humble microwave. Though I've never used any button besides the numpad, start, and cancel, there are many more buttons which configure the microwave. I count 25 buttons, plus the trigger that opens the door. </p>
@@ -346,7 +346,7 @@ code {
 <h5>Input Speed: 2/sec</h5>
 <h5>Microwave Bits/min: 564</h5>
 <hr/>
-<h2>Game Controller</h2>
+<h2 id="game-controller">Game Controller</h2>
 <p class="caption">They control nuclear submarines with these!</p>
 <p><img loading="lazy" alt="They control nuclear submarines with these!" src="/static/bpmgamecontroller.png"/></p>
 <p>We're starting to get complicated. As anyone who has played Smash knows, single button presses do very little — combinations of keys are necessary to even play. I will count single button presses, joystick positions, and a joystick position + button press. </p>
@@ -391,7 +391,7 @@ code {
 <p><br/></p>
 <h5>Game Controller Total Bits/min: 4,482</h5>
 <hr/>
-<h2>Touchscreen</h2>
+<h2 id="touchscreen">Touchscreen</h2>
 <p class="caption">The Apple iPhone 11, most sold phone in 2019.</p>
 <p><img loading="lazy" alt="The Apple iPhone 11, most sold phone in 2019." src="/static/bpmiphone11.jpg"/></p>
 <p>I'm using an Apple iPhone 11 as my reference phone since it's the most sold smartphone of 2019, according to Wikipedia. There are a lot of possible input gestures on the phone, and the touchscreen enables them to be fast. I'll count each input separately to make the count more accurate. However, I'm not counting pinches, so this will be a bit of an underestimate. </p>
@@ -449,7 +449,7 @@ code {
 <p><br/></p>
 <h5>Touchscreen Total Bits/min: 2,744</h5>
 <hr/>
-<h2>Touchscreen (Stylus)</h2>
+<h2 id="touchscreen-stylus">Touchscreen (Stylus)</h2>
 <p>Though not many smartphones these days have a stylus anymore, it does allow much more pinpoint clicks while allowing the same speed and gestures that using a finger does. I'm going to use the same speeds for taps, holds, drags, but will not count swipes or pinches since they are only possible with fingers.</p>
 <p>I'll use the screen resolution we used earlier for the iPhone 11 (1792x828), and a smaller 60x60 box for the minimum pointing size. This gives us 412 potential sites for input. I'll include the volume/power/home buttons only in the taps again. </p>
 <table class="tg">
@@ -489,7 +489,7 @@ code {
 <p><br/></p>
 <h5>Touchscreen Stylus Total Bits/min: 2,852</h5>
 <hr/>
-<h2>Touchscreen (Keyboard)</h2>
+<h2 id="touchscreen-keyboard">Touchscreen (Keyboard)</h2>
 <p class="caption">Picture of the iPhone keyboard, with diction key highlighted. I didn't want to find another picture so I reused this one</p>
 <p><img loading="lazy" alt="Picture of the iPhone keyboard, with diction key highlighted. I didn't want to find another picture so I reused this one" src="/static/bpmdiction.jpg"/></p>
 <p>I'm using my iPhone 6s keyboard for this one. I'll count each page of keys separately, since they're harder to get to. I'm doing phone keyboard separately because A) we have a lot of muscle memory for it, which lets us input keys a lot faster than a usual interface, and B) to double check my numbers, the final bits/min of this should be bounded by the total bits/min of the touschreen.</p>
@@ -533,7 +533,7 @@ code {
 <p><br/></p>
 <h5>Touchscreen Keyboard Total Bits/min: 2,491</h5>
 <hr/>
-<h2>Mouse/trackpad + Screen</h2>
+<h2 id="mousetrackpad--screen">Mouse/trackpad + Screen</h2>
 <p class="caption">Macbook Air</p>
 <p><img loading="lazy" alt="Macbook Air" src="/static/bpmmacbookair.png"/></p>
 <p>I'll be using my Macbook Air screen and touchpad as the reference for this one. With a screen resolution of 1440x900, it's worse than the smartphones we just saw, but I think the finger has a broader input area than the mouse pointer. For inputs, I'm counting clicks, double clicks, right clicks, drags, and swipes (scrolling included). </p>
@@ -589,7 +589,7 @@ code {
 <p><br/></p>
 <h5>Mouse+Screen Total Bits/min: 2,864</h5>
 <hr/>
-<h2>Keyboard</h2>
+<h2 id="keyboard">Keyboard</h2>
 <p class="caption">Physical keyboard, reduced because it doesn't have the numpad on the right.</p>
 <p><img loading="lazy" alt="Physical keyboard, reduced because it doesn't have the numpad on the right." src="/static/bpmkeyboard.jpg"/></p>
 <p>I'll be using my Macbook Air keyboard, which is quite similar to the one shown above. I'm counting single keypresses for typing and not typing separately, and also combination keypresses (Control, Alt/Option, Command, Function, or Shift + any other keys).</p>
@@ -639,7 +639,7 @@ code {
 <h1 id="list-of-experimental-input-devices">List of Experimental Input Devices</h1>
 <p>These are research devices that are still working out the kinks, and don't work incredibly reliably yet. I'm including voice control because it's a biometric device instead of a button input like the earlier ones, and doesn't work for everyone's voice yet.</p>
 <hr/>
-<h2>Voice Control (Diction)</h2>
+<h2 id="voice-control-diction">Voice Control (Diction)</h2>
 <p class="caption">Voice control or diction button on an iPhone keyboard</p>
 <p><img loading="lazy" alt="Voice control or diction button on an iPhone keyboard" src="/static/bpmdiction.jpg"/></p>
 <p>I used Google's voice to text function to dictate the sentence "Google's free service instantly translates words, phrases, and web pages between English and over 100 other languages." At 114 characters (118 with punctuation) in 7.37 seconds, this yields a whopping 165 WPM, or 957 characters/min. Apple's diction feature took the same amount of time, which was how long it took me to read the sentence.</p>
@@ -648,7 +648,7 @@ code {
 <h5>Input Speed: 15.47 characters/sec</h5>
 <h5>Bits/min: 4,835</h5>
 <hr/>
-<h2>Fingerprint/Face recognition</h2>
+<h2 id="fingerprintface-recognition">Fingerprint/Face recognition</h2>
 <p>This is probably a special class of "input", but I thought it'd be cool to include. </p>
 <h3>Fingerprints</h3>
 <p><a href="https://www.nist.gov/news-events/news/2004/07/nist-study-shows-computerized-fingerprint-matching-highly-accurate">NIST</a> says fingerprint scanners only give false positives 0.01% of the time. Assuming this is consistent, the fingerprint scanner reliably can differentiate you and 700,000 others from everyone else on earth, which is 10,000 other groups of 700,000 people. I'll say that's 10,000 inputs. My phone takes around 1 second to scan, but sometimes fails, so I'll say it operates at 1.5/sec</p>
@@ -661,7 +661,7 @@ code {
 <h5>Input Speed: 1/sec</h5>
 <h5>Face Recognition Bits/min: 617</h5>
 <hr/>
-<h2>Eye tracking</h2>
+<h2 id="eye-tracking">Eye tracking</h2>
 <p class="caption">Screenshot of someone using a Tobii Eye Tracker. The big blob is the predicted gaze location, which takes up about 10% of the screen</p>
 <p><img loading="lazy" alt="Screenshot of someone using a Tobii Eye Tracker. The big blob is the predicted gaze location, which takes up about 10% of the screen" src="/static/bpmtobii.png"/></p>
 <p>Eye tracking uses your gaze location as input, usually to steer your cursor, but also for indicating attention. Tobii is one of the largest eye-tracking companies, selling hardware that just plugs into your computer and reports your gaze. However, it has a large inaccuracy which isn't mentioned on the website, and refuses to even mention accuracy specs for any of their products. </p>
@@ -672,7 +672,7 @@ code {
 <h5>Input Speed: 1.07 clicks/sec, 1.5 blinks/sec</h5>
 <h5>Eye Tracker Bits/min: 417 clicking, 584 blinking</h5>
 <hr/>
-<h2>Brain-computer interfaces (EEG)</h2>
+<h2 id="braincomputer-interfaces-eeg">Brain-computer interfaces (EEG)</h2>
 <p>There's a few different ways to detect what someone's thinking of. I'll go over both the P300 and SSVEP.</p>
 <h3>P300</h3>
 <p>The <a href="https://en.wikipedia.org/wiki/P300_(neuroscience)">P300</a> is a signal that arises when your expectation of what you're seeing is different from what you expect it to be. These BCIs work by flashing a grid of objects (letters, labeled buttons) and removing one object each time. If you ever don't see the one you're trying to select, then your brain emits a P300. It needs a lot of averaging across many trials to be done reliably though, and it's a very unintuitive way to select things. </p>

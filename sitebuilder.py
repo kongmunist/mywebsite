@@ -59,12 +59,16 @@ def prerender_jinja(text):
     # pygmented_markdown converts the ~[]() syntax into actual html
     # print("pyg body", type(pygmented_markdown(prerendered_body)), pygmented_markdown(prerendered_body))
 
-    # Add name to all h1s, use that as the id for the table of contents
+    # Add name to all h1s and h2s, use that as the id for the table of contents
     page = BeautifulSoup(pygmented_markdown(prerendered_body),features="lxml")
     for h1 in page.find_all("h1"):
         tmph1 = re.sub(r'[^\w\s]', '', h1.text)
         tmph1 = tmph1.strip().lower().replace(" ", "-")
         h1["id"] = tmph1
+    for h2 in page.find_all("h2"):
+        tmph2 = re.sub(r'[^\w\s]', '', h2.text)
+        tmph2 = tmph2.strip().lower().replace(" ", "-")
+        h2["id"] = tmph2
     return str(page)
     # return pygmented_markdown(prerendered_body)
 app.config['FLATPAGES_HTML_RENDERER'] = prerender_jinja
@@ -126,6 +130,29 @@ def utility_processor():
         h1s = re.findall(r"^# (.*)", curPageText, re.MULTILINE)
         print(h1s)
 
+
+        # get all h2s
+        h2s = re.findall(r"^## (.*)", curPageText, re.MULTILINE)
+        print(h2s)
+
+        # figure out where the h1s and h2s are in the text
+        h1locs = [curPageText.find(x) for x in h1s]
+        h2locs = [curPageText.find(x) for x in h2s]
+        print(h1locs)
+        print(h2locs)
+
+        # Determine which h1 all the h2s belong to
+        h2sUnderH1 = []
+        for i in range(len(h1locs)):
+            # get all h2s that are between the current h1 and the next h1
+            if i == len(h1locs) - 1:
+                h2sUnderH1.append([x for x in h2s if h2locs[h2s.index(x)] > h1locs[i]])
+            else:
+                h2sUnderH1.append([x for x in h2s if h2locs[h2s.index(x)] > h1locs[i] and h2locs[h2s.index(x)] < h1locs[i+1]])
+        print(h2sUnderH1)
+
+
+
         # These are the headers in the TOC. TOC will be an enumerated list
         toc = "<div class='toc'>"
         toc += "<h2 style='margin:0px;'>Table of Contents</h2>"
@@ -136,6 +163,20 @@ def utility_processor():
             h1link = h1link.strip().lower().replace(" ", "-")
             # Create link
             toc += f"{i+1}. <a href=\"#{h1link}\">{h1}</a><br>"
+
+            # Add h2s
+            if len(h2sUnderH1[i]) > 0:
+                # toc += "<ol style='margin-bottom: 0px;'>"
+                # for h2 in h2sUnderH1[i]:
+                #     h2link = re.sub(r'[^\w\s]', '', h2)
+                #     h2link = h2link.strip().lower().replace(" ", "-")
+                #     toc += f"<li><a href=\"#{h2link}\">{h2}</a></li>"
+                # toc += "</ol>"
+                for j,h2 in enumerate(h2sUnderH1[i]):
+                    h2link = re.sub(r'[^\w\s]', '', h2)
+                    h2link = h2link.strip().lower().replace(" ", "-")
+                    toc += f"&emsp;&emsp; {i+1}.{j+1} <a href=\"#{h2link}\">{h2}</a><br>"
+
         # toc += "</ol>\n"
         toc += "</div>"
         toc += "\n<hr>\n"

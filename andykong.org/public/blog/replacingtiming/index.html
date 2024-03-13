@@ -318,14 +318,14 @@ code {
 <p>Timing calls itself a time tracker, but I don't think that's really what I want. I want to know how I'm using my laptop during the course of a day, and make adjustments based on whatever I happen to want to change.</p>
 <p>Really, I just wanted to make a background-running shell or Python script that logs my context on the computer, then shows me the aggregated stats once in a while. </p>
 <p>To understand what I'm doing on my computer, I think you need to know A) the current time, B) what I'm listening to, and C) which application is open and for how long. I think these give you a pretty clear picture of my mental state. For example, if I have docs open, I'm probably writing. If I'm on Youtube, I'm watching videos. If I'm on preview, reading. Of course there are exceptions — I could be on YouTube watching gaming videos or electrical engineering tutorials.But it should be good enough. Logging my music will also help me conclusively decide if music helps or harms me when I'm working. </p>
-<h2>Improvements over Timing</h2>
+<h2 id="improvements-over-timing">Improvements over Timing</h2>
 <p>My main complaint with Timing is that it didn't ever show me aggregated features pulled out of my data. I don't mean the "automagical insight extraction" that so many data analysis teams claim to implement for millions of dollars. The human brain can do all of that truly automatically, as long as the right data is shown routinely. I simply wanted something showing my usage to establish a feedback loop, and let myself decide what needs to change or not, and how that change has been going historically. </p>
 <h1 id="whatve-you-done-so-far">What've you done so far?</h1>
 <p>So far, I've cancelled my Timing subscription and written a pretty crude day-by-day activity tracker using Applescripts, Bash, and Python. I'm gonna refer to it as Casey for now, just to have a name for it. </p>
 <p><br/><br/></p>
-<h2>As a logger, Casey uses only 15% of the storage of Timing while being 50% more efficient</h2>
+<h2 id="as-a-logger-casey-uses-only-15-of-the-storage-of-timing-while-being-50-more-efficient">As a logger, Casey uses only 15% of the storage of Timing while being 50% more efficient</h2>
 <p><br/><br/></p><hr/>
-<h2>Performance</h2>
+<h2 id="performance">Performance</h2>
 <p>Here's a photo of the two programs in the activity monitor, monitoring the same stretch of 16 minutes.  </p>
 <p class="caption">CPU time for Timing</p>
 <p><img loading="lazy" alt="CPU time for Timing" src="/static/rt_cputesttiming.png"/></p>
@@ -335,7 +335,7 @@ code {
 <p>We see the CPU time of Casey is 5.66 seconds compared to Timing's 7.68, around a 25% reduction. </p>
 <p>The memory footprint of Casey is also lower, sitting at 27.4 MB vs. 48.1 MB for Timing, representing a savings of 22.2%. </p>
 <hr/>
-<h2>Storage</h2>
+<h2 id="storage">Storage</h2>
 <p>Casey retrieves user context every second, and accumulated 1033 new lines and 179kB of extra storage during the test. Each record takes up around 173 bytes pre-compression. After compression, the total storage is only 6kB, putting each log entry at 5.8 bytes for Casey. </p>
 <p><img loading="lazy" alt="Compressed and uncompressed log sizes for Casey, Finder screenshot" src="/static/rt_stotestcasey.png"/></p>
 <p>I planned on comparing this to Timing's 12kB + 235kB in the sync.db and wal.db respectively (they do not immediately store it into a sqlite database), assuming the same logging rate.  But I personally can't believe that Timing could be so terribly inefficient. At 239 bytes/log, it's worse than Casey when naively storing everything as text directly. I'll instead refer to the 2400 hours of data it has recorded into a storage folder only 320MB in size, including backups. This means it sits at 2346 hours/320.8 MB = 38 bytes/sec. A much more reasonable quantity, still beaten handily by Casey's 5.8 bytes/log.</p>

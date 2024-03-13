@@ -4,11 +4,12 @@ TODO:
 - Add a now page
 - maybe remove the chapter headers from blog posts where the table of contents doesn't exist?
 
+Mar 13, 2024: Thanks to Vimal I realized that although subheaders using the id="" tag are faithfully rendered on a new tab page, they are not when you hard reload it, and this is because some resources are zero-height before they load. This is what causes the shifting in the page when you hard reload it. Today I added table of contents for H2 as well as H1, somewhere in prerender_jinja we have to add the id tag to all the h2 objects we find.
 Feb 12, 2024 - fixed blog post length text bleeding over the div, thanks to https://stackoverflow.com/questions/2062258/floating-elements-within-a-div-floats-outside-of-div-why
 Feb 7, 2024 - Added width option to add_pic jinja function. It only works when we're also centering, but we're almost always doing that.
 Feb 5, 2024  - Increased word spacing by 0.035em. I think it's barely visible but it does help. I could be psyopping myself though.
 Feb 2, 2024 - app.py refresh clears everything on refresh :( I added a "confirm refresh" to the refresh but I think it may still happen in the future.
-Jan 26, 2024 - Not sure how to add a TOC, I think it's hard to access the page filename from the page itself. p or page in a blog page returns <class 'jinja2.runtime.Undefined'>. Gonna just do it the brute force way.
+Jan 26, 2024 - Not sure how to add a TOC (table of contents), I think it's hard to access the page filename from the page itself. p or page in a blog page returns <class 'jinja2.runtime.Undefined'>. Gonna just do it the brute force way.
 Jan 25, 2024 - Added side border to h1 and h2 like Alexey, added counters to each page. Counters will probably mess up some older posts though... Also made the font colors a bit lighter.
 Jan 15, 2024 - removed trailing slash (hopefully) from URLs to keep them unique online but they still work (hopefully). Also turned rss+xml to just xml in the rss renderer. Removed trailing slash from the sitemap.xml too using jinja string slicing in the template file. This is not graceful. Added blog word length to the main page by adding a meta param. Removed some CLS by changing the font-display to auto.
 Jan 11, 2024 - added blog bubbles instead of <hr> between each one. Reading is a bit easier. Also went through and changed a bunch of names of old blog posts. I noticed the recent blog posts have much less "raw" titles, which actually makes them less informative.

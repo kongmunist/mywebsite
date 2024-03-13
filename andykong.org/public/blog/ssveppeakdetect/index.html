@@ -312,13 +312,13 @@ code {
 <hr>
             <html><body><p>Today I tried a bunch of techniques to try and detect SSVEP peaks in long streams of EEG data. </p>
 <p>My data came from three trials were all around 40 seconds long, and involved me staring at an LED blinking at a duty cycle of 50% and frequencies of 18, 35, and 65Hz. The techniques I used were (broadly): single-channel averaging (SCA), phase-rectified signal averaging (PRSA), autocorrelation (AC), and plain ol' power spectral distribution (PSD). Lots of three letter agencies. </p>
-<h2>Procedure</h2>
+<h2 id="procedure">Procedure</h2>
 <h3>Data</h3>
 <p>Since each data file I had was 40 seconds, I first confirmed that using the entire length of data (after a 60Hz notch and a 5-95 bandpass filter) with each technique showed a prominent peak at the frequency of stimulation, as a baseline. If using the entire length of data didn't work, then I was really screwed trying to detect it using less data. The only data to not show a peak at the stim frequency was the 65Hz data, which makes sense because of the small signal size since frequencies past 20 begin to attenuate. The 18Hz was the largest, and the 35Hz followed.</p>
 <h3>Sliding windows</h3>
 <p>For practical applications, I'd only be able to record about 5 seconds of data from the EEG before the user gets tired of staring at blinking lights. I wrote a neat function that chunked the 40 second data into overlapping, 5 second data windows. The function then runs one of the above peak detection methods on the 5 second window, and records the peak before moving on to the next 5 second window. This way, I get to see how the techniques fare across all 40 seconds, but still use a realistic time window. These graphs are longitudinal, and they'll be the focus of this post. </p>
 <p>We want to see a clear horizontal line at the frequency of interest (FOI) (either 18 or 35 Hz). I'm summing how many times each frequency shows up on the graph, and printing them out in order. I'm defining "SNR" as the number of times the frequency of interest shows up divided by the number of times the next, far-off frequency shows up (so 34 and 33 don't count for a 35Hz peak, but 30Hz does). Let's get started!</p>
-<h2>Experiments</h2>
+<h2 id="experiments">Experiments</h2>
 <p>I bet you're wondering what experiments I ran today! I'm glad to show you the graphs. </p>
 <h3>How do SCA, PRSA, and PSD stack up to each other?</h3>
 <p>The real question! Let's take a look! All peak detection was performed on a 5 sec sliding window over the entire data stream. Peaks are just frequency with the the max power between 10 and 60Hz. Shown here is the 35Hz data. Specifics of each technique are given below.</p>
@@ -370,9 +370,9 @@ code {
 <p>I think I'm going with the PRSA for now, since it appears to be sort of consistent. Maybe I can do a history-based voting system or something...</p>
 <p class="caption">Comparison of SCA and PRSA for a 5 second sliding window. SCA is much noisier, and doesn't always help fill in the gaps left by PRSA</p>
 <p><img loading="lazy" alt="Comparison of SCA and PRSA for a 5 second sliding window. SCA is much noisier, and doesn't always help fill in the gaps left by PRSA" src="/static/SCAvsPRSA5secwindow.png"/></p>
-<h2>Takeaways</h2>
+<h2 id="takeaways">Takeaways</h2>
 <p>These techniques work great for me for more than 10 seconds of data, but that just isn't feasible for real usage. Also it's annoying for me to look at a light for that long. </p>
-<h2>Next steps</h2>
+<h2 id="next-steps">Next steps</h2>
 <p>I want to make the PRSA run live. I need to add a peak detection history plot to my GUI.</p>
 <p>I also want to try the different wavelength LEDs again. With peak detection, it might be better than just amplitude thresholding or something.</p>
 <p>As far as new research goes, I want to try using the Stability Coefficient, empirical mode decomposition, and similary of background. Those are next. EMD removes noise, SC offers decent SSVEP identification accuracy at short data chunks around 1 second (voting system!), and similarity of background is close to SC. I also want to try multiple electrodes, and concat their data as if it's one stream. Then I could use PRSA and get great results from "10 seconds of data". </p>
