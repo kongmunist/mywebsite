@@ -120,5 +120,12 @@ For accountability, I will maintain the list of outputs below, though this proje
 - Mar 9: Some creepy [demos](https://twitter.com/oldestasian/status/1766621313437987057) made on Vision Pro as part of a hackathon, day 1.
 - Mar 10: Numerous [tweets](https://twitter.com/oldestasian/status/1767017445620146605) about the Vision Pro Hackathon, day 2.
 - Mar 11: [Medium post](https://kongmunist.medium.com/how-to-set-up-hand-tracking-on-apple-vision-pro-54b7439f888b)) about how to build my Vision Pro Hands demo
-- Mar 12:
+- Mar 12: 
 - Mar 13: [Reflections on the Vision Pro Hackathon](../../blog/avph_reflection)
+- Mar 14:
+- Mar 15: [Tweet thread on blood lead concentration](https://twitter.com/oldestasian/status/1768680598082822611)
+- Mar 25: [Medium post](https://kongmunist.medium.com/sub-microamp-sleep-current-with-seeed-xiao-nrf52840-732def7d95c3) on how to properly deep sleep the XIAO nRF52840 board  
+- April 3: UIST paper submission completed!
+- April 4: Completed video on my UIST paper, can't wait to show you guys!
+- April 5: [Tweet thread](https://twitter.com/oldestasian/status/1776407986879250686) about how much time it took to finish the paper. 
+- April 7: [Blog post about](../../blog/dinocamtoypower) power consumption of a children's toy camera I got in China.

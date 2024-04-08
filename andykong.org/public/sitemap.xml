@@ -14,6 +14,53 @@
 
   
     <url>
+    <loc>https://andykong.org/blog/dinocamtoypower</loc>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/dinocamtoypower/0.jpeg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/dinocamtoypower/1.jpeg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/dinocamtoypower/2.jpeg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/dinocamtoypower/3.jpeg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/dinocamtoypower/4.jpeg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/dinocamtoypower/5.jpeg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/dinocamtoypower/6.jpg
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+    <url>
     <loc>https://andykong.org/blog/avph_reflection</loc>
       
         <image:image>
@@ -43,6 +90,18 @@
         <image:image>
           <image:loc>
             https://andykong.org/static/avph_reflection/4.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/avph_reflection/riftv1.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/avph_reflection/AVP_Light_App.jpg
           </image:loc>
         </image:image>
       

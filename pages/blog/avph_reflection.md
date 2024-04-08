@@ -60,8 +60,11 @@ In the end, we had written the following apps:
 - Gaussian splatting model viewer running on Metal, with hand gesture control
 
 - Collaborative video upload gallery for AVP/iPhone 15 spatial videos
+{{ add_pic("avph_reflection/riftv1.jpg", "") }}
 
 - AR interface to control the color and brightness of real-life smart bulbs
+{{ add_pic("avph_reflection/AVP_Light_App.jpg", "") }}
+
 
 - Lighter demo like the early iPod apps
 

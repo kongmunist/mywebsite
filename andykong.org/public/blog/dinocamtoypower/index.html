@@ -8,6 +8,64 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    
+        <meta name="author" content="Andy Kong">
+        <meta name="title" content="Power profile of a thermal printer camera">
+        <meta name="description" content="Inspecting the internals of a dinosaur-shaped children&#39;s camera I got in Shenzhen">
+        <meta name="keywords" content=" electronics,  powerprofile, ">
+
+        <title>
+            Power profile of a thermal printer camera | Andy Kong
+        </title>
+    
+
+    <style>
+        body {
+            counter-reset: h1counter h2counter;
+        }
+
+        h1:not(.title) {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px groove #DBAD80;
+
+            counter-reset: h2counter;
+        }
+
+        h1:not(.title)::before {
+            counter-increment: h1counter;
+            content: counter(h1counter) ". ";
+        }
+
+/*
+        .blogpage > h2 {
+            text-decoration: underline wavy #DBAD80;
+            text-underline-thickness: 1px;
+        }
+        */
+
+        .blogpage > h2::before {
+            counter-increment: h2counter;
+            content: counter(h1counter) "." counter(h2counter) "  ";
+            /*
+            text-decoration: none;
+            display: inline-block;
+            */
+        }
+
+
+        .toc {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+            color: inherit;
+            text-decoration: none;
+        }
+
+    </style>
+
+
+
 
     <style type="text/css">
         /* Atkinson Hyperlegible */
@@ -236,295 +294,71 @@ code {
 </nav>
 
 
-<div class="row justify-content-center" style = "height:100vh; width: 100vw;padding-left:25px; padding-right:0px">
-    <div class="col-xl-3 col-lg-4 col-md-11 col-11" style="padding-left:2%; padding-right:2%;">
+    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+<!-- padding-left:20px; padding-right:20px -->
+            <div class="col-md-8 col-11 p-0" style="">
+                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
 
-        <a href="/"> <img class="media-object mx-auto d-block rounded-circle " style="margin-bottom:0px; max-height:20vh;" src="/static/merock_square.jpg"/></a>
-        <h1 class="text-center" style="font-size: 2em; margin-top:0.5em;">Hi, I'm Andy!</h1>
-        <p class="text-center"  style="font-size: 1.5em; margin-bottom:0px;"></p>
+                
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-        <div class="links text-center" style="margin:5px; font-size:2.5em;">
-            <a href="https://critiquefood.blogspot.com/" target="_blank" title="Food For Thought"><i class="fas fa-ice-cream"></i></a>&nbsp
-            <!--<a href="https://github.com/kongmunist" target="_blank" title="Github"><i class="fab fa-github-square fa-2x"></i></a>&nbsp-->
-            <!--<a href="mailto:andyking99@gmail.com" target="_blank" title="Email"><i class="far fa-paper-plane fa-2x"></i></a>&nbsp-->
-            <a href="https://www.youtube.com/channel/UC8hEr0FkB5i-gQC4b7b5fvg" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>&nbsp
-            <a href="https://kongmunist.medium.com/" target="_blank" title="Medium"><i class="fab fa-medium"></i></a>&nbsp
-            <a href="/rss.xml" title="RSS"><img src="/static/rss.svg" style = "height:1em;"></a>&nbsp
-        </div>
-<!--        <img style="background:white; padding:5px;"width="100%" src="http://ghchart.rshah.org/409ba5/kongmunist" alt="2016rshah's Github chart" />-->
-    </div>
+        
 
 
+<div class="blogpage overflow-hidden" style="margin-bottom:4em;">
+    <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Power profile of a thermal printer camera</h1>
+            <p style="font-size:0.8em;"> Published April 7, 2024</p>
+<hr>
+            <html><body><p>Hello! I've recently finished a paper, so it's time to work on sillier stuff. </p>
+<p>On a recent trip to China, I purchased this children's toy camera consisting of a front/back-facing camera and thermal printer which can print the captured photos on the spot. It's adorable, and I use it to take shitty analog-looking photos of my friends. </p>
+<p><img loading="lazy" alt="" src="/static/dinocamtoypower/0.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p>As someone whose only used phone cameras, having one as a monotool is pretty convenient. And the terrible picture quality is quite freeing, since no matter what you do or how you look, the picture will be pretty shite.</p>
+<p>My only gripe is the speed. Most real cameras have a sleep mode where they're on, ready to shoot, but not really burning much power. I'd like to keep this camera in sleep mode too, cause it takes 5-10 seconds to turn on and another few seconds to flip around the camera. But as far as I can tell, there is no sleep mode, just a screen-off mode. You can also configure an auto-off timer in the settings, but then you have to wait for it to turn back on again.</p>
+<p>If "display off" mode uses almost no power, then I can make the auto-off timer absurdly long and just turn off the display when it's in my pocket. However, if power consumption stays high, I'll just leave it off and deal with the startup time. It's time to check!</p>
+<h1 id="power-metering">Power metering</h1>
+<p>I've already taken this camera apart several times to re-plug in the battery, so it was easy enough to do it again to measure current consumption. I do this by attaching my oscilloscope probes across a 1Ω resistor in-line with the battery. The millivolts measured will be the milliamps consumed. </p>
+<p>Side note, it's sad to me that some versions of this toy will be thrown away despite being fully functional just because the parents/kid didn't know to open it and push back the battery plug back in. It should be glued on to prevent this, but I digress. </p>
+<h1 id="screen-on">Screen on</h1>
+<p>After the device turns on, power consumption is a steady ~85mA on the start screen</p>
+<p><img loading="lazy" alt="" src="/static/dinocamtoypower/1.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<h1 id="camera-on">Camera on</h1>
+<p>With the camera on, current consumption increases to ~95mA. It does not seem to matter which camera. </p>
+<p><img loading="lazy" alt="" src="/static/dinocamtoypower/2.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" src="/static/dinocamtoypower/3.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<h1 id="display-off">Display off</h1>
+<p>When the display is off but the device is on, power consumption is still quite high. The camera seems to turn off but we are still at a steady ~80mA, nearly the same as when we're on the intro menu.</p>
+<p><img loading="lazy" alt="" src="/static/dinocamtoypower/4.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<h1 id="on-shutdown">On shutdown</h1>
+<p>Display off on the menu screen has a current consumption of ~62 mA. This increases as the turn-off jingle plays and the screen turns back on, but then drops to zero when the device is off (as expected) </p>
+<p><img loading="lazy" alt="" src="/static/dinocamtoypower/5.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p>Keeping the camera on the menu screen with display off uses the least power, but it's still a far cry from zero. It's a shame because I think the startup time need not be so long, and shortening it would make the camera more useful to me. I will continue to use the camera, but probably not the display-off mode. </p>
+<p><img loading="lazy" alt="" src="/static/dinocamtoypower/6.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p>Cya next time!</p></body></html>
 
-    <div class="col-xl-7 col-lg-7 col-md-11 col-11 p-0" style="">
-        <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
 
-            
-<title>
-    Posts tagged 'electronics' | Andy Kong
-</title>
-    <div>
-    <h2>List of stuff tagged <em>electronics</em></h2>
+
+    
         <hr>
-    
-        <ul>
+        <p style="line-height:250%;">
+        <a class="btn btn-info" href="/tagged/electronics/">electronics</a>
 
-    <li>
-        <a href="/blog/noisyneopixels/">How to stop noisy NeoPixels</a>
+        
+            <a class="btn btn-info" href="/tagged/powerprofile/">powerprofile</a>
+        
+        </p> 
     
-        | Tagged:
-        
-            <a href="/tagged/electronics/">electronics</a>
-        
-    
-    </li>
-
-    <li>
-        <a href="/blog/infoglobetutorial2/">Infoglobe Tutorial Pt. 2 — Hardware Integration</a>
-    
-        | Tagged:
-        
-            <a href="/tagged/infoglobe/">infoglobe</a>
-        
-            <a href="/tagged/hardware/">hardware</a>
-        
-            <a href="/tagged/electronics/">electronics</a>
-        
-    
-    </li>
-
-    <li>
-        <a href="/blog/led5050teardown/">5050 LED Strip Teardown</a>
-    
-        | Tagged:
-        
-            <a href="/tagged/LEDs/">LEDs</a>
-        
-            <a href="/tagged/teardown/">teardown</a>
-        
-            <a href="/tagged/electronics/">electronics</a>
-        
-    
-    </li>
-
-    <li>
-        <a href="/blog/macgyver1/">MacGyvering Electronics From Merch</a>
-    
-        | Tagged:
-        
-            <a href="/tagged/electronics/">electronics</a>
-        
-            <a href="/tagged/macgyver/">macgyver</a>
-        
-    
-    </li>
-
-    <li>
-        <a href="/blog/supercap2lipo/">Supercapacitor To Lithium Battery Converter</a>
-    
-        | Tagged:
-        
-            <a href="/tagged/electronics/">electronics</a>
-        
-            <a href="/tagged/pcb/">pcb</a>
-        
-            <a href="/tagged/supercapacitor/">supercapacitor</a>
-        
-            <a href="/tagged/build18/">build18</a>
-        
-    
-    </li>
-
-    <li>
-        <a href="/blog/superchargingcaps/">Fast-charging capacitors</a>
-    
-        | Tagged:
-        
-            <a href="/tagged/electronics/">electronics</a>
-        
-    
-    </li>
-
-    <li>
-        <a href="/blog/USBA_exploration/">Exploring USB-A breakout cables</a>
-    
-        | Tagged:
-        
-            <a href="/tagged/electronics/">electronics</a>
-        
-    
-    </li>
-
-    <li>
-        <a href="/blog/attinyrtc/">A computer scientist&#39;s guide to I2C</a>
-    
-        | Tagged:
-        
-            <a href="/tagged/electronics/">electronics</a>
-        
-            <a href="/tagged/arduino/">arduino</a>
-        
-            <a href="/tagged/attiny/">attiny</a>
-        
-    
-    </li>
-
-    <li>
-        <a href="/blog/barcodehistory/">The first generation of handheld barcode scanners had laser tubes</a>
-    
-        | Tagged:
-        
-            <a href="/tagged/history/">history</a>
-        
-            <a href="/tagged/electronics/">electronics</a>
-        
-    
-    </li>
-
-    <li>
-        <a href="/blog/highcurrentsource/">Measuring 150 Amps With A DIY Shunt</a>
-    
-        | Tagged:
-        
-            <a href="/tagged/electronics/">electronics</a>
-        
-            <a href="/tagged/highcurrent/">highcurrent</a>
-        
-    
-    </li>
-
-    <li>
-        <a href="/blog/spudging/">Spudging PCB Stencils for Beginners</a>
-    
-        | Tagged:
-        
-            <a href="/tagged/electronics/">electronics</a>
-        
-            <a href="/tagged/PCB/">PCB</a>
-        
-            <a href="/tagged/tutorial/">tutorial</a>
-        
-    
-    </li>
-
-    <li>
-        <a href="/blog/LEDs3W6piece/">Testing out some high power LEDs</a>
-    
-        | Tagged:
-        
-            <a href="/tagged/electronics/">electronics</a>
-        
-            <a href="/tagged/LED/">LED</a>
-        
-            <a href="/tagged/projectlog/">projectlog</a>
-        
-            <a href="/tagged/wallscreen/">wallscreen</a>
-        
-    
-    </li>
-
-    <li>
-        <a href="/blog/testingbpw34/">Testing out the BPW34</a>
-    
-        | Tagged:
-        
-            <a href="/tagged/electronics/">electronics</a>
-        
-            <a href="/tagged/solar/">solar</a>
-        
-            <a href="/tagged/micropower/">micropower</a>
-        
-    
-    </li>
-
-    <li>
-        <a href="/blog/analogscalingvoltages/">Analog Electronics Basics: Scaling Voltage Rails</a>
-    
-        | Tagged:
-        
-            <a href="/tagged/analog/">analog</a>
-        
-            <a href="/tagged/electronics/">electronics</a>
-        
-            <a href="/tagged/opamps/">opamps</a>
-        
-    
-    </li>
-
-    <li>
-        <a href="/blog/traxionreproduction/">Recreating the Traxion psychophysics effect</a>
-    
-        | Tagged:
-        
-            <a href="/tagged/electronics/">electronics</a>
-        
-            <a href="/tagged/haptics/">haptics</a>
-        
-    
-    </li>
-
-    <li>
-        <a href="/blog/teardownlibre2cgm/">Teardown of the Freestyle Libre 2 Continuous Glucose Monitor</a>
-    
-        | Tagged:
-        
-            <a href="/tagged/electronics/">electronics</a>
-        
-            <a href="/tagged/teardown/">teardown</a>
-        
-            <a href="/tagged/personalinformatics/">personalinformatics</a>
-        
-    
-    </li>
-
-    <li>
-        <a href="/blog/ard2attiny/">Programming an ATtiny85V using an Arduino</a>
-    
-        | Tagged:
-        
-            <a href="/tagged/electronics/">electronics</a>
-        
-            <a href="/tagged/arduino/">arduino</a>
-        
-    
-    </li>
-
-    <li>
-        <a href="/blog/dinocamtoypower/">Power profile of a thermal printer camera</a>
-    
-        | Tagged:
-        
-            <a href="/tagged/electronics/">electronics</a>
-        
-            <a href="/tagged/powerprofile/">powerprofile</a>
-        
-    
-    </li>
-
-    <li>
-        <a href="/blog/infoglobetutorial1/">Infoglobe Tutorial Pt 1 — Hardware Prototyping</a>
-    
-        | Tagged:
-        
-            <a href="/tagged/infoglobe/">infoglobe</a>
-        
-            <a href="/tagged/hardware/">hardware</a>
-        
-            <a href="/tagged/electronics/">electronics</a>
-        
-    
-    </li>
-
-</div>
-    
-    </div>
-
-            <!-- </div> -->
-    </div>
-    <div class="col-xl-2 col-lg-1 col-0"></div>
 </div>
 
-    
+
+
+
+                    </div>
+                    <br>
+        <!-- </div> -->
+</div>
+
+
 
 
 <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
