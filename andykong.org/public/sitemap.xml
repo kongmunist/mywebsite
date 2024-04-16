@@ -14,6 +14,35 @@
 
   
     <url>
+    <loc>https://andykong.org/blog/cmuads</loc>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/cmuads/0.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/CCzoomin.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/cmuads/1.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/cmuads/2.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+    <url>
     <loc>https://andykong.org/blog/omorse</loc>
       
         <image:image>

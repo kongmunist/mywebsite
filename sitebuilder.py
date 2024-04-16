@@ -54,6 +54,7 @@ print(app.config['FLATPAGES_EXTENSION'])
 
 # Allows markdown to do flask functions before the site's HTML renders. INTEGRAL. SO IMPORTANT.
 def prerender_jinja(text):
+    print(text)
     prerendered_body = render_template_string(Markup(text))
     # print("PR Body", type(prerendered_body), prerendered_body)
     # pygmented_markdown converts the ~[]() syntax into actual html
@@ -302,11 +303,13 @@ def mainblog():
 def blog(title):
     print("blog page " + title)
     page = [pages.get("blog/" + title)]
-    blogPages = [p for p in pages if "blog"==p.meta.get('label')]
+    print(page)
+    blogPages = [p for p in pages if "blog" == p.meta.get('label')]
 
     # Add loading="lazy" to all images
     pattern = '<img'
     for p in page:
+        print(p.html)
         p.html = re.sub(pattern, '<img loading="lazy"', p.html)
 
     if page[0] is None:
