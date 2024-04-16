@@ -25,11 +25,11 @@
 		<form method="post">
 			Title<br>
 <!--			make it wider -->
-			<input type="text" name="title" width="200px" placeholder="Title"><br><br>
+			<input type="text" name="title" size="70px" placeholder="Title"><br><br>
+			<input type="text" name="snippet" size="70px" placeholder="Brief description"><br><br>
 			<input type="text" name="postname" placeholder="blogpost3000"><br><br>
 <!--			<input type="text" name="date" placeholder="Date"><br><br>-->
 			<input type="text" name="tags" placeholder="Tags"><br><br>
-			<input type="text" name="snippet" width="200px" placeholder="Brief description"><br><br>
 			<label for="ckeditor">Post</label>
 			{{ ckeditor.create() }}<br>
 			<input type="submit" value="Submit">

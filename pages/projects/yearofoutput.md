@@ -130,4 +130,5 @@ For accountability, I will maintain the list of outputs below, though this proje
 - April 5: [Tweet thread](https://twitter.com/oldestasian/status/1776407986879250686) about how much time it took to finish the paper. 
 - April 7: [Blog post about](../../blog/dinocamtoypower) power consumption of a children's toy camera I got in China.
 - April 12: Blog post on [how optimized Morse code is](../../blog/omorse)
+- April 14: 
 - April 15: Blog post on [most popular bulletin boards on CMU campus](../../blog/cmuads)
