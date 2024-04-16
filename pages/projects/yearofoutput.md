@@ -43,6 +43,7 @@ I started a Patreon, you can subscribe [here](https://www.patreon.com/AndyKongYe
 For accountability, I will maintain the list of outputs below, though this project page may not update every day. I'm also thinking about mirroring the list to the front page of my site to see it better — you'll know it if you see it.
 
 # 2024 Year Of Output
+## January
 - Jan 1: [Gaming travel blog post](../../blog/packingtips/)
 - Jan 2: Year Of Output project page (this one!), newsletter
 - Jan 3: [Wallet weight tweet thread](https://twitter.com/oldestasian/status/1742769447587246088), [newsletter landing page](https://andy-kong.ck.page/d0e99a7179)
@@ -75,6 +76,7 @@ For accountability, I will maintain the list of outputs below, though this proje
 - Jan 29: Comms
 - Jan 30: [Silly tweet about Apple Watch](https://twitter.com/oldestasian/status/1752594889466888589)
 - Jan 31: [Project post for head candles](../../projects/headcandles)
+## February
 - Feb 1: [First newsletter!](https://ckarchive.com/b/5quvh7hvxvqk0hp5xxd52arqrl344)
 - Feb 2: [Blog post](../../blog/ard2attiny) on flashing the ATtiny
 - Feb 3: Hosted a party, showed off Grid World.
@@ -87,7 +89,7 @@ For accountability, I will maintain the list of outputs below, though this proje
 - Feb 9: Applied for Flux Capacitor, a 1517 grant
 - Feb 10: Driver Apple Watch [tweet](https://twitter.com/oldestasian/status/1756578851893760155)
 {{ add_pic("yearofoutput/driverapplewatch.png", "") }}
-- Feb 11: ___
+- Feb 11: Ordered parts for impedance matching
 - Feb 12: Last blog post on Fitbit timezone correction, this time using Google location data. [Link](../../blog/glocfitbittzcorrection)
 {{ add_pic("glocfitbittzcorrection/0.png", "") }}
 - Feb 13: Looked into potential research collab
@@ -108,7 +110,8 @@ For accountability, I will maintain the list of outputs below, though this proje
     - 26: Blink detector [tweet](https://twitter.com/oldestasian/status/1762341673638469972)
     - 27: Saw Adrian, King Dashboard discussion
     - 28: Blink rate vs Tetris/Twitter [tweet](https://twitter.com/oldestasian/status/1762868017719894149)
-- Feb 29: .
+- Feb 29: Took pictures for tiny solar cell blog post
+## March
 - Mar 1: Arm-to-arm power delivery working, thanks Chris. Also emailed several people
 - Mar 2: Created a [patreon](https://www.patreon.com/AndyKongYearOfOutput), so far zero dollars.
 - Mar 3: [February Newsletter](https://ckarchive.com/b/gkunh5hd92d0ehzodd9oku5xlkv99)
@@ -120,15 +123,46 @@ For accountability, I will maintain the list of outputs below, though this proje
 - Mar 9: Some creepy [demos](https://twitter.com/oldestasian/status/1766621313437987057) made on Vision Pro as part of a hackathon, day 1.
 - Mar 10: Numerous [tweets](https://twitter.com/oldestasian/status/1767017445620146605) about the Vision Pro Hackathon, day 2.
 - Mar 11: [Medium post](https://kongmunist.medium.com/how-to-set-up-hand-tracking-on-apple-vision-pro-54b7439f888b)) about how to build my Vision Pro Hands demo
-- Mar 12: 
+- Mar 12: Talked to Adam about summering in Michigan
 - Mar 13: [Reflections on the Vision Pro Hackathon](../../blog/avph_reflection)
-- Mar 14:
+{{ add_pic("avph_reflection/2.jpg", "") }}
+- Mar 14: Learned how small 7-segment displays can get
+{{ add_pic("yearofoutput/7seg.png", "") }}
 - Mar 15: [Tweet thread on blood lead concentration](https://twitter.com/oldestasian/status/1768680598082822611)
+- Mar 16: [First post](https://www.researchhub.com/post/1839/inducing-mentalphysical-changes-using-parasites) on ResearchHub, a cryptocurrency research platform. I like the vision, but nobody engaged with my post.
+- Mar 17: First therapy
+- Mar 18: Parsing Apple Health sleep data, helped a friend with a PCB
+- Mar 19: Combining Apple health with Fitbit sleep data
+- Mar 20: Thrift store with Elio
+- Mar 21: Talked to Max
+- Mar 22: Calculator video, went climbing with Phu
+- Mar 23: Dietrich party with the Good Will Hunting squad
+- Mar 24: Disassembled a vape pen, took pics for future blog post
+{{ add_pic("yearofoutput/vape.png", "") }}
 - Mar 25: [Medium post](https://kongmunist.medium.com/sub-microamp-sleep-current-with-seeed-xiao-nrf52840-732def7d95c3) on how to properly deep sleep the XIAO nRF52840 board  
-- April 3: UIST paper submission completed!
-- April 4: Completed video on my UIST paper, can't wait to show you guys!
-- April 5: [Tweet thread](https://twitter.com/oldestasian/status/1776407986879250686) about how much time it took to finish the paper. 
-- April 7: [Blog post about](../../blog/dinocamtoypower) power consumption of a children's toy camera I got in China.
-- April 12: Blog post on [how optimized Morse code is](../../blog/omorse)
-- April 14: 
-- April 15: Blog post on [most popular bulletin boards on CMU campus](../../blog/cmuads)
+- Mar 26: Gradient generating code for figures. Hopefully will not have to remake that. 
+{{ add_pic("yearofoutput/bodygradient.png", "") }}
+- Mar 27: Observations on the Vision Pro video stream [here](https://twitter.com/oldestasian/status/1773056074297335858)
+- Mar 28: Chris "celebrated problem" debate, no progress on getting e-ink display working. Added abstract to PCS.
+- Mar 29: Shot hero figure pictures for the paper
+- Mar 30: Experienced PGH BBQ with Ezra and M
+- Mar 31: First user study completed, deadline very close
+## April 
+- Apr 1: Catch up with Frido!
+- Apr 2: [Notes](https://twitter.com/oldestasian/status/1775385705952493843) from reading the ICNIRP guidelines — I should write a blog post on this eventually. 
+- Apr 3: UIST paper submission completed!
+- Apr 4: Completed video on my UIST paper, can't wait to show you guys!
+- Apr 5: [Tweet thread](https://twitter.com/oldestasian/status/1776407986879250686) about how much time it took to finish the paper. 
+- Apr 6: Took pics of dino toy printer camera for power consumption blog post, hosted gamer party
+- Apr 7: [Blog post about](../../blog/dinocamtoypower) power consumption of a children's toy camera I got in China.
+- Apr 8: Eclipse day!
+{{ add_pic("yearofoutput/eclipse.png", "") }}
+- Apr 9: So much Blender, redid head scan with a handheld 3D scanner
+- April 10: Transplanted my face onto my face in Blender. [Memes ensued](https://twitter.com/oldestasian/status/1778015641011708058)
+- Apr 11: Printed big [head candle mold](https://twitter.com/oldestasian/status/1778903412425339039)
+{{ add_pic("yearofoutput/headcandlemold.png", "") }}
+- Apr 12: Blog post on [how optimized Morse code is](../../blog/omorse)
+- Apr 13: Beeswax + Coconut wax + scent ratio test
+- Apr 14: Big head candle completed [here](https://twitter.com/oldestasian/status/1779613951782703296)
+- Apr 15: Blog post on [most popular bulletin boards on CMU campus](../../blog/cmuads)
+- Apr 16: Blog post explaining the [ICNIRP guidelines for EM radiation safety!](../../blog/icnirp) (Woohoo!)
