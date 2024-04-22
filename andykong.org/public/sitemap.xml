@@ -14,6 +14,47 @@
 
   
     <url>
+    <loc>https://andykong.org/blog/quickimmersion</loc>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/quickimmersion/apple.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/quickimmersion/1.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/quickimmersion/2.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/quickimmersion/3.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/quickimmersion/4.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/quickimmersion/5.jpg
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+    <url>
     <loc>https://andykong.org/blog/icnirp</loc>
       
         <image:image>

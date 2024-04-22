@@ -416,7 +416,14 @@ a[target='_blank']:after {
         targets[i].style.opacity = 1.0;        
       }
     }
-  });  
+  });
+
+  // hitting 'b' goes to /blog
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'b') {
+        window.location.href = "/blog";
+        }
+    });
 
 </script>
 
