@@ -166,3 +166,11 @@ For accountability, I will maintain the list of outputs below, though this proje
 - Apr 14: Big head candle completed [here](https://twitter.com/oldestasian/status/1779613951782703296)
 - Apr 15: Blog post on [most popular bulletin boards on CMU campus](../../blog/cmuads)
 - Apr 16: Blog post explaining the [ICNIRP guidelines for EM radiation safety!](../../blog/icnirp) (Woohoo!)
+- Apr 17:
+- Apr 18:
+- Apr 19:
+- Apr 20:
+- Apr 21: AVP Hackathon 2.0, day 2. Posted Quick Immersion [video](https://twitter.com/oldestasian/status/1782201841067123068) and [blog post](../../blog/quickimmersion).
+- Apr 22: [Blog post](../../blog/attinyfuses) on how to set ATtiny fuses
+- Apr 23: 
+- 

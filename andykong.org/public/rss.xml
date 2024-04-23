@@ -6,7 +6,7 @@
     <description>Thoughts and Work</description>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
-    <lastBuildDate>Mon, 22 Apr 2024 00:09:08 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 23 Apr 2024 06:18:33 +0000</lastBuildDate>
     <item>
       <title>First Post!</title>
       <link>blog/first</link>
@@ -6318,7 +6318,9 @@ Anyway, I hope you successfully stay away from dangerous EM waves until I see yo
 
 Apple's VisionOS is the first AR headset I've worn for more than a few hours, and I've been writing VisionOS apps for about a week now.
 
-So far, one thing that bothers me about VisionOS is the inability to use custom gestures in the main "area". The Vision Pro is mostly billed as a productivity tool, and while working in it I wanted to do hand gestures to open specific webpages or send data to some program for processing. Unfortunately, accessing hand tracking requires ARKit, which requires the app to be in an "Full Space", which closes all other apps (e.g. Safari, Macbook screen mirroring). This is intentional on Apple's part, possibly to prevent custom gestures from interfering with the system-level "Tap" and "Drag" motions.
+# No Gestures?
+
+So far, the thing that bothers me the most about VisionOS is the inability to use custom gestures in the main "area". The Vision Pro is mostly billed as a productivity tool, and while working in it I wanted to do hand gestures to open specific webpages or send data to some program for processing. Unfortunately, accessing hand tracking requires ARKit, which requires the app to be in an "Full Space", which closes all other apps (e.g. Safari, Macbook screen mirroring). This is intentional on Apple's part, possibly to prevent custom gestures from interfering with the system-level "Tap" and "Drag" motions.
 
 {{ add_pic("quickimmersion/apple.png", "Apple's justification") }}
 
@@ -6340,6 +6342,7 @@ I've been experimenting with opening a Full Space and closing it really quickly,
 
 In the past I've seen apps with an exit button to get out of the Full Space. by using a custom gesture, exiting out takes only about a second — the approximate delay when switching between desktops on the Macbook. It's been quite comfortable to use but I haven't found a really useful thing to do with it. Here's some ideas I had though:
 
+&lt;hr&gt;
 ## Inventory app
 
 An "inventory" website can have drag-n-drop slots for objects (3D meshes, URLs, text, files) and share those objects with an Immersive app. A user can drag assets from their computer into the inventory site, enter the Full Space to work with the assets as objects, return them to the inventory, and then exit the Full Space and get the finished files off the website.
@@ -6350,12 +6353,64 @@ Since meshes/objects in a Full Space can communicate on-interaction (such as sen
 
 A classic AR use case is viewing life-scale 3D models. An engineer in the middle of PCB design can visualize several boards and connectors in the Full Space, ensuring they fit together. A designer can export their couch design halfway through the process to see how their chosen materials look in real environments, or to check if the approximate sizes make sense. 
 
+&lt;hr&gt;
 # Conclusion
 
 Anyway, just wanted to let y'all know that this was possible. The code is in a [Github repo](https://github.com/kongmunist/QuickImmersion) and it does a few other things (spawning cubes that bounce around the room), but the Full Space opening/closing is simple enough that I hope you can find it. Cya! 
 </content:encoded>
       <author>andyking99@gmail.com (Andy Kong)</author>
       <pubDate>Sun, 21 Apr 2024 00:00:00 -0400</pubDate>
+    </item>
+    <item>
+      <title>How To Set ATtiny Fuses (with Arduino as ISP)</title>
+      <link>blog/attinyfuses</link>
+      <description>Change clocks, reduce startup delay, and more!</description>
+      <content:encoded>Hello! This post will show you how to set the fuses on an ATtiny using the Arduino IDE and an Arduino as ISP. You'll need to do this to configure some new options on the ATtiny that aren't available in the Arduino IDE dropdown. We're gonna start off where we left off in the [previous blog post](../ard2attiny), so be sure to follow that through if you haven't yet.
+
+{{ add_pic("attinyfuses/0.png", "The incomplete fuse options offered by the Arduino IDE") }}
+
+# Motivation
+
+Recently, I wanted to use energy harvesting to power an ATtiny. Every electron is precious in such a scenario, so I had none to waste. However, on startup, I noticed my ATtiny was actually just doing nothing for around 60ms after power-on!
+
+{{ add_pic("attinyfuses/1.png", "60ms delay after startup on the ATtiny. Blue is power rail, yellow is the signal out") }}
+
+Digging into the datasheet, I found that by default the ATtiny waits 64ms after startup to give the clock time to stabilize. While this is all nice and good, I don't have that kind of power to waste! This could be changed to 4ms or 0ms by setting the LFUSE (datasheet page 26), but I had no idea how — all I knew were the options on the Arduino IDE. From more reading, I learned that the fuses were what changed every time I altered the clock frequency or other pre-code options then hit Burn Bootloader, but I still didn't know how to upload non-common options.
+
+{{ add_pic("attinyfuses/2.png", "") }}
+
+# Custom fuses
+
+##Burn Bootloader command from the CLI
+
+On a forum post someone mentioned you could burn the fuses from the command line using the same command that the Arduino IDE used to burn the bootloader (fuses included). To get the starter command, you can go to Settings-&gt;verbose output and turn it on for upload. Next time you hit the Tools-&gt;Burn Bootloader button, at the very top of the stdout box will be the command that the IDE tried to run.
+
+{{ add_pic("attinyfuses/3.png", "String to steal from the Arduino IDE stdout") }}
+
+When we copy this line elsewhere, we can see exactly where the fuses are in the command. They're towards the end, and encoded as bytes. If you ran this in the terminal, it would do the same thing that hitting "Burn Bootloader" in the IDE does. 
+
+{{ add_pic("attinyfuses/4.png", "Pretty-printed Burn Bootloader command from the previous image") }}
+
+## Determining fuse byte values
+
+One way to set the fuses is to figure out exactly which bits of the LFUSE bytes alter the startup time. In my case, SUT should be 00 for 0ms delay, meaning the right byte should be changed in LFUSE (0x62 above). This approach is possible albeit annoying, and I worried that I had the wrong endian-ness all the time.
+
+{{ add_pic("attinyfuses/5.png", "") }}
+
+The second time, I realized there were several fuse calculators webpages (like [this](https://eleccelerator.com/fusecalc/fusecalc.php?chip=attiny85) or [this](https://www.engbedded.com/fusecalc/)) where you could pick the options and it would auto-generate the correct fuse value. Super!
+
+{{ add_pic("attinyfuses/6.png", "") }}
+
+Once you figure out the fuse bytes, just edit the original Arduino IDE string to include the new values for the appropriate fuses. You can then just run the command in your computer's terminal to set the new fuses on your ATtiny. 
+
+In my case, I just changed the 0x62 in -Ulfuse to 0x42. Now my startup time is &lt;1ms!
+
+{{ add_pic("attinyfuses/7.png", "No more startup delay") }}
+
+Alright, that's all. Cya around!
+</content:encoded>
+      <author>andyking99@gmail.com (Andy Kong)</author>
+      <pubDate>Tue, 23 Apr 2024 00:00:00 -0400</pubDate>
     </item>
   </channel>
 </rss>

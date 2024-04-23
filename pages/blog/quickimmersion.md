@@ -8,7 +8,9 @@ Hello!
 
 Apple's VisionOS is the first AR headset I've worn for more than a few hours, and I've been writing VisionOS apps for about a week now.
 
-So far, one thing that bothers me about VisionOS is the inability to use custom gestures in the main "area". The Vision Pro is mostly billed as a productivity tool, and while working in it I wanted to do hand gestures to open specific webpages or send data to some program for processing. Unfortunately, accessing hand tracking requires ARKit, which requires the app to be in an "Full Space", which closes all other apps (e.g. Safari, Macbook screen mirroring). This is intentional on Apple's part, possibly to prevent custom gestures from interfering with the system-level "Tap" and "Drag" motions.
+# No Gestures?
+
+So far, the thing that bothers me the most about VisionOS is the inability to use custom gestures in the main "area". The Vision Pro is mostly billed as a productivity tool, and while working in it I wanted to do hand gestures to open specific webpages or send data to some program for processing. Unfortunately, accessing hand tracking requires ARKit, which requires the app to be in an "Full Space", which closes all other apps (e.g. Safari, Macbook screen mirroring). This is intentional on Apple's part, possibly to prevent custom gestures from interfering with the system-level "Tap" and "Drag" motions.
 
 {{ add_pic("quickimmersion/apple.png", "Apple's justification") }}
 
@@ -30,6 +32,7 @@ I've been experimenting with opening a Full Space and closing it really quickly,
 
 In the past I've seen apps with an exit button to get out of the Full Space. by using a custom gesture, exiting out takes only about a second — the approximate delay when switching between desktops on the Macbook. It's been quite comfortable to use but I haven't found a really useful thing to do with it. Here's some ideas I had though:
 
+<hr>
 ## Inventory app
 
 An "inventory" website can have drag-n-drop slots for objects (3D meshes, URLs, text, files) and share those objects with an Immersive app. A user can drag assets from their computer into the inventory site, enter the Full Space to work with the assets as objects, return them to the inventory, and then exit the Full Space and get the finished files off the website.
@@ -40,6 +43,7 @@ Since meshes/objects in a Full Space can communicate on-interaction (such as sen
 
 A classic AR use case is viewing life-scale 3D models. An engineer in the middle of PCB design can visualize several boards and connectors in the Full Space, ensuring they fit together. A designer can export their couch design halfway through the process to see how their chosen materials look in real environments, or to check if the approximate sizes make sense. 
 
+<hr>
 # Conclusion
 
 Anyway, just wanted to let y'all know that this was possible. The code is in a [Github repo](https://github.com/kongmunist/QuickImmersion) and it does a few other things (spawning cubes that bounce around the room), but the Full Space opening/closing is simple enough that I hope you can find it. Cya! 

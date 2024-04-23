@@ -312,7 +312,8 @@ code {
 <hr>
             <html><body><p>Hello!</p>
 <p>Apple's VisionOS is the first AR headset I've worn for more than a few hours, and I've been writing VisionOS apps for about a week now.</p>
-<p>So far, one thing that bothers me about VisionOS is the inability to use custom gestures in the main "area". The Vision Pro is mostly billed as a productivity tool, and while working in it I wanted to do hand gestures to open specific webpages or send data to some program for processing. Unfortunately, accessing hand tracking requires ARKit, which requires the app to be in an "Full Space", which closes all other apps (e.g. Safari, Macbook screen mirroring). This is intentional on Apple's part, possibly to prevent custom gestures from interfering with the system-level "Tap" and "Drag" motions.</p>
+<h1 id="no-gestures">No Gestures?</h1>
+<p>So far, the thing that bothers me the most about VisionOS is the inability to use custom gestures in the main "area". The Vision Pro is mostly billed as a productivity tool, and while working in it I wanted to do hand gestures to open specific webpages or send data to some program for processing. Unfortunately, accessing hand tracking requires ARKit, which requires the app to be in an "Full Space", which closes all other apps (e.g. Safari, Macbook screen mirroring). This is intentional on Apple's part, possibly to prevent custom gestures from interfering with the system-level "Tap" and "Drag" motions.</p>
 <p class="caption"> Apple's justification </p>
 <p><img loading="lazy" alt="Apple's justification" src="/static/quickimmersion/apple.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <p>I'm not sure what privacy would be protected by restricting ARKit usage like this, but I think custom gestures would be really cool to enable spatial computing and I want to do it. What are our alternatives?</p>
@@ -329,18 +330,20 @@ code {
 <p class="caption"> 5. The previous apps return when the Full Space is closed and the user can resume their reading </p>
 <p><img loading="lazy" alt="5. The previous apps return when the Full Space is closed and the user can resume their reading" src="/static/quickimmersion/5.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <p>In the past I've seen apps with an exit button to get out of the Full Space. by using a custom gesture, exiting out takes only about a second — the approximate delay when switching between desktops on the Macbook. It's been quite comfortable to use but I haven't found a really useful thing to do with it. Here's some ideas I had though:</p>
+<hr/>
 <h2 id="inventory-app">Inventory app</h2>
 <p>An "inventory" website can have drag-n-drop slots for objects (3D meshes, URLs, text, files) and share those objects with an Immersive app. A user can drag assets from their computer into the inventory site, enter the Full Space to work with the assets as objects, return them to the inventory, and then exit the Full Space and get the finished files off the website.</p>
 <p>Since meshes/objects in a Full Space can communicate on-interaction (such as sending a GET request), the website can know what's happened to its own objects and persist those changes outside the space.</p>
 <h2 id="3d-viewer">3D viewer</h2>
 <p>A classic AR use case is viewing life-scale 3D models. An engineer in the middle of PCB design can visualize several boards and connectors in the Full Space, ensuring they fit together. A designer can export their couch design halfway through the process to see how their chosen materials look in real environments, or to check if the approximate sizes make sense. </p>
+<hr/>
 <h1 id="conclusion">Conclusion</h1>
 <p>Anyway, just wanted to let y'all know that this was possible. The code is in a <a href="https://github.com/kongmunist/QuickImmersion">Github repo</a> and it does a few other things (spawning cubes that bounce around the room), but the Full Space opening/closing is simple enough that I hope you can find it. Cya! </p></body></html>
 
 
 
     
-        <hr>
+<!--        <hr>-->
         <p style="line-height:250%;">
         <a class="btn btn-info" href="/tagged/avp/">avp</a>
 
