@@ -173,4 +173,8 @@ For accountability, I will maintain the list of outputs below, though this proje
 - Apr 21: AVP Hackathon 2.0, day 2. Posted Quick Immersion [video](https://twitter.com/oldestasian/status/1782201841067123068) and [blog post](../../blog/quickimmersion).
 - Apr 22: [Blog post](../../blog/attinyfuses) on how to set ATtiny fuses
 - Apr 23: 
-- 
+- Apr 24:
+- Apr 25:
+- Apr 26: 
+- Apr 27: [Blog post](../../blog/hologramblackout) on different ways to black-out holograms
+- Apr 28: 

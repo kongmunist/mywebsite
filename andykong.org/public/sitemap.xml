@@ -14,6 +14,47 @@
 
   
     <url>
+    <loc>https://andykong.org/blog/hologramblackout</loc>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/hologramblackout/0.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/hologramblackout/1.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/hologramblackout/2.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/hologramblackout/3.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/hologramblackout/4.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/hologramblackout/5.jpg
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+    <url>
     <loc>https://andykong.org/blog/attinyfuses</loc>
       
         <image:image>
