@@ -4,7 +4,7 @@ label: blog
 tags: [datascience, python, quantifiedself]
 snippet: "Functions you'll need"
 
-Hello! Today I'm gonna walk you through my data analysis pipeline for my personal time series data. 
+Hello! Today I'll walk you through my data analysis pipeline for my personal time series data. 
 
 The problem with personal data is that it's more of a hobby than a rigorous industrial process — as such, the sensors give patchy, inconsistent data which is hard to align across time. Another issue is the movement of humans vs. the immobility of some sensors means individualized corrections must be made for each type of data depending on the source (air quality reported from your bedroom must be filtered by location, however your watch does not).
 
@@ -26,15 +26,15 @@ In my system, there are only two kinds of data: continuous data (heart rate, CO2
 
 These are not many, and they cover much of what is needed. Interestingly enough, these can all be constructed through the use of two functions. 
 
-# Function 1: Interpolation by timestamp (1, 4)
+# Function 1: Interpolation by timestamp (Analyses 1, 4)
 
-Most continuous sensors will not share timestamps, so you will need to align them (tossing stuff that doesn't line up perfectly) or "align them" (interpolate the denser value with a sparser one to get matching rows). Since we don't usually have a ton of data to spare, we go for interpolation. The code is simple. 
+Most continuous sensors will not share timestamps, so you will need to align them (tossing stuff that doesn't line up perfectly) or "align them" (interpolate the denser value with a sparser one to get matching rows). Since we don't usually have a ton of data to spare, we go for interpolation. The code is simple, and just uses `np.interpolate`
 
 {{ add_pic("pqsda1/0.png", "") }}
 
 This is preferred for continuous vs. continous, but for event vs. event much can happen on longer timescales so I think interpolation is quite lossy. 
 
-# Function 2: Select around timestamp (2, 3, 5)
+# Function 2: Select around timestamp (Analyses 2, 3, 5)
 
 Since these analyses all use event data, we will select y-variable data that lines up with the event timestamp. This function just slices out time ranges from the y-variable that are specific offsets from each x-variable event. 
 
@@ -44,7 +44,7 @@ Once each time range is found, we toss the ranges with zero elements and then ha
 
 {{ add_pic("pqsda1/2.png", "") }}
 
-The `a` variable was created by running `a = s1.selectAround(doseTimes, beforeHours=2, afterHours=4)`, selecting time ranges that included each doseTime and data from 2 hours before and 4 hours after. Once the list is made, you can either just plot each time range on the same graph:
+The `a` variable was created by running `a = s1.selectAround(doseTimes, beforeHours=2, afterHours=4)`, selecting time ranges that included each doseTime and data from 2 hours before and 4 hours after. Once the list is made, you can just plot each time range on the same graph:
 
 {{ add_pic("pqsda1/3.png", "") }}
 

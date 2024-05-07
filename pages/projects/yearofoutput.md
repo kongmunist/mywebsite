@@ -178,3 +178,14 @@ For accountability, I will maintain the list of outputs below, though this proje
 - Apr 26: 
 - Apr 27: [Blog post](../../blog/hologramblackout) on different ways to black-out holograms
 - Apr 28: 
+- Apr 29:
+- Apr 30:
+- Apr 31:
+- May 1:
+- May 2:
+- May 3:
+- May 4:
+- May 5:
+- May 6:
+- May 7: [First blog post](../../blog/pqsda1) about QS data analysis
+- 
