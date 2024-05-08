@@ -2815,6 +2815,24 @@
           </image:loc>
         </image:image>
       
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/NJE_J1_PINOUT.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/nje_functions.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/nje_senseplugs.png
+          </image:loc>
+        </image:image>
+      
     </url>
   
     <url>

@@ -188,4 +188,5 @@ For accountability, I will maintain the list of outputs below, though this proje
 - May 5:
 - May 6:
 - May 7: [First blog post](../../blog/pqsda1) about QS data analysis
+- May 8: [Updated high current power supply post](../../blog/highcurrentsource) with front panel pinout
 - 
