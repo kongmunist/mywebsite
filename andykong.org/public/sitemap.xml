@@ -14,6 +14,83 @@
 
   
     <url>
+    <loc>https://andykong.org/projects/bohems</loc>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/bohems/boh_hero.jpeg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/bohems/andyelectrocuting.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/bohems/boh_yudai3.jpeg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/bohems/boh_nella_assembled1.jpeg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/bohems/boh_nella10boards.jpeg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/bohems/boh_gui.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/bohems/boh_padplacement.jpeg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/bohems/boh_nella_fullhand2.jpeg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/bohems/boh_pressure_placement.jpeg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/bohems/boh_traxion1.jpeg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/bohems/boh_traxion2.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/bohems/boh_kaji1.jpeg
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+    <url>
     <loc>https://andykong.org/blog/pqsda1</loc>
       
         <image:image>

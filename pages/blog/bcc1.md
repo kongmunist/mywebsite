@@ -1,4 +1,4 @@
-title: Implementing Body Channel Communication Pt. 1
+title: Body Channel Communication Tutorial Pt. 1
 date: 2021-04-17
 label: blog
 tags: [hci, microcontroller, bcc]

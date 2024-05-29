@@ -1,4 +1,4 @@
-title: Implementing Body Channel Communication Pt. 2
+title: Body Channel Communication Tutorial Pt. 2
 date: 2021-04-27
 label: blog
 tags: [hci, bcc, microcontroller, biosig]

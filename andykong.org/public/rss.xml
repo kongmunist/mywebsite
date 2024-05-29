@@ -6,7 +6,7 @@
     <description>Thoughts and Work</description>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
-    <lastBuildDate>Wed, 08 May 2024 16:58:31 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 29 May 2024 06:27:08 +0000</lastBuildDate>
     <item>
       <title>First Post!</title>
       <link>blog/first</link>
@@ -2655,7 +2655,7 @@ It's amazing how much scrap wood they have in there. The shop goes through a lot
       <pubDate>Wed, 24 Mar 2021 00:00:00 -0400</pubDate>
     </item>
     <item>
-      <title>Implementing Body Channel Communication Pt. 1</title>
+      <title>Body Channel Communication Tutorial Pt. 1</title>
       <link>blog/bcc1</link>
       <description>Harnessing the body's conductivity as a signal path</description>
       <content:encoded>Hello! Today I'm going to be talking about some preliminary experiments I did involving body channel communication, or BCC. BCC is a technique that uses the body's natural conductivity as a signal path, allowing your devices to talk to anything you touch. I implemented a basic version that requires a shared ground, some experiments from an implementation without a shared ground, and show practical techniques that worked for me. 
@@ -2772,7 +2772,7 @@ We're gonna try bits next! Cya then!</content:encoded>
       <pubDate>Sat, 17 Apr 2021 00:00:00 -0400</pubDate>
     </item>
     <item>
-      <title>Implementing Body Channel Communication Pt. 2</title>
+      <title>Body Channel Communication Tutorial Pt. 2</title>
       <link>blog/bcc2</link>
       <description>Look Ma, no shared ground!</description>
       <content:encoded>Continuing from [last time](../bcc1), I'm trying to make our body channel communication system work without requiring a shared ground between the two devices. And I got it working in a very bootstrapped way, which may be usable for our class demo. Read on for more!
@@ -2922,7 +2922,7 @@ Cya around next time I make stuff out of wood!</content:encoded>
       <pubDate>Thu, 29 Apr 2021 00:00:00 -0400</pubDate>
     </item>
     <item>
-      <title>Implementing Body Channel Communication Pt. 3</title>
+      <title>Body Channel Communication Tutorial Pt. 3</title>
       <link>blog/bcc3</link>
       <description>Reinventing the radio and using touch as the antenna</description>
       <content:encoded>&lt;div style="font-size:.75em;"&gt; Previous posts here: &lt;a href="../bcc1"&gt;[Part 1]&lt;/a&gt; and &lt;a href="../bcc2"&gt; [Part 2] &lt;/a&gt; &lt;/div&gt;
