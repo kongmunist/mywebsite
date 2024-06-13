@@ -166,27 +166,10 @@ For accountability, I will maintain the list of outputs below, though this proje
 - Apr 14: Big head candle completed [here](https://twitter.com/oldestasian/status/1779613951782703296)
 - Apr 15: Blog post on [most popular bulletin boards on CMU campus](../../blog/cmuads)
 - Apr 16: Blog post explaining the [ICNIRP guidelines for EM radiation safety!](../../blog/icnirp) (Woohoo!)
-- Apr 17:
-- Apr 18:
-- Apr 19:
-- Apr 20:
 - Apr 21: AVP Hackathon 2.0, day 2. Posted Quick Immersion [video](https://twitter.com/oldestasian/status/1782201841067123068) and [blog post](../../blog/quickimmersion).
 - Apr 22: [Blog post](../../blog/attinyfuses) on how to set ATtiny fuses
-- Apr 23: 
-- Apr 24:
-- Apr 25:
-- Apr 26: 
 - Apr 27: [Blog post](../../blog/hologramblackout) on different ways to black-out holograms
-- Apr 28: 
-- Apr 29:
-- Apr 30:
-- Apr 31:
-- May 1:
-- May 2:
-- May 3:
-- May 4:
-- May 5:
-- May 6:
 - May 7: [First blog post](../../blog/pqsda1) about QS data analysis
 - May 8: [Updated high current power supply post](../../blog/highcurrentsource) with front panel pinout
-- 
+- June 7-14: Attending Edge Esmerelda
+- June 12: [Blog post](../../blog/monochrome/) about using one Chrome window at a time 

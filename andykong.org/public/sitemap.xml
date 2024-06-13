@@ -14,6 +14,35 @@
 
   
     <url>
+    <loc>https://andykong.org/blog/monochrome</loc>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/monochrome/0.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/monochrome/1.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/monochrome/2.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/monochrome/3.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+    <url>
     <loc>https://andykong.org/projects/bohems</loc>
       
         <image:image>
