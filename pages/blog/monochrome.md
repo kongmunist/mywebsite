@@ -8,9 +8,10 @@ Hello. Today I'm going to tell you about a work-style switch I made about a year
 
 # Tangent
 
+{{ add_pic("monochrome/0.jpeg", "") }}
+
 In 2021, I watched a coworker swipe up their Mission Control page to reveal ~20 different applications all on the same desktop. Extremely surprised, I asked why they did that, and they said it was faster. At the time, thought of only using 1 desktop was alien to me because I segregated each work subject into a different desktop (PCBs, software, messenger apps).
 
-{{ add_pic("monochrome/0.png", "") }}
 
 Later I realized multiple desktops actually do suck — there's a 0.5-1 second delay when switching desktops which cannot be reduced, and my ProMotion 120Hz screen never turns on when I have multiple desktops. This is, I think, a hard limitation meant to guarantee the OS has enough time to shift memory around and load up the main apps in the new window. But it slowed me down, and then I started using a single desktop. 
 
@@ -18,7 +19,7 @@ Later I realized multiple desktops actually do suck — there's a 0.5-1 second d
 
 I used to do the same thing with my Chrome tabs. 100 tabs spread across 4 windows, constantly alt-tabbing through to find the right one. One for electronics, one for articles and blog posts, one for wikipedia pages to read, etc. This was a bad strat, but at the time I felt "organized". 
 
-Now I just keep one window open. If it gets cluttered, I go through and clear it out. Article? Read and close it. Personal blog you want to correspond with? Write them an email and close it. If you don't have time now, just save it in a Google doc or the Notes app, I'm sure you'll get back to it, if it's so important *wink wink*
+But the same thing was true for multiple Desktops, why not apply the same lessons? Now I just keep one window open. If it gets cluttered, I go through and clear it out. Article? Read and close it. Personal blog you want to correspond with? Write them an email and close it. If you don't have time now, just save it in a Google doc or the Notes app, I'm sure you'll get back to it, if it's so important *wink wink*
 
 {{ add_pic("monochrome/1.png", "") }}
 
