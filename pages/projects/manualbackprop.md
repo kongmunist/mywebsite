@@ -3,7 +3,7 @@ date: 2019-09-27
 label: project
 timespan: March 2019
 pic: backprop.png
-description: Manually implementing backpropagation to prove that I know how it works
+description: Manually implementing backpropagation to make sure I know how it works
 
 When I first completed Andrew Ng's [course](https://www.coursera.org/learn/machine-learning), I realized that the coding homeworks had babied me. The structure was already in-place, the matrix operations were trivial in MATLAB, and I didn't really have to understand how the backprop algorithm worked in order to implement it in the exercises. To prove to myself that I knew how to do it, I needed to implement it myself, with only a little help from Python and numpy.
 

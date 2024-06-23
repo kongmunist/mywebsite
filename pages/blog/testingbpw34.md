@@ -4,7 +4,7 @@ label: blog
 tags: [electronics, solar, micropower]
 snippet: "Tiny experiments with a tiny solar cell"
 
-{{ tableofcontents("testingbpw34.md") }}
+{{ tableofcontents("blog/testingbpw34.md") }}
 
 Hello! Did you know solar cells work even through skin? More on that later.
 

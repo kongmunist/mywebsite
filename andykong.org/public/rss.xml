@@ -6,7 +6,7 @@
     <description>Thoughts and Work</description>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
-    <lastBuildDate>Thu, 13 Jun 2024 20:55:52 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 23 Jun 2024 19:42:35 +0000</lastBuildDate>
     <item>
       <title>First Post!</title>
       <link>blog/first</link>
@@ -5447,7 +5447,7 @@ Anyway, please DM me if you know of an alternative tracker that DOESN'T ruin the
       <title>My Quantified-Self Data Stack</title>
       <link>blog/allmydata</link>
       <description>Many cool self-insights and the data logging methods used</description>
-      <content:encoded>{{ tableofcontents("allmydata.md") }}
+      <content:encoded>{{ tableofcontents("blog/allmydata.md") }}
 
 If you've ever wondered if you sleep worse after drinking coffee in the morning or how listening to music affects your focus, this post is for you. I used to have these musings, and now I just have the data to check for myself. 
 
@@ -5887,7 +5887,7 @@ Generally, Vitalia felt like a vacation amongst like-minded people. I came durin
       <title>Testing out the BPW34</title>
       <link>blog/testingbpw34</link>
       <description>Tiny experiments with a tiny solar cell</description>
-      <content:encoded>{{ tableofcontents("testingbpw34.md") }}
+      <content:encoded>{{ tableofcontents("blog/testingbpw34.md") }}
 
 Hello! Did you know solar cells work even through skin? More on that later.
 
@@ -5985,7 +5985,7 @@ Anyway, somehow I got a crew of four people and we spent 48 hours building apps 
 
 We also had a rule that someone had to be wearing the AVP at all times —  in the end, this didn't even need enforcing because we were iterating so fast that someone always needed it. In the end, we made 3.5 working apps, which is a pretty good hitrate. 
 
-{{tableofcontents("avph_reflection.md")}}
+{{tableofcontents("blog/avph_reflection.md")}}
 
 
 # Day 1 

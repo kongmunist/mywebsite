@@ -18,7 +18,7 @@ Anyway, somehow I got a crew of four people and we spent 48 hours building apps 
 
 We also had a rule that someone had to be wearing the AVP at all times —  in the end, this didn't even need enforcing because we were iterating so fast that someone always needed it. In the end, we made 3.5 working apps, which is a pretty good hitrate. 
 
-{{tableofcontents("avph_reflection.md")}}
+{{tableofcontents("blog/avph_reflection.md")}}
 
 
 # Day 1 

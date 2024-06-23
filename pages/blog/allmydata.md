@@ -4,7 +4,7 @@ label: blog
 tags: [quantifiedself, personalinformatics, data, lifelogging]
 snippet: "Many cool self-insights and the data logging methods used"
 
-{{ tableofcontents("allmydata.md") }}
+{{ tableofcontents("blog/allmydata.md") }}
 
 If you've ever wondered if you sleep worse after drinking coffee in the morning or how listening to music affects your focus, this post is for you. I used to have these musings, and now I just have the data to check for myself. 
 

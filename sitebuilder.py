@@ -97,12 +97,12 @@ def utility_processor():
         if (center):
             pyg = pygmented_markdown(overallString)
             if ("<img" in pyg):
-                # print("IMG, ", pyg)
                 imgInd = pyg.find("<img") + 4
-                # centerHTML = ' style="display: block; margin-left: auto;margin-right: auto; " '
                 centerHTML = ' style="display: block; margin-left: auto;margin-right: auto; max-width: %s%%;" ' % width
+                centerHTML += ' loading="lazy" '
                 overallString = Markup(pyg[:imgInd] + centerHTML + pyg[imgInd:])
                 # print(pyg[:imgInd], "AIDNWIN", pyg[imgInd:])
+
         return overallString
 
     def add_vid(filename, width="75%", speed=1.0, autoplay=False):
@@ -121,7 +121,7 @@ def utility_processor():
 
     def tableofcontents(filename):
         # print(filename, type(filename))
-        curPage = f"pages/blog/{filename}"
+        curPage = f"pages/{filename}"
         curPageText = open(curPage, "r").read()
         # print(curPageText)
         # print(os.path.exists(yes))

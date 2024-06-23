@@ -28,10 +28,12 @@ Check 'em out!
 Howdy folks, long time no project! More info linked above, and this here is a timelapse of the exhibit. Keep reading for more pictures!
 
 <div class="video-container">
-    <iframe class="youtubevideo" src="https://www.youtube.com/embed/afivxSqr79Y"allowfullscreen></iframe>
+
+[//]: # (    <iframe class="youtubevideo" src="https://www.youtube.com/embed/afivxSqr79Y"allowfullscreen></iframe>)
+    <iframe class="youtubevideo" src="https://www.youtube.com/embed/kao2IscGAG4"allowfullscreen></iframe>
 </div>
 
-
+<br>
 In my 2nd to last semester at CMU, I took an artsy class called Electronic Logics && Creative Practice. If you don't know CMU, we have an entire tech + arts department called IDeATE shoved into a library basement. The department gave me creative technologist vibes, and I wanted to see if I'd like that kind of environment. And I did!
 
 {{ add_pic("ign_backstory.jpg", "Fun parts included messing around with materials") }} 

@@ -312,30 +312,30 @@ code {
 <hr>
             <html><body><p>Hello! This post will show you how to set the fuses on an ATtiny using the Arduino IDE and an Arduino as ISP. You'll need to do this to configure some new options on the ATtiny that aren't available in the Arduino IDE dropdown. We're gonna start off where we left off in the <a href="../ard2attiny">previous blog post</a>, so be sure to follow that through if you haven't yet.</p>
 <p class="caption"> The incomplete fuse options offered by the Arduino IDE </p>
-<p><img loading="lazy" alt="The incomplete fuse options offered by the Arduino IDE" src="/static/attinyfuses/0.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="The incomplete fuse options offered by the Arduino IDE" loading="lazy" src="/static/attinyfuses/0.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <h1 id="motivation">Motivation</h1>
 <p>Recently, I wanted to use energy harvesting to power an ATtiny. Every electron is precious in such a scenario, so I had none to waste. However, on startup, I noticed my ATtiny was actually just doing nothing for around 60ms after power-on!</p>
 <p class="caption"> 60ms delay after startup on the ATtiny. Blue is power rail, yellow is the signal out </p>
-<p><img loading="lazy" alt="60ms delay after startup on the ATtiny. Blue is power rail, yellow is the signal out" src="/static/attinyfuses/1.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="60ms delay after startup on the ATtiny. Blue is power rail, yellow is the signal out" loading="lazy" src="/static/attinyfuses/1.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <p>Digging into the datasheet, I found that by default the ATtiny waits 64ms after startup to give the clock time to stabilize. While this is all nice and good, I don't have that kind of power to waste! This could be changed to 4ms or 0ms by setting the LFUSE (datasheet page 26), but I had no idea how — all I knew were the options on the Arduino IDE. From more reading, I learned that the fuses were what changed every time I altered the clock frequency or other pre-code options then hit Burn Bootloader, but I still didn't know how to upload non-common options.</p>
-<p><img loading="lazy" alt="" src="/static/attinyfuses/2.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" loading="lazy" src="/static/attinyfuses/2.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <h1 id="custom-fuses">Custom fuses</h1>
 <h2 id="burn-bootloader-command-from-the-cli">Burn Bootloader command from the CLI</h2>
 <p>On a forum post someone mentioned you could burn the fuses from the command line using the same command that the Arduino IDE used to burn the bootloader (fuses included). To get the starter command, you can go to Settings-&gt;verbose output and turn it on for upload. Next time you hit the Tools-&gt;Burn Bootloader button, at the very top of the stdout box will be the command that the IDE tried to run.</p>
 <p class="caption"> String to steal from the Arduino IDE stdout </p>
-<p><img loading="lazy" alt="String to steal from the Arduino IDE stdout" src="/static/attinyfuses/3.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="String to steal from the Arduino IDE stdout" loading="lazy" src="/static/attinyfuses/3.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <p>When we copy this line elsewhere, we can see exactly where the fuses are in the command. They're towards the end, and encoded as bytes. If you ran this in the terminal, it would do the same thing that hitting "Burn Bootloader" in the IDE does. </p>
 <p class="caption"> Pretty-printed Burn Bootloader command from the previous image </p>
-<p><img loading="lazy" alt="Pretty-printed Burn Bootloader command from the previous image" src="/static/attinyfuses/4.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Pretty-printed Burn Bootloader command from the previous image" loading="lazy" src="/static/attinyfuses/4.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <h2 id="determining-fuse-byte-values">Determining fuse byte values</h2>
 <p>One way to set the fuses is to figure out exactly which bits of the LFUSE bytes alter the startup time. In my case, SUT should be 00 for 0ms delay, meaning the right byte should be changed in LFUSE (0x62 above). This approach is possible albeit annoying, and I worried that I had the wrong endian-ness all the time.</p>
-<p><img loading="lazy" alt="" src="/static/attinyfuses/5.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" loading="lazy" src="/static/attinyfuses/5.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <p>The second time, I realized there were several fuse calculators webpages (like <a href="https://eleccelerator.com/fusecalc/fusecalc.php?chip=attiny85">this</a> or <a href="https://www.engbedded.com/fusecalc/">this</a>) where you could pick the options and it would auto-generate the correct fuse value. Super!</p>
-<p><img loading="lazy" alt="" src="/static/attinyfuses/6.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" loading="lazy" src="/static/attinyfuses/6.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <p>Once you figure out the fuse bytes, just edit the original Arduino IDE string to include the new values for the appropriate fuses. You can then just run the command in your computer's terminal to set the new fuses on your ATtiny. </p>
 <p>In my case, I just changed the 0x62 in -Ulfuse to 0x42. Now my startup time is &lt;1ms!</p>
 <p class="caption"> No more startup delay </p>
-<p><img loading="lazy" alt="No more startup delay" src="/static/attinyfuses/7.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="No more startup delay" loading="lazy" src="/static/attinyfuses/7.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <p>Alright, that's all. Cya around!</p></body></html>
 
 

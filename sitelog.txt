@@ -4,6 +4,7 @@ TODO:
 - Add a now page
 - maybe remove the chapter headers from blog posts where the table of contents doesn't exist?
 
+June 23, 2024: Added table of contents to project pages too, back-fixed the 3 blog posts that have one. Also made images lazy-load in project pages.
 Apr 21, 2024: Removed the <hr> at the end of each blog post before the tags. Looks fine to me now, maybe I'll change my mind.
 Mar 13, 2024: Thanks to Vimal I realized that although subheaders using the id="" tag are faithfully rendered on a new tab page, they are not when you hard reload it, and this is because some resources are zero-height before they load. This is what causes the shifting in the page when you hard reload it. Today I added table of contents for H2 as well as H1, somewhere in prerender_jinja we have to add the id tag to all the h2 objects we find.
 Feb 12, 2024 - fixed blog post length text bleeding over the div, thanks to https://stackoverflow.com/questions/2062258/floating-elements-within-a-div-floats-outside-of-div-why

@@ -1,9 +1,9 @@
-title: Through-Hand Electrical Nerve Stimulation
+title: Electroshock VR Haptics
 date: 2024-05-28
 label: project
 timespan: Summer 2021
 pic: bohems/boh_nella_fullhand_hero.jpeg
-description: Shocking VR research!
+description: Through-Hand Electrical Nerve Stimulation
 
 [<h1>Paper Link Here!</h1>](https://dl.acm.org/doi/full/10.1145/3544548.3581382)
 
