@@ -14,6 +14,12 @@
 
 <title> EyeCatcher | Andy Kong</title>
 
+    <style>
+        img {
+            border-radius: 10px;
+        }
+    </style>
+
 
     <style type="text/css">
         /* Atkinson Hyperlegible */
@@ -257,7 +263,7 @@ code {
             <hr>
         <html><body><p>A friend and I decided it'd be fun to do a real-time video art project that we could display on the lab's huge TV. The end result is a reactive screen showing a triple-torus floating in the aether, which turns as your head turns, and moves as your head moves. </p>
 <p><a href="https://karan-ahuja.com/fun_projects/eyecatcher/">Demo here!</a> <a href="https://eyecatcher.netlify.app/">[Mirror]</a></p>
-<p><img class="d-block mx-auto" src="/static/eyecatchergif.gif"/></p>
+<p><img loading="lazy" class="d-block mx-auto" src="/static/eyecatchergif.gif"/></p>
 <h3>Technical Implementation</h3>
 <p>It was pretty simple given the advanced state of Javascript. 3D graphics are simple with GL and Three.js, head tracking done with machine learning is made easy through Tensorflow.JS. </p>
 <p>We used Mediapipe's facemesh to get the head angles and position of a person walking by, then combined it with a great Three.js 3D demo by <a href="https://twitter.com/DerSchmale">David Lenaerts</a> to make the torus turn according to your head geometry. </p>

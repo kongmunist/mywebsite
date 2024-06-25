@@ -99,7 +99,6 @@ def utility_processor():
             if ("<img" in pyg):
                 imgInd = pyg.find("<img") + 4
                 centerHTML = ' style="display: block; margin-left: auto;margin-right: auto; max-width: %s%%;" ' % width
-                centerHTML += ' loading="lazy" '
                 overallString = Markup(pyg[:imgInd] + centerHTML + pyg[imgInd:])
                 # print(pyg[:imgInd], "AIDNWIN", pyg[imgInd:])
 
@@ -368,6 +367,12 @@ def project(project):
     #     return redirect(url_for("static", filename="FaceMeshMedium/index.html"))
 
     page = [pages.get("projects/" + project)]
+
+    # Add loading="lazy" to all images
+    pattern = '<img'
+    for p in page:
+        p.html = re.sub(pattern, '<img loading="lazy"', p.html)
+
     if page[0] is None:
         return mainproject()
     return render_template('projects.html', page = page[0])

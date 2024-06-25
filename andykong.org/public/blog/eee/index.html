@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- <title>
+    Andy Kong!
+</title> -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+        <meta name="author" content="Andy Kong">
+        <meta name="title" content="Edge Esmerelda Experience">
+        <meta name="description" content="Popup City No. 2">
+        <meta name="keywords" content=" edge esmerelda,  popup city,  longevity, ">
+
+        <title>
+            Edge Esmerelda Experience | Andy Kong
+        </title>
+    
+
+    <style>
+        body {
+            counter-reset: h1counter h2counter;
+        }
+
+        h1:not(.title) {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px groove #DBAD80;
+
+            counter-reset: h2counter;
+        }
+
+        h1:not(.title)::before {
+            counter-increment: h1counter;
+            content: counter(h1counter) ". ";
+        }
+
+/*
+        .blogpage > h2 {
+            text-decoration: underline wavy #DBAD80;
+            text-underline-thickness: 1px;
+        }
+        */
+
+        .blogpage > h2::before {
+            counter-increment: h2counter;
+            content: counter(h1counter) "." counter(h2counter) "  ";
+            /*
+            text-decoration: none;
+            display: inline-block;
+            */
+        }
+
+
+        .toc {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+            color: inherit;
+            text-decoration: none;
+        }
+
+    </style>
+
+
+
+
+    <style type="text/css">
+        /* Atkinson Hyperlegible */
+        /* latin-ext
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          src: url("/static/atkhyp_latext.woff2") format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        } */
+        /* latin */
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          src: url("/static/atkhyp_lat.woff2") format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+
+        /* Ubuntu */
+        /* latin-ext
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          src: url("/static/ubuntu_latext.woff2") format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        } */
+        /* latin */
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          src: url("/static/ubuntu_lat.woff2") format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+    </style>
+
+    <!-- Bootstrap -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap.min.css">
+
+    <script src="/static/fontawesome.js" defer></script>
+    <!-- <script src="https://kit.fontawesome.com/c62dcd5933.js"></script> -->
+
+    <!-- Instant Page inlined - source is instant.page/5.1.0 -->
+    <script src="/static/instantpage-5.1.0.js" type="module" defer></script>
+
+
+
+
+    <style>
+body {
+    background: #202222;
+    font-size: 1.2em;
+    font-family: 'Ubuntu', sans-serif;
+    color: #FAEADB;
+    overflow-x: hidden;
+
+    word-spacing: 0.03em;
+}
+
+.navlinks{
+    font-family: 'Atkinson Hyperlegible';
+    font-size: 1.2em;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: "Atkinson Hyperlegible";
+}
+
+
+a {
+    transition: color .2s linear;
+    color:#00B4CC;
+}
+
+a:hover {
+    color:#00DFFC;
+    text-decoration: none;
+}
+
+.navbar-custom {
+    font-size: 22px;
+    background-color: #202222 !important;
+}
+
+.navbar-custom .navbar-brand{
+    font-size: 30px;
+    color: #00dffc !important;
+}
+
+.navbar-custom .navitem{
+    color:#00dffc !important;
+}
+
+.navitem:hover{
+    color:#00b4cc !important;
+    text-decoration: none;
+}
+
+.hidden{
+  display: none;
+}
+
+.navbar-toggler-icon {
+  border: none;
+  outline: none;
+}
+
+.caption{
+    font-size:12px;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: .2em;
+    margin-top: 1em;
+}
+
+.projectpage img{
+    max-width: 100%;
+    max-height: 50vh;
+    height: auto;
+    width: auto;
+}
+
+.blogpage img{
+    max-width: 100%;
+    max-height: 50vh;
+    height: auto;
+    width: auto;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+.blogpage h1, .blogpage h2{
+    color: #E0B890;
+}
+
+.projectpage h1, .projectpage h2{
+    color: #E0B890;
+}
+
+hr{
+    background-color:white !important;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+
+.youtubevideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+code {
+  font-family: Consolas,"courier new";
+  color: #110000;
+  background-color: #FAEADB;
+  padding: 2px;
+  font-size: 105%;
+}
+
+</style>
+
+    <link rel="icon" type="image/png" href=" /static/aklogo.png " />
+
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YNX5JQZWHT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YNX5JQZWHT');
+</script>
+<script data-goatcounter="https://kong.goatcounter.com/count"
+                    async src="//gc.zgo.at/count.js"></script>
+    
+</head>
+
+
+
+<body style="">
+
+
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
+      <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
+          </span>
+        </i>
+    </button>
+
+    <div class="collapse navbar-collapse " id="navbarSupportedContent" style="margin-left:25px;margin-top:10px">
+        <ul class="navbar-nav ml-auto navlinks">
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/static/AndyKongCV.pdf ">CV/Resume</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://github.com/kongmunist" target="_blank" title="Github">GitHub</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://twitter.com/oldestasian" target="_blank" title="Twitter">Twitter</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="mailto:andykongresearch@gmail.com" target="_blank" title="Email">Email</a>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/blog/">[Blog]</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+<!-- padding-left:20px; padding-right:20px -->
+            <div class="col-md-8 col-11 p-0" style="">
+                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
+
+                
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        
+
+
+<div class="blogpage overflow-hidden" style="margin-bottom:4em;">
+    <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Edge Esmerelda Experience</h1>
+            <p style="font-size:0.8em;"> Published June 25, 2024</p>
+<hr>
+            <html><body><p>Hello! Again I have returned from a distant land with tales from a popup community. This city was/is called <a href="https://www.edgeesmeralda.com/">Edge Esmerelda</a>, and is/was located in Healdsburg, CA.  </p>
+<p><img loading="lazy" alt="" src="/static/eee/0.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p>In part, going was an experiment. I remember reading someone's blog post about "asking favors/questions you are SURE will be refused" as a way to make sure you really know the bounds of your social position (a la <a href="https://www.youtube.com/watch?v=vKA4w2O61Xo">Veritasium</a>) — I did this about a year ago when I asked 3 people if I could borrow 20,000 Swiss Francs so I could stay in Switzerland. None of them had it, but all of them said yes.</p>
+<p>Regarding Edge Esmerelda, I had just recently gone to SF and did not really want to go back so soon, but decided that if it was free then I would. I DM'd one of the organizers and asked if I could come for a week if I sorted my own housing, and they were very generous to me. Every time I do this exercise I am surprised.</p>
+<p>Anyway. Here's what</p>
+<h1 id="edge-esmerelda-is-like">Edge Esmerelda is like</h1>
+<h2 id="college">College</h2>
+<p>College is a sweet time where all your friends live together and hang out often, and everyone you meet has a lot of potential. I am not <em>that</em> old, but so far life has not been like that. But Edge was, and it made me miss living near cool people. </p>
+<h2 id="harvard">Harvard</h2>
+<p>Through one lens, Harvard is a place where smart people and rich people (not mutually exclusive) go to mingle. At the end, everyone gets a Harvard degree, and it's hard to tell which is which. In my first few days at Edge, I met many incredible biologists and engineers working on crazy ideas — measuring brain activity using lasers, airships for cargo and surveying, and balloons which slow down global warming. Later on, I met some crypto people who also founded hard tech companies. </p>
+<h2 id="a-conference">A Conference</h2>
+<p>Most conferences I've been to go something like this: during the day people give talks and listen, groups go off to dinner, and then every night there's a party. If you tag along to dinner with someone interesting, you do get to chat with them, but otherwise you can't because it's either between sessions (rushed) or after drinks (incapacitated).</p>
+<p>Being at Edge for a week felt like the perfect conference — there was no rush, but you still felt urgency to talk to interesting people. And there were events, but an interesting conversation took precedence. And because the talks were noncommittal, they were not one-sided since everyone who attended had a stake in the discussion that followed. I quickly found a stable group, but there were new faces to meet at every meal. If Edge was a conference it would be a perfect one.</p>
+<h2 id="america">America</h2>
+<p>Massive simplfiication but stick with me: America was founded when a group of people unsatisfied by their local community chose to go somewhere else with all their homies. In 2024, new land is in short supply so "somewhere else" becomes "anywhere &gt;2 hours away from a major airport". Also in 2024, Protestantism has been superseded by scientism, and so "religious homies" becomes "science/engineering homies". </p>
+<h2 id="a-commune">A Commune</h2>
+<p>In exchange for coming, all I had to do was be involved: I spoke with new people every day, gave talks, and attended events. But I really don't think I pulled my weight. Other people organized Pilates sessions, planned hackathons and brainstorming sessions, and threw parties. It felt a lot like my ideal commune — one community, in constant contact, giving and receiving favors so rapidly that a balance is achieved and life is enhanced for everyone. </p>
+<h1 id="list-of-stuff-that-happened">List of stuff that happened</h1>
+<ul>
+<li>
+<p>Saw horses (2)</p>
+</li>
+<li>
+<p>I gave a talk on implants</p>
+</li>
+</ul>
+<p><img loading="lazy" alt="" src="/static/eee/1.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<ul>
+<li>
+<p>Showed off my holograms to a ton of people</p>
+</li>
+<li>
+<p>Experienced my first Pilates session</p>
+</li>
+</ul>
+<p><img loading="lazy" alt="" src="/static/eee/2.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<ul>
+<li>learned you can 3d print spring-y stuff, like this knife!</li>
+</ul>
+<p><img loading="lazy" alt="" src="/static/eee/4.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<ul>
+<li>Stayed at Hotel Anson for 3 nights where I made friends with Canadians and non-Canadians alike</li>
+</ul>
+<p><img loading="lazy" alt="" src="/static/eee/3.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p></body></html>
+
+
+
+    
+<!--        <hr>-->
+        <p style="line-height:250%;">
+        <a class="btn btn-info" href="/tagged/edge%20esmerelda/">edge esmerelda</a>
+
+        
+            <a class="btn btn-info" href="/tagged/popup%20city/">popup city</a>
+        
+            <a class="btn btn-info" href="/tagged/longevity/">longevity</a>
+        
+        </p> 
+    
+</div>
+
+
+
+
+                    </div>
+                    <br>
+        <!-- </div> -->
+</div>
+
+
+
+
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
+<script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
+<script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -14,6 +14,12 @@
 
 <title> Webcam Heartrate Monitor | Andy Kong</title>
 
+    <style>
+        img {
+            border-radius: 10px;
+        }
+    </style>
+
 
     <style type="text/css">
         /* Atkinson Hyperlegible */
@@ -257,12 +263,12 @@ code {
             <hr>
         <html><body><p>Hey! This is Andy. Here's the link to the <a href="http://heartrateleaderboard.netlify.app/">website that can find your heartrate</a>.</p>
 <p class="caption"> Website main page, pre-graphic designer stage </p>
-<p><img alt="Website main page, pre-graphic designer stage" loading="lazy" src="/static/heartratemainpage.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Website main page, pre-graphic designer stage" src="/static/heartratemainpage.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <p>I recently came across this app that used a smartphone camera and flashlight to calculate your heartrate. This relies on the fact that oxygenated blood and deoxygenated blood have different colors, and it's noticeable on a smartphone camera. In fact, one of my favorite party tricks is to start recording a video on my phone while pressing my finger on the camera, and show people how you can <i>see</i> my pulse as the color on the video pulses a darker color occasionally. Try it yourself!</p>
-<p><img class="d-block mx-auto img-thumbnail" src="/static/heartratebloodcolor.jpeg"/></p>
+<p><img loading="lazy" class="d-block mx-auto img-thumbnail" src="/static/heartratebloodcolor.jpeg"/></p>
 <p class="caption">And no, it's not blue when deoxygenated.</p>
 <p>Anyway, I thought to myself that it must be a simple matter to move this app's functionality onto a website. So I did. Using HTML webcam access, I even found out that ambient light is often enough to see the pulse against (especially if you have the help of a computer). </p>
-<p><a href="http://heartrateleaderboard.netlify.app/" target="_blank"><img class="d-block mx-auto img-thumbnail" src="/static/heartratemainpage.png"/></a></p>
+<p><a href="http://heartrateleaderboard.netlify.app/" target="_blank"><img loading="lazy" class="d-block mx-auto img-thumbnail" src="/static/heartratemainpage.png"/></a></p>
 <p>Once I had the array of webcam brightnesses, I just had to take the FFT of it in order to find the actual frequency I wanted. This is easier said than done, since there are no native Javascript FFT libraries. I converted one using browserify, and had to figure out how to turn the FFT output into frequency bins. Overall, an enjoyable experience. I had never made sense of the FFT output myself before, libraries usually give the frequency bins for you. </p>
 <p>After that, it was pretty much done! Just added some instructions and graph for the FFT to help me do the bin-to-frequency conversion. </p></body></html>
             </div>

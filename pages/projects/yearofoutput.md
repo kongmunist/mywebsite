@@ -172,4 +172,7 @@ For accountability, I will maintain the list of outputs below, though this proje
 - May 7: [First blog post](../../blog/pqsda1) about QS data analysis
 - May 8: [Updated high current power supply post](../../blog/highcurrentsource) with front panel pinout
 - June 7-14: Attending Edge Esmerelda
-- June 12: [Blog post](../../blog/monochrome/) about using one Chrome window at a time 
+- June 12: [Blog post](../../blog/monochrome/) about using one Chrome window at a time
+- June 23: [Big head candle project writeup](../project/bigheadcandle)
+{{ add_pic("bigheadcandle/demoldingprocess.jpg", "") }}
+- June 25: Posted my [Edge Esmerelda experience](../../blog/eee)

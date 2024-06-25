@@ -317,7 +317,7 @@ code {
 </style>
 </head><body><p>Hello! I'm writing a tutorial on how to hack your own Olympia Infoglobe. This first part just tells you all the wires you'll need to cut or connect in order to make it display custom messages. </p>
 <p class="caption"> caption </p>
-<p><img loading="lazy" alt="caption" loading="lazy" src="/static/igt1_hero.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="caption" src="/static/igt1_hero.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <p>If you don't already know about the Infoglobe (surprising considering how I won't shut up about it), it's a caller ID system from the turn of the millenia which displayed who was calling your quaint little landline phone. It could also store messages that people left you, and display holiday messages. Overall, a cute little device!</p>
 <p>Today, the humble Infoglobe has been rendered obsolete by the modern smartphone. With no landline resurgence in sight, we're going to hack the Infoglobe to show custom messages and give it a second life as a weather station or some other mundane job.</p>
 <p>Let's start!</p>
@@ -332,21 +332,21 @@ code {
 <li>50-1kΩ resistor</li>
 </ul>
 <p class="caption"> Since I already did this hack, I have only photographed two of the tools. Please use your imagination for the rest </p>
-<p><img loading="lazy" alt="Since I already did this hack, I have only photographed two of the tools. Please use your imagination for the rest" loading="lazy" src="/static/igt1_tools.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Since I already did this hack, I have only photographed two of the tools. Please use your imagination for the rest" src="/static/igt1_tools.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <h2 id="step-1-remove-the-screws-from-the-base">Step 1: Remove the screws from the base</h2>
 <p>Pretty straightforward. There's 4 Philips-head screws in these 4 dark holes. They're kinda deep in there, so get a long thing screwdriver. Nothing will happen when they come out, but it makes the next step easier. </p>
 <p class="caption"> The four screw burrows, helpfully circled in red </p>
-<p><img loading="lazy" alt="The four screw burrows, helpfully circled in red" loading="lazy" src="/static/igt1_screws.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="The four screw burrows, helpfully circled in red" src="/static/igt1_screws.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <h2 id="step-2-remove-the-clear-blue-dome">Step 2: Remove the clear blue dome</h2>
 <p>Now we're taking off the top and getting to the insides. The top is held on by four latches you can see from the outside on the edges.</p>
 <p class="caption"> Latches visible from the outside (pic from eBay) </p>
-<p><img loading="lazy" alt="Latches visible from the outside (pic from eBay)" loading="lazy" src="/static/igt1_latches.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Latches visible from the outside (pic from eBay)" src="/static/igt1_latches.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <p>Inside, they have a little notch going from the wall radially inwards</p>
 <p class="caption"> Inside the base, there are notches that go towards the center </p>
-<p><img loading="lazy" alt="Inside the base, there are notches that go towards the center" loading="lazy" src="/static/igt1_bottomclasp.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Inside the base, there are notches that go towards the center" src="/static/igt1_bottomclasp.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <p>The top part has these seatbelt-like shapes that line up with the notch on the inside. </p>
 <p class="caption"> And on the top part, there are latches that extend into the body </p>
-<p><img loading="lazy" alt="And on the top part, there are latches that extend into the body" loading="lazy" src="/static/igt1_topclasp.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="And on the top part, there are latches that extend into the body" src="/static/igt1_topclasp.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <h3>Careful!!</h3>
 <p>I won't lie to you: getting this thing off is kinda hard. You feel like you're gonna break it on accident, and it's a sphere so it's hard to hold on to, and will definitely break when you drop it. I recommend sitting on the floor or hugging it when you're wrestling the top part off. </p>
 <p>You'll want to pick one latch to start with. Right above the latch on the blue part, pull inwards and pull up at the same time. Hold the base tightly with your other hand, or hug it with your arm. A wedge/screwdriver is unlikely to help. Here's a video of me getting the first one out.</p>
@@ -356,45 +356,45 @@ code {
 <h1 id="step-3-remove-the-propeller">Step 3: remove the propeller</h1>
 <p>Once you're in, the grey part will be loose, but still held in by the spinning arm of the Infoglobe. We'll have to take that off. Just use your screwdriver to remove those 3 small screws. The propeller is spring loaded, so maybe unscrew all of them a little first so the first one doesn't bounce out and get lost</p>
 <p class="caption"> Note the square center peg and the triangular screw arrangement - automatic alignment! </p>
-<p><img loading="lazy" alt="Note the square center peg and the triangular screw arrangement - automatic alignment!" loading="lazy" src="/static/igt1_propellerscrews.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Note the square center peg and the triangular screw arrangement - automatic alignment!" src="/static/igt1_propellerscrews.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <p>Remove both the propeller and the grey plate and set them aside. </p>
 <h1 id="step-4-hijack-the-infoglobes-data-led-and-add-a-currentlimiting-resistor">Step 4: Hijack the Infoglobe's data LED and add a current-limiting resistor</h1>
 <p>There's 3 obvious LEDs once you're looking at the circuit board. One is red, this is just a power indicator. Of the two other light-blue ones, the innermost one is the data LED. </p>
 <p class="caption"> All LEDs inside the infoglobe, labeled </p>
-<p><img loading="lazy" alt="All LEDs inside the infoglobe, labeled" loading="lazy" src="/static/igt1_dataLED.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="All LEDs inside the infoglobe, labeled" src="/static/igt1_dataLED.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <p>Previous tutorials have made circuit boards that integrate into the infoglobe, allowing it to continue displaying the phone stuff you wanna see plus cool custom stuff. This is why past projects have had such complex setups. I say why bother? The data LED has two wires like any other LED, and if we cut them then we can write whatever we want. </p>
 <p>There's two ways about this. You can either cut both legs of the LED and solder on new wires that run to the outside of the infoglobe, or you can just cut the positive side of the LED and connect the grounds of the Infoglobe board to your microcontroller. </p>
 <p>Either way, two wires get added so it's really up to you. I started with the single wire and joined the grounds first because I knew I wanted to power my microcontroller off the infoglobe power eventually, and it made prototyping way faster. </p>
 <p class="caption"> The two-cut approach hijacks the entire data LED. The LED's positive side is on the left </p>
-<p><img loading="lazy" alt="The two-cut approach hijacks the entire data LED. The LED's positive side is on the left" loading="lazy" src="/static/igt1_bothcut.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="The two-cut approach hijacks the entire data LED. The LED's positive side is on the left" src="/static/igt1_bothcut.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <p class="caption"> The one cut approach, hijacks only the power wire (left) and requires you find ground somewhere else (anywhere connected to the right wirse is fine) </p>
-<p><img loading="lazy" alt="The one cut approach, hijacks only the power wire (left) and requires you find ground somewhere else (anywhere connected to the right wirse is fine)" loading="lazy" src="/static/igt1_onecut.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="The one cut approach, hijacks only the power wire (left) and requires you find ground somewhere else (anywhere connected to the right wirse is fine)" src="/static/igt1_onecut.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <p>Run those two wires outside of the casing and connect a resistor in series so you don't blow out the Infoglobe's infrared LED. </p>
 <h3>PLEASE CONNECT A SERIES RESISTOR TO THE DATA LED LINE BEFORE USING IT, OTHERWISE YOU RISK BURNING OUT THE LED!</h3>
 <hr/>
 <h1 id="testing-the-infoglobe-without-putting-it-back-together">Testing the Infoglobe without putting it back together</h1>
 <p>If you wanted to plug in the infoglobe with all the plastic off, it'd probably be dangerous for both the board and you. It just takes a hair caught in the rotor to ruin your Infoglobe and hair and project all at once. But it sucks to put it all back together, and there is a way to be relatively safe without doing that. </p>
 <p>1) Put the grey piece back on. The alignment is a bit tricky but it should drop right in</p>
-<p><img loading="lazy" alt="" loading="lazy" src="/static/igt1_reass1.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" src="/static/igt1_reass1.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <p>2) Then place the rotor back on the center section and screw it in. Make sure you screw them all in a bit simultaneously, since there is a spring under it. </p>
-<p><img loading="lazy" alt="" loading="lazy" src="/static/igt1_reass2.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" src="/static/igt1_reass2.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <p>3) Get something to fool the safety switch, preferably nonmetal</p>
 <p class="caption"> This limit switch needs to be taped or pushed down </p>
-<p><img loading="lazy" alt="This limit switch needs to be taped or pushed down" loading="lazy" src="/static/igt1_safeswitch.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="This limit switch needs to be taped or pushed down" src="/static/igt1_safeswitch.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <p class="caption"> Chopstick works for depressing it </p>
-<p><img loading="lazy" alt="Chopstick works for depressing it" loading="lazy" src="/static/igt1_reass3.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Chopstick works for depressing it" src="/static/igt1_reass3.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <p>The top dome can also be placed into the slots without clicking down, but still low enough to trigger the safety switch. This is probably the safest way to do it.</p>
 <p class="caption"> The lid also works for triggering the safety switch, but this is the only method that is actually safe </p>
-<p><img loading="lazy" alt="The lid also works for triggering the safety switch, but this is the only method that is actually safe" loading="lazy" src="/static/igt1_reass4.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="The lid also works for triggering the safety switch, but this is the only method that is actually safe" src="/static/igt1_reass4.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <p>4) Plug in the infoglobe power, and the rotor should begin spinning with no words appearing</p>
 <p>To change the insides requires at least unscrewing the rotor, but luckily you won't need to do it much at all. </p>
 <hr/>
 <h1 id="final-setup">Final setup</h1>
 <p>At this point, you should have an Infoglobe with two wires coming out of it. I originally used F jumpers as the wires to the data LED, then plugged into them using an external Arduino. </p>
 <p class="caption"> Picture of the Arduino setup I originally worked with, Arduino not in-frame </p>
-<p><img loading="lazy" alt="Picture of the Arduino setup I originally worked with, Arduino not in-frame" loading="lazy" src="/static/igt1_testingsetup2.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Picture of the Arduino setup I originally worked with, Arduino not in-frame" src="/static/igt1_testingsetup2.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <p>Later when I was sure the code worked on Arduino, I moved to using an ESP8266 microcontroller. It's the little square with a blue light in the picture below. </p>
-<p><img loading="lazy" alt="" loading="lazy" src="/static/igt1_testingsetup.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" src="/static/igt1_testingsetup.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <p>Since the ESP has no headers, I'm using a breadboard to connect the ESP to the data wires. Again, the LED's wires you've added will just run out from under the shell of the Infoglobe, and they safety switch can be engaged using the top dome despite the wires preventing it from closing fully. </p>
 <p>There is some more hardware on the breadboard than I'm letting on, but that will be covered in Pt 2.</p>
 <hr/>

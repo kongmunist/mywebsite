@@ -314,38 +314,38 @@ code {
 <hr/>
 <p>Hello! Did you know solar cells work even through skin? More on that later.</p>
 <p>Today I'm going to show you some basic testing I did with the BPW34. This is technically a photodiode (for detection), but as we know, photodiodes work both ways.</p>
-<p><img loading="lazy" alt="" loading="lazy" src="/static/testingbpw34/0.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" src="/static/testingbpw34/0.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <h1 id="bpw34-description">BPW34 Description</h1>
 <p>These are sold on SparkFun as miniature solar cells, and I wanted to see how much power I could pull out of them in ambient light. </p>
-<p><img loading="lazy" alt="" loading="lazy" src="/static/testingbpw34/1.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" src="/static/testingbpw34/1.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <p>The reported open-circuit voltage is 350mV, so two in series should be enough to drive an energy-harvesting PMIC. We may even get away with just using one and a dedicated solar cell harvester IC, but I didn't have any of those on hand. Also, the more the merrier!</p>
 <p>I looked on Digikey for similar photodiodes (just find the BPW34 and then trace back what product category it fits into), and found plenty. There are alternatives, but none go much higher than 300mV (though they might be of photon-&gt;current higher efficiency). Watch out also, some have a daylight blocking filter which stymies their usage as solar cells.</p>
-<p><img loading="lazy" alt="" loading="lazy" src="/static/testingbpw34/2.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" src="/static/testingbpw34/2.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <p>Here's how big it is. </p>
-<p><img loading="lazy" alt="" loading="lazy" src="/static/testingbpw34/3.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" src="/static/testingbpw34/3.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <p>If you're using it for power harvesting, the positive terminal is the leg with a single stripe of metal (where the probe is clipped in this photo)</p>
-<p><img loading="lazy" alt="" loading="lazy" src="/static/testingbpw34/4.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" src="/static/testingbpw34/4.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <h1 id="voltage-under-no-light">Voltage under no light</h1>
 <p>I put one in a black bag just for fun and got &gt;70mV, which is not a lot, but not zero. I think this is from light leakage into the bag, but it gets an awfully small amount of light for a pretty decent voltage. You know the old saying, 5 in a bag is worth 1 in the air. I didn't try drawing power from it like this, but it should not provide very much. </p>
-<p><img loading="lazy" alt="" loading="lazy" src="/static/testingbpw34/5.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" src="/static/testingbpw34/5.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <h1 id="voltage-under-some-light">Voltage under some light</h1>
 <p>Indoors near a large window I get &gt;300mV no-load from a single diode. This varies from 290-350mV, depending on if the diode faces the window or not. </p>
-<p><img loading="lazy" alt="" loading="lazy" src="/static/testingbpw34/6.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" src="/static/testingbpw34/6.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <h1 id="voltage-under-lots-of-light">Voltage under lots of light</h1>
 <p>I blasted one with my phone flashlight and the voltage goes over 500mV. When the flashlight LED is held directly over the photodiode, I max out at 600mV. I couldn't take pictures of this since I was using my phone's flashlight, so you'll have to trust me, bro.</p>
 <h1 id="2-in-series-some-light">2 in series, some light</h1>
 <p>I wanted to make sure the diodes actually do add in series so I soldered two together. In ambient light they add up as expected. </p>
-<p><img loading="lazy" alt="" loading="lazy" src="/static/testingbpw34/7.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" src="/static/testingbpw34/7.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <h1 id="2-in-series-some-light-through-skin">2 in series, some light, through skin</h1>
 <p>I read <a href="https://www.sciencedirect.com/science/article/pii/S0956566316311320">this paper</a> which reported that fresh human skin transmits a lot of light in the spectrum of 700nm and up, allowing subdermal electronics to be powered by light exposure.</p>
-<p><img loading="lazy" alt="" loading="lazy" src="/static/testingbpw34/8.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
-<p><img loading="lazy" alt="" loading="lazy" src="/static/testingbpw34/9.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" src="/static/testingbpw34/8.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" src="/static/testingbpw34/9.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <p>I did a very rudimentary test of this by covering the two diodes with my thumb. While I'm sure this is mostly leakage light from the sides of the diodes, I do get ~half the voltage.</p>
-<p><img loading="lazy" alt="" loading="lazy" src="/static/testingbpw34/10.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" src="/static/testingbpw34/10.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <p>The paper tried this using a thin skin sample (1-2mm); my thumb is a quite a bit thicker than that so I expected way less voltage than just half. </p>
 <h1 id="expected-voltage-vs-skin-thickness">Expected voltage vs. skin thickness</h1>
 <p>We can compare the fresh "Upper inner arm" 1mm sample with the fresh "Forehead" 1.5mm sample — transmittance goes from ~0.56 to 0.28 at 800nm, so the relationship between transmittance and thickness is nonlinear. </p>
-<p><img loading="lazy" alt="" loading="lazy" src="/static/testingbpw34/11.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" src="/static/testingbpw34/11.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
 <p>However, if we compare shoulder and forehead, we get totally different transmittances at 800nm despite the similar thickness. From <a href="https://pubmed.ncbi.nlm.nih.gov/14690333/">this paper</a>, the shoulder epidermis is 11mm thick and in <a href="https://www.selcukmedj.org/uploads/publications/2022-102-13168603.pdf">this paper</a> the forehead epidermis+dermis thickness is 0.07mm and 1.6mm. Because the shoulder sample is mostly epidermis and the forehead sample is mostly dermis, I think the dermis is doing most of the light blocking here. I conclude that the forehead (and face in general is not a great place to put implanted solar cells. </p>
 <p>Anyway, that's all the testing I've done so far. Open-circuit voltage is not power, but this high of a voltage is enough for energy harvesting, however slowly that may happen. Let me know if you explore this any further!</p>
 <p>Cya next time!</p></body></html>

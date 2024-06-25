@@ -14,6 +14,12 @@
 
 <title> Amp Box | Andy Kong</title>
 
+    <style>
+        img {
+            border-radius: 10px;
+        }
+    </style>
+
 
     <style type="text/css">
         /* Atkinson Hyperlegible */
@@ -261,12 +267,12 @@ code {
 <li>Battery powered</li>
 <li>Easily wire-able inputs</li>
 </ul>
-<p><img class="d-block mx-auto" src="/static/ampbox.png"/></p>
+<p><img loading="lazy" class="d-block mx-auto" src="/static/ampbox.png"/></p>
 <h3>Rundown</h3>
 <p>It's a simple little device, but very useful. Let's take a closer look</p>
 <p>To turn it on, simply flick the power button on the left to the on position. This eliminates the three power supply wires you'd ordinarily need to power an amplifier circuit (positive, negative, and ground). Since it's battery powered, there's no power source jitter to add noise to your circuit, and there are hidden decoupling capacitors on the underside for even higher supply stability. A voltage divider made of 5k resistors creates an artificial positive and negative voltage to operate on signals positive and negative. </p>
 <p>The red and black inputs and solid wires allow you to plug in components or alligator clip them to the input solid cores. To see the amplified signal, simply clip onto the left half of the feedback resistor. </p>
-<p><img class="d-block mx-auto" src="/static/ampboxcircuit.png"/></p>
+<p><img loading="lazy" class="d-block mx-auto" src="/static/ampboxcircuit.png"/></p>
 <p>The potentiometer leads to ground, meaning the gain can be dialed as high as you want it (or at least until your signal hits the supply rails, around 2V for this battery). The low power op amp will last a while, at which point you just need to replace it with another 18650 which isn't too hard to find. </p>
 <h3>Testing</h3>
 <p>Since the amplifier's gain equation puts the potentiometer on the bottom (100k/potentiometer), any signal can be amplified until you can see it. I fed in a 10 mV sine wave, and was still able to boost it to the rails at 2V. The noise spec is not the best, but this box is really just for seeing if a tiny signal exists before you begin building a circuit specifically for measuring the tiny signal. </p>

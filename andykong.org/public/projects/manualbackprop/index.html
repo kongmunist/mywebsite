@@ -14,6 +14,12 @@
 
 <title> Manual Backpropagation | Andy Kong</title>
 
+    <style>
+        img {
+            border-radius: 10px;
+        }
+    </style>
+
 
     <style type="text/css">
         /* Atkinson Hyperlegible */
@@ -258,7 +264,7 @@ code {
         <html><body><p>When I first completed Andrew Ng's <a href="https://www.coursera.org/learn/machine-learning">course</a>, I realized that the coding homeworks had babied me. The structure was already in-place, the matrix operations were trivial in MATLAB, and I didn't really have to understand how the backprop algorithm worked in order to implement it in the exercises. To prove to myself that I knew how to do it, I needed to implement it myself, with only a little help from Python and numpy.</p>
 <p>Also, for whatever reason, implementing machine learning in PyTorch was trivial and unimpressive to a lot of people. That kind of peeved me, since tuning hyperparameters is no trivial task. Staging layers for CNNs was also not easy to figure out. </p>
 <p>I started by watching 3Blue1Brown's video on the backprop <a href="https://www.youtube.com/watch?v=Ilg3gGewQ5U&amp;t=709s">algorithm</a>, which really helped me understand what order to do the math in. I wrote a ReLU function in Python, then either imported or created all the variables (a', z, etc.) and multiplied a bunch of matrices together. I trained on the MNIST handwritten digits dataset, and got 86% accuracy on the test set after validating on a 20% subset. </p>
-<p><img class="d-block mx-auto" src="/static/manualbackpropcode.png"/></p>
+<p><img loading="lazy" class="d-block mx-auto" src="/static/manualbackpropcode.png"/></p>
 <p>This post is short because the code is not very neat to look at or think about. Machine learning really is just a bunch of matrices multiplying themselves. I meant to implement gradient checking to make sure I had taken the derivatives properly, but I was much too lazy. This whole project took about 8 hours, and doing the same thing in PyTorch would have taken less than 1. I just thought it was a fun, personal challenge, and now will never take PyTorch for granted again.</p></body></html>
             </div>
         <div class="col-lg-2"></div>

@@ -14,6 +14,12 @@
 
 <title> Myo2 | Andy Kong</title>
 
+    <style>
+        img {
+            border-radius: 10px;
+        }
+    </style>
+
 
     <style type="text/css">
         /* Atkinson Hyperlegible */
@@ -256,11 +262,11 @@ code {
 
             <hr>
         <html><body><p>Here it is! My own EMG sensor board, capable of amplifying 50uV muscle signals into ~1V outputs without getting drowned out by electromagnetic interference or noise. Total gain is around 30,000x.
-<img class="d-block mx-auto" src="/static/myo2tensingcropped.gif" style="margin-bottom:0px"/></p>
+<img loading="lazy" class="d-block mx-auto" src="/static/myo2tensingcropped.gif" style="margin-bottom:0px"/></p>
 <p class="caption">Myo2 muscle tensing test gif. Two hard contractions followed by a lighter, discreet contraction.</p>
-<p><img class="d-block mx-auto" src="/static/myo2boardpic.png" style="margin-bottom:0px"/></p>
+<p><img loading="lazy" class="d-block mx-auto" src="/static/myo2boardpic.png" style="margin-bottom:0px"/></p>
 <p class="caption">Myo2 fully populated board, with level-shifting, right leg drive, and driven ground (and a guard ring on the inputs!)</p>
-<p><img class="d-block mx-auto" src="/static/myo2output1.png" style="margin-bottom:0px"/></p>
+<p><img loading="lazy" class="d-block mx-auto" src="/static/myo2output1.png" style="margin-bottom:0px"/></p>
 <p class="caption">Muscle contraction test. The two clusters of activity are different electrode positions.</p>
 <hr/>
 <h3>Motivation</h3>
@@ -271,20 +277,20 @@ code {
 <p><br/></p>
 <h3>Specifications</h3>
 <p>When a muscle tenses, the coordinated opening of the ion channels in the fibers creates an electrical signal within the muscle that propogates outwards to the skin. This creates a very small surface signal, on the order of 1 millivolt. </p>
-<p><img class="d-block mx-auto" src="/static/myo2musclebelly.png"/></p>
+<p><img loading="lazy" class="d-block mx-auto" src="/static/myo2musclebelly.png"/></p>
 <p>To perform EMG, all you have to do is measure this voltage from the middle of the muscle belly to one end of the muscle. From an electronics standpoint, EMG is a high-noise, high-impedance voltage measurement problem. </p>
 <p>Since I wanted to measure nonvisible muscle signals as well as visible ones, my board would need to be ultra-low noise, with a lot of gain stages. Following Douglas Weber's research, the signal I was looking for was on the order of 1-8 microvolts, more than 1000x smaller than the ordinary EMG signal. In addition, since the body acts as an antenna for electromagnetic interference, I'd need amazingly sharp filters to cut out much of the noise before I amplified it so high.</p>
 <p>I wanted to turn a 1uV signal into a 100mV signal, a gain of 100,000x! For reference, a 100kOhm resistor alone has 1.3uV of thermal noise, which would ruin our noise floor. This makes my problem much more difficult. </p>
 <p><br/></p>
 <h3>Board Design</h3>
-<p><img class="d-block mx-auto" src="/static/myo2badschematic.png" style="margin-bottom:0px"/></p>
+<p><img loading="lazy" class="d-block mx-auto" src="/static/myo2badschematic.png" style="margin-bottom:0px"/></p>
 <p class="caption">Myo2 caricature of the final schematic. I drew this up for a friend to help me debug, but made errors that make it not feasible if constructed exactly like it's drawn.</p>
 <p>The board looks something like this image, but is not this schematic exactly. Roughly, I construct an instrumentation amplifier from 3 ultra-low current noise op-amps to turn the differential signal into a single-ended one, then apply a combination of low-pass, high-pass, and band-pass filtering stages that each have gain to this signal. The output theoretically has 90,000x gain, and around 100 mV of noise. </p>
 <p>From the middle of the instrumentation amplifier (representing the common-mode voltage), I generate a driven right leg that is connected back to the user (to reduce common mode noise from the body) and a low-impedance driven guard (to power the guard ring and cable guard for the inputs). This helps with the noise levels on the inputs.</p>
 <p>Finally, the output is scaled from ±5V to 0-3.3V, so that I can use a Teensy 4.0 microcontroller to digitize and save the signal onto my computer.</p>
 <h3>Testing</h3>
 <p>Tests were initially done with a signal generator as the input. I made a simple voltage divider that would take a signal and divide it by 1000, then feed it into the two inputs of a myo2 board. Then I fed it a 10 mV peak-peak sine wave, and increased the amplitude until the output was visible on the oscilloscope. Around 50 uV the signal was visible; then around 100 uV the signal was very obvious. </p>
-<p><img class="d-block mx-auto" src="/static/myo2RLD.png" style="margin-bottom:0px; "/></p>
+<p><img loading="lazy" class="d-block mx-auto" src="/static/myo2RLD.png" style="margin-bottom:0px; "/></p>
 <p class="caption">Oscilloscope output of a muscle contraction. The yellow is the muscle signal, the blue is the right leg drive (RLD). When I connect the RLD pin to my body, the output noise on the yellow channel goes down by about 10% </p>
 <p>Output gain was not as high as I had hoped due to some imperfections in the filter amplifiers I chose. However, the output signal's noise was almost exactly what was predicted by the op amp's voltage and current noises after undergoing 10,000x gain. So I ran into a limitation in my parts selection, and not my implementation. It always feels good to figure out a problem is in your hardware and not the way you set it up.</p>
 <h3>Interested in making one?</h3>

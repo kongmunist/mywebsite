@@ -14,6 +14,148 @@
 
   
     <url>
+    <loc>https://andykong.org/blog/eee</loc>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/eee/0.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/eee/1.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/eee/2.jpeg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/eee/4.jpeg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/eee/3.jpeg
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+    <url>
+    <loc>https://andykong.org/projects/bigheadcandle</loc>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/bigheadcandle/drama.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/bigheadcandle/andyeinscan.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/bigheadcandle/facetransplant3.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/bigheadcandle/moldmaking.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/bigheadcandle/headsize.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/bigheadcandle/printedmoldinout.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/bigheadcandle/annealpla.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/bigheadcandle/coconutwaxtesting.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/bigheadcandle/allsupplies.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/bigheadcandle/yogurtcups.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/bigheadcandle/meltingwax.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/bigheadcandle/pouringwax.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/bigheadcandle/afterpour.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/bigheadcandle/demoldingprocess.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/bigheadcandle/donecandle.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/bigheadcandle/standcandle.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/bigheadcandle/fullheadprint.jpg
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+    <url>
     <loc>https://andykong.org/blog/monochrome</loc>
       
         <image:image>
@@ -1303,6 +1445,12 @@
         <image:image>
           <image:loc>
             https://andykong.org/static/yearofoutput/headcandlemold.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/bigheadcandle/demoldingprocess.jpg
           </image:loc>
         </image:image>
       

@@ -90,7 +90,7 @@ During the removal, I cracked the mold and left a large scar on the candle's fac
 
 
 # What now? 
-Casting the face was just a trial run, and I still need to tackle the challenge of casting the whole-head. Due to the difficulty of de-molding the face, I decided not to try to cast the whole head using the same process. Instead, I 3D printed a full head positive and bought a bunch of silicone so I could make a proper, stretchy negative. This time I'll also use proper mold release. 
+Casting the face was just a trial run, and I still need to tackle the challenge of casting my whole head. Due to the difficulty of de-molding the face, I decided not to try to cast the whole head using the same process. Instead, I 3D printed a full head positive and bought a bunch of silicone so I could make a proper, stretchy negative. This time I'll also use proper mold release. 
 
 {{ add_pic("bigheadcandle/fullheadprint.jpg", "Full head 3D print") }}
 

@@ -14,6 +14,12 @@
 
 <title> AsciiZOOM | Andy Kong</title>
 
+    <style>
+        img {
+            border-radius: 10px;
+        }
+    </style>
+
 
     <style type="text/css">
         /* Atkinson Hyperlegible */
@@ -264,7 +270,7 @@ code {
 <hr/>
 <h3>Video Encoding</h3>
 <p>Since we didn't want to eat up all the bandwidth on our server, we decided the most efficient way to send each frame of video was to pack it into a single TCP packet. You might be wondering how we fit a full image in under 50 kilobytes: with text! Through the magic of ascii art, we were able to re-encode a frame as pure text characters, packaging a single pixel into 8 bits instead of the traditional 24. Since we only used 4 unique "characters," we could have further reduced this down to 2 bits if we were really pressed for space, but the additional processing on either end would have led to additional latency.</p>
-<p><img class="d-block mx-auto" src="/static/chickensidecomparison.jpeg"/></p>
+<p><img loading="lazy" class="d-block mx-auto" src="/static/chickensidecomparison.jpeg"/></p>
 <p>There's plenty of example code online for asciifying an image, but the code is <a href="https://github.com/kongmunist/asciiZOOM">here</a> for both asciifization and transmitting. This text-based image sending also makes encryption easier, since we can just caesar cipher with a predetermined shift and the image is ruined. </p>
 <hr/>
 <h3>Networking</h3>
