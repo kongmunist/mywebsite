@@ -14,11 +14,18 @@
 
 <title> Electroshock VR Haptics | Andy Kong</title>
 
-    <style>
-        img {
-            border-radius: 10px;
-        }
-    </style>
+<style>
+    .projectpage h1, .projectpage h2{
+        color: #E0B890;
+    }
+
+    .projectpage img{
+        max-width: 100%;
+        max-height: 50vh;
+        height: auto;
+        width: auto;
+    }
+</style>
 
 
     <style type="text/css">
@@ -74,123 +81,115 @@
 
 
     <style>
-body {
-    background: #202222;
-    font-size: 1.2em;
-    font-family: 'Ubuntu', sans-serif;
-    color: #FAEADB;
-    overflow-x: hidden;
+        body {
+            background: #202222;
+            font-size: 1.2em;
+            font-family: 'Ubuntu', sans-serif;
+            color: #FAEADB;
+            overflow-x: hidden;
 
-    word-spacing: 0.03em;
-}
+            word-spacing: 0.03em;
+        }
 
-.navlinks{
-    font-family: 'Atkinson Hyperlegible';
-    font-size: 1.2em;
-}
+        .navlinks{
+            font-family: 'Atkinson Hyperlegible';
+            font-size: 1.2em;
+        }
 
-h1, h2, h3, h4, h5, h6{
-    font-family: "Atkinson Hyperlegible";
-}
+        h1, h2, h3, h4, h5, h6{
+            font-family: "Atkinson Hyperlegible";
+        }
 
 
-a {
-    transition: color .2s linear;
-    color:#00B4CC;
-}
+        a {
+            transition: color .2s linear;
+            color:#00B4CC;
+        }
 
-a:hover {
-    color:#00DFFC;
-    text-decoration: none;
-}
+        a:hover {
+            color:#00DFFC;
+            text-decoration: none;
+        }
 
-.navbar-custom {
-    font-size: 22px;
-    background-color: #202222 !important;
-}
+        .navbar-custom {
+            font-size: 22px;
+            background-color: #202222 !important;
+        }
 
-.navbar-custom .navbar-brand{
-    font-size: 30px;
-    color: #00dffc !important;
-}
+        .navbar-custom .navbar-brand{
+            font-size: 30px;
+            color: #00dffc !important;
+        }
 
-.navbar-custom .navitem{
-    color:#00dffc !important;
-}
+        .navbar-custom .navitem{
+            color:#00dffc !important;
+        }
 
-.navitem:hover{
-    color:#00b4cc !important;
-    text-decoration: none;
-}
+        .navitem:hover{
+            color:#00b4cc !important;
+            text-decoration: none;
+        }
 
-.hidden{
-  display: none;
-}
+        .hidden{
+          display: none;
+        }
 
-.navbar-toggler-icon {
-  border: none;
-  outline: none;
-}
+        .navbar-toggler-icon {
+          border: none;
+          outline: none;
+        }
 
-.caption{
-    font-size:12px;
-    text-align: center;
-    font-style: italic;
-    margin-bottom: .2em;
-    margin-top: 1em;
-}
+        .caption{
+            font-size:12px;
+            text-align: center;
+            font-style: italic;
+            margin-bottom: .2em;
+            margin-top: 1em;
+        }
 
-.projectpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-}
 
-.blogpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-    display: block !important;
-    margin: 0 auto !important;
-}
+        hr{
+            background-color:white !important;
+        }
 
-.blogpage h1, .blogpage h2{
-    color: #E0B890;
-}
+        .video-container {
+          position: relative;
+          width: 100%;
+          padding-bottom: 56.25%;
+        }
 
-.projectpage h1, .projectpage h2{
-    color: #E0B890;
-}
+        .youtubevideo {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 0;
+        }
 
-hr{
-    background-color:white !important;
-}
+        code {
+          font-family: Consolas,"courier new";
+          color: #110000;
+          background-color: #FAEADB;
+          padding: 2px;
+          font-size: 105%;
+        }
 
-.video-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
-}
 
-.youtubevideo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
+        .addpic {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+            border-radius: 10px;
 
-code {
-  font-family: Consolas,"courier new";
-  color: #110000;
-  background-color: #FAEADB;
-  padding: 2px;
-  font-size: 105%;
-}
+            transition: transform .2s ease-in-out;
+            transform: scale(0.99);
+        }
 
+        .addpic:hover {
+            transform: scale(1.01);
+        }
 </style>
 
     <link rel="icon" type="image/png" href=" /static/aklogo.png " />
@@ -255,20 +254,20 @@ code {
 <div class="row overflow-hidden" style = "height:100vh; width: 100vw; padding: 0px 30px 0px 30px;">
         <div class="col-lg-2"></div>
         <div class="col-12 col-lg-8 projectpage" style="max-width:1000px; margin-bottom:4em;">
-        <h1 style="text-center; margin-bottom: 5px">Electroshock VR Haptics</h1>
-            <i><p style="margin-bottom: 5px; margin-top: 0px">Through-Hand Electrical Nerve Stimulation</p></i>
-            <p style="margin-bottom: 0px; margin-top: 0px">Timespan: Summer 2021</p>
-            <p style="margin-bottom: 5px; margin-top: 0px">Published: 2024-05-28</p>
+            <h1 style="text-center; margin-bottom: 5px">Electroshock VR Haptics</h1>
+                <i><p style="margin-bottom: 5px; margin-top: 0px">Through-Hand Electrical Nerve Stimulation</p></i>
+                <p style="margin-bottom: 0px; margin-top: 0px">Timespan: Summer 2021</p>
+                <p style="margin-bottom: 5px; margin-top: 0px">Published: 2024-05-28</p>
 
-            <hr>
-        <html><body><p><a href="https://dl.acm.org/doi/full/10.1145/3544548.3581382"><h1 id="paper-link-here">Paper Link Here!</h1></a></p>
+                <hr>
+            <html><body><p><a href="https://dl.acm.org/doi/full/10.1145/3544548.3581382"><h1 id="paper-link-here">Paper Link Here!</h1></a></p>
 <p>Welcome to my writeup for some research I worked on in 2021! </p>
-<p><img loading="lazy" alt="" src="/static/bohems/boh_hero.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/bohems/boh_hero.jpeg"/></p>
 <p>For COVID summer 2021, I worked with Prof. Pedro Lopes and the Human-Computer Integration lab at UChicago. I ran small electrical currents through my hands in order to find interesting touch sensations. We wanted to reproduce the feeling of touching real stuff using electricity so we could feel virtual objects the same way we feel real ones. </p>
 <h1 id="background">Background</h1>
 <p>Around 2020, I bought a TENS unit because I was curious what it felt like to have a device override control of your muscles, and discovered that it was also a fun device to bring to parties. When I showed it to my friend Cathy, she suggested I reach out to Prof. Pedro since his PhD explored electrical muscle stimulation for HCI. </p>
 <p class="caption"> Administering my TENS unit on innocent partygoers </p>
-<p><img loading="lazy" alt="Administering my TENS unit on innocent partygoers" src="/static/bohems/andyelectrocuting.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Administering my TENS unit on innocent partygoers" class="addpic" src="/static/bohems/andyelectrocuting.jpg"/></p>
 <p>My own explorations were unstructured but broad. I activated big and small muscle groups, and tried to target single muscles for more precise control. I did a few group sessions, and learned anatomy by seeing what fingers jumped for a given electrode position. But I hadz hit a cap in what could be explored with my little TENS unit since it could only do continuous pulse trains at frequencies from 2-100Hz. I definitely still had curiosities to satisfy. </p>
 <p>I met with Pedro a few times online and we got along pretty well, so we decided it could be viable for me to come to Chicago that summer to work on something. His lab had more electrode pads than I could ever need, and cool digitally-controlled precision muscle stimulation devices to play with</p>
 <h1 id="things-that-happened">Things that happened</h1>
@@ -276,44 +275,44 @@ code {
 <li>Worked closely with Yudai</li>
 </ul>
 <p class="caption"> Yudai enjoying the Chicago summer </p>
-<p><img loading="lazy" alt="Yudai enjoying the Chicago summer" src="/static/bohems/boh_yudai3.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Yudai enjoying the Chicago summer" class="addpic" src="/static/bohems/boh_yudai3.jpeg"/></p>
 <ul>
 <li>Developed a high-voltage constant current board named after a restaurant we frequented after work</li>
 </ul>
 <p class="caption"> Nella stimulator boards, assembled </p>
-<p><img loading="lazy" alt="Nella stimulator boards, assembled" src="/static/bohems/boh_nella_assembled1.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Nella stimulator boards, assembled" class="addpic" src="/static/bohems/boh_nella_assembled1.jpeg"/></p>
 <p class="caption"> 10 Nella stimulator boards, ready for full-hand stimulation </p>
-<p><img loading="lazy" alt="10 Nella stimulator boards, ready for full-hand stimulation" src="/static/bohems/boh_nella10boards.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="10 Nella stimulator boards, ready for full-hand stimulation" class="addpic" src="/static/bohems/boh_nella10boards.jpeg"/></p>
 <ul>
 <li>Wrote a Processing GUI for participants to report hand sensation location</li>
 </ul>
 <p class="caption"> GUI for participants, basically drawing canvas overlaid on hand image </p>
-<p><img loading="lazy" alt="GUI for participants, basically drawing canvas overlaid on hand image" src="/static/bohems/boh_gui.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="GUI for participants, basically drawing canvas overlaid on hand image" class="addpic" src="/static/bohems/boh_gui.png"/></p>
 <ul>
 <li>Found electrode pad placement on the back of the hand which resulted in sensation on the front</li>
 </ul>
 <p class="caption"> Pad placement for eliciting sensations on the front of the hand </p>
-<p><img loading="lazy" alt="Pad placement for eliciting sensations on the front of the hand" src="/static/bohems/boh_padplacement.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Pad placement for eliciting sensations on the front of the hand" class="addpic" src="/static/bohems/boh_padplacement.jpeg"/></p>
 <p class="caption"> Full-hand setup for back-of-hand stimulation. Yeowch! </p>
-<p><img loading="lazy" alt="Full-hand setup for back-of-hand stimulation. Yeowch!" src="/static/bohems/boh_nella_fullhand2.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Full-hand setup for back-of-hand stimulation. Yeowch!" class="addpic" src="/static/bohems/boh_nella_fullhand2.jpeg"/></p>
 <ul>
 <li>Found a location + waveform which created pressure sensations without "vibrating" sensations, required per-user per-session tuning into the microamps</li>
 </ul>
 <p class="caption"> Very sensitive to position and strength, but somewhere near 8Hz this feels like pressure ONLY  </p>
-<p><img loading="lazy" alt="Very sensitive to position and strength, but somewhere near 8Hz this feels like pressure ONLY " src="/static/bohems/boh_pressure_placement.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Very sensitive to position and strength, but somewhere near 8Hz this feels like pressure ONLY " class="addpic" src="/static/bohems/boh_pressure_placement.jpeg"/></p>
 <ul>
 <li>Tried out the <a href="../../blog/traxionreproduction/">Traxion effect</a></li>
 </ul>
-<p><img loading="lazy" alt="" src="/static/bohems/boh_traxion1.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
-<p><img loading="lazy" alt="" src="/static/bohems/boh_traxion2.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/bohems/boh_traxion1.jpeg"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/bohems/boh_traxion2.png"/></p>
 <ul>
 <li>Tried out the Kajimoto high-density fingertip stimulator</li>
 </ul>
 <p class="caption"> Tingly fingers device. Taught me principles of high voltage w/ high voltage shift register </p>
-<p><img loading="lazy" alt="Tingly fingers device. Taught me principles of high voltage w/ high voltage shift register" src="/static/bohems/boh_kaji1.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Tingly fingers device. Taught me principles of high voltage w/ high voltage shift register" class="addpic" src="/static/bohems/boh_kaji1.jpeg"/></p>
 <h1 id="conclusion">Conclusion</h1>
 <p>It was a blessing to work with such cool and interesting people during a summer where everyone else was alone. I learned so much about how the human body's sensory system works, and it still comes in handy now. </p></body></html>
-            </div>
+        </div>
         <div class="col-lg-2"></div>
         <p style="line-height:300%;">&nbsp;</p>
 </div>

@@ -37,13 +37,6 @@
             content: counter(h1counter) ". ";
         }
 
-/*
-        .blogpage > h2 {
-            text-decoration: underline wavy #DBAD80;
-            text-underline-thickness: 1px;
-        }
-        */
-
         .blogpage > h2::before {
             counter-increment: h2counter;
             content: counter(h1counter) "." counter(h2counter) "  ";
@@ -54,6 +47,19 @@
         }
 
 
+        .blogpage img{
+            max-width: 100%;
+            max-height: 50vh;
+            height: auto;
+            width: auto;
+            display: block !important;
+            margin: 0 auto !important;
+        }
+
+        .blogpage h1, .blogpage h2{
+            color: #E0B890;
+        }
+
         .toc {
             padding-left: 12px;
             margin-left: -12px;
@@ -61,6 +67,8 @@
             color: inherit;
             text-decoration: none;
         }
+
+
 
     </style>
 
@@ -120,123 +128,115 @@
 
 
     <style>
-body {
-    background: #202222;
-    font-size: 1.2em;
-    font-family: 'Ubuntu', sans-serif;
-    color: #FAEADB;
-    overflow-x: hidden;
+        body {
+            background: #202222;
+            font-size: 1.2em;
+            font-family: 'Ubuntu', sans-serif;
+            color: #FAEADB;
+            overflow-x: hidden;
 
-    word-spacing: 0.03em;
-}
+            word-spacing: 0.03em;
+        }
 
-.navlinks{
-    font-family: 'Atkinson Hyperlegible';
-    font-size: 1.2em;
-}
+        .navlinks{
+            font-family: 'Atkinson Hyperlegible';
+            font-size: 1.2em;
+        }
 
-h1, h2, h3, h4, h5, h6{
-    font-family: "Atkinson Hyperlegible";
-}
+        h1, h2, h3, h4, h5, h6{
+            font-family: "Atkinson Hyperlegible";
+        }
 
 
-a {
-    transition: color .2s linear;
-    color:#00B4CC;
-}
+        a {
+            transition: color .2s linear;
+            color:#00B4CC;
+        }
 
-a:hover {
-    color:#00DFFC;
-    text-decoration: none;
-}
+        a:hover {
+            color:#00DFFC;
+            text-decoration: none;
+        }
 
-.navbar-custom {
-    font-size: 22px;
-    background-color: #202222 !important;
-}
+        .navbar-custom {
+            font-size: 22px;
+            background-color: #202222 !important;
+        }
 
-.navbar-custom .navbar-brand{
-    font-size: 30px;
-    color: #00dffc !important;
-}
+        .navbar-custom .navbar-brand{
+            font-size: 30px;
+            color: #00dffc !important;
+        }
 
-.navbar-custom .navitem{
-    color:#00dffc !important;
-}
+        .navbar-custom .navitem{
+            color:#00dffc !important;
+        }
 
-.navitem:hover{
-    color:#00b4cc !important;
-    text-decoration: none;
-}
+        .navitem:hover{
+            color:#00b4cc !important;
+            text-decoration: none;
+        }
 
-.hidden{
-  display: none;
-}
+        .hidden{
+          display: none;
+        }
 
-.navbar-toggler-icon {
-  border: none;
-  outline: none;
-}
+        .navbar-toggler-icon {
+          border: none;
+          outline: none;
+        }
 
-.caption{
-    font-size:12px;
-    text-align: center;
-    font-style: italic;
-    margin-bottom: .2em;
-    margin-top: 1em;
-}
+        .caption{
+            font-size:12px;
+            text-align: center;
+            font-style: italic;
+            margin-bottom: .2em;
+            margin-top: 1em;
+        }
 
-.projectpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-}
 
-.blogpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-    display: block !important;
-    margin: 0 auto !important;
-}
+        hr{
+            background-color:white !important;
+        }
 
-.blogpage h1, .blogpage h2{
-    color: #E0B890;
-}
+        .video-container {
+          position: relative;
+          width: 100%;
+          padding-bottom: 56.25%;
+        }
 
-.projectpage h1, .projectpage h2{
-    color: #E0B890;
-}
+        .youtubevideo {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 0;
+        }
 
-hr{
-    background-color:white !important;
-}
+        code {
+          font-family: Consolas,"courier new";
+          color: #110000;
+          background-color: #FAEADB;
+          padding: 2px;
+          font-size: 105%;
+        }
 
-.video-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
-}
 
-.youtubevideo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
+        .addpic {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+            border-radius: 10px;
 
-code {
-  font-family: Consolas,"courier new";
-  color: #110000;
-  background-color: #FAEADB;
-  padding: 2px;
-  font-size: 105%;
-}
+            transition: transform .2s ease-in-out;
+            transform: scale(0.99);
+        }
 
+        .addpic:hover {
+            transform: scale(1.01);
+        }
 </style>
 
     <link rel="icon" type="image/png" href=" /static/aklogo.png " />
@@ -311,21 +311,21 @@ code {
             <p style="font-size:0.8em;"> Published February 2, 2024</p>
 <hr>
             <html><body><p>Hello! Today I'm gonna walk you through uploading code to an ATtiny using an Arduino. This was my first time programming a microcontroller off-board, and I got most of the process following <a href="https://www.youtube.com/watch?v=TUlzOD9T3nI">this video</a>. But that video was not sufficient alone, so I'll be describing some of the extra steps in this post.</p>
-<p><img loading="lazy" alt="" src="/static/ard2attiny/0.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/ard2attiny/0.jpeg"/></p>
 <h1 id="ingredients">Ingredients</h1>
 <p>You'll need an ATtiny25/45/85 chip, Arduino, 6 jumper wires, a resistor + LED, and maybe a 10uF capacitor. </p>
 <h1 id="prepping-the-arduino">Prepping the Arduino</h1>
 <p>First we must flash the Arduino with the ArduinoISP sketch (found in File-&gt;Examples-&gt;11.ArduinoISP). We are using the "old style" wiring, so also uncomment line 81 in this sketch. </p>
-<p><img loading="lazy" alt="" src="/static/ard2attiny/1.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/ard2attiny/1.png"/></p>
 <p>We're not going to program the Arduino again, so go ahead and switch the target board to "ATtiny25/45/85" in Tools. If you don't have this option in your boards, follow the instructions in the <a href='&lt;a href="https://github.com/SpenceKonde/ATTinyCore/blob/v2.0.0-devThis-is-the-head-submit-PRs-against-this/Installation.md"&gt;https://github.com/SpenceKonde/ATTinyCore/blob/v2.0.0-devThis-is-the-head-submit-PRs-against-this/Installation.md&lt;/a&gt;'>ATtiny repo</a>. </p>
 <p>Change the programmer to "Arduino as ISP" as in the image below, and we'll be ready to go. </p>
-<p><img loading="lazy" alt="" src="/static/ard2attiny/2.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/ard2attiny/2.png"/></p>
 <h1 id="wiring-the-attiny">Wiring the ATtiny</h1>
 <p>Now we're going to need those jumpers. Follow this wiring diagram from the video above so we can upload code to the ATtiny</p>
 <p class="caption"> [source](https://www.youtube.com/watch?v=TUlzOD9T3nI) </p>
-<p><img loading="lazy" alt="source" src="/static/ard2attiny/3.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="source" class="addpic" src="/static/ard2attiny/3.jpeg"/></p>
 <p>To do the Blink sketch properly, we need to add the LED and resistor across PB0 and GND. Make sure the longer (positive) leg of the LED is on PB0. </p>
-<p><img loading="lazy" alt="" src="/static/ard2attiny/4.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/ard2attiny/4.jpeg"/></p>
 <h1 id="uploading-blink">Uploading Blink</h1>
 <p>If this is the first time your ATtiny is being used or you've changed any build settings, you'll need to hit Tools-&gt;Burn Bootloader. This should work with no errors, but if you get one, make sure you've uncommented that "old style wiring" line in ArduinoISP and that your wire connections are solid. </p>
 <p>Now, open the Blink example sketch. Change all instances of <code>LED_BUILTIN</code> to 0, then upload the sketch. If you have no errors, fortune smiles upon thee. Proceed to the next section. </p>
@@ -333,17 +333,17 @@ code {
 <h1 id="uploading-softwareserial">Uploading SoftwareSerial</h1>
 <p>To test any non-visual functionality, we're going to want to print debug messages over Serial. While we can't do Serial in the ATtiny hardware, we can include the SoftwareSerial library and do it anyway. The following code is derived from an example on this <a href='&lt;a href="https://www.instructables.com/ATtiny85-ATtiny84-Analog-Pins-Serial-Communication/"&gt;https://www.instructables.com/ATtiny85-ATtiny84-Analog-Pins-Serial-Communication/&lt;/a&gt;'>guide</a>, but you can use the sketch in Examples-&gt;SoftwareSerial also. </p>
 <p class="caption"> SoftwareSerial example works, though the pin numbers are all new to me </p>
-<p><img loading="lazy" alt="SoftwareSerial example works, though the pin numbers are all new to me" src="/static/ard2attiny/5.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="SoftwareSerial example works, though the pin numbers are all new to me" class="addpic" src="/static/ard2attiny/5.png"/></p>
 <h2 id="sus-method">Sus method</h2>
 <p>If the ATtiny uses SoftwareSerial, you can route the TX physical pin to the Arduino's TX pin and open the Serial monitor. You should see random noise characters, but if you hold down the RESET button, you can get messages from the ATtiny to show up.</p>
 <p class="caption"> Fine for words, but holding down the RESET messed with my ADC values. </p>
-<p><img loading="lazy" alt="Fine for words, but holding down the RESET messed with my ADC values." src="/static/ard2attiny/6.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Fine for words, but holding down the RESET messed with my ADC values." class="addpic" src="/static/ard2attiny/6.png"/></p>
 <p>The ATtiny's messages are scrambled when we receive them over Serial because the Arduino also uses the RX/TX pins and they're physically routed to the UART-&gt;USB converter chip. By holding down the RESET, we disable the Arduino and get to see the ATtiny messages without any problems.</p>
 <h2 id="less-sus-method">Less sus method</h2>
 <p>The proper way is to get an FTDI Friend or other UART-&gt;USB converter and receive messages using that instead. </p>
-<p><img loading="lazy" alt="" src="/static/ard2attiny/7.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/ard2attiny/7.jpeg"/></p>
 <p>If you go this route, the ATtiny's TX goes into the FTDI Friend's  RX, and the GNDs are connected. The port will have to be changed, and the messages will be received just fine. </p>
-<p><img loading="lazy" alt="" src="/static/ard2attiny/8.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/ard2attiny/8.jpeg"/></p>
 <h1 id="trying-out-the-adc">Trying out the ADC</h1>
 <p>The ATtiny85 is big enough to fit a lot of the Arduino helper functions, so the <code>analogRead</code> function just works like normal. You will need to be careful to pick a pin which can receive analog, so be sure to check. Here's my code to read from pin 2 and print it to Serial. </p>
 <!-- HTML generated using hilite.me -->
@@ -371,10 +371,10 @@ SoftwareSerial <span style="color: #0066BB; font-weight: bold">mySerial</span>(R
 }
 </pre></div>
 <p class="caption"> ADC readings plotted over time </p>
-<p><img loading="lazy" alt="ADC readings plotted over time" src="/static/ard2attiny/9.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="ADC readings plotted over time" class="addpic" src="/static/ard2attiny/9.png"/></p>
 <h1 id="have-fun">Have fun!</h1>
 <p>Hopefully you know the basics. As <a href='&lt;a href="https://www.youtube.com/watch?v=7bZg_GzUbHI&amp;t=1771s"&gt;https://www.youtube.com/watch?v=7bZg_GzUbHI&amp;t=1771s&lt;/a&gt;'>DeepBlueMbedded</a> said, you're basically done once you get blinking.</p>
-<p><img loading="lazy" alt="" src="/static/ard2attiny/10.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p></body></html>
+<p><img loading="lazy" alt="" class="addpic" src="/static/ard2attiny/10.png"/></p></body></html>
 
 
 

@@ -37,13 +37,6 @@
             content: counter(h1counter) ". ";
         }
 
-/*
-        .blogpage > h2 {
-            text-decoration: underline wavy #DBAD80;
-            text-underline-thickness: 1px;
-        }
-        */
-
         .blogpage > h2::before {
             counter-increment: h2counter;
             content: counter(h1counter) "." counter(h2counter) "  ";
@@ -54,6 +47,19 @@
         }
 
 
+        .blogpage img{
+            max-width: 100%;
+            max-height: 50vh;
+            height: auto;
+            width: auto;
+            display: block !important;
+            margin: 0 auto !important;
+        }
+
+        .blogpage h1, .blogpage h2{
+            color: #E0B890;
+        }
+
         .toc {
             padding-left: 12px;
             margin-left: -12px;
@@ -61,6 +67,8 @@
             color: inherit;
             text-decoration: none;
         }
+
+
 
     </style>
 
@@ -120,123 +128,115 @@
 
 
     <style>
-body {
-    background: #202222;
-    font-size: 1.2em;
-    font-family: 'Ubuntu', sans-serif;
-    color: #FAEADB;
-    overflow-x: hidden;
+        body {
+            background: #202222;
+            font-size: 1.2em;
+            font-family: 'Ubuntu', sans-serif;
+            color: #FAEADB;
+            overflow-x: hidden;
 
-    word-spacing: 0.03em;
-}
+            word-spacing: 0.03em;
+        }
 
-.navlinks{
-    font-family: 'Atkinson Hyperlegible';
-    font-size: 1.2em;
-}
+        .navlinks{
+            font-family: 'Atkinson Hyperlegible';
+            font-size: 1.2em;
+        }
 
-h1, h2, h3, h4, h5, h6{
-    font-family: "Atkinson Hyperlegible";
-}
+        h1, h2, h3, h4, h5, h6{
+            font-family: "Atkinson Hyperlegible";
+        }
 
 
-a {
-    transition: color .2s linear;
-    color:#00B4CC;
-}
+        a {
+            transition: color .2s linear;
+            color:#00B4CC;
+        }
 
-a:hover {
-    color:#00DFFC;
-    text-decoration: none;
-}
+        a:hover {
+            color:#00DFFC;
+            text-decoration: none;
+        }
 
-.navbar-custom {
-    font-size: 22px;
-    background-color: #202222 !important;
-}
+        .navbar-custom {
+            font-size: 22px;
+            background-color: #202222 !important;
+        }
 
-.navbar-custom .navbar-brand{
-    font-size: 30px;
-    color: #00dffc !important;
-}
+        .navbar-custom .navbar-brand{
+            font-size: 30px;
+            color: #00dffc !important;
+        }
 
-.navbar-custom .navitem{
-    color:#00dffc !important;
-}
+        .navbar-custom .navitem{
+            color:#00dffc !important;
+        }
 
-.navitem:hover{
-    color:#00b4cc !important;
-    text-decoration: none;
-}
+        .navitem:hover{
+            color:#00b4cc !important;
+            text-decoration: none;
+        }
 
-.hidden{
-  display: none;
-}
+        .hidden{
+          display: none;
+        }
 
-.navbar-toggler-icon {
-  border: none;
-  outline: none;
-}
+        .navbar-toggler-icon {
+          border: none;
+          outline: none;
+        }
 
-.caption{
-    font-size:12px;
-    text-align: center;
-    font-style: italic;
-    margin-bottom: .2em;
-    margin-top: 1em;
-}
+        .caption{
+            font-size:12px;
+            text-align: center;
+            font-style: italic;
+            margin-bottom: .2em;
+            margin-top: 1em;
+        }
 
-.projectpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-}
 
-.blogpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-    display: block !important;
-    margin: 0 auto !important;
-}
+        hr{
+            background-color:white !important;
+        }
 
-.blogpage h1, .blogpage h2{
-    color: #E0B890;
-}
+        .video-container {
+          position: relative;
+          width: 100%;
+          padding-bottom: 56.25%;
+        }
 
-.projectpage h1, .projectpage h2{
-    color: #E0B890;
-}
+        .youtubevideo {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 0;
+        }
 
-hr{
-    background-color:white !important;
-}
+        code {
+          font-family: Consolas,"courier new";
+          color: #110000;
+          background-color: #FAEADB;
+          padding: 2px;
+          font-size: 105%;
+        }
 
-.video-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
-}
 
-.youtubevideo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
+        .addpic {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+            border-radius: 10px;
 
-code {
-  font-family: Consolas,"courier new";
-  color: #110000;
-  background-color: #FAEADB;
-  padding: 2px;
-  font-size: 105%;
-}
+            transition: transform .2s ease-in-out;
+            transform: scale(0.99);
+        }
 
+        .addpic:hover {
+            transform: scale(1.01);
+        }
 </style>
 
     <link rel="icon" type="image/png" href=" /static/aklogo.png " />
@@ -315,20 +315,20 @@ code {
 <h1 id="no-gestures">No Gestures?</h1>
 <p>So far, the thing that bothers me the most about VisionOS is the inability to use custom gestures in the main "area". The Vision Pro is mostly billed as a productivity tool, and while working in it I wanted to do hand gestures to open specific webpages or send data to some program for processing. Unfortunately, accessing hand tracking requires ARKit, which requires the app to be in an "Full Space", which closes all other apps (e.g. Safari, Macbook screen mirroring). This is intentional on Apple's part, possibly to prevent custom gestures from interfering with the system-level "Tap" and "Drag" motions.</p>
 <p class="caption"> Apple's justification </p>
-<p><img loading="lazy" alt="Apple's justification" src="/static/quickimmersion/apple.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Apple's justification" class="addpic" src="/static/quickimmersion/apple.png"/></p>
 <p>I'm not sure what privacy would be protected by restricting ARKit usage like this, but I think custom gestures would be really cool to enable spatial computing and I want to do it. What are our alternatives?</p>
 <h1 id="quick-immersion">Quick Immersion</h1>
 <p>I've been experimenting with opening a Full Space and closing it really quickly, essentially using an app's windowed version as a toggle for the app's Full Space. The Full Space and the user's workflow can then complement each other — I do some 3D modelling on my laptop's shared screen, launch my app's Full Space for life-size model viewing and tweaks, then return to my desktop with a quick gesture. Here's some demo photos.</p>
 <p class="caption"> 1. User is using another app (reading about potatoes) </p>
-<p><img loading="lazy" alt="1. User is using another app (reading about potatoes)" src="/static/quickimmersion/1.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="1. User is using another app (reading about potatoes)" class="addpic" src="/static/quickimmersion/1.jpg"/></p>
 <p class="caption"> 2. User decides to go into an Immersive Space to work with a 3D asset </p>
-<p><img loading="lazy" alt="2. User decides to go into an Immersive Space to work with a 3D asset" src="/static/quickimmersion/2.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="2. User decides to go into an Immersive Space to work with a 3D asset" class="addpic" src="/static/quickimmersion/2.jpg"/></p>
 <p class="caption"> 3. User spawns a cube in the Full Space. Note the Safari window has closed on the left </p>
-<p><img loading="lazy" alt="3. User spawns a cube in the Full Space. Note the Safari window has closed on the left" src="/static/quickimmersion/3.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="3. User spawns a cube in the Full Space. Note the Safari window has closed on the left" class="addpic" src="/static/quickimmersion/3.jpg"/></p>
 <p class="caption"> 4. Satisfied with their cube, the user performs the exit gesture </p>
-<p><img loading="lazy" alt="4. Satisfied with their cube, the user performs the exit gesture" src="/static/quickimmersion/4.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="4. Satisfied with their cube, the user performs the exit gesture" class="addpic" src="/static/quickimmersion/4.jpg"/></p>
 <p class="caption"> 5. The previous apps return when the Full Space is closed and the user can resume their reading </p>
-<p><img loading="lazy" alt="5. The previous apps return when the Full Space is closed and the user can resume their reading" src="/static/quickimmersion/5.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="5. The previous apps return when the Full Space is closed and the user can resume their reading" class="addpic" src="/static/quickimmersion/5.jpg"/></p>
 <p>In the past I've seen apps with an exit button to get out of the Full Space. by using a custom gesture, exiting out takes only about a second — the approximate delay when switching between desktops on the Macbook. It's been quite comfortable to use but I haven't found a really useful thing to do with it. Here's some ideas I had though:</p>
 <hr/>
 <h2 id="inventory-app">Inventory app</h2>

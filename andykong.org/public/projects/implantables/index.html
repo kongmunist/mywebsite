@@ -14,11 +14,18 @@
 
 <title> Implantables | Andy Kong</title>
 
-    <style>
-        img {
-            border-radius: 10px;
-        }
-    </style>
+<style>
+    .projectpage h1, .projectpage h2{
+        color: #E0B890;
+    }
+
+    .projectpage img{
+        max-width: 100%;
+        max-height: 50vh;
+        height: auto;
+        width: auto;
+    }
+</style>
 
 
     <style type="text/css">
@@ -74,123 +81,115 @@
 
 
     <style>
-body {
-    background: #202222;
-    font-size: 1.2em;
-    font-family: 'Ubuntu', sans-serif;
-    color: #FAEADB;
-    overflow-x: hidden;
+        body {
+            background: #202222;
+            font-size: 1.2em;
+            font-family: 'Ubuntu', sans-serif;
+            color: #FAEADB;
+            overflow-x: hidden;
 
-    word-spacing: 0.03em;
-}
+            word-spacing: 0.03em;
+        }
 
-.navlinks{
-    font-family: 'Atkinson Hyperlegible';
-    font-size: 1.2em;
-}
+        .navlinks{
+            font-family: 'Atkinson Hyperlegible';
+            font-size: 1.2em;
+        }
 
-h1, h2, h3, h4, h5, h6{
-    font-family: "Atkinson Hyperlegible";
-}
+        h1, h2, h3, h4, h5, h6{
+            font-family: "Atkinson Hyperlegible";
+        }
 
 
-a {
-    transition: color .2s linear;
-    color:#00B4CC;
-}
+        a {
+            transition: color .2s linear;
+            color:#00B4CC;
+        }
 
-a:hover {
-    color:#00DFFC;
-    text-decoration: none;
-}
+        a:hover {
+            color:#00DFFC;
+            text-decoration: none;
+        }
 
-.navbar-custom {
-    font-size: 22px;
-    background-color: #202222 !important;
-}
+        .navbar-custom {
+            font-size: 22px;
+            background-color: #202222 !important;
+        }
 
-.navbar-custom .navbar-brand{
-    font-size: 30px;
-    color: #00dffc !important;
-}
+        .navbar-custom .navbar-brand{
+            font-size: 30px;
+            color: #00dffc !important;
+        }
 
-.navbar-custom .navitem{
-    color:#00dffc !important;
-}
+        .navbar-custom .navitem{
+            color:#00dffc !important;
+        }
 
-.navitem:hover{
-    color:#00b4cc !important;
-    text-decoration: none;
-}
+        .navitem:hover{
+            color:#00b4cc !important;
+            text-decoration: none;
+        }
 
-.hidden{
-  display: none;
-}
+        .hidden{
+          display: none;
+        }
 
-.navbar-toggler-icon {
-  border: none;
-  outline: none;
-}
+        .navbar-toggler-icon {
+          border: none;
+          outline: none;
+        }
 
-.caption{
-    font-size:12px;
-    text-align: center;
-    font-style: italic;
-    margin-bottom: .2em;
-    margin-top: 1em;
-}
+        .caption{
+            font-size:12px;
+            text-align: center;
+            font-style: italic;
+            margin-bottom: .2em;
+            margin-top: 1em;
+        }
 
-.projectpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-}
 
-.blogpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-    display: block !important;
-    margin: 0 auto !important;
-}
+        hr{
+            background-color:white !important;
+        }
 
-.blogpage h1, .blogpage h2{
-    color: #E0B890;
-}
+        .video-container {
+          position: relative;
+          width: 100%;
+          padding-bottom: 56.25%;
+        }
 
-.projectpage h1, .projectpage h2{
-    color: #E0B890;
-}
+        .youtubevideo {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 0;
+        }
 
-hr{
-    background-color:white !important;
-}
+        code {
+          font-family: Consolas,"courier new";
+          color: #110000;
+          background-color: #FAEADB;
+          padding: 2px;
+          font-size: 105%;
+        }
 
-.video-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
-}
 
-.youtubevideo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
+        .addpic {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+            border-radius: 10px;
 
-code {
-  font-family: Consolas,"courier new";
-  color: #110000;
-  background-color: #FAEADB;
-  padding: 2px;
-  font-size: 105%;
-}
+            transition: transform .2s ease-in-out;
+            transform: scale(0.99);
+        }
 
+        .addpic:hover {
+            transform: scale(1.01);
+        }
 </style>
 
     <link rel="icon" type="image/png" href=" /static/aklogo.png " />
@@ -255,38 +254,38 @@ code {
 <div class="row overflow-hidden" style = "height:100vh; width: 100vw; padding: 0px 30px 0px 30px;">
         <div class="col-lg-2"></div>
         <div class="col-12 col-lg-8 projectpage" style="max-width:1000px; margin-bottom:4em;">
-        <h1 style="text-center; margin-bottom: 5px">Implantables</h1>
-            <i><p style="margin-bottom: 5px; margin-top: 0px">Advanced implantable technology for continuously powered sensors and actuators</p></i>
-            <p style="margin-bottom: 0px; margin-top: 0px">Timespan: December 2023-now</p>
-            <p style="margin-bottom: 5px; margin-top: 0px">Published: 2024-02-06</p>
+            <h1 style="text-center; margin-bottom: 5px">Implantables</h1>
+                <i><p style="margin-bottom: 5px; margin-top: 0px">Advanced implantable technology for continuously powered sensors and actuators</p></i>
+                <p style="margin-bottom: 0px; margin-top: 0px">Timespan: December 2023-now</p>
+                <p style="margin-bottom: 5px; margin-top: 0px">Published: 2024-02-06</p>
 
-            <hr>
-        <html><body><p>Hi! I'm making passive implants that continuously monitor cognition and health. My main innovation is using the skin as a wire.</p>
+                <hr>
+            <html><body><p>Hi! I'm making passive implants that continuously monitor cognition and health. My main innovation is using the skin as a wire.</p>
 <video controls="" src="/static/implantables/LEDpower_over_skin.mp4" style="display: block; margin-left: auto; margin-right: auto;" width="75%"></video>
 <p class="caption"> Power delivery over skin, enough to light up an LED</p>
 <hr/>
 <h1 id="why-would-anyone-want-implants">Why would anyone want implants?</h1>
 <p>The dream for me: I've always wanted to be able to jack into a computer, exchanging information and intentions with silicon at the speed of thought. The keyboard has always felt like a limitation, a tiny pipe forcing me to transcribe my thoughts into letters in order to access the internet. What if we could commune directly through our body movements or thoughts? What if I could receive information as naturally as I know exactly where all my fingers are? To me, implants are a step towards that future. </p>
 <p class="caption"> The dream </p>
-<p><img loading="lazy" alt="The dream" src="/static/implantables/img_10.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 75%;"/></p>
+<p><img loading="lazy" alt="The dream" class="addpic" src="/static/implantables/img_10.png"/></p>
 <p>And what about health? Elderly folks would benefit from early warning of a heart attack or illness via continuous EKG monitoring, but the current equipment is large, with cables and gel pads that need switching every day. Diabetics need continuous glucose and blood pressure monitors, kidney stone formers need to monitor their hydration, and patients with chronic disease don't want to go to the doctor's office every week. What if all these biometrics could all be recorded from a one-time implant that continuously uploads the data for doctors and users to monitor?</p>
 <p class="caption"> User groups </p>
-<p><img loading="lazy" alt="User groups" src="/static/implantables/img_11.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 50%;"/></p>
+<p><img loading="lazy" alt="User groups" class="addpic" src="/static/implantables/img_11.png"/></p>
 <h1 id="why-are-you-making-your-own-arent-there-already-implants-available">Why are you making your own? Aren't there already implants available?</h1>
 <p>I'm making my own implants because the existing ones can't do anything I mentioned above.</p>
 <p>In 2015, I became interested in implants when I read about people getting biomagnets implanted to detect electrical fields and RFID chips to badge into places without a card.</p>
 <p class="caption"> Receipts </p>
-<p><img loading="lazy" alt="Receipts" src="/static/implantables/img_1.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 50%;"/></p>
+<p><img loading="lazy" alt="Receipts" class="addpic" src="/static/implantables/img_1.png"/></p>
 <p class="caption"> Implantable magnets allow for fun party tricks and perception of electrical fields </p>
-<p><img loading="lazy" alt="Implantable magnets allow for fun party tricks and perception of electrical fields" src="/static/implantables/img_9.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Implantable magnets allow for fun party tricks and perception of electrical fields" class="addpic" src="/static/implantables/img_9.png"/></p>
 <p>Now it's 2024. New implants have developed that allow advanced ID verification and under-skin LEDs. Coating tech has advanced to allow for more stable and larger implants, but the core functionality has stagnated because the technological problems are still the same.</p>
 <p class="caption"> An implantable LED </p>
-<p><img loading="lazy" alt="An implantable LED" src="/static/implantables/img_3.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="An implantable LED" class="addpic" src="/static/implantables/img_3.png"/></p>
 <h1 id="whats-holding-us-back-from-making-more-functional-implants">What's holding us back from making more functional implants?</h1>
 <p>The main reason we haven't developed any new functionality in human implants in the past decade is power delivery.</p>
 <p>Because human skin is such a good insulator of electromagnetic radiation, once an implant is completely encased in flesh it becomes hard to power. Current implants all rely on inductive power, which is the same stuff smartphones use for wireless charging. The applications of implants are limited because power must be provided whenever the implant is in use — one-off functionality is built-in.</p>
 <p class="caption"> Diagram of inductive power transfer </p>
-<p><img loading="lazy" alt="Diagram of inductive power transfer" src="/static/implantables/img_7.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Diagram of inductive power transfer" class="addpic" src="/static/implantables/img_7.png"/></p>
 <p>Implants focus so heavily on NFC because even non-implanted NFC chips need an external inductive power source to work. Adopting same use-cases as NFC makes the implant easy to motivate from a convenience standpoint. But since there aren't many other daily-use functionalities that rely on inductive power, it's hard to make implants that do other things.</p>
 <p>I've seen implants get around this using batteries charged inductively, but this runs the risks of potential leaks and larger implants. Sending messages across the skin also requires a lot of power, so even battery-powered implants aren't suitable for longer-term applications.</p>
 <h1 id="what-are-you-doing-thats-new">What are you doing that's new?</h1>
@@ -294,7 +293,7 @@ code {
 <video controls="" src="/static/implantables/LEDpower_over_skin.mp4" style="display: block; margin-left: auto; margin-right: auto;" width="75%"></video>
 <p>Imagine a wearable which can power your entire body network of implanted devices — sensors, actuators, communication units. Implants which don't need to carry any battery, but can be continuously powered simply by being in contact with your body. </p>
 <p>I hope your mind is racing with the possibilities. Mine is too, so please shoot me an email if you're interested in getting one or developing new functionality with the tech or just have ideas. My DMs are open.</p></body></html>
-            </div>
+        </div>
         <div class="col-lg-2"></div>
         <p style="line-height:300%;">&nbsp;</p>
 </div>

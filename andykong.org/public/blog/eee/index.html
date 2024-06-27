@@ -37,13 +37,6 @@
             content: counter(h1counter) ". ";
         }
 
-/*
-        .blogpage > h2 {
-            text-decoration: underline wavy #DBAD80;
-            text-underline-thickness: 1px;
-        }
-        */
-
         .blogpage > h2::before {
             counter-increment: h2counter;
             content: counter(h1counter) "." counter(h2counter) "  ";
@@ -54,6 +47,19 @@
         }
 
 
+        .blogpage img{
+            max-width: 100%;
+            max-height: 50vh;
+            height: auto;
+            width: auto;
+            display: block !important;
+            margin: 0 auto !important;
+        }
+
+        .blogpage h1, .blogpage h2{
+            color: #E0B890;
+        }
+
         .toc {
             padding-left: 12px;
             margin-left: -12px;
@@ -61,6 +67,8 @@
             color: inherit;
             text-decoration: none;
         }
+
+
 
     </style>
 
@@ -120,123 +128,115 @@
 
 
     <style>
-body {
-    background: #202222;
-    font-size: 1.2em;
-    font-family: 'Ubuntu', sans-serif;
-    color: #FAEADB;
-    overflow-x: hidden;
+        body {
+            background: #202222;
+            font-size: 1.2em;
+            font-family: 'Ubuntu', sans-serif;
+            color: #FAEADB;
+            overflow-x: hidden;
 
-    word-spacing: 0.03em;
-}
+            word-spacing: 0.03em;
+        }
 
-.navlinks{
-    font-family: 'Atkinson Hyperlegible';
-    font-size: 1.2em;
-}
+        .navlinks{
+            font-family: 'Atkinson Hyperlegible';
+            font-size: 1.2em;
+        }
 
-h1, h2, h3, h4, h5, h6{
-    font-family: "Atkinson Hyperlegible";
-}
+        h1, h2, h3, h4, h5, h6{
+            font-family: "Atkinson Hyperlegible";
+        }
 
 
-a {
-    transition: color .2s linear;
-    color:#00B4CC;
-}
+        a {
+            transition: color .2s linear;
+            color:#00B4CC;
+        }
 
-a:hover {
-    color:#00DFFC;
-    text-decoration: none;
-}
+        a:hover {
+            color:#00DFFC;
+            text-decoration: none;
+        }
 
-.navbar-custom {
-    font-size: 22px;
-    background-color: #202222 !important;
-}
+        .navbar-custom {
+            font-size: 22px;
+            background-color: #202222 !important;
+        }
 
-.navbar-custom .navbar-brand{
-    font-size: 30px;
-    color: #00dffc !important;
-}
+        .navbar-custom .navbar-brand{
+            font-size: 30px;
+            color: #00dffc !important;
+        }
 
-.navbar-custom .navitem{
-    color:#00dffc !important;
-}
+        .navbar-custom .navitem{
+            color:#00dffc !important;
+        }
 
-.navitem:hover{
-    color:#00b4cc !important;
-    text-decoration: none;
-}
+        .navitem:hover{
+            color:#00b4cc !important;
+            text-decoration: none;
+        }
 
-.hidden{
-  display: none;
-}
+        .hidden{
+          display: none;
+        }
 
-.navbar-toggler-icon {
-  border: none;
-  outline: none;
-}
+        .navbar-toggler-icon {
+          border: none;
+          outline: none;
+        }
 
-.caption{
-    font-size:12px;
-    text-align: center;
-    font-style: italic;
-    margin-bottom: .2em;
-    margin-top: 1em;
-}
+        .caption{
+            font-size:12px;
+            text-align: center;
+            font-style: italic;
+            margin-bottom: .2em;
+            margin-top: 1em;
+        }
 
-.projectpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-}
 
-.blogpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-    display: block !important;
-    margin: 0 auto !important;
-}
+        hr{
+            background-color:white !important;
+        }
 
-.blogpage h1, .blogpage h2{
-    color: #E0B890;
-}
+        .video-container {
+          position: relative;
+          width: 100%;
+          padding-bottom: 56.25%;
+        }
 
-.projectpage h1, .projectpage h2{
-    color: #E0B890;
-}
+        .youtubevideo {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 0;
+        }
 
-hr{
-    background-color:white !important;
-}
+        code {
+          font-family: Consolas,"courier new";
+          color: #110000;
+          background-color: #FAEADB;
+          padding: 2px;
+          font-size: 105%;
+        }
 
-.video-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
-}
 
-.youtubevideo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
+        .addpic {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+            border-radius: 10px;
 
-code {
-  font-family: Consolas,"courier new";
-  color: #110000;
-  background-color: #FAEADB;
-  padding: 2px;
-  font-size: 105%;
-}
+            transition: transform .2s ease-in-out;
+            transform: scale(0.99);
+        }
 
+        .addpic:hover {
+            transform: scale(1.01);
+        }
 </style>
 
     <link rel="icon" type="image/png" href=" /static/aklogo.png " />
@@ -311,7 +311,7 @@ code {
             <p style="font-size:0.8em;"> Published June 25, 2024</p>
 <hr>
             <html><body><p>Hello! Again I have returned from a distant land with tales from a popup community. This city was/is called <a href="https://www.edgeesmeralda.com/">Edge Esmerelda</a>, and is/was located in Healdsburg, CA.  </p>
-<p><img loading="lazy" alt="" src="/static/eee/0.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/eee/0.png"/></p>
 <p>In part, going was an experiment. I remember reading someone's blog post about "asking favors/questions you are SURE will be refused" as a way to make sure you really know the bounds of your social position (a la <a href="https://www.youtube.com/watch?v=vKA4w2O61Xo">Veritasium</a>) — I did this about a year ago when I asked 3 people if I could borrow 20,000 Swiss Francs so I could stay in Switzerland. None of them had it, but all of them said yes.</p>
 <p>Regarding Edge Esmerelda, I had just recently gone to SF and did not really want to go back so soon, but decided that if it was free then I would. I DM'd one of the organizers and asked if I could come for a week if I sorted my own housing, and they were very generous to me. Every time I do this exercise I am surprised.</p>
 <p>Anyway. Here's what</p>
@@ -336,7 +336,7 @@ code {
 <p>I gave a talk on implants</p>
 </li>
 </ul>
-<p><img loading="lazy" alt="" src="/static/eee/1.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/eee/1.png"/></p>
 <ul>
 <li>
 <p>Showed off my holograms to a ton of people</p>
@@ -345,15 +345,15 @@ code {
 <p>Experienced my first Pilates session</p>
 </li>
 </ul>
-<p><img loading="lazy" alt="" src="/static/eee/2.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/eee/2.jpeg"/></p>
 <ul>
 <li>learned you can 3d print spring-y stuff, like this knife!</li>
 </ul>
-<p><img loading="lazy" alt="" src="/static/eee/4.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/eee/4.jpeg"/></p>
 <ul>
 <li>Stayed at Hotel Anson for 3 nights where I made friends with Canadians and non-Canadians alike</li>
 </ul>
-<p><img loading="lazy" alt="" src="/static/eee/3.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p></body></html>
+<p><img loading="lazy" alt="" class="addpic" src="/static/eee/3.jpeg"/></p></body></html>
 
 
 

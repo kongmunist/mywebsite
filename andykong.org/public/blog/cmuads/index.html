@@ -37,13 +37,6 @@
             content: counter(h1counter) ". ";
         }
 
-/*
-        .blogpage > h2 {
-            text-decoration: underline wavy #DBAD80;
-            text-underline-thickness: 1px;
-        }
-        */
-
         .blogpage > h2::before {
             counter-increment: h2counter;
             content: counter(h1counter) "." counter(h2counter) "  ";
@@ -54,6 +47,19 @@
         }
 
 
+        .blogpage img{
+            max-width: 100%;
+            max-height: 50vh;
+            height: auto;
+            width: auto;
+            display: block !important;
+            margin: 0 auto !important;
+        }
+
+        .blogpage h1, .blogpage h2{
+            color: #E0B890;
+        }
+
         .toc {
             padding-left: 12px;
             margin-left: -12px;
@@ -61,6 +67,8 @@
             color: inherit;
             text-decoration: none;
         }
+
+
 
     </style>
 
@@ -120,123 +128,115 @@
 
 
     <style>
-body {
-    background: #202222;
-    font-size: 1.2em;
-    font-family: 'Ubuntu', sans-serif;
-    color: #FAEADB;
-    overflow-x: hidden;
+        body {
+            background: #202222;
+            font-size: 1.2em;
+            font-family: 'Ubuntu', sans-serif;
+            color: #FAEADB;
+            overflow-x: hidden;
 
-    word-spacing: 0.03em;
-}
+            word-spacing: 0.03em;
+        }
 
-.navlinks{
-    font-family: 'Atkinson Hyperlegible';
-    font-size: 1.2em;
-}
+        .navlinks{
+            font-family: 'Atkinson Hyperlegible';
+            font-size: 1.2em;
+        }
 
-h1, h2, h3, h4, h5, h6{
-    font-family: "Atkinson Hyperlegible";
-}
+        h1, h2, h3, h4, h5, h6{
+            font-family: "Atkinson Hyperlegible";
+        }
 
 
-a {
-    transition: color .2s linear;
-    color:#00B4CC;
-}
+        a {
+            transition: color .2s linear;
+            color:#00B4CC;
+        }
 
-a:hover {
-    color:#00DFFC;
-    text-decoration: none;
-}
+        a:hover {
+            color:#00DFFC;
+            text-decoration: none;
+        }
 
-.navbar-custom {
-    font-size: 22px;
-    background-color: #202222 !important;
-}
+        .navbar-custom {
+            font-size: 22px;
+            background-color: #202222 !important;
+        }
 
-.navbar-custom .navbar-brand{
-    font-size: 30px;
-    color: #00dffc !important;
-}
+        .navbar-custom .navbar-brand{
+            font-size: 30px;
+            color: #00dffc !important;
+        }
 
-.navbar-custom .navitem{
-    color:#00dffc !important;
-}
+        .navbar-custom .navitem{
+            color:#00dffc !important;
+        }
 
-.navitem:hover{
-    color:#00b4cc !important;
-    text-decoration: none;
-}
+        .navitem:hover{
+            color:#00b4cc !important;
+            text-decoration: none;
+        }
 
-.hidden{
-  display: none;
-}
+        .hidden{
+          display: none;
+        }
 
-.navbar-toggler-icon {
-  border: none;
-  outline: none;
-}
+        .navbar-toggler-icon {
+          border: none;
+          outline: none;
+        }
 
-.caption{
-    font-size:12px;
-    text-align: center;
-    font-style: italic;
-    margin-bottom: .2em;
-    margin-top: 1em;
-}
+        .caption{
+            font-size:12px;
+            text-align: center;
+            font-style: italic;
+            margin-bottom: .2em;
+            margin-top: 1em;
+        }
 
-.projectpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-}
 
-.blogpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-    display: block !important;
-    margin: 0 auto !important;
-}
+        hr{
+            background-color:white !important;
+        }
 
-.blogpage h1, .blogpage h2{
-    color: #E0B890;
-}
+        .video-container {
+          position: relative;
+          width: 100%;
+          padding-bottom: 56.25%;
+        }
 
-.projectpage h1, .projectpage h2{
-    color: #E0B890;
-}
+        .youtubevideo {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 0;
+        }
 
-hr{
-    background-color:white !important;
-}
+        code {
+          font-family: Consolas,"courier new";
+          color: #110000;
+          background-color: #FAEADB;
+          padding: 2px;
+          font-size: 105%;
+        }
 
-.video-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
-}
 
-.youtubevideo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
+        .addpic {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+            border-radius: 10px;
 
-code {
-  font-family: Consolas,"courier new";
-  color: #110000;
-  background-color: #FAEADB;
-  padding: 2px;
-  font-size: 105%;
-}
+            transition: transform .2s ease-in-out;
+            transform: scale(0.99);
+        }
 
+        .addpic:hover {
+            transform: scale(1.01);
+        }
 </style>
 
     <link rel="icon" type="image/png" href=" /static/aklogo.png " />
@@ -312,18 +312,18 @@ code {
 <hr>
             <html><body><p>Hello!</p>
 <p>Back when I attended CMU, there were these massive bulletin boards around campus full of adverts from students and profs. Students usually promoted their app/club/org/student course, and professors pushed their classes.</p>
-<p><img loading="lazy" alt="" src="/static/cmuads/0.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/cmuads/0.jpg"/></p>
 <p>When I started putting my own ads on these boards, I was always curious which b-boards were the most frequently looked at. For instance, the board between the Sorrells library and the bathroom gets a lot of traffic, but the people walking there were probably pretty focused on studying. Whereas the UC bulletin boards get less foot traffic, but the people there seem calmer since they aren't walking fast to get to class.</p>
 <p>Anyway, when I finished a campus events aggregator called <a href="../../projects/carnegiecalendar">Carnegie Calendar</a> and wanted to promote it by putting up bulletins, I finally had my chance to determine the highest engagement b-board.</p>
 <p>I printed out 63 of these flyers promoting Carnegie Calendar, each with a unique QR code demarcated by this little number in the corner. Each QR code led to the same website with a different trailing URL argument, which my server recorded in a text file. </p>
 <p class="caption"> See the little 1? </p>
-<p><img loading="lazy" alt="See the little 1?" src="/static/CCzoomin.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="See the little 1?" class="addpic" src="/static/CCzoomin.png"/></p>
 <p>I got a bunch of friends to help me put up the QR codes (Thanks Nancy Sam Ruijie and I think Nate?) and waited for the data to roll in.</p>
 <p>I always wanted to sell this data to some overzealous student group that puts up a ton of flyers and cares about it, but after 4 years I'm realizing that's probably not gonna happen. So I've tabulated the results into this map below.</p>
-<p><img loading="lazy" alt="" src="/static/cmuads/1.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/cmuads/1.png"/></p>
 <p>More granularly, the per-bulletin board data can be found <a href="https://docs.google.com/spreadsheets/d/1T-BplbYhJhCCI-hyfR-BIS-O5AUM7uf--s4L8abqz_0/edit#gid=1010815453">here</a>.</p>
 <p>A day or two after all the flyers were up, I realized that it would be free traffic if I also advertised the website in the school Facebook groups. I made a separate URL extension for the group links and posted it. The single Facebook link received around 6x the visits to all in-person links despite only being up for like 8 hours. </p>
-<p><img loading="lazy" alt="" src="/static/cmuads/2.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/cmuads/2.png"/></p>
 <p>As with all deploys, some event I scraped the first day of public release ended up busting the website, and I didn't realize until noon the next day. I always wonder about those missed first impressions. Anyway, enough lore for the day. Cya next time!</p></body></html>
 
 

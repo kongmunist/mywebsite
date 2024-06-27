@@ -14,11 +14,18 @@
 
 <title> Myo2 | Andy Kong</title>
 
-    <style>
-        img {
-            border-radius: 10px;
-        }
-    </style>
+<style>
+    .projectpage h1, .projectpage h2{
+        color: #E0B890;
+    }
+
+    .projectpage img{
+        max-width: 100%;
+        max-height: 50vh;
+        height: auto;
+        width: auto;
+    }
+</style>
 
 
     <style type="text/css">
@@ -74,123 +81,115 @@
 
 
     <style>
-body {
-    background: #202222;
-    font-size: 1.2em;
-    font-family: 'Ubuntu', sans-serif;
-    color: #FAEADB;
-    overflow-x: hidden;
+        body {
+            background: #202222;
+            font-size: 1.2em;
+            font-family: 'Ubuntu', sans-serif;
+            color: #FAEADB;
+            overflow-x: hidden;
 
-    word-spacing: 0.03em;
-}
+            word-spacing: 0.03em;
+        }
 
-.navlinks{
-    font-family: 'Atkinson Hyperlegible';
-    font-size: 1.2em;
-}
+        .navlinks{
+            font-family: 'Atkinson Hyperlegible';
+            font-size: 1.2em;
+        }
 
-h1, h2, h3, h4, h5, h6{
-    font-family: "Atkinson Hyperlegible";
-}
+        h1, h2, h3, h4, h5, h6{
+            font-family: "Atkinson Hyperlegible";
+        }
 
 
-a {
-    transition: color .2s linear;
-    color:#00B4CC;
-}
+        a {
+            transition: color .2s linear;
+            color:#00B4CC;
+        }
 
-a:hover {
-    color:#00DFFC;
-    text-decoration: none;
-}
+        a:hover {
+            color:#00DFFC;
+            text-decoration: none;
+        }
 
-.navbar-custom {
-    font-size: 22px;
-    background-color: #202222 !important;
-}
+        .navbar-custom {
+            font-size: 22px;
+            background-color: #202222 !important;
+        }
 
-.navbar-custom .navbar-brand{
-    font-size: 30px;
-    color: #00dffc !important;
-}
+        .navbar-custom .navbar-brand{
+            font-size: 30px;
+            color: #00dffc !important;
+        }
 
-.navbar-custom .navitem{
-    color:#00dffc !important;
-}
+        .navbar-custom .navitem{
+            color:#00dffc !important;
+        }
 
-.navitem:hover{
-    color:#00b4cc !important;
-    text-decoration: none;
-}
+        .navitem:hover{
+            color:#00b4cc !important;
+            text-decoration: none;
+        }
 
-.hidden{
-  display: none;
-}
+        .hidden{
+          display: none;
+        }
 
-.navbar-toggler-icon {
-  border: none;
-  outline: none;
-}
+        .navbar-toggler-icon {
+          border: none;
+          outline: none;
+        }
 
-.caption{
-    font-size:12px;
-    text-align: center;
-    font-style: italic;
-    margin-bottom: .2em;
-    margin-top: 1em;
-}
+        .caption{
+            font-size:12px;
+            text-align: center;
+            font-style: italic;
+            margin-bottom: .2em;
+            margin-top: 1em;
+        }
 
-.projectpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-}
 
-.blogpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-    display: block !important;
-    margin: 0 auto !important;
-}
+        hr{
+            background-color:white !important;
+        }
 
-.blogpage h1, .blogpage h2{
-    color: #E0B890;
-}
+        .video-container {
+          position: relative;
+          width: 100%;
+          padding-bottom: 56.25%;
+        }
 
-.projectpage h1, .projectpage h2{
-    color: #E0B890;
-}
+        .youtubevideo {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 0;
+        }
 
-hr{
-    background-color:white !important;
-}
+        code {
+          font-family: Consolas,"courier new";
+          color: #110000;
+          background-color: #FAEADB;
+          padding: 2px;
+          font-size: 105%;
+        }
 
-.video-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
-}
 
-.youtubevideo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
+        .addpic {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+            border-radius: 10px;
 
-code {
-  font-family: Consolas,"courier new";
-  color: #110000;
-  background-color: #FAEADB;
-  padding: 2px;
-  font-size: 105%;
-}
+            transition: transform .2s ease-in-out;
+            transform: scale(0.99);
+        }
 
+        .addpic:hover {
+            transform: scale(1.01);
+        }
 </style>
 
     <link rel="icon" type="image/png" href=" /static/aklogo.png " />
@@ -255,13 +254,13 @@ code {
 <div class="row overflow-hidden" style = "height:100vh; width: 100vw; padding: 0px 30px 0px 30px;">
         <div class="col-lg-2"></div>
         <div class="col-12 col-lg-8 projectpage" style="max-width:1000px; margin-bottom:4em;">
-        <h1 style="text-center; margin-bottom: 5px">Myo2</h1>
-            <i><p style="margin-bottom: 5px; margin-top: 0px">Making my own ultra-sensitive EMG sensors for measuring unnoticeable muscle movement</p></i>
-            <p style="margin-bottom: 0px; margin-top: 0px">Timespan: July 2020 - now</p>
-            <p style="margin-bottom: 5px; margin-top: 0px">Published: 2020-10-23</p>
+            <h1 style="text-center; margin-bottom: 5px">Myo2</h1>
+                <i><p style="margin-bottom: 5px; margin-top: 0px">Making my own ultra-sensitive EMG sensors for measuring unnoticeable muscle movement</p></i>
+                <p style="margin-bottom: 0px; margin-top: 0px">Timespan: July 2020 - now</p>
+                <p style="margin-bottom: 5px; margin-top: 0px">Published: 2020-10-23</p>
 
-            <hr>
-        <html><body><p>Here it is! My own EMG sensor board, capable of amplifying 50uV muscle signals into ~1V outputs without getting drowned out by electromagnetic interference or noise. Total gain is around 30,000x.
+                <hr>
+            <html><body><p>Here it is! My own EMG sensor board, capable of amplifying 50uV muscle signals into ~1V outputs without getting drowned out by electromagnetic interference or noise. Total gain is around 30,000x.
 <img loading="lazy" class="d-block mx-auto" src="/static/myo2tensingcropped.gif" style="margin-bottom:0px"/></p>
 <p class="caption">Myo2 muscle tensing test gif. Two hard contractions followed by a lighter, discreet contraction.</p>
 <p><img loading="lazy" class="d-block mx-auto" src="/static/myo2boardpic.png" style="margin-bottom:0px"/></p>
@@ -295,7 +294,7 @@ code {
 <p>Output gain was not as high as I had hoped due to some imperfections in the filter amplifiers I chose. However, the output signal's noise was almost exactly what was predicted by the op amp's voltage and current noises after undergoing 10,000x gain. So I ran into a limitation in my parts selection, and not my implementation. It always feels good to figure out a problem is in your hardware and not the way you set it up.</p>
 <h3>Interested in making one?</h3>
 <p>Email me (check my CV)! I can send all schematics and talk more about my design decisions, just don't want to write it all up.</p></body></html>
-            </div>
+        </div>
         <div class="col-lg-2"></div>
         <p style="line-height:300%;">&nbsp;</p>
 </div>

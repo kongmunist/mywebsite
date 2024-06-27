@@ -14,11 +14,18 @@
 
 <title> Strooper | Andy Kong</title>
 
-    <style>
-        img {
-            border-radius: 10px;
-        }
-    </style>
+<style>
+    .projectpage h1, .projectpage h2{
+        color: #E0B890;
+    }
+
+    .projectpage img{
+        max-width: 100%;
+        max-height: 50vh;
+        height: auto;
+        width: auto;
+    }
+</style>
 
 
     <style type="text/css">
@@ -74,123 +81,115 @@
 
 
     <style>
-body {
-    background: #202222;
-    font-size: 1.2em;
-    font-family: 'Ubuntu', sans-serif;
-    color: #FAEADB;
-    overflow-x: hidden;
+        body {
+            background: #202222;
+            font-size: 1.2em;
+            font-family: 'Ubuntu', sans-serif;
+            color: #FAEADB;
+            overflow-x: hidden;
 
-    word-spacing: 0.03em;
-}
+            word-spacing: 0.03em;
+        }
 
-.navlinks{
-    font-family: 'Atkinson Hyperlegible';
-    font-size: 1.2em;
-}
+        .navlinks{
+            font-family: 'Atkinson Hyperlegible';
+            font-size: 1.2em;
+        }
 
-h1, h2, h3, h4, h5, h6{
-    font-family: "Atkinson Hyperlegible";
-}
+        h1, h2, h3, h4, h5, h6{
+            font-family: "Atkinson Hyperlegible";
+        }
 
 
-a {
-    transition: color .2s linear;
-    color:#00B4CC;
-}
+        a {
+            transition: color .2s linear;
+            color:#00B4CC;
+        }
 
-a:hover {
-    color:#00DFFC;
-    text-decoration: none;
-}
+        a:hover {
+            color:#00DFFC;
+            text-decoration: none;
+        }
 
-.navbar-custom {
-    font-size: 22px;
-    background-color: #202222 !important;
-}
+        .navbar-custom {
+            font-size: 22px;
+            background-color: #202222 !important;
+        }
 
-.navbar-custom .navbar-brand{
-    font-size: 30px;
-    color: #00dffc !important;
-}
+        .navbar-custom .navbar-brand{
+            font-size: 30px;
+            color: #00dffc !important;
+        }
 
-.navbar-custom .navitem{
-    color:#00dffc !important;
-}
+        .navbar-custom .navitem{
+            color:#00dffc !important;
+        }
 
-.navitem:hover{
-    color:#00b4cc !important;
-    text-decoration: none;
-}
+        .navitem:hover{
+            color:#00b4cc !important;
+            text-decoration: none;
+        }
 
-.hidden{
-  display: none;
-}
+        .hidden{
+          display: none;
+        }
 
-.navbar-toggler-icon {
-  border: none;
-  outline: none;
-}
+        .navbar-toggler-icon {
+          border: none;
+          outline: none;
+        }
 
-.caption{
-    font-size:12px;
-    text-align: center;
-    font-style: italic;
-    margin-bottom: .2em;
-    margin-top: 1em;
-}
+        .caption{
+            font-size:12px;
+            text-align: center;
+            font-style: italic;
+            margin-bottom: .2em;
+            margin-top: 1em;
+        }
 
-.projectpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-}
 
-.blogpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-    display: block !important;
-    margin: 0 auto !important;
-}
+        hr{
+            background-color:white !important;
+        }
 
-.blogpage h1, .blogpage h2{
-    color: #E0B890;
-}
+        .video-container {
+          position: relative;
+          width: 100%;
+          padding-bottom: 56.25%;
+        }
 
-.projectpage h1, .projectpage h2{
-    color: #E0B890;
-}
+        .youtubevideo {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 0;
+        }
 
-hr{
-    background-color:white !important;
-}
+        code {
+          font-family: Consolas,"courier new";
+          color: #110000;
+          background-color: #FAEADB;
+          padding: 2px;
+          font-size: 105%;
+        }
 
-.video-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
-}
 
-.youtubevideo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
+        .addpic {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+            border-radius: 10px;
 
-code {
-  font-family: Consolas,"courier new";
-  color: #110000;
-  background-color: #FAEADB;
-  padding: 2px;
-  font-size: 105%;
-}
+            transition: transform .2s ease-in-out;
+            transform: scale(0.99);
+        }
 
+        .addpic:hover {
+            transform: scale(1.01);
+        }
 </style>
 
     <link rel="icon" type="image/png" href=" /static/aklogo.png " />
@@ -255,24 +254,24 @@ code {
 <div class="row overflow-hidden" style = "height:100vh; width: 100vw; padding: 0px 30px 0px 30px;">
         <div class="col-lg-2"></div>
         <div class="col-12 col-lg-8 projectpage" style="max-width:1000px; margin-bottom:4em;">
-        <h1 style="text-center; margin-bottom: 5px">Strooper</h1>
-            <i><p style="margin-bottom: 5px; margin-top: 0px">A Chrome extension to track your cognitive performance when visiting particular websites</p></i>
-            <p style="margin-bottom: 0px; margin-top: 0px">Timespan: October 2023</p>
-            <p style="margin-bottom: 5px; margin-top: 0px">Published: 2024-01-08</p>
+            <h1 style="text-center; margin-bottom: 5px">Strooper</h1>
+                <i><p style="margin-bottom: 5px; margin-top: 0px">A Chrome extension to track your cognitive performance when visiting particular websites</p></i>
+                <p style="margin-bottom: 0px; margin-top: 0px">Timespan: October 2023</p>
+                <p style="margin-bottom: 5px; margin-top: 0px">Published: 2024-01-08</p>
 
-            <hr>
-        <html><body><p><img loading="lazy" alt="" src="/static/strooper/strooper_storepage.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+                <hr>
+            <html><body><p><img loading="lazy" alt="" class="addpic" src="/static/strooper/strooper_storepage.png"/></p>
 <p>Strooper is the first Chrome extension I've ever made that worked. It pops up a Stroop test which you must complete whenever you visit a user-specified list of websites, and logs your performance to the localStorage. Check it out <a href="https://chromewebstore.google.com/detail/strooper/bmpmimimabakkagnniammiljclhjcmgi">here</a>!</p>
 <h1 id="motivation">Motivation</h1>
 <p>I wanted to track my cognitive performance to see if I suffer any terrible effects from sleep deprivation, caffeine intake, etc. Since I was previously using <a href="https://kongmunist.medium.com/playing-faster-tetris-by-sleeping-less-3d9b04d30349">Tetris</a> as a cognitive proxy, taking the Stroop test seemed like a nice step-up. </p>
 <p class="caption"> Sleep duration does NOT affect my Tetris performance </p>
-<p><img loading="lazy" alt="Sleep duration does NOT affect my Tetris performance" src="/static/strooper/img_3.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Sleep duration does NOT affect my Tetris performance" class="addpic" src="/static/strooper/img_3.png"/></p>
 <h1 id="background">Background</h1>
 <p class="caption"> Example of a stroop test. The participant would be tasked with reading out the color of the word instead of the word itself. </p>
-<p><img loading="lazy" alt="Example of a stroop test. The participant would be tasked with reading out the color of the word instead of the word itself." src="/static/strooper/img_1.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Example of a stroop test. The participant would be tasked with reading out the color of the word instead of the word itself." class="addpic" src="/static/strooper/img_1.png"/></p>
 <p>The Stroop test is a cognitive performance test invented by John Ridley Stroop in 1935. If you give it a try with the list above, you'll notice it's pretty confusing. Here's a graph from the original paper. 2 takes longer than 1, and their difference is the Stroop effect.</p>
 <p class="caption"> Task 1 is to name a color shown in its own color (non-interference), task 2 is to name a color shown in a different color (interference) </p>
-<p><img loading="lazy" alt="Task 1 is to name a color shown in its own color (non-interference), task 2 is to name a color shown in a different color (interference)" src="/static/strooper/img_2.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Task 1 is to name a color shown in its own color (non-interference), task 2 is to name a color shown in a different color (interference)" class="addpic" src="/static/strooper/img_2.png"/></p>
 <p>Psychologists use the Stroop test as a measure for executive function and selective attention because they believe that a test participant must suppress their stronger urge to read the word in order to say the color instead. Here's <a href="https://psycnet.apa.org/doiLanding?doi=10.1037%2F0894-4105.21.2.251">the first article</a> I found about people with ADHD doing worse on the Stroop test, but there are many, many more about other conditions and variants.</p>
 <h1 id="motivation-2">Motivation 2</h1>
 <p>While searching for suitable tracking solutions, I found only terrible Stroop tests online (click instead of keyboard button, no logging), and felt the strong desire to make my own.</p>
@@ -299,7 +298,7 @@ code {
 <h2 id="why-are-there-three-scores">Why are there three scores?</h2>
 <p>I got this from reading <a href="https://psycnet.apa.org/record/1966-02137-001">"Scoring the Stroop Test"</a> by Arthur Jensen. </p>
 <p>Basically, there were a lot of different score calculation methods floating around and he wanted to figure out which ones were actually useful. He got a big batch of data, calculated all the different scoring methods, and noted which ones were redundant using PCA. That left us with scores B, D, and E. </p>
-<p><img loading="lazy" alt="" src="/static/strooper/img_5.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/strooper/img_5.png"/></p>
 <p>Scores A, B, and C are the scores of the three subtasks in order. B is the reading speed, D = A/(A+B) (color naming score regularized by reading speed), and E = C-A (Stroop effect score)</p>
 <p>I enjoyed this paper, really I just love reading old research to see how the wording and procedures have evolved. </p>
 <h2 id="does-it-work-if-we-hitclick-the-buttons-instead-of-saying-it-out-loud">Does it work if we hit/click the buttons instead of saying it out loud?</h2>
@@ -316,9 +315,9 @@ code {
 <li>No results, but KPier's <a href="https://www.lesswrong.com/posts/nvRauqCD3u5hdkLm9/chess-and-cheap-ways-to-check-day-to-day-variance-in">Chess</a> article</li>
 </ul>
 <p>Here's a graphic I made for my email to Mr. Mite comparing the different tests.</p>
-<p><img loading="lazy" alt="" src="/static/strooper/img_4.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/strooper/img_4.png"/></p>
 <p><br/></p></body></html>
-            </div>
+        </div>
         <div class="col-lg-2"></div>
         <p style="line-height:300%;">&nbsp;</p>
 </div>

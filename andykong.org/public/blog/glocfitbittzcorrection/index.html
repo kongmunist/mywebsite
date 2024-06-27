@@ -37,13 +37,6 @@
             content: counter(h1counter) ". ";
         }
 
-/*
-        .blogpage > h2 {
-            text-decoration: underline wavy #DBAD80;
-            text-underline-thickness: 1px;
-        }
-        */
-
         .blogpage > h2::before {
             counter-increment: h2counter;
             content: counter(h1counter) "." counter(h2counter) "  ";
@@ -54,6 +47,19 @@
         }
 
 
+        .blogpage img{
+            max-width: 100%;
+            max-height: 50vh;
+            height: auto;
+            width: auto;
+            display: block !important;
+            margin: 0 auto !important;
+        }
+
+        .blogpage h1, .blogpage h2{
+            color: #E0B890;
+        }
+
         .toc {
             padding-left: 12px;
             margin-left: -12px;
@@ -61,6 +67,8 @@
             color: inherit;
             text-decoration: none;
         }
+
+
 
     </style>
 
@@ -120,123 +128,115 @@
 
 
     <style>
-body {
-    background: #202222;
-    font-size: 1.2em;
-    font-family: 'Ubuntu', sans-serif;
-    color: #FAEADB;
-    overflow-x: hidden;
+        body {
+            background: #202222;
+            font-size: 1.2em;
+            font-family: 'Ubuntu', sans-serif;
+            color: #FAEADB;
+            overflow-x: hidden;
 
-    word-spacing: 0.03em;
-}
+            word-spacing: 0.03em;
+        }
 
-.navlinks{
-    font-family: 'Atkinson Hyperlegible';
-    font-size: 1.2em;
-}
+        .navlinks{
+            font-family: 'Atkinson Hyperlegible';
+            font-size: 1.2em;
+        }
 
-h1, h2, h3, h4, h5, h6{
-    font-family: "Atkinson Hyperlegible";
-}
+        h1, h2, h3, h4, h5, h6{
+            font-family: "Atkinson Hyperlegible";
+        }
 
 
-a {
-    transition: color .2s linear;
-    color:#00B4CC;
-}
+        a {
+            transition: color .2s linear;
+            color:#00B4CC;
+        }
 
-a:hover {
-    color:#00DFFC;
-    text-decoration: none;
-}
+        a:hover {
+            color:#00DFFC;
+            text-decoration: none;
+        }
 
-.navbar-custom {
-    font-size: 22px;
-    background-color: #202222 !important;
-}
+        .navbar-custom {
+            font-size: 22px;
+            background-color: #202222 !important;
+        }
 
-.navbar-custom .navbar-brand{
-    font-size: 30px;
-    color: #00dffc !important;
-}
+        .navbar-custom .navbar-brand{
+            font-size: 30px;
+            color: #00dffc !important;
+        }
 
-.navbar-custom .navitem{
-    color:#00dffc !important;
-}
+        .navbar-custom .navitem{
+            color:#00dffc !important;
+        }
 
-.navitem:hover{
-    color:#00b4cc !important;
-    text-decoration: none;
-}
+        .navitem:hover{
+            color:#00b4cc !important;
+            text-decoration: none;
+        }
 
-.hidden{
-  display: none;
-}
+        .hidden{
+          display: none;
+        }
 
-.navbar-toggler-icon {
-  border: none;
-  outline: none;
-}
+        .navbar-toggler-icon {
+          border: none;
+          outline: none;
+        }
 
-.caption{
-    font-size:12px;
-    text-align: center;
-    font-style: italic;
-    margin-bottom: .2em;
-    margin-top: 1em;
-}
+        .caption{
+            font-size:12px;
+            text-align: center;
+            font-style: italic;
+            margin-bottom: .2em;
+            margin-top: 1em;
+        }
 
-.projectpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-}
 
-.blogpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-    display: block !important;
-    margin: 0 auto !important;
-}
+        hr{
+            background-color:white !important;
+        }
 
-.blogpage h1, .blogpage h2{
-    color: #E0B890;
-}
+        .video-container {
+          position: relative;
+          width: 100%;
+          padding-bottom: 56.25%;
+        }
 
-.projectpage h1, .projectpage h2{
-    color: #E0B890;
-}
+        .youtubevideo {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 0;
+        }
 
-hr{
-    background-color:white !important;
-}
+        code {
+          font-family: Consolas,"courier new";
+          color: #110000;
+          background-color: #FAEADB;
+          padding: 2px;
+          font-size: 105%;
+        }
 
-.video-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
-}
 
-.youtubevideo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
+        .addpic {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+            border-radius: 10px;
 
-code {
-  font-family: Consolas,"courier new";
-  color: #110000;
-  background-color: #FAEADB;
-  padding: 2px;
-  font-size: 105%;
-}
+            transition: transform .2s ease-in-out;
+            transform: scale(0.99);
+        }
 
+        .addpic:hover {
+            transform: scale(1.01);
+        }
 </style>
 
     <link rel="icon" type="image/png" href=" /static/aklogo.png " />
@@ -316,13 +316,13 @@ code {
 <p>To cap off all my Fitbit posting, I exported my data one last time and noticed that they have restructured the data and ruined my <a href="../fitbitsleeptzcorrection">stress method</a> for timezone correction, rendering all my latest data unusable. Since I've collected more Tetris and Stroop data that I wanted to correlate, I decided to try one final method that I've always thought about but never cared enough to do — syncing my Google Location with Fitbit's data to get UTC timestamps. I'll describe the steps verbally and the code will be at the end. </p>
 <h1 id="method">Method</h1>
 <p>First I loaded my Google location data with <a href="https://github.com/Scarygami/location-history-json-converter">this neat tool</a> by Scarygami which produces a massive CSV of all the longitude and latitude and everything else. Here I visualized part of it using plotly's <code>scatter_mapbox</code> function. </p>
-<p><img loading="lazy" alt="" src="/static/glocfitbittzcorrection/0.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/glocfitbittzcorrection/0.png"/></p>
 <p>From each longitude and latitude, you can get the timezone name using the Python library <a href="https://pypi.org/project/timezonefinder/">timezonefinder</a>, which works at a rate of ~2ms/1000 coordinates without needing to do GET requests. I converted the timezone strings into timezone offsets using some code from <a href="https://stackoverflow.com/questions/5537876/get-utc-offset-from-time-zone-name-in-python">this SO post</a>. </p>
 <p>Then I realized that I needed to also account for daylight savings time across two regions, Europe and America, which for some reason have DST dates that are about a week off from each other. I can't wait for them to abolish DST so I'll have to add a bool which determines if DST correction is necessary in my timezone correction pipeline /s</p>
-<p><img loading="lazy" alt="" src="/static/glocfitbittzcorrection/1.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/glocfitbittzcorrection/1.png"/></p>
 <p>Some sleep sessions have no "close" longitude/latitude coordinates, so I toss them. Close is defined arbitrarily, I use 6 hrs as my cutoff. </p>
 <p>My success rate with this method is ~60%, and most of the loss comes from me neglecting to turn on Google Timeline on my iPhone until sometime mid-2021. In total, I recovered 600+ days of <em>accurate</em> Fitbit sleep data and can now produce fun sleep graphs which I can trust. For instance, here is my true Tetris speed vs. sleep graph: </p>
-<p><img loading="lazy" alt="" src="/static/glocfitbittzcorrection/2.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/glocfitbittzcorrection/2.png"/></p>
 <p>Turns out sleep is good for you, actually.</p>
 <h1 id="code">Code</h1>
 <p>Code is provided with no guarantees or user-friendly comments. Use at your own risk, etc. etc.</p>

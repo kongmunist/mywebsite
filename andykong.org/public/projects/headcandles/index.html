@@ -14,11 +14,18 @@
 
 <title> Head Candle | Andy Kong</title>
 
-    <style>
-        img {
-            border-radius: 10px;
-        }
-    </style>
+<style>
+    .projectpage h1, .projectpage h2{
+        color: #E0B890;
+    }
+
+    .projectpage img{
+        max-width: 100%;
+        max-height: 50vh;
+        height: auto;
+        width: auto;
+    }
+</style>
 
 
     <style type="text/css">
@@ -74,123 +81,115 @@
 
 
     <style>
-body {
-    background: #202222;
-    font-size: 1.2em;
-    font-family: 'Ubuntu', sans-serif;
-    color: #FAEADB;
-    overflow-x: hidden;
+        body {
+            background: #202222;
+            font-size: 1.2em;
+            font-family: 'Ubuntu', sans-serif;
+            color: #FAEADB;
+            overflow-x: hidden;
 
-    word-spacing: 0.03em;
-}
+            word-spacing: 0.03em;
+        }
 
-.navlinks{
-    font-family: 'Atkinson Hyperlegible';
-    font-size: 1.2em;
-}
+        .navlinks{
+            font-family: 'Atkinson Hyperlegible';
+            font-size: 1.2em;
+        }
 
-h1, h2, h3, h4, h5, h6{
-    font-family: "Atkinson Hyperlegible";
-}
+        h1, h2, h3, h4, h5, h6{
+            font-family: "Atkinson Hyperlegible";
+        }
 
 
-a {
-    transition: color .2s linear;
-    color:#00B4CC;
-}
+        a {
+            transition: color .2s linear;
+            color:#00B4CC;
+        }
 
-a:hover {
-    color:#00DFFC;
-    text-decoration: none;
-}
+        a:hover {
+            color:#00DFFC;
+            text-decoration: none;
+        }
 
-.navbar-custom {
-    font-size: 22px;
-    background-color: #202222 !important;
-}
+        .navbar-custom {
+            font-size: 22px;
+            background-color: #202222 !important;
+        }
 
-.navbar-custom .navbar-brand{
-    font-size: 30px;
-    color: #00dffc !important;
-}
+        .navbar-custom .navbar-brand{
+            font-size: 30px;
+            color: #00dffc !important;
+        }
 
-.navbar-custom .navitem{
-    color:#00dffc !important;
-}
+        .navbar-custom .navitem{
+            color:#00dffc !important;
+        }
 
-.navitem:hover{
-    color:#00b4cc !important;
-    text-decoration: none;
-}
+        .navitem:hover{
+            color:#00b4cc !important;
+            text-decoration: none;
+        }
 
-.hidden{
-  display: none;
-}
+        .hidden{
+          display: none;
+        }
 
-.navbar-toggler-icon {
-  border: none;
-  outline: none;
-}
+        .navbar-toggler-icon {
+          border: none;
+          outline: none;
+        }
 
-.caption{
-    font-size:12px;
-    text-align: center;
-    font-style: italic;
-    margin-bottom: .2em;
-    margin-top: 1em;
-}
+        .caption{
+            font-size:12px;
+            text-align: center;
+            font-style: italic;
+            margin-bottom: .2em;
+            margin-top: 1em;
+        }
 
-.projectpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-}
 
-.blogpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-    display: block !important;
-    margin: 0 auto !important;
-}
+        hr{
+            background-color:white !important;
+        }
 
-.blogpage h1, .blogpage h2{
-    color: #E0B890;
-}
+        .video-container {
+          position: relative;
+          width: 100%;
+          padding-bottom: 56.25%;
+        }
 
-.projectpage h1, .projectpage h2{
-    color: #E0B890;
-}
+        .youtubevideo {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 0;
+        }
 
-hr{
-    background-color:white !important;
-}
+        code {
+          font-family: Consolas,"courier new";
+          color: #110000;
+          background-color: #FAEADB;
+          padding: 2px;
+          font-size: 105%;
+        }
 
-.video-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
-}
 
-.youtubevideo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
+        .addpic {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+            border-radius: 10px;
 
-code {
-  font-family: Consolas,"courier new";
-  color: #110000;
-  background-color: #FAEADB;
-  padding: 2px;
-  font-size: 105%;
-}
+            transition: transform .2s ease-in-out;
+            transform: scale(0.99);
+        }
 
+        .addpic:hover {
+            transform: scale(1.01);
+        }
 </style>
 
     <link rel="icon" type="image/png" href=" /static/aklogo.png " />
@@ -255,46 +254,46 @@ code {
 <div class="row overflow-hidden" style = "height:100vh; width: 100vw; padding: 0px 30px 0px 30px;">
         <div class="col-lg-2"></div>
         <div class="col-12 col-lg-8 projectpage" style="max-width:1000px; margin-bottom:4em;">
-        <h1 style="text-center; margin-bottom: 5px">Head Candle</h1>
-            <i><p style="margin-bottom: 5px; margin-top: 0px">Candles shaped like my head</p></i>
-            <p style="margin-bottom: 0px; margin-top: 0px">Timespan: October 2021 - now</p>
-            <p style="margin-bottom: 5px; margin-top: 0px">Published: 2024-02-01</p>
+            <h1 style="text-center; margin-bottom: 5px">Head Candle</h1>
+                <i><p style="margin-bottom: 5px; margin-top: 0px">Candles shaped like my head</p></i>
+                <p style="margin-bottom: 0px; margin-top: 0px">Timespan: October 2021 - now</p>
+                <p style="margin-bottom: 5px; margin-top: 0px">Published: 2024-02-01</p>
 
-            <hr>
-        <html><body><h1 id="one-day-a-long-long-time-ago">One day, a long long time ago...</h1>
+                <hr>
+            <html><body><h1 id="one-day-a-long-long-time-ago">One day, a long long time ago...</h1>
 <p>I needed to give someone a gift and wanted to give them a candle in the shape of their head. They countered with "I'd prefer a candle in the shape of <em>your</em> head", maybe to avoid seeming vain.</p>
 <p>I found an app which generated a model of your head using just the iPhone front-facing camera. Take a 30-second video and pay a dollar, then voila! Head model in your email. What a glorious day that was...</p>
-<p><img loading="lazy" alt="" src="/static/headcandle/hc_bellusmodel.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/headcandle/hc_bellusmodel.jpeg"/></p>
 <p>3D printing your head was a pretty lame idea — it follows pretty easily from having the model. I wanted to take it a step further and decided to make a candle. </p>
 <hr/>
 <h1 id="heres-some-vague-steps">Here's some vague steps</h1>
 <p>I subtracted my head model from a solid cube in Blender/SolidWORKS and 3D printed some molds on my club's 3D printer. </p>
 <p class="caption"> One half of the candle mold I 3D printed. Resin printers &gt; FDM </p>
-<p><img loading="lazy" alt="One half of the candle mold I 3D printed. Resin printers &gt; FDM" src="/static/headcandle/hc_moldhalf.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="One half of the candle mold I 3D printed. Resin printers &gt; FDM" class="addpic" src="/static/headcandle/hc_moldhalf.jpeg"/></p>
 <p>Then I bought some beeswax and chunked it. Constructed a double boiler using two pots. </p>
 <p class="caption"> Beeswax surprisingly tastes nothing like honey </p>
-<p><img loading="lazy" alt="Beeswax surprisingly tastes nothing like honey" src="/static/headcandle/hc_meltingwax.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Beeswax surprisingly tastes nothing like honey" class="addpic" src="/static/headcandle/hc_meltingwax.jpeg"/></p>
 <p class="caption"> After pouring, the candle looks like this. The white bit is the wick.  </p>
-<p><img loading="lazy" alt="After pouring, the candle looks like this. The white bit is the wick. " src="/static/headcandle/hc_pipebomb.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="After pouring, the candle looks like this. The white bit is the wick. " class="addpic" src="/static/headcandle/hc_pipebomb.jpeg"/></p>
 <hr/>
 <h1 id="candle-tips-they-dont-want-you-to-know">CANDLE TIPS THEY DON'T WANT YOU TO KNOW!!!!</h1>
 <p>I must warn you, pouring a candle is non-trivial. My first one failed because I put it in the freezer instead of leaving it out (rapid cooling means bubbles on face surface), and my second one failed because I dunked it in water (water displaced the still-liquid wax, leaving a cavity). </p>
 <p class="caption"> Failure mode of my second attempt </p>
-<p><img loading="lazy" alt="Failure mode of my second attempt" src="/static/headcandle/hc_secondfail.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Failure mode of my second attempt" class="addpic" src="/static/headcandle/hc_secondfail.jpeg"/></p>
 <p>I also learned we needed some mold-release stuff to make the candle removal easier also, so I started coating the inside of the mold before pouring the wax. Oh, also wax shrinks as it solidifies so you'll need to top off the mold after waiting a bit. </p>
 <p class="caption"> My first proper head candle </p>
-<p><img loading="lazy" alt="My first proper head candle" src="/static/headcandle/hc_closeupdome.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="My first proper head candle" class="addpic" src="/static/headcandle/hc_closeupdome.jpeg"/></p>
 <p>The purpose of a candle is to be burned and provide light or smells. Unfortunately, I only ever gave head candles to people who really liked me — the people lease likely to ever burn a candle that looks like me. </p>
 <p class="caption"> I feel a weird tingling on top of my head... </p>
-<p><img loading="lazy" alt="I feel a weird tingling on top of my head..." src="/static/headcandle/hc_lightinghead.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="I feel a weird tingling on top of my head..." class="addpic" src="/static/headcandle/hc_lightinghead.jpeg"/></p>
 <hr/>
 <h1 id="in-closing">In closing</h1>
 <p>The original head scanning app was called Bellus3D, and they really targeted rhinoplasty or other facial reconstructive surgery pre-work and analysis. Somehow they ran out of money and took the app down so you can't use it anymore. </p>
 <p>Other apps for head scanning use the point cloud from the front-facing depth camera, which is much, much worse quality than doing photogrammetry (though I think a bit cheaper, computationally). </p>
 <p>There are also some big neural network models that claim to generate 3D models from a couple of images, but there is no easy-to-run demo of this working probably because everyone decided to paywall it. Alas!</p>
 <p>I think head candles are a great gift, and I still believe that giving someone a candle in the shape of <em>their</em> head is much more memorable and novel than giving them a candle in the shape of <em>your</em> head. </p>
-<p><img loading="lazy" alt="" src="/static/headcandle/hc_hero.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p></body></html>
-            </div>
+<p><img loading="lazy" alt="" class="addpic" src="/static/headcandle/hc_hero.jpeg"/></p></body></html>
+        </div>
         <div class="col-lg-2"></div>
         <p style="line-height:300%;">&nbsp;</p>
 </div>

@@ -37,13 +37,6 @@
             content: counter(h1counter) ". ";
         }
 
-/*
-        .blogpage > h2 {
-            text-decoration: underline wavy #DBAD80;
-            text-underline-thickness: 1px;
-        }
-        */
-
         .blogpage > h2::before {
             counter-increment: h2counter;
             content: counter(h1counter) "." counter(h2counter) "  ";
@@ -54,6 +47,19 @@
         }
 
 
+        .blogpage img{
+            max-width: 100%;
+            max-height: 50vh;
+            height: auto;
+            width: auto;
+            display: block !important;
+            margin: 0 auto !important;
+        }
+
+        .blogpage h1, .blogpage h2{
+            color: #E0B890;
+        }
+
         .toc {
             padding-left: 12px;
             margin-left: -12px;
@@ -61,6 +67,8 @@
             color: inherit;
             text-decoration: none;
         }
+
+
 
     </style>
 
@@ -120,123 +128,115 @@
 
 
     <style>
-body {
-    background: #202222;
-    font-size: 1.2em;
-    font-family: 'Ubuntu', sans-serif;
-    color: #FAEADB;
-    overflow-x: hidden;
+        body {
+            background: #202222;
+            font-size: 1.2em;
+            font-family: 'Ubuntu', sans-serif;
+            color: #FAEADB;
+            overflow-x: hidden;
 
-    word-spacing: 0.03em;
-}
+            word-spacing: 0.03em;
+        }
 
-.navlinks{
-    font-family: 'Atkinson Hyperlegible';
-    font-size: 1.2em;
-}
+        .navlinks{
+            font-family: 'Atkinson Hyperlegible';
+            font-size: 1.2em;
+        }
 
-h1, h2, h3, h4, h5, h6{
-    font-family: "Atkinson Hyperlegible";
-}
+        h1, h2, h3, h4, h5, h6{
+            font-family: "Atkinson Hyperlegible";
+        }
 
 
-a {
-    transition: color .2s linear;
-    color:#00B4CC;
-}
+        a {
+            transition: color .2s linear;
+            color:#00B4CC;
+        }
 
-a:hover {
-    color:#00DFFC;
-    text-decoration: none;
-}
+        a:hover {
+            color:#00DFFC;
+            text-decoration: none;
+        }
 
-.navbar-custom {
-    font-size: 22px;
-    background-color: #202222 !important;
-}
+        .navbar-custom {
+            font-size: 22px;
+            background-color: #202222 !important;
+        }
 
-.navbar-custom .navbar-brand{
-    font-size: 30px;
-    color: #00dffc !important;
-}
+        .navbar-custom .navbar-brand{
+            font-size: 30px;
+            color: #00dffc !important;
+        }
 
-.navbar-custom .navitem{
-    color:#00dffc !important;
-}
+        .navbar-custom .navitem{
+            color:#00dffc !important;
+        }
 
-.navitem:hover{
-    color:#00b4cc !important;
-    text-decoration: none;
-}
+        .navitem:hover{
+            color:#00b4cc !important;
+            text-decoration: none;
+        }
 
-.hidden{
-  display: none;
-}
+        .hidden{
+          display: none;
+        }
 
-.navbar-toggler-icon {
-  border: none;
-  outline: none;
-}
+        .navbar-toggler-icon {
+          border: none;
+          outline: none;
+        }
 
-.caption{
-    font-size:12px;
-    text-align: center;
-    font-style: italic;
-    margin-bottom: .2em;
-    margin-top: 1em;
-}
+        .caption{
+            font-size:12px;
+            text-align: center;
+            font-style: italic;
+            margin-bottom: .2em;
+            margin-top: 1em;
+        }
 
-.projectpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-}
 
-.blogpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-    display: block !important;
-    margin: 0 auto !important;
-}
+        hr{
+            background-color:white !important;
+        }
 
-.blogpage h1, .blogpage h2{
-    color: #E0B890;
-}
+        .video-container {
+          position: relative;
+          width: 100%;
+          padding-bottom: 56.25%;
+        }
 
-.projectpage h1, .projectpage h2{
-    color: #E0B890;
-}
+        .youtubevideo {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 0;
+        }
 
-hr{
-    background-color:white !important;
-}
+        code {
+          font-family: Consolas,"courier new";
+          color: #110000;
+          background-color: #FAEADB;
+          padding: 2px;
+          font-size: 105%;
+        }
 
-.video-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
-}
 
-.youtubevideo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
+        .addpic {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+            border-radius: 10px;
 
-code {
-  font-family: Consolas,"courier new";
-  color: #110000;
-  background-color: #FAEADB;
-  padding: 2px;
-  font-size: 105%;
-}
+            transition: transform .2s ease-in-out;
+            transform: scale(0.99);
+        }
 
+        .addpic:hover {
+            transform: scale(1.01);
+        }
 </style>
 
     <link rel="icon" type="image/png" href=" /static/aklogo.png " />
@@ -314,24 +314,24 @@ code {
 <p>The inventor of Morse code mentions counting the occurrences of letters in printer's type in order to dole out the shorter codes to more commonly used letters. For example, E and T are both single-symbol, while something like Z requires 4 symbols.</p>
 <p>I was interested in seeing just how good Morse got his letter frequencies, so I got a letter frequency table and the Morse code chart and correlated them against each other.</p>
 <h1 id="morse-code-charlength-vs-letter-frequency">Morse Code Char-Length vs. Letter Frequency</h1>
-<p><img loading="lazy" alt="" src="/static/omorse/0.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/omorse/0.png"/></p>
 <p>Further right is more common, further up is longer Morse sequences. We see some glaring gaps — O should possibly be a 2-char symbol instead of 3, maybe replacing M? But overall this follows the trend of less-common letters getting the longer end of the Morse code. </p>
 <hr/>
 <h1 id="morse-code-timelength-vs-letter-frequency">Morse Code Time-Length vs. Letter Frequency</h1>
 <p>Then I also wanted to know if the time length of each Morse letter also matched the letter frequency — the idea being that more common letters should be shorter in duration to make them easier to type. Morse is defined around the duration of a single dot — inter-symbol gaps are a dot long, and a dash is 3 dots long.</p>
-<p><img loading="lazy" alt="" src="/static/omorse/1.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/omorse/1.png"/></p>
 <p>Here is the same graph as above, but instead of Morse symbol length I'm plotting time length for each letter. The gaps here are even more extreme. "O" is typed out as "___", taking 11 dots of time despite being the 4th most common letter. "I" (..) appears less often than "A" (._), but is shorter to type. </p>
 <p>It's obvious that Morse code is clearly un-optimized for typing speed, which suggests that transmit speed wasn't actually that important in practical use. It is kinda frustrating that they didn't add such a simple improvement even though it would have helped a decent amount (10-20% I'm estimating).</p>
 <hr/>
 <h1 id="morse-transmit-speed-optimization">Morse Transmit Speed Optimization</h1>
 <p>While I know Morse was developed for terrible communication channels and could only transmit one tone, I couldn't help but think about the potential improvements especially in regards with multi-tone. If two tone were possible, a dash could be converted from a long symbol into a short dot in the other frequency.</p>
 <p>This graph compares the transmit time-lengths for each letter if dashes were 3 or 1 dots long. Y-axis is frozen for easier comparing. By adding one tone we can decrease time for any letter with a dash.</p>
-<p><img loading="lazy" alt="" src="/static/omorse/3.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/omorse/3.png"/></p>
 <p>Here's a harder-to-read improvements chart</p>
-<p><img loading="lazy" alt="" src="/static/omorse/2.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/omorse/2.png"/></p>
 <p>Finally, the approximate speedup offered by switching dashes to dots, and then further even removing the spaces between letters.</p>
-<p><img loading="lazy" alt="" src="/static/omorse/4.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
-<p><img loading="lazy" alt="" src="/static/omorse/morsespeedup.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/omorse/4.png"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/omorse/morsespeedup.png"/></p>
 <p>So the total improvement isn't nuts, around 50% in optimal cases with dashes being 1 dot long. This doesn't even account for possible improvements when properly staggering the Morse length vs. letter frequency. </p>
 <hr/>
 <h1 id="who-cares-why-are-you-learning-outdated-radio-speak">Who cares, why are you learning outdated radio speak?</h1>

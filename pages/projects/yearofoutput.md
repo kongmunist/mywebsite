@@ -175,4 +175,5 @@ For accountability, I will maintain the list of outputs below, though this proje
 - June 12: [Blog post](../../blog/monochrome/) about using one Chrome window at a time
 - June 23: [Big head candle project writeup](../project/bigheadcandle)
 {{ add_pic("bigheadcandle/demoldingprocess.jpg", "") }}
+- June 24: Some graphs about this [website's anniversary!](https://x.com/oldestasian/status/1805465933588127855), courtesy of Claude
 - June 25: Posted my [Edge Esmerelda experience](../../blog/eee)

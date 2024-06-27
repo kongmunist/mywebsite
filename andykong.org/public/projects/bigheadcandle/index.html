@@ -14,11 +14,18 @@
 
 <title> Full-Size Head Candle | Andy Kong</title>
 
-    <style>
-        img {
-            border-radius: 10px;
-        }
-    </style>
+<style>
+    .projectpage h1, .projectpage h2{
+        color: #E0B890;
+    }
+
+    .projectpage img{
+        max-width: 100%;
+        max-height: 50vh;
+        height: auto;
+        width: auto;
+    }
+</style>
 
 
     <style type="text/css">
@@ -74,123 +81,115 @@
 
 
     <style>
-body {
-    background: #202222;
-    font-size: 1.2em;
-    font-family: 'Ubuntu', sans-serif;
-    color: #FAEADB;
-    overflow-x: hidden;
+        body {
+            background: #202222;
+            font-size: 1.2em;
+            font-family: 'Ubuntu', sans-serif;
+            color: #FAEADB;
+            overflow-x: hidden;
 
-    word-spacing: 0.03em;
-}
+            word-spacing: 0.03em;
+        }
 
-.navlinks{
-    font-family: 'Atkinson Hyperlegible';
-    font-size: 1.2em;
-}
+        .navlinks{
+            font-family: 'Atkinson Hyperlegible';
+            font-size: 1.2em;
+        }
 
-h1, h2, h3, h4, h5, h6{
-    font-family: "Atkinson Hyperlegible";
-}
+        h1, h2, h3, h4, h5, h6{
+            font-family: "Atkinson Hyperlegible";
+        }
 
 
-a {
-    transition: color .2s linear;
-    color:#00B4CC;
-}
+        a {
+            transition: color .2s linear;
+            color:#00B4CC;
+        }
 
-a:hover {
-    color:#00DFFC;
-    text-decoration: none;
-}
+        a:hover {
+            color:#00DFFC;
+            text-decoration: none;
+        }
 
-.navbar-custom {
-    font-size: 22px;
-    background-color: #202222 !important;
-}
+        .navbar-custom {
+            font-size: 22px;
+            background-color: #202222 !important;
+        }
 
-.navbar-custom .navbar-brand{
-    font-size: 30px;
-    color: #00dffc !important;
-}
+        .navbar-custom .navbar-brand{
+            font-size: 30px;
+            color: #00dffc !important;
+        }
 
-.navbar-custom .navitem{
-    color:#00dffc !important;
-}
+        .navbar-custom .navitem{
+            color:#00dffc !important;
+        }
 
-.navitem:hover{
-    color:#00b4cc !important;
-    text-decoration: none;
-}
+        .navitem:hover{
+            color:#00b4cc !important;
+            text-decoration: none;
+        }
 
-.hidden{
-  display: none;
-}
+        .hidden{
+          display: none;
+        }
 
-.navbar-toggler-icon {
-  border: none;
-  outline: none;
-}
+        .navbar-toggler-icon {
+          border: none;
+          outline: none;
+        }
 
-.caption{
-    font-size:12px;
-    text-align: center;
-    font-style: italic;
-    margin-bottom: .2em;
-    margin-top: 1em;
-}
+        .caption{
+            font-size:12px;
+            text-align: center;
+            font-style: italic;
+            margin-bottom: .2em;
+            margin-top: 1em;
+        }
 
-.projectpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-}
 
-.blogpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-    display: block !important;
-    margin: 0 auto !important;
-}
+        hr{
+            background-color:white !important;
+        }
 
-.blogpage h1, .blogpage h2{
-    color: #E0B890;
-}
+        .video-container {
+          position: relative;
+          width: 100%;
+          padding-bottom: 56.25%;
+        }
 
-.projectpage h1, .projectpage h2{
-    color: #E0B890;
-}
+        .youtubevideo {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 0;
+        }
 
-hr{
-    background-color:white !important;
-}
+        code {
+          font-family: Consolas,"courier new";
+          color: #110000;
+          background-color: #FAEADB;
+          padding: 2px;
+          font-size: 105%;
+        }
 
-.video-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
-}
 
-.youtubevideo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
+        .addpic {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+            border-radius: 10px;
 
-code {
-  font-family: Consolas,"courier new";
-  color: #110000;
-  background-color: #FAEADB;
-  padding: 2px;
-  font-size: 105%;
-}
+            transition: transform .2s ease-in-out;
+            transform: scale(0.99);
+        }
 
+        .addpic:hover {
+            transform: scale(1.01);
+        }
 </style>
 
     <link rel="icon" type="image/png" href=" /static/aklogo.png " />
@@ -255,15 +254,15 @@ code {
 <div class="row overflow-hidden" style = "height:100vh; width: 100vw; padding: 0px 30px 0px 30px;">
         <div class="col-lg-2"></div>
         <div class="col-12 col-lg-8 projectpage" style="max-width:1000px; margin-bottom:4em;">
-        <h1 style="text-center; margin-bottom: 5px">Full-Size Head Candle</h1>
-            <i><p style="margin-bottom: 5px; margin-top: 0px">What if Andy was made of wax?</p></i>
-            <p style="margin-bottom: 0px; margin-top: 0px">Timespan: March-April 2024, future-?</p>
-            <p style="margin-bottom: 5px; margin-top: 0px">Published: 2024-06-23</p>
+            <h1 style="text-center; margin-bottom: 5px">Full-Size Head Candle</h1>
+                <i><p style="margin-bottom: 5px; margin-top: 0px">What if Andy was made of wax?</p></i>
+                <p style="margin-bottom: 0px; margin-top: 0px">Timespan: March-April 2024, future-?</p>
+                <p style="margin-bottom: 5px; margin-top: 0px">Published: 2024-06-23</p>
 
-            <hr>
-        <html><body><p>A while back, I told someone about my <a href="../headcandles">head candles</a> and they were unimpressed — they claimed that they would only be interested if the candle was actually the same size as my head. Well, Serena, this one's for you.</p>
+                <hr>
+            <html><body><p>A while back, I told someone about my <a href="../headcandles">head candles</a> and they were unimpressed — they claimed that they would only be interested if the candle was actually the same size as my head. Well, Serena, this one's for you.</p>
 <p class="caption"> Big Head Candle </p>
-<p><img loading="lazy" alt="Big Head Candle" src="/static/bigheadcandle/drama.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Big Head Candle" class="addpic" src="/static/bigheadcandle/drama.jpg"/></p>
 <div class="toc"><h2 id="table-of-contents" style="margin:0px;">Table of Contents</h2>1. <a href="#overall-process">Overall Process</a><br/>2. <a href="#3d-model">3D Model</a><br/>3. <a href="#3d-printing">3D Printing</a><br/>   3.1 <a href="#mold-hardening">Mold Hardening</a><br/>4. <a href="#supplies">Supplies</a><br/>5. <a href="#casting">Casting</a><br/>6. <a href="#demolding">Demolding</a><br/>7. <a href="#what-now">What now? </a><br/></div>
 <hr/>
 <h1 id="overall-process">Overall Process</h1>
@@ -271,63 +270,63 @@ code {
 <h1 id="3d-model">3D Model</h1>
 <p>The first challenge was getting a better model. I got enough feedback over the years from showing people my head candle and hearing them ask "who is that supposed to be?" to know I needed a higher-resolution scan. Luckily I was at CMU, so I could pop into my old <a href="">club</a> and use their Einscan hand-held 3D scanner. </p>
 <p class="caption"> Head scanned using an Einscan, courtesy of CMU Roboclub </p>
-<p><img loading="lazy" alt="Head scanned using an Einscan, courtesy of CMU Roboclub" src="/static/bigheadcandle/andyeinscan.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Head scanned using an Einscan, courtesy of CMU Roboclub" class="addpic" src="/static/bigheadcandle/andyeinscan.jpg"/></p>
 <p>Due to social capital requirements, I was only able to get 1 partial scan of my smiling face and 1 full scan of my unsmiling face. This left me the annoying task of <em>subtracting my face from my head</em> in order to <em>transplant a smile onto my other head</em>. After 3 hours in Blender, I asked my roommate if there was another way to do this, and he replied that mesh correction is more of an art than a pre-determined process. This gave me the confidence to push through, and with 5 more hours in Blender I succeeded in making a smiling Andy head model.  </p>
 <p class="caption"> Unsmiling and smiling united with a choppy seam </p>
-<p><img loading="lazy" alt="Unsmiling and smiling united with a choppy seam" src="/static/bigheadcandle/facetransplant3.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Unsmiling and smiling united with a choppy seam" class="addpic" src="/static/bigheadcandle/facetransplant3.jpg"/></p>
 <p>After I had the model, I made a coarse pixelization of the model as the outer shell, and subtracted my head from the inside to make the molds. I also added a base and a hole at the top for the wax.</p>
-<p><img loading="lazy" alt="" src="/static/bigheadcandle/moldmaking.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/bigheadcandle/moldmaking.png"/></p>
 <h1 id="3d-printing">3D Printing</h1>
 <p>Previously I used a resin 3D printer to make my molds — this was mainly because the resolution is much higher, and at small sizes I wanted all the detail I could get. Also, I have the impression that resin is tougher than PLA/ABS, and holds together better under heat (like from melted wax).</p>
 <p>I spent a few weeks hunting around for a resin printer large enough to fit my head. While I found one, it belonged to a lab whose members I could never locate, and I did not want to spend 800$ for a big printer just for this one silly project.</p>
 <p class="caption"> Head size measurements </p>
-<p><img loading="lazy" alt="Head size measurements" src="/static/bigheadcandle/headsize.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Head size measurements" class="addpic" src="/static/bigheadcandle/headsize.jpg"/></p>
 <p>At some point, I realized that by going full-sized, I actually could use FDM printers to achieve a good enough level of detail despite their lower resolution. This proved much easier to locate, and I had a print going within a few days. Each print took around 11 hours and most of a roll of filament (~700g). I printed it in two halves, front and back.</p>
 <p class="caption"> 3D printed mold, inside and outside view </p>
-<p><img loading="lazy" alt="3D printed mold, inside and outside view" src="/static/bigheadcandle/printedmoldinout.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="3D printed mold, inside and outside view" class="addpic" src="/static/bigheadcandle/printedmoldinout.jpg"/></p>
 <h2 id="mold-hardening">Mold Hardening</h2>
 <p>PLA is not a good material for candle molds because it melts/weakens at pretty low temperatures. While molten wax cannot melt PLA beams, it can definitely weaken the structure until the hollow mold collapses, ruining the candle. </p>
 <p class="caption"> PLA heated past 90C gets stronger. From the <a href="https://blog.prusa3d.com/how-to-improve-your-3d-prints-with-annealing_31088/" target="_blank">Prusa blog</a> </p>
-<p><img loading="lazy" alt="PLA heated past 90C gets stronger. From the &lt;a target='_blank' href='https://blog.prusa3d.com/how-to-improve-your-3d-prints-with-annealing_31088/'&gt;Prusa blog&lt;/a&gt;" src="/static/bigheadcandle/annealpla.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="PLA heated past 90C gets stronger. From the &lt;a target='_blank' href='https://blog.prusa3d.com/how-to-improve-your-3d-prints-with-annealing_31088/'&gt;Prusa blog&lt;/a&gt;" class="addpic" src="/static/bigheadcandle/annealpla.jpg"/></p>
 <p>To guard against this, I found a few papers and blog posts which claimed that heat-treating PLA can increase its glass transition temperature (where it goes from solid to deformable) and tensile strength. All you need to do is heat the plastic to 100C and let it cool slowly. I accomplished this using a workshop heat gun and an infrared thermometer to check different parts of the mold.</p>
 <h1 id="supplies">Supplies</h1>
 <p>In anticipation of the back half completing, I went ahead and purchased the other supplies. I got 10 lb of white beeswax, 1 lb of coconut wax, a vial of honey-scented essential oil, and a long spool of wick. I wanted both coconut and beeswax because A) natural, B) beeswax doesn't hold scent well and needs some assistance, and C) beeswax is a really hard wax and coconut is too soft, which means their mixture has a perfect texture (I went with 10% coconut).</p>
 <p class="caption"> Test palette to balance the waxes </p>
-<p><img loading="lazy" alt="Test palette to balance the waxes" src="/static/bigheadcandle/coconutwaxtesting.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Test palette to balance the waxes" class="addpic" src="/static/bigheadcandle/coconutwaxtesting.jpg"/></p>
 <p>Unforutunately, the back half of the mold failed and I didn't have more PLA on hand, but had I already budgeted the time. Luckily, I calculated that I could cast a face candle using just the front mold and still have enough wax for the entire thing, so that's what I did. </p>
 <p class="caption"> Beeswax and coconutswax, honey scent, and wick </p>
-<p><img loading="lazy" alt="Beeswax and coconutswax, honey scent, and wick" src="/static/bigheadcandle/allsupplies.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Beeswax and coconutswax, honey scent, and wick" class="addpic" src="/static/bigheadcandle/allsupplies.jpg"/></p>
 <h1 id="casting">Casting</h1>
 <p>The process of candle casting contains a lot of minutiae which I will only mention briefly. Heated molds warp less when poured, you need mold release for large molds, wax shrinks a lot so keep some reserve, wait longer than you think you need, don't forget the wick, etc. etc.</p>
 <p>The main challenge for me was finding a way to liquify a few kilos of wax. The difficulty was mainly my fault — I had only one pan in my house at the time. To estimate how much wax was required, it may help to know that wax and humans have similar densities (human is averaged across all tissue types) and both are lighter than water (which is why both float). Also the average human head is about 5 liters in volume (This is actually hard to google because people online assume you're asking about cranial capacity (inside volume) when you really want to know outside volume).</p>
 <p>In order to not burn the wax, you must use a double boiler to keep temperatures under 100C. The full mold required a 5L double boiler, but for just the face, I thought I could get away with 2L. I was dreading the idea of buying a second pan just for this purpose when suddenly I remembered! </p>
 <p class="caption"> Yogurt containers, I was on a Fage kick at the time </p>
-<p><img loading="lazy" alt="Yogurt containers, I was on a Fage kick at the time" src="/static/bigheadcandle/yogurtcups.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Yogurt containers, I was on a Fage kick at the time" class="addpic" src="/static/bigheadcandle/yogurtcups.jpg"/></p>
 <p>I love yogurt, and I had been hoarding a large stack of yogurt containers which were made of high-temperature plastic that could withstand boiling water. It was perfect — my pan could only fit 2 containers, but that could hold 1.8kg of wax which is ~2L. Amazing!</p>
 <p class="caption"> Melting wax in my yogurt container double-boiler </p>
-<p><img loading="lazy" alt="Melting wax in my yogurt container double-boiler" src="/static/bigheadcandle/meltingwax.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Melting wax in my yogurt container double-boiler" class="addpic" src="/static/bigheadcandle/meltingwax.jpg"/></p>
 <p>Melting the wax took over an hour. I had this clay-like window sealant which I used to rest the mold face-down on the counter. To minimize post-pour shrinkage, I actually turned off the heat and waited a bit after the wax all melted for it to cool down. Then I got a friend to help hold the mold and just poured the wax in. </p>
 <p class="caption"> The candle pour </p>
-<p><img loading="lazy" alt="The candle pour" src="/static/bigheadcandle/pouringwax.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="The candle pour" class="addpic" src="/static/bigheadcandle/pouringwax.jpg"/></p>
 <p>The blue tape across the mold held the wicks upright while the wax cooled. After the pour, I checked the temperature a few times but otherwise left it alone for ~36 hours.</p>
 <p class="caption"> Solid gold clear wax after the pour </p>
-<p><img loading="lazy" alt="Solid gold clear wax after the pour" src="/static/bigheadcandle/afterpour.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Solid gold clear wax after the pour" class="addpic" src="/static/bigheadcandle/afterpour.jpg"/></p>
 <h1 id="demolding">Demolding</h1>
 <p>I've previously used cooking oil as a mold release to ok effect. With this larger mold, that was insufficient. All I knew before de-molding was that the wax was NOT coming out easily. But after de-molding, I found it had pooled in my nose area instead of evenly insulating the wax from the PLA.</p>
 <p class="caption"> Demolding took ages </p>
-<p><img loading="lazy" alt="Demolding took ages" src="/static/bigheadcandle/demoldingprocess.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Demolding took ages" class="addpic" src="/static/bigheadcandle/demoldingprocess.jpg"/></p>
 <p>During the removal, I cracked the mold and left a large scar on the candle's face from scraping it on my 3D printed ear cavity. In total, it took 10 minutes and made me feel a bit like a mother giving birth with all the pushing and the post-hoc peace.</p>
 <p class="caption"> Face candle </p>
-<p><img loading="lazy" alt="Face candle" src="/static/bigheadcandle/donecandle.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Face candle" class="addpic" src="/static/bigheadcandle/donecandle.jpg"/></p>
 <p class="caption"> Face candle standing </p>
-<p><img loading="lazy" alt="Face candle standing" src="/static/bigheadcandle/standcandle.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Face candle standing" class="addpic" src="/static/bigheadcandle/standcandle.jpg"/></p>
 <h1 id="what-now">What now?</h1>
 <p>Casting the face was just a trial run, and I still need to tackle the challenge of casting my whole head. Due to the difficulty of de-molding the face, I decided not to try to cast the whole head using the same process. Instead, I 3D printed a full head positive and bought a bunch of silicone so I could make a proper, stretchy negative. This time I'll also use proper mold release. </p>
 <p class="caption"> Full head 3D print </p>
-<p><img loading="lazy" alt="Full head 3D print" src="/static/bigheadcandle/fullheadprint.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Full head 3D print" class="addpic" src="/static/bigheadcandle/fullheadprint.jpg"/></p>
 <p>I left all the parts in Pittsburgh when my lease ended, so for now this will be a fun future project. </p>
 <p>To be continued...</p></body></html>
-            </div>
+        </div>
         <div class="col-lg-2"></div>
         <p style="line-height:300%;">&nbsp;</p>
 </div>

@@ -14,11 +14,18 @@
 
 <title> Webcam Heartrate Monitor | Andy Kong</title>
 
-    <style>
-        img {
-            border-radius: 10px;
-        }
-    </style>
+<style>
+    .projectpage h1, .projectpage h2{
+        color: #E0B890;
+    }
+
+    .projectpage img{
+        max-width: 100%;
+        max-height: 50vh;
+        height: auto;
+        width: auto;
+    }
+</style>
 
 
     <style type="text/css">
@@ -74,123 +81,115 @@
 
 
     <style>
-body {
-    background: #202222;
-    font-size: 1.2em;
-    font-family: 'Ubuntu', sans-serif;
-    color: #FAEADB;
-    overflow-x: hidden;
+        body {
+            background: #202222;
+            font-size: 1.2em;
+            font-family: 'Ubuntu', sans-serif;
+            color: #FAEADB;
+            overflow-x: hidden;
 
-    word-spacing: 0.03em;
-}
+            word-spacing: 0.03em;
+        }
 
-.navlinks{
-    font-family: 'Atkinson Hyperlegible';
-    font-size: 1.2em;
-}
+        .navlinks{
+            font-family: 'Atkinson Hyperlegible';
+            font-size: 1.2em;
+        }
 
-h1, h2, h3, h4, h5, h6{
-    font-family: "Atkinson Hyperlegible";
-}
+        h1, h2, h3, h4, h5, h6{
+            font-family: "Atkinson Hyperlegible";
+        }
 
 
-a {
-    transition: color .2s linear;
-    color:#00B4CC;
-}
+        a {
+            transition: color .2s linear;
+            color:#00B4CC;
+        }
 
-a:hover {
-    color:#00DFFC;
-    text-decoration: none;
-}
+        a:hover {
+            color:#00DFFC;
+            text-decoration: none;
+        }
 
-.navbar-custom {
-    font-size: 22px;
-    background-color: #202222 !important;
-}
+        .navbar-custom {
+            font-size: 22px;
+            background-color: #202222 !important;
+        }
 
-.navbar-custom .navbar-brand{
-    font-size: 30px;
-    color: #00dffc !important;
-}
+        .navbar-custom .navbar-brand{
+            font-size: 30px;
+            color: #00dffc !important;
+        }
 
-.navbar-custom .navitem{
-    color:#00dffc !important;
-}
+        .navbar-custom .navitem{
+            color:#00dffc !important;
+        }
 
-.navitem:hover{
-    color:#00b4cc !important;
-    text-decoration: none;
-}
+        .navitem:hover{
+            color:#00b4cc !important;
+            text-decoration: none;
+        }
 
-.hidden{
-  display: none;
-}
+        .hidden{
+          display: none;
+        }
 
-.navbar-toggler-icon {
-  border: none;
-  outline: none;
-}
+        .navbar-toggler-icon {
+          border: none;
+          outline: none;
+        }
 
-.caption{
-    font-size:12px;
-    text-align: center;
-    font-style: italic;
-    margin-bottom: .2em;
-    margin-top: 1em;
-}
+        .caption{
+            font-size:12px;
+            text-align: center;
+            font-style: italic;
+            margin-bottom: .2em;
+            margin-top: 1em;
+        }
 
-.projectpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-}
 
-.blogpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-    display: block !important;
-    margin: 0 auto !important;
-}
+        hr{
+            background-color:white !important;
+        }
 
-.blogpage h1, .blogpage h2{
-    color: #E0B890;
-}
+        .video-container {
+          position: relative;
+          width: 100%;
+          padding-bottom: 56.25%;
+        }
 
-.projectpage h1, .projectpage h2{
-    color: #E0B890;
-}
+        .youtubevideo {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 0;
+        }
 
-hr{
-    background-color:white !important;
-}
+        code {
+          font-family: Consolas,"courier new";
+          color: #110000;
+          background-color: #FAEADB;
+          padding: 2px;
+          font-size: 105%;
+        }
 
-.video-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
-}
 
-.youtubevideo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
+        .addpic {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+            border-radius: 10px;
 
-code {
-  font-family: Consolas,"courier new";
-  color: #110000;
-  background-color: #FAEADB;
-  padding: 2px;
-  font-size: 105%;
-}
+            transition: transform .2s ease-in-out;
+            transform: scale(0.99);
+        }
 
+        .addpic:hover {
+            transform: scale(1.01);
+        }
 </style>
 
     <link rel="icon" type="image/png" href=" /static/aklogo.png " />
@@ -255,15 +254,15 @@ code {
 <div class="row overflow-hidden" style = "height:100vh; width: 100vw; padding: 0px 30px 0px 30px;">
         <div class="col-lg-2"></div>
         <div class="col-12 col-lg-8 projectpage" style="max-width:1000px; margin-bottom:4em;">
-        <h1 style="text-center; margin-bottom: 5px">Webcam Heartrate Monitor</h1>
-            <i><p style="margin-bottom: 5px; margin-top: 0px">Website that can determine your heartrate using ambient lighting and a camera.</p></i>
-            <p style="margin-bottom: 0px; margin-top: 0px">Timespan: July-August 2020</p>
-            <p style="margin-bottom: 5px; margin-top: 0px">Published: 2020-08-05</p>
+            <h1 style="text-center; margin-bottom: 5px">Webcam Heartrate Monitor</h1>
+                <i><p style="margin-bottom: 5px; margin-top: 0px">Website that can determine your heartrate using ambient lighting and a camera.</p></i>
+                <p style="margin-bottom: 0px; margin-top: 0px">Timespan: July-August 2020</p>
+                <p style="margin-bottom: 5px; margin-top: 0px">Published: 2020-08-05</p>
 
-            <hr>
-        <html><body><p>Hey! This is Andy. Here's the link to the <a href="http://heartrateleaderboard.netlify.app/">website that can find your heartrate</a>.</p>
+                <hr>
+            <html><body><p>Hey! This is Andy. Here's the link to the <a href="http://heartrateleaderboard.netlify.app/">website that can find your heartrate</a>.</p>
 <p class="caption"> Website main page, pre-graphic designer stage </p>
-<p><img loading="lazy" alt="Website main page, pre-graphic designer stage" src="/static/heartratemainpage.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Website main page, pre-graphic designer stage" class="addpic" src="/static/heartratemainpage.png"/></p>
 <p>I recently came across this app that used a smartphone camera and flashlight to calculate your heartrate. This relies on the fact that oxygenated blood and deoxygenated blood have different colors, and it's noticeable on a smartphone camera. In fact, one of my favorite party tricks is to start recording a video on my phone while pressing my finger on the camera, and show people how you can <i>see</i> my pulse as the color on the video pulses a darker color occasionally. Try it yourself!</p>
 <p><img loading="lazy" class="d-block mx-auto img-thumbnail" src="/static/heartratebloodcolor.jpeg"/></p>
 <p class="caption">And no, it's not blue when deoxygenated.</p>
@@ -271,7 +270,7 @@ code {
 <p><a href="http://heartrateleaderboard.netlify.app/" target="_blank"><img loading="lazy" class="d-block mx-auto img-thumbnail" src="/static/heartratemainpage.png"/></a></p>
 <p>Once I had the array of webcam brightnesses, I just had to take the FFT of it in order to find the actual frequency I wanted. This is easier said than done, since there are no native Javascript FFT libraries. I converted one using browserify, and had to figure out how to turn the FFT output into frequency bins. Overall, an enjoyable experience. I had never made sense of the FFT output myself before, libraries usually give the frequency bins for you. </p>
 <p>After that, it was pretty much done! Just added some instructions and graph for the FFT to help me do the bin-to-frequency conversion. </p></body></html>
-            </div>
+        </div>
         <div class="col-lg-2"></div>
         <p style="line-height:300%;">&nbsp;</p>
 </div>

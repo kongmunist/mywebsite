@@ -37,13 +37,6 @@
             content: counter(h1counter) ". ";
         }
 
-/*
-        .blogpage > h2 {
-            text-decoration: underline wavy #DBAD80;
-            text-underline-thickness: 1px;
-        }
-        */
-
         .blogpage > h2::before {
             counter-increment: h2counter;
             content: counter(h1counter) "." counter(h2counter) "  ";
@@ -54,6 +47,19 @@
         }
 
 
+        .blogpage img{
+            max-width: 100%;
+            max-height: 50vh;
+            height: auto;
+            width: auto;
+            display: block !important;
+            margin: 0 auto !important;
+        }
+
+        .blogpage h1, .blogpage h2{
+            color: #E0B890;
+        }
+
         .toc {
             padding-left: 12px;
             margin-left: -12px;
@@ -61,6 +67,8 @@
             color: inherit;
             text-decoration: none;
         }
+
+
 
     </style>
 
@@ -120,123 +128,115 @@
 
 
     <style>
-body {
-    background: #202222;
-    font-size: 1.2em;
-    font-family: 'Ubuntu', sans-serif;
-    color: #FAEADB;
-    overflow-x: hidden;
+        body {
+            background: #202222;
+            font-size: 1.2em;
+            font-family: 'Ubuntu', sans-serif;
+            color: #FAEADB;
+            overflow-x: hidden;
 
-    word-spacing: 0.03em;
-}
+            word-spacing: 0.03em;
+        }
 
-.navlinks{
-    font-family: 'Atkinson Hyperlegible';
-    font-size: 1.2em;
-}
+        .navlinks{
+            font-family: 'Atkinson Hyperlegible';
+            font-size: 1.2em;
+        }
 
-h1, h2, h3, h4, h5, h6{
-    font-family: "Atkinson Hyperlegible";
-}
+        h1, h2, h3, h4, h5, h6{
+            font-family: "Atkinson Hyperlegible";
+        }
 
 
-a {
-    transition: color .2s linear;
-    color:#00B4CC;
-}
+        a {
+            transition: color .2s linear;
+            color:#00B4CC;
+        }
 
-a:hover {
-    color:#00DFFC;
-    text-decoration: none;
-}
+        a:hover {
+            color:#00DFFC;
+            text-decoration: none;
+        }
 
-.navbar-custom {
-    font-size: 22px;
-    background-color: #202222 !important;
-}
+        .navbar-custom {
+            font-size: 22px;
+            background-color: #202222 !important;
+        }
 
-.navbar-custom .navbar-brand{
-    font-size: 30px;
-    color: #00dffc !important;
-}
+        .navbar-custom .navbar-brand{
+            font-size: 30px;
+            color: #00dffc !important;
+        }
 
-.navbar-custom .navitem{
-    color:#00dffc !important;
-}
+        .navbar-custom .navitem{
+            color:#00dffc !important;
+        }
 
-.navitem:hover{
-    color:#00b4cc !important;
-    text-decoration: none;
-}
+        .navitem:hover{
+            color:#00b4cc !important;
+            text-decoration: none;
+        }
 
-.hidden{
-  display: none;
-}
+        .hidden{
+          display: none;
+        }
 
-.navbar-toggler-icon {
-  border: none;
-  outline: none;
-}
+        .navbar-toggler-icon {
+          border: none;
+          outline: none;
+        }
 
-.caption{
-    font-size:12px;
-    text-align: center;
-    font-style: italic;
-    margin-bottom: .2em;
-    margin-top: 1em;
-}
+        .caption{
+            font-size:12px;
+            text-align: center;
+            font-style: italic;
+            margin-bottom: .2em;
+            margin-top: 1em;
+        }
 
-.projectpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-}
 
-.blogpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-    display: block !important;
-    margin: 0 auto !important;
-}
+        hr{
+            background-color:white !important;
+        }
 
-.blogpage h1, .blogpage h2{
-    color: #E0B890;
-}
+        .video-container {
+          position: relative;
+          width: 100%;
+          padding-bottom: 56.25%;
+        }
 
-.projectpage h1, .projectpage h2{
-    color: #E0B890;
-}
+        .youtubevideo {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 0;
+        }
 
-hr{
-    background-color:white !important;
-}
+        code {
+          font-family: Consolas,"courier new";
+          color: #110000;
+          background-color: #FAEADB;
+          padding: 2px;
+          font-size: 105%;
+        }
 
-.video-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
-}
 
-.youtubevideo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
+        .addpic {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+            border-radius: 10px;
 
-code {
-  font-family: Consolas,"courier new";
-  color: #110000;
-  background-color: #FAEADB;
-  padding: 2px;
-  font-size: 105%;
-}
+            transition: transform .2s ease-in-out;
+            transform: scale(0.99);
+        }
 
+        .addpic:hover {
+            transform: scale(1.01);
+        }
 </style>
 
     <link rel="icon" type="image/png" href=" /static/aklogo.png " />
@@ -313,51 +313,51 @@ code {
             <html><body><p>Hello!</p>
 <p>Recently I received an email from Apple letting me know that my iCloud storage was full. </p>
 <p class="caption"> Kind letter from Apple requesting I purchase more storage </p>
-<p><img loading="lazy" alt="Kind letter from Apple requesting I purchase more storage" src="/static/ic_appleemail.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Kind letter from Apple requesting I purchase more storage" class="addpic" src="/static/ic_appleemail.jpg"/></p>
 <p>Since the cost of 200GB vs. 1TB jumps more than threefold, I embarked on a great exploration of alternatives. Since photos made up the majority of my storage (~127GB), I figured I could just go into my Photos album and click Sort By File Size.</p>
 <p>...</p>
 <p>Except this is not a feature offered by Apple. It's not even a feature in the iCloud browser. I guess it's a bit too technical for Apple Photos, and unfortunately it would also make it too easy to avoid paying for more iCloud storage. </p>
 <p>Whatever the reason, I still wanted to go through my photos by file size. Several apps exist for going through your photos and highlighting duplicates, or into your videos and showing you the file size. The only problem — photos that have been offloaded to iCloud do not show up in these apps, so they're not actually super useful. Also, would you really want random apps to scan through all your photos? </p>
 <p class="caption"> Screenshot from a photo file size viewing app, with non-downloaded photos represented as 0B </p>
-<p><img loading="lazy" alt="Screenshot from a photo file size viewing app, with non-downloaded photos represented as 0B" src="/static/ic_photosbysize.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Screenshot from a photo file size viewing app, with non-downloaded photos represented as 0B" class="addpic" src="/static/ic_photosbysize.png"/></p>
 <h2 id="janky-js-solution">Janky JS solution</h2>
 <p>Instead, I went to the iCloud website and thought about what was possible. I navigated to Photos-&gt;Media Types-&gt;Videos, and zoomed out as far as I could. </p>
 <p class="caption"> Videos anonymized by slow internet loading </p>
-<p><img loading="lazy" alt="Videos anonymized by slow internet loading" src="/static/ic_icloudphotos.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Videos anonymized by slow internet loading" class="addpic" src="/static/ic_icloudphotos.png"/></p>
 <p>We can see that each video has an accompanying duration box — as long as it's an HTML element, we can use JS to search and filter them. I found that every runtime box has the class <code>video-text-badge</code>. From there is was a simple matter to find all of them in the page, sort by their duration, and highlight the ones that were past some threshold. Here's the code:</p>
 <script src="https://gist.github.com/kongmunist/a598bcdd8c226c3a3159b1a918344977.js"></script>
 <p>Because iCloud only loads the elements that are on the page, I've made this into a function that runs on a timer so new elements get highlighted as they get scrolled into. Here's what it looks like:</p>
 <p class="caption"> Videos bigger than 20s are surrounded by a red box, making them much easy to pick out </p>
-<p><img loading="lazy" alt="Videos bigger than 20s are surrounded by a red box, making them much easy to pick out" src="/static/ic_icloudphotoshighlighted.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Videos bigger than 20s are surrounded by a red box, making them much easy to pick out" class="addpic" src="/static/ic_icloudphotoshighlighted.png"/></p>
 <p>To use it, just open the Javascript console (right click page -&gt; Inspect Element) and paste in the entire gist. Now you can easily select multiple big videos from iCloud and download them before deleting, moving them into longer-term storage: secret HDD under your mattress, other cloud storage, etc etc. </p>
 <hr/>
 <h1 id="the-mystery">The Mystery</h1>
 <p>So, I used this script to remove all my iCloud videos &gt;30s. The interesting thing is, after I had removed all the "big videos" and downloaded them, it cleared ~55GB from my iCloud <em>despite only downloading 7GB of videos.</em> Herein lies the mystery.</p>
 <p class="caption"> All downloaded videos take up 8GB of disk space </p>
-<p><img loading="lazy" alt="All downloaded videos take up 8GB of disk space" src="/static/ic_dl1info.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="All downloaded videos take up 8GB of disk space" class="addpic" src="/static/ic_dl1info.png"/></p>
 <p class="caption"> iCloud storage reduces from 199GB to 143GB after downloading 7GB of videos </p>
-<p><img loading="lazy" alt="iCloud storage reduces from 199GB to 143GB after downloading 7GB of videos" src="/static/ic_dl1afterdelete.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="iCloud storage reduces from 199GB to 143GB after downloading 7GB of videos" class="addpic" src="/static/ic_dl1afterdelete.png"/></p>
 <p>Somehow, those 7GB of video took up way more space in the cloud than on my hard drive. Interesting...</p>
 <h1 id="experiment-1">Experiment 1</h1>
 <p>I wanted to test this further. First, I uploaded a 4K video with a lot of motion. This took up 281 MB. My storage looked like this after uploading it:</p>
 <p class="caption"> 4K video uploaded, iCloud says 145.33 GB used </p>
-<p><img loading="lazy" alt="4K video uploaded, iCloud says 145.33 GB used" src="/static/ic_dl2storagebefore.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="4K video uploaded, iCloud says 145.33 GB used" class="addpic" src="/static/ic_dl2storagebefore.png"/></p>
 <p>Then I downloaded it and deleted it. The file was still 281 MB. Here is the storage afterwards:</p>
 <p class="caption"> 4K video deleted, iCloud says 145.6 GB used </p>
-<p><img loading="lazy" alt="4K video deleted, iCloud says 145.6 GB used" src="/static/ic_dl2storageafter.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="4K video deleted, iCloud says 145.6 GB used" class="addpic" src="/static/ic_dl2storageafter.png"/></p>
 <p>Removing a 281MB video frees up ~270MB. This adds up, which is puzzling. What about the other, older videos? </p>
 <h1 id="experiment-2">Experiment 2</h1>
 <p>I thought that maybe older videos could have multiple copies saved in iCloud, so I searched through my videos to see if I could find a shorter one that takes up a lot of storage space. I found one with a lot of graphs, iCloud said it took up 128 MB.</p>
 <p class="caption"> Older big video that takes up 128 MB </p>
-<p><img loading="lazy" alt="Older big video that takes up 128 MB" src="/static/ic_dl3icloudinfo.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Older big video that takes up 128 MB" class="addpic" src="/static/ic_dl3icloudinfo.png"/></p>
 <p>When I downloaded it, the file was only 47 MB!</p>
 <p class="caption"> Downloaded video file is 47 MB </p>
-<p><img loading="lazy" alt="Downloaded video file is 47 MB" src="/static/ic_dl3download.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Downloaded video file is 47 MB" class="addpic" src="/static/ic_dl3download.png"/></p>
 <p>And here is my iCloud storage before and after</p>
 <p class="caption"> iCloud storage before deleting the old video, 145.29 GB used </p>
-<p><img loading="lazy" alt="iCloud storage before deleting the old video, 145.29 GB used" src="/static/ic_dl3storagebefore.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="iCloud storage before deleting the old video, 145.29 GB used" class="addpic" src="/static/ic_dl3storagebefore.png"/></p>
 <p class="caption"> iCloud storage before deleting the old video, 145.12 GB used, reduction of 170MB </p>
-<p><img loading="lazy" alt="iCloud storage before deleting the old video, 145.12 GB used, reduction of 170MB" src="/static/ic_dl3storageafter.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="iCloud storage before deleting the old video, 145.12 GB used, reduction of 170MB" class="addpic" src="/static/ic_dl3storageafter.png"/></p>
 <p>So iCloud says the video is 128MB, I download it and the video is actually 48MB, and my free storage increases by ~170MB when I deleted it. Interesting!</p>
 <h1 id="conclusion">Conclusion</h1>
 <p>It's weird that my storage freed up more than 7x the removed files size, and weirder still that old, big videos appear to have a much larger storage footprint in iCloud than in real life. </p>

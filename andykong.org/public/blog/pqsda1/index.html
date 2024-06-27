@@ -37,13 +37,6 @@
             content: counter(h1counter) ". ";
         }
 
-/*
-        .blogpage > h2 {
-            text-decoration: underline wavy #DBAD80;
-            text-underline-thickness: 1px;
-        }
-        */
-
         .blogpage > h2::before {
             counter-increment: h2counter;
             content: counter(h1counter) "." counter(h2counter) "  ";
@@ -54,6 +47,19 @@
         }
 
 
+        .blogpage img{
+            max-width: 100%;
+            max-height: 50vh;
+            height: auto;
+            width: auto;
+            display: block !important;
+            margin: 0 auto !important;
+        }
+
+        .blogpage h1, .blogpage h2{
+            color: #E0B890;
+        }
+
         .toc {
             padding-left: 12px;
             margin-left: -12px;
@@ -61,6 +67,8 @@
             color: inherit;
             text-decoration: none;
         }
+
+
 
     </style>
 
@@ -120,123 +128,115 @@
 
 
     <style>
-body {
-    background: #202222;
-    font-size: 1.2em;
-    font-family: 'Ubuntu', sans-serif;
-    color: #FAEADB;
-    overflow-x: hidden;
+        body {
+            background: #202222;
+            font-size: 1.2em;
+            font-family: 'Ubuntu', sans-serif;
+            color: #FAEADB;
+            overflow-x: hidden;
 
-    word-spacing: 0.03em;
-}
+            word-spacing: 0.03em;
+        }
 
-.navlinks{
-    font-family: 'Atkinson Hyperlegible';
-    font-size: 1.2em;
-}
+        .navlinks{
+            font-family: 'Atkinson Hyperlegible';
+            font-size: 1.2em;
+        }
 
-h1, h2, h3, h4, h5, h6{
-    font-family: "Atkinson Hyperlegible";
-}
+        h1, h2, h3, h4, h5, h6{
+            font-family: "Atkinson Hyperlegible";
+        }
 
 
-a {
-    transition: color .2s linear;
-    color:#00B4CC;
-}
+        a {
+            transition: color .2s linear;
+            color:#00B4CC;
+        }
 
-a:hover {
-    color:#00DFFC;
-    text-decoration: none;
-}
+        a:hover {
+            color:#00DFFC;
+            text-decoration: none;
+        }
 
-.navbar-custom {
-    font-size: 22px;
-    background-color: #202222 !important;
-}
+        .navbar-custom {
+            font-size: 22px;
+            background-color: #202222 !important;
+        }
 
-.navbar-custom .navbar-brand{
-    font-size: 30px;
-    color: #00dffc !important;
-}
+        .navbar-custom .navbar-brand{
+            font-size: 30px;
+            color: #00dffc !important;
+        }
 
-.navbar-custom .navitem{
-    color:#00dffc !important;
-}
+        .navbar-custom .navitem{
+            color:#00dffc !important;
+        }
 
-.navitem:hover{
-    color:#00b4cc !important;
-    text-decoration: none;
-}
+        .navitem:hover{
+            color:#00b4cc !important;
+            text-decoration: none;
+        }
 
-.hidden{
-  display: none;
-}
+        .hidden{
+          display: none;
+        }
 
-.navbar-toggler-icon {
-  border: none;
-  outline: none;
-}
+        .navbar-toggler-icon {
+          border: none;
+          outline: none;
+        }
 
-.caption{
-    font-size:12px;
-    text-align: center;
-    font-style: italic;
-    margin-bottom: .2em;
-    margin-top: 1em;
-}
+        .caption{
+            font-size:12px;
+            text-align: center;
+            font-style: italic;
+            margin-bottom: .2em;
+            margin-top: 1em;
+        }
 
-.projectpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-}
 
-.blogpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-    display: block !important;
-    margin: 0 auto !important;
-}
+        hr{
+            background-color:white !important;
+        }
 
-.blogpage h1, .blogpage h2{
-    color: #E0B890;
-}
+        .video-container {
+          position: relative;
+          width: 100%;
+          padding-bottom: 56.25%;
+        }
 
-.projectpage h1, .projectpage h2{
-    color: #E0B890;
-}
+        .youtubevideo {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 0;
+        }
 
-hr{
-    background-color:white !important;
-}
+        code {
+          font-family: Consolas,"courier new";
+          color: #110000;
+          background-color: #FAEADB;
+          padding: 2px;
+          font-size: 105%;
+        }
 
-.video-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
-}
 
-.youtubevideo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
+        .addpic {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+            border-radius: 10px;
 
-code {
-  font-family: Consolas,"courier new";
-  color: #110000;
-  background-color: #FAEADB;
-  padding: 2px;
-  font-size: 105%;
-}
+            transition: transform .2s ease-in-out;
+            transform: scale(0.99);
+        }
 
+        .addpic:hover {
+            transform: scale(1.01);
+        }
 </style>
 
     <link rel="icon" type="image/png" href=" /static/aklogo.png " />
@@ -335,19 +335,19 @@ code {
 <p>These are not many, and they cover much of what is needed. Interestingly enough, these can all be constructed through the use of two functions. </p>
 <h1 id="function-1-interpolation-by-timestamp-analyses-1-4">Function 1: Interpolation by timestamp (Analyses 1, 4)</h1>
 <p>Most continuous sensors will not share timestamps, so you will need to align them (tossing stuff that doesn't line up perfectly) or "align them" (interpolate the denser value with a sparser one to get matching rows). Since we don't usually have a ton of data to spare, we go for interpolation. The code is simple, and just uses <code>np.interpolate</code></p>
-<p><img loading="lazy" alt="" src="/static/pqsda1/0.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/pqsda1/0.png"/></p>
 <p>This is preferred for continuous vs. continous, but for event vs. event much can happen on longer timescales so I think interpolation is quite lossy. </p>
 <h1 id="function-2-select-around-timestamp-analyses-2-3-5">Function 2: Select around timestamp (Analyses 2, 3, 5)</h1>
 <p>Since these analyses all use event data, we will select y-variable data that lines up with the event timestamp. This function just slices out time ranges from the y-variable that are specific offsets from each x-variable event. </p>
-<p><img loading="lazy" alt="" src="/static/pqsda1/1.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/pqsda1/1.png"/></p>
 <p>Once each time range is found, we toss the ranges with zero elements and then have a list of dataframes. Just for fun, I added an "eventOffset" column for each sample so we can <code>hstack</code> them into a single DataFrame if desired. Here's one element from the list of my heart rate dataframes. </p>
-<p><img loading="lazy" alt="" src="/static/pqsda1/2.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/pqsda1/2.png"/></p>
 <p>The <code>a</code> variable was created by running <code>a = s1.selectAround(doseTimes, beforeHours=2, afterHours=4)</code>, selecting time ranges that included each doseTime and data from 2 hours before and 4 hours after. Once the list is made, you can just plot each time range on the same graph:</p>
-<p><img loading="lazy" alt="" src="/static/pqsda1/3.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/pqsda1/3.png"/></p>
 <p>Or more cleanly, plot a smoothed mean of the same data:</p>
-<p><img loading="lazy" alt="" src="/static/pqsda1/4.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/pqsda1/4.png"/></p>
 <p>Another fantastic use case of <code>selectAround</code> is that I can select data that happened exclusively after or before an event time. For instance, if I wanted to see all sleep sessions happening within 6 hours of a caffeine event, I could run <code>sleep.selectAround(doseTimes, 0, 6, cutoff=0, surroundRequired=False)</code> and get the list of every time that happened. The inclusion of the <code>timeOffset</code> col also means I can scatterplot the sleep data once selected:</p>
-<p><img loading="lazy" alt="" src="/static/pqsda1/5.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/pqsda1/5.png"/></p>
 <p><code>selectAround</code> also offers negative lookback and lookahead, so you can do whatever you need. </p>
 <h1 id="conclusion">Conclusion</h1>
 <p>Anyway, I think these two primitives are all you need to find any personal insights you might wish. You may also want to use filters (air quality data bool'd by location, or sleep session filtered by coffee consumption), but that will be saved for the next post.</p></body></html>

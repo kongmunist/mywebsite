@@ -14,11 +14,18 @@
 
 <title> Hacking The Olympia InfoGlobe | Andy Kong</title>
 
-    <style>
-        img {
-            border-radius: 10px;
-        }
-    </style>
+<style>
+    .projectpage h1, .projectpage h2{
+        color: #E0B890;
+    }
+
+    .projectpage img{
+        max-width: 100%;
+        max-height: 50vh;
+        height: auto;
+        width: auto;
+    }
+</style>
 
 
     <style type="text/css">
@@ -74,123 +81,115 @@
 
 
     <style>
-body {
-    background: #202222;
-    font-size: 1.2em;
-    font-family: 'Ubuntu', sans-serif;
-    color: #FAEADB;
-    overflow-x: hidden;
+        body {
+            background: #202222;
+            font-size: 1.2em;
+            font-family: 'Ubuntu', sans-serif;
+            color: #FAEADB;
+            overflow-x: hidden;
 
-    word-spacing: 0.03em;
-}
+            word-spacing: 0.03em;
+        }
 
-.navlinks{
-    font-family: 'Atkinson Hyperlegible';
-    font-size: 1.2em;
-}
+        .navlinks{
+            font-family: 'Atkinson Hyperlegible';
+            font-size: 1.2em;
+        }
 
-h1, h2, h3, h4, h5, h6{
-    font-family: "Atkinson Hyperlegible";
-}
+        h1, h2, h3, h4, h5, h6{
+            font-family: "Atkinson Hyperlegible";
+        }
 
 
-a {
-    transition: color .2s linear;
-    color:#00B4CC;
-}
+        a {
+            transition: color .2s linear;
+            color:#00B4CC;
+        }
 
-a:hover {
-    color:#00DFFC;
-    text-decoration: none;
-}
+        a:hover {
+            color:#00DFFC;
+            text-decoration: none;
+        }
 
-.navbar-custom {
-    font-size: 22px;
-    background-color: #202222 !important;
-}
+        .navbar-custom {
+            font-size: 22px;
+            background-color: #202222 !important;
+        }
 
-.navbar-custom .navbar-brand{
-    font-size: 30px;
-    color: #00dffc !important;
-}
+        .navbar-custom .navbar-brand{
+            font-size: 30px;
+            color: #00dffc !important;
+        }
 
-.navbar-custom .navitem{
-    color:#00dffc !important;
-}
+        .navbar-custom .navitem{
+            color:#00dffc !important;
+        }
 
-.navitem:hover{
-    color:#00b4cc !important;
-    text-decoration: none;
-}
+        .navitem:hover{
+            color:#00b4cc !important;
+            text-decoration: none;
+        }
 
-.hidden{
-  display: none;
-}
+        .hidden{
+          display: none;
+        }
 
-.navbar-toggler-icon {
-  border: none;
-  outline: none;
-}
+        .navbar-toggler-icon {
+          border: none;
+          outline: none;
+        }
 
-.caption{
-    font-size:12px;
-    text-align: center;
-    font-style: italic;
-    margin-bottom: .2em;
-    margin-top: 1em;
-}
+        .caption{
+            font-size:12px;
+            text-align: center;
+            font-style: italic;
+            margin-bottom: .2em;
+            margin-top: 1em;
+        }
 
-.projectpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-}
 
-.blogpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-    display: block !important;
-    margin: 0 auto !important;
-}
+        hr{
+            background-color:white !important;
+        }
 
-.blogpage h1, .blogpage h2{
-    color: #E0B890;
-}
+        .video-container {
+          position: relative;
+          width: 100%;
+          padding-bottom: 56.25%;
+        }
 
-.projectpage h1, .projectpage h2{
-    color: #E0B890;
-}
+        .youtubevideo {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 0;
+        }
 
-hr{
-    background-color:white !important;
-}
+        code {
+          font-family: Consolas,"courier new";
+          color: #110000;
+          background-color: #FAEADB;
+          padding: 2px;
+          font-size: 105%;
+        }
 
-.video-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
-}
 
-.youtubevideo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
+        .addpic {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+            border-radius: 10px;
 
-code {
-  font-family: Consolas,"courier new";
-  color: #110000;
-  background-color: #FAEADB;
-  padding: 2px;
-  font-size: 105%;
-}
+            transition: transform .2s ease-in-out;
+            transform: scale(0.99);
+        }
 
+        .addpic:hover {
+            transform: scale(1.01);
+        }
 </style>
 
     <link rel="icon" type="image/png" href=" /static/aklogo.png " />
@@ -255,13 +254,13 @@ code {
 <div class="row overflow-hidden" style = "height:100vh; width: 100vw; padding: 0px 30px 0px 30px;">
         <div class="col-lg-2"></div>
         <div class="col-12 col-lg-8 projectpage" style="max-width:1000px; margin-bottom:4em;">
-        <h1 style="text-center; margin-bottom: 5px">Hacking The Olympia InfoGlobe</h1>
-            <i><p style="margin-bottom: 5px; margin-top: 0px">Kinda-vintage internet-connected spinning-LED bulletin-board</p></i>
-            <p style="margin-bottom: 0px; margin-top: 0px">Timespan: June - August 2022</p>
-            <p style="margin-bottom: 5px; margin-top: 0px">Published: 2023-11-05</p>
+            <h1 style="text-center; margin-bottom: 5px">Hacking The Olympia InfoGlobe</h1>
+                <i><p style="margin-bottom: 5px; margin-top: 0px">Kinda-vintage internet-connected spinning-LED bulletin-board</p></i>
+                <p style="margin-bottom: 0px; margin-top: 0px">Timespan: June - August 2022</p>
+                <p style="margin-bottom: 5px; margin-top: 0px">Published: 2023-11-05</p>
 
-            <hr>
-        <html><body><p><img loading="lazy" alt="" src="/static/infoglobe_hero.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+                <hr>
+            <html><body><p><img loading="lazy" alt="" class="addpic" src="/static/infoglobe_hero.png"/></p>
 <p>Last year I co-opted an Olympia InfoGlobe display with an ESP8266 and made the code public <a href="https://gist.github.com/kongmunist/a8bdadbacda4bcb129cd183f2f0fffc5">here</a>. </p>
 <p>The hardware details are in blog posts <a href="https://andykong.org/blog/infoglobetutorial1/">part 1</a> and <a href="https://andykong.org/blog/infoglobetutorial2/">part 2</a>, and I walk through the software in <a href="https://andykong.org/blog/infoglobetutorial3/">part 3</a></p>
 <hr/>
@@ -269,21 +268,21 @@ code {
 <p>A middle school teacher was cleaning out their closet and wanted to throw away their InfoGlobe. A valid decision, considering that it's useless without a landline phone and spheres don't pack efficiently. I promised them I'd make something cool with it and saved it from the landfill, at least for a few years. </p>
 <p>I started playing with Arduinos to make this thing say what I wanted, and I got kinda close but never figured out the delays in the IR messaging protocol.</p>
 <p class="caption"> (2018) Early attempt to make the hacked Infoglobe, timings are off so some letters are missing </p>
-<p><img loading="lazy" alt="(2018) Early attempt to make the hacked Infoglobe, timings are off so some letters are missing" src="/static/infoglobe_earlytry.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="(2018) Early attempt to make the hacked Infoglobe, timings are off so some letters are missing" class="addpic" src="/static/infoglobe_earlytry.jpg"/></p>
 <p>I revisited it a few years later, while working at a software company. During the day, I'd get tired of looking at computer screens for hours on end, and wanted some way to talk to my friends when I got home that didn't involve typing at them on my phone or computer. The reader may mention letters or other physical artifacts, but I also wanted semi-instantaneous communication. </p>
 <p>With my newfound electrical engineering skills, I vanquished the timing issue and got consistent messages to show up on the InfoGlobe. </p>
 <p class="caption"> (2022) Photo of the modern, working version of the Infoglobe. Desk has not gotten any cleaner </p>
-<p><img loading="lazy" alt="(2022) Photo of the modern, working version of the Infoglobe. Desk has not gotten any cleaner" src="/static/infoglobe_booyah.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="(2022) Photo of the modern, working version of the Infoglobe. Desk has not gotten any cleaner" class="addpic" src="/static/infoglobe_booyah.png"/></p>
 <hr/>
 <h2 id="interactions-now">Interactions now</h2>
 <p>Then I created a website where anyone could leave messages to be displayed on my 'globe. This is totally unmoderated, so do not get mad at me if it says something mean about anyone.</p>
 <p class="caption"> Screenshot of the Infoglobe website where messages can be uploaded. This is actually how I learned of Gorbachev's death </p>
-<p><img loading="lazy" alt="Screenshot of the Infoglobe website where messages can be uploaded. This is actually how I learned of Gorbachev's death" src="/static/infoglobe_websiteex.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Screenshot of the Infoglobe website where messages can be uploaded. This is actually how I learned of Gorbachev's death" class="addpic" src="/static/infoglobe_websiteex.jpg"/></p>
 <p>I also added the time and date as possible messages, because it was easy. Actually it wasn't super easy, since the ESP8266 has no geo-locating features and I didn't want to add them. Basically, there's a secret webpage I can visit on the infoglobe site which sets the time zone offset for the infoglobe. Assuming only I visit the page, then the infoglobe's time will always match my timezone.</p>
-<p><img loading="lazy" alt="" src="/static/infoglobe_newsite.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/infoglobe_newsite.png"/></p>
 <p>Here's what the the current website looks like. If you are a designer and want to make it look less like an eyesore please hit me up. I have no money but it is a very simple page, and maybe you like the concept enough to send me a Figma link :)</p>
 <p>Anyway, here's the website where you can write messages: <a href="aksuper7.pythonanywhere.com">aksuper7.pythonanywhere.com</a></p></body></html>
-            </div>
+        </div>
         <div class="col-lg-2"></div>
         <p style="line-height:300%;">&nbsp;</p>
 </div>

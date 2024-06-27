@@ -37,13 +37,6 @@
             content: counter(h1counter) ". ";
         }
 
-/*
-        .blogpage > h2 {
-            text-decoration: underline wavy #DBAD80;
-            text-underline-thickness: 1px;
-        }
-        */
-
         .blogpage > h2::before {
             counter-increment: h2counter;
             content: counter(h1counter) "." counter(h2counter) "  ";
@@ -54,6 +47,19 @@
         }
 
 
+        .blogpage img{
+            max-width: 100%;
+            max-height: 50vh;
+            height: auto;
+            width: auto;
+            display: block !important;
+            margin: 0 auto !important;
+        }
+
+        .blogpage h1, .blogpage h2{
+            color: #E0B890;
+        }
+
         .toc {
             padding-left: 12px;
             margin-left: -12px;
@@ -61,6 +67,8 @@
             color: inherit;
             text-decoration: none;
         }
+
+
 
     </style>
 
@@ -120,123 +128,115 @@
 
 
     <style>
-body {
-    background: #202222;
-    font-size: 1.2em;
-    font-family: 'Ubuntu', sans-serif;
-    color: #FAEADB;
-    overflow-x: hidden;
+        body {
+            background: #202222;
+            font-size: 1.2em;
+            font-family: 'Ubuntu', sans-serif;
+            color: #FAEADB;
+            overflow-x: hidden;
 
-    word-spacing: 0.03em;
-}
+            word-spacing: 0.03em;
+        }
 
-.navlinks{
-    font-family: 'Atkinson Hyperlegible';
-    font-size: 1.2em;
-}
+        .navlinks{
+            font-family: 'Atkinson Hyperlegible';
+            font-size: 1.2em;
+        }
 
-h1, h2, h3, h4, h5, h6{
-    font-family: "Atkinson Hyperlegible";
-}
+        h1, h2, h3, h4, h5, h6{
+            font-family: "Atkinson Hyperlegible";
+        }
 
 
-a {
-    transition: color .2s linear;
-    color:#00B4CC;
-}
+        a {
+            transition: color .2s linear;
+            color:#00B4CC;
+        }
 
-a:hover {
-    color:#00DFFC;
-    text-decoration: none;
-}
+        a:hover {
+            color:#00DFFC;
+            text-decoration: none;
+        }
 
-.navbar-custom {
-    font-size: 22px;
-    background-color: #202222 !important;
-}
+        .navbar-custom {
+            font-size: 22px;
+            background-color: #202222 !important;
+        }
 
-.navbar-custom .navbar-brand{
-    font-size: 30px;
-    color: #00dffc !important;
-}
+        .navbar-custom .navbar-brand{
+            font-size: 30px;
+            color: #00dffc !important;
+        }
 
-.navbar-custom .navitem{
-    color:#00dffc !important;
-}
+        .navbar-custom .navitem{
+            color:#00dffc !important;
+        }
 
-.navitem:hover{
-    color:#00b4cc !important;
-    text-decoration: none;
-}
+        .navitem:hover{
+            color:#00b4cc !important;
+            text-decoration: none;
+        }
 
-.hidden{
-  display: none;
-}
+        .hidden{
+          display: none;
+        }
 
-.navbar-toggler-icon {
-  border: none;
-  outline: none;
-}
+        .navbar-toggler-icon {
+          border: none;
+          outline: none;
+        }
 
-.caption{
-    font-size:12px;
-    text-align: center;
-    font-style: italic;
-    margin-bottom: .2em;
-    margin-top: 1em;
-}
+        .caption{
+            font-size:12px;
+            text-align: center;
+            font-style: italic;
+            margin-bottom: .2em;
+            margin-top: 1em;
+        }
 
-.projectpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-}
 
-.blogpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-    display: block !important;
-    margin: 0 auto !important;
-}
+        hr{
+            background-color:white !important;
+        }
 
-.blogpage h1, .blogpage h2{
-    color: #E0B890;
-}
+        .video-container {
+          position: relative;
+          width: 100%;
+          padding-bottom: 56.25%;
+        }
 
-.projectpage h1, .projectpage h2{
-    color: #E0B890;
-}
+        .youtubevideo {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 0;
+        }
 
-hr{
-    background-color:white !important;
-}
+        code {
+          font-family: Consolas,"courier new";
+          color: #110000;
+          background-color: #FAEADB;
+          padding: 2px;
+          font-size: 105%;
+        }
 
-.video-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
-}
 
-.youtubevideo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
+        .addpic {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+            border-radius: 10px;
 
-code {
-  font-family: Consolas,"courier new";
-  color: #110000;
-  background-color: #FAEADB;
-  padding: 2px;
-  font-size: 105%;
-}
+            transition: transform .2s ease-in-out;
+            transform: scale(0.99);
+        }
 
+        .addpic:hover {
+            transform: scale(1.01);
+        }
 </style>
 
     <link rel="icon" type="image/png" href=" /static/aklogo.png " />
@@ -311,37 +311,37 @@ code {
             <p style="font-size:0.8em;"> Published November 26, 2023</p>
 <hr>
             <html><body><p>On September 26, 2023, I spent 34 British pounds on a software license for Alfred 5, giving me access to some extra features like Workflows and Remote execution. This post is going to tell you about the Workflows that I've found, written, or co-opted to be useful to me.</p>
-<p><img loading="lazy" alt="" src="/static/alfredworth/0.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/alfredworth/0.png"/></p>
 <hr/>
 <p>Over time, I realized Alfred just makes a lot of little things easier, and we do a lot of those little things pretty often. Here's my Workflow list:</p>
-<p><img loading="lazy" alt="" src="/static/alfredworth/1.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/alfredworth/1.png"/></p>
 <h2 id="1-quit-arena-or-all-but-messages-and-opera">1. Quit Arena, or "All but messages and Opera"</h2>
 <p>This workflow is derived from <a href="https://github.com/vitorgalvao/alfred-workflows/tree/master/QuitArena">this other workflow called QuitArena</a>, and just closes all my apps except a preset few (Chrome, Messages, Opera, Spotify). It's nice for clearing my screen before a presentation, or just to context-switch to working on another project. Used about 2x per month</p>
-<p><img loading="lazy" alt="" src="/static/alfredworth/2.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/alfredworth/2.png"/></p>
 <h2 id="2-change-audio-to-airpods">2. Change Audio To Airpods</h2>
 <p>Runs two CLI scripts, one that Bluetooth connects to my Airpods (via their hard-coded MAC address) and another that switches the sound output to my Airpods. I use this about once a day, since they tend to connect to my phone first.</p>
-<p><img loading="lazy" alt="" src="/static/alfredworth/3.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/alfredworth/3.png"/></p>
 <h2 id="3-clippaster">3. <a href="https://github.com/kongmunist/alfred_clippaster_workflow">ClipPaster</a></h2>
 <p>ClipPaster pastes the last $n$ screenshots from my clipboard history to whatever application is focused. It's nice for copying relevant parts of several screens or pictures at once and then putting them all into a doc at once. I use it about once a week. Modified from ClipSaver by luckman212 (next one!)</p>
-<p><img loading="lazy" alt="" src="/static/alfredworth/4.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/alfredworth/4.png"/></p>
 <h2 id="4-clipsaver">4. <a href="https://github.com/luckman212/alfred_clipsaver_workflow">ClipSaver</a></h2>
 <p>ClipSaver does the same as above, but saves them to desktop instead of pasting them. I use it slightly less than once per week.</p>
-<p><img loading="lazy" alt="" src="/static/alfredworth/5.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/alfredworth/5.png"/></p>
 <h2 id="5-email-myself">5. Email Myself</h2>
 <p>When I write "m mdmaowaodijwaojdwoaij", this workflow shoots off my "mdmaowaodijwaojdwoai" message to my mailbox. Good for quick reminders, but I don't use it that often.</p>
-<p><img loading="lazy" alt="" src="/static/alfredworth/6.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/alfredworth/6.png"/></p>
 <h2 id="6-launch-apps">6. Launch Apps</h2>
 <p>While it's kind of silly or trivial, I find it way easier to bind hotkeys using Alfred than using the Settings-&gt;Keyboard-&gt;Keyboard Shortcuts method that's built-in to the Mac. This workflow surfaces some of my most-used applications. I use it a few times a day.</p>
-<p><img loading="lazy" alt="" src="/static/alfredworth/7.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/alfredworth/7.png"/></p>
 <h2 id="7-system-settings">7. <a href="https://github.com/alfredapp/system-settings-workflow/">System Settings</a></h2>
 <p>Surfaces the MacOS system settings menus and makes them searchable in Alfred. Really nice, I use it about once a day.</p>
-<p><img loading="lazy" alt="" src="/static/alfredworth/8.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/alfredworth/8.png"/></p>
 <h2 id="8-translate-hotkey">8. translate hotkey</h2>
 <p>I type "t something" and the "something" is immediately opened in Google Translate. 1-2x a day, but only because I live in a German-speaking area at the moment.</p>
-<p><img loading="lazy" alt="" src="/static/alfredworth/9.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/alfredworth/9.png"/></p>
 <h2 id="9-url-handler">9. URL Handler</h2>
 <p>I wrote this to handle arbitrary strings. YouTube links get downloaded as videos, Github links get downloaded as zips, other websites get turned into ".webarchive" pages. Pretty generically useful, I use it about once a week.</p>
-<p><img loading="lazy" alt="" src="/static/alfredworth/10.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/alfredworth/10.png"/></p>
 <h1 id="worth-it">Worth it?</h1>
 <p>I'm not going to do a dry, EA-style calculation of time saved, but I estimate Alfred saves me about 30s of annoying, flow-breaking tasks every day. And that number can only ever improve, so I think Alfred is a good purchase if you plan on using your computer a lot.</p></body></html>
 

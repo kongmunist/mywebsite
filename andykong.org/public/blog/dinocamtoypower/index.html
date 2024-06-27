@@ -37,13 +37,6 @@
             content: counter(h1counter) ". ";
         }
 
-/*
-        .blogpage > h2 {
-            text-decoration: underline wavy #DBAD80;
-            text-underline-thickness: 1px;
-        }
-        */
-
         .blogpage > h2::before {
             counter-increment: h2counter;
             content: counter(h1counter) "." counter(h2counter) "  ";
@@ -54,6 +47,19 @@
         }
 
 
+        .blogpage img{
+            max-width: 100%;
+            max-height: 50vh;
+            height: auto;
+            width: auto;
+            display: block !important;
+            margin: 0 auto !important;
+        }
+
+        .blogpage h1, .blogpage h2{
+            color: #E0B890;
+        }
+
         .toc {
             padding-left: 12px;
             margin-left: -12px;
@@ -61,6 +67,8 @@
             color: inherit;
             text-decoration: none;
         }
+
+
 
     </style>
 
@@ -120,123 +128,115 @@
 
 
     <style>
-body {
-    background: #202222;
-    font-size: 1.2em;
-    font-family: 'Ubuntu', sans-serif;
-    color: #FAEADB;
-    overflow-x: hidden;
+        body {
+            background: #202222;
+            font-size: 1.2em;
+            font-family: 'Ubuntu', sans-serif;
+            color: #FAEADB;
+            overflow-x: hidden;
 
-    word-spacing: 0.03em;
-}
+            word-spacing: 0.03em;
+        }
 
-.navlinks{
-    font-family: 'Atkinson Hyperlegible';
-    font-size: 1.2em;
-}
+        .navlinks{
+            font-family: 'Atkinson Hyperlegible';
+            font-size: 1.2em;
+        }
 
-h1, h2, h3, h4, h5, h6{
-    font-family: "Atkinson Hyperlegible";
-}
+        h1, h2, h3, h4, h5, h6{
+            font-family: "Atkinson Hyperlegible";
+        }
 
 
-a {
-    transition: color .2s linear;
-    color:#00B4CC;
-}
+        a {
+            transition: color .2s linear;
+            color:#00B4CC;
+        }
 
-a:hover {
-    color:#00DFFC;
-    text-decoration: none;
-}
+        a:hover {
+            color:#00DFFC;
+            text-decoration: none;
+        }
 
-.navbar-custom {
-    font-size: 22px;
-    background-color: #202222 !important;
-}
+        .navbar-custom {
+            font-size: 22px;
+            background-color: #202222 !important;
+        }
 
-.navbar-custom .navbar-brand{
-    font-size: 30px;
-    color: #00dffc !important;
-}
+        .navbar-custom .navbar-brand{
+            font-size: 30px;
+            color: #00dffc !important;
+        }
 
-.navbar-custom .navitem{
-    color:#00dffc !important;
-}
+        .navbar-custom .navitem{
+            color:#00dffc !important;
+        }
 
-.navitem:hover{
-    color:#00b4cc !important;
-    text-decoration: none;
-}
+        .navitem:hover{
+            color:#00b4cc !important;
+            text-decoration: none;
+        }
 
-.hidden{
-  display: none;
-}
+        .hidden{
+          display: none;
+        }
 
-.navbar-toggler-icon {
-  border: none;
-  outline: none;
-}
+        .navbar-toggler-icon {
+          border: none;
+          outline: none;
+        }
 
-.caption{
-    font-size:12px;
-    text-align: center;
-    font-style: italic;
-    margin-bottom: .2em;
-    margin-top: 1em;
-}
+        .caption{
+            font-size:12px;
+            text-align: center;
+            font-style: italic;
+            margin-bottom: .2em;
+            margin-top: 1em;
+        }
 
-.projectpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-}
 
-.blogpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-    display: block !important;
-    margin: 0 auto !important;
-}
+        hr{
+            background-color:white !important;
+        }
 
-.blogpage h1, .blogpage h2{
-    color: #E0B890;
-}
+        .video-container {
+          position: relative;
+          width: 100%;
+          padding-bottom: 56.25%;
+        }
 
-.projectpage h1, .projectpage h2{
-    color: #E0B890;
-}
+        .youtubevideo {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 0;
+        }
 
-hr{
-    background-color:white !important;
-}
+        code {
+          font-family: Consolas,"courier new";
+          color: #110000;
+          background-color: #FAEADB;
+          padding: 2px;
+          font-size: 105%;
+        }
 
-.video-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
-}
 
-.youtubevideo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
+        .addpic {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+            border-radius: 10px;
 
-code {
-  font-family: Consolas,"courier new";
-  color: #110000;
-  background-color: #FAEADB;
-  padding: 2px;
-  font-size: 105%;
-}
+            transition: transform .2s ease-in-out;
+            transform: scale(0.99);
+        }
 
+        .addpic:hover {
+            transform: scale(1.01);
+        }
 </style>
 
     <link rel="icon" type="image/png" href=" /static/aklogo.png " />
@@ -312,7 +312,7 @@ code {
 <hr>
             <html><body><p>Hello! I've recently finished a paper, so it's time to work on sillier stuff. </p>
 <p>On a recent trip to China, I purchased this children's toy camera consisting of a front/back-facing camera and thermal printer which can print the captured photos on the spot. It's adorable, and I use it to take shitty analog-looking photos of my friends. </p>
-<p><img loading="lazy" alt="" src="/static/dinocamtoypower/0.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/dinocamtoypower/0.jpeg"/></p>
 <p>As someone whose only used phone cameras, having one as a monotool is pretty convenient. And the terrible picture quality is quite freeing, since no matter what you do or how you look, the picture will be pretty shite.</p>
 <p>My only gripe is the speed. Most real cameras have a sleep mode where they're on, ready to shoot, but not really burning much power. I'd like to keep this camera in sleep mode too, cause it takes 5-10 seconds to turn on and another few seconds to flip around the camera. But as far as I can tell, there is no sleep mode, just a screen-off mode. You can also configure an auto-off timer in the settings, but then you have to wait for it to turn back on again.</p>
 <p>If "display off" mode uses almost no power, then I can make the auto-off timer absurdly long and just turn off the display when it's in my pocket. However, if power consumption stays high, I'll just leave it off and deal with the startup time. It's time to check!</p>
@@ -321,19 +321,19 @@ code {
 <p>Side note, it's sad to me that some versions of this toy will be thrown away despite being fully functional just because the parents/kid didn't know to open it and push back the battery plug back in. It should be glued on to prevent this, but I digress. </p>
 <h1 id="screen-on">Screen on</h1>
 <p>After the device turns on, power consumption is a steady ~85mA on the start screen</p>
-<p><img loading="lazy" alt="" src="/static/dinocamtoypower/1.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/dinocamtoypower/1.jpeg"/></p>
 <h1 id="camera-on">Camera on</h1>
 <p>With the camera on, current consumption increases to ~95mA. It does not seem to matter which camera. </p>
-<p><img loading="lazy" alt="" src="/static/dinocamtoypower/2.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
-<p><img loading="lazy" alt="" src="/static/dinocamtoypower/3.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/dinocamtoypower/2.jpeg"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/dinocamtoypower/3.jpeg"/></p>
 <h1 id="display-off">Display off</h1>
 <p>When the display is off but the device is on, power consumption is still quite high. The camera seems to turn off but we are still at a steady ~80mA, nearly the same as when we're on the intro menu.</p>
-<p><img loading="lazy" alt="" src="/static/dinocamtoypower/4.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/dinocamtoypower/4.jpeg"/></p>
 <h1 id="on-shutdown">On shutdown</h1>
 <p>Display off on the menu screen has a current consumption of ~62 mA. This increases as the turn-off jingle plays and the screen turns back on, but then drops to zero when the device is off (as expected) </p>
-<p><img loading="lazy" alt="" src="/static/dinocamtoypower/5.jpeg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/dinocamtoypower/5.jpeg"/></p>
 <p>Keeping the camera on the menu screen with display off uses the least power, but it's still a far cry from zero. It's a shame because I think the startup time need not be so long, and shortening it would make the camera more useful to me. I will continue to use the camera, but probably not the display-off mode. </p>
-<p><img loading="lazy" alt="" src="/static/dinocamtoypower/6.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/dinocamtoypower/6.jpg"/></p>
 <p>Cya next time!</p></body></html>
 
 

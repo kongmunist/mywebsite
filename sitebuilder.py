@@ -98,7 +98,8 @@ def utility_processor():
             pyg = pygmented_markdown(overallString)
             if ("<img" in pyg):
                 imgInd = pyg.find("<img") + 4
-                centerHTML = ' style="display: block; margin-left: auto;margin-right: auto; max-width: %s%%;" ' % width
+                centerHTML = ' class="addpic" '
+                # centerHTML += f' style="display: block; margin-left: auto;margin-right: auto; max-width: {width}%; transform: scale(1.02); transition: all .2s;  " '
                 overallString = Markup(pyg[:imgInd] + centerHTML + pyg[imgInd:])
                 # print(pyg[:imgInd], "AIDNWIN", pyg[imgInd:])
 

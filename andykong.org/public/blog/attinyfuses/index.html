@@ -37,13 +37,6 @@
             content: counter(h1counter) ". ";
         }
 
-/*
-        .blogpage > h2 {
-            text-decoration: underline wavy #DBAD80;
-            text-underline-thickness: 1px;
-        }
-        */
-
         .blogpage > h2::before {
             counter-increment: h2counter;
             content: counter(h1counter) "." counter(h2counter) "  ";
@@ -54,6 +47,19 @@
         }
 
 
+        .blogpage img{
+            max-width: 100%;
+            max-height: 50vh;
+            height: auto;
+            width: auto;
+            display: block !important;
+            margin: 0 auto !important;
+        }
+
+        .blogpage h1, .blogpage h2{
+            color: #E0B890;
+        }
+
         .toc {
             padding-left: 12px;
             margin-left: -12px;
@@ -61,6 +67,8 @@
             color: inherit;
             text-decoration: none;
         }
+
+
 
     </style>
 
@@ -120,123 +128,115 @@
 
 
     <style>
-body {
-    background: #202222;
-    font-size: 1.2em;
-    font-family: 'Ubuntu', sans-serif;
-    color: #FAEADB;
-    overflow-x: hidden;
+        body {
+            background: #202222;
+            font-size: 1.2em;
+            font-family: 'Ubuntu', sans-serif;
+            color: #FAEADB;
+            overflow-x: hidden;
 
-    word-spacing: 0.03em;
-}
+            word-spacing: 0.03em;
+        }
 
-.navlinks{
-    font-family: 'Atkinson Hyperlegible';
-    font-size: 1.2em;
-}
+        .navlinks{
+            font-family: 'Atkinson Hyperlegible';
+            font-size: 1.2em;
+        }
 
-h1, h2, h3, h4, h5, h6{
-    font-family: "Atkinson Hyperlegible";
-}
+        h1, h2, h3, h4, h5, h6{
+            font-family: "Atkinson Hyperlegible";
+        }
 
 
-a {
-    transition: color .2s linear;
-    color:#00B4CC;
-}
+        a {
+            transition: color .2s linear;
+            color:#00B4CC;
+        }
 
-a:hover {
-    color:#00DFFC;
-    text-decoration: none;
-}
+        a:hover {
+            color:#00DFFC;
+            text-decoration: none;
+        }
 
-.navbar-custom {
-    font-size: 22px;
-    background-color: #202222 !important;
-}
+        .navbar-custom {
+            font-size: 22px;
+            background-color: #202222 !important;
+        }
 
-.navbar-custom .navbar-brand{
-    font-size: 30px;
-    color: #00dffc !important;
-}
+        .navbar-custom .navbar-brand{
+            font-size: 30px;
+            color: #00dffc !important;
+        }
 
-.navbar-custom .navitem{
-    color:#00dffc !important;
-}
+        .navbar-custom .navitem{
+            color:#00dffc !important;
+        }
 
-.navitem:hover{
-    color:#00b4cc !important;
-    text-decoration: none;
-}
+        .navitem:hover{
+            color:#00b4cc !important;
+            text-decoration: none;
+        }
 
-.hidden{
-  display: none;
-}
+        .hidden{
+          display: none;
+        }
 
-.navbar-toggler-icon {
-  border: none;
-  outline: none;
-}
+        .navbar-toggler-icon {
+          border: none;
+          outline: none;
+        }
 
-.caption{
-    font-size:12px;
-    text-align: center;
-    font-style: italic;
-    margin-bottom: .2em;
-    margin-top: 1em;
-}
+        .caption{
+            font-size:12px;
+            text-align: center;
+            font-style: italic;
+            margin-bottom: .2em;
+            margin-top: 1em;
+        }
 
-.projectpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-}
 
-.blogpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-    display: block !important;
-    margin: 0 auto !important;
-}
+        hr{
+            background-color:white !important;
+        }
 
-.blogpage h1, .blogpage h2{
-    color: #E0B890;
-}
+        .video-container {
+          position: relative;
+          width: 100%;
+          padding-bottom: 56.25%;
+        }
 
-.projectpage h1, .projectpage h2{
-    color: #E0B890;
-}
+        .youtubevideo {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 0;
+        }
 
-hr{
-    background-color:white !important;
-}
+        code {
+          font-family: Consolas,"courier new";
+          color: #110000;
+          background-color: #FAEADB;
+          padding: 2px;
+          font-size: 105%;
+        }
 
-.video-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
-}
 
-.youtubevideo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
+        .addpic {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+            border-radius: 10px;
 
-code {
-  font-family: Consolas,"courier new";
-  color: #110000;
-  background-color: #FAEADB;
-  padding: 2px;
-  font-size: 105%;
-}
+            transition: transform .2s ease-in-out;
+            transform: scale(0.99);
+        }
 
+        .addpic:hover {
+            transform: scale(1.01);
+        }
 </style>
 
     <link rel="icon" type="image/png" href=" /static/aklogo.png " />
@@ -312,30 +312,30 @@ code {
 <hr>
             <html><body><p>Hello! This post will show you how to set the fuses on an ATtiny using the Arduino IDE and an Arduino as ISP. You'll need to do this to configure some new options on the ATtiny that aren't available in the Arduino IDE dropdown. We're gonna start off where we left off in the <a href="../ard2attiny">previous blog post</a>, so be sure to follow that through if you haven't yet.</p>
 <p class="caption"> The incomplete fuse options offered by the Arduino IDE </p>
-<p><img loading="lazy" alt="The incomplete fuse options offered by the Arduino IDE" src="/static/attinyfuses/0.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="The incomplete fuse options offered by the Arduino IDE" class="addpic" src="/static/attinyfuses/0.png"/></p>
 <h1 id="motivation">Motivation</h1>
 <p>Recently, I wanted to use energy harvesting to power an ATtiny. Every electron is precious in such a scenario, so I had none to waste. However, on startup, I noticed my ATtiny was actually just doing nothing for around 60ms after power-on!</p>
 <p class="caption"> 60ms delay after startup on the ATtiny. Blue is power rail, yellow is the signal out </p>
-<p><img loading="lazy" alt="60ms delay after startup on the ATtiny. Blue is power rail, yellow is the signal out" src="/static/attinyfuses/1.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="60ms delay after startup on the ATtiny. Blue is power rail, yellow is the signal out" class="addpic" src="/static/attinyfuses/1.png"/></p>
 <p>Digging into the datasheet, I found that by default the ATtiny waits 64ms after startup to give the clock time to stabilize. While this is all nice and good, I don't have that kind of power to waste! This could be changed to 4ms or 0ms by setting the LFUSE (datasheet page 26), but I had no idea how — all I knew were the options on the Arduino IDE. From more reading, I learned that the fuses were what changed every time I altered the clock frequency or other pre-code options then hit Burn Bootloader, but I still didn't know how to upload non-common options.</p>
-<p><img loading="lazy" alt="" src="/static/attinyfuses/2.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/attinyfuses/2.png"/></p>
 <h1 id="custom-fuses">Custom fuses</h1>
 <h2 id="burn-bootloader-command-from-the-cli">Burn Bootloader command from the CLI</h2>
 <p>On a forum post someone mentioned you could burn the fuses from the command line using the same command that the Arduino IDE used to burn the bootloader (fuses included). To get the starter command, you can go to Settings-&gt;verbose output and turn it on for upload. Next time you hit the Tools-&gt;Burn Bootloader button, at the very top of the stdout box will be the command that the IDE tried to run.</p>
 <p class="caption"> String to steal from the Arduino IDE stdout </p>
-<p><img loading="lazy" alt="String to steal from the Arduino IDE stdout" src="/static/attinyfuses/3.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="String to steal from the Arduino IDE stdout" class="addpic" src="/static/attinyfuses/3.png"/></p>
 <p>When we copy this line elsewhere, we can see exactly where the fuses are in the command. They're towards the end, and encoded as bytes. If you ran this in the terminal, it would do the same thing that hitting "Burn Bootloader" in the IDE does. </p>
 <p class="caption"> Pretty-printed Burn Bootloader command from the previous image </p>
-<p><img loading="lazy" alt="Pretty-printed Burn Bootloader command from the previous image" src="/static/attinyfuses/4.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Pretty-printed Burn Bootloader command from the previous image" class="addpic" src="/static/attinyfuses/4.png"/></p>
 <h2 id="determining-fuse-byte-values">Determining fuse byte values</h2>
 <p>One way to set the fuses is to figure out exactly which bits of the LFUSE bytes alter the startup time. In my case, SUT should be 00 for 0ms delay, meaning the right byte should be changed in LFUSE (0x62 above). This approach is possible albeit annoying, and I worried that I had the wrong endian-ness all the time.</p>
-<p><img loading="lazy" alt="" src="/static/attinyfuses/5.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/attinyfuses/5.png"/></p>
 <p>The second time, I realized there were several fuse calculators webpages (like <a href="https://eleccelerator.com/fusecalc/fusecalc.php?chip=attiny85">this</a> or <a href="https://www.engbedded.com/fusecalc/">this</a>) where you could pick the options and it would auto-generate the correct fuse value. Super!</p>
-<p><img loading="lazy" alt="" src="/static/attinyfuses/6.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/attinyfuses/6.png"/></p>
 <p>Once you figure out the fuse bytes, just edit the original Arduino IDE string to include the new values for the appropriate fuses. You can then just run the command in your computer's terminal to set the new fuses on your ATtiny. </p>
 <p>In my case, I just changed the 0x62 in -Ulfuse to 0x42. Now my startup time is &lt;1ms!</p>
 <p class="caption"> No more startup delay </p>
-<p><img loading="lazy" alt="No more startup delay" src="/static/attinyfuses/7.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="No more startup delay" class="addpic" src="/static/attinyfuses/7.png"/></p>
 <p>Alright, that's all. Cya around!</p></body></html>
 
 

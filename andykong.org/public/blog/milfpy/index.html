@@ -37,13 +37,6 @@
             content: counter(h1counter) ". ";
         }
 
-/*
-        .blogpage > h2 {
-            text-decoration: underline wavy #DBAD80;
-            text-underline-thickness: 1px;
-        }
-        */
-
         .blogpage > h2::before {
             counter-increment: h2counter;
             content: counter(h1counter) "." counter(h2counter) "  ";
@@ -54,6 +47,19 @@
         }
 
 
+        .blogpage img{
+            max-width: 100%;
+            max-height: 50vh;
+            height: auto;
+            width: auto;
+            display: block !important;
+            margin: 0 auto !important;
+        }
+
+        .blogpage h1, .blogpage h2{
+            color: #E0B890;
+        }
+
         .toc {
             padding-left: 12px;
             margin-left: -12px;
@@ -61,6 +67,8 @@
             color: inherit;
             text-decoration: none;
         }
+
+
 
     </style>
 
@@ -120,123 +128,115 @@
 
 
     <style>
-body {
-    background: #202222;
-    font-size: 1.2em;
-    font-family: 'Ubuntu', sans-serif;
-    color: #FAEADB;
-    overflow-x: hidden;
+        body {
+            background: #202222;
+            font-size: 1.2em;
+            font-family: 'Ubuntu', sans-serif;
+            color: #FAEADB;
+            overflow-x: hidden;
 
-    word-spacing: 0.03em;
-}
+            word-spacing: 0.03em;
+        }
 
-.navlinks{
-    font-family: 'Atkinson Hyperlegible';
-    font-size: 1.2em;
-}
+        .navlinks{
+            font-family: 'Atkinson Hyperlegible';
+            font-size: 1.2em;
+        }
 
-h1, h2, h3, h4, h5, h6{
-    font-family: "Atkinson Hyperlegible";
-}
+        h1, h2, h3, h4, h5, h6{
+            font-family: "Atkinson Hyperlegible";
+        }
 
 
-a {
-    transition: color .2s linear;
-    color:#00B4CC;
-}
+        a {
+            transition: color .2s linear;
+            color:#00B4CC;
+        }
 
-a:hover {
-    color:#00DFFC;
-    text-decoration: none;
-}
+        a:hover {
+            color:#00DFFC;
+            text-decoration: none;
+        }
 
-.navbar-custom {
-    font-size: 22px;
-    background-color: #202222 !important;
-}
+        .navbar-custom {
+            font-size: 22px;
+            background-color: #202222 !important;
+        }
 
-.navbar-custom .navbar-brand{
-    font-size: 30px;
-    color: #00dffc !important;
-}
+        .navbar-custom .navbar-brand{
+            font-size: 30px;
+            color: #00dffc !important;
+        }
 
-.navbar-custom .navitem{
-    color:#00dffc !important;
-}
+        .navbar-custom .navitem{
+            color:#00dffc !important;
+        }
 
-.navitem:hover{
-    color:#00b4cc !important;
-    text-decoration: none;
-}
+        .navitem:hover{
+            color:#00b4cc !important;
+            text-decoration: none;
+        }
 
-.hidden{
-  display: none;
-}
+        .hidden{
+          display: none;
+        }
 
-.navbar-toggler-icon {
-  border: none;
-  outline: none;
-}
+        .navbar-toggler-icon {
+          border: none;
+          outline: none;
+        }
 
-.caption{
-    font-size:12px;
-    text-align: center;
-    font-style: italic;
-    margin-bottom: .2em;
-    margin-top: 1em;
-}
+        .caption{
+            font-size:12px;
+            text-align: center;
+            font-style: italic;
+            margin-bottom: .2em;
+            margin-top: 1em;
+        }
 
-.projectpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-}
 
-.blogpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-    display: block !important;
-    margin: 0 auto !important;
-}
+        hr{
+            background-color:white !important;
+        }
 
-.blogpage h1, .blogpage h2{
-    color: #E0B890;
-}
+        .video-container {
+          position: relative;
+          width: 100%;
+          padding-bottom: 56.25%;
+        }
 
-.projectpage h1, .projectpage h2{
-    color: #E0B890;
-}
+        .youtubevideo {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 0;
+        }
 
-hr{
-    background-color:white !important;
-}
+        code {
+          font-family: Consolas,"courier new";
+          color: #110000;
+          background-color: #FAEADB;
+          padding: 2px;
+          font-size: 105%;
+        }
 
-.video-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
-}
 
-.youtubevideo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
+        .addpic {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+            border-radius: 10px;
 
-code {
-  font-family: Consolas,"courier new";
-  color: #110000;
-  background-color: #FAEADB;
-  padding: 2px;
-  font-size: 105%;
-}
+            transition: transform .2s ease-in-out;
+            transform: scale(0.99);
+        }
 
+        .addpic:hover {
+            transform: scale(1.01);
+        }
 </style>
 
     <link rel="icon" type="image/png" href=" /static/aklogo.png " />
@@ -314,14 +314,14 @@ code {
 <p>Do this maybe 20 times, and you usually get some idea of the distribution. Usually the cuts happen so quickly and fluidly that you may notice yourself <em>missing</em> a few cuts, even though every pixel on the screen dramatically changes and it seems like something you'd notice. </p>
 <p>Recently I watched Milf Manor, a "reality" dating show where older women seeking younger men are paired with younger men seeking older women on a fancy island. The twist is that every young man is the child of one of the older women. Hilarity ensues (?). </p>
 <p class="caption"> The complicated feature I used for detecting jump cuts </p>
-<p><img loading="lazy" alt="The complicated feature I used for detecting jump cuts" src="/static/milf_cutfeature.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="The complicated feature I used for detecting jump cuts" class="addpic" src="/static/milf_cutfeature.jpg"/></p>
 <p>Common decency aside, this show jump-cuts like nothing else. I did my stopwatch thing but didn't want to stop there — I really wanted to know all about the cut length distribution. I downloaded an episode and used the change in standard deviation of the absolute color difference of two adjacent frames. When this number crossed ~30, I called it a cut and recorded the frame number.</p>
 <p>Then I calculated a few stats about it. Here they are:</p>
 <p class="caption"> Avg clip length is 2.48 sec, with the median at 1.92 sec </p>
-<p><img loading="lazy" alt="Avg clip length is 2.48 sec, with the median at 1.92 sec" src="/static/milf_stats.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Avg clip length is 2.48 sec, with the median at 1.92 sec" class="addpic" src="/static/milf_stats.png"/></p>
 <p>While the average clip length is 2.5 seconds, the median is only 2 seconds. I also find it interesting that the average human blink rate is 1 blink per 4-5 seconds, which means we can see around two clips between blinks. Since the average blink takes ~0.3 seconds, we also won't miss much of a clip while blinking.</p>
 <p class="caption"> Milf Manor clip duration histogram </p>
-<p><img loading="lazy" alt="Milf Manor clip duration histogram" src="/static/milf_cutdistro.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Milf Manor clip duration histogram" class="addpic" src="/static/milf_cutdistro.jpg"/></p>
 <h1 id="conclusion">Conclusion</h1>
 <p>The difficulty of identifying a cut in a video surprised me, but it makes sense if you consider all the possible transitions (fade to black, fade to another clip, slo-mo transition to real-time, etc.). There is even a library in Python called <a href="https://pypi.org/project/scenedetect/">scenedetect</a> which identifies these for you. Next time I will definitely use that for cut detection instead of making my own feature. </p>
 <p>I have completely satisfied my curiousity about Milf Manor at this time. </p></body></html>

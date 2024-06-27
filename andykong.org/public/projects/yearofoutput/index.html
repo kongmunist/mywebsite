@@ -14,11 +14,18 @@
 
 <title> Year of Output | Andy Kong</title>
 
-    <style>
-        img {
-            border-radius: 10px;
-        }
-    </style>
+<style>
+    .projectpage h1, .projectpage h2{
+        color: #E0B890;
+    }
+
+    .projectpage img{
+        max-width: 100%;
+        max-height: 50vh;
+        height: auto;
+        width: auto;
+    }
+</style>
 
 
     <style type="text/css">
@@ -74,123 +81,115 @@
 
 
     <style>
-body {
-    background: #202222;
-    font-size: 1.2em;
-    font-family: 'Ubuntu', sans-serif;
-    color: #FAEADB;
-    overflow-x: hidden;
+        body {
+            background: #202222;
+            font-size: 1.2em;
+            font-family: 'Ubuntu', sans-serif;
+            color: #FAEADB;
+            overflow-x: hidden;
 
-    word-spacing: 0.03em;
-}
+            word-spacing: 0.03em;
+        }
 
-.navlinks{
-    font-family: 'Atkinson Hyperlegible';
-    font-size: 1.2em;
-}
+        .navlinks{
+            font-family: 'Atkinson Hyperlegible';
+            font-size: 1.2em;
+        }
 
-h1, h2, h3, h4, h5, h6{
-    font-family: "Atkinson Hyperlegible";
-}
+        h1, h2, h3, h4, h5, h6{
+            font-family: "Atkinson Hyperlegible";
+        }
 
 
-a {
-    transition: color .2s linear;
-    color:#00B4CC;
-}
+        a {
+            transition: color .2s linear;
+            color:#00B4CC;
+        }
 
-a:hover {
-    color:#00DFFC;
-    text-decoration: none;
-}
+        a:hover {
+            color:#00DFFC;
+            text-decoration: none;
+        }
 
-.navbar-custom {
-    font-size: 22px;
-    background-color: #202222 !important;
-}
+        .navbar-custom {
+            font-size: 22px;
+            background-color: #202222 !important;
+        }
 
-.navbar-custom .navbar-brand{
-    font-size: 30px;
-    color: #00dffc !important;
-}
+        .navbar-custom .navbar-brand{
+            font-size: 30px;
+            color: #00dffc !important;
+        }
 
-.navbar-custom .navitem{
-    color:#00dffc !important;
-}
+        .navbar-custom .navitem{
+            color:#00dffc !important;
+        }
 
-.navitem:hover{
-    color:#00b4cc !important;
-    text-decoration: none;
-}
+        .navitem:hover{
+            color:#00b4cc !important;
+            text-decoration: none;
+        }
 
-.hidden{
-  display: none;
-}
+        .hidden{
+          display: none;
+        }
 
-.navbar-toggler-icon {
-  border: none;
-  outline: none;
-}
+        .navbar-toggler-icon {
+          border: none;
+          outline: none;
+        }
 
-.caption{
-    font-size:12px;
-    text-align: center;
-    font-style: italic;
-    margin-bottom: .2em;
-    margin-top: 1em;
-}
+        .caption{
+            font-size:12px;
+            text-align: center;
+            font-style: italic;
+            margin-bottom: .2em;
+            margin-top: 1em;
+        }
 
-.projectpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-}
 
-.blogpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-    display: block !important;
-    margin: 0 auto !important;
-}
+        hr{
+            background-color:white !important;
+        }
 
-.blogpage h1, .blogpage h2{
-    color: #E0B890;
-}
+        .video-container {
+          position: relative;
+          width: 100%;
+          padding-bottom: 56.25%;
+        }
 
-.projectpage h1, .projectpage h2{
-    color: #E0B890;
-}
+        .youtubevideo {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 0;
+        }
 
-hr{
-    background-color:white !important;
-}
+        code {
+          font-family: Consolas,"courier new";
+          color: #110000;
+          background-color: #FAEADB;
+          padding: 2px;
+          font-size: 105%;
+        }
 
-.video-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
-}
 
-.youtubevideo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
+        .addpic {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+            border-radius: 10px;
 
-code {
-  font-family: Consolas,"courier new";
-  color: #110000;
-  background-color: #FAEADB;
-  padding: 2px;
-  font-size: 105%;
-}
+            transition: transform .2s ease-in-out;
+            transform: scale(0.99);
+        }
 
+        .addpic:hover {
+            transform: scale(1.01);
+        }
 </style>
 
     <link rel="icon" type="image/png" href=" /static/aklogo.png " />
@@ -255,16 +254,16 @@ code {
 <div class="row overflow-hidden" style = "height:100vh; width: 100vw; padding: 0px 30px 0px 30px;">
         <div class="col-lg-2"></div>
         <div class="col-12 col-lg-8 projectpage" style="max-width:1000px; margin-bottom:4em;">
-        <h1 style="text-center; margin-bottom: 5px">Year of Output</h1>
-            <i><p style="margin-bottom: 5px; margin-top: 0px">What is Andy doing in 2024?</p></i>
-            <p style="margin-bottom: 0px; margin-top: 0px">Timespan: 2024</p>
-            <p style="margin-bottom: 5px; margin-top: 0px">Published: 2024-01-02</p>
+            <h1 style="text-center; margin-bottom: 5px">Year of Output</h1>
+                <i><p style="margin-bottom: 5px; margin-top: 0px">What is Andy doing in 2024?</p></i>
+                <p style="margin-bottom: 0px; margin-top: 0px">Timespan: 2024</p>
+                <p style="margin-bottom: 5px; margin-top: 0px">Published: 2024-01-02</p>
 
-            <hr>
-        <html><body><p>It is 2024, and I am leaving my grad studies. I have no job prospects, and no startup money. I have enough savings for a year of living. If my life were a company, this would be my runway. To extend the analogy, I am trying to find Andy-Market Fit.</p>
+                <hr>
+            <html><body><p>It is 2024, and I am leaving my grad studies. I have no job prospects, and no startup money. I have enough savings for a year of living. If my life were a company, this would be my runway. To extend the analogy, I am trying to find Andy-Market Fit.</p>
 <p>I always felt that if I were given free rein to follow my curiosity for a while, I would be able to make something cool and useful. At the end of high school, I tried to take a gap year. My parents told me to do it after I finished college. As college ended and I considered grad school, I wanted to take a year off to work on personal projects. My parents encouraged me to get my graduate degree first.</p>
 <p>Now, after a year of graduate studies, I realize this will never end. I wanted security, and there is never enough security. There is always more school to finish, more money to save, more career to further before making any leap. I am going to use what I know now to sustain myself. I am going to stop sinning.</p>
-<p><img loading="lazy" alt="" src="/static/yearofoutput/img_4.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 75%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/yearofoutput/img_4.png"/></p>
 <hr/>
 <h1 id="the-plan">The Plan</h1>
 <p>This year has no script. I am going to follow my curiosity and rely on my animal mind to stumble onto something good. </p>
@@ -290,30 +289,30 @@ code {
 <li>Jan 3: <a href="https://twitter.com/oldestasian/status/1742769447587246088">Wallet weight tweet thread</a>, <a href="https://andy-kong.ck.page/d0e99a7179">newsletter landing page</a></li>
 </ul>
 <p class="caption"> Wallet weight tweet </p>
-<p><img loading="lazy" alt="Wallet weight tweet" src="/static/yearofoutput/jan3.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Wallet weight tweet" class="addpic" src="/static/yearofoutput/jan3.png"/></p>
 <ul>
 <li>Jan 4: Backscatter project summary slides, collab email</li>
 <li>Jan 5: <a href="https://www.youtube.com/watch?v=NpI9p_4Awvg">Homemade Butter short video</a></li>
 </ul>
 <p class="caption"> Short quantity of butter </p>
-<p><img loading="lazy" alt="Short quantity of butter" src="/static/yearofoutput/jan5.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Short quantity of butter" class="addpic" src="/static/yearofoutput/jan5.png"/></p>
 <ul>
 <li>Jan 6: <a href="https://twitter.com/oldestasian/status/1744230730513694916">Hamster research</a></li>
 </ul>
 <p class="caption"> hamster tweet </p>
-<p><img loading="lazy" alt="hamster tweet" src="/static/yearofoutput/jan6.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="hamster tweet" class="addpic" src="/static/yearofoutput/jan6.png"/></p>
 <ul>
 <li>Jan 7: Shots for a long video, Colpitts oscillator which doesn't work</li>
 </ul>
 <p class="caption"> A sneak peek </p>
-<p><img loading="lazy" alt="A sneak peek" src="/static/yearofoutput/jan7.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="A sneak peek" class="addpic" src="/static/yearofoutput/jan7.jpg"/></p>
 <ul>
 <li>Jan 8: <a href="../strooper">Strooper project post</a> (<a href="https://chromewebstore.google.com/detail/strooper/bmpmimimabakkagnniammiljclhjcmgi">extension here!</a>)</li>
 <li>Jan 9: <a href="../../blog/printvsdigital/">Blog post comparing my reading speed on paper vs. screen</a></li>
 <li>Jan 10: Editing long video, <a href="../../blog/stroopvssleep">Stroop vs Sleep graph</a></li>
 </ul>
 <p class="caption"> Stroop performance gets better if I sleep more. As my mom would say, Duh! </p>
-<p><img loading="lazy" alt="Stroop performance gets better if I sleep more. As my mom would say, Duh!" src="/static/stroopvssleep/img.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Stroop performance gets better if I sleep more. As my mom would say, Duh!" class="addpic" src="/static/stroopvssleep/img.png"/></p>
 <ul>
 <li>Jan 11: <a href="../../blog/bionicreadingtest">Checking if Bionic Reading helps you read faster</a></li>
 <li>Jan 12: Shots for 18-wheeler-tailgating video.</li>
@@ -328,7 +327,7 @@ code {
 <li>Jan 26: <a href="../../blog/allmydata">Blog post on main project 2</a>, added chapter counters to blog.</li>
 </ul>
 <p class="caption"> Example of the header chapter counters. I can also add a table of contents </p>
-<p><img loading="lazy" alt="Example of the header chapter counters. I can also add a table of contents" src="/static/yearofoutput/img_1.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Example of the header chapter counters. I can also add a table of contents" class="addpic" src="/static/yearofoutput/img_1.png"/></p>
 <ul>
 <li>Jan 27: Part selection + started PCB for main project 1 rev3.</li>
 <li>Jan 28: Ordered new PCBs + parts for main project 1. Made pesto pasta.</li>
@@ -344,7 +343,7 @@ code {
 <li>Feb 4: Applied to Vitalia. </li>
 <li>Feb 5: <a href="https://www.youtube.com/watch?v=LdaKsLM5S64&amp;t=1s">YouTube video</a> about brute-forcing Ford cars </li>
 </ul>
-<p><img loading="lazy" alt="" src="/static/yearofoutput/img.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/yearofoutput/img.png"/></p>
 <ul>
 <li>Feb 6: Blog post <a href="../../blog/attinyrtc">CS major's guide to I2C</a></li>
 <li>Feb 7: Posted about main project 1, <a href="../../projects/implantables">implantables</a>. Also on Twitter.</li>
@@ -352,12 +351,12 @@ code {
 <li>Feb 9: Applied for Flux Capacitor, a 1517 grant</li>
 <li>Feb 10: Driver Apple Watch <a href="https://twitter.com/oldestasian/status/1756578851893760155">tweet</a></li>
 </ul>
-<p><img loading="lazy" alt="" src="/static/yearofoutput/driverapplewatch.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/yearofoutput/driverapplewatch.png"/></p>
 <ul>
 <li>Feb 11: Ordered parts for impedance matching</li>
 <li>Feb 12: Last blog post on Fitbit timezone correction, this time using Google location data. <a href="../../blog/glocfitbittzcorrection">Link</a></li>
 </ul>
-<p><img loading="lazy" alt="" src="/static/glocfitbittzcorrection/0.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/glocfitbittzcorrection/0.png"/></p>
 <ul>
 <li>Feb 13: Looked into potential research collab</li>
 <li>Feb 14-21: Trip to <a href="vitalia.city">Vitalia.city</a> and <a href="https://twitter.com/oldestasian/status/1760185015218872437">shitposted a bit</a>.<ul>
@@ -372,7 +371,7 @@ code {
 </li>
 <li>Feb 22: Post about [Vitalia](../../blog/vitalia1)</li>
 </ul>
-<p><img loading="lazy" alt="" src="/static/vitalia1/9.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/vitalia1/9.jpg"/></p>
 <ul>
 <li>Feb 23-28: Trip to Boston<ul>
 <li>23: Went to NTBOS event, met Max</li>
@@ -401,11 +400,11 @@ code {
 <li>Mar 12: Talked to Adam about summering in Michigan</li>
 <li>Mar 13: <a href="../../blog/avph_reflection">Reflections on the Vision Pro Hackathon</a></li>
 </ul>
-<p><img loading="lazy" alt="" src="/static/avph_reflection/2.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/avph_reflection/2.jpg"/></p>
 <ul>
 <li>Mar 14: Learned how small 7-segment displays can get</li>
 </ul>
-<p><img loading="lazy" alt="" src="/static/yearofoutput/7seg.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/yearofoutput/7seg.png"/></p>
 <ul>
 <li>Mar 15: <a href="https://twitter.com/oldestasian/status/1768680598082822611">Tweet thread on blood lead concentration</a></li>
 <li>Mar 16: <a href="https://www.researchhub.com/post/1839/inducing-mentalphysical-changes-using-parasites">First post</a> on ResearchHub, a cryptocurrency research platform. I like the vision, but nobody engaged with my post.</li>
@@ -418,12 +417,12 @@ code {
 <li>Mar 23: Dietrich party with the Good Will Hunting squad</li>
 <li>Mar 24: Disassembled a vape pen, took pics for future blog post</li>
 </ul>
-<p><img loading="lazy" alt="" src="/static/yearofoutput/vape.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/yearofoutput/vape.png"/></p>
 <ul>
 <li>Mar 25: <a href="https://kongmunist.medium.com/sub-microamp-sleep-current-with-seeed-xiao-nrf52840-732def7d95c3">Medium post</a> on how to properly deep sleep the XIAO nRF52840 board  </li>
 <li>Mar 26: Gradient generating code for figures. Hopefully will not have to remake that. </li>
 </ul>
-<p><img loading="lazy" alt="" src="/static/yearofoutput/bodygradient.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/yearofoutput/bodygradient.png"/></p>
 <ul>
 <li>Mar 27: Observations on the Vision Pro video stream <a href="https://twitter.com/oldestasian/status/1773056074297335858">here</a></li>
 <li>Mar 28: Chris "celebrated problem" debate, no progress on getting e-ink display working. Added abstract to PCS.</li>
@@ -442,13 +441,13 @@ code {
 <li>Apr 7: <a href="../../blog/dinocamtoypower">Blog post about</a> power consumption of a children's toy camera I got in China.</li>
 <li>Apr 8: Eclipse day!</li>
 </ul>
-<p><img loading="lazy" alt="" src="/static/yearofoutput/eclipse.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/yearofoutput/eclipse.png"/></p>
 <ul>
 <li>Apr 9: So much Blender, redid head scan with a handheld 3D scanner</li>
 <li>April 10: Transplanted my face onto my face in Blender. <a href="https://twitter.com/oldestasian/status/1778015641011708058">Memes ensued</a></li>
 <li>Apr 11: Printed big <a href="https://twitter.com/oldestasian/status/1778903412425339039">head candle mold</a></li>
 </ul>
-<p><img loading="lazy" alt="" src="/static/yearofoutput/headcandlemold.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/yearofoutput/headcandlemold.png"/></p>
 <ul>
 <li>Apr 12: Blog post on <a href="../../blog/omorse">how optimized Morse code is</a></li>
 <li>Apr 13: Beeswax + Coconut wax + scent ratio test</li>
@@ -464,11 +463,12 @@ code {
 <li>June 12: <a href="../../blog/monochrome/">Blog post</a> about using one Chrome window at a time</li>
 <li>June 23: <a href="../project/bigheadcandle">Big head candle project writeup</a></li>
 </ul>
-<p><img loading="lazy" alt="" src="/static/bigheadcandle/demoldingprocess.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/bigheadcandle/demoldingprocess.jpg"/></p>
 <ul>
+<li>June 24: Some graphs about this <a href="https://x.com/oldestasian/status/1805465933588127855">website's anniversary!</a>, courtesy of Claude</li>
 <li>June 25: Posted my <a href="../../blog/eee">Edge Esmerelda experience</a></li>
 </ul></body></html>
-            </div>
+        </div>
         <div class="col-lg-2"></div>
         <p style="line-height:300%;">&nbsp;</p>
 </div>

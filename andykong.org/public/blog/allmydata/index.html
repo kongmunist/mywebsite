@@ -37,13 +37,6 @@
             content: counter(h1counter) ". ";
         }
 
-/*
-        .blogpage > h2 {
-            text-decoration: underline wavy #DBAD80;
-            text-underline-thickness: 1px;
-        }
-        */
-
         .blogpage > h2::before {
             counter-increment: h2counter;
             content: counter(h1counter) "." counter(h2counter) "  ";
@@ -54,6 +47,19 @@
         }
 
 
+        .blogpage img{
+            max-width: 100%;
+            max-height: 50vh;
+            height: auto;
+            width: auto;
+            display: block !important;
+            margin: 0 auto !important;
+        }
+
+        .blogpage h1, .blogpage h2{
+            color: #E0B890;
+        }
+
         .toc {
             padding-left: 12px;
             margin-left: -12px;
@@ -61,6 +67,8 @@
             color: inherit;
             text-decoration: none;
         }
+
+
 
     </style>
 
@@ -120,123 +128,115 @@
 
 
     <style>
-body {
-    background: #202222;
-    font-size: 1.2em;
-    font-family: 'Ubuntu', sans-serif;
-    color: #FAEADB;
-    overflow-x: hidden;
+        body {
+            background: #202222;
+            font-size: 1.2em;
+            font-family: 'Ubuntu', sans-serif;
+            color: #FAEADB;
+            overflow-x: hidden;
 
-    word-spacing: 0.03em;
-}
+            word-spacing: 0.03em;
+        }
 
-.navlinks{
-    font-family: 'Atkinson Hyperlegible';
-    font-size: 1.2em;
-}
+        .navlinks{
+            font-family: 'Atkinson Hyperlegible';
+            font-size: 1.2em;
+        }
 
-h1, h2, h3, h4, h5, h6{
-    font-family: "Atkinson Hyperlegible";
-}
+        h1, h2, h3, h4, h5, h6{
+            font-family: "Atkinson Hyperlegible";
+        }
 
 
-a {
-    transition: color .2s linear;
-    color:#00B4CC;
-}
+        a {
+            transition: color .2s linear;
+            color:#00B4CC;
+        }
 
-a:hover {
-    color:#00DFFC;
-    text-decoration: none;
-}
+        a:hover {
+            color:#00DFFC;
+            text-decoration: none;
+        }
 
-.navbar-custom {
-    font-size: 22px;
-    background-color: #202222 !important;
-}
+        .navbar-custom {
+            font-size: 22px;
+            background-color: #202222 !important;
+        }
 
-.navbar-custom .navbar-brand{
-    font-size: 30px;
-    color: #00dffc !important;
-}
+        .navbar-custom .navbar-brand{
+            font-size: 30px;
+            color: #00dffc !important;
+        }
 
-.navbar-custom .navitem{
-    color:#00dffc !important;
-}
+        .navbar-custom .navitem{
+            color:#00dffc !important;
+        }
 
-.navitem:hover{
-    color:#00b4cc !important;
-    text-decoration: none;
-}
+        .navitem:hover{
+            color:#00b4cc !important;
+            text-decoration: none;
+        }
 
-.hidden{
-  display: none;
-}
+        .hidden{
+          display: none;
+        }
 
-.navbar-toggler-icon {
-  border: none;
-  outline: none;
-}
+        .navbar-toggler-icon {
+          border: none;
+          outline: none;
+        }
 
-.caption{
-    font-size:12px;
-    text-align: center;
-    font-style: italic;
-    margin-bottom: .2em;
-    margin-top: 1em;
-}
+        .caption{
+            font-size:12px;
+            text-align: center;
+            font-style: italic;
+            margin-bottom: .2em;
+            margin-top: 1em;
+        }
 
-.projectpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-}
 
-.blogpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-    display: block !important;
-    margin: 0 auto !important;
-}
+        hr{
+            background-color:white !important;
+        }
 
-.blogpage h1, .blogpage h2{
-    color: #E0B890;
-}
+        .video-container {
+          position: relative;
+          width: 100%;
+          padding-bottom: 56.25%;
+        }
 
-.projectpage h1, .projectpage h2{
-    color: #E0B890;
-}
+        .youtubevideo {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 0;
+        }
 
-hr{
-    background-color:white !important;
-}
+        code {
+          font-family: Consolas,"courier new";
+          color: #110000;
+          background-color: #FAEADB;
+          padding: 2px;
+          font-size: 105%;
+        }
 
-.video-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
-}
 
-.youtubevideo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
+        .addpic {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+            border-radius: 10px;
 
-code {
-  font-family: Consolas,"courier new";
-  color: #110000;
-  background-color: #FAEADB;
-  padding: 2px;
-  font-size: 105%;
-}
+            transition: transform .2s ease-in-out;
+            transform: scale(0.99);
+        }
 
+        .addpic:hover {
+            transform: scale(1.01);
+        }
 </style>
 
     <link rel="icon" type="image/png" href=" /static/aklogo.png " />
@@ -316,20 +316,20 @@ code {
 <p>In this post I'm going to show y'all few self-insights I've derived from logging a lot of my personal data. I'll also list all the types of data and how they're collected. </p>
 <h1 id="why-i-collect-data">Why I collect data</h1>
 <p>I think it's important to specify "why research" as well as "how research", and this "why" can become insincere when scientists court the big grant-writers in industry and government instead of saying what they really mean. I currently work for myself and will try to be a bit more honest — I like learning how my body and mind interact with my environment to create my lived experience. I also just like to know stuff.</p>
-<p><img loading="lazy" alt="" src="/static/allmydata/0.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/allmydata/0.png"/></p>
 <h1 id="cool-selfinsights-ive-found">Cool self-insights I've found</h1>
 <ul>
 <li>My Ritalin blood concentration correlates with better Tetris performance</li>
 </ul>
-<p><img loading="lazy" alt="" src="/static/allmydata/1.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/allmydata/1.png"/></p>
 <ul>
 <li>I think better with more sleep (actually one of my most burning questions)</li>
 </ul>
-<p><img loading="lazy" alt="" src="/static/allmydata/2.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/allmydata/2.png"/></p>
 <ul>
 <li>My Tetris speed (pieces per second = PPS) correlates slightly with lower humidity</li>
 </ul>
-<p><img loading="lazy" alt="" src="/static/allmydata/3.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/allmydata/3.png"/></p>
 <p>Here's a <a href="https://medium.com/@kongmunist/playing-faster-tetris-by-sleeping-less-3d9b04d30349">few</a> more <a href="../blog/stroopvssleep/">examples</a></p>
 <hr/>
 <h1 id="my-data-stack">My data stack</h1>
@@ -337,44 +337,44 @@ code {
 <p>Not all the data is obviously useful — some of it is just easy to collect. But most data I expect to use as an 'x' or 'y' variable in some future analysis.</p>
 <h2 id="browser-activity">Browser Activity</h2>
 <p>Chrome websites visited with URL and timestamp. Collected via Tom Critchlow's <a href="../settingupelectrictables/">JS electric tables script</a></p>
-<p><img loading="lazy" alt="" src="/static/allmydata/4.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/allmydata/4.png"/></p>
 <h2 id="hard-drive-space">Hard Drive Space</h2>
 <p>Every 4 hours, a bash script logs my available hard drive space in bytes. </p>
-<p><img loading="lazy" alt="" src="/static/allmydata/5.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/allmydata/5.png"/></p>
 <h2 id="physical-location">Physical Location</h2>
 <p>Google Maps Timeline is enabled on my phone and records my latitude/longitude every few minutes. I have this data going back a couple of years, and it includes the velocity and predicted mode of transport. </p>
-<p><img loading="lazy" alt="" src="/static/allmydata/6.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/allmydata/6.png"/></p>
 <h2 id="smartwatch-biometrics">Smartwatch Biometrics</h2>
 <p>Fitbit records a ton of data and multiple granularities. There's tons of problems with the data itself (documented <a href="../fitbittsproblem/">here</a> and <a href="../fitbitsleeptzcorrection/">here</a> ), but the majority is usable. Most usable stuff is probably the nightly sleep stats, minutely heart rate + HR variance, and daily step count. Fitbit offers this data export <a href="https://www.fitbit.com/settings/data/export&lt;/a&gt;">through the web interface</a></p>
-<p><img loading="lazy" alt="" src="/static/allmydata/7.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/allmydata/7.png"/></p>
 <h2 id="music">Music</h2>
 <p>Spotify! It's a bit complicated and I haven't looked into it, but all the streaming data is there. Spotify offers this data export <a href="https://support.spotify.com/us/article/understanding-my-data/">through the web interface</a></p>
-<p><img loading="lazy" alt="" src="/static/allmydata/8.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/allmydata/8.png"/></p>
 <h2 id="tweets">Tweets</h2>
 <p>Twitter activity, has been used by <a href="https://twitter.com/ultimape/status/1145889385256296449&lt;/a&gt;">ultimape</a> to detect their shifting circadian rhythm, has been used by Andy for nothing so far. Twitter offers this data export <a href="https://help.twitter.com/en/managing-your-account/how-to-download-your-x-archive&lt;/a&gt;">through the web interface</a></p>
-<p><img loading="lazy" alt="" src="/static/allmydata/9.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/allmydata/9.png"/></p>
 <h2 id="purchasing-data">Purchasing data</h2>
 <p>My Apple Card tracks all my purchases. The data is retrieved by manually hitting the "Export CSV" button on each month, and includes the Merchant and category and date.</p>
-<p><img loading="lazy" alt="" src="/static/allmydata/10.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/allmydata/10.png"/></p>
 <h2 id="glucose">Glucose</h2>
 <p>I wore a Freestyle Libre 2 CGM for two weeks and have nearly continuous data from that period (15-min intervals). Export is done through web interface.</p>
-<p><img loading="lazy" alt="" src="/static/allmydata/11.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/allmydata/11.png"/></p>
 <h2 id="air-quality">Air quality</h2>
 <p>I use a QingPing air quality monitor to track my relative humidity, temperature, CO2, particulates (PM2.5), and tVOC (total volatile organic compounds). Through the QingPing IoT app, we can export the past year of data logged at 15-min intervals. </p>
-<p><img loading="lazy" alt="" src="/static/allmydata/12.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/allmydata/12.png"/></p>
 <h2 id="tetris-cognitive">Tetris (cognitive)</h2>
 <p>I play Tetris for fun a few times a day. The website I play on records the stats and timestamps of each game, and I wrote a little Selenium scraper to retrieve it all. I run this every few months to collate all the data into a CSV.</p>
-<p><img loading="lazy" alt="" src="/static/allmydata/13.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/allmydata/13.png"/></p>
 <h2 id="stroop-cognitive">Stroop (cognitive)</h2>
 <p>I use my Strooper <a href="../../projects/strooper">chrome extension</a> and complete a mini-Stroop test a few times a day. This gives me a coarse metric of my executive function, reading speed, and reaction time randomly throughout the day. I transfer the results into a spreadsheet monthly. </p>
-<p><img loading="lazy" alt="" src="/static/allmydata/14.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
-<p><img loading="lazy" alt="" src="/static/allmydata/15.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/allmydata/14.png"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/allmydata/15.png"/></p>
 <h2 id="weight-and-grip-strength">Weight and grip strength</h2>
 <p>Every night I record my weight and fat % with a bioimpedance scale, then record my left and right handed grip strength using a dynamometer. I record these as calendar events and transfer them to spreadsheets monthly. </p>
-<p><img loading="lazy" alt="" src="/static/allmydata/16.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/allmydata/16.png"/></p>
 <h2 id="dose-times">Dose times</h2>
 <p>I frequently drink caffeinated beverages, sometimes use nicotine patches, and randomly try out OTC supplements like L-Theanine or magnesium. I update a calendar notebook with my dosage and time, and have gotten pretty good at just noting the time when I take them and logging it later. I transfer this to a spreadsheet every month or so. </p>
-<p><img loading="lazy" alt="" src="/static/allmydata/17.png" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/allmydata/17.png"/></p>
 <hr/>
 <h1 id="conclusion">Conclusion</h1>
 <h2 id="do-it-now">Do it now!</h2>

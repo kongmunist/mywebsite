@@ -37,13 +37,6 @@
             content: counter(h1counter) ". ";
         }
 
-/*
-        .blogpage > h2 {
-            text-decoration: underline wavy #DBAD80;
-            text-underline-thickness: 1px;
-        }
-        */
-
         .blogpage > h2::before {
             counter-increment: h2counter;
             content: counter(h1counter) "." counter(h2counter) "  ";
@@ -54,6 +47,19 @@
         }
 
 
+        .blogpage img{
+            max-width: 100%;
+            max-height: 50vh;
+            height: auto;
+            width: auto;
+            display: block !important;
+            margin: 0 auto !important;
+        }
+
+        .blogpage h1, .blogpage h2{
+            color: #E0B890;
+        }
+
         .toc {
             padding-left: 12px;
             margin-left: -12px;
@@ -61,6 +67,8 @@
             color: inherit;
             text-decoration: none;
         }
+
+
 
     </style>
 
@@ -120,123 +128,115 @@
 
 
     <style>
-body {
-    background: #202222;
-    font-size: 1.2em;
-    font-family: 'Ubuntu', sans-serif;
-    color: #FAEADB;
-    overflow-x: hidden;
+        body {
+            background: #202222;
+            font-size: 1.2em;
+            font-family: 'Ubuntu', sans-serif;
+            color: #FAEADB;
+            overflow-x: hidden;
 
-    word-spacing: 0.03em;
-}
+            word-spacing: 0.03em;
+        }
 
-.navlinks{
-    font-family: 'Atkinson Hyperlegible';
-    font-size: 1.2em;
-}
+        .navlinks{
+            font-family: 'Atkinson Hyperlegible';
+            font-size: 1.2em;
+        }
 
-h1, h2, h3, h4, h5, h6{
-    font-family: "Atkinson Hyperlegible";
-}
+        h1, h2, h3, h4, h5, h6{
+            font-family: "Atkinson Hyperlegible";
+        }
 
 
-a {
-    transition: color .2s linear;
-    color:#00B4CC;
-}
+        a {
+            transition: color .2s linear;
+            color:#00B4CC;
+        }
 
-a:hover {
-    color:#00DFFC;
-    text-decoration: none;
-}
+        a:hover {
+            color:#00DFFC;
+            text-decoration: none;
+        }
 
-.navbar-custom {
-    font-size: 22px;
-    background-color: #202222 !important;
-}
+        .navbar-custom {
+            font-size: 22px;
+            background-color: #202222 !important;
+        }
 
-.navbar-custom .navbar-brand{
-    font-size: 30px;
-    color: #00dffc !important;
-}
+        .navbar-custom .navbar-brand{
+            font-size: 30px;
+            color: #00dffc !important;
+        }
 
-.navbar-custom .navitem{
-    color:#00dffc !important;
-}
+        .navbar-custom .navitem{
+            color:#00dffc !important;
+        }
 
-.navitem:hover{
-    color:#00b4cc !important;
-    text-decoration: none;
-}
+        .navitem:hover{
+            color:#00b4cc !important;
+            text-decoration: none;
+        }
 
-.hidden{
-  display: none;
-}
+        .hidden{
+          display: none;
+        }
 
-.navbar-toggler-icon {
-  border: none;
-  outline: none;
-}
+        .navbar-toggler-icon {
+          border: none;
+          outline: none;
+        }
 
-.caption{
-    font-size:12px;
-    text-align: center;
-    font-style: italic;
-    margin-bottom: .2em;
-    margin-top: 1em;
-}
+        .caption{
+            font-size:12px;
+            text-align: center;
+            font-style: italic;
+            margin-bottom: .2em;
+            margin-top: 1em;
+        }
 
-.projectpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-}
 
-.blogpage img{
-    max-width: 100%;
-    max-height: 50vh;
-    height: auto;
-    width: auto;
-    display: block !important;
-    margin: 0 auto !important;
-}
+        hr{
+            background-color:white !important;
+        }
 
-.blogpage h1, .blogpage h2{
-    color: #E0B890;
-}
+        .video-container {
+          position: relative;
+          width: 100%;
+          padding-bottom: 56.25%;
+        }
 
-.projectpage h1, .projectpage h2{
-    color: #E0B890;
-}
+        .youtubevideo {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 0;
+        }
 
-hr{
-    background-color:white !important;
-}
+        code {
+          font-family: Consolas,"courier new";
+          color: #110000;
+          background-color: #FAEADB;
+          padding: 2px;
+          font-size: 105%;
+        }
 
-.video-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
-}
 
-.youtubevideo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
+        .addpic {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+            border-radius: 10px;
 
-code {
-  font-family: Consolas,"courier new";
-  color: #110000;
-  background-color: #FAEADB;
-  padding: 2px;
-  font-size: 105%;
-}
+            transition: transform .2s ease-in-out;
+            transform: scale(0.99);
+        }
 
+        .addpic:hover {
+            transform: scale(1.01);
+        }
 </style>
 
     <link rel="icon" type="image/png" href=" /static/aklogo.png " />
@@ -318,21 +318,21 @@ code {
 <h1 id="black-tape">Black Tape</h1>
 <p>The funny thing about black tape (duct/gaffer) is that usually the sticky side is white. I found electrical tape to have a black sticky side, but wasn't able to find any that was wide enough to cover my glass plates in one piece. I tried abutting them edge-to-edge instead. </p>
 <p class="caption"> Tape abutment works ok for blacking out holograms </p>
-<p><img loading="lazy" alt="Tape abutment works ok for blacking out holograms" src="/static/hologramblackout/0.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Tape abutment works ok for blacking out holograms" class="addpic" src="/static/hologramblackout/0.jpg"/></p>
 <p>You'll notice this kinda works, but the gaps are clearly visible. Even for perfect alignment, there will be a noticeable thin line. There's also some bubbles — these are easy enough to get out by scratching at the tape so it flattens out, but sometimes there are bigger bubbles which do not come out easily. If done carefully it won't look too bad. </p>
 <p class="caption"> Air bubbles trapped in the tape backing. Remember manually putting on phone screens like this? </p>
-<p><img loading="lazy" alt="Air bubbles trapped in the tape backing. Remember manually putting on phone screens like this?" src="/static/hologramblackout/1.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Air bubbles trapped in the tape backing. Remember manually putting on phone screens like this?" class="addpic" src="/static/hologramblackout/1.jpg"/></p>
 <h1 id="black-tape-overlap">Black Tape, Overlap</h1>
 <p>If the tape is instead placed over the next piece, this line only gets worse. I cannot recommend this method cause it really sucks. </p>
 <p class="caption"> Overlapping tape backing </p>
-<p><img loading="lazy" alt="Overlapping tape backing" src="/static/hologramblackout/2.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
-<p><img loading="lazy" alt="" src="/static/hologramblackout/3.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Overlapping tape backing" class="addpic" src="/static/hologramblackout/2.jpg"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/hologramblackout/3.jpg"/></p>
 <h1 id="paint">Paint</h1>
 <p>Lastly, I tried a matte black spray paint. One nice thing about this is that we don't really care about the finish on the back side so you can spray a pretty thick single coat. Here is a sheet I taped and spray-painted for comparison. </p>
 <p class="caption"> Holograph plate taped (left) and spray painted (right) </p>
-<p><img loading="lazy" alt="Holograph plate taped (left) and spray painted (right)" src="/static/hologramblackout/4.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Holograph plate taped (left) and spray painted (right)" class="addpic" src="/static/hologramblackout/4.jpg"/></p>
 <p class="caption"> Difference in black effectiveness from the visible side </p>
-<p><img loading="lazy" alt="Difference in black effectiveness from the visible side" src="/static/hologramblackout/5.jpg" style="display: block; margin-left: auto;margin-right: auto; max-width: 100%;"/></p>
+<p><img loading="lazy" alt="Difference in black effectiveness from the visible side" class="addpic" src="/static/hologramblackout/5.jpg"/></p>
 <p>In the circle above you can see the difference in contrast between tape (bottom) and paint (top). I would say the spray paint is a tad darker, and can go on more evenly. This is definitely the nicest method. </p>
 <p>Anyway, now you know!</p></body></html>
 
