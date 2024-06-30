@@ -16,11 +16,11 @@ Luckily, I was able to find some sheets of pure-ish gelatin in the supermarket b
 
 
 <hr>
-## In sheets???
+# In sheets???
 
 The store sells gelatin in both powder and sheets form, and I chose the sheets cause I found the form factor interesting. Each sheet is good enough for around 100mL of liquid, and is totally clear with some bubbles at the seams.
 
-{{ add_pic("cg1_composite.jpg", "caption") }}
+{{ add_pic("cg1_composite.jpg", "Clear gelatin sheets fresh from the store") }}
 
 The sheet is pretty cool. It's embossed in a diamond pattern (zoom in!) and is quite bendy (not brittle at all) and hard to the touch. And when I touched it, it didn't get sticky or anything, so my skin moisture did not sufficiently wet it. I put it in my mouth for 30 sec and it became only a bit softer, and had no flavor. I'm using a 500mL tupperware to hold my jello, so I used around 4 sheets and left some air in the top. 
 
@@ -32,18 +32,18 @@ First, you gotta soak the gelatin sheets in cold water for 5-10 minutes. This is
 
 While that was happening I went and microwaved my tupperware to get the water warm. I brought over the gelatin, which had sagged down in the cup of water and got ready to transfer it. I used a spoon because I didn't know how my hand oils would affect the setting. 
 
-{{ add_pic("gc1_bothcups.jpg", "caption") }}
+{{ add_pic("gc1_bothcups.jpg", "") }}
 
 The package said to stir until totally dissolved and I had worried that it would take a long time, but it dissolved on impact into this slightly tan cloud. I stirred it for just a few seconds and it incorporated just fine. Here's my tupperware chilling in the fridge right after this
 
 
-{{ add_pic("gc1_preset.jpg", "caption") }}
+{{ add_pic("gc1_preset.jpg", "Unset gelatin") }}
 
 
 On my first attempt, it didn't set right because I misread the instructions. I thought each sheet could set 1L, but that was off by an order of magnitude (I never claimed to read French). I corrected that error, and after a night in the fridge, the properly-set gelatin turned cloudy.
 
 
-{{ add_pic("gc1_postset.jpg", "caption") }}
+{{ add_pic("gc1_postset.jpg", "Set gelatin") }}
 
 The gelatin is super stiff after setting, and on measuring, I realized I used 4 sheets for around 300g of water. This is a good ratio for future gelatin — I hate squishy Jell-O.
 

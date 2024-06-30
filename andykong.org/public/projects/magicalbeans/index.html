@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- <title>
+    Andy Kong!
+</title> -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Andy Kong">
+    <meta name="title" content="Magical Beans">
+    <meta name="description" content="Growing beans with an enchanted water bottle">
+
+<title> Magical Beans | Andy Kong</title>
+
+<style>
+    .projectpage h1, .projectpage h2{
+        color: #E0B890;
+    }
+
+    .projectpage img{
+        max-width: 100%;
+        max-height: 50vh;
+        height: auto;
+        width: auto;
+    }
+</style>
+
+
+    <style type="text/css">
+        /* Atkinson Hyperlegible */
+        /* latin-ext
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          src: url("/static/atkhyp_latext.woff2") format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        } */
+        /* latin */
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          src: url("/static/atkhyp_lat.woff2") format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+
+        /* Ubuntu */
+        /* latin-ext
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          src: url("/static/ubuntu_latext.woff2") format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        } */
+        /* latin */
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          src: url("/static/ubuntu_lat.woff2") format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+    </style>
+
+    <!-- Bootstrap -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap.min.css">
+
+    <script src="/static/fontawesome.js" defer></script>
+    <!-- <script src="https://kit.fontawesome.com/c62dcd5933.js"></script> -->
+
+    <!-- Instant Page inlined - source is instant.page/5.1.0 -->
+    <script src="/static/instantpage-5.1.0.js" type="module" defer></script>
+
+
+
+
+    <style>
+        body {
+            background: #202222;
+            font-size: 1.2em;
+            font-family: 'Ubuntu', sans-serif;
+            color: #FAEADB;
+            overflow-x: hidden;
+
+            word-spacing: 0.03em;
+        }
+
+        .navlinks{
+            font-family: 'Atkinson Hyperlegible';
+            font-size: 1.2em;
+        }
+
+        h1, h2, h3, h4, h5, h6{
+            font-family: "Atkinson Hyperlegible";
+        }
+
+
+        a {
+            transition: color .2s linear;
+            color:#00B4CC;
+        }
+
+        a:hover {
+            color:#00DFFC;
+            text-decoration: none;
+        }
+
+        .navbar-custom {
+            font-size: 22px;
+            background-color: #202222 !important;
+        }
+
+        .navbar-custom .navbar-brand{
+            font-size: 30px;
+            color: #00dffc !important;
+        }
+
+        .navbar-custom .navitem{
+            color:#00dffc !important;
+        }
+
+        .navitem:hover{
+            color:#00b4cc !important;
+            text-decoration: none;
+        }
+
+        .hidden{
+          display: none;
+        }
+
+        .navbar-toggler-icon {
+          border: none;
+          outline: none;
+        }
+
+        .caption{
+            font-size:12px;
+            text-align: center;
+            font-style: italic;
+            margin-bottom: .2em;
+            margin-top: 1em;
+        }
+
+
+        hr{
+            background-color:white !important;
+        }
+
+        .video-container {
+          position: relative;
+          width: 100%;
+          padding-bottom: 56.25%;
+        }
+
+        .youtubevideo {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 0;
+        }
+
+        code {
+          font-family: Consolas,"courier new";
+          color: #110000;
+          background-color: #FAEADB;
+          padding: 2px;
+          font-size: 105%;
+        }
+
+
+        .addpic {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+            border-radius: 10px;
+
+            transition: transform .2s ease-in-out;
+            transform: scale(0.99);
+        }
+
+        .addpic:hover {
+            transform: scale(1.01);
+        }
+</style>
+
+    <link rel="icon" type="image/png" href=" /static/aklogo.png " />
+
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YNX5JQZWHT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YNX5JQZWHT');
+</script>
+<script data-goatcounter="https://kong.goatcounter.com/count"
+                    async src="//gc.zgo.at/count.js"></script>
+    
+</head>
+
+
+
+<body style="">
+
+
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
+      <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
+          </span>
+        </i>
+    </button>
+
+    <div class="collapse navbar-collapse " id="navbarSupportedContent" style="margin-left:25px;margin-top:10px">
+        <ul class="navbar-nav ml-auto navlinks">
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/static/AndyKongCV.pdf ">CV/Resume</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://github.com/kongmunist" target="_blank" title="Github">GitHub</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://twitter.com/oldestasian" target="_blank" title="Twitter">Twitter</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="mailto:andykongresearch@gmail.com" target="_blank" title="Email">Email</a>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/blog/">[Blog]</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+
+<!--    <div class="row justify-content-center">-->
+<!--<div class="row overflow-hidden" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">-->
+<div class="row overflow-hidden" style = "height:100vh; width: 100vw; padding: 0px 30px 0px 30px;">
+        <div class="col-lg-2"></div>
+        <div class="col-12 col-lg-8 projectpage" style="max-width:1000px; margin-bottom:4em;">
+            <h1 style="text-center; margin-bottom: 5px">Magical Beans</h1>
+                <i><p style="margin-bottom: 5px; margin-top: 0px">Growing beans with an enchanted water bottle</p></i>
+                <p style="margin-bottom: 0px; margin-top: 0px">Timespan: Winter 2023</p>
+                <p style="margin-bottom: 5px; margin-top: 0px">Published: 2024-06-28</p>
+
+                <hr>
+            <html><body><div class="toc"><h2 id="table-of-contents" style="margin:0px;">Table of Contents</h2>1. <a href="#enchanted-water-bottle">Enchanted water bottle</a><br/>2. <a href="#the-experiment">The Experiment</a><br/>   2.1 <a href="#growing-setup">Growing setup</a><br/>   2.2 <a href="#daily-procedure">Daily procedure</a><br/>3. <a href="#results">Results</a><br/>   3.1 <a href="#visual">Visual</a><br/>   3.2 <a href="#weight">Weight </a><br/>   3.3 <a href="#taste">Taste</a><br/>4. <a href="#limitations">Limitations</a><br/>5. <a href="#conclusion">Conclusion</a><br/></div>
+<hr/>
+<p>I am a big fan of pseudoscience. </p>
+<p>One reason is I believe most novel scientific concepts were first dismissed as being ridiculous "psuedoscience". Imagine being the guy who first thought little invisible bacteria were making us sick while everyone else was busy believing in the four humours — laughable!</p>
+<h1 id="enchanted-water-bottle">Enchanted water bottle</h1>
+<p>Anyway, in 2021 I bought a water bottle which claimed to be enchanted — the bottle is made of "Programmed Silicon" so any water stored in it will be restored to a more natural state which is good-for-you.</p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/magicalbeans/flaskasell.png"/></p>
+<p>I was intrigued by the idea, but the thing that really got me was a sentence on the website — the company was founded by a former strawberry farmer who said strawberries watered with the enchanted water were "18.1% more plentiful".</p>
+<p class="caption"> I am a sucker for the quantitative </p>
+<p><img loading="lazy" alt="I am a sucker for the quantitative" class="addpic" src="/static/magicalbeans/strawberriesbigger.png"/></p>
+<p>That is testable! Woo/hippie products usually stick with qualitative effects like "feeling better" or "being healthier", and only show numbers when reporting on surveys e.g. "80% of people said they slept better". They stay out of normal science because usually they can't show results. But here was a company claiming a hypothesis and experiment — I was sold, and immediately bought the bottle.</p>
+<p class="caption"> The bottle </p>
+<p><img loading="lazy" alt="The bottle" class="addpic" src="/static/magicalbeans/bottle2.png"/></p>
+<p>When the bottle came, I really enjoyed it. The cap comes off quickly with just a tug, and the cap + sleeve placement makes it difficult to smash into pieces. The fact that it's all glass and cork means there's no possibility of chemicals leaching into the water. The cork was even fully-cork, not the particle+glue stuff that gets shilled as cork. The bottle also makes a pop when uncapped, the tone of which changes with water level. How cute! I even made some <a href="https://www.tiktok.com/@kongmunist/video/7277684045201509664">Tiktoks</a> with it. The only downside is the weight — when full, the bottle weighs 1.5 kg and holds only 750 mL of water.</p>
+<p>Anyway, I don't want to be accused of promoting questionable hippie water bottles so I won't tell you the brand, but it was actually good. And because it was so good, I forgot all about testing it until 3 years later, in the winter of 2023.</p>
+<h1 id="the-experiment">The Experiment</h1>
+<p>In college, I did a plant experiment where I had to grow three batches of arugula. This takes usually takes 3-6 months, but it only took me 1 to kill them off. With respect to my skill level, this time around I decided to try growing bean sprouts.</p>
+<p class="caption"> Mung bean sprouts </p>
+<p><img loading="lazy" alt="Mung bean sprouts" class="addpic" src="/static/magicalbeans/beansprouts.jpg"/></p>
+<p>My Asian readers probably have some domestic experience with this, but for my worldly audience, here's the dig: if you keep green/mung beans wet for 3 days, they become these big watery sprouts which you can cook and eat. Some people like the flavor, I personally like how fast they grow.</p>
+<p class="caption"> Excuse the German </p>
+<p><img loading="lazy" alt="Excuse the German" class="addpic" src="/static/magicalbeans/mungbeans.jpg"/></p>
+<h2 id="growing-setup">Growing setup</h2>
+<p>I bought some mung beans in the store and soaked the whole bag in regular tap water for a day.  </p>
+<p class="caption"> Beans swelled so much they split the bag they came in! </p>
+<p><img loading="lazy" alt="Beans swelled so much they split the bag they came in!" class="addpic" src="/static/magicalbeans/bagsplit.jpg"/></p>
+<p>I took two yogurt containers and put a paper towel at the bottom, then I measured out 50 g of the beans into each bin. One got marked near the rim to denote it as the experimental group, and the other didn't.</p>
+<p class="caption"> Marked vs. unmarked bin of beans </p>
+<p><img loading="lazy" alt="Marked vs. unmarked bin of beans" class="addpic" src="/static/magicalbeans/foiledcontainers.jpg"/></p>
+<h2 id="daily-procedure">Daily procedure</h2>
+<p>Every day I filled the marked bin with enchanted water that had been sitting in the bottle for at least 5 minutes (manufacturer's instructions) and then drained it, doing the same with the unmarked bin except with fresh tap water. Then both bins went back above the fridge. Because the mung beans get bitter in the light, I wrapped both bins with foil and also inserted a cover of foil after each moistening.</p>
+<p class="caption"> Magic water for the marked beans, tap water for the unmarked beans, foil to keep them in the dark about it </p>
+<p><img loading="lazy" alt="Magic water for the marked beans, tap water for the unmarked beans, foil to keep them in the dark about it" class="addpic" src="/static/magicalbeans/twowaters.jpg"/></p>
+<h1 id="results">Results</h1>
+<h2 id="visual">Visual</h2>
+<p>After four days, I took out both bean sprout bundles. There was a clear difference between the two visually. The magic beans are clearly greener, and a bit longer too.</p>
+<p class="caption"> The two bean conditions, left is tap water and right is magic water </p>
+<p><img loading="lazy" alt="The two bean conditions, left is tap water and right is magic water" class="addpic" src="/static/magicalbeans/diff.jpg"/></p>
+<h2 id="weight">Weight</h2>
+<p>The tap water beans weighted 217 g, while the magic beans weighed 224 g. Adjusting by the initial weight of 50 g, this represents a growth factor of 3.34x and 3.48x respectively, too close to declare any difference by condition.</p>
+<p class="caption"> Nearly the same weight. Foil is tare'd out, and the paper towels are sequential ones from the same roll. </p>
+<p><img loading="lazy" alt="Nearly the same weight. Foil is tare'd out, and the paper towels are sequential ones from the same roll." class="addpic" src="/static/magicalbeans/beanweight.jpg"/></p>
+<h2 id="taste">Taste</h2>
+<p>Since the sprouts were food, I had to eat them. The tap water beans definitely tasted sweeter, or at least less bitter than the magic water beans. While they shouldn't've been exposed to more light, the bitterness might come from the fact that the magic beans did get more light after they grew tall enough to escape their paper towels. Or maybe the magic water makes them bitter. Who knows?</p>
+<p class="caption"> Mmmm... sprouts </p>
+<p><img loading="lazy" alt="Mmmm... sprouts" class="addpic" src="/static/magicalbeans/andyeating.jpg"/></p>
+<h1 id="limitations">Limitations</h1>
+<p>Some things were not controlled, and in hindsight, should've been. In order of perceived importance:</p>
+<ul>
+<li>
+<p>water was added each day until saturation, and the drained water was not controlled/measured</p>
+</li>
+<li>
+<p>containers were not pitch-black, and light kinda depended on sprout height</p>
+</li>
+<li>
+<p>magic water was left out for 5 minutes after coming out the tap, while the tap water went straight in the bin</p>
+</li>
+<li>
+<p>sprouts were grown as a group, so I can't do statistics across members of each population</p>
+</li>
+<li>
+<p>bean groups were equalized by weight, not by count</p>
+</li>
+<li>
+<p>Sharpie marking might have influenced growth rate of the experimental condition</p>
+</li>
+</ul>
+<p>I know, I know. And I will probably run this experiment again more rigorously in the future and solve all the above limitations. If you think I'm missing any conditions, please reach out on Twitter or email to let me know.</p>
+<h1 id="conclusion">Conclusion</h1>
+<p>So we didn't prove our initial hypothesis about plentifulness, but there was clearly a visual difference. I think this is enough evidence to investigate further!</p></body></html>
+        </div>
+        <div class="col-lg-2"></div>
+        <p style="line-height:300%;">&nbsp;</p>
+</div>
+
+
+
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
+<script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
+<script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

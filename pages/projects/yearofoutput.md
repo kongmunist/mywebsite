@@ -177,3 +177,4 @@ For accountability, I will maintain the list of outputs below, though this proje
 {{ add_pic("bigheadcandle/demoldingprocess.jpg", "") }}
 - June 24: Some graphs about this [website's anniversary!](https://x.com/oldestasian/status/1805465933588127855), courtesy of Claude
 - June 25: Posted my [Edge Esmerelda experience](../../blog/eee)
+- June 27-28: Updated the tweets of blog posts. 
