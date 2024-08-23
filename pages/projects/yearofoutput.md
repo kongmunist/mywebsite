@@ -169,12 +169,20 @@ For accountability, I will maintain the list of outputs below, though this proje
 - Apr 21: AVP Hackathon 2.0, day 2. Posted Quick Immersion [video](https://twitter.com/oldestasian/status/1782201841067123068) and [blog post](../../blog/quickimmersion).
 - Apr 22: [Blog post](../../blog/attinyfuses) on how to set ATtiny fuses
 - Apr 27: [Blog post](../../blog/hologramblackout) on different ways to black-out holograms
+## May
 - May 7: [First blog post](../../blog/pqsda1) about QS data analysis
 - May 8: [Updated high current power supply post](../../blog/highcurrentsource) with front panel pinout
+## June
 - June 7-14: Attending Edge Esmerelda
 - June 12: [Blog post](../../blog/monochrome/) about using one Chrome window at a time
 - June 23: [Big head candle project writeup](../project/bigheadcandle)
 {{ add_pic("bigheadcandle/demoldingprocess.jpg", "") }}
 - June 24: Some graphs about this [website's anniversary!](https://x.com/oldestasian/status/1805465933588127855), courtesy of Claude
 - June 25: Posted my [Edge Esmerelda experience](../../blog/eee)
-- June 27-28: Updated the tweets of blog posts. 
+- June 27-28: Updated the tweets of blog posts.
+## July
+- July 25 - Fly to SF for Fidget Camp
+- July 27 - Aug 5: Fidget Camp in SF! Great event hosted by some amazing creatives and technologists
+    - Aug 4-5: [Exhibition]()!! 
+- Aug 7-11: Brain Hack in Mill Valley. Worked with cool people on biosensing
+- Aug 12: Back to Boston
