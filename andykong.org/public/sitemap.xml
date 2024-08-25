@@ -14,6 +14,47 @@
 
   
     <url>
+    <loc>https://andykong.org/blog/eetestr1801k</loc>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/eetestr1801k/0.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/eetestr1801k/1.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/eetestr1801k/2.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/eetestr1801k/3.jpeg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/eetestr1801k/4.jpeg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/eetestr1801k/5.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+    <url>
     <loc>https://andykong.org/projects/magicalbeans</loc>
       
         <image:image>

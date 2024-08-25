@@ -18,7 +18,7 @@ Hey Max! Here's some calculators to make our lives easier.
 		<tr>
 			<td>Wavelength 1:</td>
 			<td><input id="wavelength1" type="number" step="0.01" value="780.241"> nm</td>
-		</tr>
+		</tr>https://www.amazon.com/Acxico-700mA-Module-Converter-Supply/dp/B093GW6SZ1?source=ps-sl-shoppingads-lpcontext&smid=A1RV7R81U3FOKU
 		<!-- <tr>
 			<td>Wavelength 2:</td>
 			<td><input id="wavelength2" type="number" step="0.01" value=""> nm</td>

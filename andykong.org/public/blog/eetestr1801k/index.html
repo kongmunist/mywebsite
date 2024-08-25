@@ -8,6 +8,72 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    
+        <meta name="author" content="Andy Kong">
+        <meta name="title" content="Solar energy harvesting">
+        <meta name="description" content="Testing out the R1801K">
+        <meta name="keywords" content=" electronics,  solar,  energyharvesting, ">
+
+        <title>
+            Solar energy harvesting | Andy Kong
+        </title>
+    
+
+    <style>
+        body {
+            counter-reset: h1counter h2counter;
+        }
+
+        h1:not(.title) {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px groove #DBAD80;
+
+            counter-reset: h2counter;
+        }
+
+        h1:not(.title)::before {
+            counter-increment: h1counter;
+            content: counter(h1counter) ". ";
+        }
+
+        .blogpage > h2::before {
+            counter-increment: h2counter;
+            content: counter(h1counter) "." counter(h2counter) "  ";
+            /*
+            text-decoration: none;
+            display: inline-block;
+            */
+        }
+
+
+        .blogpage img{
+            max-width: 100%;
+            max-height: 50vh;
+            height: auto;
+            width: auto;
+            display: block !important;
+            margin: 0 auto !important;
+        }
+
+        .blogpage h1, .blogpage h2{
+            color: #E0B890;
+        }
+
+        .toc {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+
+    </style>
+
+
+
 
     <style type="text/css">
         /* Atkinson Hyperlegible */
@@ -228,77 +294,67 @@
 </nav>
 
 
-<div class="row justify-content-center" style = "height:100vh; width: 100vw;padding-left:25px; padding-right:0px">
-    <div class="col-xl-3 col-lg-4 col-md-11 col-11" style="padding-left:2%; padding-right:2%;">
+    <div class="row justify-content-center" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">
+<!-- padding-left:20px; padding-right:20px -->
+            <div class="col-md-8 col-11 p-0" style="">
+                <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
 
-        <a href="/"> <img class="media-object mx-auto d-block rounded-circle " style="margin-bottom:0px; max-height:20vh;" src="/static/merock_square.jpg"/></a>
-        <h1 class="text-center" style="font-size: 2em; margin-top:0.5em;">Hi, I'm Andy!</h1>
-        <p class="text-center"  style="font-size: 1.5em; margin-bottom:0px;"></p>
+                
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-        <div class="links text-center" style="margin:5px; font-size:2.5em;">
-            <a href="https://critiquefood.blogspot.com/" target="_blank" title="Food For Thought"><i class="fas fa-ice-cream"></i></a>&nbsp
-            <!--<a href="https://github.com/kongmunist" target="_blank" title="Github"><i class="fab fa-github-square fa-2x"></i></a>&nbsp-->
-            <!--<a href="mailto:andyking99@gmail.com" target="_blank" title="Email"><i class="far fa-paper-plane fa-2x"></i></a>&nbsp-->
-            <a href="https://www.youtube.com/channel/UC8hEr0FkB5i-gQC4b7b5fvg" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>&nbsp
-            <a href="https://kongmunist.medium.com/" target="_blank" title="Medium"><i class="fab fa-medium"></i></a>&nbsp
-            <a href="/rss.xml" title="RSS"><img src="/static/rss.svg" style = "height:1em;"></a>&nbsp
-        </div>
-<!--        <img style="background:white; padding:5px;"width="100%" src="http://ghchart.rshah.org/409ba5/kongmunist" alt="2016rshah's Github chart" />-->
-    </div>
+        
 
 
+<div class="blogpage overflow-hidden" style="margin-bottom:4em;">
+    <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Solar energy harvesting</h1>
+            <p style="font-size:0.8em;"> Published August 25, 2024</p>
+<hr>
+            <html><body><p>Hello!</p>
+<p>I want to build devices which can charge themselves using energy sources present in the environment. Currently I'm trying out solar.</p>
+<h1 id="background-on-solar">Background on solar</h1>
+<p>Even though a solar cell generates its max voltage in the presence of almost any light, they are high-resistance sources i.e. you can't just connect them directly into your battery. For maximum power, you need to pull just enough current to reduce the solar cell's output to ~80% of its peak voltage, as shown in the chart below. Chips that intelligently track this peak call it MPPT (maximum power point tracking). </p>
+<p class="caption"> [source](https://www.atonometrics.com/applications/what-is-a-pv-module-iv-curve/) </p>
+<p><img loading="lazy" alt="source" class="addpic" src="/static/eetestr1801k/0.png"/></p>
+<p>For my device, the TI BQ25570 is nearly perfect — it offers MPPT and starts from only 600 mV. However, it requires a certain amount of power to start up, around 15 uW. Since I'm expecting almost no light on my device, I wanted to find a chip which starts from even less power. This is where the R1801K comes in — this is a chip made by Nisshinbo that claims to begin harvesting at only 1 uW!</p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/eetestr1801k/1.png"/></p>
+<p>The only catch is that it requires 4 V, but I think the voltage will be easier to get than the power. So I bought the chip, and my friend Injoo made a little breakout board for me which pulls charge from solar cell into a storage capacitor. </p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/eetestr1801k/2.jpg"/></p>
+<p>To simulate a constrained power source, I'm passing 4 V across a 1 MΩ resistor, resulting in an output power of 16 uW. Then I connected my board.</p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/eetestr1801k/3.jpeg"/></p>
+<p>Initially, the storage capacitor filled up steadily, but at some point my capacitor voltage was just holding still. To compensate, I increased my power supply voltage and the charging started again. Again, after a bit the charging would stop. </p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/eetestr1801k/4.jpeg"/></p>
+<p>I was powering the device on 4.8V, and the output voltage could go no further than 1.5V. I realized at this point that my capacitor was probably leaking, and checked out the datasheet. Lo and behold, a leakage current of 12.6 uA! Assuming this happens at the rated voltage (6.3 V), then the capacitor's resistance is 500kΩ. This meant the R1801K was desperately pumping in charge which was being leaked out at the same rate by the capacitor, and at 1.5V, that rate was 3uA. </p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/eetestr1801k/5.png"/></p>
+<p>Because this is pretty close to the max current that the R1801K has access to (4.8V/1MΩ = 4.8uA), I'm pretty happy with the performance of this chip even though it couldn't overcome the leakiness of my capacitor. I now also have to think about alternative energy storage methods like SMD solid-state batteries, which are a lot less straightforward to buy. But hey, limitation breeds creativity. </p>
+<h1 id="big-picture">Big picture</h1>
+<p>I'm currently working on an energy harvesting device for my Hackaday talk coming up in November, and in the process I need to evaluate a bunch of the elements of an energy harvesting device (solar/RF/thermal, harvesting chips, storage methods, low-powered microcontrollers, communication methods). I don't think it'll be worth it to try out everything from every category, but I still love testing out chips just to make sure they do what they say on the tin. Anyway, cya later!</p></body></html>
 
-    <div class="col-xl-7 col-lg-7 col-md-11 col-11 p-0" style="">
-        <!-- <div class="container-fluid img-rounded shadow-lg px-4 d-flex " style="padding-top:20px;padding-bottom:20px;  border-radius:20px;text-overflow:ellipsis;width:100%;"> -->
 
-            
-<title>
-    Posts tagged 'solar' | Andy Kong
-</title>
-    <div>
-    <h2>List of stuff tagged <em>solar</em></h2>
-        <hr>
+
     
-        <ul>
+<!--        <hr>-->
+        <p style="line-height:250%;">
+        <a class="btn btn-info" href="/tagged/electronics/">electronics</a>
 
-    <li>
-        <a href="/blog/eetestr1801k/">Solar energy harvesting</a>
+        
+            <a class="btn btn-info" href="/tagged/solar/">solar</a>
+        
+            <a class="btn btn-info" href="/tagged/energyharvesting/">energyharvesting</a>
+        
+        </p> 
     
-        | Tagged:
-        
-            <a href="/tagged/electronics/">electronics</a>
-        
-            <a href="/tagged/solar/">solar</a>
-        
-            <a href="/tagged/energyharvesting/">energyharvesting</a>
-        
-    
-    </li>
-
-    <li>
-        <a href="/blog/testingbpw34/">Testing out the BPW34</a>
-    
-        | Tagged:
-        
-            <a href="/tagged/electronics/">electronics</a>
-        
-            <a href="/tagged/solar/">solar</a>
-        
-            <a href="/tagged/micropower/">micropower</a>
-        
-    
-    </li>
-
-</div>
-    
-    </div>
-
-            <!-- </div> -->
-    </div>
-    <div class="col-xl-2 col-lg-1 col-0"></div>
 </div>
 
-    
+
+
+
+                    </div>
+                    <br>
+        <!-- </div> -->
+</div>
+
+
 
 
 <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
