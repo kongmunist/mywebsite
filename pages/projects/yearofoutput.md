@@ -181,8 +181,9 @@ For accountability, I will maintain the list of outputs below, though this proje
 - June 25: Posted my [Edge Esmerelda experience](../../blog/eee)
 - June 27-28: Updated the tweets of blog posts.
 ## July
-- July 25 - Fly to SF for Fidget Camp
+- July 25 - Fly to SF for [Fidget Camp](https://fidgetcamp.com/)
 - July 27 - Aug 5: Fidget Camp in SF! Great event hosted by some amazing creatives and technologists
-    - Aug 4-5: [Exhibition]()!! 
-- Aug 7-11: Brain Hack in Mill Valley. Worked with cool people on biosensing
-- Aug 12: Back to Boston
+    - Aug 4-5: [Exhibition](https://www.tiktok.com/@empowa/video/7403484937971666219)!! 
+- Aug 7-11: Brain Hack in Mill Valley. Worked with cool people on a new way to do EEG
+- Aug 12: Back to Boston!
+- Aug 26: [First pull request](https://github.com/linien-org/linien/pull/428) to an open source project 

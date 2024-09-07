@@ -12,7 +12,7 @@ Soon, I hope to make this a reality. Today I received a few boxes in the mail, c
 
 We rely so heavily on our eyes for almost everything. Balance, trajectory planning, social interaction, building cool toys, playing video games. The list goes on and on. And soon, I will be able to have more than one pair. Say I wanted to up the contrast of the world, or overlay line detection over my view? Done in a few lines of code. What about the Minecraft nausea effect applied in real time, or even better, Deep Dreaming every frame I see? Easy enough given the level of control over the data that's available. For the first time, I will have granular control over how I see things. It will be glorious.
 
-## If you find this project interesting and/or think that there's some neat way to edit the visual field that I've missed, don't hesitate to email me to let me know what your idea is, and I'll try to implement it (andyking99@gmail.com).
+## If you find this project interesting and/or think that there's some neat way to edit the visual field that I've missed, don't hesitate to email me to let me know what your idea is, and I'll try to implement it (andykongresearch@gmail.com).
 <br><br>
 
 <ul>Filters/new eyes I'm trying to implement
