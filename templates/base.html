@@ -175,49 +175,6 @@
 </style>
 
 
-<style>
-    .nav-item:hover .tooltip {
-        display: block;
-    }
-
-    .tooltip {
-        position: absolute;
-        white-space: nowrap;
-        display: none;
-        background: #ffffcc;
-        border: 1px solid black;
-        padding: 5px;
-        z-index: 1000;
-        color: black;
-    }
-</style>
-    
-<script>
-    // wait for dom
-    document.addEventListener("DOMContentLoaded", function() {
-        // var tooltip = document.querySelector(".tooltip");
-        function showTooltip(e) {
-            if (e.target && e.target.title){
-                console.log("showing tooltip");
-                console.log(e.target);
-                console.log(e.target.title);
-                if (e.target.title){
-                    e.target.title
-                }
-            }
-        }
-
-        var tooltips = document.querySelectorAll('.nav-item');
-        for(var i = 0; i < tooltips.length; i++) {
-            tooltips[i].addEventListener('mousemove', showTooltip);
-        }
-
-        var tooltip = document.createElement("div");
-        tooltip.classList.add("tooltip");
-        document.body.appendChild(tooltip);
-    });
-</script>
-
     <link rel="icon" type="image/png" href=" {{ url_for("static",filename="aklogo.png") }} " />
 
         <!-- Google tag (gtag.js) -->
@@ -265,10 +222,10 @@
 
 
             <li class="nav-item">
-                <a class="nav-link navitem" href="/log/" title="Quick updates and thoughts" data-toggle="tooltip" data-placement="bottom" data-trigger="hover">[Log]</a>
+                <a class="nav-link navitem" href="/log/" >[Log]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" title="Longer form articles" data-toggle="tooltip" data-placement="bottom" data-trigger="hover">[Blog]</a>
+                <a class="nav-link navitem" href="/blog/" >[Blog]</a>
             </li>
         </ul>
     </div>
