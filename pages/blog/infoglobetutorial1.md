@@ -1,6 +1,6 @@
 title: Infoglobe Tutorial Pt 1 — Hardware Prototyping
 date: 2022-10-01
-label: blog
+label: log
 tags: [infoglobe, hardware, electronics]
 snippet: Hacking a new brain into the Infoglobe
 

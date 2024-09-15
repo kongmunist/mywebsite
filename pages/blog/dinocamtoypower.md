@@ -1,6 +1,6 @@
 title: "Power profiling a thermal printer camera"
 date: 2024-04-07
-label: blog
+label: log
 tags: [electronics, powerprofile]
 snippet: "Exposing the internals of a dinosaur-shaped children's camera I got in Shenzhen"
 

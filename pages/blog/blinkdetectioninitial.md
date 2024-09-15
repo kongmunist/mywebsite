@@ -1,6 +1,6 @@
 title: Blink Detection Using Infrared Reflective Sensors
 date: 2021-02-12
-label: blog
+label: log
 tags: [infrared, Arduino, sensing, blinkdetection]
 snippet: Experiments in focus tracking.
 

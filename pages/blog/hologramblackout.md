@@ -1,6 +1,6 @@
 title: "Different ways to black-out holograms"
 date: 2024-04-28
-label: blog
+label: log
 tags: [holography, optics]
 snippet: "Paint vs. tape"
 

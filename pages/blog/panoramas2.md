@@ -1,6 +1,6 @@
 title: Creating panorama images manually, pt 2!
 date: 2020-11-18
-label: blog
+label: log
 tags: [CV, OpenCV]
 snippet: Better stitching by doing something really easy I just forgot to consider
 

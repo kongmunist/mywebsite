@@ -1,6 +1,6 @@
 title: Sugar-Metering My First Watermelon
 date: 2021-07-27
-label: blog
+label: log
 tags: [refractometer, sugarinfruit]
 snippet: "Tastes like Capri-sun! Bonus: Lychee and Longan"
 

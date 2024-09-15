@@ -1,6 +1,6 @@
 title: Setting up Electric Tables v0.2
 date: 2022-04-22
-label: blog
+label: log
 tags: [electrictables, notes, logging, javascript, web]
 snippet: Shoutout to Tom Critchlow
 

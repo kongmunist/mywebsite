@@ -1,6 +1,6 @@
 title: Trying out various peak detection techniques for the SSVEP
 date: 2021-01-18
-label: blog
+label: log
 tags: [ssvep, eeg, bci, dsp]
 snippet: Garbage in, garbage out. 
 

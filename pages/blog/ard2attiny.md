@@ -1,6 +1,6 @@
 title: "Programming an ATtiny85V using an Arduino"
 date: 2024-02-02
-label: blog
+label: log
 tags: [electronics, arduino]
 snippet: "Blink & SoftwareSerial & ADC, oh my!"
 

@@ -1,6 +1,6 @@
 title: Real Time Fourier Transform Using Shaped Aperture
 date: 2021-09-20
-label: blog
+label: log
 tags: [light, fourier, optics]
 snippet: Light speed!
 

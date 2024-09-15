@@ -1,6 +1,6 @@
 title: 5050 LED Strip Teardown
 date: 2021-02-20
-label: blog
+label: log
 tags: [LEDs, teardown, electronics]
 snippet: Repurposing an LED light strip controller and power supply
 

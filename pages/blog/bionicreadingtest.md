@@ -1,6 +1,6 @@
 title: "Bionic reading doesn't help you read faster"
 date: 2024-01-11
-label: blog
+label: log
 tags: [reading, personalinformatics, thoughts]
 snippet: "An N=1 experiment"
 

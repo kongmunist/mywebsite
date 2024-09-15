@@ -1,6 +1,6 @@
 title: Making clear gelatin from porcine sheets
 date: 2022-10-04
-label: blog
+label: log
 tags: [gelatin, lasers]
 snippet: From Jello you came, and to Jello you shall return
 

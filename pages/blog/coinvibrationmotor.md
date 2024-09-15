@@ -1,6 +1,6 @@
 title: Coin vibration motors arrived!
 date: 2020-12-14
-label: blog
+label: log
 tags: [hardware, motor, haptic]
 snippet: "Now I can do \"haptic feedback\""
 

@@ -1,6 +1,6 @@
 title: Myo3 EMG sensor initial tests
 date: 2020-11-26
-label: blog
+label: log
 tags: [myo3, projectlog, PCB]
 snippet: It's like they always say, the hard part's the software
 

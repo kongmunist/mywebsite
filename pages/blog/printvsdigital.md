@@ -1,6 +1,6 @@
 title: "Reading speed comparison on paper vs screens"
 date: 2024-01-09
-label: blog
+label: log
 tags: [reading, personalinformatics, thoughts]
 snippet: "Also reflections on the Percy Jackson series"
 

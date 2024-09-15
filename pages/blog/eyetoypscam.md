@@ -1,6 +1,6 @@
 title: Playstation Eye does not work for MacOS!
 date: 2020-11-15
-label: blog
+label: log
 tags: [problems, hardware]
 snippet: Mac doesn't play nice with weird USB webcams :(
 

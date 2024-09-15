@@ -1,6 +1,6 @@
 title: Body Channel Communication Tutorial Pt. 3
 date: 2021-05-15
-label: blog
+label: log
 tags: [hci, bcc, microcontroller, biosig]
 snippet: Reinventing the radio and using touch as the antenna
 

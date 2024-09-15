@@ -1,6 +1,6 @@
 title: Learning AppleScript
 date: 2022-01-05
-label: blog
+label: log
 tags: [applescript, scripting, quantifiedself]
 snippet: Several examples of AppleScripts for Spotify, current app, etc.
 

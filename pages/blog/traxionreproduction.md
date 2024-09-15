@@ -1,6 +1,6 @@
 title: Recreating the Traxion psychophysics effect
 date: 2021-06-02
-label: blog
+label: log
 tags: [electronics, haptics]
 snippet: Only 8 years late!
 

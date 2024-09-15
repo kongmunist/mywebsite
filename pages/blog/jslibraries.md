@@ -1,6 +1,6 @@
 title: Why are Javascript libraries so annoying
 date: 2020-11-28
-label: blog
+label: log
 tags: [webdev, javascript]
 snippet: What do you mean everything is a global???
 

@@ -1,6 +1,6 @@
 title: "Paper Delivery: Sinusoidal Skin Displacements"
 date: 2021-06-22
-label: blog
+label: log
 tags: [mechanoreceptors, litsearch]
 snippet: Retro papers you probably missed, but shouldn't have!
 

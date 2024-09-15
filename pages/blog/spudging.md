@@ -1,6 +1,6 @@
 title: Spudging PCB Stencils for Beginners
 date: 2020-09-14
-label: blog
+label: log
 tags: [electronics, PCB, tutorial]
 snippet: How to lay out 50 components on a board really fast
 

@@ -1,6 +1,6 @@
 title: Body Channel Communication Tutorial Pt. 1
 date: 2021-04-17
-label: blog
+label: log
 tags: [hci, microcontroller, bcc]
 snippet: Harnessing the body's conductivity as a signal path
 

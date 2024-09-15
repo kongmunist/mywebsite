@@ -313,6 +313,20 @@ def blog(title):
         return mainblog()
     return render_template('blog.html', page=page, pages=blogPages)
 
+@app.route("/log/")
+def mainlog():
+    print("main log page")
+    logPages = [p for p in pages if "log" == p.meta.get('label')]
+    print(logPages)
+    logPages = [(x.meta.get('date'), x) for x in logPages if 'wip' not in x.meta.get('tags')]
+
+    logPages.sort(reverse=True, key=lambda x: x[0])
+    logPages = [x[1] for x in logPages] 
+
+    for page in logPages:
+        page.meta['len'] = len(page.body.split(" "))
+    return render_template('logmain.html', pages=logPages)
+
 
 @app.route('/tagged/')
 def maintag():

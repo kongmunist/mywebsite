@@ -1,6 +1,6 @@
 title: "Fitbit timestamps cannot be trusted"
 date: 2024-01-15
-label: blog
+label: log
 tags: [personalinformatics, quantifiedself, data, complaint]
 snippet: "Please recommend me alternatives"
 

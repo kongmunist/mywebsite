@@ -1,6 +1,6 @@
 title: Gyroscope Gesture Recognition
 date: 2021-02-03
-label: blog
+label: log
 tags: [gyroscope, gesturerecognition, smartphone, wip]
 snippet: Simple thresholding and duplicate removal for recogizing common device gestures.
 

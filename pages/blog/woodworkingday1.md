@@ -1,6 +1,6 @@
 title: Intro to Intro to Woodworking
 date: 2021-03-24
-label: blog
+label: log
 tags: [woodworking, cmu]
 snippet: There's always money in the banana stand
 

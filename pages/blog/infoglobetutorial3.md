@@ -1,6 +1,6 @@
 title: Infoglobe Tutorial Pt. 3 — Software
 date: 2023-04-09
-label: blog
+label: log
 tags: [infoglobe, software, gist, tutorial]
 snippet: Adding bits to our atoms
 

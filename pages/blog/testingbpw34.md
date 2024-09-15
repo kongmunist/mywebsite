@@ -1,6 +1,6 @@
 title: "Testing out the BPW34"
 date: 2024-03-04
-label: blog
+label: log
 tags: [electronics, solar, micropower]
 snippet: "Tiny experiments with a tiny solar cell"
 

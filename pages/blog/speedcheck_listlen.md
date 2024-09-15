@@ -1,6 +1,6 @@
 title: Speed Check — Generating a list of a range of a len
 date: 2020-11-25
-label: blog
+label: log
 tags: [speedcheck, matplotlib]
 snippet: Why does matplotlib set_data not take an iterable :(
 

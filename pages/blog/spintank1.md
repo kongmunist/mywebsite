@@ -1,6 +1,6 @@
 title: Spin Tank Proof-of-Concept Test
 date: 2019-08-20
-label: blog
+label: log
 tags: [projectlog, spintank]
 snippet: A new configuration for some old kinds of armor
 

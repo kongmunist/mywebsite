@@ -1,6 +1,6 @@
 title: Speed checking Python built-in functions
 date: 2020-05-25
-label: blog
+label: log
 tags: [speedcheck]
 snippet: Calling str, type, etc. is free... right?
 

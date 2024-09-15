@@ -1,6 +1,6 @@
 title: Oversampling vs. Averaging for Noise Reduction
 date: 2021-01-24
-label: blog
+label: log
 tags: [dsp, eeg]
 snippet: "Spoiler: always oversample."
 

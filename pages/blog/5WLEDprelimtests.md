@@ -1,6 +1,6 @@
 title: Preliminary 5W LED Tests
 date: 2021-01-06
-label: blog
+label: log
 tags: [projector, projectlog, LED]
 snippet: Projecting 5W of light onto a wall — DIY Projector
 

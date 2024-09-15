@@ -1,6 +1,6 @@
 title: "Replacing Timing.app"
 date: 2022-01-09
-label: blog
+label: log
 tags: [quantifiedself, applescript, python]
 snippet: Doing self-logging 
 

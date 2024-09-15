@@ -1,6 +1,6 @@
 title: "How sleep deprivation affects my cognition"
 date: 2024-01-10
-label: blog
+label: log
 tags: [personalinformatics, quantifiedself, data]
 snippet: "Correlating my Stroop with sleep data"
 

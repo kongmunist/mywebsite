@@ -1,6 +1,6 @@
 title: "Teensy DAQ: ADC Oversampling on the Teensy 4.0 microcontroller"
 date: 2020-11-27
-label: blog
+label: log
 tags: [hardware, microcontrollers, Teensy, ADC]
 snippet: "300 kSPS to 1 kSPS faster than you can say \"free bits\""
 

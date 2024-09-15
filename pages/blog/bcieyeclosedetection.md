@@ -1,6 +1,6 @@
 title: Hello World for Brain-Computer Interfaces
 date: 2020-12-31
-label: blog
+label: log
 tags: [BCI, EEG]
 snippet: Detecting alpha wave activity with EEG to predict whether my eyes are open or closed
 

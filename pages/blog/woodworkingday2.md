@@ -1,6 +1,6 @@
 title: Outro to Intro to Woodworking
 date: 2021-04-29
-label: blog
+label: log
 tags: [woodworking, cmu]
 snippet: Crate, shelf, stool
 

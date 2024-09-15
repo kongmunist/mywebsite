@@ -1,6 +1,6 @@
 title: "Timezone correcting Fitbit sleep data"
 date: 2023-11-30
-label: blog
+label: log
 tags: [fitbit, personalinformatics, datascience]
 snippet: "How to get your sleep data in UTC so you can actually do anything with it"
 

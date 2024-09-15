@@ -1,6 +1,6 @@
 title: "Shot comparisons between an iPhone and digital camera"
 date: 2023-12-23
-label: blog
+label: log
 tags: [photography, optics]
 snippet: "Sensor size matters!"
 

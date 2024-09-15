@@ -1,6 +1,6 @@
 title: "Solar energy harvesting"
 date: 2024-08-25
-label: blog
+label: log
 tags: [electronics, solar, energyharvesting]
 snippet: "Testing out the R1801K"
 

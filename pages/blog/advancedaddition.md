@@ -1,6 +1,6 @@
 title: Simple arithmetic addition with neural networks
 date: 2019-07-17
-label: blog
+label: log
 tags: [projectlog, advancedaddition,new]
 snippet: I have stumbled across a new way to add numbers.
 

@@ -1,6 +1,6 @@
 title: Infoglobe Tutorial Pt. 2 — Hardware Integration
 date: 2022-10-15
-label: blog
+label: log
 tags: [infoglobe, hardware, electronics]
 snippet: Letting go of externalized electronics
 

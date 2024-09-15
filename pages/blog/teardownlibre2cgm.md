@@ -1,6 +1,6 @@
 title: "Teardown of the Freestyle Libre 2 Continuous Glucose Monitor"
 date: 2023-12-18
-label: blog
+label: log
 tags: [electronics, teardown, personalinformatics]
 snippet: "Pictures and wild speculation"
 

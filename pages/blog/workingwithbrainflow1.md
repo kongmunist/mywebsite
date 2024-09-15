@@ -1,6 +1,6 @@
 title: Working with BrainFlow pt. 1
 date: 2020-12-30
-label: blog
+label: log
 tags: [projectlog, EEG, Python]
 snippet: A new way to stream OpenBCI data to Python
 

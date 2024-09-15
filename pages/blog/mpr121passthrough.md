@@ -1,6 +1,6 @@
 title: MPR121 Touch Sensing Across Barriers
 date: 2021-03-13
-label: blog
+label: log
 tags: [mpr121, touchsensitive, sensor, hardware]
 snippet: Testing capacitive coupling across various barriers
 

@@ -1,6 +1,6 @@
 title: Measuring 150 Amps With A DIY Shunt
 date: 2021-09-06
-label: blog
+label: log
 tags: [electronics, highcurrent]
 snippet: Speccing a 150A@5V power supply, the NJE MK750
 

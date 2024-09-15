@@ -1,6 +1,6 @@
 title: Finding My Pacinian Corpuscles in vivo
 date: 2021-06-16
-label: blog
+label: log
 tags: [mechanoreceptors, haptics, LRA]
 snippet: If only Galen had had a vibrating motor
 

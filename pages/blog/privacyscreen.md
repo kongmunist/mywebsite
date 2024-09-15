@@ -1,6 +1,6 @@
 title: Privacy screen
 date: 2020-09-09
-label: blog
+label: log
 tags: [facerecognition, miniprojectlog]
 snippet: Only cool kids can see this laptop!
 

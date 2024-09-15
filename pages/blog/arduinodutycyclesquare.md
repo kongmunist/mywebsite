@@ -1,6 +1,6 @@
 title: "Arduino Function Generator: Square Wave with Variable Duty Cycle"
 date: 2020-12-23
-label: blog
+label: log
 tags: [arduino, microcontrollers, testequipment, tutorial, wip]
 snippet: How to make a free, customizable square wave generator from a microcontroller you already have
 

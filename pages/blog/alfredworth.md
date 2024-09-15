@@ -1,6 +1,6 @@
 title: "Breakdown of my most used Alfred Workflows"
 date: 2023-11-26
-label: blog
+label: log
 tags: [mac, alfred, productivity]
 snippet: "Is Alfred worth buying?"
 

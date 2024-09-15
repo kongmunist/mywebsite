@@ -1,6 +1,6 @@
 title: Detecting instantaneous frequency is hard
 date: 2021-01-31
-label: blog
+label: log
 tags: [thoughts, bci, dsp, fft]
 snippet: Major blockades to fast, effective BCI
 

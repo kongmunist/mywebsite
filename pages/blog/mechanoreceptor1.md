@@ -1,6 +1,6 @@
 title: "Stimulating the Merkel Discs: selective nerve stimulation with a TENS unit"
 date: 2021-05-23
-label: blog
+label: log
 tags: [EMS, TENS]
 snippet: The Firm Handshake-inator 3000
 

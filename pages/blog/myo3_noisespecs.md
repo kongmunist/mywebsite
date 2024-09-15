@@ -1,6 +1,6 @@
 title: Myo3 Noise Specs
 date: 2020-11-29
-label: blog
+label: log
 tags: [myo3, projectlog]
 snippet: 1.24µV of noise at 500,000x gain on a DIY electromyography sensor
 

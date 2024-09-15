@@ -1,6 +1,6 @@
 title: MacGyvering Electronics From Merch
 date: 2021-05-31
-label: blog
+label: log
 tags: [electronics, macgyver]
 snippet: TFW no batteries :( 
 

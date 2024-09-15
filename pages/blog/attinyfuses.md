@@ -1,6 +1,6 @@
 title: "How To Set ATtiny Fuses (with Arduino as ISP)"
 date: 2024-04-23
-label: blog
+label: log
 tags: [electronics, arduino, attiny]
 snippet: "Change clocks, reduce startup delay, and more!"
 

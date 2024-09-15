@@ -1,6 +1,6 @@
 title: Touch Reactive LEDs
 date: 2021-01-29
-label: blog
+label: log
 tags: [hci, touchdetection, LED]
 snippet: Electronic piano, anyone?
 

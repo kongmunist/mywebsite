@@ -1,6 +1,6 @@
 title: Advanced addition and speedup of neural network evaluation
 date: 2019-08-01
-label: blog
+label: log
 tags: [projectlog, advancedaddition]
 snippet: Linear functions and what it means for Neural Network acceleration
 

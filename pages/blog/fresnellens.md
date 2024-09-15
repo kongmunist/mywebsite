@@ -1,6 +1,6 @@
 title: Fresnel Lens
 date: 2021-01-05
-label: blog
+label: log
 tags: [optics, lenses, projectlog] 
 snippet: Making flat lenses using special surface ridging
 

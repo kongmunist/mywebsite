@@ -1,6 +1,6 @@
 title: Speed Check
 date: 2020-05-10
-label: blog
+label: log
 tags: [projectlog, speedcheck]
 snippet: What's the fastest way to record a stream of strings in Python?
 

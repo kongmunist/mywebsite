@@ -1,6 +1,6 @@
 title: How to get access to your Fitbit data (API tutorial)
 date: 2021-07-26
-label: blog
+label: log
 tags: [tutorial, API, fitbit]
 snippet: Navigating a slightly complicated process for API noobs
 

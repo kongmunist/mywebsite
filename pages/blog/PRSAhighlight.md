@@ -1,6 +1,6 @@
 title: "My new favorite EEG technique: Phase-rectified signal averaging"
 date: 2021-01-13
-label: blog
+label: log
 tags: [ssvep, bci, eeg, paperhighlight]
 snippet: Basic method of aligning waves helps when averaging out noise from long time-series
 

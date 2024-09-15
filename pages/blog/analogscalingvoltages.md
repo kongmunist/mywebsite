@@ -1,6 +1,6 @@
 title: "Analog Electronics Basics: Scaling Voltage Rails"
 date: 2020-12-08
-label: blog
+label: log
 tags: [analog, electronics, opamps]
 snippet: What to do when your circuit outputs -5V to +5V but your ADC only takes 0-5V
 

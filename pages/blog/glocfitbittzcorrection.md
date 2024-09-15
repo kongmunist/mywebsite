@@ -1,6 +1,6 @@
 title: "Timezone correcting Fitbit sleep data using Google Timeline"
 date: 2024-02-12
-label: blog
+label: log
 tags: [fitbit, quantifiedself, timezonecorrection]
 snippet: "My last post on dealing with terrible Fitbit data"
 

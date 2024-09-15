@@ -1,6 +1,6 @@
 title: Fast-charging capacitors
 date: 2021-08-09
-label: blog
+label: log
 tags: [electronics]
 snippet: Who has time for 5RC?
 

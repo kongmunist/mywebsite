@@ -1,6 +1,6 @@
 title: Comparing the interface speed of a thermostat to a keyboard
 date: 2021-01-21
-label: blog
+label: log
 tags: [bci, hci, interfaces]
 snippet: Calculating the human-computer bandwidth of common and uncommon input devices using information transfer rate
 

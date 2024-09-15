@@ -1,6 +1,6 @@
 title: Playing sounds with an Arduino, speaker, and no amplifier
 date: 2020-12-13
-label: blog
+label: log
 tags: [arduino, microcontroller, audio, hack]
 snippet: LM386 audio amplifier? I 'ardly know her!
 

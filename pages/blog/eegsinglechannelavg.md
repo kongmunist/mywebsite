@@ -1,6 +1,6 @@
 title: Improving noisy EEG data through single channel averaging
 date: 2020-12-18
-label: blog
+label: log
 tags: [bci, signalprocessing]
 snippet: How to get rid of Gaussian noise using a single electrode's measurements
 

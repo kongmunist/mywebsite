@@ -1,6 +1,6 @@
 title: "Immersive Space Workarounds In The Vision Pro"
 date: 2024-04-21
-label: blog
+label: log
 tags: [avp, ar, vr]
 snippet: "Quick Immersion"
 

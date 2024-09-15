@@ -1,6 +1,6 @@
 title: How to stop noisy NeoPixels
 date: 2023-05-31
-label: blog
+label: log
 tags: [electronics]
 snippet: Audible annoyance from WS2812B LEDs
 

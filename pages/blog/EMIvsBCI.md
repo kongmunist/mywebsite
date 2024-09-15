@@ -1,6 +1,6 @@
 title: EEG fails in the prescence of household EMI
 date: 2021-01-17
-label: blog
+label: log
 tags: [eeg, bci, emi, thoughts]
 snippet: I am beginning to have doubts on the feasibility of everday BCIs...
 

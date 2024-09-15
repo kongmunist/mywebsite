@@ -1,6 +1,6 @@
 title: Testing out some high power LEDs
 date: 2020-12-28
-label: blog
+label: log
 tags: [electronics, LED, projectlog, wallscreen]
 snippet: Casting light on far away surfaces using 3W LEDs
 

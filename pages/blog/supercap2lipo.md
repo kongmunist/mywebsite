@@ -1,6 +1,6 @@
 title: Supercapacitor To Lithium Battery Converter
 date: 2022-02-14
-label: blog
+label: log
 tags: [electronics, pcb, supercapacitor, build18]
 snippet: To enable powering all lithium battery devices with chunky supercaps instead
 

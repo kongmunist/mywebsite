@@ -1,6 +1,6 @@
 title: How Good Are Stock Watchlists Anyway? 
 date: 2021-12-25
-label: blog
+label: log
 tags: [stocks, trading]
 snippet: Fact-checking Timothy Sykes
 

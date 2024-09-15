@@ -1,6 +1,6 @@
 title: Remote Photoplethysmography (PPG) Tutorial
 date: 2020-12-07
-label: blog
+label: log
 tags: [tutorial, CV, heartrate]
 snippet: A guide on how to pronounce the word, and how to implement it in Python
 

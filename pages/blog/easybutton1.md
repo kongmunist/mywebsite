@@ -1,6 +1,6 @@
 title: Easy Button Hack Pt. 1
 date: 2020-12-24
-label: blog
+label: log
 tags: [projectlog, easybutton, arduino, microcontroller, audio]
 snippet: Learning about SD cards, transistor audio amps, Arduino sleep and interrupts
 

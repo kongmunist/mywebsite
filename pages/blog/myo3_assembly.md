@@ -1,6 +1,6 @@
 title: Putting together Myo3, the 3rd iteration of my EMG sensor
 date: 2020-11-22
-label: blog
+label: log
 tags: [projectlog, myo, PCB]
 snippet: My third PCB!
 

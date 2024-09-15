@@ -1,6 +1,6 @@
 title: Body Channel Communication Tutorial Pt. 2
 date: 2021-04-27
-label: blog
+label: log
 tags: [hci, bcc, microcontroller, biosig]
 snippet: Look Ma, no shared ground!
 

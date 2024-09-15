@@ -1,6 +1,6 @@
 title: Histogram Equalization
 date: 2020-11-20
-label: blog
+label: log
 tags: [CV]
 snippet: Using all your dynamic range to make black and white images look sick!
 

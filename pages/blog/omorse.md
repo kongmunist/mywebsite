@@ -1,6 +1,6 @@
 title: "Is Morse Code Letter-Frequency Optimal?"
 date: 2024-04-12
-label: blog
+label: log
 tags: [morse, communications, human-computer bandwidth]
 snippet: "Most common letters vs. Morse code length"
 

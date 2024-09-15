@@ -1,6 +1,6 @@
 title: Exploring USB-A breakout cables
 date: 2020-12-04
-label: blog
+label: log
 tags: [electronics]
 snippet: The normal USB cable
 

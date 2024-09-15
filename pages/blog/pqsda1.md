@@ -1,6 +1,6 @@
 title: "Practical Quantified Self Data Analysis, Pt. 1"
 date: 2024-05-07
-label: blog
+label: log
 tags: [datascience, python, quantifiedself]
 snippet: "Functions you'll need"
 

@@ -1,6 +1,6 @@
 title: Digital Holograms
 date: 2020-06-18
-label: blog
+label: log
 tags: [projectlog]
 snippet: Displaying 3D images on a 2D computer screen
 

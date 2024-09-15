@@ -1,6 +1,6 @@
 title: Creating panorama images manually
 date: 2020-11-17
-label: blog
+label: log
 tags: [CV, OpenCV]
 snippet: Experiments in holography
 

@@ -1,6 +1,6 @@
 title: Calculating the expected value of the PA scratch offs
 date: 2021-02-04
-label: blog
+label: log
 tags: [lottery, wasteofmoney, probability]
 snippet: It's ok, all proceeds pay for the benefits of older residents of Pennsylvania
 
