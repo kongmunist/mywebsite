@@ -317,7 +317,6 @@ def blog(title):
 def mainlog():
     print("main log page")
     logPages = [p for p in pages if "log" == p.meta.get('label')]
-    print(logPages)
     logPages = [(x.meta.get('date'), x) for x in logPages if 'wip' not in x.meta.get('tags')]
 
     logPages.sort(reverse=True, key=lambda x: x[0])

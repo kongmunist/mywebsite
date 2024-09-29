@@ -42,13 +42,13 @@ Here, an example is set up scaling ±15V sensor output to 0-5V Arduino/microcont
 	<tr>
 		<td>
 			Vref: </td><td>
-			<input id="vref" size=8> V
+			<input id="vref" size=8 disabled> V
 		</td>
 	</tr>
 	<tr>
 		<td>
 			R2/R1 ratio: </td><td>
-			<input id="rratio" size=8>
+			<input id="rratio" size=8 disabled>
 		</td>
 	</tr>
 </table>
@@ -74,7 +74,7 @@ This update adds the reverse calculation of output voltage rails given the input
 			<td style="text-align:center">
 				Vin rails: </td><td> Low rail: <input id="rev1" size="8" value="-15"> V <br> High rail:<input id="rev2" size="8" value="15"> V
 			</td>
-			<td>Vout rails: </td><td> Low rail: <input id="revo1" size="8"> V <br> High rail:<input id="revo2" size="8"> V</td>
+			<td>Vout rails: </td><td> Low rail: <input id="revo1" size="8" disabled> V <br> High rail:<input id="revo2" size="8" disabled> V</td>
 		</tr>
 		<tr>
 			<td style="text-align:center">
