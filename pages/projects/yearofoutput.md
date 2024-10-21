@@ -225,5 +225,5 @@ For accountability, I will maintain the list of outputs below, though this proje
 - Oct 15: [Tweet thread](https://x.com/oldestasian/status/1846292645707919531) about Power-over-Skin, Kinda blew up, god bless. I'm 1/3 of the way to Twitter monetization, bless up
 - Oct 17: Ate my first MRE. Glad to know our troops are eating good.
 - Oct 20: Tried to reproduce the pixelizer lens from Twitter.
-- Oct 21: Substack post
+- Oct 21: Laser Holograms [project page](../../projects/holograms)
 - 
