@@ -182,8 +182,48 @@ For accountability, I will maintain the list of outputs below, though this proje
 - June 27-28: Updated the tweets of blog posts.
 ## July
 - July 25 - Fly to SF for [Fidget Camp](https://fidgetcamp.com/)
+## August
 - July 27 - Aug 5: Fidget Camp in SF! Great event hosted by some amazing creatives and technologists
     - Aug 4-5: [Exhibition](https://www.tiktok.com/@empowa/video/7403484937971666219)!! 
 - Aug 7-11: Brain Hack in Mill Valley. Worked with cool people on a new way to do EEG
 - Aug 12: Back to Boston!
+- Aug 25: [Blog post](../../blog/eetestr1801k) about the R1801K, an energy harvesting chip
 - Aug 26: [First pull request](https://github.com/linien-org/linien/pull/428) to an open source project 
+- Aug 28: Moved into The Future house
+- Aug 29: Crazy day in Seattle. Saw everyone that I knew was there 
+- Aug 30-Sep 1: Went to Vancouver, experienced Farm Camp! Olympics, Talent show, sleeping in tents, buddhist ceremony. Felt incredible for weeks afterwards
+## September
+- Sep 7: Discovered that all vacuum flasks have a non-evaporable getter pellet in them to maintain vacuum. How dope!
+- Sep 8: Yerba haul
+- Sep 12: Made DIY laser profilometer that slots into a 30mm cage system
+- Sep 13: Soft launch of our magneto-optical trap in a [tweet](https://x.com/oldestasian/status/1834580690198782414)
+{{ add_pic("yearofoutput/IMG_1332.jpeg", "") }}
+- Sep 14-15: Ishaan visiting for HackMIT
+- Sep 16: Went to this crazy plasma guy's workshop
+- Sep 18: Acquired a couch from the street
+- Sep 19: Got Stelo CGM, injected it
+- Sep 20: Got a messenger bag from PD. Best purchase I've made in a while
+- Sep 21: Housewarming party!
+- Sep 23: Exchanged old backpack for a huge mug and dinner
+- Sep 25: Went to medical devices trade fair. 
+- Sep 28: Went to Rhode Island. Slept 12 hours.
+## October
+- Oct 1: Evaluated RFID energy harvesting using the BQ25504. Not really viable. 
+- Oct 2: Got these 90 degree glasses. Really stupidly fun
+- Oct 4: Tried ultrasonic softening of metal. [Video here](https://x.com/oldestasian/status/1842617156858531969)
+- Oct 5: Destroyed Stelo CGM after it expired
+{{ add_pic("yearofoutput/steloteardown.png", "") }}
+- Oct 6: Blog post about the [Stelo CGM](../../blog/cgmteardown1)
+- Oct 9: Made an RF amplifier using the THS3491
+- Oct 10: Party!
+- Oct 11: Demo of Power-over-Skin for the NSF director Panch
+- Oct 12: Demo of Power-over-Skin at the CMU UIST Pre-party. It was great, you should've been there!
+{{ add_pic("yearofoutput/IMG_2751.JPG", "") }}
+- Oct 13: Demo of Power-over-Skin at the UIST Workshop "Soft Wearables" hosted by Cat and Cedric. Also great
+- Oct 14: My first first-author conference talk. Also demo of Power-over-Skin at the UIST Demo Session, which we barely got into thanks to the efforts of Eric Whitmire, god bless
+{{ add_pic("yearofoutput/IMG_2511.jpeg", "") }}
+- Oct 15: [Tweet thread](https://x.com/oldestasian/status/1846292645707919531) about Power-over-Skin, Kinda blew up, god bless. I'm 1/3 of the way to Twitter monetization, bless up
+- Oct 17: Ate my first MRE. Glad to know our troops are eating good.
+- Oct 20: Tried to reproduce the pixelizer lens from Twitter.
+- Oct 21: Substack post
+- 
