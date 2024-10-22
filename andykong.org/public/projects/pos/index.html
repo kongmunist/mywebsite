@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- <title>
+    Andy Kong!
+</title> -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Andy Kong">
+    <meta name="title" content="Power-over-Skin">
+    <meta name="description" content="Battery-free wearables, powered through body contact!">
+
+<title> Power-over-Skin | Andy Kong</title>
+
+<style>
+    .projectpage h1, .projectpage h2{
+        color: #E0B890;
+    }
+
+    .projectpage img{
+        max-width: 100%;
+        max-height: 50vh;
+        height: auto;
+        width: auto;
+    }
+</style>
+
+
+    <style type="text/css">
+        /* Atkinson Hyperlegible */
+        /* latin-ext
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          src: url("/static/atkhyp_latext.woff2") format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        } */
+        /* latin */
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          src: url("/static/atkhyp_lat.woff2") format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+
+        /* Ubuntu */
+        /* latin-ext
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          src: url("/static/ubuntu_latext.woff2") format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        } */
+        /* latin */
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          src: url("/static/ubuntu_lat.woff2") format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+    </style>
+
+    <!-- Bootstrap -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap.min.css">
+
+    <script src="/static/fontawesome.js" defer></script>
+    <!-- <script src="https://kit.fontawesome.com/c62dcd5933.js"></script> -->
+
+    <!-- Instant Page inlined - source is instant.page/5.1.0 -->
+    <script src="/static/instantpage-5.1.0.js" type="module" defer></script>
+
+
+
+
+    <style>
+        body {
+            background: #202222;
+            font-size: 1.2em;
+            font-family: 'Ubuntu', sans-serif;
+            color: #FAEADB;
+            overflow-x: hidden;
+
+            word-spacing: 0.03em;
+        }
+
+        .navlinks{
+            font-family: 'Atkinson Hyperlegible';
+            font-size: 1.2em;
+        }
+
+        h1, h2, h3, h4, h5, h6{
+            font-family: "Atkinson Hyperlegible";
+        }
+
+
+        a {
+            transition: color .2s linear;
+            color:#00B4CC;
+        }
+
+        a:hover {
+            color:#00DFFC;
+            text-decoration: none;
+        }
+
+        .navbar-custom {
+            font-size: 22px;
+            background-color: #202222 !important;
+        }
+
+        .navbar-custom .navbar-brand{
+            font-size: 30px;
+            color: #00dffc !important;
+        }
+
+        .navbar-custom .navitem{
+            color:#00dffc !important;
+        }
+
+        .navitem:hover{
+            color:#00b4cc !important;
+            text-decoration: none;
+        }
+
+        .hidden{
+          display: none;
+        }
+
+        .navbar-toggler-icon {
+          border: none;
+          outline: none;
+        }
+
+        .caption{
+            font-size:12px;
+            text-align: center;
+            font-style: italic;
+            margin-bottom: .2em;
+            margin-top: 1em;
+        }
+
+
+        hr{
+            background-color:white !important;
+        }
+
+        .video-container {
+          position: relative;
+          width: 100%;
+          padding-bottom: 56.25%;
+        }
+
+        .youtubevideo {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 0;
+        }
+
+        code {
+          font-family: Consolas,"courier new";
+          color: #110000;
+          background-color: #FAEADB;
+          padding: 2px;
+          font-size: 105%;
+        }
+
+
+        .addpic {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+            border-radius: 10px;
+
+            transition: transform .2s ease-in-out;
+            transform: scale(0.99);
+        }
+
+        .addpic:hover {
+            transform: scale(1.01);
+        }
+
+</style>
+
+
+    <link rel="icon" type="image/png" href=" /static/aklogo.png " />
+
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YNX5JQZWHT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YNX5JQZWHT');
+</script>
+<script data-goatcounter="https://kong.goatcounter.com/count"
+                    async src="//gc.zgo.at/count.js"></script>
+    
+</head>
+
+
+
+<body style="">
+
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
+      <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
+          </span>
+        </i>
+    </button>
+
+    <div class="collapse navbar-collapse " id="navbarSupportedContent" style="margin-left:25px;margin-top:10px">
+        <ul class="navbar-nav ml-auto navlinks">
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/static/AndyKongCV.pdf ">CV/Resume</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://github.com/kongmunist" target="_blank" title="Github">GitHub</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://twitter.com/oldestasian" target="_blank" title="Twitter">Twitter</a>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link navitem" href="mailto:andykongresearch@gmail.com" target="_blank" title="Email">Email</a>
+            </li> -->
+
+
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/log/" >[Blog]</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/blog/" >[Real Blog]</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+
+<!--    <div class="row justify-content-center">-->
+<!--<div class="row overflow-hidden" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">-->
+<div class="row overflow-hidden" style = "height:100vh; width: 100vw; padding: 0px 30px 0px 30px;">
+        <div class="col-lg-2"></div>
+        <div class="col-12 col-lg-8 projectpage" style="max-width:1000px; margin-bottom:4em;">
+            <h1 style="text-center; margin-bottom: 5px">Power-over-Skin</h1>
+                <i><p style="margin-bottom: 5px; margin-top: 0px">Battery-free wearables, powered through body contact!</p></i>
+                <p style="margin-bottom: 0px; margin-top: 0px">Timespan: December 2023 - October 2024</p>
+                <p style="margin-bottom: 5px; margin-top: 0px">Published: 2024-10-22</p>
+
+                <hr>
+            <html><body><p class="caption"> Andy talking at UIST </p>
+<p><img loading="lazy" alt="Andy talking at UIST" class="addpic" src="/static/poweroverskin/andytalking.jpg"/></p>
+<p>Hello! Today I'd like to tell you about my first UIST paper, Power-over-Skin! First, let me get all the links out of the way</p>
+<ul>
+<li>Paper (open-access): <a href="https://dl.acm.org/doi/10.1145/3654777.3676394">ACM Digital Library</a>, <a href="https://drive.google.com/file/d/17qtaXyanAeJqdw0Rrbnp-YJJgXEy5sqx/view?usp=sharing">(mirror)</a></li>
+<li>Video: <a href="https://www.youtube.com/watch?v=5PEN04-jyCU">YouTube</a></li>
+<li>Laymen explanation: <a href="https://x.com/oldestasian/status/1846292645707919531">Twitter thread</a></li>
+<li>Project page: <a href="https://www.figlab.com/research/2024/poweroverskin">Figlab</a></li>
+<li>Hardware: <a href="https://github.com/kongmunist/Power-Over-Skin-Hardware">GitHub</a></li>
+</ul>
+<p class="caption"> Snail-shaped blinker used to demo Power-over-Skin </p>
+<p><img loading="lazy" alt="Snail-shaped blinker used to demo Power-over-Skin" class="addpic" src="/static/poweroverskin/PoS_Snail.JPG"/></p>
+<hr/>
+<h1 id="why-did-you-do-this">Why did you do this?</h1>
+<p>I could say many reasons to motivate this project, all of them true. </p>
+<ul>
+<li>1, I did this project because I wanted to wirelessly power wearable devices using the batteries that we already carry around, like those in our phone or headset. </li>
+<li>2, I did this project because I thought it was really cool, and I wanted to start doing backscatter but got nerdsniped by this instead.</li>
+<li>3, I want to know every quantifiable feature of my body and mind at all times so I can learn things about the human body, and I don't want to have to think about charging or wearing a device that tracks all of this stuff for me, and I thought it would be most convenient to wear a battery-powered transmitter somewhere on the body and power all these battery-free implanted sensors that track my body for me, and this was the method that I thought would work, but actually it doesn't work because this technique requires an externally-coupled ground plane which you can't get from fully within the body, but that's ok because the technique still has useful outputs like powering wearables and transdermal implants which are half-in half-out of the body.  </li>
+</ul>
+<h1 id="faq">FAQ</h1>
+<h3>This is just thermal harvesting!</h3>
+<p>It's literally not, please read anything I ever wrote about it. I think people think this because we used a heatsink for the ground plane in the snail image, but this was just because it was copper and had high surface area. </p>
+<h3>This is like the matrix?</h3>
+<p>In the Matrix, they harvest power from like the humans in the pods. But we're not actually taking power from the body, we're putting it through the body using another battery-powered transmitter.</p>
+<h3>Does this shit work through pants?</h3>
+<p>This shit does work through pants! Power is reduced since there is a weaker capacitive coupling through clothing, but it does work!</p>
+<h3>Can you transmit data too?</h3>
+<p>there's a lot more prior work on transmitting data through the human body, this is a field known as Human Body Communication or Body Area Networks. This involves a powered receiver, however, and even companies like Ixana have to power both devices on the transmit and receive sides. I'm interested in extending this work to transmit data through backscatter on the skin —  if you have any interest in this, please reach out because I need a collaborator.  </p>
+<hr/>
+<h1 id="assorted-ramblings-which-are-not-coherent-but-do-explain-how-i-started-thinking-about-this">Assorted ramblings which are not coherent but do explain how I started thinking about this</h1>
+<h3>Background</h3>
+<p>I feel like I've talked this project to death by now, so in this post I'd like to explain why I worked on this. </p>
+<p>My last project before leaving Switzerland involved over-air power transfer, using the PowerCast transmitters which broadcast at 915 MHz. By holding a harvester board with a short wire antenna, we could pick up several milliwatts and use it to light up an LED.</p>
+<p>This was already dope, but during my lit review I found something even doper. There was a Nature paper claiming that through-body power transmission was possible, using the human tissue as the wire! I rushed to replicate their circuit, and indeed got a little trickle of power over my skin.</p>
+<h3>Personal info tracking</h3>
+<p>I have a special interest in personal informatics, which involves analyzing your own biological/cognitive/logistical data in order to do early diagnosis and health optimization. For example, a question one might answer is "how much does coffee increase my alertness compared to Adderall?" or "has my reaction time slowed down in the past 5 years?" — these questions require a lot of data, and it's better to start tracking early (especially since it's automatic).</p>
+<p>In 2024, I'd been wearing a Fitbit for about 2 years. This gives me good bio data but there were shortcomings — mainly, the need to charge it regularly and the physical presence on my wrist. The presence was a problem because I didn't like that it got caught on things, and I didn't like that other people could see me tracking. Admittedly, a petty reason, but in a perfect world I would've preferred a hidden sensor that could do all the things that my smartwatch could do. Sounds like an implant, no?</p>
+<h3>Modern implants are the same one as 10 years ago</h3>
+<p>I was really interested in hobbyist implants as a kid (~2014), and I started looking into them again to see if anyone had made a smartwatch replacement yet. How surprised I was to find them still selling the same old RFIDs and magnets! The field had not progressed at all, even though there were many more options for nanopower devices and sensor chips nowadays. The closest thing I could find to a fitness tracker was <a href="https://augmentationlimitles.ipage.com/temptress/">Temptress</a> by Augmentation Limitless, which is an implantable NFC chip that reads off the temperature when you tap your phone to it. While cool, this was even less automatic than the Fitbit. </p>
+<p>When you think about it, the problem with implants has always been the difficulty of getting power through the skin into the implant. We've devised ways around this, for example wearing a battery pack immediately outside the implant (Eversense CGM) or just putting a battery in the implant which makes it either one-time use (Most CGMs) or require recharging (Guardian CGM). Neither of these appeal to me because they have the same problem as the Fitbit. </p>
+<p>This led me to energy harvesting and wireless power transmission to power an implanted device. <a href="https://sapiensanonym.blogspot.com/">Lepht Anonym</a> has implanted an inductively-charged implant before, but the prospect of fitting a large inductive coil in my body kinda skeeved me out. The lessons from this are 1) inductive charging through the skin couples enough power to turn on a Raspberry Pi (not even a smaller Zero!) inside the body (power budget is a 1-5 watts), 2) WiFi works through the body. Incredible. Anyway, I wasn't doing that.</p>
+<p class="caption"> Lessons from Lepht Anonym's pirate box implant </p>
+<p><img loading="lazy" alt="Lessons from Lepht Anonym's pirate box implant" class="addpic" src="/static/poweroverskin/lepht_lessons.png"/></p></body></html>
+        </div>
+        <div class="col-lg-2"></div>
+        <p style="line-height:300%;">&nbsp;</p>
+</div>
+
+
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
+<script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
+<script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>
