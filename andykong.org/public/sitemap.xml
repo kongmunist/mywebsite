@@ -14,6 +14,40 @@
 
   
     <url>
+    <loc>https://andykong.org/blog/conviction</loc>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/convictionmeme.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+    <url>
+    <loc>https://andykong.org/projects/pos</loc>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/poweroverskin/andytalking.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/poweroverskin/PoS_Snail.JPG
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/poweroverskin/lepht_lessons.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+    <url>
     <loc>https://andykong.org/projects/holograms</loc>
       
         <image:image>
