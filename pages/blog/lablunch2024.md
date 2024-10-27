@@ -2,16 +2,18 @@ title: Andy Brief
 date: 2050-10-10
 label: project
 timespan: Oct 29 2024
-pic: infoglobe_hero.png
-description: Show n Tell
+tags: [wip]
+snippet: Show n Tell
 
-
+# Body Area Networks — power and data over skin
 {{ add_pic("poweroverskin/touchtags.png", "") }}
 {{ add_pic("poweroverskin/PoS_Snail.JPG", "") }}
 {{ add_pic("poweroverskin/POSHero_deanon.png", "") }}
 {{ add_pic("poweroverskin/calc2.png", "") }}
 
 <hr>
+
+# Custom candles
 {{ add_pic("bigheadcandle/moldmaking.png", "") }}
 {{ add_pic("bigheadcandle/printedmoldinout.jpg", "3D printed mold, inside and outside view") }}
 {{ add_pic("bigheadcandle/donecandle.jpg", "Face candle") }}
