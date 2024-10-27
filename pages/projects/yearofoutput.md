@@ -226,5 +226,6 @@ For accountability, I will maintain the list of outputs below, though this proje
 - Oct 17: Ate my first MRE. Glad to know our troops are eating good.
 - Oct 20: Tried to reproduce the pixelizer lens from Twitter.
 - Oct 21: Laser Holograms [project page](../../projects/holograms)
-- Oct 22: Power-over-Skin [project page](../../projects/pos)
+- Oct 22: Power-over-Skin [project page](../../projects/pos)e
 - Oct 26: [Conviction](../../blog/conviction)
+- Oct 27: Gave hackathon talk at ekkolapto
