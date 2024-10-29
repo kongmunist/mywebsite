@@ -68,3 +68,14 @@ This led me to energy harvesting and wireless power transmission to power an imp
 
 
 
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // If "l" is pressed, redirect to ../blog/lablunch2024
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'l') {
+                window.location.href = "../../blog/lablunch2024";
+            }
+        });
+    });
+</script>
