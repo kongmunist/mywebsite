@@ -11,6 +11,7 @@ Hello! Today I'd like to tell you about my first UIST paper, Power-over-Skin! Fi
 
 - Paper (open-access): [ACM Digital Library](https://dl.acm.org/doi/10.1145/3654777.3676394), [(mirror)](https://drive.google.com/file/d/17qtaXyanAeJqdw0Rrbnp-YJJgXEy5sqx/view?usp=sharing)
 - Video: [YouTube](https://www.youtube.com/watch?v=5PEN04-jyCU)
+- Talk: [YouTube](https://www.youtube.com/watch?v=gi56CEKdBYY)
 - Laymen explanation: [Twitter thread](https://x.com/oldestasian/status/1846292645707919531)
 - Project page: [Figlab](https://www.figlab.com/research/2024/poweroverskin)
 - Hardware: [GitHub](https://github.com/kongmunist/Power-Over-Skin-Hardware)
