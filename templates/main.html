@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block meta_content %}
-<meta name="description" content="Project portfolio and blog of a HCI researcher, CMU student, and lifelong learner">
+<meta name="description" content="Digital footprint of a curious man">
 <meta name="author" content="Andy Kong">
 
 <title> Andy Kong Website </title>
@@ -129,57 +129,16 @@
 
 /* Generated from CSS elastic ease generator: https://codepen.io/amit_sheen/full/xxdKroP/57c932ba5730a4d512adc8ab49059892 */
 @keyframes elastic {
-  0% { transform: translate(var(--startX), var(--startY)); opacity:0.5;}
-
+  0% { transform: translateX(100px); opacity:0;}
   33.54% { transform: translateX(-26.58px); }
   60.59% { transform: translateX(15.76px); }
   82.41% { transform: translateX(-7.04px); }
   100.00% { transform: translateX(0.00px); opacity:1;}
 }
 
-
-@keyframes springIn3 {
-    0% { transform: translate(var(--startX), var(--startY)); opacity: 0; }
-    39.10% { transform: translate(calc(var(--startX) * -0.4568), calc(var(--startY) * -0.4568)); opacity: 1; }
-    63.23% { transform: translate(calc(var(--startX) * 0.2742), calc(var(--startY) * 0.2742)); }
-    78.13% { transform: translate(calc(var(--startX) * -0.1641), calc(var(--startY) * -0.1641)); }
-    87.32% { transform: translate(calc(var(--startX) * 0.0949), calc(var(--startY) * 0.0949)); }
-    93.00% { transform: translate(calc(var(--startX) * -0.0525), calc(var(--startY) * -0.0525)); }
-    96.50% { transform: translate(calc(var(--startX) * 0.0238), calc(var(--startY) * 0.0238)); }
-    98.66% { transform: translate(calc(var(--startX) * -0.0100), calc(var(--startY) * -0.0100)); }
-    100% { transform: translate(0, 0); opacity: 1; }
-}
-
-
-@keyframes elastic_new {
-  0% { transform: translateX(100%); }
-  17.04% { transform: translateX(-8.30%); }
-  32.53% { transform: translateX(6.75%); }
-  46.61% { transform: translateX(-5.34%); }
-  59.42% { transform: translateX(4.06%); }
-  71.06% { transform: translateX(-2.89%); }
-  81.64% { transform: translateX(1.84%); }
-  91.26% { transform: translateX(-0.87%); }
-  100.00% { transform: translateX(0.00%); }
-}
-
-@keyframes springIn4 {
-    0% { transform: translate(var(--startX), var(--startY)); opacity: 0; }
-    17.04% { transform: translate(calc(var(--startX) * -0.0830), calc(var(--startY) * -0.0830)); }
-    32.53% { transform: translate(calc(var(--startX) * 0.0675), calc(var(--startY) * 0.0675)); }
-    46.61% { transform: translate(calc(var(--startX) * -0.0534), calc(var(--startY) * -0.0534)); }
-    59.42% { transform: translate(calc(var(--startX) * 0.0406), calc(var(--startY) * 0.0406)); }
-    71.06% { transform: translate(calc(var(--startX) * -0.0289), calc(var(--startY) * -0.0289)); }
-    81.64% { transform: translate(calc(var(--startX) * 0.0184), calc(var(--startY) * 0.0184)); }
-    91.26% { transform: translate(calc(var(--startX) * -0.0087), calc(var(--startY) * -0.0087)); }
-    100% { transform: translate(0, 0); opacity: 1; }
-}
-
-
 .appearOnScroll{
   opacity:0;
 }
-
 
 
 a[target='_blank']:after {
@@ -197,68 +156,20 @@ a[target='_blank']:after {
 
 </style>
 
-
-
-<!--      const callback = function(entries) {-->
-<!--        entries.forEach( function(entry) {-->
-<!--          if (entry.isIntersecting){-->
-<!--            animDelay = .2 + parseFloat((entry.target.offsetLeft/window.innerWidth).toFixed(1))/2-->
-<!--            entry.target.style.animation = "1s ease-in-out " + animDelay + "s elastic forwards"-->
-<!--            // entry.target.style.animation = "0.7s ease " + animDelay + "s appearAndSlideABit forwards"-->
-<!--          }-->
-<!--          expose = entry-->
-<!--          // console.log(expose.isIntersecting)-->
-<!--        });-->
-<!--      };-->
-
-
-<!--      const callback = function(entries) {-->
-<!--          entries.forEach(function(entry) {-->
-<!--            if (entry.isIntersecting) {-->
-<!--              const target = entry.target;-->
-<!--              // random starting point off screen-->
-<!--              const startX = (Math.random() < 0.5 ? -1 : 1) * (window.innerWidth + 100);-->
-<!--              const startY = (Math.random() < 0.5 ? -1 : 1) * (window.innerHeight + 100);-->
-
-<!--              target.style.setProperty('&#45;&#45;startX', `${startX}px`);-->
-<!--              target.style.setProperty('&#45;&#45;startY', `${startY}px`);-->
-
-<!--              // target.style.animation = `springIn 1.2s cubic-bezier(0.37, 0, 0.63, 1) ${animDelay}s forwards`;-->
-<!--              target.style.animation = `springIn 1.2s linear  forwards`;-->
-<!--              // target.style.animation = `springIn 1.2s cubic-bezier(.96,-0.33,.64,1.44) ${animDelay}s forwards`;-->
-<!--            }-->
-<!--          });-->
-<!--        };-->
-
-
 <script type="text/javascript">
   var expose
   window.addEventListener('DOMContentLoaded', function (event) { // Dynamic load images if supported
     if (typeof(window.IntersectionObserverEntry) != "undefined" && window.IntersectionObserverEntry.prototype.hasOwnProperty('isIntersecting')){
 
-
       const callback = function(entries) {
-          entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-              const target = entry.target;
-              // random starting point off screen
-              // const startX = (Math.random() < 0.5 ? -1 : 1) * (window.innerWidth + 100);
-              // const startY = (Math.random() < 0.5 ? -1 : 1) * (window.innerHeight + 100);
-              const startX = (Math.random() * window.innerWidth);
-                const startY = (Math.random() * window.innerHeight);
-
-
-              target.style.setProperty('--startX', `${startX}px`);
-              target.style.setProperty('--startY', `${startY}px`);
-
-              // target.style.animation = `springIn 1.2s cubic-bezier(0.37, 0, 0.63, 1) ${animDelay}s forwards`;
-              target.style.animation = `springIn4 1s ease-in-out forwards`;
-              // target.style.animation = `springIn 1.2s cubic-bezier(.96,-0.33,.64,1.44) ${animDelay}s forwards`;
-            }
-          });
-        };
-
-
+        entries.forEach( function(entry) {
+          if (entry.isIntersecting){
+            animDelay = parseFloat((entry.target.offsetLeft/window.innerWidth).toFixed(1))/2
+            entry.target.style.animation = "0.7s ease-in-out " + animDelay + "s elastic forwards"
+          }
+          expose = entry
+        });
+      };
 
       const observer = new IntersectionObserver(callback);
       const targets = document.querySelectorAll(".appearOnScroll");
@@ -268,7 +179,7 @@ a[target='_blank']:after {
     } else { // If unsupported, show all targets
       const targets = document.querySelectorAll(".appearOnScroll");
       for (let i = 0; i< targets.length; i++){
-        targets[i].style.opacity = 1.0;        
+        targets[i].style.opacity = 1.0;
       }
     }
   });
@@ -293,7 +204,7 @@ a[target='_blank']:after {
 
 
     <div class="media-body col-xl-7 col-lg-8 col-md-8" style="padding:2em; padding-top:10px;">
-        <div style="font-size:3em;">Howdy!</div> 
+        <div style="font-size:3em;">Howdy!</div>
         <div style="font-size:2em; padding-left:2em;">I'm Andy Kong</div>
             <br>
             <p>
@@ -346,7 +257,6 @@ a[target='_blank']:after {
     </div>
 </div>
 {% endblock %}
-
 
 
 
