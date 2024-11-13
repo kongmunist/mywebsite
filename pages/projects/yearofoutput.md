@@ -229,3 +229,5 @@ For accountability, I will maintain the list of outputs below, though this proje
 - Oct 22: Power-over-Skin [project page](../../projects/pos)e
 - Oct 26: [Conviction](../../blog/conviction)
 - Oct 27: Gave hackathon talk at ekkolapto
+## November
+- Nov 3: Implants talk at Hackaday Supercon 8
