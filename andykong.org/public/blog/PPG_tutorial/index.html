@@ -288,10 +288,7 @@
 
 
             <li class="nav-item">
-                <a class="nav-link navitem" href="/log/" >[Blog]</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[Real Blog]</a>
+                <a class="nav-link navitem" href="/blog/" >[Blog]</a>
             </li>
         </ul>
     </div>
@@ -319,7 +316,8 @@
 <p>Today I'm going to be telling you about this sick computer vision technique that requires only your webcam feed to get your heartrate. And no, I'm not talking about the phone flashlight trick. I'm talking photoplethysmography (PPG)!</p>
 <p>Existing cameras on phones and laptops are amazing, their resolution has allowed some really cool sensing techniques besides taking great photos of your Chipotle burrito. Even knowing this, I found this technique hard to believe. </p>
 <p>I was reading about a project from Microsoft Research called <a href="https://www.microsoft.com/en-us/research/project/cardiolens/">CardioLens</a>, which projected people's heartrates onto their faces using just the camera in a Hololens headset. When your heart beats, your blood vessels swell out a little from the sudden pump motion of the heart. According to this paper, we can see this cyclical pumping as the blood vessels swell and shrink just by averaging the intensity of the colors on someone's face. With a normal camera!</p>
-<p><img loading="lazy" alt="Cardiolens pulse signal" src="http://alumni.media.mit.edu/~djmcduff/assets/cardiolens/cardiolens_image_2.png"/></p>
+<p class="caption"> Cardiolens pulse signal </p>
+<p><img loading="lazy" alt="Cardiolens pulse signal" class="addpic" src="/static/cardiolens_danielmcduff.png"/></p>
 <p>Nuts, right? I procrastinated trying this project despite how simple it was reported to be, but after reading about it on <a href="https://www.jimmynewland.com/wp/about-jimmy/presentations/remote-ppg-gui/">Jimmy Newland's website</a>, I felt I could give a decent crack at it. </p>
 <p><img loading="lazy" alt="Face and eye detection using Haar Cascades" src="/static/ppg.gif"/></p>
 <p class="caption">Face and eye detection using Haar Cascades</p>

@@ -4,6 +4,8 @@ TODO:
 - Add a now page
 - maybe remove the chapter headers from blog posts where the table of contents doesn't exist?
 
+Dec 27, 2024: reconsolidated blog/log split, now blogs are just colored differently. also fixed a dead link from daniel mcduff on our ppg tutorial. also updated resume
+September 24, 2024: Split blog posts into logs and blogs.
 June 27, 2024: Images grow when moused over, in both blog and project pages. rounded corners are a bit jumpy, but it's subtle enough.
 June 23, 2024: Added table of contents to project pages too, back-fixed the 3 blog posts that have one. Also made images lazy-load in project pages.
 Apr 21, 2024: Removed the <hr> at the end of each blog post before the tags. Looks fine to me now, maybe I'll change my mind.
