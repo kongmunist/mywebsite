@@ -7,7 +7,7 @@ snippet: ""
 I could clump my friends into four groups:
 
 # Stable, unsure: pleading
-Nice jobs which let them stay home 3 days a week. Whenever we talk it’s their boss’s kid’s birthday. Free mangoes in the office. I watched Queen’s Gambit and started playing Lichess.  I thought there would be more than this.
+Nice jobs which let them stay home 3 days a week. Whenever we talk it’s their boss’s kid’s birthday. Free mangoes in the office. I watched Queen’s Gambit and started playing Lichess. I thought there would be more than this.
 
 # Unstable, unsure: worried
 Making just enough to eke out a life’s work that’s fun to talk about at parties. Always at a sweet 6 month gig doing exactly what they want, wide open road afterwards. I should get a job. I was thinking of going back to school. What am I doing with my life? 

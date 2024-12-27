@@ -14,7 +14,7 @@ Existing cameras on phones and laptops are amazing, their resolution has allowed
 
 I was reading about a project from Microsoft Research called [CardioLens](https://www.microsoft.com/en-us/research/project/cardiolens/), which projected people's heartrates onto their faces using just the camera in a Hololens headset. When your heart beats, your blood vessels swell out a little from the sudden pump motion of the heart. According to this paper, we can see this cyclical pumping as the blood vessels swell and shrink just by averaging the intensity of the colors on someone's face. With a normal camera!
 
-![Cardiolens pulse signal](http://alumni.media.mit.edu/~djmcduff/assets/cardiolens/cardiolens_image_2.png)
+{{ add_pic("cardiolens_danielmcduff.png", "Cardiolens pulse signal") }}
 
 Nuts, right? I procrastinated trying this project despite how simple it was reported to be, but after reading about it on [Jimmy Newland's website](https://www.jimmynewland.com/wp/about-jimmy/presentations/remote-ppg-gui/), I felt I could give a decent crack at it. 
 

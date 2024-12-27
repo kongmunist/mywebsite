@@ -288,7 +288,8 @@ def about():
 @app.route("/blog/")
 def mainblog():
     print("main blog page")
-    blogPages = [p for p in pages if "blog"==p.meta.get('label')]
+    # blogPages = [p for p in pages if "blog"==p.meta.get('label')]
+    blogPages = [p for p in pages if "log" in p.meta.get('label')] # gets both blogs and logs
     blogPages = [(x.meta.get('date'), x) for x in blogPages if 'wip' not in x.meta.get('tags')]
 
     blogPages.sort(reverse=True, key= lambda x: x[0])
@@ -302,7 +303,7 @@ def mainblog():
 def blog(title):
     print("blog page " + title)
     page = [pages.get("blog/" + title)]
-    blogPages = [p for p in pages if "blog" == p.meta.get('label')]
+    blogPages = [p for p in pages if "blog" == p.meta.get('label') ]
 
     # Add loading="lazy" to all images
     pattern = '<img'
@@ -312,19 +313,6 @@ def blog(title):
     if page[0] is None:
         return mainblog()
     return render_template('blog.html', page=page, pages=blogPages)
-
-@app.route("/log/")
-def mainlog():
-    print("main log page")
-    logPages = [p for p in pages if "log" == p.meta.get('label')]
-    logPages = [(x.meta.get('date'), x) for x in logPages if 'wip' not in x.meta.get('tags')]
-
-    logPages.sort(reverse=True, key=lambda x: x[0])
-    logPages = [x[1] for x in logPages] 
-
-    for page in logPages:
-        page.meta['len'] = len(page.body.split(" "))
-    return render_template('logmain.html', pages=logPages)
 
 
 @app.route('/tagged/')
