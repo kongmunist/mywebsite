@@ -391,7 +391,6 @@ def tester():
 
 @app.route("/friends/")
 def friends():
-    # print("friends" + friend)
     print("friends")
     return render_template("friends.html")
 

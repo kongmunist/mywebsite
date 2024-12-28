@@ -115,18 +115,6 @@
   }
 }
 
-/*
-@keyframes appearAndSlideABit{
-  0% {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0px);
-  }
-}*/
-
 /* Generated from CSS elastic ease generator: https://codepen.io/amit_sheen/full/xxdKroP/57c932ba5730a4d512adc8ab49059892 */
 @keyframes elastic {
   0% { transform: translateX(100px); opacity:0;}
@@ -153,6 +141,24 @@ a[target='_blank']:after {
   height: 100%;
   object-fit: cover;
 }
+
+
+
+/* for the new front page view */
+
+  @media (max-width: 1024px) {
+  div[style*="display: flex; padding"] {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  div[style*="flex: 0 0"] {
+    flex: none;
+    width: 100%;
+    max-width: 800px;
+  }
+}
+  
 
 </style>
 
@@ -195,40 +201,37 @@ a[target='_blank']:after {
 
 
 
-<div class="row">
-    <div class="media-left col-xl-5 col-lg-4 col-md-4" style=" display:flex; align-items: center; padding:2em;">
-        <img alt="Photo of Andy Kong (website author) smiling" class="mx-auto d-block media-object rounded-image" src="{{url_for('static', filename = 'meiceland1.jpg')}}"
-             style="width:100%; height:auto; max-width: 70%;  margin: 2em;">
+    <div style="display: flex; padding: 2rem 0rem 0rem 0rem; gap: 2rem; margin: 0 auto; max-width: 90%;">
+
+    <div style="flex: 0 0 40%; display: flex; ">
+      <img alt="Photo of Andy Kong (website author) smiling" 
+           src="{{url_for('static', filename = 'meiceland1.jpg')}}"
+           style="width: 80%; height: auto; margin: auto;  border-radius: 5%; max-width:50vw;">
     </div>
+      <div style="flex: 0 0 60%; padding: 0em;">
 
+      <div style="font-size: 3rem;">Howdy!</div>
+      <div style="font-size: 2rem; padding-left: 2rem;">I'm Andy Kong</div>
+      <br>
+      <p style="margin-bottom:0px;">
+        I'm currently engaged in a <a href="/projects/yearofoutput">Year Of Output</a>
+        <br><br>
+        I'm interested in human augmentation, computational photography, and personal informatics.<br>
+        I like experiencing new sensations, training my senses, seeing things I've never seen before, challenging my beliefs of what is possible, and inventing sufficiently advanced technology.
+        <br><br>
+        You can keep up with what I'm up to by joining my Year Of Output monthly newsletter
+      </p>
 
-
-    <div class="media-body col-xl-7 col-lg-8 col-md-8" style="padding:2em; padding-top:10px;">
-        <div style="font-size:3em;">Howdy!</div>
-        <div style="font-size:2em; padding-left:2em;">I'm Andy Kong</div>
-            <br>
-            <p>
-                I'm currently engaged in a <a href="/projects/yearofoutput">Year Of Output</a>
-                <br><br>
-                I'm interested in human augmentation, computational photography, and personal informatics.
-                <br>
-                I like experiencing new sensations, training my senses, seeing things I've never seen before, challenging my beliefs of what is possible, and inventing sufficiently advanced technology.
-<!--                <br><br><br>-->
-<!--                Welcome to my personal site! I built it to document my work and to store my blog. If you would like to contact me about past or future projects, feel free to email or message me on Twitter.-->
-<!--                <br>-->
-<!--                I also started a newsletter to send out monthly updates in 2024 — signup below!-->
-                <br><br>
-                You can keep up with what I'm up to by joining my Year Of Output monthly newsletter
-                <div style="display: flex; justify-content: center; width:100%; flex-direction: row;">
-                <script async data-uid="bc53dedea2" src="https://andy-kong.ck.page/bc53dedea2/index.js"></script>
-                </div>
-            </p>
+  <div style="display: flex; justify-content: center; width: 100%; min-height: 200px;">
+    <script async data-uid="bc53dedea2" src="https://andy-kong.ck.page/bc53dedea2/index.js"></script>
+  </div>
     </div>
-</div>
+  </div>
 
+  
 <a href="/projects/"><h1 class="text-center" > Portfolio </h1></a>
 <div class="container-fluid" style="height: 100%;">
-    <div class="row" style="padding-left:15px;">
+    <div class="row" style="padding-left:0px;">
 
 
         {% for p in pages %}
@@ -241,8 +244,6 @@ a[target='_blank']:after {
             {% else %}
                 <img alt="{{ p.title }} Hero Image" class="img mx-auto d-block" src="{{ url_for("static", filename= p.pic) }}" height="400vw" loading="lazy">
             {% endif %}
-
-
             <span class="overlay" >
                <h2 style="width:90%; margin-left:5%; border-radius:12px">{{ p.title }}</h2>
                <p style="border-radius:12px" class="info">{{ p.description }} </p>
@@ -250,7 +251,6 @@ a[target='_blank']:after {
         </span>
         </a>
     </div>
-<!--    </a>-->
         {% endfor %}
 
 

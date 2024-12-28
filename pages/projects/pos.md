@@ -3,7 +3,7 @@ date: 2024-10-22
 label: project
 timespan: December 2023 - October 2024
 pic: poweroverskin/PoS_Snail.JPG
-description: Battery-free wearables, powered through body contact!
+description: Battery-free wearables, powered via body contact!
 
 {{ add_pic("poweroverskin/andytalking.jpg", "Andy talking at UIST") }}
 
