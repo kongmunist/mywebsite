@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<!-- <title>
-    Andy Kong!
-</title> -->
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <meta name="description" content="Digital footprint of a curious man">
@@ -52,15 +47,10 @@
           unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
     </style>
-
-    <!-- Bootstrap -->
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
     <link rel="stylesheet" type="text/css" href="/static/bootstrap.min.css">
 
     <script src="/static/fontawesome.js" defer></script>
-    <!-- <script src="https://kit.fontawesome.com/c62dcd5933.js"></script> -->
 
-    <!-- Instant Page inlined - source is instant.page/5.1.0 -->
     <script src="/static/instantpage-5.1.0.js" type="module" defer></script>
 
 
@@ -69,7 +59,7 @@
     <style>
         body {
             background: #202222;
-            font-size: 1.2em;
+            font-size: 1.1em;
             font-family: 'Ubuntu', sans-serif;
             color: #FAEADB;
             overflow-x: hidden;
@@ -79,7 +69,7 @@
 
         .navlinks{
             font-family: 'Atkinson Hyperlegible';
-            font-size: 1.2em;
+            font-size: 1.1em;
         }
 
         h1, h2, h3, h4, h5, h6{
@@ -213,19 +203,14 @@
     <div class="collapse navbar-collapse " id="navbarSupportedContent" style="margin-left:25px;margin-top:10px">
         <ul class="navbar-nav ml-auto navlinks">
             <li class="nav-item">
-                <a class="nav-link navitem" href="/static/AndyKongCV.pdf ">CV/Resume</a>
+                <a class="nav-link navitem" href="https://github.com/kongmunist" target="_blank" title="Github">Github</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="https://github.com/kongmunist" target="_blank" title="Github">GitHub</a>
+                <a class="nav-link navitem" href="https://twitter.com/oldestasian" target="_blank" title="twitter">Twitter</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link navitem" href="https://twitter.com/oldestasian" target="_blank" title="Twitter">Twitter</a>
+            <li class="nav-item"></li>
+                <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
-            <!-- <li class="nav-item">
-                <a class="nav-link navitem" href="mailto:andykongresearch@gmail.com" target="_blank" title="Email">Email</a>
-            </li> -->
-
-
             <li class="nav-item">
                 <a class="nav-link navitem" href="/blog/" >[Blog]</a>
             </li>
@@ -340,18 +325,6 @@
   }
 }
 
-/*
-@keyframes appearAndSlideABit{
-  0% {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0px);
-  }
-}*/
-
 /* Generated from CSS elastic ease generator: https://codepen.io/amit_sheen/full/xxdKroP/57c932ba5730a4d512adc8ab49059892 */
 @keyframes elastic {
   0% { transform: translateX(100px); opacity:0;}
@@ -378,6 +351,24 @@ a[target='_blank']:after {
   height: 100%;
   object-fit: cover;
 }
+
+
+
+/* for the new front page view */
+
+  @media (max-width: 1024px) {
+  div[style*="display: flex; padding"] {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  div[style*="flex: 0 0"] {
+    flex: none;
+    width: 100%;
+    max-width: 800px;
+  }
+}
+  
 
 </style>
 
@@ -420,40 +411,37 @@ a[target='_blank']:after {
 
 
 
-<div class="row">
-    <div class="media-left col-xl-5 col-lg-4 col-md-4" style=" display:flex; align-items: center; padding:2em;">
-        <img alt="Photo of Andy Kong (website author) smiling" class="mx-auto d-block media-object rounded-image" src="/static/meiceland1.jpg"
-             style="width:100%; height:auto; max-width: 70%;  margin: 2em;">
+    <div style="display: flex; padding: 2rem 0rem 0rem 0rem; gap: 2rem; margin: 0 auto; max-width: 90%;">
+
+    <div style="flex: 0 0 40%; display: flex; ">
+      <img alt="Photo of Andy Kong (website author) smiling" 
+           src="/static/meiceland1.jpg"
+           style="width: 80%; height: auto; margin: auto;  border-radius: 5%; max-width:50vw;">
     </div>
+      <div style="flex: 0 0 60%; padding: 0em;">
 
+      <div style="font-size: 3rem;">Howdy!</div>
+      <div style="font-size: 2rem; padding-left: 2rem;">I'm Andy Kong</div>
+      <br>
+      <p style="margin-bottom:0px;">
+        I'm currently engaged in a <a href="/projects/yearofoutput">Year Of Output</a>
+        <br><br>
+        I'm interested in human augmentation, computational photography, and personal informatics.<br>
+        I like experiencing new sensations, training my senses, seeing things I've never seen before, challenging my beliefs of what is possible, and inventing sufficiently advanced technology.
+        <br><br>
+        You can keep up with what I'm up to by joining my Year Of Output monthly newsletter
+      </p>
 
-
-    <div class="media-body col-xl-7 col-lg-8 col-md-8" style="padding:2em; padding-top:10px;">
-        <div style="font-size:3em;">Howdy!</div>
-        <div style="font-size:2em; padding-left:2em;">I'm Andy Kong</div>
-            <br>
-            <p>
-                I'm currently engaged in a <a href="/projects/yearofoutput">Year Of Output</a>
-                <br><br>
-                I'm interested in human augmentation, computational photography, and personal informatics.
-                <br>
-                I like experiencing new sensations, training my senses, seeing things I've never seen before, challenging my beliefs of what is possible, and inventing sufficiently advanced technology.
-<!--                <br><br><br>-->
-<!--                Welcome to my personal site! I built it to document my work and to store my blog. If you would like to contact me about past or future projects, feel free to email or message me on Twitter.-->
-<!--                <br>-->
-<!--                I also started a newsletter to send out monthly updates in 2024 — signup below!-->
-                <br><br>
-                You can keep up with what I'm up to by joining my Year Of Output monthly newsletter
-                <div style="display: flex; justify-content: center; width:100%; flex-direction: row;">
-                <script async data-uid="bc53dedea2" src="https://andy-kong.ck.page/bc53dedea2/index.js"></script>
-                </div>
-            </p>
+  <div style="display: flex; justify-content: center; width: 100%; min-height: 200px;">
+    <script async data-uid="bc53dedea2" src="https://andy-kong.ck.page/bc53dedea2/index.js"></script>
+  </div>
     </div>
-</div>
+  </div>
 
+  
 <a href="/projects/"><h1 class="text-center" > Portfolio </h1></a>
 <div class="container-fluid" style="height: 100%;">
-    <div class="row" style="padding-left:15px;">
+    <div class="row" style="padding-left:0px;">
 
 
         
@@ -461,18 +449,15 @@ a[target='_blank']:after {
         <a style="display:block; height:100%; text-decoration:none; padding:20px;" href="/projects/ultraeeg/">
         <span class="hovereffect">
             
-                <img alt="Ultrasonic EEG Hero Image" class="img mx-auto d-block" src="/static/ultraeeg/realhumanskull.jpeg" height="400vw" loading="lazy">
+                <img alt="Brain Hack 2 Hero Image" class="img mx-auto d-block" src="/static/ultraeeg/brainhack.png" height="400vw" loading="lazy">
             
-
-
             <span class="overlay" >
-               <h2 style="width:90%; margin-left:5%; border-radius:12px">Ultrasonic EEG</h2>
-               <p style="border-radius:12px" class="info">Combining the best of tFUS and EEG </p>
+               <h2 style="width:90%; margin-left:5%; border-radius:12px">Brain Hack 2</h2>
+               <p style="border-radius:12px" class="info">Taking the best of tFUS and EEG </p>
             </span>
         </span>
         </a>
     </div>
-<!--    </a>-->
         
     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" style="position:relative; display:inline-block; z-index: 500;">
         <a style="display:block; height:100%; text-decoration:none; padding:20px;" href="/projects/pos/">
@@ -480,16 +465,13 @@ a[target='_blank']:after {
             
                 <img alt="Power-over-Skin Hero Image" class="img mx-auto d-block" src="/static/poweroverskin/PoS_Snail.JPG" height="400vw" loading="lazy">
             
-
-
             <span class="overlay" >
                <h2 style="width:90%; margin-left:5%; border-radius:12px">Power-over-Skin</h2>
-               <p style="border-radius:12px" class="info">Battery-free wearables, powered through body contact! </p>
+               <p style="border-radius:12px" class="info">Battery-free wearables, powered via body contact! </p>
             </span>
         </span>
         </a>
     </div>
-<!--    </a>-->
         
     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" style="position:relative; display:inline-block; z-index: 500;">
         <a style="display:block; height:100%; text-decoration:none; padding:20px;" href="/projects/holograms/">
@@ -497,8 +479,6 @@ a[target='_blank']:after {
             
                 <img alt="Laser Holograms Hero Image" class="img mx-auto d-block" src="/static/holograms/hero.jpg" height="400vw" loading="lazy">
             
-
-
             <span class="overlay" >
                <h2 style="width:90%; margin-left:5%; border-radius:12px">Laser Holograms</h2>
                <p style="border-radius:12px" class="info">Trapping 3D objects in a 2D sheet of glass </p>
@@ -506,7 +486,6 @@ a[target='_blank']:after {
         </span>
         </a>
     </div>
-<!--    </a>-->
         
     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" style="position:relative; display:inline-block; z-index: 500;">
         <a style="display:block; height:100%; text-decoration:none; padding:20px;" href="/projects/magicalbeans/">
@@ -514,8 +493,6 @@ a[target='_blank']:after {
             
                 <img alt="Magical Beans Hero Image" class="img mx-auto d-block" src="/static/magicalbeans/hero.jpg" height="400vw" loading="lazy">
             
-
-
             <span class="overlay" >
                <h2 style="width:90%; margin-left:5%; border-radius:12px">Magical Beans</h2>
                <p style="border-radius:12px" class="info">Growing beans with an enchanted water bottle </p>
@@ -523,7 +500,6 @@ a[target='_blank']:after {
         </span>
         </a>
     </div>
-<!--    </a>-->
         
     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" style="position:relative; display:inline-block; z-index: 500;">
         <a style="display:block; height:100%; text-decoration:none; padding:20px;" href="/projects/bigheadcandle/">
@@ -531,8 +507,6 @@ a[target='_blank']:after {
             
                 <img alt="Full-Size Head Candle Hero Image" class="img mx-auto d-block" src="/static/bigheadcandle/drama.jpg" height="400vw" loading="lazy">
             
-
-
             <span class="overlay" >
                <h2 style="width:90%; margin-left:5%; border-radius:12px">Full-Size Head Candle</h2>
                <p style="border-radius:12px" class="info">What if Andy was made of wax? </p>
@@ -540,7 +514,6 @@ a[target='_blank']:after {
         </span>
         </a>
     </div>
-<!--    </a>-->
         
     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" style="position:relative; display:inline-block; z-index: 500;">
         <a style="display:block; height:100%; text-decoration:none; padding:20px;" href="/projects/bohems/">
@@ -548,8 +521,6 @@ a[target='_blank']:after {
             
                 <img alt="Electroshock VR Haptics Hero Image" class="img mx-auto d-block" src="/static/bohems/boh_nella_fullhand_hero.jpeg" height="400vw" loading="lazy">
             
-
-
             <span class="overlay" >
                <h2 style="width:90%; margin-left:5%; border-radius:12px">Electroshock VR Haptics</h2>
                <p style="border-radius:12px" class="info">Through-Hand Electrical Nerve Stimulation </p>
@@ -557,7 +528,6 @@ a[target='_blank']:after {
         </span>
         </a>
     </div>
-<!--    </a>-->
         
     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" style="position:relative; display:inline-block; z-index: 500;">
         <a style="display:block; height:100%; text-decoration:none; padding:20px;" href="/projects/implantables/">
@@ -565,8 +535,6 @@ a[target='_blank']:after {
             
                 <img alt="Implantables Hero Image" class="img mx-auto d-block" src="/static/implantables/implantables_hero.jpeg" height="400vw" loading="lazy">
             
-
-
             <span class="overlay" >
                <h2 style="width:90%; margin-left:5%; border-radius:12px">Implantables</h2>
                <p style="border-radius:12px" class="info">Advanced implantable technology for continuously powered sensors and actuators </p>
@@ -574,7 +542,6 @@ a[target='_blank']:after {
         </span>
         </a>
     </div>
-<!--    </a>-->
         
     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" style="position:relative; display:inline-block; z-index: 500;">
         <a style="display:block; height:100%; text-decoration:none; padding:20px;" href="/projects/headcandles/">
@@ -582,8 +549,6 @@ a[target='_blank']:after {
             
                 <img alt="Head Candle Hero Image" class="img mx-auto d-block" src="/static/headcandle/hc_hero.jpeg" height="400vw" loading="lazy">
             
-
-
             <span class="overlay" >
                <h2 style="width:90%; margin-left:5%; border-radius:12px">Head Candle</h2>
                <p style="border-radius:12px" class="info">Candles shaped like my head </p>
@@ -591,7 +556,6 @@ a[target='_blank']:after {
         </span>
         </a>
     </div>
-<!--    </a>-->
         
     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" style="position:relative; display:inline-block; z-index: 500;">
         <a style="display:block; height:100%; text-decoration:none; padding:20px;" href="/projects/strooper/">
@@ -599,8 +563,6 @@ a[target='_blank']:after {
             
                 <img alt="Strooper Hero Image" class="img mx-auto d-block" src="/static/strooper/strooper_storepage.png" height="400vw" loading="lazy">
             
-
-
             <span class="overlay" >
                <h2 style="width:90%; margin-left:5%; border-radius:12px">Strooper</h2>
                <p style="border-radius:12px" class="info">A Chrome extension to track your cognitive performance when visiting particular websites </p>
@@ -608,7 +570,6 @@ a[target='_blank']:after {
         </span>
         </a>
     </div>
-<!--    </a>-->
         
     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" style="position:relative; display:inline-block; z-index: 500;">
         <a style="display:block; height:100%; text-decoration:none; padding:20px;" href="/projects/yearofoutput/">
@@ -616,8 +577,6 @@ a[target='_blank']:after {
             
                 <img alt="Year of Output Hero Image" class="img mx-auto d-block" src="/static/yearofoutput/andylookingeeg.jpg" height="400vw" loading="lazy">
             
-
-
             <span class="overlay" >
                <h2 style="width:90%; margin-left:5%; border-radius:12px">Year of Output</h2>
                <p style="border-radius:12px" class="info">What is Andy doing in 2024? </p>
@@ -625,7 +584,6 @@ a[target='_blank']:after {
         </span>
         </a>
     </div>
-<!--    </a>-->
         
     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" style="position:relative; display:inline-block; z-index: 500;">
         <a style="display:block; height:100%; text-decoration:none; padding:20px;" href="/projects/gridworld/">
@@ -634,8 +592,6 @@ a[target='_blank']:after {
                 <video class="img mx-auto d-block" src="/static/gridworldherovid.mov" style="object-fit: cover; height:auto; width:100%; margin: 30px 0px 30px 0px;";
             autoplay muted loop playsinline loading="lazy"></video>
             
-
-
             <span class="overlay" >
                <h2 style="width:90%; margin-left:5%; border-radius:12px">Grid World</h2>
                <p style="border-radius:12px" class="info">Collaborative online pixel canvas with a physical display in my room </p>
@@ -643,7 +599,6 @@ a[target='_blank']:after {
         </span>
         </a>
     </div>
-<!--    </a>-->
         
     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" style="position:relative; display:inline-block; z-index: 500;">
         <a style="display:block; height:100%; text-decoration:none; padding:20px;" href="/projects/infoglobe/">
@@ -651,8 +606,6 @@ a[target='_blank']:after {
             
                 <img alt="Hacking The Olympia InfoGlobe Hero Image" class="img mx-auto d-block" src="/static/infoglobe_hero.png" height="400vw" loading="lazy">
             
-
-
             <span class="overlay" >
                <h2 style="width:90%; margin-left:5%; border-radius:12px">Hacking The Olympia InfoGlobe</h2>
                <p style="border-radius:12px" class="info">Kinda-vintage internet-connected spinning-LED bulletin-board </p>
@@ -660,7 +613,6 @@ a[target='_blank']:after {
         </span>
         </a>
     </div>
-<!--    </a>-->
         
     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" style="position:relative; display:inline-block; z-index: 500;">
         <a style="display:block; height:100%; text-decoration:none; padding:20px;" href="/projects/meiger/">
@@ -668,8 +620,6 @@ a[target='_blank']:after {
             
                 <img alt="Meiger Counters Hero Image" class="img mx-auto d-block" src="/static/meiger_hero.jpg" height="400vw" loading="lazy">
             
-
-
             <span class="overlay" >
                <h2 style="width:90%; margin-left:5%; border-radius:12px">Meiger Counters</h2>
                <p style="border-radius:12px" class="info">Geiger&#39;s 2nd most famous counter, the electromagnetic radiation detector </p>
@@ -677,7 +627,6 @@ a[target='_blank']:after {
         </span>
         </a>
     </div>
-<!--    </a>-->
         
     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" style="position:relative; display:inline-block; z-index: 500;">
         <a style="display:block; height:100%; text-decoration:none; padding:20px;" href="/projects/facemeshdemos/">
@@ -685,8 +634,6 @@ a[target='_blank']:after {
             
                 <img alt="Face Mesh Demos Hero Image" class="img mx-auto d-block" src="/static/meshcool.png" height="400vw" loading="lazy">
             
-
-
             <span class="overlay" >
                <h2 style="width:90%; margin-left:5%; border-radius:12px">Face Mesh Demos</h2>
                <p style="border-radius:12px" class="info">A collection of three Face Mesh Demos that I coded to be minimal useful examples </p>
@@ -694,7 +641,6 @@ a[target='_blank']:after {
         </span>
         </a>
     </div>
-<!--    </a>-->
         
     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" style="position:relative; display:inline-block; z-index: 500;">
         <a style="display:block; height:100%; text-decoration:none; padding:20px;" href="/projects/igneous/">
@@ -702,8 +648,6 @@ a[target='_blank']:after {
             
                 <img alt="Igneous Hero Image" class="img mx-auto d-block" src="/static/ign_exhib7.jpg" height="400vw" loading="lazy">
             
-
-
             <span class="overlay" >
                <h2 style="width:90%; margin-left:5%; border-radius:12px">Igneous</h2>
                <p style="border-radius:12px" class="info">A morphing landscape of colored wax melting for hours, reflecting visitors&#39; actions </p>
@@ -711,7 +655,6 @@ a[target='_blank']:after {
         </span>
         </a>
     </div>
-<!--    </a>-->
         
     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" style="position:relative; display:inline-block; z-index: 500;">
         <a style="display:block; height:100%; text-decoration:none; padding:20px;" href="/projects/eyemu/">
@@ -719,8 +662,6 @@ a[target='_blank']:after {
             
                 <img alt="EyeMU Hero Image" class="img mx-auto d-block" src="/static/eyemuhero_clipped.png" height="400vw" loading="lazy">
             
-
-
             <span class="overlay" >
                <h2 style="width:90%; margin-left:5%; border-radius:12px">EyeMU</h2>
                <p style="border-radius:12px" class="info">First first-author paper! &#34;EyeMU Interactions, Gaze + IMU Gestures on Mobile Devices&#34; </p>
@@ -728,7 +669,6 @@ a[target='_blank']:after {
         </span>
         </a>
     </div>
-<!--    </a>-->
         
     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" style="position:relative; display:inline-block; z-index: 500;">
         <a style="display:block; height:100%; text-decoration:none; padding:20px;" href="/projects/BCC/">
@@ -736,8 +676,6 @@ a[target='_blank']:after {
             
                 <img alt="Body Channel Communication Hero Image" class="img mx-auto d-block" src="/static/bcc_alansonsketch.jpg" height="400vw" loading="lazy">
             
-
-
             <span class="overlay" >
                <h2 style="width:90%; margin-left:5%; border-radius:12px">Body Channel Communication</h2>
                <p style="border-radius:12px" class="info">Identifying users by their touch alone </p>
@@ -745,7 +683,6 @@ a[target='_blank']:after {
         </span>
         </a>
     </div>
-<!--    </a>-->
         
     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" style="position:relative; display:inline-block; z-index: 500;">
         <a style="display:block; height:100%; text-decoration:none; padding:20px;" href="/projects/wordlengthneonsign/">
@@ -753,8 +690,6 @@ a[target='_blank']:after {
             
                 <img alt="Physical Word Length Calculator Hero Image" class="img mx-auto d-block" src="/static/physicalwordlength.png" height="400vw" loading="lazy">
             
-
-
             <span class="overlay" >
                <h2 style="width:90%; margin-left:5%; border-radius:12px">Physical Word Length Calculator</h2>
                <p style="border-radius:12px" class="info">Calculator to determine how much string you need to spell a word </p>
@@ -762,7 +697,6 @@ a[target='_blank']:after {
         </span>
         </a>
     </div>
-<!--    </a>-->
         
     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" style="position:relative; display:inline-block; z-index: 500;">
         <a style="display:block; height:100%; text-decoration:none; padding:20px;" href="/projects/directionofvoice/">
@@ -770,8 +704,6 @@ a[target='_blank']:after {
             
                 <img alt="Direction-of-Voice Hero Image" class="img mx-auto d-block" src="/static/dov_thumbnail.png" height="400vw" loading="lazy">
             
-
-
             <span class="overlay" >
                <h2 style="width:90%; margin-left:5%; border-radius:12px">Direction-of-Voice</h2>
                <p style="border-radius:12px" class="info">A novel method for estimating speaker head direction from a single microphone array </p>
@@ -779,7 +711,6 @@ a[target='_blank']:after {
         </span>
         </a>
     </div>
-<!--    </a>-->
         
     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" style="position:relative; display:inline-block; z-index: 500;">
         <a style="display:block; height:100%; text-decoration:none; padding:20px;" href="/projects/eyecatcher/">
@@ -787,8 +718,6 @@ a[target='_blank']:after {
             
                 <img alt="EyeCatcher Hero Image" class="img mx-auto d-block" src="/static/eyecatchercrop4.gif" height="400vw" loading="lazy">
             
-
-
             <span class="overlay" >
                <h2 style="width:90%; margin-left:5%; border-radius:12px">EyeCatcher</h2>
                <p style="border-radius:12px" class="info">A glimpse into another world, made possible through real-time head tracking </p>
@@ -796,7 +725,6 @@ a[target='_blank']:after {
         </span>
         </a>
     </div>
-<!--    </a>-->
         
     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" style="position:relative; display:inline-block; z-index: 500;">
         <a style="display:block; height:100%; text-decoration:none; padding:20px;" href="/projects/analogscalingcalculator/">
@@ -804,8 +732,6 @@ a[target='_blank']:after {
             
                 <img alt="Analog Signal Scaling Hero Image" class="img mx-auto d-block" src="/static/analogscalinggraphic.png" height="400vw" loading="lazy">
             
-
-
             <span class="overlay" >
                <h2 style="width:90%; margin-left:5%; border-radius:12px">Analog Signal Scaling</h2>
                <p style="border-radius:12px" class="info">Taming an unruly analog signal into a more manageable size. </p>
@@ -813,7 +739,6 @@ a[target='_blank']:after {
         </span>
         </a>
     </div>
-<!--    </a>-->
         
     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" style="position:relative; display:inline-block; z-index: 500;">
         <a style="display:block; height:100%; text-decoration:none; padding:20px;" href="/projects/myo2/">
@@ -821,8 +746,6 @@ a[target='_blank']:after {
             
                 <img alt="Myo2 Hero Image" class="img mx-auto d-block" src="/static/myo2tensing.png" height="400vw" loading="lazy">
             
-
-
             <span class="overlay" >
                <h2 style="width:90%; margin-left:5%; border-radius:12px">Myo2</h2>
                <p style="border-radius:12px" class="info">Making my own ultra-sensitive EMG sensors for measuring unnoticeable muscle movement </p>
@@ -830,7 +753,6 @@ a[target='_blank']:after {
         </span>
         </a>
     </div>
-<!--    </a>-->
         
     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" style="position:relative; display:inline-block; z-index: 500;">
         <a style="display:block; height:100%; text-decoration:none; padding:20px;" href="/projects/heartratemonitor/">
@@ -838,8 +760,6 @@ a[target='_blank']:after {
             
                 <img alt="Webcam Heartrate Monitor Hero Image" class="img mx-auto d-block" src="/static/heartratefromcamera.jpg" height="400vw" loading="lazy">
             
-
-
             <span class="overlay" >
                <h2 style="width:90%; margin-left:5%; border-radius:12px">Webcam Heartrate Monitor</h2>
                <p style="border-radius:12px" class="info">Website that can determine your heartrate using ambient lighting and a camera. </p>
@@ -847,7 +767,6 @@ a[target='_blank']:after {
         </span>
         </a>
     </div>
-<!--    </a>-->
         
     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" style="position:relative; display:inline-block; z-index: 500;">
         <a style="display:block; height:100%; text-decoration:none; padding:20px;" href="/projects/carnegiecalendar/">
@@ -855,8 +774,6 @@ a[target='_blank']:after {
             
                 <img alt="Carnegie Calendar Hero Image" class="img mx-auto d-block" src="/static/CCmain.png" height="400vw" loading="lazy">
             
-
-
             <span class="overlay" >
                <h2 style="width:90%; margin-left:5%; border-radius:12px">Carnegie Calendar</h2>
                <p style="border-radius:12px" class="info">All-encompassing, auto-updating events calendar for everything going on at uni </p>
@@ -864,7 +781,6 @@ a[target='_blank']:after {
         </span>
         </a>
     </div>
-<!--    </a>-->
         
     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" style="position:relative; display:inline-block; z-index: 500;">
         <a style="display:block; height:100%; text-decoration:none; padding:20px;" href="/projects/asciizoom/">
@@ -872,8 +788,6 @@ a[target='_blank']:after {
             
                 <img alt="AsciiZOOM Hero Image" class="img mx-auto d-block" src="/static/asciizoom.png" height="400vw" loading="lazy">
             
-
-
             <span class="overlay" >
                <h2 style="width:90%; margin-left:5%; border-radius:12px">AsciiZOOM</h2>
                <p style="border-radius:12px" class="info">The first secure, text-based videoconferencing app, accessible from the safety of your terminal. </p>
@@ -881,7 +795,6 @@ a[target='_blank']:after {
         </span>
         </a>
     </div>
-<!--    </a>-->
         
     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" style="position:relative; display:inline-block; z-index: 500;">
         <a style="display:block; height:100%; text-decoration:none; padding:20px;" href="/projects/alteredperceptions/">
@@ -889,8 +802,6 @@ a[target='_blank']:after {
             
                 <img alt="Altered Perceptions Hero Image" class="img mx-auto d-block" src="/static/alteredbonsai.jpg" height="400vw" loading="lazy">
             
-
-
             <span class="overlay" >
                <h2 style="width:90%; margin-left:5%; border-radius:12px">Altered Perceptions</h2>
                <p style="border-radius:12px" class="info">VR headset + POV camera + preprocessing =&gt; new way to see the world </p>
@@ -898,7 +809,6 @@ a[target='_blank']:after {
         </span>
         </a>
     </div>
-<!--    </a>-->
         
     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" style="position:relative; display:inline-block; z-index: 500;">
         <a style="display:block; height:100%; text-decoration:none; padding:20px;" href="/projects/ampbox/">
@@ -906,8 +816,6 @@ a[target='_blank']:after {
             
                 <img alt="Amp Box Hero Image" class="img mx-auto d-block" src="/static/ampbox.png" height="400vw" loading="lazy">
             
-
-
             <span class="overlay" >
                <h2 style="width:90%; margin-left:5%; border-radius:12px">Amp Box</h2>
                <p style="border-radius:12px" class="info">A box optimized for ease-of-use in amplifying tiny electrical signals (&lt;10 mv) </p>
@@ -915,7 +823,6 @@ a[target='_blank']:after {
         </span>
         </a>
     </div>
-<!--    </a>-->
         
     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" style="position:relative; display:inline-block; z-index: 500;">
         <a style="display:block; height:100%; text-decoration:none; padding:20px;" href="/projects/manualbackprop/">
@@ -923,8 +830,6 @@ a[target='_blank']:after {
             
                 <img alt="Manual Backpropagation Hero Image" class="img mx-auto d-block" src="/static/backprop.png" height="400vw" loading="lazy">
             
-
-
             <span class="overlay" >
                <h2 style="width:90%; margin-left:5%; border-radius:12px">Manual Backpropagation</h2>
                <p style="border-radius:12px" class="info">Manually implementing backpropagation to make sure I know how it works </p>
@@ -932,7 +837,6 @@ a[target='_blank']:after {
         </span>
         </a>
     </div>
-<!--    </a>-->
         
     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" style="position:relative; display:inline-block; z-index: 500;">
         <a style="display:block; height:100%; text-decoration:none; padding:20px;" href="/projects/spintank/">
@@ -940,8 +844,6 @@ a[target='_blank']:after {
             
                 <img alt="Spin Tank Hero Image" class="img mx-auto d-block" src="/static/spintankabrams.png" height="400vw" loading="lazy">
             
-
-
             <span class="overlay" >
                <h2 style="width:90%; margin-left:5%; border-radius:12px">Spin Tank</h2>
                <p style="border-radius:12px" class="info">Testing a novel reactive tank armor that spins to deflect projectiles </p>
@@ -949,7 +851,6 @@ a[target='_blank']:after {
         </span>
         </a>
     </div>
-<!--    </a>-->
         
     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" style="position:relative; display:inline-block; z-index: 500;">
         <a style="display:block; height:100%; text-decoration:none; padding:20px;" href="/projects/forcequeue/">
@@ -957,8 +858,6 @@ a[target='_blank']:after {
             
                 <img alt="Spotify Force Queueing Hero Image" class="img mx-auto d-block" src="/static/kerokerokerokerokerokero.png" height="400vw" loading="lazy">
             
-
-
             <span class="overlay" >
                <h2 style="width:90%; margin-left:5%; border-radius:12px">Spotify Force Queueing</h2>
                <p style="border-radius:12px" class="info">A Python program using Spotify APIs to forcibly queue songs on collaborative playlists when you don&#39;t have aux control </p>
@@ -966,7 +865,6 @@ a[target='_blank']:after {
         </span>
         </a>
     </div>
-<!--    </a>-->
         
     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" style="position:relative; display:inline-block; z-index: 500;">
         <a style="display:block; height:100%; text-decoration:none; padding:20px;" href="/projects/eyetracker/">
@@ -974,8 +872,6 @@ a[target='_blank']:after {
             
                 <img alt="Eye-Tracking Mouse Hero Image" class="img mx-auto d-block" src="/static/eyetrackthumbnail.png" height="400vw" loading="lazy">
             
-
-
             <span class="overlay" >
                <h2 style="width:90%; margin-left:5%; border-radius:12px">Eye-Tracking Mouse</h2>
                <p style="border-radius:12px" class="info">An easy-to-use, handless mouse utilizing a laptop&#39;s built-in webcam and some CNNs. </p>
@@ -983,7 +879,6 @@ a[target='_blank']:after {
         </span>
         </a>
     </div>
-<!--    </a>-->
         
     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 appearOnScroll" style="position:relative; display:inline-block; z-index: 500;">
         <a style="display:block; height:100%; text-decoration:none; padding:20px;" href="/projects/personalwebsite/">
@@ -991,8 +886,6 @@ a[target='_blank']:after {
             
                 <img alt="Personal Website Hero Image" class="img mx-auto d-block" src="/static/websitev2.png" height="400vw" loading="lazy">
             
-
-
             <span class="overlay" >
                <h2 style="width:90%; margin-left:5%; border-radius:12px">Personal Website</h2>
                <p style="border-radius:12px" class="info">Static website generator built with Flask and hosted on Firebase. You&#39;re looking right at it! </p>
@@ -1000,22 +893,14 @@ a[target='_blank']:after {
         </span>
         </a>
     </div>
-<!--    </a>-->
         
 
 
     </div>
 </div>
 
-
-<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
-<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
-<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </body>

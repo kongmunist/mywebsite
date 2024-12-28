@@ -4,7 +4,7 @@ TODO:
 - Add a now page
 - maybe remove the chapter headers from blog posts where the table of contents doesn't exist?
 
-Dec 28, 2024: Wow Claude is great at removing bootstrap. I hated doing all the column stuff, and Claude has converted my blog, project, blogmain, and main page header into flexboxes. Great! I also removed a ton of crufty comments hidden inside the HTML, probably will load faster now
+Dec 28, 2024: Wow Claude is great at removing bootstrap. I hated doing all the column stuff, and Claude has converted my blog, project, blogmain, and main page header into flexboxes. Great! I also removed a ton of crufty comments hidden inside the HTML, probably will load faster now. Finally added Now page
 Dec 27, 2024: reconsolidated blog/log split, now blogs are just colored differently. also fixed a dead link from daniel mcduff on our ppg tutorial. also updated resume
 September 24, 2024: Split blog posts into logs and blogs.
 June 27, 2024: Images grow when moused over, in both blog and project pages. rounded corners are a bit jumpy, but it's subtle enough.

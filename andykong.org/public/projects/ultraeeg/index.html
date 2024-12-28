@@ -1,18 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<!-- <title>
-    Andy Kong!
-</title> -->
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="author" content="Andy Kong">
-    <meta name="title" content="Ultrasonic EEG">
-    <meta name="description" content="Combining the best of tFUS and EEG">
+    <meta name="title" content="Brain Hack 2">
+    <meta name="description" content="Taking the best of tFUS and EEG">
 
-<title> Ultrasonic EEG | Andy Kong</title>
+<title> Brain Hack 2 | Andy Kong</title>
 
 <style>
     .projectpage h1, .projectpage h2{
@@ -66,15 +61,10 @@
           unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
     </style>
-
-    <!-- Bootstrap -->
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
     <link rel="stylesheet" type="text/css" href="/static/bootstrap.min.css">
 
     <script src="/static/fontawesome.js" defer></script>
-    <!-- <script src="https://kit.fontawesome.com/c62dcd5933.js"></script> -->
 
-    <!-- Instant Page inlined - source is instant.page/5.1.0 -->
     <script src="/static/instantpage-5.1.0.js" type="module" defer></script>
 
 
@@ -83,7 +73,7 @@
     <style>
         body {
             background: #202222;
-            font-size: 1.2em;
+            font-size: 1.1em;
             font-family: 'Ubuntu', sans-serif;
             color: #FAEADB;
             overflow-x: hidden;
@@ -93,7 +83,7 @@
 
         .navlinks{
             font-family: 'Atkinson Hyperlegible';
-            font-size: 1.2em;
+            font-size: 1.1em;
         }
 
         h1, h2, h3, h4, h5, h6{
@@ -227,19 +217,14 @@
     <div class="collapse navbar-collapse " id="navbarSupportedContent" style="margin-left:25px;margin-top:10px">
         <ul class="navbar-nav ml-auto navlinks">
             <li class="nav-item">
-                <a class="nav-link navitem" href="/static/AndyKongCV.pdf ">CV/Resume</a>
+                <a class="nav-link navitem" href="https://github.com/kongmunist" target="_blank" title="Github">Github</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="https://github.com/kongmunist" target="_blank" title="Github">GitHub</a>
+                <a class="nav-link navitem" href="https://twitter.com/oldestasian" target="_blank" title="twitter">Twitter</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link navitem" href="https://twitter.com/oldestasian" target="_blank" title="Twitter">Twitter</a>
+            <li class="nav-item"></li>
+                <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
-            <!-- <li class="nav-item">
-                <a class="nav-link navitem" href="mailto:andykongresearch@gmail.com" target="_blank" title="Email">Email</a>
-            </li> -->
-
-
             <li class="nav-item">
                 <a class="nav-link navitem" href="/blog/" >[Blog]</a>
             </li>
@@ -249,38 +234,105 @@
 
 
 
-
-<!--    <div class="row justify-content-center">-->
-<!--<div class="row overflow-hidden" style = "height:100vh; width: 100vw; padding-left:30px; padding-right:0px;">-->
-<div class="row overflow-hidden" style = "height:100vh; width: 100vw; padding: 0px 30px 0px 30px;">
-        <div class="col-lg-2"></div>
-        <div class="col-12 col-lg-8 projectpage" style="max-width:1000px; margin-bottom:4em;">
-            <h1 style="text-center; margin-bottom: 5px">Ultrasonic EEG</h1>
-                <i><p style="margin-bottom: 5px; margin-top: 0px">Combining the best of tFUS and EEG</p></i>
+<div class="overflow-hidden" style = "height:100vh; width: 100vw; padding: 0px 1em 0px 1em;">
+        <div class="projectpage" style="max-width:50em; margin-bottom:4em; margin-left:auto; margin-right:auto;">
+            <h1 style="margin-bottom: 5px">Brain Hack 2</h1>
+                <i><p style="margin-bottom: 5px; margin-top: 0px">Taking the best of tFUS and EEG</p></i>
                 <p style="margin-bottom: 0px; margin-top: 0px">Timespan: August 2024</p>
                 <p style="margin-bottom: 5px; margin-top: 0px">Published: 2024-12-26</p>
 
                 <hr>
-            <html><body><p>Spatial resolution of tFUS + time resolution of EEG. WIP since Dec 27 2024</p>
-<p>My first circuit board measured the electrical signals thrown off by muscles as they tense and flex, amplifying a small voltage on the surface of the bicep 100,000x so I could see it on the oscilloscope, a quantification of my body working as it had for many years. This marked the beginning of my exploration into biosignals and what they meant about the body. </p>
-<p>Later I worked with EEG, starting and stopping with the OpenBCI Ganglion. This board is essentially the Texas Instruments ADS1299 chip with some nice software integration, and the data is completely useless. I'm not sure if the board is useless or surface EEG is useless — either way, the signals were small and difficult to see. Brain signals are 10-100x smaller than muscle signals, and coupling an electrode to the scalp through the hair was harder than sticking 3M red dot electrodes onto the arm. To find better signal, I went searching through the literature.</p>
+            <html><body><p class="caption"> Muscle contraction test on Myo2 boards </p>
+<p><img loading="lazy" alt="Muscle contraction test on Myo2 boards" class="addpic" src="/static/ultraeeg/brainhack.png"/></p>
+<p>Hi! This post is gonna describe the Ultrasound+EEG project I worked on as part of Brain Hack 2 hosted by <a href="https://www.marleyx.com/">Marley</a> and <a href="https://www.rhotter.com/">Raffi</a></p>
+<ul>
+<li>Proper <a href="https://brainhack.vercel.app/ae">writeup</a></li>
+<li>Layman description <a href="https://x.com/_marleyx/status/1845999421542334608">on Twitter</a></li>
+</ul>
+<hr/>
+<h1 id="background">Background</h1>
+<h2 id="muscles">Muscles</h2>
+<p>My first circuit board measured the electrical signals thrown off by muscles as they tense and flex, amplifying a small voltage on the surface of the bicep 10,000x so I could see it on the oscilloscope, a quantification of my body working as it had for many years. This marked the beginning of my exploration into biosignals and what we could communicate to a computer through our movements.</p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/myo2output1.png"/></p>
+<h2 id="brain">Brain</h2>
+<p>Later I moved to EEG because I thought it would be cool to think and have my computer pull up information for me. Brain signals are 10-100x smaller in magnitude than muscle signals, and coupling an electrode to the scalp through the hair was way harder than simply sticking 3M red dot electrodes onto the arm. I had a lot of trouble getting useful signal, so I went searching through the literature.</p>
+<p class="caption"> OpenBCI Ganglion kit for measuring EEG </p>
+<p><img loading="lazy" alt="OpenBCI Ganglion kit for measuring EEG" class="addpic" src="/static/ultraeeg/initialeeg.jpeg"/></p>
 <p>There's many ways to look into the brain without opening it. You can use light (fNIRS, optogenetics), voltages on the scalp (EEG), magnetic fields right outside the head (MEG), magnetic fields inside the brain (fMRI), or many more. But the trouble with all of these is that the brain cannot be touched. It's kinda like that guy who got his cylinder stuck in a M&amp;Ms container but refused any unstucking methods that could damage it — how can you get better signal resolution out of a source that cannot be harmed or isolated or altered without fundamentally ruining the original point to all the sensing? Anyway, from all this I learned that the methods that could exactly see WHEN a cluster of neurons fired (EEG, MEG) were terrible at figuring out where that cluster was, whereas the approaches that were really slow to react (fNIRS, MRI) could tell you exactly where neurons were firing. What a crazy world!</p>
-<p>There was a technique called lock-in amplification which claimed to pull nanovolt signals out of the noise floor, but it required the signal to be modulated. Since I couldn't figure out a way to modulate the brain signal, I tried instead to lock onto the stimulus frequency (a lamp flashing at 10Hz). This technique doesn't work so well at low frequencies, and the brain is not a reliable function generator anyway, so that didn't work. Shortly afterwards I gave up.</p>
-<h1 id="fast-forward-3-years">Fast forward 3 years</h1></body></html>
+<p class="caption"> My SSVEP setup, operating from ~10-20Hz </p>
+<p><img loading="lazy" alt="My SSVEP setup, operating from ~10-20Hz" class="addpic" src="/static/ultraeeg/SSVEP.jpg"/></p>
+<p>I did read about a technique called lock-in amplification, which claimed to be able to pull nanovolt signals out of the noise floor, but it required the signal to be modulated by some reference signal. Since I couldn't figure out a way to modulate the brain signal inside my head, I tried instead to lock onto the stimulus frequency (a lamp flashing at 10Hz). This technique doesn't work so well at low frequencies, and the brain is not a reliable function generator anyway, so that didn't work. Shortly afterwards I gave up on EEG entirely.</p>
+<hr/>
+<h1 id="fast-forward-3-years">Fast forward 3 years</h1>
+<p>After that project, EEG was completely and totally dead as far as I was concerned — I saw no way to get good signal non-invasively. But 2024 was a magical year. One day in August as I was about to leave San Francisco, a friend (Marley) mentioned a signal processing problem involving EEG they were scoping out, and would I like to come over and think about it together? And what they revealed to me had the potential to become EEG's salvation. </p>
+<p>As mentioned before, EEG's resolution could be enhanced by modulating brain waves at a certain frequency, then using a lock-in amplifier to extract the signal. This works just like a car radio — every station is always broadcasting, but your radio decides what frequency to pick up on. The technique goes by many names (lock in amplification, heterodyning, synchronized detection), but basically it lets you pull signals deep, deep in the background noise — all you needed was a way to modulate biosignals. </p>
+<p class="caption">Modulation shifts the original red signal to the blue signal, where it can be recovered above the noise floor <a href="https://www.edn.com/design-a-dsp-lock-in-amplifier-part-1-background/">(source)</a></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/ultraeeg/edn.gif"/></p>
+<p>What Marley and Raffi had found in the literature was an approach to modulate electrical biosignals by physically compressing the tissues the biosignals passed through using focused ultrasound energy. It's called the acousto-electric effect, or AE; by applying ~1MPa of pressure, tissues would typically change resistitivity by ~0.1%, allowing us to use the ultrasonic signal as the modulator for locking onto EEG waves. This wasn't even a theoretical technique — it had been done on the heart to image cardiac currents <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8569939/pdf/nihms-1696551.pdf">(In vivo acoustoelectric imaging for high-resolution visualization
+of cardiac electric spatiotemporal dynamics)</a>. </p>
+<p class="caption">A map of the peak voltages at different areas of the heart, produced using the acousto-electric effect  <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8569939/pdf/nihms-1696551.pdf">(source)</a></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/ultraeeg/cardiacae.png"/></p>
+<p>Not only did this give us a method for higher-resolution EEG, it also meant we could read a much denser resolution of EEG. Since ultrasound can be focused down to a tiny $&lt;1mm^3$ spot, if we stimulated just one section of the brain we would be able to decode the activity from just that part. Spatial resolution of tFUS and the time resolution of EEG — I was hooked.</p>
+<p>We did the math on a whiteboard. 0.1% change in resistivity on top of a ~10-100uV neural signal means we would be hunting for a 10-100nV signal hidden within the typically ~1-3 V raw amplified EEG signal. Totally possible with the lock-in! I moved my flight by a week and joined their quest. </p>
+<hr/>
+<h1 id="brain-hack-2">Brain Hack 2</h1>
+<p>Our hackers were situated in a beautiful house in Mill Valley, half an hour north of SF in a quaint old house with a painting of the OG homebuilder. We turned it into a lab as soon as we got there. The TV stand became the 3D printer table, the big dining table was claimed by team skull, and the living room table became the dominion of team AE. </p>
+<p class="caption"> Just a side house of the main house </p>
+<p><img loading="lazy" alt="Just a side house of the main house" class="addpic" src="/static/ultraeeg/house.jpeg"/></p>
+<p class="caption"> Team tFUS </p>
+<p><img loading="lazy" alt="Team tFUS" class="addpic" src="/static/ultraeeg/raffiyawning.jpeg"/></p>
+<p class="caption"> Acousto-electric living room </p>
+<p><img loading="lazy" alt="Acousto-electric living room" class="addpic" src="/static/ultraeeg/teamaedominion.jpg"/></p>
+<p>Closets were filled with deionized water, and a huge pot was constantly being boiled and cooled in order to produce degased water, a required medium for the ultrasonic transducer to not blow up. Every day Amazon packages arrived, bottlenecks lifted, and the team would make progress until we could no more. It felt like a skunkworks. It was heavenly.</p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/ultraeeg/skullwifhat.jpeg"/></p>
+<h1 id="process">Process</h1>
+<p>I think most "science" is pretty straightforward engineering. Get it working in ideal settings, then replace ideal components with non-ideal ones, one at a time. </p>
+<p class="caption"> Function generator for the ultrasonic transducer, oscilloscope to see the ultrasonic microphone, lock-in (SR860) for demodulating the AE signal, and Marley for head scratching </p>
+<p><img loading="lazy" alt="Function generator for the ultrasonic transducer, oscilloscope to see the ultrasonic microphone, lock-in (SR860) for demodulating the AE signal, and Marley for head scratching" class="addpic" src="/static/ultraeeg/allmachinesandmarley.jpg"/></p>
+<p>First we tested all the equipment. Does the lock-in report a tiny attenuated signal when we divide the function gen output by a million? Does the ultrasonic transducer work, and does the ultrasonic mic pick it up? </p>
+<p class="caption"> I loved the lock-in. You would tell we were a real group of nerds because as soon as it arrived we were all vying to be the first to read the manual. 
+ </p>
+<p><img loading="lazy" alt="I loved the lock-in. You would tell we were a real group of nerds because as soon as it arrived we were all vying to be the first to read the manual. 
+" class="addpic" src="/static/ultraeeg/momsaiditsmyturnonthelockin.jpg"/></p>
+<p>Once all the components are working we started on the real thing. Here were our rough milestones:</p>
+<ol>
+<li>AE working in saline</li>
+<li>AE working in saline, and we pick up a DC signal running through the ultrasound's focus</li>
+<li>AE working in saline, and we pick up an AC signal running through the focus</li>
+<li>AE working in muscle</li>
+<li>AE working in muscle, and we pick up flexing</li>
+<li>AE working on brain</li>
+</ol>
+<p>We made it to step 4.</p>
+<hr/>
+<h1 id="what-did-and-didnt-work">What did and didn't work</h1>
+<p>I didn't keep good notes on the process, and now it is several months after the hack. All I have remaining are the struggles that we overcame. In no intentional order:</p>
+<ol>
+<li>Using the function generator to drive the ultrasonic transducer directly works great.</li>
+<li>Saline solution (0.9% salt) has similar properties to human tissue w/r/t the acousto-electric effect, so you can use it for testing</li>
+<li>Saline is conductive, and most coaxial cables are not waterproof. This means that the driving signal for the ultrasonic transducer can weakly conduct through the saline to get picked up. This is deceptive because it looks like the AE signal, but is actually electrical and not acoustic. To solve this, we encapsulated the transducer in a latex balloon filled with mineral oil, which doesn't affect the ultrasonic propagation <p><img loading="lazy" alt="" class="addpic" src="/static/ultraeeg/balloon.jpeg"/></p></li>
+<li>One way to ensure your signal is acoustic and not electrical is to look at the delay between driving signal and receiving signal. Acoustic signals are limited by speed of sound in the medium (50-100us), while electrical happens instantly <p><img loading="lazy" alt="" class="addpic" src="/static/ultraeeg/drivesignal.jpeg"/></p></li>
+<li>Ultrasound can be focused using any physical shape, for instance a cone. It kinda just matters the hardness of the material, I think. We tried using orbeez cut into cones, wax molded into a cone, silicone cone, and finally went with a 3D printed one. <p><img loading="lazy" alt="" class="addpic" src="/static/ultraeeg/carrotlens.jpeg"/></p></li>
+<li>3D printers have come so far. Our Bambu was running nearly the whole time, and every print was necessary or saved us a lot of janky work holding. I'm beginning to enjoy 3D printing a holder for everything</li>
+<li>Working with other skilled engineers is a joy I hope everyone gets to experience. Your expertise is generally spiky, and in a group those spikes balance out to make a glorious, fast-rolling circle down progress lane. Made great friends with <a href="https://x.com/BigCrete">Ethan</a> on this trip <p><img loading="lazy" alt="" class="addpic" src="/static/ultraeeg/menethan.jpeg"/></p></li>
+<li>On most multi-channel function generators, there exist nanovolts of leakage between the outputs. Typically there is nothing wrong with this, except for the edge case where your signal is in the nanovolts. Oops!! Just buy a 2nd function generator. </li>
+<li>You can buy skulls for 2000 USD online, and their reward points are denominated in "bones"</li>
+<li>Being away from the usual location is like staying up to work without social distractions, but 10x better. I thought it was a bit wasteful to just go half an hour away for this, but it really puts you in a hackathon mindset. Loved the house also, Mill Valley is a beautiful area which is very walkable. <p><img loading="lazy" alt="" class="addpic" src="/static/ultraeeg/house%21.jpeg"/></p></li>
+<li>You can boil bones, in fact you have to if you want to put ultrasound into them. Cause in real life they're wet, so you gotta make them wet to show the effect too. </li>
+<li>Bambu printers have high speed settings, and they even have ludicrous. This is the same as the Tesla speed settings, but they don't go up to Plaid, which is a reference to Spaceballs, which is a parody of Star Wars, both of which I have never seen.</li>
+<li>If you put a projector on a gimbal you can create a new way to be online. <p><img loading="lazy" alt="" class="addpic" src="/static/ultraeeg/brian.jpeg"/></p></li>
+<li>Modern lock-in amplifiers allow you to lock onto a specific frequency, but in case you're off by a few Hertz or don't know where to look, they also offer the option to sweep their modulation frequency across a range. This gives you a clearer signal than simply picking one frequency. </li>
+<li>Morale is a real thing. There is still room for fun and relaxing after a day's sprint, even if the task seems impossible. I don't know if I can implicitly budget this in yet, but Marley and Raffi and everyone else included time for it very naturally.</li>
+</ol>
+<p><img loading="lazy" alt="" class="addpic" src="/static/ultraeeg/latenights.jpeg"/></p>
+<p>Ok that's all I think was left unsaid in the official writeup. Cya next time!</p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/ultraeeg/goodworks.png"/></p></body></html>
         </div>
-        <div class="col-lg-2"></div>
         <p style="line-height:300%;">&nbsp;</p>
 </div>
 
-
-<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
-<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
-<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </body>

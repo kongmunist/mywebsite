@@ -278,11 +278,10 @@ def rss():
     return response
 
 
-@app.route("/about/")
-def about():
-    # print("about page")
-    # return render_template('about.html')
-    return redirect("/")
+@app.route("/now/")
+def now():
+    print("now page")
+    return render_template('about.html')
 
 
 @app.route("/blog/")
