@@ -1,28 +1,85 @@
 {% extends "base.html" %}
 
 {% block app_content %}
-<div class="row justify-content-center" style = "height:100vh; width: 100vw;padding-left:25px; padding-right:0px">
-    <div class="col-xl-3 col-lg-4 col-md-11 col-11" style="padding-left:2%; padding-right:2%;">
 
-        <a href="/"> <img class="media-object mx-auto d-block rounded-circle " style="margin-bottom:0px; max-height:20vh;" src="{{url_for('static', filename = 'merock_square.jpg')}}"/></a>
-        <h1 class="text-center" style="font-size: 2em; margin-top:0.5em;">Hi, I'm Andy!</h1>
-        <p class="text-center"  style="font-size: 1.5em; margin-bottom:0px;"></p>
+<style>
+    .container {
+      display: flex;
+      min-height: 100vh;
+      padding: 0 2rem;
+      gap: 2rem;
+    }
+    
+    .sidebar {
+      position: sticky;
+      top: 2rem;
+      height: fit-content;
+      flex: 0 0 300px;
+      text-align: center;
+    }
+    
+    .profile-pic {
+      border-radius: 50%;
+      max-height: 20vh;
+      margin-bottom: 1rem;
+    }
+    
+    .social-links {
+      font-size: 2.5em;
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+    
+    .rss-icon {
+      height: 1em;
+    }
+    
+    .content {
+      flex: 1;
+      max-width: 800px;
+    }
+    
+    
+    @media (max-width: 1024px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .sidebar {
+        position: static;
+        flex: none;
+        width: 100%;
+        max-width: 800px;
+      }
+      
+      .content {
+        width: 100%;
+        max-width: 800px;
+      }
+    }
+</style>
 
-        <div class="links text-center" style="margin:5px; font-size:2.5em;">
-            <a href="https://critiquefood.blogspot.com/" target="_blank" title="Food For Thought"><i class="fas fa-ice-cream"></i></a>&nbsp
-            <a href="https://www.youtube.com/channel/UC8hEr0FkB5i-gQC4b7b5fvg" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>&nbsp
-            <a href="https://kongmunist.medium.com/" target="_blank" title="Medium"><i class="fab fa-medium"></i></a>&nbsp
-            <a href="/rss.xml" title="RSS"><img src="{{ url_for('static', filename='rss.svg')}}" style = "height:1em;"></a>&nbsp
-        </div>
+
+
+<div class="container">
+  <aside class="sidebar">
+    <a href="/">
+      <img class="profile-pic" src="{{url_for('static', filename = 'merock_square.jpg')}}" alt="Andy"/>
+    </a>
+    <h1>Hi, I'm Andy!</h1>
+    <div class="social-links">
+      <a href="https://critiquefood.blogspot.com/" target="_blank" title="Food For Thought"><i class="fas fa-ice-cream"></i></a>
+      <a href="https://www.youtube.com/channel/UC8hEr0FkB5i-gQC4b7b5fvg" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://kongmunist.medium.com/" target="_blank"><i class="fab fa-medium"></i></a>
+      <a href="/rss.xml"><img src="{{ url_for('static', filename='rss.svg')}}" class="rss-icon"></a>
     </div>
+  </aside>
 
-
-
-    <div class="col-xl-7 col-lg-7 col-md-11 col-11 p-0">
-            {% block batcontent %}
-            {% endblock %}
-    </div>
-    <div class="col-xl-2 col-lg-1 col-0"></div>
-</div>
-
+  <main class="content">
+    {% block batcontent %}
     {% endblock %}
+  </main>
+</div>
+{% endblock %}
