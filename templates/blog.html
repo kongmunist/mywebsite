@@ -33,10 +33,6 @@
         .blogpage > h2::before {
             counter-increment: h2counter;
             content: counter(h1counter) "." counter(h2counter) "  ";
-            /*
-            text-decoration: none;
-            display: inline-block;
-            */
         }
 
 
@@ -75,7 +71,8 @@
         {% for p in page %}
 
 
-<div class="blogpage overflow-hidden" style="margin-bottom:4em;">
+<!-- <div class="blogpage overflow-hidden" style="margin-bottom:4em;"> -->
+<div class="blogpage overflow-hidden" style="max-width:50em; margin-bottom:4em; margin-left:auto; margin-right:auto;">
     <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">{{ p.title }}</h1>
             <p style="font-size:0.8em;"> Published {{ dateconvert(p.meta.date) }}</p>
 <hr>
@@ -84,7 +81,6 @@
 
 
     {% if p.meta.tags|length %}
-<!--        <hr>-->
         <p style="line-height:250%;">
         <a class="btn btn-info" href="{{ url_for("tag", tag= p.meta.tags.0  ) }}">{{ p.meta.tags.0 }}</a>
 
