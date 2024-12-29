@@ -3,11 +3,11 @@ date: 2024-12-26
 label: project
 timespan: August 2024
 pic: ultraeeg/brainhack.png
-description: Taking the best of tFUS and EEG
+description: Ultra EEG
 
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-{{ add_pic("ultraeeg/brainhack.png", "Muscle contraction test on Myo2 boards") }}
+{{ add_pic("ultraeeg/brainhack.png", "") }}
 
 Hi! This post is gonna describe the Ultrasound+EEG project I worked on as part of Brain Hack 2 hosted by [Marley](https://www.marleyx.com/) and [Raffi](https://www.rhotter.com/)
 
@@ -48,7 +48,7 @@ of cardiac electric spatiotemporal dynamics)](https://pmc.ncbi.nlm.nih.gov/artic
 <p class="caption">A map of the peak voltages at different areas of the heart, produced using the acousto-electric effect  <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8569939/pdf/nihms-1696551.pdf">(source)</a></p>
 {{ add_pic("ultraeeg/cardiacae.png","") }}
 
-Not only did this give us a method for higher-resolution EEG, it also meant we could read a much denser resolution of EEG. Since ultrasound can be focused down to a tiny \\(<1mm^3\\)spot, if we stimulated just one section of the brain we would be able to decode the activity from just that part. Spatial resolution of tFUS and the time resolution of EEG — I was hooked.
+Not only did this give us a method for higher-resolution EEG, it also meant we could read a much denser resolution of EEG. Since ultrasound can be focused down to a tiny \\(<1mm^3\\)spot, if we stimulated just one section of the brain we would be able to decode the activity from just that part. Spatial resolution of focused ultrasound and the time resolution of EEG — I was hooked.
 
 We did the math on a whiteboard. 0.1% change in resistivity on top of a ~10-100uV neural signal means we would be hunting for a 10-100nV signal hidden within the typically ~1-3 V raw amplified EEG signal. Totally possible with the lock-in! I moved my flight by a week and joined their quest. 
 
@@ -58,7 +58,7 @@ Our hackers were situated in a beautiful house in Mill Valley, half an hour nort
 
 {{ add_pic("ultraeeg/house.jpeg","Just a side house of the main house") }}
 
-{{ add_pic("ultraeeg/raffiyawning.jpeg","Team tFUS") }}
+{{ add_pic("ultraeeg/raffiyawning.jpeg","Team functional ultrasound aka team skull") }}
 {{ add_pic("ultraeeg/teamaedominion.jpg","Acousto-electric living room") }}
 
 Closets were filled with deionized water, and a huge pot was constantly being boiled and cooled in order to produce degased water, a required medium for the ultrasonic transducer to not blow up. Every day Amazon packages arrived, bottlenecks lifted, and the team would make progress until we could no more. It felt like a skunkworks. It was heavenly.
@@ -120,6 +120,5 @@ External EEG seemed so impossible for many years, and now I have hope. That too 
 # More, please!
 
 And finally, working on this a) hard/nearly impossible problem with b) minimal resource constraints, c) a team of competent, fun people under a d) tight timeline has been a peak experience in my life. If you have a similar problem which fulfills at least a, c, and d and needs some help on the prototyping/research/EE/signals/ML/CV/problem solving/thinking/minimum viable solution side, I am your man and would love to join. Please reach out!
-
 
 {{ add_pic("ultraeeg/goodworks.png", "") }}
