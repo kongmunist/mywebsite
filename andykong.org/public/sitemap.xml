@@ -14,6 +14,17 @@
 
   
     <url>
+    <loc>https://andykong.org/blog/footslip</loc>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/footslip.jpg
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+    <url>
     <loc>https://andykong.org/projects/ultraeeg</loc>
       
         <image:image>

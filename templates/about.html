@@ -18,7 +18,37 @@
 
 <div style="display: flex; flex-direction: column; align-items: center; max-width: 600px; margin: 0 auto; padding: 20px;">
     <div>
-        <div style="display: flex; justify-content: center; width: 100%"><img src="{{ url_for('static', filename='andyoq.jpg') }}" style="max-width: 75%; max-height: 50vh; height: auto; width: auto; "></div>
+        {% if startEntry[0]|length > 0 %}
+            <div style="display: flex; justify-content: center; width: 100%"><img src="{{ url_for('static', filename=startEntry[0]) }}" style="max-width: 75%; max-height: 50vh; height: auto; width: auto; "></div>
+            <br>
+        {% endif %}
+        <p style="margin-bottom: 20px;">
+            I live in {{ startEntry[1] }}, and have been since {{ startEntry[2] }}. I'm currently
+        </p>
+        {% for entry in startEntry[4:] %}
+            <div class="nowli">
+                {{ entry|safe }}
+            </div>
+        {% endfor %}
+
+        {% for entry in pastEntries %}
+            <hr>
+            {% if entry[0]|length > 0 %}
+                <div style="display: flex; justify-content: center; width: 100%"><img src="{{ url_for('static', filename=entry[0]) }}" style="max-width: 75%; max-height: 50vh; height: auto; width: auto; "></div>
+                <br>
+            {% endif %}
+            <p style="margin-bottom: 20px;">
+                Before that I lived in {{ entry[1] }} from {{ entry[2] }} to {{ entry[3] }}, where I
+            </p>
+            {% for entry in entry[4:] %}
+                <div class="pastli">
+                    {{ entry|safe }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+
+
+        <!-- <div style="display: flex; justify-content: center; width: 100%"><img src="{{ url_for('static', filename='andyoq.jpg') }}" style="max-width: 75%; max-height: 50vh; height: auto; width: auto; "></div>
 
         <br>    
         <p style="margin-bottom: 20px;">
@@ -41,8 +71,7 @@
         </div>
         <div class="pastli">
             published a first-author paper at UIST 2024: Power-over-Skin, a technique for transmitting power to battery-free wearables through body contact (<a href="https://dl.acm.org/doi/10.1145/3654777.3676394">paper</a>, <a href="../projects/pos">project</a>)  
-        </div>
-        
+        </div> -->
 
 
 

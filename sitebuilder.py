@@ -280,20 +280,27 @@ def rss():
 
 @app.route("/now/")
 def now():
-    print("now page")
-    return render_template('about.html')
+    print("now page") # parse pages from static/now.md
+    entries = [x.split("\n") for x in open(os.path.join(app.root_path, "pages", "now.md"), "r").read().split("\n\n")]
+    entries = entries[1:] # skip label
+    parsedEntries = []
+    for entry in entries:
+        parsedEntries.append([])
+        for i in range(4): # image, place, start, endat
+            parsedEntries[-1].append(entry[i][7:]) 
+        for i in range(4, len(entry)): 
+            parsedEntries[-1].append(pygmented_markdown(entry[i][2:]))
+    return render_template('about.html', startEntry=parsedEntries[0], pastEntries=parsedEntries[1:])
 
 
 @app.route("/blog/")
 def mainblog():
     print("main blog page")
-    # blogPages = [p for p in pages if "blog"==p.meta.get('label')]
-    blogPages = [p for p in pages if "log" in p.meta.get('label')] # gets both blogs and logs
+    blogPages = [p for p in pages if ("log" in p.meta.get('label'))] # gets both blogs and logs 
     blogPages = [(x.meta.get('date'), x) for x in blogPages if 'wip' not in x.meta.get('tags')]
 
     blogPages.sort(reverse=True, key= lambda x: x[0])
     blogPages=[x[1] for x in blogPages]
-    # pageLens = [len(x.body.split(" ")) for x in blogPages]
     for page in blogPages:
         page.meta['len'] = len(page.body.split(" "))
     return render_template('blogmain.html', page=[], pages=blogPages)

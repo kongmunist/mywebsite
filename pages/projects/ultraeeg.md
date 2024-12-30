@@ -39,7 +39,7 @@ After that project, EEG was completely and totally dead as far as I was concerne
 
 As mentioned before, EEG's resolution could be enhanced by modulating brain waves at a certain frequency, then using a lock-in amplifier to extract the signal. This works just like a car radio — every station is always broadcasting, but your radio decides what frequency to pick up on. The technique goes by many names (lock in amplification, heterodyning, synchronized detection), but basically it lets you pull signals deep, deep in the background noise — all you needed was a way to modulate biosignals. 
 
-<p class="caption">Modulation shifts the original red signal to the blue signal, where it can be recovered above the noise floor <a href="https://www.edn.com/design-a-dsp-lock-in-amplifier-part-1-background/">(source)</a></p>
+<p class="caption">Not from our work, but illustrates lock-in. Modulation shifts the original, sub-noise red signal to the blue signal, where it can be recovered above the noise floor <a href="https://www.edn.com/design-a-dsp-lock-in-amplifier-part-1-background/">(source)</a></p>
 {{ add_pic("ultraeeg/edn.gif","") }}
 
 What Marley and Raffi had found in the literature was an approach to modulate electrical biosignals by physically compressing the tissues the biosignals passed through using focused ultrasound energy. It's called the acousto-electric effect, or AE; by applying ~1MPa of pressure, tissues would typically change resistitivity by ~0.1%, allowing us to use the ultrasonic signal as the modulator for locking onto EEG waves. This wasn't even a theoretical technique — it had been done on the heart to image cardiac currents [(In vivo acoustoelectric imaging for high-resolution visualization
