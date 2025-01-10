@@ -267,7 +267,7 @@ def rss():
             fe.link(href=article.path)
             fe.content(article.body)
             fe.description(article.meta['snippet'], isSummary=True)
-            fe.author(name="Andy Kong", email="andyking99@gmail.com")
+            fe.author(name="Andy Kong", email="andykongresearch@gmail.com")
             dt = datetime.combine(article.meta['date'], datetime.min.time())
             timezone = pytz.timezone('America/New_York')
             fe.pubDate(timezone.localize(dt))

@@ -5,18 +5,39 @@ tags: [wip]
 snippet: Show n Tell
 
 # Muscle/brain sensing
-{{ add_pic("myo2boardpic.png", "My 2nd PCB") }} 
 {{ add_pic("myo2tensingcropped.gif", "EMG board I made") }} 
 {{ add_pic("alphawaves_eyesclosed.png", "OpenBCI EEG experiments") }} 
 
 
 # Body Area Networks — power and data over skin
-{{ add_pic("poweroverskin/touchtags.png", "Inspiration") }}
+{{ add_pic("bcc_alansonsketch.jpg", "Inspiration") }}
 {{ add_pic("bcc_doorlockdemo.png", "Body-channel transmission: lock that detects the user's identity") }}
 {{ add_pic("poweroverskin/PoS_Snail.JPG", "Power-over-Skin: Sending 100-1000 µW using the body as a wire") }}
 {{ add_pic("poweroverskin/POSHero_deanon.png", "Powering wearables that don't need a battery") }}
-{{ add_pic("poweroverskin/calc2.png", "calculator powered over skin") }}
+{{ add_pic("poweroverskin/posearring.png", "Earrings") }}
 
+<hr>
+
+
+# Energy-harvesting sensors
+
+{{ add_pic("cgmteardown1/2.jpeg", "Continuous glucose monitor that I took apart, consumes ~25uW") }}
+{{ add_pic("lablunch/hamsolar.png", "Solar panels work through skin (and ham), roughly 0.5mW/cm2 in direct sunlight") }}
+{{ add_pic("IMG_3045.jpg", "Solar panels work through skin (and ham), roughly 0.5mW/cm2 in direct sunlight") }}
+
+
+# Candles Projects
+{{ add_pic("ign_giantscauseway.jpg", "") }}
+{{ add_pic("ign_assem4.jpg", "") }}
+{{ add_pic("ign_exhib6.jpg", "") }}
+{{ add_pic("ign_waxy11.jpg", "") }}
+{{ add_pic("ign_waxy14.jpg", "") }}
+{{ add_pic("bigheadcandle/drama.jpg", "") }}
+
+
+<hr>
+<br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <hr>
 
 # 3D printed optics
@@ -29,11 +50,6 @@ snippet: Show n Tell
 {{ add_pic("lablunch/be7a6f0ab8021d0f431eb9939052743ef3288147.png", "Resin printed lens, -1 prescription (my right eye)") }}
 {{ add_pic("lablunch/img.png", "same mounted in glasses, unprocessed") }}
 
-<hr>
-
-# Energy-harvesting sensors
-{{ add_pic("cgmteardown1/2.jpeg", "Continuous glucose monitor that I took apart, consumes ~25uW") }}
-{{ add_pic("lablunch/hamsolar.png", "Solar panels work through skin (and ham), roughly 0.5mW/cm2 in direct sunlight") }}
 
 # DIY PCBs
 {{ add_pic("lablunch/image000001.png", "Laser etched PCBs") }} 
