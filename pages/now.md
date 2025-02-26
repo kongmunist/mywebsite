@@ -5,7 +5,7 @@ place: Cambridge, MA
 start: June 2024
 endat: 
 - building an open-source [MOT](https://en.wikipedia.org/wiki/Magneto-optical_trap) to accelerate quantum physics research @ [Open Quantum](https://www.open-quantum.org) (taking orders!) 
-- prototyping a Bluetooth health-sensing ring that charges itself via solar harvesting 
+- prototyping a self-charging health tracker which uses solar harvesting, wearable or implant as the goal
 
 image: 
 place: Pittsburgh, PA
