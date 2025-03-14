@@ -40,7 +40,7 @@ I also learned we needed some mold-release stuff to make the candle removal easi
 
 {{ add_pic("headcandle/hc_closeupdome.jpeg", "My first proper head candle") }}
 
-The purpose of a candle is to be burned and provide light or smells. Unfortunately, I only ever gave head candles to people who really liked me — the people lease likely to ever burn a candle that looks like me. 
+The purpose of a candle is to be burned and provide light or smells. Unfortunately, I only ever gave head candles to people who really liked me — the people least likely to ever burn a candle that looks like me. 
 
 {{ add_pic("headcandle/hc_lightinghead.jpeg", "I feel a weird tingling on top of my head...") }}
 
