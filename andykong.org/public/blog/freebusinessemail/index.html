@@ -3,6 +3,65 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    
+        <meta name="author" content="Andy Kong">
+        <meta name="title" content="Free custom email domain through Gmail">
+        <meta name="description" content="1 CRAZY trick that Big Custom Mailbox doesn&#39;t want you to know">
+        <meta name="keywords" content=" email,  tutorial, ">
+
+        <title>
+            Free custom email domain through Gmail | Andy Kong
+        </title>
+    
+
+    <style>
+        body {
+            counter-reset: h1counter h2counter;
+        }
+
+        h1:not(.title) {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px groove #DBAD80;
+
+            counter-reset: h2counter;
+        }
+
+        h1:not(.title)::before {
+            counter-increment: h1counter;
+            content: counter(h1counter) ". ";
+        }
+
+        .blogpage > h2::before {
+            counter-increment: h2counter;
+            content: counter(h1counter) "." counter(h2counter) "  ";
+        }
+
+
+        .blogpage img{
+            max-width: 100%;
+            max-height: 50vh;
+            height: auto;
+            width: auto;
+            display: block !important;
+            margin: 0 auto !important;
+        }
+
+        .blogpage h1, .blogpage h2{
+            color: #E0B890;
+        }
+
+        .toc {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+            color: inherit;
+            text-decoration: none;
+        }
+    </style>
+
+
+
 
     <style type="text/css">
         /* Atkinson Hyperlegible */
@@ -214,187 +273,59 @@
 </nav>
 
 
+<div style="height:100vh; width: 100vw; padding: 0px 1em 0px 1em;">
+    <div style="max-width:50em; margin-bottom:4em; margin-left:auto; margin-right:auto;">
+        
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-<style>
-    .container {
-      display: flex;
-      min-height: 100vh;
-      padding: 0 2rem;
-      gap: 2rem;
-    }
-    
-    .sidebar {
-      position: sticky;
-      top: 2rem;
-      height: fit-content;
-      flex: 0 0 300px;
-      text-align: center;
-    }
-    
-    .profile-pic {
-      border-radius: 50%;
-      max-height: 20vh;
-      margin-bottom: 1rem;
-    }
-    
-    .social-links {
-      font-size: 2.5em;
-      display: flex;
-      gap: 0.5rem;
-      justify-content: center;
-    }
-    
-    .rss-icon {
-      height: 1em;
-    }
-    
-    .content {
-      flex: 1;
-      max-width: 800px;
-    }
-    
-    
-    @media (max-width: 1024px) {
-      .container {
-        flex-direction: column;
-        align-items: center;
-      }
-      
-      .sidebar {
-        position: static;
-        flex: none;
-        width: 100%;
-        max-width: 800px;
-      }
-      
-      .content {
-        width: 100%;
-        max-width: 800px;
-      }
-    }
-</style>
+        
+
+
+<!-- <div class="blogpage overflow-hidden" style="margin-bottom:4em;"> -->
+<div class="blogpage overflow-hidden" style="max-width:50em; margin-bottom:4em; margin-left:auto; margin-right:auto;">
+    <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Free custom email domain through Gmail</h1>
+            <p style="font-size:0.8em;"> Published May 16, 2025</p>
+<hr>
+            <html><body><p>Ok, so you have a CRAZY idea for a startup that you can't believe nobody's done yet, you incorporated a Delaware LLC via Stripe Atlas and bought a domain, then (vibe)coded  a dope 1-page website so the money tree investors and customers can come and find you. Ahh, life is good. Oh wait, but you can't put your <name dope="" i="" in="" middle="" school="" thought="" was="">@gmail.com address in the contact, or else people will know you're just a kid. And all the alternatives cost something every month, which really cuts into your ARR. What now?? </name></p>
+<p>So if you can receive email at a custom domain (e.g. Namecheap offers free custom domain email forwarding) but can't send it, you can solve this. Gmail offers this service for free but has utterly gimped the setup guides, probably just to sell more Google Workspace. I'm gonna tell you how to do it because it's actually really simple. </p>
+<h2 id="1-first-navigate-to-gmail-then-hit-settings-then-hit-all-settings-then-go-to-accounts-and-imports">1. First navigate to Gmail, then hit settings, then hit all settings, then go to "Accounts and Imports"</h2>
+<p>Menu should look like this. Hit "Add another email address" to trigger a popup</p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/freebusinessemail/0.png"/></p>
+<h2 id="2-put-in-your-custom-email">2. Put in your custom email</h2>
+<p><img loading="lazy" alt="" class="addpic" src="/static/freebusinessemail/1.png"/></p>
+<h2 id="3-fill-out-smtp">3. Fill out SMTP</h2>
+<p>Use "smtp.gmail.com" and port 587, then add your current gmail address as the username (remove the @gmail.com). For password you'll need to make an app password. </p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/freebusinessemail/2.png"/></p>
+<p>An app password is basically a way to give an app access to your email without exposing your password. To make one, go to <a href="https://myaccount.google.com/">myaccount.google.com</a>, search for "App passwords" (you will not find it as a menu item), do a sign-in again, then make up a name and generate one.</p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/freebusinessemail/3.png"/></p>
+<p>Copy that into the SMTP popup and hit Add Account:</p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/freebusinessemail/4.png"/></p>
+<p>You are pretty much done. They will send a confirmation email to your custom domain, which, if your forwarding was really set up right, will go somewhere you can click it. From then on you can send emails from your custom domain fo free. Enjoy!</p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/freebusinessemail/5.png"/></p>
+<hr/>
+<p>Guide mostly cribbed from the super-thorough but deleted Google Support guide backed up on wayback <a href="https://web.archive.org/web/20230326042630/https://support.google.com/domains/answer/9437157">here</a>. Why do they insist on making their products annoying to use? </p></body></html>
 
 
 
-<div class="container">
-  <aside class="sidebar">
-    <a href="/">
-      <img class="profile-pic" src="/static/merock_square.jpg" alt="Andy"/>
-    </a>
-    <h1>Hi, I'm Andy!</h1>
-    <div class="social-links">
-      <a href="https://critiquefood.blogspot.com/" target="_blank" title="Food For Thought"><i class="fas fa-ice-cream"></i></a>
-      <a href="https://www.youtube.com/channel/UC8hEr0FkB5i-gQC4b7b5fvg" target="_blank"><i class="fab fa-youtube"></i></a>
-      <a href="https://kongmunist.medium.com/" target="_blank"><i class="fab fa-medium"></i></a>
-      <a href="/rss.xml"><img src="/static/rss.svg" class="rss-icon"></a>
-    </div>
-  </aside>
+    
+        <p style="line-height:250%;">
+        <a class="btn btn-info" href="/tagged/email/">email</a>
 
-  <main class="content">
+        
+            <a class="btn btn-info" href="/tagged/tutorial/">tutorial</a>
+        
+        </p> 
     
-<title>
-    Posts tagged 'tutorial' | Andy Kong
-</title>
-    <div>
-    <h2>List of stuff tagged <em>tutorial</em></h2>
-        <hr>
-    
-        <ul>
-
-    <li>
-        <a href="/blog/arduinodutycyclesquare/">Arduino Function Generator: Square Wave with Variable Duty Cycle</a>
-    
-        | Tagged:
-        
-            <a href="/tagged/arduino/">arduino</a>
-        
-            <a href="/tagged/microcontrollers/">microcontrollers</a>
-        
-            <a href="/tagged/testequipment/">testequipment</a>
-        
-            <a href="/tagged/tutorial/">tutorial</a>
-        
-            <a href="/tagged/wip/">wip</a>
-        
-    
-    </li>
-
-    <li>
-        <a href="/blog/infoglobetutorial3/">Infoglobe Tutorial Pt. 3 — Software</a>
-    
-        | Tagged:
-        
-            <a href="/tagged/infoglobe/">infoglobe</a>
-        
-            <a href="/tagged/software/">software</a>
-        
-            <a href="/tagged/gist/">gist</a>
-        
-            <a href="/tagged/tutorial/">tutorial</a>
-        
-    
-    </li>
-
-    <li>
-        <a href="/blog/fitbit1/">How to get access to your Fitbit data (API tutorial)</a>
-    
-        | Tagged:
-        
-            <a href="/tagged/tutorial/">tutorial</a>
-        
-            <a href="/tagged/API/">API</a>
-        
-            <a href="/tagged/fitbit/">fitbit</a>
-        
-    
-    </li>
-
-    <li>
-        <a href="/blog/PPG_tutorial/">Remote Photoplethysmography (PPG) Tutorial</a>
-    
-        | Tagged:
-        
-            <a href="/tagged/tutorial/">tutorial</a>
-        
-            <a href="/tagged/CV/">CV</a>
-        
-            <a href="/tagged/heartrate/">heartrate</a>
-        
-    
-    </li>
-
-    <li>
-        <a href="/blog/spudging/">Spudging PCB Stencils for Beginners</a>
-    
-        | Tagged:
-        
-            <a href="/tagged/electronics/">electronics</a>
-        
-            <a href="/tagged/PCB/">PCB</a>
-        
-            <a href="/tagged/tutorial/">tutorial</a>
-        
-    
-    </li>
-
-    <li>
-        <a href="/blog/freebusinessemail/">Free custom email domain through Gmail</a>
-    
-        | Tagged:
-        
-            <a href="/tagged/email/">email</a>
-        
-            <a href="/tagged/tutorial/">tutorial</a>
-        
-    
-    </li>
-
 </div>
-    
-    </div>
 
-  </main>
+
+
+
+    </div>
+    <br>
 </div>
+
 
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

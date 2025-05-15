@@ -14,6 +14,89 @@
 
   
     <url>
+    <loc>https://andykong.org/projects/shenzhen2025</loc>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/shenzhen2025/hotel.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/shenzhen2025/menolivia.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/shenzhen2025/funnyphone.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/shenzhen2025/adnanose.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/shenzhen2025/cedric.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/shenzhen2025/moldmaking1.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/shenzhen2025/moldmaking2.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/shenzhen2025/amit.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/shenzhen2025/worldrecord.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/shenzhen2025/xiao.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/shenzhen2025/gym.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/shenzhen2025/turtles.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/shenzhen2025/fireworks.jpg
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+    <url>
     <loc>https://andykong.org/blog/footslip</loc>
       
         <image:image>
