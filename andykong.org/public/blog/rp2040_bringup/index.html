@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+        <meta name="author" content="Andy Kong">
+        <meta name="title" content="Bringing up a custom RP2040 board">
+        <meta name="description" content="First time lessons are easily forgotten, here mine are persisted">
+        <meta name="keywords" content=" electronics, ">
+
+        <title>
+            Bringing up a custom RP2040 board | Andy Kong
+        </title>
+    
+
+    <style>
+        body {
+            counter-reset: h1counter h2counter;
+        }
+
+        h1:not(.title) {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px groove #DBAD80;
+
+            counter-reset: h2counter;
+        }
+
+        h1:not(.title)::before {
+            counter-increment: h1counter;
+            content: counter(h1counter) ". ";
+        }
+
+        .blogpage > h2::before {
+            counter-increment: h2counter;
+            content: counter(h1counter) "." counter(h2counter) "  ";
+        }
+
+
+        .blogpage img{
+            max-width: 100%;
+            max-height: 50vh;
+            height: auto;
+            width: auto;
+            display: block !important;
+            margin: 0 auto !important;
+        }
+
+        .blogpage h1, .blogpage h2{
+            color: #E0B890;
+        }
+
+        .toc {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+            color: inherit;
+            text-decoration: none;
+        }
+    </style>
+
+
+
+
+    <style type="text/css">
+        /* Atkinson Hyperlegible */
+        /* latin-ext
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          src: url("/static/atkhyp_latext.woff2") format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        } */
+        /* latin */
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          src: url("/static/atkhyp_lat.woff2") format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+
+        /* Ubuntu */
+        /* latin-ext
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          src: url("/static/ubuntu_latext.woff2") format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        } */
+        /* latin */
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          src: url("/static/ubuntu_lat.woff2") format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap.min.css">
+
+    <script src="/static/fontawesome.js" defer></script>
+
+    <script src="/static/instantpage-5.1.0.js" type="module" defer></script>
+
+
+
+
+    <style>
+        body {
+            background: #202222;
+            font-size: 1.1em;
+            font-family: 'Ubuntu', sans-serif;
+            color: #FAEADB;
+            overflow-x: hidden;
+
+            word-spacing: 0.03em;
+        }
+
+        .navlinks{
+            font-family: 'Atkinson Hyperlegible';
+            font-size: 1.1em;
+        }
+
+        h1, h2, h3, h4, h5, h6{
+            font-family: "Atkinson Hyperlegible";
+        }
+
+
+        a {
+            transition: color .2s linear;
+            color:#00B4CC;
+        }
+
+        a:hover {
+            color:#00DFFC;
+            text-decoration: none;
+        }
+
+        .navbar-custom {
+            font-size: 22px;
+            background-color: #202222 !important;
+        }
+
+        .navbar-custom .navbar-brand{
+            font-size: 30px;
+            color: #00dffc !important;
+        }
+
+        .navbar-custom .navitem{
+            color:#00dffc !important;
+        }
+
+        .navitem:hover{
+            color:#00b4cc !important;
+            text-decoration: none;
+        }
+
+        .hidden{
+          display: none;
+        }
+
+        .navbar-toggler-icon {
+          border: none;
+          outline: none;
+        }
+
+        .caption{
+            font-size:12px;
+            text-align: center;
+            font-style: italic;
+            margin-bottom: .2em;
+            margin-top: 1em;
+        }
+
+
+        hr{
+            background-color:white !important;
+        }
+
+        .video-container {
+          position: relative;
+          width: 100%;
+          padding-bottom: 56.25%;
+        }
+
+        .youtubevideo {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 0;
+        }
+
+        code {
+          font-family: Consolas,"courier new";
+          color: #110000;
+          background-color: #FAEADB;
+          padding: 2px;
+          font-size: 105%;
+        }
+
+
+        .addpic {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+            border-radius: 10px;
+
+            transition: transform .2s ease-in-out;
+            transform: scale(0.99);
+        }
+
+        .addpic:hover {
+            transform: scale(1.01);
+        }
+
+</style>
+
+
+    <link rel="icon" type="image/png" href=" /static/aklogo.png " />
+
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YNX5JQZWHT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YNX5JQZWHT');
+</script>
+<script data-goatcounter="https://kong.goatcounter.com/count"
+                    async src="//gc.zgo.at/count.js"></script>
+    
+</head>
+
+
+
+<body style="">
+
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
+      <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
+          </span>
+        </i>
+    </button>
+
+    <div class="collapse navbar-collapse " id="navbarSupportedContent" style="margin-left:25px;margin-top:10px">
+        <ul class="navbar-nav ml-auto navlinks">
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://github.com/kongmunist" target="_blank" title="Github">Github</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://twitter.com/oldestasian" target="_blank" title="twitter">Twitter</a>
+            </li>
+            <li class="nav-item"></li>
+                <a class="nav-link navitem" href="/now/" >[Now]</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/blog/" >[Blog]</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<div style="height:100vh; width: 100vw; padding: 0px 1em 0px 1em;">
+    <div style="max-width:50em; margin-bottom:4em; margin-left:auto; margin-right:auto;">
+        
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        
+
+
+<!-- <div class="blogpage overflow-hidden" style="margin-bottom:4em;"> -->
+<div class="blogpage overflow-hidden" style="max-width:50em; margin-bottom:4em; margin-left:auto; margin-right:auto;">
+    <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Bringing up a custom RP2040 board</h1>
+            <p style="font-size:0.8em;"> Published May 21, 2025</p>
+<hr>
+            <html><body><p>Hello, today I'm gonna walk you through putting the RP2040 on a custom PCB and programming it. I'm used to Arduino but chose to use picotools for this — but I'm getting ahead of myself. Target audience is Arduino script kiddies. </p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/rp2040_bringup/0.png"/></p>
+<div class="toc"><h2 id="table-of-contents" style="margin:0px;">Table of Contents</h2>1. <a href="#whats-this-for">What's this for</a><br/>2. <a href="#hardware">Hardware</a><br/>   2.1 <a href="#schematic">Schematic</a><br/>   2.2 <a href="#layout">Layout</a><br/>3. <a href="#embedded--software">Embedded / Software</a><br/>   3.1 <a href="#method-1-download-one">Method 1: download one</a><br/>   3.2 <a href="#method-2-arduino-ide">Method 2: Arduino IDE</a><br/>   3.3 <a href="#method-3-build-it-yourself">Method 3: Build it yourself</a><br/>4. <a href="#warning-i2cspiuartpwm-pins-are-baked-into-hardware-pio-isnt-but-parallel-reads-should-be-adjacent-pins">Warning: I2C/SPI/UART/PWM pins are baked into hardware. PIO isn't, but parallel reads should be adjacent pins</a><br/>5. <a href="#conclusion">Conclusion</a><br/></div>
+<hr/>
+<h1 id="whats-this-for">What's this for</h1>
+<p>Ok so sometimes you want to make your circuit small, or just well-integrated, and a messy breadboard takes up a lot of space and decreases your investability (Sometimes it increases it, see <a href="">Orbit's blog</a> for an example). In this situation you want to put the microcontroller on a custom PCB. Then programming gets complicated — the USB datastream from Arduino can't upload directly to most ICs, requiring a translator chip (USB-&gt;UART) to convert it, which is another chip to figure out. Or maybe cost is an issue. The RP2040 hits both targets, costing ~70c (as of 2025) and allowing direct USB input for programming. </p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/rp2040_bringup/1.png"/></p>
+<h1 id="hardware">Hardware</h1>
+<h2 id="schematic">Schematic</h2>
+<p>First step is the schematic and layout. Most manufacturers publish a minimal set of components needed to run their chip, and RP2040 is no different. The schematic can be found <a href="">on this blog</a> and I've ported the picture for posterity. </p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/rp2040_bringup/2.png"/></p>
+<p>None of the parts are really special. The power converter is needed to change 5V into 3.3V (max VIN is like 3.6V I think?), anad then the D+ and D- lines from the USB which carry the programming require in-line resistors to (I think) incur a voltage drop so they don't break the input pins (5V signals directly might wreck those pins). The flash chip they use is required (no on-chip flash like Arduino or others), but is pretty cheap and stocked by most PCB shops. </p>
+<p>This board really is the minimal set, but there's a few more bits I'd add to make your life easier. For example, if BOOT is connected to GND on startup, the RP2040 goes into BOOTSEL mode, which you need in order to program it IF you also want to get debug messages over USB. So you should probably add a pushbutton bridging BOOT and GND. You might also want to do this for the RESET pin. Otherwise you'll going to have to do this with a paperclip or the spring out of a pen.</p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/rp2040_bringup/3.jpg"/></p>
+<p>Also I'd add an LED + resistor from the 3.3V supply, just so we can tell when the thing is on or not, and then another LED + resistor wired to an unused GPIO so we can use a Blink sketch to check if our uploads are working.</p>
+<h2 id="layout">Layout</h2>
+<p><img loading="lazy" alt="" class="addpic" src="/static/rp2040_bringup/4.png"/></p>
+<p>There's a lot of recommendations on the datasheet for where to place everything, but really it comes down to priority. IMO everything should stay on the same plane as long as possible. High-speed stuff (crystal) needs to be quite close, and decoupling caps shouldn't be much further. For the flash and other sensors, proximity won't matter much.</p>
+<h1 id="embedded--software">Embedded / Software</h1>
+<p>Here's my board</p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/rp2040_bringup/5.jpg"/></p>
+<p>When you first plug it in, the RP2040 will not show up as a progammable device port in the Arduino IDE, instead your computer will beep and tell you about the new USB flash drive you just plugged in. The USB device that shows up is the RP2040 in BOOTSEL mode, which by default exposes itself as a USB stick which you can program via drag n' drop with a .uf2 file. The IC saves the program to flash and unplugs itself (in software). After you upload a valid uf2, the RP2040 stops showing up as a USB mass storage device, and if you want to upload another UF2 (instead of through the IDE) you'll need to power cycle it while holding down the BOOTSEL button. </p>
+<p>If it doesn't show up as a USB device, that sucks (you may have forgotten to route the power (I did this), just probe stuff and look at the schematic until it makes sense. </p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/rp2040_bringup/6.png"/></p>
+<p>Now you might be thinking to yourself, where do I get a .uf2 file? Ok so three ways I know of. </p>
+<h2 id="method-1-download-one">Method 1: download one</h2>
+<p>There's some basic "check functionality" sketches in the <a href="https://github.com/raspberrypi/pico-examples">raspberrypi/pico-examples github repo</a> which you can download and then upload directly. You can't edit these, but they let you check that the IC is soldered properly. </p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/rp2040_bringup/7.png"/></p>
+<h2 id="method-2-arduino-ide">Method 2: Arduino IDE</h2>
+<p>Arduino IDE can actually generate uf2 files, you just have to go to Sketch and hit "Export compiled Binary". This will compile the program for the selected target board (Make sure you're on Tools -&gt; Board -&gt; Raspberry Pi RP2040 Boards -&gt; Generic RP2040) and saves it to the sketch folder. Just to to the sketch folder and drag+drop your uf2. </p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/rp2040_bringup/8.png"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/rp2040_bringup/9.png"/></p>
+<h2 id="method-3-build-it-yourself">Method 3: Build it yourself</h2>
+<p>Here I must admit I never really learned embedded in school, so my understanding of this is patchy. Basically you write your program in .c and .h files and compile them using Cmake + make. You 'include' libraries by telling <code>CMakeLists.txt</code> to link them, which CMake will pull from the pico-sdk (you need to tell CMake where this is too), at which point your programs will know where they are. Then all this gets compiled together into a binary .elf or .bin or .uf2 file by make. So the steps are, roughly:</p>
+<ol>
+<li>
+<p>Install + cmake + build the <a href="https://github.com/raspberrypi/pico-sdk">pico-sdk</a>, reference it in your <code>.bash_rc</code> or whatever</p>
+</li>
+<li>
+<p>Make .c and .h files however you want, including the libraries you need to use at the top (same format as Arduino, <code>#include &lt;stdio.h&gt;</code>)</p>
+</li>
+<li>
+<p>Add your used libraries into the <code>CMakeLists.txt</code> file under <code>target_link_libraries(${PROJECT_NAME}</code></p>
+</li>
+<li>
+<p>Make a <code>build/</code> directory, go into it, run <code>cmake ..</code> and then <code>make</code>, there should be no errors, and if there are, you should fix them.</p>
+</li>
+<li>
+<p>To program the RP2040, you can either 1) upload the output <code>.uf2</code> file to the RP2040 mass storage device by drag n' drop or 2) to flash from the command line, install <a href="https://github.com/raspberrypi/picotool">picotool</a>, make sure the board is visible by running <code>picotool info</code>, then flashing using <code>picotool load &lt;blah.elf&gt;</code> if your RP2040 is in BOOTSEL (still a USB mass storage device) or <code>picotool load &lt;blah.elf&gt; -f</code> if the RP2040 isn't showing up as a USB device anymore. </p>
+</li>
+</ol>
+<p>There's a minimal example for how to do all this on Github at <a href="https://github.com/oguzbilgic/pico-minimal-build/tree/master">oguzbilgic/pico-minimal-build</a>, and ChatGPT is pretty helpful for debugging. I learned a lot from figuring out this part, but I needed to do this to run someone else's example program — it might not be worth if you don't have this constraint and will only do simple stuff. </p>
+<h1 id="warning-i2cspiuartpwm-pins-are-baked-into-hardware-pio-isnt-but-parallel-reads-should-be-adjacent-pins">Warning: I2C/SPI/UART/PWM pins are baked into hardware. PIO isn't, but parallel reads should be adjacent pins</h1>
+<p>If you want to use the native I2C/SPI/UART functions, you should know that certain pins are destined to be SCL/SDA and not both. And if you use PWM, make sure your PWM outputs don't share a PWM object + channel (e.g. if two pins are PWM0 A, you will only be able to PWM from one at a time). Just check the datasheet, it'll save you a rev.</p>
+<p>PIO is out of the scope of this post, but is mappable to any pin. However, if you need to do a parallel read of 8 channels (like for a camera MIPI), the channels should be arranged sin-order going to sequential in-order GPIOs. </p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/rp2040_bringup/10.png"/></p>
+<h1 id="conclusion">Conclusion</h1>
+<p>Ok, relatively painless. Simple schematic, layout, and pretty straightforward embedded. RP2040 is a chip is nice, not particularly low-power, but lots of GPIO, communication channels, ADCs, and it's really cheap. But I'll let you know what I think in a few weeks once I've used it more. </p>
+<p>Cya!</p></body></html>
+
+
+
+    
+        <p style="line-height:250%;">
+        <a class="btn btn-info" href="/tagged/electronics/">electronics</a>
+
+        
+        </p> 
+    
+</div>
+
+
+
+
+    </div>
+    <br>
+</div>
+
+
+<script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

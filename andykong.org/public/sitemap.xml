@@ -14,6 +14,77 @@
 
   
     <url>
+    <loc>https://andykong.org/blog/rp2040_bringup</loc>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/rp2040_bringup/0.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/rp2040_bringup/1.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/rp2040_bringup/2.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/rp2040_bringup/3.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/rp2040_bringup/4.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/rp2040_bringup/5.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/rp2040_bringup/6.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/rp2040_bringup/7.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/rp2040_bringup/8.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/rp2040_bringup/9.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/rp2040_bringup/10.png
+          </image:loc>
+        </image:image>
+      
+    </url>
+  
+    <url>
     <loc>https://andykong.org/projects/shenzhen2025</loc>
       
         <image:image>

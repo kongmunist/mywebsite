@@ -16,7 +16,7 @@ Making just enough to eke out a life’s work that’s fun to talk about at part
 Family people with a long lease. The days are the same, each one a joy. You catch up but nothing’s changed. Dog’s at the vet again for eating marbles. We’re rewatching House. We’re making dinner with zucchini from the weekend farmer’s market. 
 
 # Unstable, sure: pursuing
-Risking and failing, doing their work that with a smile. Independence, installations and workshops, but also grant rejections, rent increases, food stamps. I’ll be at the VR conference next month. Oh yea, I work for Nintendo at the moment. I’ve been exploring wax as a sculptural medium.
+Risking and failing, doing their work with a smile. Independence, installations and workshops, but also grant rejections, rent increases, food stamps. I’ll be at the VR conference next month. Oh yea, I work for Nintendo at the moment. I’ve been exploring wax as a sculptural medium.
 
 {{ add_pic("convictionmeme.png", "") }}
 
