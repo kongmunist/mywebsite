@@ -288,7 +288,8 @@
             <p style="font-size:0.8em;"> Published May 21, 2025</p>
 <hr>
             <html><body><p>Hello, today I'm gonna walk you through putting the RP2040 on a custom PCB and programming it. I'm used to Arduino but chose to use picotools for this — but I'm getting ahead of myself. Target audience is Arduino script kiddies. </p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/rp2040_bringup/0.png"/></p>
+<p class="caption"> The screen that's in your future </p>
+<p><img loading="lazy" alt="The screen that's in your future" class="addpic" src="/static/rp2040_bringup/0.png"/></p>
 <div class="toc"><h2 id="table-of-contents" style="margin:0px;">Table of Contents</h2>1. <a href="#whats-this-for">What's this for</a><br/>2. <a href="#hardware">Hardware</a><br/>   2.1 <a href="#schematic">Schematic</a><br/>   2.2 <a href="#layout">Layout</a><br/>3. <a href="#embedded--software">Embedded / Software</a><br/>   3.1 <a href="#method-1-download-one">Method 1: download one</a><br/>   3.2 <a href="#method-2-arduino-ide">Method 2: Arduino IDE</a><br/>   3.3 <a href="#method-3-build-it-yourself">Method 3: Build it yourself</a><br/>4. <a href="#warning-i2cspiuartpwm-pins-are-baked-into-hardware-pio-isnt-but-parallel-reads-should-be-adjacent-pins">Warning: I2C/SPI/UART/PWM pins are baked into hardware. PIO isn't, but parallel reads should be adjacent pins</a><br/>5. <a href="#conclusion">Conclusion</a><br/></div>
 <hr/>
 <h1 id="whats-this-for">What's this for</h1>
@@ -297,17 +298,19 @@
 <h1 id="hardware">Hardware</h1>
 <h2 id="schematic">Schematic</h2>
 <p>First step is the schematic and layout. Most manufacturers publish a minimal set of components needed to run their chip, and RP2040 is no different. The schematic can be found <a href="">on this blog</a> and I've ported the picture for posterity. </p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/rp2040_bringup/2.png"/></p>
+<p class="caption"> Minimal schematic for RP2040 </p>
+<p><img loading="lazy" alt="Minimal schematic for RP2040" class="addpic" src="/static/rp2040_bringup/2.png"/></p>
 <p>None of the parts are really special. The power converter is needed to change 5V into 3.3V (max VIN is like 3.6V I think?), anad then the D+ and D- lines from the USB which carry the programming require in-line resistors to (I think) incur a voltage drop so they don't break the input pins (5V signals directly might wreck those pins). The flash chip they use is required (no on-chip flash like Arduino or others), but is pretty cheap and stocked by most PCB shops. </p>
-<p>This board really is the minimal set, but there's a few more bits I'd add to make your life easier. For example, if BOOT is connected to GND on startup, the RP2040 goes into BOOTSEL mode, which you need in order to program it IF you also want to get debug messages over USB. So you should probably add a pushbutton bridging BOOT and GND. You might also want to do this for the RESET pin. Otherwise you'll going to have to do this with a paperclip or the spring out of a pen.</p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/rp2040_bringup/3.jpg"/></p>
-<p>Also I'd add an LED + resistor from the 3.3V supply, just so we can tell when the thing is on or not, and then another LED + resistor wired to an unused GPIO so we can use a Blink sketch to check if our uploads are working.</p>
+<p class="caption"> You'll want a BOOTSEL button, ask me how I know </p>
+<p><img loading="lazy" alt="You'll want a BOOTSEL button, ask me how I know" class="addpic" src="/static/rp2040_bringup/3.jpg"/></p>
+<p>This board really is the minimal set, but there's a few more bits I'd add to make your life easier. For example, if BOOT is connected to GND on startup, the RP2040 goes into BOOTSEL mode, which you need in order to program it IF you also want to get debug messages over USB. So you should probably add a pushbutton bridging BOOT and GND. You might also want to do this for the RESET pin. Otherwise you'll have to do this with a paperclip or a pen spring.</p>
+<p>I'd also add an LED + resistor from the 3.3V supply, just so we can tell when the thing is on or not, and then another LED + resistor wired to an unused GPIO so we can use a Blink sketch to check if our uploads are working.</p>
 <h2 id="layout">Layout</h2>
 <p><img loading="lazy" alt="" class="addpic" src="/static/rp2040_bringup/4.png"/></p>
 <p>There's a lot of recommendations on the datasheet for where to place everything, but really it comes down to priority. IMO everything should stay on the same plane as long as possible. High-speed stuff (crystal) needs to be quite close, and decoupling caps shouldn't be much further. For the flash and other sensors, proximity won't matter much.</p>
 <h1 id="embedded--software">Embedded / Software</h1>
-<p>Here's my board</p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/rp2040_bringup/5.jpg"/></p>
+<p class="caption"> My board </p>
+<p><img loading="lazy" alt="My board" class="addpic" src="/static/rp2040_bringup/5.jpg"/></p>
 <p>When you first plug it in, the RP2040 will not show up as a progammable device port in the Arduino IDE, instead your computer will beep and tell you about the new USB flash drive you just plugged in. The USB device that shows up is the RP2040 in BOOTSEL mode, which by default exposes itself as a USB stick which you can program via drag n' drop with a .uf2 file. The IC saves the program to flash and unplugs itself (in software). After you upload a valid uf2, the RP2040 stops showing up as a USB mass storage device, and if you want to upload another UF2 (instead of through the IDE) you'll need to power cycle it while holding down the BOOTSEL button. </p>
 <p>If it doesn't show up as a USB device, that sucks (you may have forgotten to route the power (I did this), just probe stuff and look at the schematic until it makes sense. </p>
 <p><img loading="lazy" alt="" class="addpic" src="/static/rp2040_bringup/6.png"/></p>
@@ -317,7 +320,8 @@
 <p><img loading="lazy" alt="" class="addpic" src="/static/rp2040_bringup/7.png"/></p>
 <h2 id="method-2-arduino-ide">Method 2: Arduino IDE</h2>
 <p>Arduino IDE can actually generate uf2 files, you just have to go to Sketch and hit "Export compiled Binary". This will compile the program for the selected target board (Make sure you're on Tools -&gt; Board -&gt; Raspberry Pi RP2040 Boards -&gt; Generic RP2040) and saves it to the sketch folder. Just to to the sketch folder and drag+drop your uf2. </p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/rp2040_bringup/8.png"/></p>
+<p class="caption"> Export compiled Binary option exports as uf2 </p>
+<p><img loading="lazy" alt="Export compiled Binary option exports as uf2" class="addpic" src="/static/rp2040_bringup/8.png"/></p>
 <p><img loading="lazy" alt="" class="addpic" src="/static/rp2040_bringup/9.png"/></p>
 <h2 id="method-3-build-it-yourself">Method 3: Build it yourself</h2>
 <p>Here I must admit I never really learned embedded in school, so my understanding of this is patchy. Basically you write your program in .c and .h files and compile them using Cmake + make. You 'include' libraries by telling <code>CMakeLists.txt</code> to link them, which CMake will pull from the pico-sdk (you need to tell CMake where this is too), at which point your programs will know where they are. Then all this gets compiled together into a binary .elf or .bin or .uf2 file by make. So the steps are, roughly:</p>
@@ -341,7 +345,7 @@
 <p>There's a minimal example for how to do all this on Github at <a href="https://github.com/oguzbilgic/pico-minimal-build/tree/master">oguzbilgic/pico-minimal-build</a>, and ChatGPT is pretty helpful for debugging. I learned a lot from figuring out this part, but I needed to do this to run someone else's example program — it might not be worth if you don't have this constraint and will only do simple stuff. </p>
 <h1 id="warning-i2cspiuartpwm-pins-are-baked-into-hardware-pio-isnt-but-parallel-reads-should-be-adjacent-pins">Warning: I2C/SPI/UART/PWM pins are baked into hardware. PIO isn't, but parallel reads should be adjacent pins</h1>
 <p>If you want to use the native I2C/SPI/UART functions, you should know that certain pins are destined to be SCL/SDA and not both. And if you use PWM, make sure your PWM outputs don't share a PWM object + channel (e.g. if two pins are PWM0 A, you will only be able to PWM from one at a time). Just check the datasheet, it'll save you a rev.</p>
-<p>PIO is out of the scope of this post, but is mappable to any pin. However, if you need to do a parallel read of 8 channels (like for a camera MIPI), the channels should be arranged sin-order going to sequential in-order GPIOs. </p>
+<p>PIO is out of the scope of this post, but is mappable to any pin. However, if you need to do a parallel read of 8 channels (like for a camera MIPI), the channels should be arranged in-order going to sequential in-order GPIOs. </p>
 <p><img loading="lazy" alt="" class="addpic" src="/static/rp2040_bringup/10.png"/></p>
 <h1 id="conclusion">Conclusion</h1>
 <p>Ok, relatively painless. Simple schematic, layout, and pretty straightforward embedded. RP2040 is a chip is nice, not particularly low-power, but lots of GPIO, communication channels, ADCs, and it's really cheap. But I'll let you know what I think in a few weeks once I've used it more. </p>
