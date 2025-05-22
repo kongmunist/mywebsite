@@ -12,7 +12,7 @@ Hello, today I'm gonna walk you through putting the RP2040 on a custom PCB and p
 
 # What's this for
 
-Ok so sometimes you want to make your circuit small, or just well-integrated, and a messy breadboard takes up a lot of space and decreases your investability (Sometimes it increases it, see [Orbit's blog]() for an example). In this situation you want to put the microcontroller on a custom PCB. Then programming gets complicated — the USB datastream from Arduino can't upload directly to most ICs, requiring a translator chip (USB->UART) to convert it, which is another chip to figure out. Or maybe cost is an issue. The RP2040 hits both targets, costing ~70c (as of 2025) and allowing direct USB input for programming. 
+Ok so sometimes you want to make your circuit small, or just well-integrated, and a messy breadboard takes up a lot of space and decreases your investability (Sometimes it increases it, see [Orbit's blog](https://orbit.engineering/) for an example). In this situation you want to put the microcontroller on a custom PCB. Then programming gets complicated — the USB datastream from Arduino can't upload directly to most ICs, requiring a translator chip (USB->UART) to convert it, which is another chip to figure out. Or maybe cost is an issue. The RP2040 hits both targets, costing ~70c (as of 2025) and allowing direct USB input for programming. 
 
 {{ add_pic("rp2040_bringup/1.png", "") }}
 
@@ -20,7 +20,7 @@ Ok so sometimes you want to make your circuit small, or just well-integrated, an
 
 ## Schematic
 
-First step is the schematic and layout. Most manufacturers publish a minimal set of components needed to run their chip, and RP2040 is no different. The schematic can be found [on this blog]() and I've ported the picture for posterity. 
+First step is the schematic and layout. Most manufacturers publish a minimal set of components needed to run their chip, and RP2040 is no different. The schematic can be found [on this blog](http://www.technoblogy.com/show?3U75) and I've ported the picture for posterity. 
 
 {{ add_pic("rp2040_bringup/2.png", "Minimal schematic for RP2040") }}
 
@@ -46,7 +46,7 @@ When you first plug it in, the RP2040 will not show up as a progammable device p
 
 If it doesn't show up as a USB device, that sucks (you may have forgotten to route the power (I did this), just probe stuff and look at the schematic until it makes sense. 
 
-{{ add_pic("rp2040_bringup/6.png", "") }}
+{{ add_pic("rp2040_bringup/6.png", "from [here](https://th.cytron.io/tutorial/setting-up-maker-uno-rp2040-arduino)") }}
 
 Now you might be thinking to yourself, where do I get a .uf2 file? Ok so three ways I know of. 
 
