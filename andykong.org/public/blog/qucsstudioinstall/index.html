@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+        <meta name="author" content="Andy Kong">
+        <meta name="title" content="Running QUCS Studio (uSimmics) on a Mac">
+        <meta name="description" content="RF circuit simulation without ANY piracy!">
+        <meta name="keywords" content=" electronics,  rfsim, ">
+
+        <title>
+            Running QUCS Studio (uSimmics) on a Mac | Andy Kong
+        </title>
+    
+
+    <style>
+        body {
+            counter-reset: h1counter h2counter;
+        }
+
+        h1:not(.title) {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px groove #DBAD80;
+
+            counter-reset: h2counter;
+        }
+
+        h1:not(.title)::before {
+            counter-increment: h1counter;
+            content: counter(h1counter) ". ";
+        }
+
+        .blogpage > h2::before {
+            counter-increment: h2counter;
+            content: counter(h1counter) "." counter(h2counter) "  ";
+        }
+
+
+        .blogpage img{
+            max-width: 100%;
+            max-height: 50vh;
+            height: auto;
+            width: auto;
+            display: block !important;
+            margin: 0 auto !important;
+        }
+
+        .blogpage h1, .blogpage h2{
+            color: #E0B890;
+        }
+
+        .toc {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+            color: inherit;
+            text-decoration: none;
+        }
+    </style>
+
+
+
+
+    <style type="text/css">
+        /* Atkinson Hyperlegible */
+        /* latin-ext
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          src: url("/static/atkhyp_latext.woff2") format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        } */
+        /* latin */
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          src: url("/static/atkhyp_lat.woff2") format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+
+        /* Ubuntu */
+        /* latin-ext
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          src: url("/static/ubuntu_latext.woff2") format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        } */
+        /* latin */
+        @font-face {
+          font-family: 'Ubuntu';
+          font-style: normal;
+          font-weight: 400;
+          src: url("/static/ubuntu_lat.woff2") format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap.min.css">
+
+    <script src="/static/fontawesome.js" defer></script>
+
+    <script src="/static/instantpage-5.1.0.js" type="module" defer></script>
+
+
+
+
+    <style>
+        body {
+            background: #202222;
+            font-size: 1.1em;
+            font-family: 'Ubuntu', sans-serif;
+            color: #FAEADB;
+            overflow-x: hidden;
+
+            word-spacing: 0.03em;
+        }
+
+        .navlinks{
+            font-family: 'Atkinson Hyperlegible';
+            font-size: 1.1em;
+        }
+
+        h1, h2, h3, h4, h5, h6{
+            font-family: "Atkinson Hyperlegible";
+        }
+
+
+        a {
+            transition: color .2s linear;
+            color:#00B4CC;
+        }
+
+        a:hover {
+            color:#00DFFC;
+            text-decoration: none;
+        }
+
+        .navbar-custom {
+            font-size: 22px;
+            background-color: #202222 !important;
+        }
+
+        .navbar-custom .navbar-brand{
+            font-size: 30px;
+            color: #00dffc !important;
+        }
+
+        .navbar-custom .navitem{
+            color:#00dffc !important;
+        }
+
+        .navitem:hover{
+            color:#00b4cc !important;
+            text-decoration: none;
+        }
+
+        .hidden{
+          display: none;
+        }
+
+        .navbar-toggler-icon {
+          border: none;
+          outline: none;
+        }
+
+        .caption{
+            font-size:12px;
+            text-align: center;
+            font-style: italic;
+            margin-bottom: .2em;
+            margin-top: 1em;
+        }
+
+
+        hr{
+            background-color:white !important;
+        }
+
+        .video-container {
+          position: relative;
+          width: 100%;
+          padding-bottom: 56.25%;
+        }
+
+        .youtubevideo {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 0;
+        }
+
+        code {
+          font-family: Consolas,"courier new";
+          color: #110000;
+          background-color: #FAEADB;
+          padding: 2px;
+          font-size: 105%;
+        }
+
+
+        .addpic {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+            border-radius: 10px;
+
+            transition: transform .2s ease-in-out;
+            transform: scale(0.99);
+        }
+
+        .addpic:hover {
+            transform: scale(1.01);
+        }
+
+</style>
+
+
+    <link rel="icon" type="image/png" href=" /static/aklogo.png " />
+
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YNX5JQZWHT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YNX5JQZWHT');
+</script>
+<script data-goatcounter="https://kong.goatcounter.com/count"
+                    async src="//gc.zgo.at/count.js"></script>
+    
+</head>
+
+
+
+<body style="">
+
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
+      <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
+          </span>
+        </i>
+    </button>
+
+    <div class="collapse navbar-collapse " id="navbarSupportedContent" style="margin-left:25px;margin-top:10px">
+        <ul class="navbar-nav ml-auto navlinks">
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://github.com/kongmunist" target="_blank" title="Github">Github</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://twitter.com/oldestasian" target="_blank" title="twitter">Twitter</a>
+            </li>
+            <li class="nav-item"></li>
+                <a class="nav-link navitem" href="/now/" >[Now]</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/blog/" >[Blog]</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<div style="height:100vh; width: 100vw; padding: 0px 1em 0px 1em;">
+    <div style="max-width:50em; margin-bottom:4em; margin-left:auto; margin-right:auto;">
+        
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        
+
+
+<!-- <div class="blogpage overflow-hidden" style="margin-bottom:4em;"> -->
+<div class="blogpage overflow-hidden" style="max-width:50em; margin-bottom:4em; margin-left:auto; margin-right:auto;">
+    <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Running QUCS Studio (uSimmics) on a Mac</h1>
+            <p style="font-size:0.8em;"> Published May 31, 2025</p>
+<hr>
+            <html><body><p>Hi, if you're reading this you must be truly desperate — casual readers would never ever click a blog post titled like this. Today I'm gonna walk you through running QUCS Studio on your Mac computer. </p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/qucsstudioinstall/0.jpg"/></p>
+<h1 id="background">Background</h1>
+<p>Software people love Apple, but real engineers use software that only runs on Windows. As an aspiring EE, I can usually get by for circuit/SPICE simulation via Paul Falstad's lovely <a href="https://www.falstad.com/circuit/circuitjs.html">CircuitJS</a> web calculator or LTSpice.app, but as I got into more high frequency stuff, there were rapidly fewer options. While Windows users get to pick from Microwave Office, Pathwave ADS, HFSS, or Cadence, Apple users get nothing at all. This software is big, bulky, and running it in a VM is painful. Luckily there are some smaller packages which can do the same simulation, such as QUCS-Studio (which looks very familiar for ADS users), but again, annoying to run in a VM. If not a VM, you might think of Wine for running an .exe, to which I can respond I've never ever gotten that to work for anything.</p>
+<p>However, recently I found a guide by Vanderson PC (<a href="https://www.vandersonpc.com/Qucstudio-on-MacOs/">link</a>, <a href="https://archive.is/SYlBm">mirror</a>) on running QUCS-Studio using PlayOnMac. I followed it diligently and it did not work either. This is because the guide is from 2017 and there have been a lot of MacOS breaking changes in the meantime, and PlayOnMac has not been so updated. However, the problems were solvable and I will share how.</p>
+<h1 id="1-start-the-guide">1. start the guide</h1>
+<p>Ok just do everything the guide says. Yes uSimmics 5.8 works even though the blog author is running QUCS-Studio 3.3.4</p>
+<h1 id="2-follow-the-guide-until-step-6">2. follow the guide until Step 6</h1>
+<p>On step 6, you are asked to select a Wine version. I don't have a wine version. The first step of this guide should be how to install a wine version on PlayOnMac.</p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/qucsstudioinstall/1.png"/></p>
+<p>Leave the configuration menu. Install a Wine version by going to Tools-&gt;Manage Wine versions. </p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/qucsstudioinstall/2.png"/></p>
+<p>If you're like me, the list on the left is empty. Pretty daunting. If it's still empty after 5s you have a problem.</p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/qucsstudioinstall/3.png"/></p>
+<p>After reading some <a href="https://www.playonmac.com/en/topic-17045-2.html">forums</a>, I realized that PlayOnMac makes some questionable code decisions. One of which is that all the URL requests have a 5s timeout and then fail silently. To figure out where it's failing, you exit PlayOnMac (Cmd+Q), open up a terminal and navigate to the .app file, and then run the application file from the terminal so you can see the debug messages (Find PlayOnMac.app, then run <code>./PlayOnMac.app/Contents/MacOS/playonmac</code>). It should boot normally. </p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/qucsstudioinstall/4.png"/></p>
+<p>Now go to the Tool-&gt;Wine window again. If the list stays empty, you should see something like this:</p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/qucsstudioinstall/5.png"/></p>
+<p>So, you can check that the "phoenicis" URL is still active by just going to it using your browser. If it's still up, it just means that their server is slow and the request is just timing out locally. Go into the "WineVersionsFetcher.py" file and change the timeout to like 15 or 30 or 60 seconds. Then you'll get your Wine version downloaded.</p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/qucsstudioinstall/6.png"/></p>
+<p>After that continue following the guide. Other people on the forums had an issue where Wine wouldn't download properly, but you could download it yourself and move it into the directory it was supposed to be in and it'd work. Honestly I feel a bit like a battle medic when I'm doing edits like this, but y'know, it's gotta work. </p>
+<h1 id="step-3-finish-the-guide">Step 3. finish the guide.</h1>
+<p>Just follow the other guy's post, it's a good blog. No step should throw an error. </p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/qucsstudioinstall/7.png"/></p>
+<p>Sorry for the lazy post, have fun simulating!</p></body></html>
+
+
+
+    
+        <p style="line-height:250%;">
+        <a class="btn btn-info" href="/tagged/electronics/">electronics</a>
+
+        
+            <a class="btn btn-info" href="/tagged/rfsim/">rfsim</a>
+        
+        </p> 
+    
+</div>
+
+
+
+
+    </div>
+    <br>
+</div>
+
+
+<script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

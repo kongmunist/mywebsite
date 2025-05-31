@@ -1,4 +1,4 @@
-title: Face Mesh Demos
+title: "Face Mesh Demos ↗"
 date: 2023-02-12
 label: project
 timespan: 2021-05-27
