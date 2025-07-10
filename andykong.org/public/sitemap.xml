@@ -265,12 +265,6 @@
       
         <image:image>
           <image:loc>
-            https://andykong.org/static/holograms/firsttry_3.jpeg
-          </image:loc>
-        </image:image>
-      
-        <image:image>
-          <image:loc>
             https://andykong.org/static/holograms/firsttry_1.jpeg
           </image:loc>
         </image:image>
@@ -1865,18 +1859,6 @@
       
         <image:image>
           <image:loc>
-            https://andykong.org/static/bcc_doorlockdemo.png
-          </image:loc>
-        </image:image>
-      
-        <image:image>
-          <image:loc>
-            https://andykong.org/static/bcc_calendardemo.png
-          </image:loc>
-        </image:image>
-      
-        <image:image>
-          <image:loc>
             https://andykong.org/static/bcc_transmittedsig.png
           </image:loc>
         </image:image>
@@ -1884,6 +1866,18 @@
         <image:image>
           <image:loc>
             https://andykong.org/static/bcc_receivedsig.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/bcc_doorlockdemo.png
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
+            https://andykong.org/static/bcc_calendardemo.png
           </image:loc>
         </image:image>
       

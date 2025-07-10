@@ -5,11 +5,13 @@ timespan: Oct 2022 - now, on and off
 pic: holograms/hero.jpg
 description: Trapping 3D objects in a 2D sheet of glass
 
-Super WIP, I'm going to add practical instructions for making your own. If you email me asking for more stuff here I will be really inclined to write it up for you. 
+# Overview
 
-{{ add_pic("holograms/firsttry_3.jpeg", "") }}
+In this post I'm going to talk a lot about laser holography, a bit of a "lost art" of photography which many people and companies heralded as the successor to analog film. Alas, holograms lost out to digital photography, and today it's rarely practiced. Anyway, I'm going to tell you a bit about them, and then share all my tacit knowledge that I've learned from trying to make them 10+ times across two years. 
 
-<hr>
+
+
+# Background
 
 At the Oak Street Gallery in Pittsburgh, I saw something I thought was impossible. It was a glass screen with what appeared to be a real drum behind it. I was immediately captivated. I spent a long time searching about this technique to see how I could do it also. It kind of peaked in the 80s but is still possible today. 
 

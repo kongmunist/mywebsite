@@ -296,6 +296,14 @@
 <p><img loading="lazy" class="d-block mx-auto" src="/static/bcc_receiversch.png" style="margin-bottom:0px"/></p>
 <p class="caption">Receiver circuit</p>
 <hr/>
+<h1 id="results">Results</h1>
+<p>Our groundless body channel communication system can transmit at a bitrate up to 1kHz with minimal signal degradation due to analog filtering and amplification. Here's what the transmitter is emitting:</p>
+<p><img loading="lazy" class="d-block mx-auto" src="/static/bcc_transmittedsig.png" style="margin-bottom:0px"/></p>
+<p class="caption">Transmitted signal</p>
+<p>And on the other wise, here is what the receiver sees post-filter + amplification. Transmitted bits are obvious.</p>
+<p><img loading="lazy" class="d-block mx-auto" src="/static/bcc_receivedsig.png" style="margin-bottom:0px"/></p>
+<p class="caption">Received signal</p>
+<hr/>
 <h1 id="demos-and-prototyping-process">Demos and Prototyping Process</h1>
 <p>We implemented a couple of demos to showcase potential applications of our BCC system.</p>
 <h3>Smart door lock</h3>
@@ -307,14 +315,7 @@
 <hr/>
 <h2 id="useraware-calendar">User-Aware Calendar</h2>
 <p>Our second demo shows the possibilities for personalization with BCC using a wearable device on each user’s wrist, also by transmitting user IDs through touch. In the demo, a calendar display updates to show the personal calendar of the user who has just touched the receiver pad. When user A touches the receiver pad, their ID ‘A’ is parsed by the receiver microcontroller, which communicates over Serial with a Processing script that updates the display to show their personal calendar.</p>
-<p><img loading="lazy" class="d-block mx-auto" src="/static/bcc_calendardemo.png" style="margin-bottom:0px"/></p>
-<hr/>
-<h1 id="results">Results</h1>
-<p>Our groundless body channel communication system can transmit at a bitrate up to 1kHz with minimal signal degradation due to analog filtering and amplification.</p>
-<p><img loading="lazy" class="d-block mx-auto" src="/static/bcc_transmittedsig.png" style="margin-bottom:0px"/></p>
-<p class="caption">Transmitted signal</p>
-<p><img loading="lazy" class="d-block mx-auto" src="/static/bcc_receivedsig.png" style="margin-bottom:0px"/></p>
-<p class="caption">Received signal</p></body></html>
+<p><img loading="lazy" class="d-block mx-auto" src="/static/bcc_calendardemo.png" style="margin-bottom:0px"/></p></body></html>
         </div>
         <p style="line-height:300%;">&nbsp;</p>
 </div>

@@ -101,6 +101,19 @@ The receiver is a passive RC filter at 159 Hz followed by a gain stage set at 30
 
 <hr>
 
+# Results
+Our groundless body channel communication system can transmit at a bitrate up to 1kHz with minimal signal degradation due to analog filtering and amplification. Here's what the transmitter is emitting:
+
+<img class="d-block mx-auto" src="{{ url_for("static",filename="bcc_transmittedsig.png") }}" style="margin-bottom:0px"/>
+<p class="caption">Transmitted signal</p>
+
+And on the other wise, here is what the receiver sees post-filter + amplification. Transmitted bits are obvious.
+
+<img class="d-block mx-auto" src="{{ url_for("static",filename="bcc_receivedsig.png") }}" style="margin-bottom:0px"/>
+<p class="caption">Received signal</p>
+
+<hr>
+
 # Demos and Prototyping Process
 We implemented a couple of demos to showcase potential applications of our BCC system.
 
@@ -122,14 +135,3 @@ The enclosures were designed to be 3D-printed on an SLA printer. Because of prin
 Our second demo shows the possibilities for personalization with BCC using a wearable device on each user’s wrist, also by transmitting user IDs through touch. In the demo, a calendar display updates to show the personal calendar of the user who has just touched the receiver pad. When user A touches the receiver pad, their ID ‘A’ is parsed by the receiver microcontroller, which communicates over Serial with a Processing script that updates the display to show their personal calendar.
 
 <img class="d-block mx-auto" src="{{ url_for("static",filename="bcc_calendardemo.png") }}" style="margin-bottom:0px"/>
-
-<hr>
-
-# Results
-Our groundless body channel communication system can transmit at a bitrate up to 1kHz with minimal signal degradation due to analog filtering and amplification.
-
-<img class="d-block mx-auto" src="{{ url_for("static",filename="bcc_transmittedsig.png") }}" style="margin-bottom:0px"/>
-<p class="caption">Transmitted signal</p>
-
-<img class="d-block mx-auto" src="{{ url_for("static",filename="bcc_receivedsig.png") }}" style="margin-bottom:0px"/>
-<p class="caption">Received signal</p>
