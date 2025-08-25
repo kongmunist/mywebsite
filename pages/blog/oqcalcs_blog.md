@@ -1,6 +1,6 @@
 title: Quantum Optics Calculators
 date: 2025-08-23
-label: project
+label: blog
 tags: [wip]
 snippet: Calculators for light
 

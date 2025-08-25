@@ -186,14 +186,13 @@ def utility_processor():
     return dict(add_pic=add_pic, add_vid=add_vid, tableofcontents=tableofcontents)
     # return dict(add_pic=add_pic, add_vid=add_vid)
 
-
-
 ###################### Flask setup functions ##############################
 @app.route("/")
 def index():
     # return redirect("projects") #render_template('index.html', pages=pages)
     print("about me + projects main page")
     projPages = [p for p in pages if "project" == p.meta.get('label')]
+
     projPages = [(x.meta.get('date'), x) for x in projPages]
     projPages.sort(reverse=True, key=lambda x: x[0])
 
@@ -454,7 +453,7 @@ if __name__ == "__main__":
         else:
             freezer.freeze()
     else:
-        app.run(port=8001)
+        app.run(port=8001, debug=True)
 
 
 

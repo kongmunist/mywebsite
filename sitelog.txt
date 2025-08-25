@@ -5,7 +5,7 @@ TODO:
 - When the URL bar pops in and out on iPhone, the images that are taller than wide will jump in size. fix.
 - re-add width arg to add_pics
 
-
+Aug 25, 2025: what a year. If you get "pic not attribute of flatpages.page", it might be because you wrote a blog post and labeled it "project"
 Jan 1, 2025: removed personal email from rss feed
 Dec 29, 2024: Now page much easier to update now. 
 Dec 28, 2024: Wow Claude is great at removing bootstrap. I hated doing all the column stuff, and Claude has converted my blog, project, blogmain, and main page header into flexboxes. Great! I also removed a ton of crufty comments hidden inside the HTML, probably will load faster now. Finally added Now page
