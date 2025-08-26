@@ -7,7 +7,7 @@ description: Why Chargerless?
 
 Hello!
 
-This post is going to be a bit of a departure from my other posts. Usually I write up a project after it's done, but this time I'm going to explain it to you as it's happening because I think this time I think it's going to take years to finish. Check out the website at [chargerless.xyz](https://chargerless.xyz/)
+This post is going to be a bit of a departure from my other posts. Usually I write up a project after it's done, but this time I'm going to explain it to you as it's happening because I think this time it'll take years to finish. Check out the website at [chargerless.xyz](https://chargerless.xyz/)
 
 {{ add_pic("chargerless/beaut.jpg", "") }}
 
@@ -85,12 +85,12 @@ I'm the only person I know at this intersection, and if you know someone else I'
 
 <br>
 # How's it going?
-It's going great, but there's a lot to do!
+It's going great, but there's a lot to do.
 
 Chargerless was started ~fall 2024 as a series of disconnected experiments; Digikey deep dives, napkin math, and de-risking various pieces of the puzzle. The vision coalesced around January of this year, then in July I incorporated and moved to SF to work on Chargerless full-time. 
 
 
-{{ add_pic("chargerless/stabby.jpg", "Programming some test boards") }}
+{{ add_pic("chargerless/stabby.jpg", "Programming on test boards") }}
 <br>
 
 We're making strong progress thanks to our early angel investors. Today, all the technical components have been derisked, and we are currently integrating the hardware and embedded into one tiny package. At our current rate of development, we'll have 100 beta devices ready by November 2025 to send out to a select group for tuning and testing — around the same time, preorders will open for the first public offering shipping next summer.
