@@ -7,7 +7,7 @@ description: Why Chargerless?
 
 Hello!
 
-This post is going to be a bit of a departure from my other posts. Usually I write up a project after it's done, but this time I'm going to explain it to you as it's happening because I think this time it'll take years to finish. Check out the website at [chargerless.xyz](https://chargerless.xyz/)
+Usually I write up a project after it's done, but this time I'm going to explain it to you as it's happening. Check out the website at [chargerless.xyz](https://chargerless.xyz/)
 
 {{ add_pic("chargerless/beaut.jpg", "") }}
 
@@ -54,20 +54,23 @@ Energy harvesting has been studied for decades, but only recently have low-power
 {{ add_pic("chargerless/smallenough.jpg", "") }}
 <br>
 
-### Now is the right time:
+## Now is the right time:
+- Truly continuous biometrics data integrated across data sources can revolutionize medicine, and you can't get data from the past, we must start now. But non-tech audiences don't like the cold and bulky look of today's wearable trackers.
+- Smaller designs which solve this are enabled by our power harvesting stack and modern advancements in semiconductors, alleviating the primary pain points of wearables (low battery, bad aesthetics)
 
-- tech for tech's sake is out, the people want the functionality but don't want the "device" look
-- personalized health is gaining mass appeal but wearable trackers still look cold and bulky to non-tech audiences
-- smaller designs which solve this are enabled by our power harvesting stack and modern advancements in semiconductors, alleviating the primary pain points of wearables (low battery, bad aesthetics)
-- truly continuous biometrics data integrated across data sources can revolutionize medicine, and you can't get data from the past, we must start now
+# Marketing
+
+1. More data, more insights. Today's trackers can tell your sleep impacted your day, but not much more, which makes it hard to justify the daily maintenance. We want to do more than that, to expand the data sources that a user can analyze and self-improve upon, and deliver novel insights across the mind-body axis.
+2. Modern wearables do not lean into the social spread factor because the modern wearable is a bad gift — it looks like a device, and needs daily maintenance. Chargerless can be gifted to your grandma or your kid or your dog because it works "for free" and has a minimal look, and we'll focus marketing on families, couples, and friend groups, which we believe is a stickier way to get people to care about their health, and is an angle that other wearable companies can't compete on. 
+
+Our target audience is primarily people in their mid-20s to late 40s — with friends and family members to care about and keep up with through day-to-day wellness. A lot of outreach will happen via word-of-mouth, gifts, being active on forums, and I will also tweet a lot. We'll also focus a bit on traditional web media — we have some advisors helping with tech journalists, but we're always looking for more!  
+
 
 <br>
 # Financials
-A 2019 Pew Research [survey](https://www.pewresearch.org/wp-content/uploads/2020/01/FT_2020.01.07_FitnessTracker_Methodology-_Topline_final.pdf) reports that 21% of US adults regularly wear a fitness device. Applied to the US, we get ~70 million devices today. Chargerless is more fashionable and convenient to use than any existing tracker, appealing to both current fitness tracker users and non-users. But how many people is that? 
+A 2019 Pew Research [survey](https://www.pewresearch.org/wp-content/uploads/2020/01/FT_2020.01.07_FitnessTracker_Methodology-_Topline_final.pdf) reports that 21% of US adults regularly wear a fitness device. Applied to the US, we get ~70 million devices in circulation and a market size of ~80 B ([source](https://www.grandviewresearch.com/industry-analysis/wearable-technology-market)). 
 
-An [NIH study](https://bmcpublichealth.biomedcentral.com/articles/10.1186/s12889-017-4888-1) reports about 40% of ex-users quit wearing a tracker because they disliked the aesthetics or short battery life of their wearable. If only 10% of those users switch to Chargerless, that is 2.8 million users, amortizing over the device lifetime to ~280M ARR. Lower bounding at a 10x revenue multiple, this will be a company valued at 3B. 
-
-This is without accounting for any non-users who decide to use a fitness tracker that looks good and functions "for free". The numbers on this one are harder to estimate, but I think it's pretty clear that many people are interested in fitness tracking but unwilling to deal with the hassle presented by today's products. Those people would enjoy Chargerless.    
+Chargerless is more fashionable and convenient than any other tracker, appealing to both current fitness tracker users and non-users. But how many people is that? An [NIH study](https://bmcpublichealth.biomedcentral.com/articles/10.1186/s12889-017-4888-1) reports about 20% of current and ex-users dislike the aesthetics or short battery life of their device. This is a sizable chunk of the existing user base. We will also mention that this does not account for any non-users for whom the "chargerless"ness pushes them to finally get a tracker. If we converted only existing users, our userbase would have ~14 million devices in circulation. 
 
 <br>
 <hr>
@@ -77,17 +80,18 @@ This is without accounting for any non-users who decide to use a fitness tracker
 
 My name is Andy Kong, welcome to my website! 
 
-- I previously worked a lot on EE/CS at CMU, ETH Zurich, and MIT, with a research focus in biosensing (EKG, EEG, EMG, eye tracking), energy harvesting, and micropower devices
+- I've previously worked at CMU, Google, ETH Zurich, and MIT, with a research focus in biosensing (EKG, EEG, EMG, eye tracking), energy harvesting, and micropower devices
 - I have ~4 years experience working in top HCI labs, where I learned a lot about human-centered design and PD
 - I love wearables and other personalized health data (tracking since 2017!), and I think data-driven personalized data analysis is the future of health. 
 
 I'm the only person I know at this intersection, and if you know someone else I'd love to meet them! My email is andy at [chargerless.xyz](https://chargerless.xyz/)
 
 <br>
+<hr>
 # How's it going?
-It's going great, but there's a lot to do.
+It's going great, and there's a lot left to do!
 
-Chargerless was started ~fall 2024 as a series of disconnected experiments; Digikey deep dives, napkin math, and de-risking various pieces of the puzzle. The vision coalesced around January of this year, then in July I incorporated and moved to SF to work on Chargerless full-time. 
+Chargerless was loosely started ~fall 2024 as a series of disconnected experiments; Digikey deep dives, napkin math, and de-risking various pieces of the puzzle. The vision coalesced around January of this year, then in July I incorporated and moved to SF to work on Chargerless full-time. 
 
 
 {{ add_pic("chargerless/stabby.jpg", "Programming on test boards") }}
@@ -96,10 +100,18 @@ Chargerless was started ~fall 2024 as a series of disconnected experiments; Digi
 We're making strong progress thanks to our early angel investors. Today, all the technical components have been derisked, and we are currently integrating the hardware and embedded into one tiny package. At our current rate of development, we'll have 100 beta devices ready by November 2025 to send out to a select group for tuning and testing — around the same time, preorders will open for the first public offering shipping next summer.
 
 
-## The Future
-Once the beta devices are out the door, our next target is getting >10k preorders.
 
-I'm writing this on August 24, 2025. I'm looking to raise a bit more money and close the pre-seed so I can front costs for development and focus on shipping first devices. I'm currently spending most of my time on the technical side, so I'm looking for a product person to take the time to really nail down the brand / marketing of this company. And I'd also like to move quicker on other deliverables (app, website, database), looking for some help on that front. 
 
-If you'd like to get in on the first 100, reach out @oldestasian or andy at [chargerless.xyz](https://chargerless.xyz/)
+
+
+[//]: # ()
+[//]: # (## The Future)
+
+[//]: # (Once the beta devices are out the door, our next target is getting >10k preorders.)
+
+[//]: # ()
+[//]: # (I'm writing this on August 24, 2025. I'm looking to raise a bit more money and close the pre-seed so I can front costs for development and focus on shipping first devices. I'm currently spending most of my time on the technical side, so I'm looking for a product person to take the time to really nail down the brand / marketing of this company. And I'd also like to move quicker on other deliverables &#40;app, website, database&#41;, looking for some help on that front. )
+
+[//]: # ()
+[//]: # (If you'd like to get in on the first 100, reach out @oldestasian or andy at [chargerless.xyz]&#40;https://chargerless.xyz/&#41;)
 
