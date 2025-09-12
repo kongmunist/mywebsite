@@ -58,6 +58,15 @@ Energy harvesting has been studied for decades, but only recently have low-power
 - Truly continuous biometrics data integrated across data sources can revolutionize medicine, and you can't get data from the past, we must start now. But non-tech audiences don't like the cold and bulky look of today's wearable trackers.
 - Smaller designs which solve this are enabled by our power harvesting stack and modern advancements in semiconductors, alleviating the primary pain points of wearables (low battery, bad aesthetics)
 
+<br><hr>
+
+# Financials
+A 2019 Pew Research [survey](https://www.pewresearch.org/wp-content/uploads/2020/01/FT_2020.01.07_FitnessTracker_Methodology-_Topline_final.pdf) reports that 21% of US adults regularly wear a fitness device. Applied to the US, we get ~70 million devices in circulation and a market size of ~80 B ([source](https://www.grandviewresearch.com/industry-analysis/wearable-technology-market)). 
+
+Chargerless is more fashionable and convenient than any other tracker, appealing to both current fitness tracker users and non-users. But how many people is that? An [NIH study](https://bmcpublichealth.biomedcentral.com/articles/10.1186/s12889-017-4888-1) reports about 20% of current and ex-users dislike the aesthetics or short battery life of their device. This is a sizable chunk of the existing user base. We will also mention that this does not account for any non-users for whom the "chargerless"ness pushes them to finally get a tracker. If we converted only existing users, our userbase would have ~14 million devices in circulation. 
+
+<br>
+
 # Marketing
 
 1. More data, more insights. Today's trackers can tell your sleep impacted your day, but not much more, which makes it hard to justify the daily maintenance. We want to do more than that, to expand the data sources that a user can analyze and self-improve upon, and deliver novel insights across the mind-body axis.
@@ -65,14 +74,6 @@ Energy harvesting has been studied for decades, but only recently have low-power
 
 Our target audience is primarily people in their mid-20s to late 40s — with friends and family members to care about and keep up with through day-to-day wellness. A lot of outreach will happen via word-of-mouth, gifts, being active on forums, and I will also tweet a lot. We'll also focus a bit on traditional web media — we have some advisors helping with tech journalists, but we're always looking for more!  
 
-
-<br>
-# Financials
-A 2019 Pew Research [survey](https://www.pewresearch.org/wp-content/uploads/2020/01/FT_2020.01.07_FitnessTracker_Methodology-_Topline_final.pdf) reports that 21% of US adults regularly wear a fitness device. Applied to the US, we get ~70 million devices in circulation and a market size of ~80 B ([source](https://www.grandviewresearch.com/industry-analysis/wearable-technology-market)). 
-
-Chargerless is more fashionable and convenient than any other tracker, appealing to both current fitness tracker users and non-users. But how many people is that? An [NIH study](https://bmcpublichealth.biomedcentral.com/articles/10.1186/s12889-017-4888-1) reports about 20% of current and ex-users dislike the aesthetics or short battery life of their device. This is a sizable chunk of the existing user base. We will also mention that this does not account for any non-users for whom the "chargerless"ness pushes them to finally get a tracker. If we converted only existing users, our userbase would have ~14 million devices in circulation. 
-
-<br>
 <hr>
 # Why you?
 
@@ -86,7 +87,6 @@ My name is Andy Kong, welcome to my website!
 
 I'm the only person I know at this intersection, and if you know someone else I'd love to meet them! My email is andy at [chargerless.xyz](https://chargerless.xyz/)
 
-<br>
 <hr>
 # How's it going?
 It's going great, and there's a lot left to do!
@@ -98,6 +98,8 @@ Chargerless was loosely started ~fall 2024 as a series of disconnected experimen
 <br>
 
 We're making strong progress thanks to our early angel investors. Today, all the technical components have been derisked, and we are currently integrating the hardware and embedded into one tiny package. At our current rate of development, we'll have 100 beta devices ready by November 2025 to send out to a select group for tuning and testing — around the same time, preorders will open for the first public offering shipping next summer.
+
+Keep up on our [twitter page](http://twitter.com/chargerlessxyz) or by joining our mailing list on the website!
 
 
 
