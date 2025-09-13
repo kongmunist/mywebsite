@@ -384,6 +384,15 @@ def project(project):
         return mainproject()
     return render_template('projects.html', page = page[0])
 
+@app.route('/cwang/')
+def cwang():
+    print("cwang")
+    page = [pages.get("projects/catherinewang")]
+
+    if page[0] is None:
+        return mainproject()
+    return render_template('projects.html', page = page[0])
+
 
 # Serving another website as a suburl from flask
 @app.route("/tester/")
@@ -453,7 +462,7 @@ if __name__ == "__main__":
         else:
             freezer.freeze()
     else:
-        app.run(port=8004, debug=True)
+        app.run(port=8005, debug=True)
 
 
 

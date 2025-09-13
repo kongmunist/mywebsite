@@ -1,7 +1,7 @@
 title: Catherine Wang
 date: 2026-08-23
 label: project
-timespan: Sep 2025-now
+timespan: Dec 2000-now
 pic: chargerless/beaut.jpg
 description: Welcome to my personal site
 
