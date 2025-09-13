@@ -453,7 +453,7 @@ if __name__ == "__main__":
         else:
             freezer.freeze()
     else:
-        app.run(port=8002, debug=True)
+        app.run(port=8004, debug=True)
 
 
 
