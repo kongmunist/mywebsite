@@ -59,14 +59,16 @@ Energy harvesting has been studied for decades, but only recently have low-power
 A 2019 Pew Research [survey](https://www.pewresearch.org/wp-content/uploads/2020/01/FT_2020.01.07_FitnessTracker_Methodology-_Topline_final.pdf) reports that 21% of US adults regularly wear a fitness device. Applied to the US, we get ~70 million devices in circulation and a market size of ~80 B ([source](https://www.grandviewresearch.com/industry-analysis/wearable-technology-market)). 
 
 
-The Ray band is intended as both a consumer's first product in this space and a replacement device for existing fitness users — we will grow the pie and take a big slice. The top two quitting reasons for fitness users are the aesthetics (~20%) and battery life (~18%), which are an entangled problem solved by our new device, and conversions on existing users can easily hit ~14M users. I'm extremely excited to boost average health across the population, and have it done effortlessly. 
+The Ray band is intended as both a consumer's first product in this space and a replacement device for existing fitness users — we will grow the pie and take a big slice. The top two quitting reasons for fitness users are the aesthetics (~20%) and battery life (~18%), which are an entangled problem solved by our new device, and conversions on existing users can easily hit ~14M users. New users will be a larger component than other wearables given the social advantages of the Ray, and this plays into our marketing strategy also.
+
+[//]: # (. I'm extremely excited to boost average health across the population, and have it done effortlessly. )
 
 # Marketing
 
-Our target audience is primarily people in their mid-20s to late 40s — with friends and family members to care about and keep up with through day-to-day wellness. A lot of outreach will happen via word-of-mouth, gifts, being active on forums, and social media. Traditional web media will also play a big role for the slightly older end of our target audience. We think this will work for two reasons. 
+Our target audience is primarily people in their mid-20s to late 40s — with friends and family members to care about and keep up with through day-to-day wellness. A lot of outreach will happen via word-of-mouth, gifts, being active on forums, and social media. Traditional web media will also play a big role for the slightly older end of our target audience. We think this will work well for two reasons. 
 
-1. More data, more insights. Today's trackers can tell your sleep impacted your day, but not much more, which makes it hard to justify their annoyance. We want to do more than that, to expand the data sources that a user can analyze and self-improve upon, and deliver novel insights across the mind-body axis.
-2. Modern wearables do not lean into the social spread factor because the modern wearable is a bad gift — it looks like a device, and needs daily maintenance. Chargerless can be gifted to your grandma or your kid or your dog because it works "for free" and has a minimal look, and we'll focus marketing on families, couples, and friend groups, which we believe is a stickier way to get people to care about their health, and is an angle that other wearable companies can't compete on. 
+1. More data, more insights. Today's trackers can tell your sleep impacted your day, but not much more, which makes it hard to justify their annoyance. We want to do more than that, to expand the data sources that a user can analyze and self-improve upon, and deliver novel insights across the mind-body axis for a stickier user experience. 
+2. Modern wearables don't lean hard into the social spread factor because the modern wearable is a bad gift — it looks like a device, and needs daily maintenance. Chargerless can be gifted to your grandma or your kid or your dog because it works "for free" and has a minimal look, and we'll focus marketing on families and friend groups, which we believe is a great way to get people to care about their health, and is an angle in which Chargerless is outstanding. 
 
 [//]: # (<hr>)
 
@@ -95,7 +97,7 @@ Chargerless was loosely started ~fall 2024 as a series of disconnected experimen
 
 {{ add_pic("chargerless/stabby.jpg", "Programming on test boards") }}
 
-We're making strong progress thanks to our early angel investors. At our current rate of development, we plan to ship out 100 beta devices to paid users by November 2025 for tuning and testing (list is ~80% full, please DM me if you'd like to join the list!). The next time you'll be able to get one will be the first public batch around next year.
+We're making strong progress thanks to our early angel investors — technical derisking is finished, and integration is well underway. At our current rate of development, we plan to ship out 100 beta devices to paid users by November 2025 for tuning and testing (list is ~80% full, please DM me if you'd like to join the list!). The next time you'll be able to get one will be the first public batch around next year.
 
 Keep up on our [twitter page](http://twitter.com/chargerlessxyz) or by joining our newsletter!
 
