@@ -24,9 +24,7 @@ But do wearables today "earn their keep" through their functionality in spite of
 
 What's up with this? If everyone is wearing ugly bricks on their wrists, why hasn't anyone showed up with a nice, sleek, "looks like jewelry" wearable yet? The answer is an old way of thinking about the core component that all wearables share: the battery.
 
-<br>
 {{ add_pic("chargerless/allbats.jpg", "Oops! All Battery") }}
-<br>
 
 It goes something like this: the engineers say "this feature needs this much power per day", and the designers say "this should only get charged once a week", then they ship the product. Since everyone has access to the same battery technology, this means that today's wearables all carry around 200mAh of lithium to power their sensor and communication stack, which is why they're all the same size and can barely last a week.
 
@@ -97,7 +95,7 @@ Chargerless was loosely started ~fall 2024 as a series of disconnected experimen
 
 {{ add_pic("chargerless/stabby.jpg", "Programming on test boards") }}
 
-We're making strong progress thanks to our early angel investors. At our current rate of development, we plan to ship out 100 beta devices to paid users by November 2025 for tuning and testing. DM me to join the list! Larger batch will follow ~next summer.
+We're making strong progress thanks to our early angel investors. At our current rate of development, we plan to ship out 100 beta devices to paid users by November 2025 for tuning and testing (list is ~80% full, please DM me if you'd like to join the list!). The next time you'll be able to get one will be the first public batch around next year.
 
 Keep up on our [twitter page](http://twitter.com/chargerlessxyz) or by joining our newsletter!
 
