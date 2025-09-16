@@ -54,6 +54,12 @@
       
         <image:image>
           <image:loc>
+            https://andykong.org/static/chargerless/glowing.jpg
+          </image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>
             https://andykong.org/static/chargerless/stabby.jpg
           </image:loc>
         </image:image>

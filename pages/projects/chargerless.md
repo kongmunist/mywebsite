@@ -1,32 +1,28 @@
-title: Chargerless
+title: Chargerless Manifesto
 date: 2025-08-23
 label: project
 timespan: Jan 2025-now
 pic: chargerless/beaut.jpg
 description: Why Chargerless?
 
-Hello! Usually I write up a project after it's done, but this time I'm going to explain it to you as it's happening. Check out the website at [chargerless.xyz](https://chargerless.xyz/)
+[//]: # (Hello! Usually I write up a project after it's done, but this time I'm going to explain it to you as it's happening. Check out the website at [chargerless.xyz]&#40;https://chargerless.xyz/&#41;)
 
-{{ add_pic("chargerless/beaut.jpg", "") }}
+{{ add_pic("chargerless/beaut.jpg", "<a href='https://chargerless.xyz'>Chargerless</a>") }}
 
-<br>
-<hr>
 
-# Chargerless Manifesto
-
-Between 20-40% of the US adult population owns a fitness tracker, and I haven't met a single person who likes how they look. At best the wearable is tolerated, "discreet <i>enough</i>" ; at worst it sticks out like a stain on a nice white shirt. 
+Between 20-30% of the US adult population owns a fitness tracker, and I haven't met a single person who likes how they look. At best, wearables are tolerated, "discreet <i>enough</i>" ; at worst it sticks out like a stain on a nice outfit. 
 
 {{ add_pic("chargerless/clunky.avif", "Chunky, chunky, chunky") }}
 <br>
 
-But do wearables today "earn their keep" through their functionality in spite of how they look? No! Outside of the top 1% most fitness-brained users, I'd argue that everyone else mostly uses it to check the time. That is, when their device isn't dead.
+But do wearables today "earn their keep" through their functionality in spite of how they look? No! Outside of the top 1% most fitness-brained users, everyone else mostly uses it to check the time. That is, when their device isn't dead.
 
 
-What's up with this? If everyone is wearing ugly bricks on their wrists, why hasn't anyone showed up with a nice, sleek, "looks like jewelry" wearable yet? The answer is an old way of thinking about the core component that all wearables share: the battery.
+What's up with this? If everyone is wearing ugly bricks on their wrists, why hasn't anyone showed up with a nice, sleek wearable yet? The answer is an old way of thinking about the core component that all wearables share: the battery.
 
 {{ add_pic("chargerless/allbats.jpg", "Oops! All Battery") }}
 
-It goes something like this: the engineers say "this feature needs this much power per day", and the designers say "this should only get charged once a week", then they ship the product. Since everyone has access to the same battery technology, this means that today's wearables all carry around 200mAh of lithium to power their sensor and communication stack, which is why they're all the same size and can barely last a week.
+It goes something like this: the engineers say "this feature needs this much power per day", and the designers say "this should only need charging once a week", then they ship the product. Since everyone uses the same battery technology, this means that today's wearables all carry around 200mAh of lithium to power their sensor and communication stack, and end up at a similarly sized package.
 
 Can we do better?
 
@@ -37,29 +33,32 @@ Chargerless is a rethinking of the way personal devices have always been powered
 
 {{ add_pic("chargerless/handshot.jpg", "") }}
 
-First, it'd be incredibly convenient to never worry again about charging your watch. And as a second order effect — if your wearable is always charging, we can use a much smaller battery to get the same functionality that we're used to: heart rate, sleep, and activity tracking without any of the hassle.
+First, if your device charges itself all the time, we can get the same functionality using a much smaller battery; sleep, exercise, health tracking without any of the hassle. Ane secondly, your device would never die again — how magical is that?
 
 {{ add_pic("chargerless/beaut.jpg", "") }}
-<br>
 
 # Why now?
 
 Energy harvesting has been studied for decades, but only recently have low-power microcontrollers caught up. The current generation of chips can run sensors, process data, and transmit signals wirelessly, all from a silicon chip smaller than a salt grain — the primary limitation is a way of thinking about power: how to use it and where it comes from. 
 
 {{ add_pic("chargerless/smallenough.jpg", "") }}
+
 <br>
 
-## Now is the right time:
-- Truly continuous biometrics data integrated across data sources can revolutionize medicine, and you can't get data from the past, we must start now. But non-tech audiences don't like the cold and bulky look of today's wearable trackers.
-- Smaller designs which solve this are enabled by our power harvesting stack and modern advancements in semiconductors, alleviating the primary pain points of wearables (low battery, bad aesthetics)
+# So what?
+You might be wondering why I'm so eager to build a fitness tracker if today's people only use it to check the time — it's because Chargerless will be so much more than that. Today's devices offer "health insights" but the data is so limited they can basically only calculate sleep scores. Humans are so much more than that — we constantly emit data about our cognition, mental energy levels, or mental state, and one of the goals of Chargerless is to cast a wider net to get that bigger picture view of your health, mind and body.
 
-<br><hr>
+Bryan Johnson obviously has someone analyzing his biometrics data, and in the near future AI can offer this analysis to anyone. But you can't get data from the past, we must start now, and do it by removing any reason to not have a device. This means smaller designs enabled by our power harvesting stack, and an infinite battery life when others are quibbling over weeks and days.
+
+{{ add_pic("chargerless/glowing.jpg", "") }}
+
+<hr>
 
 # Financials
 A 2019 Pew Research [survey](https://www.pewresearch.org/wp-content/uploads/2020/01/FT_2020.01.07_FitnessTracker_Methodology-_Topline_final.pdf) reports that 21% of US adults regularly wear a fitness device. Applied to the US, we get ~70 million devices in circulation and a market size of ~80 B ([source](https://www.grandviewresearch.com/industry-analysis/wearable-technology-market)). 
 
+The Ray band is intended as both a first product in this space and a replacement device for existing fitness users — we will grow the pie and take a big slice. The top two quitting reasons for fitness users are the aesthetics (~20%) and battery life (~18%), which are an entangled problem solved by our new device, and conversions on existing users can easily hit ~14M users. New users will be a larger component than other wearables given the social advantages of the Ray, and this plays into marketing as well.
 
-The Ray band is intended as both a consumer's first product in this space and a replacement device for existing fitness users — we will grow the pie and take a big slice. The top two quitting reasons for fitness users are the aesthetics (~20%) and battery life (~18%), which are an entangled problem solved by our new device, and conversions on existing users can easily hit ~14M users. New users will be a larger component than other wearables given the social advantages of the Ray, and this plays into our marketing strategy also.
 
 [//]: # (. I'm extremely excited to boost average health across the population, and have it done effortlessly. )
 
@@ -67,9 +66,12 @@ The Ray band is intended as both a consumer's first product in this space and a 
 
 Our target audience is primarily people in their mid-20s to late 40s — with friends and family members to care about and keep up with through day-to-day wellness. A lot of outreach will happen via word-of-mouth, gifts, being active on forums, and social media. Traditional web media will also play a big role for the slightly older end of our target audience. We think this will work well for two reasons. 
 
-1. More data, more insights. Today's trackers can tell your sleep impacted your day, but not much more, which makes it hard to justify their annoyance. We want to do more than that, to expand the data sources that a user can analyze and self-improve upon, and deliver novel insights across the mind-body axis for a stickier user experience. 
-2. Modern wearables don't lean hard into the social spread factor because the modern wearable is a bad gift — it looks like a device, and needs daily maintenance. Chargerless can be gifted to your grandma or your kid or your dog because it works "for free" and has a minimal look, and we'll focus marketing on families and friend groups, which we believe is a great way to get people to care about their health, and is an angle in which Chargerless is outstanding. 
+1. More data, more insights. Today's trackers can tell your sleep impacted your day, but not much more, which makes it hard to justify their annoyance. We want to do more than that, to expand the data sources that a user can analyze and self-improve upon, and deliver novel insights across the mind-body axis for a higher value user experience. 
+2. Chargerless is the first fitness and health for everyone. As a gift to your parents, grandparents, or kids, it is the only device which feels more like an object than a responsibility because it works "for free" and has a minimal look. We'll focus marketing on families and friend groups, which we believe is a great way to get people to care about their health, and is an angle in which Chargerless is outstanding. 
 
+
+
+ 
 [//]: # (<hr>)
 
 [//]: # (# Why you?)
