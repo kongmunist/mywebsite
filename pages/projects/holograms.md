@@ -2,7 +2,7 @@ title: Laser Holograms
 date: 2024-10-20
 label: project
 timespan: Oct 2022 - now, on and off
-pic: holograms/hero.jpg
+pic: holograms/hero.jpeg
 description: Trapping 3D objects in a 2D sheet of glass
 
 # Overview
