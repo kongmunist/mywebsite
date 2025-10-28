@@ -2,7 +2,7 @@ title: Magical Beans
 date: 2024-06-28
 label: project
 timespan: Winter 2023
-pic: magicalbeans/hero.jpeg
+pic: magicalbeans/hero.jpg
 description: Growing beans with an enchanted water bottle
 
 {{ tableofcontents("projects/magicalbeans.md") }}
