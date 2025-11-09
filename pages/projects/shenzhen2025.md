@@ -7,7 +7,7 @@ description: A month of prototyping
 
 Hello everyone! 
 
-Last November I learned that [Cedric Honnet](https://honnet.eu/) would host a cohort of 10 MIT researchers in Shenzhen for a month as part of the [Scalable HCI Summit](https://scalablehci.com/2025/program/). There were factory tours, browsing the electronics malls, and plenty of free time to catch up on research. To be supported in prototyping, in the best possble location for electronics development, with a group of similarly-inclined peers — this felt hand-made for me. I signed up immediately. 
+Last November I learned that [Cedric Honnet](https://honnet.eu/) would host a cohort of 10 MIT researchers in Shenzhen for a month as part of the [Scalable HCI Summit](https://scalablehci.com/2025/program/). There were factory tours, browsing the electronics malls, and plenty of free time to catch up on research. To be supported in prototyping, in the best possible location for electronics development, with a group of similarly-inclined peers — this felt hand-made for me. I signed up immediately. 
 
 When I got accepted, I felt both excited and nervous. This is the dream of every engineer; how can we make the most of it? I decided worrying over such a question was useless. We would simply go, and see, and do. What follows is an account of the happenings.
 
