@@ -5,7 +5,7 @@ timespan: December 2023 - October 2024
 pic: poweroverskin/PoS_Snail.JPG
 description: Battery-free wearables, powered via body contact!
 
-{{ add_pic("poweroverskin/andytalking.jpg", "Andy talking at UIST") }}
+{{ add_pic("poweroverskin/andytalking.jpeg", "Andy talking at UIST") }}
 
 Hello! Today I'd like to tell you about my first UIST paper, Power-over-Skin! First, let me get all the links out of the way
 
