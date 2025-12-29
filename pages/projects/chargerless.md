@@ -1,5 +1,5 @@
 title: Chargerless Manifesto
-date: 2025-08-23
+date: 2026-08-23
 label: project
 timespan: Jan 2025-now
 pic: chargerless/beaut.jpg

@@ -138,211 +138,15 @@
     }
     
     
-    @keyframes slideInFromRight {
-        0% {
-            transform: translateX(100%);
-            opacity:0;
-        }
-        100% {
-            transform: translateX(0);
-            opacity:1;
-        }
-    }
-    
-    @keyframes appear{
-        0% {
-            opacity:0;
-        }
-        100% {
-            opacity:1;
-        }
-    }
-    
-    /* Generated from CSS elastic ease generator: https://codepen.io/amit_sheen/full/xxdKroP/57c932ba5730a4d512adc8ab49059892 */
-    @keyframes elastic {
-        0% { transform: translateX(100px); opacity:0;}
-        33.54% { transform: translateX(-26.58px); }
-        60.59% { transform: translateX(15.76px); }
-        82.41% { transform: translateX(-7.04px); }
-        100.00% { transform: translateX(0.00px); opacity:1;}
-    }
-    
-    .appearOnScroll{
-        opacity:0;
-    }
-    
-    
-    a[target='_blank']:after {
-        /* The icon can be a SVG or image file */
-        content: url("{{url_for('static', filename='ext.svg')}}");
-        display: inline-block;
-    }
-    
-    .rounded-image {
-        border-radius: 5%;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    
-    /* Timeline styles */
-    .timeline-container {
-        background: #1a1a1a;
-        padding: 1rem 1.5rem 0.5rem 1.5rem;
-        border-radius: 0.5rem;
-        box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.2);
-        margin: 2rem 1rem;
-        max-width: 800px;
-    }
-    
-    .timeline-item {
-        display: flex;
-        gap: 2rem;
-        margin-bottom: 0.25rem;
-        font-family: monospace;
-        font-size: 0.9em;
-    }
-    
-    .timeline-date {
-        color: #888;
-        font-size: 0.9em;
-        text-align: right;
-        flex: 0 0 auto;
-    }
-    
-    .timeline-content {
-        flex: 1;
-        color: #fff;
-    }
-    
-    .timeline-more {
-        color: #00b4c4;
-        text-decoration: none;
-        cursor: pointer;
-    }
-    
-    .timeline-more:hover {
-        text-decoration: underline;
-    }
-    
-    /* Custom scrollbar for timeline */
-    .timeline-container::-webkit-scrollbar {
-        width: 0.5rem;
-    }
-    
-    .timeline-container::-webkit-scrollbar-track {
-        background: #2a2a2a;
-        border-radius: 0.25rem;
-    }
-    
-    .timeline-container::-webkit-scrollbar-thumb {
-        background: #444;
-        border-radius: 0.25rem;
-    }
-    
-    /* for the new front page view */
-    
-    @media (max-width: 1024px) {
-        div[style*="display: flex; padding"] {
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        div[style*="flex: 0 0"] {
-            flex: none;
-            width: 100%;
-            max-width: 800px;
-        }
-    }
-    
-    
 </style>
 
 <script type="text/javascript">
-    var expose
-    window.addEventListener('DOMContentLoaded', function (event) { // Dynamic load images if supported
-        if (typeof(window.IntersectionObserverEntry) != "undefined" && window.IntersectionObserverEntry.prototype.hasOwnProperty('isIntersecting')){
-            
-            const callback = function(entries) {
-                entries.forEach( function(entry) {
-                    if (entry.isIntersecting){
-                        animDelay = parseFloat((entry.target.offsetLeft/window.innerWidth).toFixed(1))/2
-                        entry.target.style.animation = "0.7s ease-in-out " + animDelay + "s elastic forwards"
-                    }
-                    expose = entry
-                });
-            };
-            
-            const observer = new IntersectionObserver(callback);
-            const targets = document.querySelectorAll(".appearOnScroll");
-            targets.forEach(function(target) {
-                observer.observe(target);
-            });
-        } else { // If unsupported, show all targets
-            const targets = document.querySelectorAll(".appearOnScroll");
-            for (let i = 0; i< targets.length; i++){
-                targets[i].style.opacity = 1.0;
-            }
-        }
-    });
-    
     // hitting 'b' goes to /blog
     document.addEventListener('keydown', function(event) {
         if (event.key === 'b') {
             window.location.href = "/blog";
         }
     });
-    
-    // Timeline population
-    fetch('/static/timeline.txt')
-    .then(response => response.text())
-    .then(text => {
-        const container = document.getElementById('timeline-container');
-        const lines = text.trim().split('\n');
-        
-        // Take only the last 9 items
-        const recentLines = lines.slice(-9);
-        
-        recentLines.forEach(line => {
-            // const [date, content] = line.split(',', 2);
-            const [date, content, _] = line.split(/,(.*)/s)
-            
-            const item = document.createElement('div');
-            item.className = 'timeline-item';
-            
-            const dateDiv = document.createElement('div');
-            dateDiv.className = 'timeline-date';
-            dateDiv.textContent = date;
-            
-            const contentDiv = document.createElement('div');
-            contentDiv.className = 'timeline-content';
-            contentDiv.textContent = content;
-            
-            item.appendChild(dateDiv);
-            item.appendChild(contentDiv);
-            container.appendChild(item);
-        });
-        
-        // Only add "More..." if there are additional entries
-        if (lines.length > 9) {
-            const moreItem = document.createElement('div');
-            moreItem.className = 'timeline-item';
-            
-            const dateDiv = document.createElement('div');
-            dateDiv.className = 'timeline-date';
-            dateDiv.textContent = '';
-            
-            const contentDiv = document.createElement('div');
-            contentDiv.className = 'timeline-content';
-            contentDiv.innerHTML = `<a href="/timeline" class="timeline-content">More</a>`;
-            
-            moreItem.appendChild(dateDiv);
-            moreItem.appendChild(contentDiv);
-            container.appendChild(moreItem);
-        }
-    })
-    .catch(err => console.error('Error loading timeline:', err));
-    
 </script>
 
 
@@ -357,20 +161,13 @@
     </div>
     <div style="flex: 3; display: flex; align-items: center;">
         <p class="hero-description">
-            I'm currently building <a href="https://chargerless.xyz" target="_blank">chargerless.xyz</a>
+            I live in San Francisco. I like building sensors to better understand the mind and body.
             <br><br>
-            I like building hardware, collecting and processing signals, analyzing data, and sharing knowledge. <br>
-            I also enjoy new experiences, training my senses, seeing things I've never seen before, challenging what I believe is possible, and inventing sufficiently advanced technology.
+            I've spent much of my light researching human-computer interaction + biosensing (CMU, ETH Zurich) and building quantum physics hardware (Open Quantum). Nowadays I'm running <a href="https://chargerless.xyz" target="_blank">Chargerless</a>, a consumer company building perpetual devices.
             <br><br>
-            I live in Dogpatch, SF, CA, the greatest city in the world. Please reach out if you think we'd have a good chat!
+            In my free time I enjoy new experiences, training my senses, seeing things I've never seen before, challenging what I believe is possible, and inventing sufficiently advanced technology.
+            <br><br>
         </p>
-        
-        <!-- <div style="display: flex; justify-content: center; width: 100%; min-height: 200px;"> -->
-            <!-- <script async data-uid="bc53dedea2" src="https://andy-kong.ck.page/bc53dedea2/index.js"></script> -->
-        <!-- </div> -->
-<!--        <div id="timeline-container" class="timeline-container">-->
-<!--            &lt;!&ndash; Timeline items will be populated here by JavaScript &ndash;&gt;-->
-<!--        </div>  -->
 
     </div>
 </div>
@@ -391,12 +188,3 @@
     {% endfor %}
 </div>
 {% endblock %}
-
-
-
-
-
-
-
-
-
