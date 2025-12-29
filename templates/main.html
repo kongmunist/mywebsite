@@ -20,10 +20,11 @@
         padding: 20px;
         border: 2px solid transparent;
         transition: border-color 0s;
+        box-sizing: border-box;
     }
     
     .portfolio-card:hover {
-        border-color: #00B4CC;
+        border-color: #2d2d2d;
         color: inherit;
     }
     
@@ -32,12 +33,7 @@
         font-weight: 600;
         margin-bottom: 0.75rem;
         text-align: center;
-        color: #00B4CC;
-        transition: color 0.1s linear;
-    }
-    
-    .portfolio-card:hover .portfolio-title {
-        color: #00DFFC;
+        color: #FAEADB;
     }
     
     .portfolio-image-wrapper {
@@ -53,12 +49,6 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform 0.2s ease-in-out;
-    }
-    
-    .portfolio-card:hover .portfolio-image-wrapper img,
-    .portfolio-card:hover .portfolio-image-wrapper video {
-        transform: scale(1.05);
     }
     
     .portfolio-description {
@@ -72,13 +62,46 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 2.5rem;
-        margin: 2rem auto;
+        margin: 2rem auto 0 auto;
         max-width: 90%;
+    }
+    
+    .hero-section {
+        max-width: 75%;
     }
     
     @media (max-width: 768px) {
         .portfolio-grid {
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+            max-width: 95%;
+        }
+        
+        .portfolio-card {
+            padding: 8px;
+        }
+        
+        .portfolio-title {
+            font-size: 1.1em;
+        }
+        
+        .portfolio-description {
+            font-size: 0.85em;
+        }
+        
+        .hero-section {
+            max-width: 95%;
+            padding: 1rem 0rem 2rem 0rem !important;
+            flex-direction: column;
+            gap: 1.5rem !important;
+        }
+        
+        .hero-section > div:first-child img {
+            width: 50% !important;
+        }
+        
+        .hero-section > div:last-child {
+            padding: 0 1rem !important;
         }
     }
     
@@ -292,16 +315,16 @@
 
 
 
-<div style="display: flex; padding: 2rem 0rem 0rem 0rem; gap: 2rem; margin: 0 auto; max-width: 90%;">
+<div class="hero-section" style="display: flex; padding: 2rem 0rem 2rem 0rem; gap: 2.5rem; margin: 0 auto;">
     
-    <div style="flex: 0 0 30%; display: flex; ">
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
         <img alt="Photo of Andy Kong (website author) smiling" 
         src="{{url_for('static', filename = 'meiceland1.jpg')}}"
-        style="width: 60%; height: auto; margin: auto;  border-radius: 5%; max-width:40vw;">
+        style="width: 100%; height: auto; margin-bottom: 1rem; border-radius: 5%;">
+        <div style="font-size: 1.5rem; margin-bottom: 0; text-align: center;">Hello, I'm Andy</div>
     </div>
-    <div style="flex: 0 0 70%; padding: 0em;">
-        <div style="font-size: 2.5rem; margin-bottom: 1.5rem;">Hello, I'm Andy</div>
-        <p style="margin-bottom:0px;">
+    <div style="flex: 3; padding: 0em; display: flex; align-items: center;">
+        <p style="margin-bottom:0px; font-size: 0.9rem;">
             I'm currently building <a href="https://chargerless.xyz" target="_blank">chargerless.xyz</a>
             <br><br>
             I like building hardware, collecting and processing signals, analyzing data, and sharing knowledge. <br>
@@ -320,7 +343,6 @@
     </div>
 </div>
 
-<br><br>
 <div class="portfolio-grid">
     {% for p in pages %}
     <a class="portfolio-card" href="{{ url_for('project',project=p.path[9:]) }}">
