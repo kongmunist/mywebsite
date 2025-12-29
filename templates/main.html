@@ -17,12 +17,13 @@
         color: inherit;
         display: flex;
         flex-direction: column;
-        transition: transform 0.2s ease-in-out;
         padding: 20px;
+        border: 2px solid transparent;
+        transition: border-color 0s;
     }
     
     .portfolio-card:hover {
-        transform: scale(1.03);
+        border-color: #00B4CC;
         color: inherit;
     }
     
@@ -31,12 +32,17 @@
         font-weight: 600;
         margin-bottom: 0.75rem;
         text-align: center;
-        color: #FAEADB;
+        color: #00B4CC;
+        transition: color 0.1s linear;
+    }
+    
+    .portfolio-card:hover .portfolio-title {
+        color: #00DFFC;
     }
     
     .portfolio-image-wrapper {
         width: 100%;
-        aspect-ratio: 4 / 3;
+        aspect-ratio: 5 / 3;
         overflow: hidden;
         border-radius: 8px;
         margin-bottom: 0.75rem;
@@ -47,6 +53,12 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        transition: transform 0.2s ease-in-out;
+    }
+    
+    .portfolio-card:hover .portfolio-image-wrapper img,
+    .portfolio-card:hover .portfolio-image-wrapper video {
+        transform: scale(1.05);
     }
     
     .portfolio-description {
@@ -59,7 +71,7 @@
     .portfolio-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem;
+        gap: 2.5rem;
         margin: 2rem auto;
         max-width: 90%;
     }
@@ -311,7 +323,7 @@
 <br><br>
 <div class="portfolio-grid">
     {% for p in pages %}
-    <a class="portfolio-card appearOnScroll" href="{{ url_for('project',project=p.path[9:]) }}">
+    <a class="portfolio-card" href="{{ url_for('project',project=p.path[9:]) }}">
         <div class="portfolio-title">{{ p.title }}</div>
         <div class="portfolio-image-wrapper">
             {% if p.pic.endswith(".mov") or p.pic.endswith(".mp4") %}
