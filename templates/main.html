@@ -11,13 +11,34 @@
 {% block app_content %}
 <style>
     
+    /* ========================================
+       Typography Scale (1.25 ratio)
+       Base: 1rem (16px)
+       ======================================== */
+    
+    .hero-name {
+        font-size: 1.75rem;
+        font-weight: 600;
+        line-height: 1.3;
+        margin-top: 0.75rem;
+        text-align: center;
+        color: #FAEADB;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin: 0;
+        color: #FAEADB;
+    }
+    
     /* Portfolio card styling with subtle hover effect */
     .portfolio-card {
         text-decoration: none;
         color: inherit;
         display: flex;
         flex-direction: column;
-        padding: 20px;
+        padding: 1.25rem;
         border: 2px solid transparent;
         transition: border-color 0s;
         box-sizing: border-box;
@@ -29,9 +50,10 @@
     }
     
     .portfolio-title {
-        font-size: 1.3em;
+        font-size: 1.125rem;
         font-weight: 600;
-        margin-bottom: 0.75rem;
+        line-height: 1.3;
+        margin-bottom: 0.5rem;
         text-align: center;
         color: #FAEADB;
     }
@@ -41,7 +63,7 @@
         aspect-ratio: 5 / 3;
         overflow: hidden;
         border-radius: 8px;
-        margin-bottom: 0.75rem;
+        margin-bottom: 0.5rem;
     }
     
     .portfolio-image-wrapper img,
@@ -53,15 +75,15 @@
     
     .portfolio-description {
         text-align: center;
-        font-size: 0.95em;
+        font-size: 0.875rem;
         color: #FAEADB;
-        line-height: 1.4;
+        line-height: 1.5;
     }
     
     .portfolio-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 2.5rem;
+        gap: 1.5rem;
         margin: 2rem auto 0 auto;
         max-width: 90%;
     }
@@ -71,6 +93,14 @@
     }
     
     @media (max-width: 768px) {
+        .hero-name {
+            font-size: 1.5rem;
+        }
+        
+        .hero-description {
+            font-size: 0.9375rem;
+        }
+        
         .portfolio-grid {
             grid-template-columns: repeat(2, 1fr);
             gap: 0.5rem;
@@ -78,22 +108,24 @@
         }
         
         .portfolio-card {
-            padding: 8px;
+            padding: 0.5rem;
         }
         
         .portfolio-title {
-            font-size: 1.1em;
+            font-size: 0.9375rem;
+            margin-bottom: 0.375rem;
         }
         
         .portfolio-description {
-            font-size: 0.85em;
+            font-size: 0.75rem;
+            line-height: 1.4;
         }
         
         .hero-section {
             max-width: 95%;
-            padding: 1rem 0rem 2rem 0rem !important;
+            padding: 1rem 0rem 1.5rem 0rem !important;
             flex-direction: column;
-            gap: 1.5rem !important;
+            gap: 1rem !important;
         }
         
         .hero-section > div:first-child img {
@@ -315,16 +347,16 @@
 
 
 
-<div class="hero-section" style="display: flex; padding: 2rem 0rem 2rem 0rem; gap: 2.5rem; margin: 0 auto;">
+<div class="hero-section" style="display: flex; padding: 2rem 0rem 1.5rem 0rem; gap: 2rem; margin: 0 auto;">
     
     <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
         <img alt="Photo of Andy Kong (website author) smiling" 
         src="{{url_for('static', filename = 'meiceland1.jpg')}}"
-        style="width: 100%; height: auto; margin-bottom: 1rem; border-radius: 5%;">
-        <div style="font-size: 1.5rem; margin-bottom: 0; text-align: center;">Hello, I'm Andy</div>
+        style="width: 100%; height: auto; border-radius: 5%;">
+        <div class="hero-name">Hello, I'm Andy</div>
     </div>
-    <div style="flex: 3; padding: 0em; display: flex; align-items: center;">
-        <p style="margin-bottom:0px; font-size: 0.9rem;">
+    <div style="flex: 3; display: flex; align-items: center;">
+        <p class="hero-description">
             I'm currently building <a href="https://chargerless.xyz" target="_blank">chargerless.xyz</a>
             <br><br>
             I like building hardware, collecting and processing signals, analyzing data, and sharing knowledge. <br>
