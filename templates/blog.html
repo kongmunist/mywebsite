@@ -13,6 +13,11 @@
     {% endfor %}
 
     <style>
+        /* ========================================
+           Typography Scale (1.25 ratio)
+           Base: 1rem (16px)
+           ======================================== */
+        
         body {
             counter-reset: h1counter h2counter;
         }
@@ -21,7 +26,7 @@
             padding-left: 12px;
             margin-left: -12px;
             border-left: 8px groove #DBAD80;
-
+            font-size: 1.75rem;
             counter-reset: h2counter;
         }
 
@@ -30,11 +35,19 @@
             content: counter(h1counter) ". ";
         }
 
+        .blogpage > h2 {
+            font-size: 1.4rem;
+        }
+
         .blogpage > h2::before {
             counter-increment: h2counter;
             content: counter(h1counter) "." counter(h2counter) "  ";
         }
 
+        .blogpage p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
 
         .blogpage img{
             max-width: 100%;
@@ -55,6 +68,7 @@
             border-left: 8px ridge #DBAD80;
             color: inherit;
             text-decoration: none;
+            font-size: 1rem;
         }
     </style>
 
