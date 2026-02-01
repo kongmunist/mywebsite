@@ -1,6 +1,6 @@
 title: "Teardown of the Urbanista Los Angeles headphones"
 date: 2026-02-01
-label: blog
+label: log
 tags: [electronics, teardown]
 snippet: "Removing another self-powering device from the world"
 
