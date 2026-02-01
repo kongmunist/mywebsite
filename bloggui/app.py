@@ -15,6 +15,7 @@ app = Flask(__name__)
 app.config['CKEDITOR_SERVE_LOCAL'] = True
 app.config['CKEDITOR_HEIGHT'] = 400
 app.config['CKEDITOR_FILE_UPLOADER'] = 'upload'
+app.config['CKEDITOR_EXTRA_PLUGINS'] = ['uploadimage']
 
 app.secret_key = 'secret string'
 app.config['UPLOADED_PATH'] = os.path.join(basedir, 'uploads')
@@ -174,15 +175,27 @@ def getRandStr(ln=5):
 @app.route('/upload', methods=['POST'])
 def upload():
     f = request.files.get('upload')
-    extension = f.filename.split('.')[-1].lower()
+
+    # Handle clipboard paste (no filename or empty filename)
+    original_filename = f.filename or 'pasted-image.png'
+    if '.' not in original_filename:
+        content_type = f.content_type or 'image/png'
+        ext_map = {'image/png': 'png', 'image/jpeg': 'jpg', 'image/gif': 'gif'}
+        extension = ext_map.get(content_type, 'png')
+    else:
+        extension = original_filename.split('.')[-1].lower()
 
     if extension not in ['jpg', 'gif', 'png', 'jpeg']:
         return upload_fail(message='Image only!')
-    f.filename = f.filename.rsplit(".", 1)[0] + getRandStr() + "." + extension
-    print("uploaded file: ", f.filename)
-    f.save(os.path.join(app.config['UPLOADED_PATH'], f.filename))
-    url = url_for('uploaded_files', filename=f.filename)
-    return upload_success(url, filename=f.filename)
+
+    # Generate unique filename
+    base_name = original_filename.rsplit(".", 1)[0] if '.' in original_filename else 'pasted-image'
+    new_filename = base_name + getRandStr() + "." + extension
+    print("uploaded file: ", new_filename)
+    os.makedirs(app.config['UPLOADED_PATH'], exist_ok=True)
+    f.save(os.path.join(app.config['UPLOADED_PATH'], new_filename))
+    url = url_for('uploaded_files', filename=new_filename)
+    return upload_success(url, filename=new_filename)
 
 
 def shutdown_server():

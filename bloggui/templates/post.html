@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- 	<meta charset="UTF-8">
- 	<title>Flask-CKEditor Demo</title>
-
-
+    <meta charset="UTF-8">
+    <title>Post Created - BlogGUI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bloggui.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon-bloggui.png') }}">
 </head>
 <body>
-	<div class="warpper" style="width: 700px; margin: auto">
-		<h1>{{ title }}</h1>
-		<hr>
-		<p>{{ body|safe }}</p>
-		<hr>
-		<a href="{{ url_for('index') }}">Back Home</a>
-	</div>
+    <div class="wrapper">
+        <div class="success-message">
+            Post created successfully!
+        </div>
+
+        <div class="post-preview">
+            <h2>{{ title }}</h2>
+            <hr>
+            <p>{{ body|safe }}</p>
+        </div>
+
+        <a href="{{ url_for('index') }}">Create Another Post</a>
+    </div>
 </body>
 </html>
-

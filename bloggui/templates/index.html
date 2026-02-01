@@ -2,79 +2,137 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Flask-CKEditor Demo</title>
-	<style>
-		img {
-			max-width: 100%;
-			height: auto !important;
-		}
-
-	</style>
-	<script>
-		window.onbeforeunload = function () {return false;}
-	</script>
-
-<!--	favicon -->
-	<link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon-bloggui.png') }}">
-
+    <title>BlogGUI - Create Post</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bloggui.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon-bloggui.png') }}">
+    <script>
+        window.onbeforeunload = function () {return false;}
+    </script>
 </head>
 <body>
-	<div class="warpper" style="width: 80%; margin: auto;">
-		<h1>Flask-CKEditor: Blog Post</h1>
+    <div class="wrapper">
+        <h1>Create Blog Post</h1>
 
-		<form method="post">
-			Title<br>
-<!--			make it wider -->
-			<input type="text" name="title" size="70px" placeholder="Title"><br><br>
-			<input type="text" name="snippet" size="70px" placeholder="Brief description"><br><br>
-			<input type="text" name="postname" placeholder="blogpost3000"><br><br>
-<!--			<input type="text" name="date" placeholder="Date"><br><br>-->
-			<input type="text" name="tags" placeholder="Tags"><br><br>
-			<label for="ckeditor">Post</label>
-			{{ ckeditor.create() }}<br>
-			<input type="submit" value="Submit">
-		</form>
-	</div>
-	{{ ckeditor.load() }}
-	{{ ckeditor.config() }}
+        <form method="post">
+            <div class="input-group">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" placeholder="My Amazing Post">
+            </div>
 
-<!--	config.contentsCss = '/css/mysitestyles.css';-->
+            <div class="input-group">
+                <label for="snippet">Description</label>
+                <span class="helper-text">Brief summary shown in post listings</span>
+                <input type="text" id="snippet" name="snippet" placeholder="A quick look at something interesting...">
+            </div>
 
+            <div class="input-row">
+                <div class="input-group">
+                    <label for="postname">Slug</label>
+                    <span class="helper-text">URL-friendly name (no spaces)</span>
+                    <input type="text" id="postname" name="postname" placeholder="my-amazing-post">
+                </div>
 
-	<script>
-		// Wait until DOM loaded
-		// document.addEventListener("DOMContentLoaded", function(event) {
+                <div class="input-group">
+                    <label for="tags">Tags</label>
+                    <span class="helper-text">Comma-separated list</span>
+                    <input type="text" id="tags" name="tags" placeholder="tech, tutorial, web">
+                </div>
+            </div>
 
-		setTimeout(function() {
-				// Initialize CKEditor
-				a = document.querySelector('iframe').contentWindow.document.body;
-				let config = { attributes: true, childList: true, subtree: true };
+            <div class="input-group">
+                <label for="ckeditor">Content</label>
+                <div class="paste-hint">
+                    <kbd>Cmd</kbd>+<kbd>V</kbd> to paste images directly from clipboard
+                </div>
+                <div class="editor-container">
+                    {{ ckeditor.create() }}
+                </div>
+            </div>
 
-				let callback = function(mutationsList) {
-					// If mutation is an image, add css object fit contain
-					for (let mutation of mutationsList) {
-						if (mutation.type === 'childList') {
-							console.log("mut 1");
-							for (let node of mutation.addedNodes) {
-								if (node.nodeName === 'IMG') {
-									node.style.objectFit = 'contain';
-									node.style.width = '100%';
-									node.style.maxHeight = '20em';
-									console.log('added');
-								}
-							}
-						}
-					};
-				}
+            <input type="submit" value="Publish Post">
+        </form>
+    </div>
 
-				let observer = new MutationObserver(callback);
-				observer.observe(a, config);
-		//});
-		}, 300);
+    {{ ckeditor.load() }}
+    {{ ckeditor.config() }}
 
+    <script>
+        // Wait for CKEditor to initialize
+        setTimeout(function() {
+            var iframe = document.querySelector('iframe');
+            if (!iframe) return;
 
+            var editorDoc = iframe.contentWindow.document;
+            var editorBody = editorDoc.body;
 
-	</script>
+            // Style the editor content area dark
+            editorBody.style.backgroundColor = '#2a2c2c';
+            editorBody.style.color = '#FAEADB';
+            editorBody.style.fontFamily = "'Atkinson Hyperlegible', sans-serif";
+            editorBody.style.padding = '10px';
+
+            // Add link styling
+            var style = editorDoc.createElement('style');
+            style.textContent = 'a { color: #00B4CC; }';
+            editorDoc.head.appendChild(style);
+
+            // MutationObserver to style images as they're added
+            var config = { attributes: true, childList: true, subtree: true };
+            var callback = function(mutationsList) {
+                for (var mutation of mutationsList) {
+                    if (mutation.type === 'childList') {
+                        for (var node of mutation.addedNodes) {
+                            if (node.nodeName === 'IMG') {
+                                node.style.objectFit = 'contain';
+                                node.style.width = '100%';
+                                node.style.maxHeight = '20em';
+                            }
+                        }
+                    }
+                }
+            };
+            var observer = new MutationObserver(callback);
+            observer.observe(editorBody, config);
+
+            // Clipboard paste handler for images
+            editorBody.addEventListener('paste', function(e) {
+                var items = (e.clipboardData || e.originalEvent.clipboardData).items;
+
+                for (var i = 0; i < items.length; i++) {
+                    if (items[i].type.indexOf('image') !== -1) {
+                        var blob = items[i].getAsFile();
+                        if (!blob) continue;
+
+                        var formData = new FormData();
+                        formData.append('upload', blob, 'pasted-image.png');
+
+                        fetch('/upload', {
+                            method: 'POST',
+                            body: formData
+                        })
+                        .then(function(response) { return response.json(); })
+                        .then(function(data) {
+                            if (data.uploaded && data.url) {
+                                // Get CKEditor instance and insert image
+                                if (window.CKEDITOR) {
+                                    var editor = CKEDITOR.instances[Object.keys(CKEDITOR.instances)[0]];
+                                    if (editor) {
+                                        editor.insertHtml('<img src="' + data.url + '" />');
+                                    }
+                                }
+                            }
+                        })
+                        .catch(function(err) {
+                            console.error('Upload failed:', err);
+                        });
+
+                        e.preventDefault();
+                        break;
+                    }
+                }
+            });
+
+        }, 500);
+    </script>
 </body>
 </html>
-
