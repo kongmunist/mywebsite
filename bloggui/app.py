@@ -34,6 +34,7 @@ def index():
         date = str(datetime.date.today())
         tags = request.form.get('tags')
         snippet = request.form.get('snippet')
+        posttype = request.form.get('posttype', 'blog')
         body = request.form.get('ckeditor')
 
 
@@ -83,7 +84,7 @@ def index():
         with open(saveFilename, "w+") as f:
             f.write(f"title: \"{title}\"\n")
             f.write(f"date: {date}\n")
-            f.write(f"label: blog\n")
+            f.write(f"label: {posttype}\n")
             f.write(f"tags: [{tags}]\n")
             f.write(f"snippet: \"{snippet}\"\n\n")
             f.write(f"{body}")

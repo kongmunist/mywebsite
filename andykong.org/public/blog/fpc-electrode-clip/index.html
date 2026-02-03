@@ -5,12 +5,12 @@
 
     
         <meta name="author" content="Andy Kong">
-        <meta name="title" content="Teardown of the Urbanista Los Angeles headphones">
-        <meta name="description" content="Removing another self-powering device from the world">
-        <meta name="keywords" content=" electronics,  teardown, ">
+        <meta name="title" content="Using flex PCB as electrode mount">
+        <meta name="description" content="First opaque clear PCBs">
+        <meta name="keywords" content=" pcb,  electronics, ">
 
         <title>
-            Teardown of the Urbanista Los Angeles headphones | Andy Kong
+            Using flex PCB as electrode mount | Andy Kong
         </title>
     
 
@@ -280,54 +280,33 @@
 
 <!-- <div class="blogpage overflow-hidden" style="margin-bottom:4em;"> -->
 <div class="blogpage overflow-hidden" style="max-width:50em; margin-bottom:4em; margin-left:auto; margin-right:auto;">
-    <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Teardown of the Urbanista Los Angeles headphones</h1>
-            <p style="font-size:0.8em;"> Published February 1, 2026</p>
+    <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Using flex PCB as electrode mount</h1>
+            <p style="font-size:0.8em;"> Published February 3, 2026</p>
 <hr>
-            <html><body><p>Hello all, it's certainly been a while since my last post so I thought we'd do something fun. Because of my current startup, I'm really interested in consumer electronics which can power themselves. I've only found a few devices like this, and today we're gonna take one apart to see how they're implementing it.</p>
-<h1 id="background">Background</h1>
-<p>We're currently in a battery-powered era of devices, driven by the cheap availability of rechargable, high density lithium batteries. However, as the chips powering these devices get more efficient, environmental energy sources like light or heat become a large enough source of power to contribute meaningful amounts of power to the device's battery life. Today, electronics that add energy harvesting can 2-3x battery life over pure battery-operated ones, especially if the duty cycle is low. </p>
-<p>The development of light-harvesting products specifically is driven by the availablility of flexible, "normal"-looking PowerFoyle solar cells by a Swedish company called Exeger. Light-harvesting electronics require a minimum power (light level) to harvest properly, and the minimum light level is higher the smaller the photovoltaic cell. PowerFoyle's cells are optimized for indoor harvesting so even dim indoor lighting can make it work, and the consumer device with the most area turns out to be headphones.</p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/urbanista-teardown/0.jpg"/></p>
-<p>Since we all work in the same space, I felt compelled to get one and test their panels myself. Exeger has partnered with a lot of big brands like JBL and Adidas, but the cheapest device I could find on eBay was a refurbed/stolen pair of Urbanista Los Angeles headphones.</p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/urbanista-teardown/1.png"/></p>
-<p>My interests lie mostly in the PV cell and the harvesting methodology, but I'm always interested to see how people make certain mechanisms at scale. The rest of this post will mostly be pictures.</p>
-<h1 id="teardown">Teardown</h1>
-<p>Here's the device</p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/urbanista-teardown/2.png"/></p>
-<p>Here's the panel we're after, built into the top band</p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/urbanista-teardown/3.png"/></p>
-<p>We start by popping off the pieces of the device that are snap-fit — The inner band, parts of the outer band, the earmuffs. You can immediately see they've strain reliefed the cable on the headband</p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/urbanista-teardown/4.png"/></p>
-<p>There's a couple of stickers keeping the band together, once those go the PV cell just falls out </p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/urbanista-teardown/5.png"/></p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/urbanista-teardown/6.png"/></p>
-<p>I used a clamp to pop off the two outer shell bits on the headphone themselves. The right one contains the harvesting and bluetooth chips (labeled on paper), and 2 mics for the noise-cancelling. </p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/urbanista-teardown/7.png"/></p>
-<p>The left earmuff has a 750mAh battery (10 kJ), PMIC, and 1 mic. I roughly calculated charging rate in direct sunlight and came up with 3-4 hrs to go from 0 to 100%.</p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/urbanista-teardown/8.png"/></p>
-<p>The part of the band coupling to the earmuffs (for the wire pass-through) is made of steel, which I found a bit surprising — its the only mechanical component that's made of metal in the whole device. Actually I felt a bit bad seeing how good the build quality was during the teardown. It was taken apart in a way that could be put back together, but I'm not really interested. </p>
-<h1 id="analysis">Analysis</h1>
-<p>From my brief research into this, Exeger bought another company called Sunboost which was also nordic in origin, and this is the harvester chip that's labeled SUNBST. Exeger also likes to partner with e-peas, a Belgian chip company. For now I don't have more info, so I'll just leave this section a stub. </p>
-<h1 id="conclusion">Conclusion</h1>
-<p>Two interesting realizations I had during this:</p>
-<ol>
-<li>
-<p>The amount of power available in the environment (heat/light) has been fixed for millenia, but our devices have become steadily more efficient. The next generation of devices will not need charging, the one after that will not even need energy harvesting.</p>
-</li>
-<li>
-<p>All devices trend smaller over time, except for things that must conform to the human body (headphones, gloves, bracelets). All tools are made small to the extent that people can still manipulate and use them effectively.</p>
-</li>
-</ol>
-<p>My review of the Urbanista Los Angeles headphones: Excellent build quality, decent noise cancelling, slightly uncomfortable and cheap earmuffs. Panel testing will come in a later</p></body></html>
+            <html><body><p>Recently I built a wearable EKG circuit with Lucia for a fun party device that visualizes your heart rate.</p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/fpc-electrode-clip/0.png"/></p>
+<p>The most clunky part of any biosensing project is coupling the human to the circuit, and this was no different. We had to get EKG gel electrodes, corresponding snap electrode cables, and then connect them to the person in question. This is annoying because the electrodes are disposable, the wires are too long and windy, and the connection to the board is bulky because the EKG electrodes normally go off-body to get digitized. </p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/fpc-electrode-clip/1.png"/></p>
+<p>It would be much nicer if the EKG was an all-in-one piece that sits across the heart and captured the same signal. A worn EKG like this exists already for monitoring people over 1-2 days, but it isn't fun or hackable or attainable by normal people, so I was looking for alternatives.</p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/fpc-electrode-clip/2.png"/></p>
+<p>One such method used flex PCBs as the "snap", using the flexibility of the FPC material to ensure good contact with an electrode. I could think of many ways to do this coupling but I had two problems: I wasn't sure how big the electrodes were (no calipers) and I could think of 3+ ways to shape the electrode-mounting hole on the FPC itself. I started by modeling out the different geometries for this (simple hole, star-shaped hole, and keyhole) in 10 different sizes spanning 3-4mm (I knew we had a 3.5mm snap electrode, I just wasn't sure which part was 3.5mm). I got this on flex, and just for fun I ordered it on JLC's clear PCB. </p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/fpc-electrode-clip/3.png"/></p>
+<p>They emailed me immediately asking about soldermask, and since I wanted the gold to be exposed for good contact, I told them to remove all of it. As it turns out, the base material of the clear FPC is clear (and slightly pink?), but the surface finish is not smooth enough to see through it without soldermask. You can approximate the soldermask with a piece of clear tape on both sides.</p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/fpc-electrode-clip/4.png"/></p>
+<p>As for the electrodes, it turns out just pretending the buckle was perfectly 3.5mm is a decent strategy. The simple hole performed ok, the star-hole had a bit too much material in the middle, and the keyhole worked just as well as the simple hole (but needed smaller sizes).</p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/fpc-electrode-clip/5.png"/></p>
+<p>It's easy to say in hindsight, but the simple holes used the flexibility of the metal, which deforms and does not snap back. This meant repeated use of a single hole meant it stopped making good contact (though it still held on to the electrode well enough). </p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/fpc-electrode-clip/6.png"/></p>
+<p>The keyhole intermediate channel was 2mm, and held much more consistently across uses. I think this is because it relied on the flexibility of the underlying substrate, or on the flexing as opposed to the deformation of the thin metal layer. In the future we'll go with the too-thin channel, and I think the electrode clips and EKG circuit will be able to all fit on the same circuit. </p></body></html>
 
 
 
     
         <p style="line-height:250%;">
-        <a class="btn btn-info" href="/tagged/electronics/">electronics</a>
+        <a class="btn btn-info" href="/tagged/pcb/">pcb</a>
 
         
-            <a class="btn btn-info" href="/tagged/teardown/">teardown</a>
+            <a class="btn btn-info" href="/tagged/electronics/">electronics</a>
         
         </p> 
     

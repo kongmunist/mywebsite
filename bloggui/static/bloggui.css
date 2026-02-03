@@ -111,6 +111,48 @@ input[type="submit"]:active {
     background-color: #009DB3;
 }
 
+/* Type toggle */
+.type-toggle {
+    display: flex;
+    gap: 0;
+}
+
+.type-toggle input[type="radio"] {
+    display: none;
+}
+
+.type-toggle .toggle-option {
+    padding: 6px 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    border: 1px solid #444;
+    background-color: #2a2c2c;
+    color: #666;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.type-toggle .toggle-option:first-of-type {
+    border-radius: 4px 0 0 4px;
+}
+
+.type-toggle .toggle-option:last-of-type {
+    border-radius: 0 4px 4px 0;
+    border-left: none;
+}
+
+.type-toggle input[type="radio"]#type-blog:checked + .toggle-blog {
+    background-color: rgba(187, 96, 229, 0.2);
+    color: #bb60e5;
+    border-color: #bb60e5;
+}
+
+.type-toggle input[type="radio"]#type-log:checked + .toggle-log {
+    background-color: rgba(0, 180, 204, 0.2);
+    color: #00B4CC;
+    border-color: #00B4CC;
+}
+
 /* Paste hint banner */
 .paste-hint {
     color: #00B4CC;

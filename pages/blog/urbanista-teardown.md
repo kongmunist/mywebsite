@@ -1,6 +1,6 @@
 title: "Teardown of the Urbanista Los Angeles headphones"
 date: 2026-02-01
-label: blog
+label: log
 tags: [electronics, teardown]
 snippet: "Removing another self-powering device from the world"
 
@@ -55,5 +55,12 @@ The part of the band coupling to the earmuffs (for the wire pass-through) is mad
 From my brief research into this, Exeger bought another company called Sunboost which was also nordic in origin, and this is the harvester chip that's labeled SUNBST. Exeger also likes to partner with e-peas, a Belgian chip company. For now I don't have more info, so I'll just leave this section a stub. 
 
 # Conclusion
+
+Two interesting realizations I had during this:
+
+1. The amount of power available in the environment (heat/light) has been fixed for millenia, but our devices have become steadily more efficient. The next generation of devices will not need charging, the one after that will not even need energy harvesting.
+
+2. All devices trend smaller over time, except for things that must conform to the human body (headphones, gloves, bracelets). All tools are made small to the extent that people can still manipulate and use them effectively.
+
 
 My review of the Urbanista Los Angeles headphones: Excellent build quality, decent noise cancelling, slightly uncomfortable and cheap earmuffs. Panel testing will come in a later
