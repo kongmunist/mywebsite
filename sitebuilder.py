@@ -1,7 +1,7 @@
 import re
 
 from flask import Flask, render_template, url_for, render_template_string, Markup, \
-        redirect,make_response,send_from_directory
+        redirect,make_response,send_from_directory,abort
 from flask_flatpages import FlatPages, pygmented_markdown
 # from flask_bootstrap import Bootstrap
 from flask_frozen import Freezer
@@ -374,7 +374,7 @@ def project(project):
     #     return redirect(url_for("static", filename="FaceMeshMedium/index.html"))
 
     if project == "chargerless":
-        return '<html><head><meta http-equiv="refresh" content="0;url=/"></head><body>Redirecting to <a href="/">homepage</a>...</body></html>'
+        abort(404)
 
     page = [pages.get("projects/" + project)]
 
