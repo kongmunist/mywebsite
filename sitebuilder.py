@@ -374,7 +374,7 @@ def project(project):
     #     return redirect(url_for("static", filename="FaceMeshMedium/index.html"))
 
     if project == "chargerless":
-        return redirect("/")
+        return '<html><head><meta http-equiv="refresh" content="0;url=/"></head><body>Redirecting to <a href="/">homepage</a>...</body></html>'
 
     page = [pages.get("projects/" + project)]
 
