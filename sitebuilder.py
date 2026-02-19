@@ -373,6 +373,9 @@ def project(project):
     # if project == "facemeshdemos":
     #     return redirect(url_for("static", filename="FaceMeshMedium/index.html"))
 
+    if project == "chargerless":
+        return redirect("/")
+
     page = [pages.get("projects/" + project)]
 
     # Add loading="lazy" to all images
