@@ -4,7 +4,11 @@ label: log
 tags: [analog, electronics, opamps]
 snippet: What to do when your circuit outputs -5V to +5V but your ADC only takes 0-5V
 
-The problem I'm going to be talking about today is how to translate an analog signal from one range to another. I have dealt with this problem three times now, each time was more unintuitive than the last so I thought it'd be useful if I wrote down my process for other people to see what's going on and solve their similar problems. 
+The problem I'm going to be talking about today is how to translate an analog signal from one range to another. I have dealt with this problem three times now, each time was more unintuitive than the last so I thought it'd be useful if I wrote down my process for other people to see what's going on and solve their similar problems.
+
+<div style="background:#1a1a2e; border-left:4px solid #E0B890; padding:12px 16px; margin:1.5em 0; border-radius:4px;">
+<strong style="color:#E0B890;">Update:</strong> I've since made a calculator that solves this for you automatically — pick your input/output rails and it gives you resistor values. <a href="../../projects/analogscalingcalculator/">Check it out here.</a>
+</div>
 
 ![Mapping analog voltages between two rails]({{ url_for('static', filename = 'analogscalinggraphic.png')}})
 <p class="caption">Mapping analog voltages between two rails</p>
