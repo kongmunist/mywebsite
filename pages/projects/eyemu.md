@@ -7,12 +7,19 @@ description: First first-author paper! "EyeMU Interactions, Gaze + IMU Gestures 
 
 <h1 style="text-align:center;"> Second paper! </h1>
 
+
+<div style="text-align:center;">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-HwcmWRAsaA?si=-PcdylK30RvWu1hQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
 <h3 style="text-align:center; margin-bottom:0px;" >
 	EyeMU Interactions: Gaze + IMU Gestures on Mobile Devices
 	<a href="{{ url_for('static',filename='ICMI_EyeMU.pdf') }}" target="_blank">(PDF)</a> 
 	<a href="https://dl.acm.org/doi/abs/10.1145/3462244.3479938" target="_blank">(DOI)</a> 
 </h3>
-<img style="margin-top:10px;" class="d-block mx-auto" src="{{ url_for('static',filename='eyemuhero.png') }}"/>
+
+
+<!--- <img style="margin-top:10px;" class="d-block mx-auto" src="{{ url_for('static',filename='eyemuhero.png') }}"/> --->
 <hr>
 
 I'm excited to announce my trend in publishing in HCI! Woohoo!! Check out the paper itself <a href="https://dl.acm.org/doi/abs/10.1145/3462244.3479938" target="_blank">here</a>, or the conference submission + stats <a href="https://dl.acm.org/doi/abs/10.1145/3462244.3479938" target="_blank">here</a>.
