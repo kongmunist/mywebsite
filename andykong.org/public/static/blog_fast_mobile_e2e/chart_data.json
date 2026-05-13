@@ -1,0 +1,103 @@
+{
+  "$schema_note": "Companion data for the Fast Mobile E2E blog post. Tier values: 'fast' = reach-for, 'situational' = use-when-needed, 'slow' = avoid in hot paths. All durations in milliseconds.",
+  "charts": {
+    "phase_breakdown": {
+      "title": "Phase breakdown for one chain (iOS, launch → advanced settings)",
+      "image": "images/02_phases.png",
+      "phases": ["SEE", "DECIDE", "ACT", "VERIFY"],
+      "chains": [
+        {"name": "before", "ms_by_phase": {"SEE": 9200, "DECIDE": 200, "ACT": 4400, "VERIFY": 600}, "total_ms": 14400},
+        {"name": "after",  "ms_by_phase": {"SEE": 1200, "DECIDE": 200, "ACT": 2000, "VERIFY": 1500}, "total_ms": 4900}
+      ]
+    },
+    "latency_budget": {
+      "title": "Mobile E2E latency budget — per-operation cost reference",
+      "image": "images/03_budget.png",
+      "operations": [
+        {"name": "adb shell input tap",                  "ms": 70,   "tier": "fast"},
+        {"name": "Direct Neon SQL (warm)",               "ms": 80,   "tier": "fast"},
+        {"name": "openatx u2 dumpWindowHierarchy",       "ms": 200,  "tier": "fast"},
+        {"name": "WDA POST /element predicate",          "ms": 300,  "tier": "fast"},
+        {"name": "adb exec-out screencap -p",            "ms": 330,  "tier": "situational"},
+        {"name": "WDA /wda/tap (idle off)",              "ms": 500,  "tier": "situational"},
+        {"name": "WDA /screenshot",                      "ms": 600,  "tier": "situational"},
+        {"name": "ssh + python -c (warm)",               "ms": 900,  "tier": "situational"},
+        {"name": "WDA /source (sparse screen)",          "ms": 1000, "tier": "situational"},
+        {"name": "Android cold launch (monkey)",         "ms": 1000, "tier": "situational"},
+        {"name": "iOS cold launch (devicectl)",          "ms": 1100, "tier": "situational"},
+        {"name": "WDA /wda/tap (idle default)",          "ms": 1100, "tier": "slow"},
+        {"name": "adb shell uiautomator dump",           "ms": 2200, "tier": "slow"},
+        {"name": "iOS cold launch (WDA path)",           "ms": 2300, "tier": "slow"},
+        {"name": "WDA /source (dense screen)",           "ms": 2700, "tier": "slow"},
+        {"name": "ssh + python -c (cold)",               "ms": 6700, "tier": "slow"}
+      ]
+    },
+    "see_operations": {
+      "title": "SEE — get the screen state",
+      "image": "images/04_see.png",
+      "operations": [
+        {"name": "hardcoded coordinate (skip SEE)",      "ms": 1,    "tier": "fast"},
+        {"name": "openatx u2 dumpWindowHierarchy",       "ms": 200,  "tier": "fast"},
+        {"name": "WDA POST /element (predicate find)",   "ms": 300,  "tier": "fast"},
+        {"name": "adb exec-out screencap -p",            "ms": 330,  "tier": "situational"},
+        {"name": "WDA /screenshot",                      "ms": 600,  "tier": "situational"},
+        {"name": "WDA /source (sparse screen)",          "ms": 1000, "tier": "situational"},
+        {"name": "adb shell uiautomator dump",           "ms": 2200, "tier": "slow"},
+        {"name": "WDA /source (dense screen)",           "ms": 2700, "tier": "slow"}
+      ]
+    },
+    "decide_operations": {
+      "title": "DECIDE — pick which element to act on",
+      "image": "images/05_decide.png",
+      "note": "Numbers are estimates; DECIDE is rarely the bottleneck. Optimize for stability (acc-id > text-set > coords > OCR) first.",
+      "operations": [
+        {"name": "hardcoded coordinate (no parse)",      "ms": 1,    "tier": "fast"},
+        {"name": "accessibility id match (predicate)",   "ms": 5,    "tier": "fast"},
+        {"name": "single text match (known label)",      "ms": 10,   "tier": "fast"},
+        {"name": "multi-name fallback set",              "ms": 15,   "tier": "fast"},
+        {"name": "regex over XML dump",                  "ms": 30,   "tier": "situational"},
+        {"name": "full tree walk + filter",              "ms": 100,  "tier": "situational"},
+        {"name": "OCR over screenshot",                  "ms": 400,  "tier": "slow"}
+      ]
+    },
+    "act_operations": {
+      "title": "ACT — perform the input",
+      "image": "images/06_act.png",
+      "operations": [
+        {"name": "adb shell input tap",                  "ms": 70,   "tier": "fast"},
+        {"name": "adb shell input keyevent",             "ms": 75,   "tier": "fast"},
+        {"name": "adb shell input swipe",                "ms": 100,  "tier": "fast"},
+        {"name": "adb shell am start (deep link)",       "ms": 150,  "tier": "fast"},
+        {"name": "xcrun devicectl process launch",       "ms": 240,  "tier": "fast"},
+        {"name": "WDA /wda/tap (waitForIdle=0)",         "ms": 500,  "tier": "situational"},
+        {"name": "WDA URL launch (deep link)",           "ms": 1100, "tier": "situational"},
+        {"name": "WDA /wda/tap (waitForIdle default)",   "ms": 1100, "tier": "slow"}
+      ]
+    },
+    "verify_operations": {
+      "title": "VERIFY — confirm the post-condition",
+      "image": "images/07_verify.png",
+      "operations": [
+        {"name": "Direct managed-DB SQL (warm pool)",    "ms": 80,   "tier": "fast"},
+        {"name": "openatx u2 dump (poll-find)",          "ms": 200,  "tier": "fast"},
+        {"name": "WDA POST /element (predicate)",        "ms": 300,  "tier": "fast"},
+        {"name": "adb exec-out screencap -p",            "ms": 330,  "tier": "situational"},
+        {"name": "WDA /screenshot",                      "ms": 600,  "tier": "situational"},
+        {"name": "ssh + python -c (warm)",               "ms": 900,  "tier": "situational"},
+        {"name": "WDA /source (sparse screen)",          "ms": 1000, "tier": "situational"},
+        {"name": "WDA /source (dense screen)",           "ms": 2700, "tier": "slow"},
+        {"name": "ssh + python -c (cold)",               "ms": 6700, "tier": "slow"}
+      ]
+    },
+    "headline_chains": {
+      "title": "Before/after wall-clock for representative chains",
+      "chains": [
+        {"name": "Android: launch → advanced settings",      "before_s": 14.0, "after_s": 5.3,  "speedup": 2.6},
+        {"name": "iOS: launch → advanced settings",          "before_s": 14.4, "after_s": 4.9,  "speedup": 2.9},
+        {"name": "iOS: launch → advanced (deep link)",       "before_s": 14.4, "after_s": 1.25, "speedup": 11.5},
+        {"name": "Android E2E suite (8 tests)",              "before_s": 161,  "after_s": 54,   "speedup": 3.0},
+        {"name": "iOS E2E suite (8 tests)",                  "before_s": 175,  "after_s": 56,   "speedup": 3.1}
+      ]
+    }
+  }
+}

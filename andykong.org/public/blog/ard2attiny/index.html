@@ -51,6 +51,64 @@
             line-height: 1.6;
         }
 
+        .blogpage pre {
+            background-color: #151818;
+            border: 1px solid #454949;
+            border-left: 4px solid #00b4cc;
+            color: #FAEADB;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin: 1.4em 0;
+            overflow-x: auto;
+            padding: 1em 1.1em;
+            white-space: pre;
+        }
+
+        .blogpage pre code {
+            background-color: transparent;
+            color: inherit;
+            display: block;
+            font-size: inherit;
+            line-height: inherit;
+            padding: 0;
+            white-space: pre;
+        }
+
+        .blogpage :not(pre) > code {
+            background-color: #353939;
+            border: 1px solid #4c5353;
+            color: #FAEADB;
+            font-size: 0.95em;
+            padding: 0.05em 0.25em;
+        }
+
+        .blogpage table {
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            line-height: 1.45;
+            margin: 1.4em 0;
+            width: 100%;
+        }
+
+        .blogpage th,
+        .blogpage td {
+            border-bottom: 1px solid #454949;
+            padding: 0.45em 0.65em;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .blogpage th {
+            color: #E0B890;
+            font-weight: 700;
+        }
+
+        .blogpage td:not(:first-child),
+        .blogpage th:not(:first-child) {
+            text-align: right;
+            white-space: nowrap;
+        }
+
         .blogpage img{
             max-width: 100%;
             max-height: 50vh;
@@ -262,7 +320,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[Blog]</a>
+                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -290,7 +351,7 @@
 <h1 id="prepping-the-arduino">Prepping the Arduino</h1>
 <p>First we must flash the Arduino with the ArduinoISP sketch (found in File-&gt;Examples-&gt;11.ArduinoISP). We are using the "old style" wiring, so also uncomment line 81 in this sketch. </p>
 <p><img loading="lazy" alt="" class="addpic" src="/static/ard2attiny/1.png"/></p>
-<p>We're not going to program the Arduino again, so go ahead and switch the target board to "ATtiny25/45/85" in Tools. If you don't have this option in your boards, follow the instructions in the <a href='&lt;a href="https://github.com/SpenceKonde/ATTinyCore/blob/v2.0.0-devThis-is-the-head-submit-PRs-against-this/Installation.md"&gt;https://github.com/SpenceKonde/ATTinyCore/blob/v2.0.0-devThis-is-the-head-submit-PRs-against-this/Installation.md&lt;/a&gt;'>ATtiny repo</a>. </p>
+<p>We're not going to program the Arduino again, so go ahead and switch the target board to "ATtiny25/45/85" in Tools. If you don't have this option in your boards, follow the instructions in the <a href="https://github.com/SpenceKonde/ATTinyCore/blob/v2.0.0-devThis-is-the-head-submit-PRs-against-this/Installation.md">ATtiny repo</a>. </p>
 <p>Change the programmer to "Arduino as ISP" as in the image below, and we'll be ready to go. </p>
 <p><img loading="lazy" alt="" class="addpic" src="/static/ard2attiny/2.png"/></p>
 <h1 id="wiring-the-attiny">Wiring the ATtiny</h1>
@@ -304,7 +365,7 @@
 <p>Now, open the Blink example sketch. Change all instances of <code>LED_BUILTIN</code> to 0, then upload the sketch. If you have no errors, fortune smiles upon thee. Proceed to the next section. </p>
 <p>If you instead get an error like <code>avrdude: stk500_paged_write(): (a) protocol error, expect=0x14, resp=0x10</code>, you'll need to place a &gt;10uF capacitor across the RESET and GND pins of the Arduino to temporarily disable the RESET button. Put it in and hit upload again, and your ATtiny should start to blink. Woohoo!</p>
 <h1 id="uploading-softwareserial">Uploading SoftwareSerial</h1>
-<p>To test any non-visual functionality, we're going to want to print debug messages over Serial. While we can't do Serial in the ATtiny hardware, we can include the SoftwareSerial library and do it anyway. The following code is derived from an example on this <a href='&lt;a href="https://www.instructables.com/ATtiny85-ATtiny84-Analog-Pins-Serial-Communication/"&gt;https://www.instructables.com/ATtiny85-ATtiny84-Analog-Pins-Serial-Communication/&lt;/a&gt;'>guide</a>, but you can use the sketch in Examples-&gt;SoftwareSerial also. </p>
+<p>To test any non-visual functionality, we're going to want to print debug messages over Serial. While we can't do Serial in the ATtiny hardware, we can include the SoftwareSerial library and do it anyway. The following code is derived from an example on this <a href="https://www.instructables.com/ATtiny85-ATtiny84-Analog-Pins-Serial-Communication/">guide</a>, but you can use the sketch in Examples-&gt;SoftwareSerial also. </p>
 <p class="caption"> SoftwareSerial example works, though the pin numbers are all new to me </p>
 <p><img loading="lazy" alt="SoftwareSerial example works, though the pin numbers are all new to me" class="addpic" src="/static/ard2attiny/5.png"/></p>
 <h2 id="sus-method">Sus method</h2>
@@ -346,7 +407,7 @@ SoftwareSerial <span style="color: #0066BB; font-weight: bold">mySerial</span>(R
 <p class="caption"> ADC readings plotted over time </p>
 <p><img loading="lazy" alt="ADC readings plotted over time" class="addpic" src="/static/ard2attiny/9.png"/></p>
 <h1 id="have-fun">Have fun!</h1>
-<p>Hopefully you know the basics. As <a href='&lt;a href="https://www.youtube.com/watch?v=7bZg_GzUbHI&amp;t=1771s"&gt;https://www.youtube.com/watch?v=7bZg_GzUbHI&amp;t=1771s&lt;/a&gt;'>DeepBlueMbedded</a> said, you're basically done once you get blinking.</p>
+<p>Hopefully you know the basics. As <a href="https://www.youtube.com/watch?v=7bZg_GzUbHI&amp;t=1771s">DeepBlueMbedded</a> said, you're basically done once you get blinking.</p>
 <p><img loading="lazy" alt="" class="addpic" src="/static/ard2attiny/10.png"/></p></body></html>
 
 

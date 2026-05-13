@@ -51,6 +51,64 @@
             line-height: 1.6;
         }
 
+        .blogpage pre {
+            background-color: #151818;
+            border: 1px solid #454949;
+            border-left: 4px solid #00b4cc;
+            color: #FAEADB;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin: 1.4em 0;
+            overflow-x: auto;
+            padding: 1em 1.1em;
+            white-space: pre;
+        }
+
+        .blogpage pre code {
+            background-color: transparent;
+            color: inherit;
+            display: block;
+            font-size: inherit;
+            line-height: inherit;
+            padding: 0;
+            white-space: pre;
+        }
+
+        .blogpage :not(pre) > code {
+            background-color: #353939;
+            border: 1px solid #4c5353;
+            color: #FAEADB;
+            font-size: 0.95em;
+            padding: 0.05em 0.25em;
+        }
+
+        .blogpage table {
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            line-height: 1.45;
+            margin: 1.4em 0;
+            width: 100%;
+        }
+
+        .blogpage th,
+        .blogpage td {
+            border-bottom: 1px solid #454949;
+            padding: 0.45em 0.65em;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .blogpage th {
+            color: #E0B890;
+            font-weight: 700;
+        }
+
+        .blogpage td:not(:first-child),
+        .blogpage th:not(:first-child) {
+            text-align: right;
+            white-space: nowrap;
+        }
+
         .blogpage img{
             max-width: 100%;
             max-height: 50vh;
@@ -262,7 +320,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[Blog]</a>
+                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -303,7 +364,7 @@
 <li>My Tetris speed (pieces per second = PPS) correlates slightly with lower humidity</li>
 </ul>
 <p><img loading="lazy" alt="" class="addpic" src="/static/allmydata/3.png"/></p>
-<p>Here's a <a href="https://medium.com/@kongmunist/playing-faster-tetris-by-sleeping-less-3d9b04d30349">few</a> more <a href="../blog/stroopvssleep/">examples</a></p>
+<p>Here's a <a href="https://medium.com/@kongmunist/playing-faster-tetris-by-sleeping-less-3d9b04d30349">few</a> more <a href="/blog/stroopvssleep/">examples</a></p>
 <hr/>
 <h1 id="my-data-stack">My data stack</h1>
 <p>Data that's useful for my analysis is either physical (heart rate, blood glucose, weight), mental (Tetris, Stroop), or environmental (air quality, music, location, computer activity). Data collection can be easy (hard drive space, Google location), or hard (computer activity), or just cost money (Fitbit, Spotify)</p>

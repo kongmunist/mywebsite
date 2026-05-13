@@ -51,6 +51,64 @@
             line-height: 1.6;
         }
 
+        .blogpage pre {
+            background-color: #151818;
+            border: 1px solid #454949;
+            border-left: 4px solid #00b4cc;
+            color: #FAEADB;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin: 1.4em 0;
+            overflow-x: auto;
+            padding: 1em 1.1em;
+            white-space: pre;
+        }
+
+        .blogpage pre code {
+            background-color: transparent;
+            color: inherit;
+            display: block;
+            font-size: inherit;
+            line-height: inherit;
+            padding: 0;
+            white-space: pre;
+        }
+
+        .blogpage :not(pre) > code {
+            background-color: #353939;
+            border: 1px solid #4c5353;
+            color: #FAEADB;
+            font-size: 0.95em;
+            padding: 0.05em 0.25em;
+        }
+
+        .blogpage table {
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            line-height: 1.45;
+            margin: 1.4em 0;
+            width: 100%;
+        }
+
+        .blogpage th,
+        .blogpage td {
+            border-bottom: 1px solid #454949;
+            padding: 0.45em 0.65em;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .blogpage th {
+            color: #E0B890;
+            font-weight: 700;
+        }
+
+        .blogpage td:not(:first-child),
+        .blogpage th:not(:first-child) {
+            text-align: right;
+            white-space: nowrap;
+        }
+
         .blogpage img{
             max-width: 100%;
             max-height: 50vh;
@@ -262,7 +320,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[Blog]</a>
+                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -286,7 +347,7 @@
             <html><body><p>If you have a Vision Pro we could borrow and live in/near Pittsburgh and are free before May 2024, I would be interested in hosting this hackathon again. Please email/DM me if you'd like that, and we can make it happen :)</p>
 <hr/>
 <p>Hello! Last weekend I hosted an Apple Vision Pro Hackathon (aka AVP Hackathon), which simply entailed asking everyone I knew if I could borrow a Vision Pro and then asking everyone if they wanted to develop on it for a couple days.</p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/avph_reflection/0.png"/></p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/avph_reflection/0.jpg"/></p>
 <p>I think hackathons are a good event for colleges since full-time coders are usually too world-weary to also spend their weekends coding. Nonetheless, I picked a bad time to ask, since I mostly knew researchers and we're a month shy of the next big conference deadline. </p>
 <p>Anyway, somehow I got a crew of four people and we spent 48 hours building apps and demos for the AVP. The main goal was to write app that would make you want to wear the AVP (the most useful are screen-mirroring and web browsing). </p>
 <p>We also had a rule that someone had to be wearing the AVP at all times —  in the end, this didn't even need enforcing because we were iterating so fast that someone always needed it. In the end, we made 3.5 working apps, which is a pretty good hitrate. </p>
