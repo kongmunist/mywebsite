@@ -113,8 +113,15 @@
                         var blob = items[i].getAsFile();
                         if (!blob) continue;
 
+                        var extensionByType = {
+                            'image/png': 'png',
+                            'image/jpeg': 'jpg',
+                            'image/gif': 'gif',
+                            'image/webp': 'webp'
+                        };
+                        var extension = extensionByType[blob.type] || 'png';
                         var formData = new FormData();
-                        formData.append('upload', blob, 'pasted-image.png');
+                        formData.append('upload', blob, 'pasted-image.' + extension);
 
                         fetch('/upload', {
                             method: 'POST',

@@ -1,26 +1,123 @@
-# from flask import Flask, render_template, request
 from flask import Flask, render_template, request, url_for, send_from_directory
 import re
 import random, os
 import datetime
-from copy import copy
-# from flask_ckeditor import CKEditor
+import html
+import shutil
+from dataclasses import dataclass
+from urllib.parse import unquote, urlparse
+from werkzeug.utils import secure_filename
 from flask_ckeditor import CKEditor, CKEditorField, upload_fail, upload_success
+from bs4 import BeautifulSoup, NavigableString
 basedir = os.path.abspath(os.path.dirname(__file__))
-
-from html.parser import HTMLParser
-parser = HTMLParser()
 
 app = Flask(__name__)
 app.config['CKEDITOR_SERVE_LOCAL'] = True
 app.config['CKEDITOR_HEIGHT'] = 400
 app.config['CKEDITOR_FILE_UPLOADER'] = 'upload'
-app.config['CKEDITOR_EXTRA_PLUGINS'] = ['uploadimage']
+app.config['CKEDITOR_EXTRA_PLUGINS'] = []
 
 app.secret_key = 'secret string'
 app.config['UPLOADED_PATH'] = os.path.join(basedir, 'uploads')
 
 ckeditor = CKEditor(app)
+
+ALLOWED_IMAGE_EXTENSIONS = {'jpg', 'jpeg', 'gif', 'png', 'webp'}
+IMAGE_MIME_EXTENSIONS = {
+    'image/jpeg': 'jpg',
+    'image/png': 'png',
+    'image/gif': 'gif',
+    'image/webp': 'webp',
+}
+BLOCK_TAGS = ('p', 'div', 'li', 'ul', 'ol', 'blockquote', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6')
+
+
+@dataclass
+class LocalImage:
+    upload_filename: str
+    output_filename: str
+
+
+def get_image_extension(filename):
+    extension = os.path.splitext(filename)[1].lstrip('.').lower()
+    return 'jpg' if extension == 'jpeg' else extension
+
+
+def extension_for_upload(filename, content_type):
+    original_filename = filename or 'pasted-image'
+    base_name = os.path.splitext(os.path.basename(original_filename))[0].lower()
+    file_extension = get_image_extension(original_filename)
+    mime_extension = IMAGE_MIME_EXTENSIONS.get((content_type or '').split(';')[0].lower())
+
+    if mime_extension and (base_name.startswith('pasted-image') or not file_extension):
+        return mime_extension
+    return file_extension or mime_extension
+
+
+def uploaded_filename_from_src(src):
+    parsed = urlparse(src or '')
+    if parsed.scheme or parsed.netloc:
+        return None
+
+    path = unquote(parsed.path)
+    if not path.startswith('/files/'):
+        return None
+    return os.path.basename(path)
+
+
+def normalize_body_text(body):
+    body = body.replace("\r\n&nbsp;\r\n", "")
+    body = body.replace("\r\n", "\n")
+    body = html.unescape(body)
+    body = body.replace("&nbsp;", " ")
+    body = body.replace("\xa0", " ")
+    body = body.replace("\u200b", "")
+    body = re.sub(r'\n{3,}', '\n\n', body)
+    return body.strip()
+
+
+def process_body_html(raw_body, post_slug):
+    soup = BeautifulSoup(raw_body or '', 'html.parser')
+    local_images = []
+    local_image_index = 0
+
+    for br in soup.find_all('br'):
+        br.replace_with(NavigableString('\n'))
+
+    for tag in soup.find_all(BLOCK_TAGS):
+        tag.insert_before(NavigableString('\n'))
+        tag.append(NavigableString('\n'))
+
+    for img in soup.find_all('img'):
+        src = img.get('src', '')
+        uploaded_filename = uploaded_filename_from_src(src)
+
+        if uploaded_filename:
+            extension = get_image_extension(uploaded_filename)
+            if extension not in ALLOWED_IMAGE_EXTENSIONS:
+                extension = 'png'
+
+            output_filename = f'{post_slug}/{local_image_index}.{extension}'
+            local_images.append(LocalImage(uploaded_filename, output_filename))
+            replacement = f'\n{{{{ add_pic("{output_filename}", "") }}}}\n'
+            local_image_index += 1
+        else:
+            replacement = f'\n![]({src})\n'
+
+        img.replace_with(NavigableString(replacement))
+
+    body = str(soup)
+    pattern = re.compile(r'(?i)<(?!a|/a).*?>')
+    body = pattern.sub('', body)
+    return normalize_body_text(body), local_images
+
+
+def copy_local_images(local_images, uploads_path, static_root):
+    for local_image in local_images:
+        source = os.path.join(uploads_path, local_image.upload_filename)
+        destination = os.path.join(static_root, local_image.output_filename)
+        os.makedirs(os.path.dirname(destination), exist_ok=True)
+        shutil.copy2(source, destination)
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -39,39 +136,7 @@ def index():
 
 
         print("body:", repr(body))
-        # pattern = re.compile(r'(?i)<(?!img|/img).*?>')
-        pattern = re.compile(r'(?i)<(?!img|a|/a).*?>') # Remove all html tags except <img> and <a>
-        body = pattern.sub('', body)
-
-        # Get all the image names and extensions
-        imgs = re.findall(r'src="([^"]+)"', body)
-        imgs = [img.split("/")[-1] for img in imgs]
-        imgexts = [img.split(".")[-1] for img in imgs]
-
-        # Remove all "\r\n&nbsp;\r\n" from the body
-        body = body.replace("\r\n&nbsp;\r\n", "")
-        body = body.replace("\r\n", "\n")
-
-        # Replace HTML chars with normal chars
-        body = parser.unescape(body)
-        body = body.replace("&nbsp;", " ") # non-breaking space
-        body = body.replace("\xa0", " ") # other non-breaking space
-        body = body.replace("\u200b", "") # zero width space
-
-
-
-        # Replace all <img> tags with {{ add_pic("file", "caption") }}
-        print("back1: ", body)
-        newLines = []
-        imIndex = 0
-        for line in body.split("\n"):
-            if line.startswith("<img"):
-                # imFile = imgs[imIndex]
-                newLines.append("{{ add_pic(\"" + f"{blogPostName}/{imIndex}." + imgexts[imIndex] + "\", \"\") }}")
-                imIndex += 1
-            else:
-                newLines.append(line)
-        body = "\n".join(newLines)
+        body, local_images = process_body_html(body, blogPostName)
         print("new body:", repr(body))
         # WARNING: use bleach or something similar to clean the data (escape JavaScript code)
         # You may need to store the data in database here
@@ -96,18 +161,8 @@ def index():
             return "Blog post with the same filename already exists!! Not doing anything until you go back and change it >:("
         else:
             print(os.getcwd())
-            import subprocess as sp
-            # Move .md file
-            sp.run(["cp", saveFilename, f"../pages/blog/{saveFilename}"])
-            # move images
-            if len(imgs) > 0:
-                os.makedirs(f"../static/{blogPostName}", exist_ok=True)
-                for i,im in enumerate(imgs):
-                    if os.path.exists(f"../static/{blogPostName}/{i}.{imgexts[i]}"):
-                        print("Image already exists, moving it but doubling the name")
-                        sp.run(["cp", f"uploads/{im}", f"../static/{blogPostName}/{i}_2.{imgexts[i]}"])
-                    else:
-                        sp.run(["cp", f"uploads/{im}", f"../static/{blogPostName}/{i}.{imgexts[i]}"])
+            shutil.copy2(saveFilename, f"../pages/blog/{saveFilename}")
+            copy_local_images(local_images, app.config['UPLOADED_PATH'], "../static")
         # Clear images folder
         # sp.run(["rm", "-r" "uploads/*"])
         # sp.run(["mkdir", "uploads"])
@@ -176,21 +231,17 @@ def getRandStr(ln=5):
 @app.route('/upload', methods=['POST'])
 def upload():
     f = request.files.get('upload')
+    if f is None:
+        return upload_fail(message='No image uploaded')
 
-    # Handle clipboard paste (no filename or empty filename)
-    original_filename = f.filename or 'pasted-image.png'
-    if '.' not in original_filename:
-        content_type = f.content_type or 'image/png'
-        ext_map = {'image/png': 'png', 'image/jpeg': 'jpg', 'image/gif': 'gif'}
-        extension = ext_map.get(content_type, 'png')
-    else:
-        extension = original_filename.split('.')[-1].lower()
+    original_filename = f.filename or 'pasted-image'
+    extension = extension_for_upload(original_filename, f.content_type)
 
-    if extension not in ['jpg', 'gif', 'png', 'jpeg']:
+    if extension not in ALLOWED_IMAGE_EXTENSIONS:
         return upload_fail(message='Image only!')
 
     # Generate unique filename
-    base_name = original_filename.rsplit(".", 1)[0] if '.' in original_filename else 'pasted-image'
+    base_name = secure_filename(os.path.splitext(original_filename)[0]) or 'pasted-image'
     new_filename = base_name + getRandStr() + "." + extension
     print("uploaded file: ", new_filename)
     os.makedirs(app.config['UPLOADED_PATH'], exist_ok=True)
