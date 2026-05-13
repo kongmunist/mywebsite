@@ -93,7 +93,7 @@ For accountability, I will maintain the list of outputs below, though this proje
 - Feb 12: Last blog post on Fitbit timezone correction, this time using Google location data. [Link](../../blog/glocfitbittzcorrection)
 {{ add_pic("glocfitbittzcorrection/0.png", "") }}
 - Feb 13: Looked into potential research collab
-- Feb 14-21: Trip to [Vitalia.city](vitalia.city) and [shitposted a bit](https://twitter.com/oldestasian/status/1760185015218872437).
+- Feb 14-21: Trip to [Vitalia.city](https://vitalia.ai/vitalia) and [shitposted a bit](https://twitter.com/oldestasian/status/1760185015218872437).
     - 14: Arrived, met James and Rochelle
     - 15: Met Fraiz and Cass, demo'd power over skin
     - 17: Explored West End
@@ -175,7 +175,7 @@ For accountability, I will maintain the list of outputs below, though this proje
 ## June
 - June 7-14: Attending Edge Esmerelda
 - June 12: [Blog post](../../blog/monochrome/) about using one Chrome window at a time
-- June 23: [Big head candle project writeup](../project/bigheadcandle)
+- June 23: [Big head candle project writeup](/projects/bigheadcandle/)
 {{ add_pic("bigheadcandle/demoldingprocess.jpg", "") }}
 - June 24: Some graphs about this [website's anniversary!](https://x.com/oldestasian/status/1805465933588127855), courtesy of Claude
 - June 25: Posted my [Edge Esmerelda experience](../../blog/eee)

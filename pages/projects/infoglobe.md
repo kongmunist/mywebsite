@@ -39,8 +39,7 @@ I also added the time and date as possible messages, because it was easy. Actual
 
 Here's what the the current website looks like. If you are a designer and want to make it look less like an eyesore please hit me up. I have no money but it is a very simple page, and maybe you like the concept enough to send me a Figma link :)
 
-Anyway, here's the website where you can write messages: [aksuper7.pythonanywhere.com](aksuper7.pythonanywhere.com)
-
+Anyway, here's the website where you can write messages: [aksuper7.pythonanywhere.com](https://aksuper7.pythonanywhere.com/)
 
 
 

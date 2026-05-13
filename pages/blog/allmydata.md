@@ -36,7 +36,7 @@ I think it's important to specify "why research" as well as "how research", and 
 
 {{ add_pic("allmydata/3.png", "") }}
 
-Here's a [few](https://medium.com/@kongmunist/playing-faster-tetris-by-sleeping-less-3d9b04d30349) more [examples](../blog/stroopvssleep/)
+Here's a [few](https://medium.com/@kongmunist/playing-faster-tetris-by-sleeping-less-3d9b04d30349) more [examples](/blog/stroopvssleep/)
 
 <hr>
 

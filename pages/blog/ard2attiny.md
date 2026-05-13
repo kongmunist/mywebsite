@@ -18,7 +18,7 @@ First we must flash the Arduino with the ArduinoISP sketch (found in File->Examp
 
 {{ add_pic("ard2attiny/1.png", "") }}
 
-We're not going to program the Arduino again, so go ahead and switch the target board to "ATtiny25/45/85" in Tools. If you don't have this option in your boards, follow the instructions in the [ATtiny repo](<a href="https://github.com/SpenceKonde/ATTinyCore/blob/v2.0.0-devThis-is-the-head-submit-PRs-against-this/Installation.md">https://github.com/SpenceKonde/ATTinyCore/blob/v2.0.0-devThis-is-the-head-submit-PRs-against-this/Installation.md</a>). 
+We're not going to program the Arduino again, so go ahead and switch the target board to "ATtiny25/45/85" in Tools. If you don't have this option in your boards, follow the instructions in the [ATtiny repo](https://github.com/SpenceKonde/ATTinyCore/blob/v2.0.0-devThis-is-the-head-submit-PRs-against-this/Installation.md). 
 
 Change the programmer to "Arduino as ISP" as in the image below, and we'll be ready to go. 
 
@@ -44,7 +44,7 @@ If you instead get an error like `avrdude: stk500_paged_write(): (a) protocol er
 
 # Uploading SoftwareSerial
 
-To test any non-visual functionality, we're going to want to print debug messages over Serial. While we can't do Serial in the ATtiny hardware, we can include the SoftwareSerial library and do it anyway. The following code is derived from an example on this [guide](<a href="https://www.instructables.com/ATtiny85-ATtiny84-Analog-Pins-Serial-Communication/">https://www.instructables.com/ATtiny85-ATtiny84-Analog-Pins-Serial-Communication/</a>), but you can use the sketch in Examples->SoftwareSerial also. 
+To test any non-visual functionality, we're going to want to print debug messages over Serial. While we can't do Serial in the ATtiny hardware, we can include the SoftwareSerial library and do it anyway. The following code is derived from an example on this [guide](https://www.instructables.com/ATtiny85-ATtiny84-Analog-Pins-Serial-Communication/), but you can use the sketch in Examples->SoftwareSerial also. 
 
 {{ add_pic("ard2attiny/5.png", "SoftwareSerial example works, though the pin numbers are all new to me") }}
 
@@ -99,6 +99,6 @@ SoftwareSerial <span style="color: #0066BB; font-weight: bold">mySerial</span>(R
 
 # Have fun!
 
-Hopefully you know the basics. As [DeepBlueMbedded](<a href="https://www.youtube.com/watch?v=7bZg_GzUbHI&t=1771s">https://www.youtube.com/watch?v=7bZg_GzUbHI&t=1771s</a>) said, you're basically done once you get blinking.
+Hopefully you know the basics. As [DeepBlueMbedded](https://www.youtube.com/watch?v=7bZg_GzUbHI&t=1771s) said, you're basically done once you get blinking.
 
 {{ add_pic("ard2attiny/10.png", "") }}

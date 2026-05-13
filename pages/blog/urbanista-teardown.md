@@ -12,7 +12,7 @@ We're currently in a battery-powered era of devices, driven by the cheap availab
 
 The development of light-harvesting products specifically is driven by the availablility of flexible, "normal"-looking PowerFoyle solar cells by a Swedish company called Exeger. Light-harvesting electronics require a minimum power (light level) to harvest properly, and the minimum light level is higher the smaller the photovoltaic cell. PowerFoyle's cells are optimized for indoor harvesting so even dim indoor lighting can make it work, and the consumer device with the most area turns out to be headphones.
 
-{{ add_pic("urbanista-teardown/0.jpg", "") }}
+{{ add_pic("urbanista-teardown/0.png", "") }}
 
 Since we all work in the same space, I felt compelled to get one and test their panels myself. Exeger has partnered with a lot of big brands like JBL and Adidas, but the cheapest device I could find on eBay was a refurbed/stolen pair of Urbanista Los Angeles headphones.
 

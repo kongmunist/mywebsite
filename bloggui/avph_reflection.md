@@ -6,7 +6,7 @@ snippet: "Lessons from hosting my first hackathon"
 
 Hello! Last weekend I hosted an Apple Vision Pro Hackathon (or AVP Hackathon for short), which simply entails borrowing someone's Vision Pro and then asking everyone I knew if they wanted to develop on it for a couple days.
 
-{{ add_pic("avph_reflection/0.png", "") }}
+{{ add_pic("avph_reflection/0.jpg", "") }}
 
 I think hackathons are a good event for colleges since full-time coders are usually too world-weary to also spend their weekends coding. Nonetheless, I picked a bad time to ask, since I mostly knew researchers and we're a month shy of the next big conference deadline. Anyway, somehow I got a crew of four people and we spent 48 hours trying to build apps/demos for the AVP.
 

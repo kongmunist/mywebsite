@@ -10,7 +10,7 @@ If you have a Vision Pro we could borrow and live in/near Pittsburgh and are fre
 
 Hello! Last weekend I hosted an Apple Vision Pro Hackathon (aka AVP Hackathon), which simply entailed asking everyone I knew if I could borrow a Vision Pro and then asking everyone if they wanted to develop on it for a couple days.
 
-{{ add_pic("avph_reflection/0.png", "") }}
+{{ add_pic("avph_reflection/0.jpg", "") }}
 
 I think hackathons are a good event for colleges since full-time coders are usually too world-weary to also spend their weekends coding. Nonetheless, I picked a bad time to ask, since I mostly knew researchers and we're a month shy of the next big conference deadline. 
 

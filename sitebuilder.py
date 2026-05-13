@@ -13,6 +13,7 @@ import pytz
 import sys
 import subprocess as sp
 import os
+import shutil
 import time
 
 # Dec 1 2023 TODO: Add pdf and other static non-image files to the sitemap
@@ -23,6 +24,7 @@ import time
 DEBUG = True
 FLATPAGES_AUTO_RELOAD = DEBUG
 FLATPAGES_EXTENSION = '.md'
+FLATPAGES_LEGACY_META_PARSER = True
 FREEZER_IGNORE_404_NOT_FOUND = True
 
 # FLATPAGES_ROOT ='/Users/andykong/Library/Mobile Documents/com~apple~CloudDocs/programming/personalwebsite/pages'
@@ -39,6 +41,39 @@ freezer = Freezer(app)
 # app.FLATPAGES_EXTENSION = '.md'
 app.config['FLATPAGES_EXTENSION'] = '.md'
 print(app.config['FLATPAGES_EXTENSION'])
+
+BASE_URL = "https://andykong.org"
+
+
+def page_tags(page):
+    return page.meta.get('tags', [])
+
+
+def is_wip(page):
+    return 'wip' in page_tags(page)
+
+
+def is_blog_or_log(page):
+    return page.meta.get('label') in ('blog', 'log')
+
+
+def is_public_blog_or_log(page):
+    return is_blog_or_log(page) and not is_wip(page)
+
+
+def is_agent_blog_post(page):
+    return is_public_blog_or_log(page) and 'agent-blog' in [tag.lower() for tag in page_tags(page)]
+
+
+def is_public_project(page):
+    return page.meta.get('label') == 'project' and not is_wip(page)
+
+
+def clean_freezer_destination():
+    destination = app.config.get("FREEZER_DESTINATION", "build")
+    if os.path.isdir(destination):
+        shutil.rmtree(destination)
+
 
 ## Solution to redirect URLs that end with / to the same URL without the /
 # From https://stackoverflow.com/questions/25494223/redirecting-urls-that-end-with-a-slash-in-flask
@@ -191,7 +226,7 @@ def utility_processor():
 def index():
     # return redirect("projects") #render_template('index.html', pages=pages)
     print("about me + projects main page")
-    projPages = [p for p in pages if "project" == p.meta.get('label')]
+    projPages = [p for p in pages if is_public_project(p)]
 
     projPages = [(x.meta.get('date'), x) for x in projPages]
     projPages.sort(reverse=True, key=lambda x: x[0])
@@ -208,16 +243,13 @@ def index():
 
 @app.route("/sitemap.xml")
 def sitemap():
-    blogPosts = [p for p in pages if "blog" == p.meta.get('label')]
-    projPosts = [p for p in pages if "project" == p.meta.get('label')]
+    blogPosts = [p for p in pages if is_public_blog_or_log(p)]
+    projPosts = [p for p in pages if is_public_project(p)]
 
 
     # Remove projects whose date is in the future
     today = datetime.date(datetime.now())
     projPosts = filter(lambda x: x['date'] < today, projPosts)
-    # Remove blog posts whose tags have wip
-    blogPosts = filter(lambda x: x.meta.get('label') == 'blog' and 'wip' not in x.meta.get('tags'), blogPosts)
-
     posts = list(blogPosts) + list(projPosts)
     posts.sort(reverse=True, key=lambda x: x['date'])
 
@@ -236,7 +268,7 @@ def sitemap():
         # print(post)
         # print(post.path)
         # print(post.meta)
-    temp = render_template("sitemap.xml", posts=posts, baseURL="https://andykong.org")
+    temp = render_template("sitemap.xml", posts=posts, baseURL=BASE_URL)
     response = make_response(temp)
     response.headers["Content-Type"] = "application/xml"
 
@@ -246,10 +278,9 @@ def sitemap():
 def rss():
     print("rss page")
 
-    # Get blog pages
-    blogPages = [p for p in pages if "blog" == p.meta.get('label')]
-    blogPages = [(x.meta.get('date'), x) for x in blogPages if
-                 'wip' not in x.meta.get('tags')]
+    # Get public blog and log pages
+    blogPages = [p for p in pages if is_public_blog_or_log(p)]
+    blogPages = [(x.meta.get('date'), x) for x in blogPages]
     blogPages.sort(reverse=True, key=lambda x: x[0])
     blogPages = [x[1] for x in blogPages]
 
@@ -257,19 +288,21 @@ def rss():
     fg = FeedGenerator()
     fg.title("Andy Kong's Blog")
     fg.description('Thoughts and Work')
-    fg.link(href='https://andykong.org')
+    fg.link(href=BASE_URL)
+    fg.link(href=BASE_URL + url_for('rss'), rel='self')
 
     for article in blogPages:  # get_news() returns a list of articles from somewhere
-        if 'wip' not in article.meta.get('tags'):
-            fe = fg.add_entry()
-            fe.title(article.meta['title'])
-            fe.link(href=article.path)
-            fe.content(article.body)
-            fe.description(article.meta['snippet'], isSummary=True)
-            fe.author(name="Andy Kong", email="andykongresearch@gmail.com")
-            dt = datetime.combine(article.meta['date'], datetime.min.time())
-            timezone = pytz.timezone('America/New_York')
-            fe.pubDate(timezone.localize(dt))
+        article_url = BASE_URL + url_for('blog', title=article.path.split('/', 1)[1])
+        fe = fg.add_entry(order='append')
+        fe.title(article.meta['title'])
+        fe.link(href=article_url)
+        fe.guid(article_url, permalink=True)
+        fe.content(article.html, type='CDATA')
+        fe.description(article.meta['snippet'], isSummary=True)
+        fe.author(name="Andy Kong")
+        dt = datetime.combine(article.meta['date'], datetime.min.time())
+        timezone = pytz.timezone('America/New_York')
+        fe.pubDate(timezone.localize(dt))
 
     response = make_response(fg.rss_str(pretty=True))
     response.headers.set('Content-Type', 'application/xml')
@@ -295,8 +328,8 @@ def now():
 @app.route("/blog/")
 def mainblog():
     print("main blog page")
-    blogPages = [p for p in pages if ("log" in p.meta.get('label'))] # gets both blogs and logs 
-    blogPages = [(x.meta.get('date'), x) for x in blogPages if 'wip' not in x.meta.get('tags')]
+    blogPages = [p for p in pages if is_public_blog_or_log(p)]
+    blogPages = [(x.meta.get('date'), x) for x in blogPages]
 
     blogPages.sort(reverse=True, key= lambda x: x[0])
     blogPages=[x[1] for x in blogPages]
@@ -304,19 +337,41 @@ def mainblog():
         page.meta['len'] = len(page.body.split(" "))
     return render_template('blogmain.html', page=[], pages=blogPages)
 
+
+@app.route("/agent-blog/")
+def agentblog():
+    print("agent blog page")
+    agentPages = [p for p in pages if is_agent_blog_post(p)]
+    agentPages = [(x.meta.get('date'), x) for x in agentPages]
+
+    agentPages.sort(reverse=True, key= lambda x: x[0])
+    agentPages=[x[1] for x in agentPages]
+    for page in agentPages:
+        page.meta['len'] = len(page.body.split(" "))
+    return render_template(
+        'blogmain.html',
+        page=[],
+        pages=agentPages,
+        meta_description="Agent-written posts about useful things",
+        page_title="Agent Blog",
+        heading="Agent Blog",
+        empty_message="No Agent Blog posts yet.",
+    )
+
 @app.route("/blog/<string:title>/")
 def blog(title):
     print("blog page " + title)
     page = [pages.get("blog/" + title)]
-    blogPages = [p for p in pages if "blog" == p.meta.get('label') ]
+    blogPages = [p for p in pages if is_public_blog_or_log(p)]
+
+    if page[0] is None or not is_public_blog_or_log(page[0]):
+        abort(404)
 
     # Add loading="lazy" to all images
     pattern = '<img'
     for p in page:
         p.html = re.sub(pattern, '<img loading="lazy"', p.html)
 
-    if page[0] is None:
-        return mainblog()
     return render_template('blog.html', page=page, pages=blogPages)
 
 
@@ -329,8 +384,8 @@ def maintag():
     allTag = []
     # For all blog posts,
     for p in pages:
-        if ("blog"==p.meta.get('label')):
-            for t in p.meta.get('tags', []):
+        if is_public_blog_or_log(p):
+            for t in page_tags(p):
                 tl = t.lower()
                 listPages.add(tl)
                 numPages[tl] = numPages.get(tl, 0) + 1
@@ -344,17 +399,20 @@ def maintag():
 def tag(tag):
     print("tag " + tag)
     tl = tag.lower()
-    tagged = [p for p in pages if tl in [x.lower() for x in p.meta.get('tags', [])]]
+    tagged = [
+        p for p in pages
+        if is_public_blog_or_log(p) and tl in [x.lower() for x in page_tags(p)]
+    ]
 
     if len(tagged) == 0:
-        return maintag()
+        abort(404)
     return render_template('tag.html', pages=tagged, tag=tl)
 
 
 @app.route('/projects/')
 def mainproject():
     print("main project page")
-    projPages = [p for p in pages if "project" == p.meta.get('label')]
+    projPages = [p for p in pages if is_public_project(p)]
     projPages = [(x.meta.get('date'), x) for x in projPages]
     projPages.sort(reverse=True, key=lambda x: x[0])
 
@@ -378,13 +436,14 @@ def project(project):
 
     page = [pages.get("projects/" + project)]
 
+    if page[0] is None or not is_public_project(page[0]):
+        abort(404)
+
     # Add loading="lazy" to all images
     pattern = '<img'
     for p in page:
         p.html = re.sub(pattern, '<img loading="lazy"', p.html)
 
-    if page[0] is None:
-        return mainproject()
     return render_template('projects.html', page = page[0])
 
 @app.route('/cwang/')
@@ -392,8 +451,8 @@ def cwang():
     print("cwang")
     page = [pages.get("projects/catherinewang")]
 
-    if page[0] is None:
-        return mainproject()
+    if page[0] is None or not is_public_project(page[0]):
+        abort(404)
     return render_template('projects.html', page = page[0])
 
 
@@ -447,6 +506,7 @@ if __name__ == "__main__":
 
             # PLEASE DO NOT RUN "python sitebuilder.py build local" IF YOU ARE NOT ON ANDY'S MAC
             app.config["FREEZER_DESTINATION"] = "andykong.org/public"
+            clean_freezer_destination()
             freezer.freeze()
 
             # Push everything to github
@@ -463,16 +523,10 @@ if __name__ == "__main__":
             # Deploy build file to firebase — effective 10/4 no more firebase.
             # os.system("(cd andykong.org && firebase deploy)")
         else:
+            clean_freezer_destination()
             freezer.freeze()
     else:
         app.run(port=8001, debug=True)
-
-
-
-
-
-
-
 
 
 
