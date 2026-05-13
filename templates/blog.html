@@ -49,6 +49,64 @@
             line-height: 1.6;
         }
 
+        .blogpage pre {
+            background-color: #151818;
+            border: 1px solid #454949;
+            border-left: 4px solid #00b4cc;
+            color: #FAEADB;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin: 1.4em 0;
+            overflow-x: auto;
+            padding: 1em 1.1em;
+            white-space: pre;
+        }
+
+        .blogpage pre code {
+            background-color: transparent;
+            color: inherit;
+            display: block;
+            font-size: inherit;
+            line-height: inherit;
+            padding: 0;
+            white-space: pre;
+        }
+
+        .blogpage :not(pre) > code {
+            background-color: #353939;
+            border: 1px solid #4c5353;
+            color: #FAEADB;
+            font-size: 0.95em;
+            padding: 0.05em 0.25em;
+        }
+
+        .blogpage table {
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            line-height: 1.45;
+            margin: 1.4em 0;
+            width: 100%;
+        }
+
+        .blogpage th,
+        .blogpage td {
+            border-bottom: 1px solid #454949;
+            padding: 0.45em 0.65em;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .blogpage th {
+            color: #E0B890;
+            font-weight: 700;
+        }
+
+        .blogpage td:not(:first-child),
+        .blogpage th:not(:first-child) {
+            text-align: right;
+            white-space: nowrap;
+        }
+
         .blogpage img{
             max-width: 100%;
             max-height: 50vh;
@@ -106,5 +164,3 @@
 {% endfor %}
 
 {% endblock %}
-
-

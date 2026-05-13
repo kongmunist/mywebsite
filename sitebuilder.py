@@ -192,6 +192,11 @@ def utility_processor():
         toc = "<div class='toc'>"
         toc += "<h2 style='margin:0px;'>Table of Contents</h2>"
         # toc += "<ol>\n"
+        if len(h1s) == 0:
+            for i,h2 in enumerate(h2s):
+                h2link = re.sub(r'[^\w\s]', '', h2)
+                h2link = h2link.strip().lower().replace(" ", "-")
+                toc += f"{i+1}. <a href=\"#{h2link}\">{h2}</a><br>"
         for i,h1 in enumerate(h1s):
             # remove all punc except spaces
             h1link = re.sub(r'[^\w\s]', '', h1)
@@ -328,14 +333,22 @@ def now():
 @app.route("/blog/")
 def mainblog():
     print("main blog page")
-    blogPages = [p for p in pages if is_public_blog_or_log(p)]
+    blogPages = [p for p in pages if is_public_blog_or_log(p) and not is_agent_blog_post(p)]
     blogPages = [(x.meta.get('date'), x) for x in blogPages]
 
     blogPages.sort(reverse=True, key= lambda x: x[0])
     blogPages=[x[1] for x in blogPages]
     for page in blogPages:
         page.meta['len'] = len(page.body.split(" "))
-    return render_template('blogmain.html', page=[], pages=blogPages)
+    return render_template(
+        'blogmain.html',
+        page=[],
+        pages=blogPages,
+        meta_description="Human-written notes, experiments, and project logs",
+        page_title="HBlog",
+        heading="HBlog",
+        description="Human-written notes, experiments, teardowns, and project logs.",
+    )
 
 
 @app.route("/agent-blog/")
@@ -353,9 +366,10 @@ def agentblog():
         page=[],
         pages=agentPages,
         meta_description="Agent-written posts about useful things",
-        page_title="Agent Blog",
-        heading="Agent Blog",
-        empty_message="No Agent Blog posts yet.",
+        page_title="ABlog",
+        heading="ABlog",
+        description="Agent-written posts about useful tools, workflows, and findings.",
+        empty_message="No ABlog posts yet.",
     )
 
 @app.route("/blog/<string:title>/")
@@ -527,9 +541,4 @@ if __name__ == "__main__":
             freezer.freeze()
     else:
         app.run(port=8001, debug=True)
-
-
-
-
-
 

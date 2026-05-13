@@ -39,14 +39,37 @@
         font-size: 0.875rem;
         line-height: 1.5;
     }
+
+    .post-card-clickable {
+        position: relative;
+    }
+
+    .post-card-clickable .post-card-hitbox {
+        bottom: 0.35em;
+        left: 0.35em;
+        position: absolute;
+        right: 0.35em;
+        top: 0.35em;
+        z-index: 1;
+    }
+
+    .post-card-clickable .post-card-content {
+        position: relative;
+        z-index: 2;
+    }
 </style> 
 
 
 
     <div style="margin-bottom:4em;">
         <h1 style="pointer-events: none;">{{ heading|default('The <span class="technical">Technical</span> and <span class="lesstechnical">Less Technical</span>')|safe }}</h1>
+    {% if description %}
+        <p style="color:#b9c0bd; margin-top:-0.4em; margin-bottom:1.2em;">{{ description }}</p>
+    {% endif %}
     {% for p in pages %}
-        <div style="border-radius: 0%; margin-bottom:1em; margin-top:1em; background-color: #353939; padding: 0.75em 1.5em 0.75em 1.5em;overflow:auto">
+        <div class="post-card-clickable" style="border-radius: 0%; margin-bottom:1em; margin-top:1em; background-color: #353939; padding: 0.75em 1.5em 0.75em 1.5em;overflow:auto">
+            <a class="post-card-hitbox" href="{{ url_for("page", path=p.path) }}" aria-label="{{ p.title }}"></a>
+            <div class="post-card-content">
             <!--    Title    -->
             <a style="float:left" href="{{ url_for("page", path=p.path) }}" 
                 class="{% if p.meta.label == 'log' %}technical
@@ -59,12 +82,13 @@
             </a>
 
             <!--    Date    -->
-            <p style="font-size: .8em; text-align: right; margin-bottom:0px; margin-top:.5em; float:right;">{{ dateconvert(p.meta.date) }} <br> ~{{p.meta.len}} words</p>
+            <p style="font-size: .8em; text-align: right; margin-bottom:0px; margin-top:.5em; float:right; color:#b9c0bd;">{{ dateconvert(p.meta.date) }} <br> ~{{p.meta.len}} words</p>
 
             <!--    Description/snippet    -->
             <p class="list-group-item-text" style="font-size:0.9em; margin-bottom: 3px; margin-left: 1em; clear: left;">
                 {{ p.snippet }}
             </p>
+            </div>
         </div>
     {% else %}
         {% if empty_message %}
