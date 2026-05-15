@@ -1,6 +1,7 @@
 title: Chargerless Manifesto
 date: 2026-08-23
 label: project
+tags: [wip]
 timespan: Jan 2025-now
 pic: chargerless/beaut.jpg
 description: Why Chargerless?
