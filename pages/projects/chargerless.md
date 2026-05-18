@@ -6,9 +6,9 @@ timespan: Jan 2025-now
 pic: chargerless/beaut.jpg
 description: Why Chargerless?
 
-[//]: # (Hello! Usually I write up a project after it's done, but this time I'm going to explain it to you as it's happening. Check out the website at [chargerless.xyz]&#40;https://chargerless.xyz/&#41;)
+[//]: # (Hello! Usually I write up a project after it's done, but this time I'm going to explain it to you as it's happening. Check out the website at [getchargerless.com]&#40;https://getchargerless.com/&#41;)
 
-{{ add_pic("chargerless/beaut.jpg", "<a href='https://chargerless.xyz'>Chargerless</a>") }}
+{{ add_pic("chargerless/beaut.jpg", "<a href='https://getchargerless.com'>Chargerless</a>") }}
 
 
 Between 20-30% of the US adult population owns a fitness tracker, and I haven't met a single person who likes how they look. At best, wearables are tolerated, "discreet <i>enough</i>" ; at worst it sticks out like a stain on a nice outfit. 
@@ -90,7 +90,7 @@ Our target audience is primarily people in their mid-20s to late 40s — with fr
 [//]: # (- I love wearables and other personalized health data &#40;tracking since 2017!&#41;, and I think data-driven personalized data analysis is the future of health. )
 
 [//]: # ()
-[//]: # (I'm the only person I know at this intersection, and if you know someone else I'd love to meet them! My email is andy at [chargerless.xyz]&#40;https://chargerless.xyz/&#41;)
+[//]: # (I'm the only person I know at this intersection, and if you know someone else I'd love to meet them! My email is andy at [getchargerless.com]&#40;https://getchargerless.com/&#41;)
 
 <hr>
 # How's it going?
@@ -118,5 +118,5 @@ Keep up on our [twitter page](http://twitter.com/chargerlessxyz) or by joining o
 [//]: # (I'm writing this on August 24, 2025. I'm looking to raise a bit more money and close the pre-seed so I can front costs for development and focus on shipping first devices. I'm currently spending most of my time on the technical side, so I'm looking for a product person to take the time to really nail down the brand / marketing of this company. And I'd also like to move quicker on other deliverables &#40;app, website, database&#41;, looking for some help on that front. )
 
 [//]: # ()
-[//]: # (If you'd like to get in on the first 100, reach out @oldestasian or andy at [chargerless.xyz]&#40;https://chargerless.xyz/&#41;)
+[//]: # (If you'd like to get in on the first 100, reach out @oldestasian or andy at [getchargerless.com]&#40;https://getchargerless.com/&#41;)
 
