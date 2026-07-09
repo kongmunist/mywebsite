@@ -48,6 +48,12 @@ The in-repo `personalwebsite/` directory is an old broken Python 2.7 virtualenv 
 
 Do not run `~/.virtualenvs/personalwebsite/bin/python sitebuilder.py build local` unless the user explicitly asks for a deploy. It mutates git state and pushes to `origin master`.
 
+## Publishing / Static Host
+
+The live static host serves the tracked frozen output in `andykong.org/public/`. Pushing only source files or freezing to the default `build/` directory will not make changes live.
+
+When the user asks to publish, deploy, make the site live, or asks why a pushed change is not live, regenerate `andykong.org/public/`, commit that generated output, and push it. The `build local` command does this but also mutates git state and pushes, so only run it when explicitly requested; otherwise set `FREEZER_DESTINATION`/`app.config["FREEZER_DESTINATION"]` to `andykong.org/public` and freeze manually.
+
 There are no automated tests. For code/template changes, at minimum run the dev server or freeze command and check the affected routes.
 
 ## Content Rules
