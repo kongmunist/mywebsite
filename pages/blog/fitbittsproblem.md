@@ -12,7 +12,7 @@ On January 14th, I got tired early and slept from 8pm to midnight, then got up u
 
 When I synced my Fitbit app from the phone, it usually fixes the time shift, so I did that. Then I looked at my sleep history and saw it. 
 
-{{ add_pic("fitbittsproblem/0.png", "") }}
+{{ add_pic("fitbittsproblem/0.png", "", alt="Fitbit app sleep log showing two short sessions with incorrect dates and times after the clock drifted") }}
 
 Here we see my two sleep sessions logged under Friday — but the times are totally wrong, 2pm-6pm then 11pm-3am. 
 

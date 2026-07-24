@@ -14,19 +14,19 @@ To cap off all my Fitbit posting, I exported my data one last time and noticed t
 
 First I loaded my Google location data with [this neat tool](https://github.com/Scarygami/location-history-json-converter) by Scarygami which produces a massive CSV of all the longitude and latitude and everything else. Here I visualized part of it using plotly's `scatter_mapbox` function. 
 
-{{ add_pic("glocfitbittzcorrection/0.png", "") }}
+{{ add_pic("glocfitbittzcorrection/0.png", "", alt="Plotly map of Google location history points clustered around Birmingham, Alabama, with a latitude-longitude tooltip") }}
 
 From each longitude and latitude, you can get the timezone name using the Python library [timezonefinder](https://pypi.org/project/timezonefinder/), which works at a rate of ~2ms/1000 coordinates without needing to do GET requests. I converted the timezone strings into timezone offsets using some code from [this SO post](https://stackoverflow.com/questions/5537876/get-utc-offset-from-time-zone-name-in-python). 
 
 Then I realized that I needed to also account for daylight savings time across two regions, Europe and America, which for some reason have DST dates that are about a week off from each other. I can't wait for them to abolish DST so I'll have to add a bool which determines if DST correction is necessary in my timezone correction pipeline /s
 
-{{ add_pic("glocfitbittzcorrection/1.png", "") }}
+{{ add_pic("glocfitbittzcorrection/1.png", "", alt="Code comments listing American and European daylight savings date ranges from 2021 to 2024") }}
 
 Some sleep sessions have no "close" longitude/latitude coordinates, so I toss them. Close is defined arbitrarily, I use 6 hrs as my cutoff. 
 
 My success rate with this method is ~60%, and most of the loss comes from me neglecting to turn on Google Timeline on my iPhone until sometime mid-2021. In total, I recovered 600+ days of _accurate_ Fitbit sleep data and can now produce fun sleep graphs which I can trust. For instance, here is my true Tetris speed vs. sleep graph: 
 
-{{ add_pic("glocfitbittzcorrection/2.png", "") }}
+{{ add_pic("glocfitbittzcorrection/2.png", "", alt="Scatterplot of sleep duration vs Tetris pieces per second with a slightly rising linear fit, p=1.91e-06") }}
 
 Turns out sleep is good for you, actually.
 

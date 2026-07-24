@@ -11,7 +11,7 @@ I always felt that if I were given free rein to follow my curiosity for a while,
 
 Now, after a year of graduate studies, I realize this will never end. I wanted security, and there is never enough security. There is always more school to finish, more money to save, more career to further before making any leap. I am going to use what I know now to sustain myself. I am going to stop sinning.
 
-{{ add_pic("yearofoutput/img_4.png", "", width=75) }}
+{{ add_pic("yearofoutput/img_4.png", "", width=75, alt="Tabloid-style poster reading Build Your Dreams Before Someone Else Hires You To Build Theirs") }}
 
 <hr>
 
@@ -82,16 +82,16 @@ For accountability, I will maintain the list of outputs below, though this proje
 - Feb 3: Hosted a party, showed off Grid World.
 - Feb 4: Applied to Vitalia. 
 - Feb 5: [YouTube video](https://www.youtube.com/watch?v=LdaKsLM5S64&t=1s) about brute-forcing Ford cars 
-{{ add_pic("yearofoutput/img.png", "") }}
+{{ add_pic("yearofoutput/img.png", "", alt="YouTube thumbnail titled Guessing My Car Passcode With Math, with Andy squinting beside a Ford keypad") }}
 - Feb 6: Blog post [CS major's guide to I2C](../../blog/attinyrtc)
 - Feb 7: Posted about main project 1, [implantables](../../projects/implantables). Also on Twitter.
 - Feb 8: Comm with RF wizard
 - Feb 9: Applied for Flux Capacitor, a 1517 grant
 - Feb 10: Driver Apple Watch [tweet](https://twitter.com/oldestasian/status/1756578851893760155)
-{{ add_pic("yearofoutput/driverapplewatch.png", "") }}
+{{ add_pic("yearofoutput/driverapplewatch.png", "", alt="Tweet showing an Apple Watch on a custom leather strap that tilts it into a driver watch") }}
 - Feb 11: Ordered parts for impedance matching
 - Feb 12: Last blog post on Fitbit timezone correction, this time using Google location data. [Link](../../blog/glocfitbittzcorrection)
-{{ add_pic("glocfitbittzcorrection/0.png", "") }}
+{{ add_pic("glocfitbittzcorrection/0.png", "", alt="Map of Alabama covered in blue Google location dots tracing highways, with a latitude-longitude tooltip") }}
 - Feb 13: Looked into potential research collab
 - Feb 14-21: Trip to [Vitalia.city](https://vitalia.ai/vitalia) and [shitposted a bit](https://twitter.com/oldestasian/status/1760185015218872437).
     - 14: Arrived, met James and Rochelle
@@ -102,7 +102,7 @@ For accountability, I will maintain the list of outputs below, though this proje
     - 20: Talked with Fraiz and Cass about possible apps given power constraints. Kayaking with friends
     - 21: Left
 - Feb 22: Post about [Vitalia](../../blog/vitalia1\)
-{{ add_pic("vitalia1/9.jpg", "") }}
+{{ add_pic("vitalia1/9.jpg", "", alt="Selfie holding a large orange starfish in the ocean, with a snorkeler friend smiling behind") }}
 - Feb 23-28: Trip to Boston
     - 23: Went to NTBOS event, met Max
     - 24: Free lunch @ Harvard
@@ -125,9 +125,9 @@ For accountability, I will maintain the list of outputs below, though this proje
 - Mar 11: [Medium post](https://kongmunist.medium.com/how-to-set-up-hand-tracking-on-apple-vision-pro-54b7439f888b)) about how to build my Vision Pro Hands demo
 - Mar 12: Talked to Adam about summering in Michigan
 - Mar 13: [Reflections on the Vision Pro Hackathon](../../blog/avph_reflection)
-{{ add_pic("avph_reflection/2.jpg", "") }}
+{{ add_pic("avph_reflection/2.jpg", "", alt="Vision Pro demo view of a classroom filled with floating copies of Andy's disembodied head") }}
 - Mar 14: Learned how small 7-segment displays can get
-{{ add_pic("yearofoutput/7seg.png", "") }}
+{{ add_pic("yearofoutput/7seg.png", "", alt="Microscope view of a tiny 7-segment display die with gold bond pads, one segment glowing green") }}
 - Mar 15: [Tweet thread on blood lead concentration](https://twitter.com/oldestasian/status/1768680598082822611)
 - Mar 16: [First post](https://www.researchhub.com/post/1839/inducing-mentalphysical-changes-using-parasites) on ResearchHub, a cryptocurrency research platform. I like the vision, but nobody engaged with my post.
 - Mar 17: First therapy
@@ -138,10 +138,10 @@ For accountability, I will maintain the list of outputs below, though this proje
 - Mar 22: Calculator video, went climbing with Phu
 - Mar 23: Dietrich party with the Good Will Hunting squad
 - Mar 24: Disassembled a vape pen, took pics for future blog post
-{{ add_pic("yearofoutput/vape.png", "") }}
+{{ add_pic("yearofoutput/vape.png", "", alt="Gloved hand holding a disassembled vape pen's tiny PCB, with the casing and mouthpiece scattered behind") }}
 - Mar 25: [Medium post](https://kongmunist.medium.com/sub-microamp-sleep-current-with-seeed-xiao-nrf52840-732def7d95c3) on how to properly deep sleep the XIAO nRF52840 board  
 - Mar 26: Gradient generating code for figures. Hopefully will not have to remake that. 
-{{ add_pic("yearofoutput/bodygradient.png", "") }}
+{{ add_pic("yearofoutput/bodygradient.png", "", alt="Human body silhouette shaded with a rainbow heatmap gradient from head to feet") }}
 - Mar 27: Observations on the Vision Pro video stream [here](https://twitter.com/oldestasian/status/1773056074297335858)
 - Mar 28: Chris "celebrated problem" debate, no progress on getting e-ink display working. Added abstract to PCS.
 - Mar 29: Shot hero figure pictures for the paper
@@ -156,11 +156,11 @@ For accountability, I will maintain the list of outputs below, though this proje
 - Apr 6: Took pics of dino toy printer camera for power consumption blog post, hosted gamer party
 - Apr 7: [Blog post about](../../blog/dinocamtoypower) power consumption of a children's toy camera I got in China.
 - Apr 8: Eclipse day!
-{{ add_pic("yearofoutput/eclipse.png", "") }}
+{{ add_pic("yearofoutput/eclipse.png", "", alt="Crescent-shaped eclipse shadows projected as a grid of spots on a dark surface") }}
 - Apr 9: So much Blender, redid head scan with a handheld 3D scanner
 - April 10: Transplanted my face onto my face in Blender. [Memes ensued](https://twitter.com/oldestasian/status/1778015641011708058)
 - Apr 11: Printed big [head candle mold](https://twitter.com/oldestasian/status/1778903412425339039)
-{{ add_pic("yearofoutput/headcandlemold.png", "") }}
+{{ add_pic("yearofoutput/headcandlemold.png", "", alt="Hand holding a large 3D-printed low-poly head, the mold master for the big head candle") }}
 - Apr 12: Blog post on [how optimized Morse code is](../../blog/omorse)
 - Apr 13: Beeswax + Coconut wax + scent ratio test
 - Apr 14: Big head candle completed [here](https://twitter.com/oldestasian/status/1779613951782703296)
@@ -176,7 +176,7 @@ For accountability, I will maintain the list of outputs below, though this proje
 - June 7-14: Attending Edge Esmerelda
 - June 12: [Blog post](../../blog/monochrome/) about using one Chrome window at a time
 - June 23: [Big head candle project writeup](/projects/bigheadcandle/)
-{{ add_pic("bigheadcandle/demoldingprocess.jpg", "") }}
+{{ add_pic("bigheadcandle/demoldingprocess.jpg", "", alt="Three-step sequence of cutting open a plaster mold and pulling out a head-shaped wax candle") }}
 - June 24: Some graphs about this [website's anniversary!](https://x.com/oldestasian/status/1805465933588127855), courtesy of Claude
 - June 25: Posted my [Edge Esmerelda experience](../../blog/eee)
 - June 27-28: Updated the tweets of blog posts.
@@ -197,7 +197,7 @@ For accountability, I will maintain the list of outputs below, though this proje
 - Sep 8: Yerba haul
 - Sep 12: Made DIY laser profilometer that slots into a 30mm cage system
 - Sep 13: Soft launch of our magneto-optical trap in a [tweet](https://x.com/oldestasian/status/1834580690198782414)
-{{ add_pic("yearofoutput/IMG_1332.jpeg", "") }}
+{{ add_pic("yearofoutput/IMG_1332.jpeg", "", alt="Glass-roofed pavilion glowing at night beside a canal walkway, city buildings lit behind") }}
 - Sep 14-15: Ishaan visiting for HackMIT
 - Sep 16: Went to this crazy plasma guy's workshop
 - Sep 18: Acquired a couch from the street
@@ -212,16 +212,16 @@ For accountability, I will maintain the list of outputs below, though this proje
 - Oct 2: Got these 90 degree glasses. Really stupidly fun
 - Oct 4: Tried ultrasonic softening of metal. [Video here](https://x.com/oldestasian/status/1842617156858531969)
 - Oct 5: Destroyed Stelo CGM after it expired
-{{ add_pic("yearofoutput/steloteardown.png", "") }}
+{{ add_pic("yearofoutput/steloteardown.png", "", alt="Fingers holding the coin-sized circuit board pulled from a Stelo CGM sensor") }}
 - Oct 6: Blog post about the [Stelo CGM](../../blog/cgmteardown1)
 - Oct 9: Made an RF amplifier using the THS3491
 - Oct 10: Party!
 - Oct 11: Demo of Power-over-Skin for the NSF director Panch
 - Oct 12: Demo of Power-over-Skin at the CMU UIST Pre-party. It was great, you should've been there!
-{{ add_pic("yearofoutput/IMG_2751.JPG", "") }}
+{{ add_pic("yearofoutput/IMG_2751.JPG", "", alt="Attendees chatting through a glass wall covered in marker doodles at the CMU UIST pre-party") }}
 - Oct 13: Demo of Power-over-Skin at the UIST Workshop "Soft Wearables" hosted by Cat and Cedric. Also great
 - Oct 14: My first first-author conference talk. Also demo of Power-over-Skin at the UIST Demo Session, which we barely got into thanks to the efforts of Eric Whitmire, god bless
-{{ add_pic("yearofoutput/IMG_2511.jpeg", "") }}
+{{ add_pic("yearofoutput/IMG_2511.jpeg", "", alt="Andy at the UIST podium beneath a Power-over-Skin title slide showing a tiny device on a fingertip") }}
 - Oct 15: [Tweet thread](https://x.com/oldestasian/status/1846292645707919531) about Power-over-Skin, Kinda blew up, god bless. I'm 1/3 of the way to Twitter monetization, bless up
 - Oct 17: Ate my first MRE. Glad to know our troops are eating good.
 - Oct 20: Tried to reproduce the pixelizer lens from Twitter.

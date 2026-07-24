@@ -14,7 +14,7 @@ In this post I'm going to show y'all few self-insights I've derived from logging
 
 I think it's important to specify "why research" as well as "how research", and this "why" can become insincere when scientists court the big grant-writers in industry and government instead of saying what they really mean. I currently work for myself and will try to be a bit more honest — I like learning how my body and mind interact with my environment to create my lived experience. I also just like to know stuff.
 
-{{ add_pic("allmydata/0.png", "") }}
+{{ add_pic("allmydata/0.png", "", alt="Meme of an orange plush lizard captioned The autistic urge to know why") }}
 
 # Cool self-insights I've found
 
@@ -22,19 +22,19 @@ I think it's important to specify "why research" as well as "how research", and 
 - My Ritalin blood concentration correlates with better Tetris performance
 
 
-{{ add_pic("allmydata/1.png", "") }}
+{{ add_pic("allmydata/1.png", "", alt="Scatter plot of Ritalin blood concentration vs Tetris survival time with an upward linear fit, p=0.001") }}
 
 
 - I think better with more sleep (actually one of my most burning questions)
 
 
-{{ add_pic("allmydata/2.png", "") }}
+{{ add_pic("allmydata/2.png", "", alt="Scatter plot of Stroop interference factor vs sleep duration with a downward linear fit, p=0.015") }}
 
 
 - My Tetris speed (pieces per second = PPS) correlates slightly with lower humidity
 
 
-{{ add_pic("allmydata/3.png", "") }}
+{{ add_pic("allmydata/3.png", "", alt="Scatter plot of Tetris pieces per second vs humidity percentage with a slight downward linear fit") }}
 
 Here's a [few](https://medium.com/@kongmunist/playing-faster-tetris-by-sleeping-less-3d9b04d30349) more [examples](/blog/stroopvssleep/)
 
@@ -50,81 +50,81 @@ Not all the data is obviously useful — some of it is just easy to collect. But
 
 Chrome websites visited with URL and timestamp. Collected via Tom Critchlow's [JS electric tables script](../settingupelectrictables/)
 
-{{ add_pic("allmydata/4.png", "") }}
+{{ add_pic("allmydata/4.png", "", alt="Google Sheet of browser history rows pairing timestamps with visited URLs") }}
 
 ## Hard Drive Space
 
 Every 4 hours, a bash script logs my available hard drive space in bytes. 
 
-{{ add_pic("allmydata/5.png", "") }}
+{{ add_pic("allmydata/5.png", "", alt="CSV log of timestamps next to available hard drive space in bytes") }}
 
 ## Physical Location 
 
 Google Maps Timeline is enabled on my phone and records my latitude/longitude every few minutes. I have this data going back a couple of years, and it includes the velocity and predicted mode of transport. 
 
-{{ add_pic("allmydata/6.png", "") }}
+{{ add_pic("allmydata/6.png", "", alt="Map of the southeastern US covered in blue GPS dots tracing highways, with a latitude-longitude tooltip") }}
 
 ## Smartwatch Biometrics
 
 Fitbit records a ton of data and multiple granularities. There's tons of problems with the data itself (documented [here](../fitbittsproblem/) and [here](../fitbitsleeptzcorrection/) ), but the majority is usable. Most usable stuff is probably the nightly sleep stats, minutely heart rate + HR variance, and daily step count. Fitbit offers this data export [through the web interface](https://www.fitbit.com/settings/data/export</a>)
 
-{{ add_pic("allmydata/7.png", "") }}
+{{ add_pic("allmydata/7.png", "", alt="Folder of Fitbit export CSVs covering heart rate, sleep, steps, SpO2, and weight") }}
 
 ## Music
 
 Spotify! It's a bit complicated and I haven't looked into it, but all the streaming data is there. Spotify offers this data export [through the web interface](https://support.spotify.com/us/article/understanding-my-data/)
 
-{{ add_pic("allmydata/8.png", "") }}
+{{ add_pic("allmydata/8.png", "", alt="Raw Spotify streaming history JSON with track names, timestamps, and milliseconds played") }}
 
 ## Tweets
 
 Twitter activity, has been used by [ultimape](https://twitter.com/ultimape/status/1145889385256296449</a>) to detect their shifting circadian rhythm, has been used by Andy for nothing so far. Twitter offers this data export [through the web interface](https://help.twitter.com/en/managing-your-account/how-to-download-your-x-archive</a>)
 
-{{ add_pic("allmydata/9.png", "") }}
+{{ add_pic("allmydata/9.png", "", alt="Tweet by ultimape with a tweets-per-day chart from 2015 to 2019 showing recurring yearly dips") }}
 
 ## Purchasing data
 
 My Apple Card tracks all my purchases. The data is retrieved by manually hitting the "Export CSV" button on each month, and includes the Merchant and category and date.
 
-{{ add_pic("allmydata/10.png", "") }}
+{{ add_pic("allmydata/10.png", "", alt="Apple Card transactions CSV listing dates, merchants, categories, and amounts") }}
 
 ## Glucose
 
 I wore a Freestyle Libre 2 CGM for two weeks and have nearly continuous data from that period (15-min intervals). Export is done through web interface.
 
-{{ add_pic("allmydata/11.png", "") }}
+{{ add_pic("allmydata/11.png", "", alt="FreeStyle LibreLink glucose export table with readings in mmol/L at 15-minute intervals") }}
 
 ## Air quality
 
 I use a QingPing air quality monitor to track my relative humidity, temperature, CO2, particulates (PM2.5), and tVOC (total volatile organic compounds). Through the QingPing IoT app, we can export the past year of data logged at 15-min intervals. 
 
-{{ add_pic("allmydata/12.png", "") }}
+{{ add_pic("allmydata/12.png", "", alt="QingPing air monitor displaying PM2.5, tVOC, CO2, temperature, and humidity next to its phone app") }}
 
 ## Tetris (cognitive)
 
 I play Tetris for fun a few times a day. The website I play on records the stats and timestamps of each game, and I wrote a little Selenium scraper to retrieve it all. I run this every few months to collate all the data into a CSV.
 
-{{ add_pic("allmydata/13.png", "") }}
+{{ add_pic("allmydata/13.png", "", alt="Jstris leaderboard of personal best Tetris sprint times with blocks, PPS, and finesse stats") }}
 
 ## Stroop (cognitive)
 
 I use my Strooper [chrome extension](../../projects/strooper) and complete a mini-Stroop test a few times a day. This gives me a coarse metric of my executive function, reading speed, and reaction time randomly throughout the day. I transfer the results into a spreadsheet monthly. 
 
-{{ add_pic("allmydata/14.png", "") }}
+{{ add_pic("allmydata/14.png", "", alt="Strooper trial showing the word yellow printed in blue above four color answer buttons") }}
 
-{{ add_pic("allmydata/15.png", "") }}
+{{ add_pic("allmydata/15.png", "", alt="Google Sheet of raw Strooper results stored as JSON rows of timestamped button presses") }}
 
 ## Weight and grip strength
 
 Every night I record my weight and fat % with a bioimpedance scale, then record my left and right handed grip strength using a dynamometer. I record these as calendar events and transfer them to spreadsheets monthly. 
 
-{{ add_pic("allmydata/16.png", "") }}
+{{ add_pic("allmydata/16.png", "", alt="Smiling man flexing one arm while holding a digital grip strength dynamometer") }}
 
 ## Dose times
 
 I frequently drink caffeinated beverages, sometimes use nicotine patches, and randomly try out OTC supplements like L-Theanine or magnesium. I update a calendar notebook with my dosage and time, and have gotten pretty good at just noting the time when I take them and logging it later. I transfer this to a spreadsheet every month or so. 
 
-{{ add_pic("allmydata/17.png", "") }}
+{{ add_pic("allmydata/17.png", "", alt="Handwritten calendar notebook entries logging dose times of caffeine and supplements") }}
 
 <hr>
 

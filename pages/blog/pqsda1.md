@@ -30,7 +30,7 @@ These are not many, and they cover much of what is needed. Interestingly enough,
 
 Most continuous sensors will not share timestamps, so you will need to align them (tossing stuff that doesn't line up perfectly) or "align them" (interpolate the denser value with a sparser one to get matching rows). Since we don't usually have a ton of data to spare, we go for interpolation. The code is simple, and just uses `np.interpolate`
 
-{{ add_pic("pqsda1/0.png", "") }}
+{{ add_pic("pqsda1/0.png", "", alt="Code snippet of the interpolateWith function signature, which interpolates one Steward's data with another's") }}
 
 This is preferred for continuous vs. continous, but for event vs. event much can happen on longer timescales so I think interpolation is quite lossy. 
 
@@ -38,23 +38,23 @@ This is preferred for continuous vs. continous, but for event vs. event much can
 
 Since these analyses all use event data, we will select y-variable data that lines up with the event timestamp. This function just slices out time ranges from the y-variable that are specific offsets from each x-variable event. 
 
-{{ add_pic("pqsda1/1.png", "") }}
+{{ add_pic("pqsda1/1.png", "", alt="Code snippet of the selectAround function signature with eventTimes, beforeHours, afterHours, and cutoff arguments") }}
 
 Once each time range is found, we toss the ranges with zero elements and then have a list of dataframes. Just for fun, I added an "eventOffset" column for each sample so we can `hstack` them into a single DataFrame if desired. Here's one element from the list of my heart rate dataframes. 
 
-{{ add_pic("pqsda1/2.png", "") }}
+{{ add_pic("pqsda1/2.png", "", alt="Polars DataFrame of heart rate rows with bpm, confidence, timestamp, and eventOffset columns spanning -2h to +4h") }}
 
 The `a` variable was created by running `a = s1.selectAround(doseTimes, beforeHours=2, afterHours=4)`, selecting time ranges that included each doseTime and data from 2 hours before and 4 hours after. Once the list is made, you can just plot each time range on the same graph:
 
-{{ add_pic("pqsda1/3.png", "") }}
+{{ add_pic("pqsda1/3.png", "", alt="Dozens of translucent heart rate time series overlaid on one plot, forming a noisy band around 80 bpm") }}
 
 Or more cleanly, plot a smoothed mean of the same data:
 
-{{ add_pic("pqsda1/4.png", "") }}
+{{ add_pic("pqsda1/4.png", "", alt="Smoothed mean heart rate curve rising from 70 to about 80 bpm around the caffeine stimulus marked at time zero") }}
 
 Another fantastic use case of `selectAround` is that I can select data that happened exclusively after or before an event time. For instance, if I wanted to see all sleep sessions happening within 6 hours of a caffeine event, I could run `sleep.selectAround(doseTimes, 0, 6, cutoff=0, surroundRequired=False)` and get the list of every time that happened. The inclusion of the `timeOffset` col also means I can scatterplot the sleep data once selected:
 
-{{ add_pic("pqsda1/5.png", "") }}
+{{ add_pic("pqsda1/5.png", "", alt="Scatterplot of hours of sleep versus hours since last caffeine, with longer sleep after longer caffeine gaps") }}
 
 `selectAround` also offers negative lookback and lookahead, so you can do whatever you need. 
 

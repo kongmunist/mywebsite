@@ -13,7 +13,7 @@ As a CS person, I didn't really need to learn how to do I2C since every chip I'v
 # I2C is like an API for ICs
 If you've ever worked with big Python libraries with unwieldy documentation and a million functions, it may help you to think of I2C as a similarly big library for hardware. Specifically, I'm thinking of matplotlib. You read and write options using matplotlib functions, you pass data, magical stuff happens internally, and voila, graph! And if it breaks, debugging is confusing because the functionality that breaks is usually buried deep in the library. 
 
-{{ add_pic("attinyrtc/1.jpg", "") }}
+{{ add_pic("attinyrtc/1.jpg", "", alt="Grandma-at-computer meme captioned How to increase the size of a matplotlib plot") }}
 
 I2C has similar functionality, except instead of calling a nice English function like `plt.clear()`, you need to say "write 0x1 to the SHUTDOWN register at position 0x10". Chips using I2C have a bunch of data and config registers. To access a sensor reading, you say "let me have 8 bytes from register XX". To configure sensor settings, you say "write XX into register YY". This makes it a bit more annoying since register addresses are harder to memorize than function names in English. You will usually be checking the datasheet a lot.
 
@@ -39,7 +39,7 @@ I recently got an ATtiny working on a breadboard using an Arduino Uno as the pro
 
 I really wanted to manually understand the I2C stuff, so I found a DS3231 (aka ZS-042) minimal example on the [Arduino forums](https://forum.arduino.cc/t/software-i2c-and-ds3231-simple-code/508288) and converted it to use TinyWireM. On the ATtiny, the I2C pins are SDA on physical pin 5 and SCL on physical pin 7 (these are also known as PB0 and PB2 respectively). 
 
-{{ add_pic("attinyrtc/4.png", "") }}
+{{ add_pic("attinyrtc/4.png", "", alt="ATtiny85 pinout diagram mapping physical pins to Arduino pin numbers, analog channels, and PWM outputs") }}
 
 I've added SoftwareSerial so we can receive the ATtiny messages using an FTDI Friend, its RX should go into physical pin 3 (same as my previous post). Wires from the ZS-042 board are SCL -> pin 7 and SDA -> pin 5. V+ and GND also need to be connected. 
 

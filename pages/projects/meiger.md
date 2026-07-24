@@ -12,17 +12,17 @@ Not medical advice. </i></p>
 <hr>
 
 
-{{ add_pic("meiger_presentation.png", "", True) }} 
+{{ add_pic("meiger_presentation.png", "", True, alt="Presentation title slide reading The Biological Effects of Electromagnetic Fields over da Vinci's Vitruvian Man") }} 
 
 Living in developed countries means constant exposure to all kinds of dirty electrical noise and strong magnetic fields. While the human body mostly signals with chemicals and ions, our brain — the intellectual center and chief information processor — communicates via electricity. 
 
 In the presence of electromagnetic (EM) fields, these signals and pathways can become muddled and interfere with maintenance and development of new neural pathways. 
 
-{{ add_pic("meiger_hero.jpg", "", True) }}
+{{ add_pic("meiger_hero.jpg", "", True, alt="Hand holding the Meiger Counter with its Magnetic Field analog meter up toward a bright ceiling light bulb") }}
 
 That's why I invented the __Meiger Counter__, the first handheld device used by reasonable, cautious people all over the world to detect and isolate dangerous sources of electromagnetic noise that could be putting you or your loved ones at a higher risk for cancer [[1]](https://www.sciencedirect.com/science/article/abs/pii/S0013935121012883). 
 
-{{ add_pic("meiger_andypresent1.jpg", "", True) }}
+{{ add_pic("meiger_andypresent1.jpg", "", True, alt="Andy in a suit and mask demonstrating the Meiger Counter beside its open carrying case") }}
 
 Each Meiger counter comes with a dial and speaker to alert you whenever a strong electrical field is nearby. Simply press the trigger while pointing our proprietary directional Efield Antenna at a source you suspect is poisoning the environment around you, and the rate of clicking will tell you the strength of the source.
 
@@ -39,14 +39,14 @@ The device is lightweight, portable, and easily rechargable. Each counter comes 
 # Build details
 The carrying case was scavenged from a Roboclub cleaning, it's a DeWalt case with no tools in it. Foam is from the cleaning as well. I cut it with a package opener, which is why it looks rather rough. 
 
-{{ add_pic("meiger_dewalt.jpg", "") }}
-{{ add_pic("meiger_foamcase.jpg", "") }}
+{{ add_pic("meiger_dewalt.jpg", "", alt="Hand scrubbing yellow paint off the embossed DeWalt logo on the black carrying case") }}
+{{ add_pic("meiger_foamcase.jpg", "", alt="Open case with pluck-and-pull foam being trimmed to hold the two counters") }}
 
 Meiger counter handles are made from the case of a Metrologic MH290 handheld barcode scanner, one of the [first ones ever sold commercially](../../blog/barcodehistory/). The top part is 3D printed on an SLS printer. To try and make it look vintage, I printed it out of a clear resin and then overexposed it in UV light. My post-processing was pretty crude, but I think it looks pretty good. 
 
-{{ add_pic("meiger_closeup1.jpg", "") }}
-{{ add_pic("meiger_closeup2.jpg", "") }}
-{{ add_pic("meiger_closeup3.jpg", "") }}
+{{ add_pic("meiger_closeup1.jpg", "", alt="Close-up of the Meiger Counter body showing its analog meter, crosshair antenna face, and a potentiometer") }}
+{{ add_pic("meiger_closeup2.jpg", "", alt="Hand holding the translucent amber Meiger Counter, showing the copper coil antenna behind its crosshair face") }}
+{{ add_pic("meiger_closeup3.jpg", "", alt="Open Meiger Counter revealing its internal circuit board, red wiring, and indicator LED") }}
 
 The Meiger counter ticks according to a Poissonian distribution, same as a Geiger counter. This makes the clicks sound eerily similar, and create a similar feeling of danger. The lambda of the Poisson distribution is determined by the variance of the analog readings on a wire antenna inside the counter. The higher the variance, the more frequent the clicks. This works pretty well for picking up electrical noise from power hubs, overhead lights, and large electronic devices. 
 
@@ -57,13 +57,13 @@ The Meiger counter ticks according to a Poissonian distribution, same as a Geige
 
 To make the presentation more convincing, I read several articles about the relationship between electromagnetic fields and various medical conditions. They presented some compelling correlations between weak magnetic fields and rates of leukemia in children, and many other conditions. The audience believed I had invented these studies, but they were quite real. Here are some screenshots from my slides:
 
-{{ add_pic("meiger_bees.png", "") }}
+{{ add_pic("meiger_bees.png", "", alt="Slide bar chart comparing honey bee queen development between control and EMF-exposed groups") }}
 
-{{ add_pic("meiger_humans.png", "") }}
+{{ add_pic("meiger_humans.png", "", alt="Slide bar chart showing childhood leukemia risk rising with higher magnetic field exposure") }}
 
-{{ add_pic("meiger_iarc.png", "") }}
+{{ add_pic("meiger_iarc.png", "", alt="Slide quoting the IARC classifying low-frequency magnetic field exposure as possibly carcinogenic, with the IARC logo") }}
 
-{{ add_pic("meiger_andypresent2.jpg", "") }}
+{{ add_pic("meiger_andypresent2.jpg", "", alt="Andy presenting in front of a projected slide of childhood leukemia risk versus magnetic field exposure") }}
 
 Adding this to the list of things that make you go "huh!"
 

@@ -25,7 +25,7 @@ Due to social capital requirements, I was only able to get 1 partial scan of my 
 
 After I had the model, I made a coarse pixelization of the model as the outer shell, and subtracted my head from the inside to make the molds. I also added a base and a hole at the top for the wax.
 
-{{ add_pic("bigheadcandle/moldmaking.png", "") }}
+{{ add_pic("bigheadcandle/moldmaking.png", "", alt="Blender views of the pixelized outer shell, the smiling head scan, and a cutaway half of the negative mold") }}
 
 # 3D Printing
 Previously I used a resin 3D printer to make my molds — this was mainly because the resolution is much higher, and at small sizes I wanted all the detail I could get. Also, I have the impression that resin is tougher than PLA/ABS, and holds together better under heat (like from melted wax).

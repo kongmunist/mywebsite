@@ -24,6 +24,35 @@
 </style>
 
 
+<link rel="canonical" href="https://andykong.org/projects/gridworld/">
+
+    <meta property="og:site_name" content="Andy Kong">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Grid World">
+    <meta property="og:description" content="Collaborative online pixel canvas with a physical display in my room">
+    <meta property="og:url" content="https://andykong.org/projects/gridworld/">
+    <meta property="article:published_time" content="2023-11-26">
+    
+    <meta property="og:image" content="https://andykong.org/static/gw_rplace.gif">
+    <meta property="og:image:alt" content="Grid World">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Grid World",
+      "description": "Collaborative online pixel canvas with a physical display in my room",
+      "datePublished": "2023-11-26",
+      "url": "https://andykong.org/projects/gridworld/",
+      "mainEntityOfPage": "https://andykong.org/projects/gridworld/",
+      "image": "https://andykong.org/static/gw_rplace.gif",
+      "author": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"},
+      "publisher": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"}
+    }
+    </script>
+
+
     <style type="text/css">
         /* Atkinson Hyperlegible */
         /* latin-ext
@@ -265,7 +294,7 @@
 <p><img loading="lazy" alt="The Raspberry Pi + Hat, dongle, power supply, and RGB display" class="addpic" src="/static/gw_hardwarebuild.JPG"/></p>
 <h2 id="software">Software</h2>
 <p>For the website to work properly across multiple users at once, I am calling fetch every few seconds from the client-side since my hosting provider does not allow any real-time messaging like Websockets or Server-Sent Events. To avoid conflicting states, I am using a changes-only <a href="https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type">CRDT</a> model on the server. Users can only push updates to pixels, and cannot overwrite the server's grid with their own. The current Grid World canvas is saved to disk every 5 seconds if any edits were made, and the server's python instance maintains the true grid in memory. </p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/gw_website.png"/></p>
+<p><img loading="lazy" alt="Grid World website with a color palette beside a 64x64 pixel canvas full of user drawings and messages" class="addpic" src="/static/gw_website.png"/></p>
 <h2 id="social-considerations">Social Considerations</h2>
 <p>I also had to add some social barriers. In Grid World, drawing is done by clicking, but when debugging I wrote code which allowed drawing via mouse hold-and-drag. When deploying the website, I left this in the code and some people uncommented it for extra privileges. This quickly creates ugly noise marks over everything, so I removed that bit of code. I also had to add a rate limit because within a week the first bots were already being annoying — erasing people's work and filling the whole canvas with a single color. </p>
 <p class="caption"> Camera feed of the physical Grid World </p>

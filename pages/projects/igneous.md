@@ -53,7 +53,7 @@ Post-brainstorming + reality check, we were left with only one project: Igneous.
 
 # Igneous 
 
-{{ add_pic("ign_giantscauseway.jpg", "") }} 
+{{ add_pic("ign_giantscauseway.jpg", "", alt="Hexagonal basalt columns of the Giant's Causeway rising from the sea under a blue sky") }} 
 
 This is the Giant's Causeway, a natural basalt formation found in Northern Ireland. The columns are believed to be formed by the cracking of cooling magma, which takes on hexagonal shapes as the cracks descend deeper. Something about minimization of surface energy... Unsure. I wanted to parallel this with hundreds of candles, creating a small scale version that visitors would be able to light and watch m
 

@@ -6,7 +6,7 @@ snippet: "RF circuit simulation without ANY piracy!"
 
 Hi, if you're reading this you must be truly desperate — casual readers would never ever click a blog post titled like this. Today I'm gonna walk you through running QUCS Studio on your Mac computer. 
 
-{{ add_pic("qucsstudioinstall/0.jpg", "") }}
+{{ add_pic("qucsstudioinstall/0.jpg", "", alt="uSimmics 5.8 welcome window open on a Mac desktop") }}
 
 # Background
 
@@ -22,27 +22,27 @@ Ok just do everything the guide says. Yes uSimmics 5.8 works even though the blo
 
 On step 6, you are asked to select a Wine version. I don't have a wine version. The first step of this guide should be how to install a wine version on PlayOnMac.
 
-{{ add_pic("qucsstudioinstall/1.png", "") }}
+{{ add_pic("qucsstudioinstall/1.png", "", alt="Guide step 6: PlayOnMac wizard asking which Wine version to use, with only System in the list") }}
 
 Leave the configuration menu. Install a Wine version by going to Tools->Manage Wine versions. 
 
-{{ add_pic("qucsstudioinstall/2.png", "") }}
+{{ add_pic("qucsstudioinstall/2.png", "", alt="PlayOnMac Tools menu with the Manage Wine versions item") }}
 
 If you're like me, the list on the left is empty. Pretty daunting. If it's still empty after 5s you have a problem.
 
-{{ add_pic("qucsstudioinstall/3.png", "") }}
+{{ add_pic("qucsstudioinstall/3.png", "", alt="PlayOnMac Wine versions manager with an empty Available Wine versions list on the left") }}
 
 After reading some [forums](https://www.playonmac.com/en/topic-17045-2.html), I realized that PlayOnMac makes some questionable code decisions. One of which is that all the URL requests have a 5s timeout and then fail silently. To figure out where it's failing, you exit PlayOnMac (Cmd+Q), open up a terminal and navigate to the .app file, and then run the application file from the terminal so you can see the debug messages (Find PlayOnMac.app, then run `./PlayOnMac.app/Contents/MacOS/playonmac`). It should boot normally. 
 
-{{ add_pic("qucsstudioinstall/4.png", "") }}
+{{ add_pic("qucsstudioinstall/4.png", "", alt="Terminal output after launching the PlayOnMac binary directly, showing its startup debug messages") }}
 
 Now go to the Tool->Wine window again. If the list stays empty, you should see something like this:
 
-{{ add_pic("qucsstudioinstall/5.png", "") }}
+{{ add_pic("qucsstudioinstall/5.png", "", alt="Python traceback in WineVersionsFetcher.py ending in socket.timeout while downloading the phoenicis Wine list") }}
 
 So, you can check that the "phoenicis" URL is still active by just going to it using your browser. If it's still up, it just means that their server is slow and the request is just timing out locally. Go into the "WineVersionsFetcher.py" file and change the timeout to like 15 or 30 or 60 seconds. Then you'll get your Wine version downloaded.
 
-{{ add_pic("qucsstudioinstall/6.png", "") }}
+{{ add_pic("qucsstudioinstall/6.png", "", alt="WineVersionsFetcher.py source with the urlopen timeout argument raised to 15 seconds") }}
 
 After that continue following the guide. Other people on the forums had an issue where Wine wouldn't download properly, but you could download it yourself and move it into the directory it was supposed to be in and it'd work. Honestly I feel a bit like a battle medic when I'm doing edits like this, but y'know, it's gotta work. 
 
@@ -50,6 +50,6 @@ After that continue following the guide. Other people on the forums had an issue
 
 Just follow the other guy's post, it's a good blog. No step should throw an error. 
 
-{{ add_pic("qucsstudioinstall/7.png", "") }}
+{{ add_pic("qucsstudioinstall/7.png", "", alt="uSimmics schematic editor with a microstrip line circuit set up for an s-parameter simulation") }}
 
 Sorry for the lazy post, have fun simulating!

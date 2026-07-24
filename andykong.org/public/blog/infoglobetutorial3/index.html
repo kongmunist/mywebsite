@@ -136,6 +136,38 @@
 
 
 
+<link rel="canonical" href="https://andykong.org/blog/infoglobetutorial3/">
+
+    
+        <meta property="og:site_name" content="Andy Kong">
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="Infoglobe Tutorial Pt. 3 — Software">
+        <meta property="og:description" content="Adding bits to our atoms">
+        <meta property="og:url" content="https://andykong.org/blog/infoglobetutorial3/">
+        <meta property="article:published_time" content="2023-04-09">
+        
+        <meta property="og:image" content="https://andykong.org/static/igt1_hero.jpeg">
+        <meta property="og:image:alt" content="Infoglobe Tutorial Pt. 3 — Software">
+        <meta name="twitter:card" content="summary_large_image">
+        
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": "Infoglobe Tutorial Pt. 3 \u2014 Software",
+          "description": "Adding bits to our atoms",
+          "datePublished": "2023-04-09",
+          "url": "https://andykong.org/blog/infoglobetutorial3/",
+          "mainEntityOfPage": "https://andykong.org/blog/infoglobetutorial3/",
+          "image": "https://andykong.org/static/igt1_hero.jpeg",
+          "keywords": "infoglobe, software, gist, tutorial",
+          "author": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"},
+          "publisher": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"}
+        }
+        </script>
+    
+
+
     <style type="text/css">
         /* Atkinson Hyperlegible */
         /* latin-ext
@@ -351,14 +383,14 @@
 }
     </style>
 </head><body><p>Ok, welcome back for our final installment of the infoglobe tutorial series. If you've not been following along, here's links to the hardware mods that you'll need to have done before this post will be useful to you — <a href="../infoglobetutorial1">part 1</a> and <a href="../infoglobetutorial2">part 2</a>.</p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/igt1_hero.jpeg"/></p>
+<p><img loading="lazy" alt="Olympia Infoglobe with a clear blue dome displaying the scrolling message Hey Hackaday" class="addpic" src="/static/igt1_hero.jpeg"/></p>
 <p>If you've forgotten, here's the device we're hacking - the Olympia Infoglobe. I have described it too often, so we're gonna get right into the meat of this post. </p>
 <hr/>
 <h1 id="code">Code</h1>
 <p>We're using the Wemos D1 mini ESP8266/ESP32 breakout board to control our globe, it looks like this.</p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/igt3_wemos.png"/></p>
+<p><img loading="lazy" alt="Wemos D1 mini breakout board with its metal-shielded ESP8266 WiFi module" class="addpic" src="/static/igt3_wemos.png"/></p>
 <p>Boot up your Arduino IDE and download the "IRremoteESP8266" library from the Tools-&gt;Manage Libraries-&gt; then search for IRremoteESP8266. This library should be supported for ESP32s as well. Hit install, and twiddle your thumbs for a bit as it installs.</p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/igt3_irlib.png"/></p>
+<p><img loading="lazy" alt="Arduino IDE Library Manager showing the IRremoteESP8266 library installed" class="addpic" src="/static/igt3_irlib.png"/></p>
 <p>Now, copy past <a href="https://gist.github.com/kongmunist/a8bdadbacda4bcb129cd183f2f0fffc5">this gist</a> into a new Arduino file and upload it to your ESP board. </p>
 <script src="https://gist.github.com/kongmunist/a8bdadbacda4bcb129cd183f2f0fffc5.js"></script>
 <p>This script is a demo showing the usage of all the functions we have to make controlling the Infoglobe easier. If you read through the <code>loop()</code> function, then you'll begin to understand the code and become able to extend it to your own beneficial/nefarious purposes.</p>

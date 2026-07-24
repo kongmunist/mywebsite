@@ -8,7 +8,7 @@ Hello!
 
 Back when I attended CMU, there were these massive bulletin boards around campus full of adverts from students and profs. Students usually promoted their app/club/org/student course, and professors pushed their classes.
 
-{{ add_pic("cmuads/0.jpg", "") }}
+{{ add_pic("cmuads/0.jpg", "", alt="Campus bulletin board crowded with flyers for tutoring, MCAT prep, student clubs, and events") }}
 
 When I started putting my own ads on these boards, I was always curious which b-boards were the most frequently looked at. For instance, the board between the Sorrells library and the bathroom gets a lot of traffic, but the people walking there were probably pretty focused on studying. Whereas the UC bulletin boards get less foot traffic, but the people there seem calmer since they aren't walking fast to get to class.
 
@@ -23,12 +23,12 @@ I got a bunch of friends to help me put up the QR codes (Thanks Nancy Sam Ruijie
 
 I always wanted to sell this data to some overzealous student group that puts up a ton of flyers and cares about it, but after 4 years I'm realizing that's probably not gonna happen. So I've tabulated the results into this map below.
 
-{{ add_pic("cmuads/1.png", "") }}
+{{ add_pic("cmuads/1.png", "", alt="CMU campus map labeled with QR scan counts per building; the UC leads with 42, then Wean 24 and Gates 21") }}
 
 More granularly, the per-bulletin board data can be found [here](https://docs.google.com/spreadsheets/d/1T-BplbYhJhCCI-hyfR-BIS-O5AUM7uf--s4L8abqz_0/edit#gid=1010815453).
 
 A day or two after all the flyers were up, I realized that it would be free traffic if I also advertised the website in the school Facebook groups. I made a separate URL extension for the group links and posted it. The single Facebook link received around 6x the visits to all in-person links despite only being up for like 8 hours. 
 
-{{ add_pic("cmuads/2.png", "") }}
+{{ add_pic("cmuads/2.png", "", alt="Spreadsheet tally comparing 139 visits from in-person boards to 832 from the online link") }}
 
 As with all deploys, some event I scraped the first day of public release ended up busting the website, and I didn't realize until noon the next day. I always wonder about those missed first impressions. Anyway, enough lore for the day. Cya next time!

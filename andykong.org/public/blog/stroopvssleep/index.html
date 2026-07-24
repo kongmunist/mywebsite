@@ -136,6 +136,38 @@
 
 
 
+<link rel="canonical" href="https://andykong.org/blog/stroopvssleep/">
+
+    
+        <meta property="og:site_name" content="Andy Kong">
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="How sleep deprivation affects my cognition">
+        <meta property="og:description" content="Correlating my Stroop with sleep data">
+        <meta property="og:url" content="https://andykong.org/blog/stroopvssleep/">
+        <meta property="article:published_time" content="2024-01-10">
+        
+        <meta property="og:image" content="https://andykong.org/static/strooper/img_1.png">
+        <meta property="og:image:alt" content="How sleep deprivation affects my cognition">
+        <meta name="twitter:card" content="summary_large_image">
+        
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": "How sleep deprivation affects my cognition",
+          "description": "Correlating my Stroop with sleep data",
+          "datePublished": "2024-01-10",
+          "url": "https://andykong.org/blog/stroopvssleep/",
+          "mainEntityOfPage": "https://andykong.org/blog/stroopvssleep/",
+          "image": "https://andykong.org/static/strooper/img_1.png",
+          "keywords": "personalinformatics, quantifiedself, data",
+          "author": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"},
+          "publisher": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"}
+        }
+        </script>
+    
+
+
     <style type="text/css">
         /* Atkinson Hyperlegible */
         /* latin-ext
@@ -348,8 +380,8 @@
 <p><img loading="lazy" alt="Stroop effect — quick, name the colors of the words" class="addpic" src="/static/strooper/img_1.png"/></p>
 <h1 id="methods-and-results">Methods and Results</h1>
 <p>Here is a lot of scatterplots where my three Stroop scores (please see above link for more info) are arranged according to some sleep variables (total time in bed, sleep efficiency, time asleep, time awake), and then I do a linear regression for each one.</p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/stroopvssleep/top.png"/></p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/stroopvssleep/bottom.png"/></p>
+<p><img loading="lazy" alt="Six scatterplots of Stroop scores vs sleep duration and sleep efficiency with linear fits and p-values" class="addpic" src="/static/stroopvssleep/top.png"/></p>
+<p><img loading="lazy" alt="Six scatterplots of Stroop scores vs minutes asleep and minutes awake with linear fits and p-values" class="addpic" src="/static/stroopvssleep/bottom.png"/></p>
 <p>I'm not just gonna throw a best-fit line on there and call it a day — I want to know how real that line is. I've also calculated a p-value which is the probability that the best-fit line slope is that value by random chance. I also <a href="https://en.wikipedia.org/wiki/Bonferroni_correction">Bonferroni-corrected</a> the threshold value, though I think this boundary is a bit arbitrary (we pick p=5% arbitarily like everyone else, then divide by 12 to Bonferroni correct. p&lt;.00416 is significant).</p>
 <h1 id="discussion">Discussion</h1>
 <p>As you can see, a few variables appear to be related (most notably Stroop score vs. sleep duration), but aren't actually by our experiment standards. I would need more data to confirm, and I only have 27 days of data because Stroop data is relatively new in my stack of tracked personal info. </p>

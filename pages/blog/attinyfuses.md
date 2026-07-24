@@ -16,7 +16,7 @@ Recently, I wanted to use energy harvesting to power an ATtiny. Every electron i
 
 Digging into the datasheet, I found that by default the ATtiny waits 64ms after startup to give the clock time to stabilize. While this is all nice and good, I don't have that kind of power to waste! This could be changed to 4ms or 0ms by setting the LFUSE (datasheet page 26), but I had no idea how — all I knew were the options on the Arduino IDE. From more reading, I learned that the fuses were what changed every time I altered the clock frequency or other pre-code options then hit Burn Bootloader, but I still didn't know how to upload non-common options.
 
-{{ add_pic("attinyfuses/2.png", "") }}
+{{ add_pic("attinyfuses/2.png", "", alt="ATtiny datasheet table of start-up times with the default 64 ms additional delay highlighted") }}
 
 # Custom fuses
 
@@ -34,11 +34,11 @@ When we copy this line elsewhere, we can see exactly where the fuses are in the 
 
 One way to set the fuses is to figure out exactly which bits of the LFUSE bytes alter the startup time. In my case, SUT should be 00 for 0ms delay, meaning the right byte should be changed in LFUSE (0x62 above). This approach is possible albeit annoying, and I worried that I had the wrong endian-ness all the time.
 
-{{ add_pic("attinyfuses/5.png", "") }}
+{{ add_pic("attinyfuses/5.png", "", alt="Fuse Low Byte datasheet table with the SUT1 and SUT0 start-up time bits highlighted") }}
 
 The second time, I realized there were several fuse calculators webpages (like [this](https://eleccelerator.com/fusecalc/fusecalc.php?chip=attiny85) or [this](https://www.engbedded.com/fusecalc/)) where you could pick the options and it would auto-generate the correct fuse value. Super!
 
-{{ add_pic("attinyfuses/6.png", "") }}
+{{ add_pic("attinyfuses/6.png", "", alt="Online AVR fuse calculator with preset dropdowns and per-bit checkboxes generating the fuse byte values") }}
 
 Once you figure out the fuse bytes, just edit the original Arduino IDE string to include the new values for the appropriate fuses. You can then just run the command in your computer's terminal to set the new fuses on your ATtiny. 
 

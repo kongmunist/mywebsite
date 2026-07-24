@@ -14,7 +14,7 @@ One reason is I believe most novel scientific concepts were first dismissed as b
 # Enchanted water bottle
 Anyway, in 2021 I bought a water bottle which claimed to be enchanted — the bottle is made of "Programmed Silicon" so any water stored in it will be restored to a more natural state which is good-for-you.
 
-{{ add_pic("magicalbeans/flaskasell.png", "") }}
+{{ add_pic("magicalbeans/flaskasell.png", "", alt="Marketing copy claiming the glass bottles encode the vibrational essence of nature into water") }}
 
 I was intrigued by the idea, but the thing that really got me was a sentence on the website — the company was founded by a former strawberry farmer who said strawberries watered with the enchanted water were "18.1% more plentiful".
 

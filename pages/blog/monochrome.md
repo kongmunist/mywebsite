@@ -8,7 +8,7 @@ Hello. Today I'm going to tell you about a work-style switch I made about a year
 
 # Tangent
 
-{{ add_pic("monochrome/0.jpeg", "") }}
+{{ add_pic("monochrome/0.jpeg", "", alt="macOS Mission Control showing many app windows crowded onto a single desktop") }}
 
 In 2021, I watched a coworker swipe up their Mission Control page to reveal ~20 different applications all on the same desktop. Extremely surprised, I asked why they did that, and they said it was faster. At the time, thought of only using 1 desktop was alien to me because I segregated each work subject into a different desktop (PCBs, software, messenger apps).
 
@@ -21,13 +21,13 @@ I used to do the same thing with my Chrome tabs. 100 tabs spread across 4 window
 
 But the same thing was true for multiple Desktops, why not apply the same lessons? Now I just keep one window open. If it gets cluttered, I go through and clear it out. Article? Read and close it. Personal blog you want to correspond with? Write them an email and close it. If you don't have time now, just save it in a Google doc or the Notes app, I'm sure you'll get back to it, if it's so important *wink wink*
 
-{{ add_pic("monochrome/1.png", "") }}
+{{ add_pic("monochrome/1.png", "", alt="Single Chrome tab strip holding about a dozen tabs for email, docs, and papers") }}
 
 As an example, my current window (above) is just stuff I need to take notes on. These are all the tabs I have open. Contrast with my old "Session Buddy" saved tab lists which I've never ever looked twice at:
 
-{{ add_pic("monochrome/2.png", "") }}
+{{ add_pic("monochrome/2.png", "", alt="Saved tab collection named before apple with 55 links, created 3 years ago") }}
 
-{{ add_pic("monochrome/3.png", "") }}
+{{ add_pic("monochrome/3.png", "", alt="Sidebar of stale saved tab collections, every one created 3 years ago") }}
 
 Imagine, I have hundreds of these lists, totally rotting in there. 
 

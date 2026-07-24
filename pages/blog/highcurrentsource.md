@@ -104,7 +104,7 @@ A reader emailed me asking for the pinout of the auxiliary J1 connector on the f
 {{ add_pic("NJE_J1_PINOUT.jpg", "The pinout of the J1 connector on the NJE MK750/MK1500 high current power supply") }}
 
 These pins correspond to the functions mentioned in the 1-pager manual I have above.
-{{ add_pic("nje_functions.png", "") }}
+{{ add_pic("nje_functions.png", "", alt="Manual excerpt titled Convenience Functions describing inhibit/remote shutdown, margin check, and power-fail signals") }}
 
 And the sense pins are supposed to be connected to the outputs like so (I think to monitor the output voltage).
 {{ add_pic("nje_senseplugs.png", "From random eBay listing") }}

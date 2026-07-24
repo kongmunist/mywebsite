@@ -6,7 +6,7 @@ snippet: "Popup City No. 2"
 
 Hello! Again I have returned from a distant land with tales from a popup community. This city was/is called [Edge Esmerelda](https://www.edgeesmeralda.com/), and is/was located in Healdsburg, CA.  
 
-{{ add_pic("eee/0.png", "") }}
+{{ add_pic("eee/0.png", "", alt="Palm tree rising among leafy green trees under a blue sky dotted with clouds in Healdsburg") }}
 
 In part, going was an experiment. I remember reading someone's blog post about "asking favors/questions you are SURE will be refused" as a way to make sure you really know the bounds of your social position (a la [Veritasium](https://www.youtube.com/watch?v=vKA4w2O61Xo)) — I did this about a year ago when I asked 3 people if I could borrow 20,000 Swiss Francs so I could stay in Switzerland. None of them had it, but all of them said yes.
 
@@ -44,19 +44,19 @@ In exchange for coming, all I had to do was be involved: I spoke with new people
 
 - I gave a talk on implants
 
-{{ add_pic("eee/1.png", "") }}
+{{ add_pic("eee/1.png", "", alt="Title slide of the Primer on Implants talk given by Andy Kong at Edge Esmerelda, June 2024") }}
 
 - Showed off my holograms to a ton of people
 
 - Experienced my first Pilates session
 
-{{ add_pic("eee/2.jpeg", "") }}
+{{ add_pic("eee/2.jpeg", "", alt="Pilates class holding side planks on mats in a sunny mirrored studio") }}
 
 - learned you can 3d print spring-y stuff, like this knife!
 
-{{ add_pic("eee/4.jpeg", "") }}
+{{ add_pic("eee/4.jpeg", "", alt="Black 3D printed retractable knife with a springy serpentine flexure in the handle, held in one hand") }}
 
 - Stayed at Hotel Anson for 3 nights where I made friends with Canadians and non-Canadians alike
 
-{{ add_pic("eee/3.jpeg", "") }}
+{{ add_pic("eee/3.jpeg", "", alt="Four friends in matching red shirts dancing together in a hotel room") }}
 

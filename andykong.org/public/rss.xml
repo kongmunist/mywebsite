@@ -7,7 +7,7 @@
     <atom:link href="https://andykong.org/rss.xml" rel="self"/>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
-    <lastBuildDate>Thu, 09 Jul 2026 23:47:40 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 24 Jul 2026 23:48:23 +0000</lastBuildDate>
     <item>
       <title>Fast automated mobile E2E testing — the unwritten manual</title>
       <link>https://andykong.org/blog/fast_mobile_e2e/</link>
@@ -432,19 +432,19 @@ print(f"{label:24s} {ms:6.0f}ms")
       <link>https://andykong.org/blog/fpc-electrode-clip/</link>
       <description>First opaque clear PCBs</description>
       <content:encoded><![CDATA[<html><body><p>Recently I built a wearable EKG circuit with Lucia for a fun party device that visualizes your heart rate.</p>
-<p><img alt="" class="addpic" src="/static/fpc-electrode-clip/0.png"/></p>
+<p><img alt="Mirror selfie with two red LEDs glowing through a black tank top from the wearable EKG heart visualizer" class="addpic" src="/static/fpc-electrode-clip/0.png"/></p>
 <p>The most clunky part of any biosensing project is coupling the human to the circuit, and this was no different. We had to get EKG gel electrodes, corresponding snap electrode cables, and then connect them to the person in question. This is annoying because the electrodes are disposable, the wires are too long and windy, and the connection to the board is bulky because the EKG electrodes normally go off-body to get digitized. </p>
-<p><img alt="" class="addpic" src="/static/fpc-electrode-clip/1.png"/></p>
+<p><img alt="Person reclined at an electronics workbench with a long white electrode wire trailing from under their shirt to the desk" class="addpic" src="/static/fpc-electrode-clip/1.png"/></p>
 <p>It would be much nicer if the EKG was an all-in-one piece that sits across the heart and captured the same signal. A worn EKG like this exists already for monitoring people over 1-2 days, but it isn't fun or hackable or attainable by normal people, so I was looking for alternatives.</p>
-<p><img alt="" class="addpic" src="/static/fpc-electrode-clip/2.png"/></p>
+<p><img alt="Compact all-in-one wearable EKG patch monitor adhered across a man's chest" class="addpic" src="/static/fpc-electrode-clip/2.png"/></p>
 <p>One such method used flex PCBs as the "snap", using the flexibility of the FPC material to ensure good contact with an electrode. I could think of many ways to do this coupling but I had two problems: I wasn't sure how big the electrodes were (no calipers) and I could think of 3+ ways to shape the electrode-mounting hole on the FPC itself. I started by modeling out the different geometries for this (simple hole, star-shaped hole, and keyhole) in 10 different sizes spanning 3-4mm (I knew we had a 3.5mm snap electrode, I just wasn't sure which part was 3.5mm). I got this on flex, and just for fun I ordered it on JLC's clear PCB. </p>
-<p><img alt="" class="addpic" src="/static/fpc-electrode-clip/3.png"/></p>
+<p><img alt="PCB render of the Electrode Flex Check board: gold strips with simple, star, and keyhole holes sized 3.1 to 4.0 mm" class="addpic" src="/static/fpc-electrode-clip/3.png"/></p>
 <p>They emailed me immediately asking about soldermask, and since I wanted the gold to be exposed for good contact, I told them to remove all of it. As it turns out, the base material of the clear FPC is clear (and slightly pink?), but the surface finish is not smooth enough to see through it without soldermask. You can approximate the soldermask with a piece of clear tape on both sides.</p>
-<p><img alt="" class="addpic" src="/static/fpc-electrode-clip/4.png"/></p>
+<p><img alt="Manufactured clear flex PCB with exposed gold strips and keyhole cutouts on a translucent frosted substrate" class="addpic" src="/static/fpc-electrode-clip/4.png"/></p>
 <p>As for the electrodes, it turns out just pretending the buckle was perfectly 3.5mm is a decent strategy. The simple hole performed ok, the star-hole had a bit too much material in the middle, and the keyhole worked just as well as the simple hole (but needed smaller sizes).</p>
-<p><img alt="" class="addpic" src="/static/fpc-electrode-clip/5.png"/></p>
+<p><img alt="Gold flex strip snapped onto the metal stud of a 3M Red Dot gel electrode, held between fingers" class="addpic" src="/static/fpc-electrode-clip/5.png"/></p>
 <p>It's easy to say in hindsight, but the simple holes used the flexibility of the metal, which deforms and does not snap back. This meant repeated use of a single hole meant it stopped making good contact (though it still held on to the electrode well enough). </p>
-<p><img alt="" class="addpic" src="/static/fpc-electrode-clip/6.png"/></p>
+<p><img alt="Keyhole slot in the flex PCB clipped around the snap stud of a gel electrode" class="addpic" src="/static/fpc-electrode-clip/6.png"/></p>
 <p>The keyhole intermediate channel was 2mm, and held much more consistently across uses. I think this is because it relied on the flexibility of the underlying substrate, or on the flexing as opposed to the deformation of the thin metal layer. In the future we'll go with the too-thin channel, and I think the electrode clips and EKG circuit will be able to all fit on the same circuit. </p></body></html>]]></content:encoded>
       <guid isPermaLink="true">https://andykong.org/blog/fpc-electrode-clip/</guid>
       <pubDate>Tue, 03 Feb 2026 00:00:00 -0500</pubDate>
@@ -452,6 +452,49 @@ print(f"{label:24s} {ms:6.0f}ms")
     <item>
       <title>Teardown of the Urbanista Los Angeles headphones</title>
       <link>https://andykong.org/blog/urbanista-teardown/</link>
+      <description>Removing another self-powering device from the world</description>
+      <content:encoded><![CDATA[<html><body><p>Hello all, it's certainly been a while since my last post so I thought we'd do something fun. Because of my current startup, I'm really interested in consumer electronics which can power themselves. I've only found a few devices like this, and today we're gonna take one apart to see how they're implementing it.</p>
+<h1 id="background">Background</h1>
+<p>We're currently in a battery-powered era of devices, driven by the cheap availability of rechargable, high density lithium batteries. However, as the chips powering these devices get more efficient, environmental energy sources like light or heat become a large enough source of power to contribute meaningful amounts of power to the device's battery life. Today, electronics that add energy harvesting can 2-3x battery life over pure battery-operated ones, especially if the duty cycle is low. </p>
+<p>The development of light-harvesting products specifically is driven by the availablility of flexible, "normal"-looking PowerFoyle solar cells by a Swedish company called Exeger. Light-harvesting electronics require a minimum power (light level) to harvest properly, and the minimum light level is higher the smaller the photovoltaic cell. PowerFoyle's cells are optimized for indoor harvesting so even dim indoor lighting can make it work, and the consumer device with the most area turns out to be headphones.</p>
+<p><img alt="Exeger promo shot of hands flexing a leather-textured PowerFoyle solar cell strip" class="addpic" src="/static/urbanista-teardown/0.png"/></p>
+<p>Since we all work in the same space, I felt compelled to get one and test their panels myself. Exeger has partnered with a lot of big brands like JBL and Adidas, but the cheapest device I could find on eBay was a refurbed/stolen pair of Urbanista Los Angeles headphones.</p>
+<p><img alt="Urbanista web store page for the Los Angeles hybrid ANC headphones, marked sold out at 119 dollars" class="addpic" src="/static/urbanista-teardown/1.png"/></p>
+<p>My interests lie mostly in the PV cell and the harvesting methodology, but I'm always interested to see how people make certain mechanisms at scale. The rest of this post will mostly be pictures.</p>
+<h1 id="teardown">Teardown</h1>
+<p>Here's the device</p>
+<p><img alt="Black Urbanista Los Angeles headphones lying on a paper-covered workbench before disassembly" class="addpic" src="/static/urbanista-teardown/2.png"/></p>
+<p>Here's the panel we're after, built into the top band</p>
+<p><img alt="Hand holding the top band with the Powerfoyle logo engraved on the built-in solar panel" class="addpic" src="/static/urbanista-teardown/3.png"/></p>
+<p>We start by popping off the pieces of the device that are snap-fit — The inner band, parts of the outer band, the earmuffs. You can immediately see they've strain reliefed the cable on the headband</p>
+<p><img alt="Headband with its snap-fit covers popped off, exposing the strain-relieved cable running through it" class="addpic" src="/static/urbanista-teardown/4.png"/></p>
+<p>There's a couple of stickers keeping the band together, once those go the PV cell just falls out </p>
+<p><img alt="Hands pulling the headband frame apart, with the coiled interconnect cable and inner rails exposed" class="addpic" src="/static/urbanista-teardown/5.png"/></p>
+<p><img alt="Freed PowerFoyle solar cell strip with its flex circuit and QR labels, next to the two detached earcups" class="addpic" src="/static/urbanista-teardown/6.png"/></p>
+<p>I used a clamp to pop off the two outer shell bits on the headphone themselves. The right one contains the harvesting and bluetooth chips (labeled on paper), and 2 mics for the noise-cancelling. </p>
+<p><img alt="Opened right earcup and solar band beside handwritten notes of chip markings, including the SUNBST harvester" class="addpic" src="/static/urbanista-teardown/7.png"/></p>
+<p>The left earmuff has a 750mAh battery (10 kJ), PMIC, and 1 mic. I roughly calculated charging rate in direct sunlight and came up with 3-4 hrs to go from 0 to 100%.</p>
+<p><img alt="Inside the left earcup: a silver 750 mAh 3.7 V pouch battery wired to the PMIC board" class="addpic" src="/static/urbanista-teardown/8.png"/></p>
+<p>The part of the band coupling to the earmuffs (for the wire pass-through) is made of steel, which I found a bit surprising — its the only mechanical component that's made of metal in the whole device. Actually I felt a bit bad seeing how good the build quality was during the teardown. It was taken apart in a way that could be put back together, but I'm not really interested. </p>
+<h1 id="analysis">Analysis</h1>
+<p>From my brief research into this, Exeger bought another company called Sunboost which was also nordic in origin, and this is the harvester chip that's labeled SUNBST. Exeger also likes to partner with e-peas, a Belgian chip company. For now I don't have more info, so I'll just leave this section a stub. </p>
+<h1 id="conclusion">Conclusion</h1>
+<p>Two interesting realizations I had during this:</p>
+<ol>
+<li>
+<p>The amount of power available in the environment (heat/light) has been fixed for millenia, but our devices have become steadily more efficient. The next generation of devices will not need charging, the one after that will not even need energy harvesting.</p>
+</li>
+<li>
+<p>All devices trend smaller over time, except for things that must conform to the human body (headphones, gloves, bracelets). All tools are made small to the extent that people can still manipulate and use them effectively.</p>
+</li>
+</ol>
+<p>My review of the Urbanista Los Angeles headphones: Excellent build quality, decent noise cancelling, slightly uncomfortable and cheap earmuffs. Panel testing will come in a later</p></body></html>]]></content:encoded>
+      <guid isPermaLink="true">https://andykong.org/blog/urbanista-teardown/</guid>
+      <pubDate>Sun, 01 Feb 2026 00:00:00 -0500</pubDate>
+    </item>
+    <item>
+      <title>Teardown of the Urbanista Los Angeles headphones</title>
+      <link>https://andykong.org/blog/urbanista-teardown%202/</link>
       <description>Removing another self-powering device from the world</description>
       <content:encoded><![CDATA[<html><body><p>Hello all, it's certainly been a while since my last post so I thought we'd do something fun. Because of my current startup, I'm really interested in consumer electronics which can power themselves. I've only found a few devices like this, and today we're gonna take one apart to see how they're implementing it.</p>
 <h1 id="background">Background</h1>
@@ -489,7 +532,7 @@ print(f"{label:24s} {ms:6.0f}ms")
 </li>
 </ol>
 <p>My review of the Urbanista Los Angeles headphones: Excellent build quality, decent noise cancelling, slightly uncomfortable and cheap earmuffs. Panel testing will come in a later</p></body></html>]]></content:encoded>
-      <guid isPermaLink="true">https://andykong.org/blog/urbanista-teardown/</guid>
+      <guid isPermaLink="true">https://andykong.org/blog/urbanista-teardown%202/</guid>
       <pubDate>Sun, 01 Feb 2026 00:00:00 -0500</pubDate>
     </item>
     <item>
@@ -535,7 +578,7 @@ print(f"{label:24s} {ms:6.0f}ms")
       <link>https://andykong.org/blog/qucsstudioinstall/</link>
       <description>RF circuit simulation without ANY piracy!</description>
       <content:encoded><![CDATA[<html><body><p>Hi, if you're reading this you must be truly desperate — casual readers would never ever click a blog post titled like this. Today I'm gonna walk you through running QUCS Studio on your Mac computer. </p>
-<p><img alt="" class="addpic" src="/static/qucsstudioinstall/0.jpg"/></p>
+<p><img alt="uSimmics 5.8 welcome window open on a Mac desktop" class="addpic" src="/static/qucsstudioinstall/0.jpg"/></p>
 <h1 id="background">Background</h1>
 <p>Software people love Apple, but real engineers use software that only runs on Windows. As an aspiring EE, I can usually get by for circuit/SPICE simulation via Paul Falstad's lovely <a href="https://www.falstad.com/circuit/circuitjs.html">CircuitJS</a> web calculator or LTSpice.app, but as I got into more high frequency stuff, there were rapidly fewer options. While Windows users get to pick from Microwave Office, Pathwave ADS, HFSS, or Cadence, Apple users get nothing at all. This software is big, bulky, and running it in a VM is painful. Luckily there are some smaller packages which can do the same simulation, such as QUCS-Studio (which looks very familiar for ADS users), but again, annoying to run in a VM. If not a VM, you might think of Wine for running an .exe, to which I can respond I've never ever gotten that to work for anything.</p>
 <p>However, recently I found a guide by Vanderson PC (<a href="https://www.vandersonpc.com/Qucstudio-on-MacOs/">link</a>, <a href="https://archive.is/SYlBm">mirror</a>) on running QUCS-Studio using PlayOnMac. I followed it diligently and it did not work either. This is because the guide is from 2017 and there have been a lot of MacOS breaking changes in the meantime, and PlayOnMac has not been so updated. However, the problems were solvable and I will share how.</p>
@@ -543,21 +586,21 @@ print(f"{label:24s} {ms:6.0f}ms")
 <p>Ok just do everything the guide says. Yes uSimmics 5.8 works even though the blog author is running QUCS-Studio 3.3.4</p>
 <h1 id="2-follow-the-guide-until-step-6">2. follow the guide until Step 6</h1>
 <p>On step 6, you are asked to select a Wine version. I don't have a wine version. The first step of this guide should be how to install a wine version on PlayOnMac.</p>
-<p><img alt="" class="addpic" src="/static/qucsstudioinstall/1.png"/></p>
+<p><img alt="Guide step 6: PlayOnMac wizard asking which Wine version to use, with only System in the list" class="addpic" src="/static/qucsstudioinstall/1.png"/></p>
 <p>Leave the configuration menu. Install a Wine version by going to Tools-&gt;Manage Wine versions. </p>
-<p><img alt="" class="addpic" src="/static/qucsstudioinstall/2.png"/></p>
+<p><img alt="PlayOnMac Tools menu with the Manage Wine versions item" class="addpic" src="/static/qucsstudioinstall/2.png"/></p>
 <p>If you're like me, the list on the left is empty. Pretty daunting. If it's still empty after 5s you have a problem.</p>
-<p><img alt="" class="addpic" src="/static/qucsstudioinstall/3.png"/></p>
+<p><img alt="PlayOnMac Wine versions manager with an empty Available Wine versions list on the left" class="addpic" src="/static/qucsstudioinstall/3.png"/></p>
 <p>After reading some <a href="https://www.playonmac.com/en/topic-17045-2.html">forums</a>, I realized that PlayOnMac makes some questionable code decisions. One of which is that all the URL requests have a 5s timeout and then fail silently. To figure out where it's failing, you exit PlayOnMac (Cmd+Q), open up a terminal and navigate to the .app file, and then run the application file from the terminal so you can see the debug messages (Find PlayOnMac.app, then run <code>./PlayOnMac.app/Contents/MacOS/playonmac</code>). It should boot normally. </p>
-<p><img alt="" class="addpic" src="/static/qucsstudioinstall/4.png"/></p>
+<p><img alt="Terminal output after launching the PlayOnMac binary directly, showing its startup debug messages" class="addpic" src="/static/qucsstudioinstall/4.png"/></p>
 <p>Now go to the Tool-&gt;Wine window again. If the list stays empty, you should see something like this:</p>
-<p><img alt="" class="addpic" src="/static/qucsstudioinstall/5.png"/></p>
+<p><img alt="Python traceback in WineVersionsFetcher.py ending in socket.timeout while downloading the phoenicis Wine list" class="addpic" src="/static/qucsstudioinstall/5.png"/></p>
 <p>So, you can check that the "phoenicis" URL is still active by just going to it using your browser. If it's still up, it just means that their server is slow and the request is just timing out locally. Go into the "WineVersionsFetcher.py" file and change the timeout to like 15 or 30 or 60 seconds. Then you'll get your Wine version downloaded.</p>
-<p><img alt="" class="addpic" src="/static/qucsstudioinstall/6.png"/></p>
+<p><img alt="WineVersionsFetcher.py source with the urlopen timeout argument raised to 15 seconds" class="addpic" src="/static/qucsstudioinstall/6.png"/></p>
 <p>After that continue following the guide. Other people on the forums had an issue where Wine wouldn't download properly, but you could download it yourself and move it into the directory it was supposed to be in and it'd work. Honestly I feel a bit like a battle medic when I'm doing edits like this, but y'know, it's gotta work. </p>
 <h1 id="step-3-finish-the-guide">Step 3. finish the guide.</h1>
 <p>Just follow the other guy's post, it's a good blog. No step should throw an error. </p>
-<p><img alt="" class="addpic" src="/static/qucsstudioinstall/7.png"/></p>
+<p><img alt="uSimmics schematic editor with a microstrip line circuit set up for an s-parameter simulation" class="addpic" src="/static/qucsstudioinstall/7.png"/></p>
 <p>Sorry for the lazy post, have fun simulating!</p></body></html>]]></content:encoded>
       <guid isPermaLink="true">https://andykong.org/blog/qucsstudioinstall/</guid>
       <pubDate>Sat, 31 May 2025 00:00:00 -0400</pubDate>
@@ -573,7 +616,7 @@ print(f"{label:24s} {ms:6.0f}ms")
 <hr/>
 <h1 id="whats-this-for">What's this for</h1>
 <p>Ok so sometimes you want to make your circuit small, or just well-integrated, and a messy breadboard takes up a lot of space and decreases your investability (Sometimes it increases it, see <a href="https://orbit.engineering/">Orbit's blog</a> for an example). In this situation you want to put the microcontroller on a custom PCB. Then programming gets complicated — the USB datastream from Arduino can't upload directly to most ICs, requiring a translator chip (USB-&gt;UART) to convert it, which is another chip to figure out. Or maybe cost is an issue. The RP2040 hits both targets, costing ~70c (as of 2025) and allowing direct USB input for programming. </p>
-<p><img alt="" class="addpic" src="/static/rp2040_bringup/1.png"/></p>
+<p><img alt="DigiKey product page for the Raspberry Pi RP2040 showing 42,381 in stock at 70 cents per unit" class="addpic" src="/static/rp2040_bringup/1.png"/></p>
 <h1 id="hardware">Hardware</h1>
 <h2 id="schematic">Schematic</h2>
 <p>First step is the schematic and layout. Most manufacturers publish a minimal set of components needed to run their chip, and RP2040 is no different. The schematic can be found <a href="http://www.technoblogy.com/show?3U75">on this blog</a> and I've ported the picture for posterity. </p>
@@ -585,7 +628,7 @@ print(f"{label:24s} {ms:6.0f}ms")
 <p>This board really is the minimal set, but there's a few more bits I'd add to make your life easier. For example, if BOOT is connected to GND on startup, the RP2040 goes into BOOTSEL mode, which you need in order to program it IF you also want to get debug messages over USB. So you should probably add a pushbutton bridging BOOT and GND. You might also want to do this for the RESET pin. Otherwise you'll have to do this with a paperclip or a pen spring.</p>
 <p>I'd also add an LED + resistor from the 3.3V supply, just so we can tell when the thing is on or not, and then another LED + resistor wired to an unused GPIO so we can use a Blink sketch to check if our uploads are working.</p>
 <h2 id="layout">Layout</h2>
-<p><img alt="" class="addpic" src="/static/rp2040_bringup/4.png"/></p>
+<p><img alt="PCB layout view of the RP2040 with traces fanning out from the chip and decoupling capacitors placed nearby" class="addpic" src="/static/rp2040_bringup/4.png"/></p>
 <p>There's a lot of recommendations on the datasheet for where to place everything, but really it comes down to priority. IMO everything should stay on the same plane as long as possible. High-speed stuff (crystal) needs to be quite close, and decoupling caps shouldn't be much further. For the flash and other sensors, proximity won't matter much.</p>
 <h1 id="embedded--software">Embedded / Software</h1>
 <p class="caption"> My board </p>
@@ -597,12 +640,12 @@ print(f"{label:24s} {ms:6.0f}ms")
 <p>Now you might be thinking to yourself, where do I get a .uf2 file? Ok so three ways I know of. </p>
 <h2 id="method-1-download-one">Method 1: download one</h2>
 <p>There's some basic "check functionality" sketches in the <a href="https://github.com/raspberrypi/pico-examples">raspberrypi/pico-examples github repo</a> which you can download and then upload directly. You can't edit these, but they let you check that the IC is soldered properly. </p>
-<p><img alt="" class="addpic" src="/static/rp2040_bringup/7.png"/></p>
+<p><img alt="Table of first example apps from the pico-examples repo, with links to prebuilt UF2 files for hello_usb and blink" class="addpic" src="/static/rp2040_bringup/7.png"/></p>
 <h2 id="method-2-arduino-ide">Method 2: Arduino IDE</h2>
 <p>Arduino IDE can actually generate uf2 files, you just have to go to Sketch and hit "Export compiled Binary". This will compile the program for the selected target board (Make sure you're on Tools -&gt; Board -&gt; Raspberry Pi RP2040 Boards -&gt; Generic RP2040) and saves it to the sketch folder. Just to to the sketch folder and drag+drop your uf2. </p>
 <p class="caption"> Export compiled Binary option exports as uf2 </p>
 <p><img alt="Export compiled Binary option exports as uf2" class="addpic" src="/static/rp2040_bringup/8.png"/></p>
-<p><img alt="" class="addpic" src="/static/rp2040_bringup/9.png"/></p>
+<p><img alt="Sketch folder in the file browser containing the exported sketch_may21a.ino.generic.uf2 file" class="addpic" src="/static/rp2040_bringup/9.png"/></p>
 <h2 id="method-3-build-it-yourself">Method 3: Build it yourself</h2>
 <p>Here I must admit I never really learned embedded in school, so my understanding of this is patchy. Basically you write your program in .c and .h files and compile them using Cmake + make. You 'include' libraries by telling <code>CMakeLists.txt</code> to link them, which CMake will pull from the pico-sdk (you need to tell CMake where this is too), at which point your programs will know where they are. Then all this gets compiled together into a binary .elf or .bin or .uf2 file by make. So the steps are, roughly:</p>
 <ol>
@@ -626,7 +669,7 @@ print(f"{label:24s} {ms:6.0f}ms")
 <h1 id="warning-i2cspiuartpwm-pins-are-baked-into-hardware-pio-isnt-but-parallel-reads-should-be-adjacent-pins">Warning: I2C/SPI/UART/PWM pins are baked into hardware. PIO isn't, but parallel reads should be adjacent pins</h1>
 <p>If you want to use the native I2C/SPI/UART functions, you should know that certain pins are destined to be SCL/SDA and not both. And if you use PWM, make sure your PWM outputs don't share a PWM object + channel (e.g. if two pins are PWM0 A, you will only be able to PWM from one at a time). Just check the datasheet, it'll save you a rev.</p>
 <p>PIO is out of the scope of this post, but is mappable to any pin. However, if you need to do a parallel read of 8 channels (like for a camera MIPI), the channels should be arranged in-order going to sequential in-order GPIOs. </p>
-<p><img alt="" class="addpic" src="/static/rp2040_bringup/10.png"/></p>
+<p><img alt="GPIO functions table from the RP2040 datasheet mapping each pin to fixed SPI, UART, I2C, and PWM roles" class="addpic" src="/static/rp2040_bringup/10.png"/></p>
 <h1 id="conclusion">Conclusion</h1>
 <p>Ok, relatively painless. Simple schematic, layout, and pretty straightforward embedded. RP2040 is a chip is nice, not particularly low-power, but lots of GPIO, communication channels, ADCs, and it's really cheap. But I'll let you know what I think in a few weeks once I've used it more. </p>
 <p>Cya!</p></body></html>]]></content:encoded>
@@ -641,18 +684,18 @@ print(f"{label:24s} {ms:6.0f}ms")
 <p>So if you can receive email at a custom domain (e.g. Namecheap offers free custom domain email forwarding) but can't send it, you can solve this. Gmail offers this service for free but has utterly gimped the setup guides, probably just to sell more Google Workspace. I'm gonna tell you how to do it because it's actually really simple. </p>
 <h2 id="1-first-navigate-to-gmail-then-hit-settings-then-hit-all-settings-then-go-to-accounts-and-imports">1. First navigate to Gmail, then hit settings, then hit all settings, then go to "Accounts and Imports"</h2>
 <p>Menu should look like this. Hit "Add another email address" to trigger a popup</p>
-<p><img alt="" class="addpic" src="/static/freebusinessemail/0.png"/></p>
+<p><img alt="Gmail Settings on the Accounts and Import tab, with the Add another email address link under Send mail as" class="addpic" src="/static/freebusinessemail/0.png"/></p>
 <h2 id="2-put-in-your-custom-email">2. Put in your custom email</h2>
-<p><img alt="" class="addpic" src="/static/freebusinessemail/1.png"/></p>
+<p><img alt="Gmail popup for adding another email address you own, with name and custom domain email filled in" class="addpic" src="/static/freebusinessemail/1.png"/></p>
 <h2 id="3-fill-out-smtp">3. Fill out SMTP</h2>
 <p>Use "smtp.gmail.com" and port 587, then add your current gmail address as the username (remove the @gmail.com). For password you'll need to make an app password. </p>
-<p><img alt="" class="addpic" src="/static/freebusinessemail/2.png"/></p>
+<p><img alt="SMTP server form filled with smtp.gmail.com, port 587, and a Gmail username, password still blank" class="addpic" src="/static/freebusinessemail/2.png"/></p>
 <p>An app password is basically a way to give an app access to your email without exposing your password. To make one, go to <a href="https://myaccount.google.com/">myaccount.google.com</a>, search for "App passwords" (you will not find it as a menu item), do a sign-in again, then make up a name and generate one.</p>
-<p><img alt="" class="addpic" src="/static/freebusinessemail/3.png"/></p>
+<p><img alt="Google Account search for app password, with App passwords appearing under the Security results" class="addpic" src="/static/freebusinessemail/3.png"/></p>
 <p>Copy that into the SMTP popup and hit Add Account:</p>
-<p><img alt="" class="addpic" src="/static/freebusinessemail/4.png"/></p>
+<p><img alt="Completed SMTP form with the app password pasted in, ready to hit the Add Account button" class="addpic" src="/static/freebusinessemail/4.png"/></p>
 <p>You are pretty much done. They will send a confirmation email to your custom domain, which, if your forwarding was really set up right, will go somewhere you can click it. From then on you can send emails from your custom domain fo free. Enjoy!</p>
-<p><img alt="" class="addpic" src="/static/freebusinessemail/5.png"/></p>
+<p><img alt="Gmail compose window with the From field set to the new custom domain address" class="addpic" src="/static/freebusinessemail/5.png"/></p>
 <hr/>
 <p>Guide mostly cribbed from the super-thorough but deleted Google Support guide backed up on wayback <a href="https://web.archive.org/web/20230326042630/https://support.google.com/domains/answer/9437157">here</a>. Why do they insist on making their products annoying to use? </p></body></html>]]></content:encoded>
       <guid isPermaLink="true">https://andykong.org/blog/freebusinessemail/</guid>
@@ -686,7 +729,7 @@ print(f"{label:24s} {ms:6.0f}ms")
 <p>Family people with a long lease. The days are the same, each one a joy. You catch up but nothing’s changed. Dog’s at the vet again for eating marbles. We’re rewatching House. We’re making dinner with zucchini from the weekend farmer’s market. </p>
 <h1 id="unstable-sure-pursuing">Unstable, sure: pursuing</h1>
 <p>Risking and failing, doing their work with a smile. Independence, installations and workshops, but also grant rejections, rent increases, food stamps. I’ll be at the VR conference next month. Oh yea, I work for Nintendo at the moment. I’ve been exploring wax as a sculptural medium.</p>
-<p><img alt="" class="addpic" src="/static/convictionmeme.png"/></p>
+<p><img alt="Meme 2x2 grid of stable vs unstable and sure vs unsure, each quadrant illustrated with a different image" class="addpic" src="/static/convictionmeme.png"/></p>
 <p>This is an incomplete lens, but it is possible to analyze your life through it, figure out where you are and where you want to be. And if you aren’t sure yet, I think everyone gets there when they’re older, or comes to terms with their inability to change anymore. Anyway, who am I to say? I am only 25.</p></body></html>]]></description>
       <guid isPermaLink="true">https://andykong.org/blog/conviction/</guid>
       <pubDate>Sat, 26 Oct 2024 00:00:00 -0400</pubDate>
@@ -694,6 +737,49 @@ print(f"{label:24s} {ms:6.0f}ms")
     <item>
       <title>Electronics Teardown: Stelo CGM</title>
       <link>https://andykong.org/blog/cgmteardown1/</link>
+      <description>Power testing a consumer continuous glucose monitor</description>
+      <content:encoded><![CDATA[<html><body><p>Hello everyone, </p>
+<p>Hope everything is well in your life. I'm working on my implants talk for Hackaday Supercon (more info <a href="https://hackaday.com/2024/09/17/2024-hackaday-superconference-speakers-round-one/">here</a>). As part of my research, I tried out the Stelo CGM by Dexcom, this is (I think) the first over-the-counter continuous glucose monitor. I'll tell you how it was and then we're gonna dissect this bad boy!</p>
+<p><img alt="Render of the Dexcom Stelo CGM, a small gray oval sensor on a white adhesive patch" class="addpic" src="/static/cgmteardown1/0.jpg"/></p>
+<h1 id="how-did-it-feel">How did it feel?</h1>
+<p>In a world where glucose monitors are &gt;100$ on Amazon sans insurance, Dexcom offers an affordable ($50) CGM with easily accessible data export, sampling your blood sugar every 5m and passing it to your phone via Bluetooth. The device lasts 15.5 days and comes in a kit of two, meaning annual glucose tracking can now be accomplished for ~1k USD.</p>
+<p><img alt="Looking into the round spring-loaded Stelo applicator held in hand, sensor visible at the bottom" class="addpic" src="/static/cgmteardown1/1.jpeg"/></p>
+<p>Deploying is done through this spring-loaded applicator, and is easy as pressing a button. A sharp, stiff needle in the cap punches a small hole in your arm and retracts, leaving behind the sensor body and a flexible needle with glucose oxidase coating. 15 days later, the app sends you an alert to replace it, and 12 hours after that it stops recording data. </p>
+<p>When I got this notification I went and got my teardown tools ready — nothing excites me more than opening a black box!</p>
+<h1 id="internal-pics">Internal pics</h1>
+<p><img alt="Stelo sensor with its gray rubber casing partly cut away, exposing the DEXCOM-marked circuit board" class="addpic" src="/static/cgmteardown1/2.jpeg"/></p>
+<p>I started out using a Dremel, but then realized the soft rubber casing is weak enough you can just use wire snippers. The board is quite thin and liable to break as you peel the rubber off, so I had to be careful. </p>
+<p><img alt="Fingers holding the thin round Stelo circuit board freed from its rubber casing" class="addpic" src="/static/cgmteardown1/3.jpeg"/></p>
+<p><img alt="Maxell CR1216 3V coin cell battery mounted on the opened Stelo sensor board" class="addpic" src="/static/cgmteardown1/4.jpeg"/></p>
+<p><img alt="Skin-facing side of the Stelo board, annotated with battery leads, needle leads, and a perimeter antenna" class="addpic" src="/static/cgmteardown1/5.jpeg"/></p>
+<h1 id="broad-architecture">Broad architecture</h1>
+<p>As far as I can tell, the glucose oxidase on the needle reacts with interstital glucose levels, turning your glucose concentration into a voltage. The Stelo uses an nRF52832 microcontroller to record this, waking up every 30 seconds to read the sensor and every 5 minutes to transmit the data to your phone/watch. The whole thing is powered by a coin cell battery, the Maxell CR1216 (<a href="https://www.maxell.com.tw/images/uploads/2014/10/CR1216_DataSheet_e.pdf">datasheet</a>), which claims a 25mAh capacity</p>
+<h2 id="question-1--are-we-getting-scammed-on-lifetime">Question 1 — are we getting scammed on lifetime?</h2>
+<p>One of the things I wanted to find out through this teardown was if the battery life was longer than the software claimed. 15 days is an incredibly square number, which led me to believe that Dexcom is "guaranteeing performance" by imposing an artificial software lifetime limit when the sensor could really go for longer.</p>
+<p><img alt="Fluke multimeter reading 2.959V across the coin cell removed from the Stelo" class="addpic" src="/static/cgmteardown1/6.jpeg"/></p>
+<p>Immediately after I took the sensor off, the battery still reads 2.95V, but since this battery sports an extraordinarily flat discharge curve I have little idea how much capacity is left. </p>
+<p><img alt="CR1216 datasheet discharge curves: voltage stays flat then drops sharply, shown for 120k, 1.2M, and 3.6M ohm loads" class="addpic" src="/static/cgmteardown1/7.png"/></p>
+<p>Since we can't tell by looking at the voltage, I powered the device using an external meter (Nordic PPK2) to find out how much power it draws. Here's the current consumption over 15 minutes:</p>
+<p><img alt="Current trace of the Stelo over 19 minutes: a high-current boot, then periodic spikes averaging about 11uA" class="addpic" src="/static/cgmteardown1/8.png"/></p>
+<p>After an initially high power boot for ~2 minutes, we reach steady operating conditions. Small spikes happen every 7.5 seconds, medium spikes every 30 seconds, and then large bursts of activity every 5 minutes denote Bluetooth activity (large bars on the ends). Average power consumption during steady-state is 8.7uA. If you'd like to see this power consumption data more granularly, feel free to email me for it. </p>
+<p><img alt="Zoomed steady-state current trace: small spikes every 7.5 and 30 seconds, averaging 8.65uA over a 5 minute window" class="addpic" src="/static/cgmteardown1/9.png"/></p>
+<p>Given its capacity of 25mAh, the battery on the Stelo could theoretically run it for 17 weeks continuously. However, nominal capacity assumes discharge down to 2V — while the nRF52832 microcontroller keeps working down to 1.7V, the other chips on this board may not. Let's say the board needs &gt;2.8V, then we can model our 8.7uA draw as a ~300kΩ load. On the battery curve given above, this corresponds to a lifetime of ~1000 hours, or about 5 weeks. Adding some margin for safety, we may indeed arrive at a reasonable lifetime of 15 days for this device.</p>
+<p><img alt="Current trace of one Bluetooth transmission: a dense burst of packet spikes lasting about 7 seconds, averaging 107uA" class="addpic" src="/static/cgmteardown1/11.png"/></p>
+<p>Oh also, here's what the power looks like during the Bluetooth transmission. It looks like &gt;50 packets, and averages 100uA for 7 seconds.</p>
+<h2 id="question-2-what-other-chips-are-in-this-thing">Question 2: What other chips are in this thing?</h2>
+<p><img alt="Top of the Stelo board annotated: nRF52832 microcontroller, mystery chips U78 and DCG7, BLE and NFC antennas, needle electrode" class="addpic" src="/static/cgmteardown1/10.jpeg"/></p>
+<p>The nRF is easily identified, but I cannot figure out what the other two are. The top has a small IC which seems to be connected to the larger antenna (possibly RFID?), and when I look up U78 it turns up an UHF amplifier (possible) with a different package, the 3SK206. But UHF antennas are pretty big usually, at least bigger than the Bluetooth one. </p>
+<p>The other big chip might be an analog frontend for the glucose needle electrode (the traces for that go right towards it). If so, it's amplifying the readout voltage from the glucose sensor before being digitized by the nRF, but again I could not figure out the specific part. Closest part marking I could find was a step-up converter, but that doesn't seem likely.</p>
+<h2 id="question-3-whats-the-bom">Question 3: What's the BOM?</h2>
+<p>I'm pretty interested in this, just because I like knowing internal info about consumer products. But until I figure out the other chips, I can't really give a good estimate for cost. I also have no idea what the encasement or needle or assembly cost, and the app is pretty nice too and that can't be easily included in cost of the product. The stuff I do know: the nRF costs about 2-3$ in bulk, passives I can't imagine exceed 50 cents in total, and the board is likely under 1$. I'm not too bummed by cost however, since in France the Libre Freestyle 2 is 40 Euro and I can't imagine them making much money over there. </p>
+<h1 id="conclusion">Conclusion</h1>
+<p>Knowing that the total power consumption is 8.7uA at 3V (~30uW) I think we can power this device using energy harvesting. For reference, I've seen a 4cm^2 solar panel receive nearly 3 mW in direct sunlight. Imagine a permanent CGM, powered simply by going outside in the sun for 15 minutes a day. What a life!</p></body></html>]]></content:encoded>
+      <guid isPermaLink="true">https://andykong.org/blog/cgmteardown1/</guid>
+      <pubDate>Sun, 06 Oct 2024 00:00:00 -0400</pubDate>
+    </item>
+    <item>
+      <title>Electronics Teardown: Stelo CGM</title>
+      <link>https://andykong.org/blog/cgmteardown1%202/</link>
       <description>Power testing a consumer continuous glucose monitor</description>
       <content:encoded><![CDATA[<html><body><p>Hello everyone, </p>
 <p>Hope everything is well in your life. I'm working on my implants talk for Hackaday Supercon (more info <a href="https://hackaday.com/2024/09/17/2024-hackaday-superconference-speakers-round-one/">here</a>). As part of my research, I tried out the Stelo CGM by Dexcom, this is (I think) the first over-the-counter continuous glucose monitor. I'll tell you how it was and then we're gonna dissect this bad boy!</p>
@@ -731,7 +817,7 @@ print(f"{label:24s} {ms:6.0f}ms")
 <p>I'm pretty interested in this, just because I like knowing internal info about consumer products. But until I figure out the other chips, I can't really give a good estimate for cost. I also have no idea what the encasement or needle or assembly cost, and the app is pretty nice too and that can't be easily included in cost of the product. The stuff I do know: the nRF costs about 2-3$ in bulk, passives I can't imagine exceed 50 cents in total, and the board is likely under 1$. I'm not too bummed by cost however, since in France the Libre Freestyle 2 is 40 Euro and I can't imagine them making much money over there. </p>
 <h1 id="conclusion">Conclusion</h1>
 <p>Knowing that the total power consumption is 8.7uA at 3V (~30uW) I think we can power this device using energy harvesting. For reference, I've seen a 4cm^2 solar panel receive nearly 3 mW in direct sunlight. Imagine a permanent CGM, powered simply by going outside in the sun for 15 minutes a day. What a life!</p></body></html>]]></content:encoded>
-      <guid isPermaLink="true">https://andykong.org/blog/cgmteardown1/</guid>
+      <guid isPermaLink="true">https://andykong.org/blog/cgmteardown1%202/</guid>
       <pubDate>Sun, 06 Oct 2024 00:00:00 -0400</pubDate>
     </item>
     <item>
@@ -745,15 +831,15 @@ print(f"{label:24s} {ms:6.0f}ms")
 <p class="caption"> [source](https://www.atonometrics.com/applications/what-is-a-pv-module-iv-curve/) </p>
 <p><img alt="source" class="addpic" src="/static/eetestr1801k/0.png"/></p>
 <p>For my device, the TI BQ25570 is nearly perfect — it offers MPPT and starts from only 600 mV. However, it requires a certain amount of power to start up, around 15 uW. Since I'm expecting almost no light on my device, I wanted to find a chip which starts from even less power. This is where the R1801K comes in — this is a chip made by Nisshinbo that claims to begin harvesting at only 1 uW!</p>
-<p><img alt="" class="addpic" src="/static/eetestr1801k/1.png"/></p>
+<p><img alt="Datasheet excerpt for the Nisshinbo R1801K energy harvesting chip in a 3.0 by 2.7 mm DFN package" class="addpic" src="/static/eetestr1801k/1.png"/></p>
 <p>The only catch is that it requires 4 V, but I think the voltage will be easier to get than the power. So I bought the chip, and my friend Injoo made a little breakout board for me which pulls charge from solar cell into a storage capacitor. </p>
-<p><img alt="" class="addpic" src="/static/eetestr1801k/2.jpg"/></p>
+<p><img alt="Front and back of a small milled copper breakout board for the R1801K, laid on a ruler for scale" class="addpic" src="/static/eetestr1801k/2.jpg"/></p>
 <p>To simulate a constrained power source, I'm passing 4 V across a 1 MΩ resistor, resulting in an output power of 16 uW. Then I connected my board.</p>
-<p><img alt="" class="addpic" src="/static/eetestr1801k/3.jpeg"/></p>
+<p><img alt="Bench power supply feeding the breakout board through an in-line resistor, with a scope probe attached" class="addpic" src="/static/eetestr1801k/3.jpeg"/></p>
 <p>Initially, the storage capacitor filled up steadily, but at some point my capacitor voltage was just holding still. To compensate, I increased my power supply voltage and the charging started again. Again, after a bit the charging would stop. </p>
-<p><img alt="" class="addpic" src="/static/eetestr1801k/4.jpeg"/></p>
+<p><img alt="Oscilloscope screen showing the storage capacitor voltage flatlining at an average of 1.31 V" class="addpic" src="/static/eetestr1801k/4.jpeg"/></p>
 <p>I was powering the device on 4.8V, and the output voltage could go no further than 1.5V. I realized at this point that my capacitor was probably leaking, and checked out the datasheet. Lo and behold, a leakage current of 12.6 uA! Assuming this happens at the rated voltage (6.3 V), then the capacitor's resistance is 500kΩ. This meant the R1801K was desperately pumping in charge which was being leaked out at the same rate by the capacitor, and at 1.5V, that rate was 3uA. </p>
-<p><img alt="" class="addpic" src="/static/eetestr1801k/5.png"/></p>
+<p><img alt="Capacitor datasheet ratings table with the 100 uF 6.3 V part highlighted, showing 12.6 uA leakage current" class="addpic" src="/static/eetestr1801k/5.png"/></p>
 <p>Because this is pretty close to the max current that the R1801K has access to (4.8V/1MΩ = 4.8uA), I'm pretty happy with the performance of this chip even though it couldn't overcome the leakiness of my capacitor. I now also have to think about alternative energy storage methods like SMD solid-state batteries, which are a lot less straightforward to buy. But hey, limitation breeds creativity. </p>
 <h1 id="big-picture">Big picture</h1>
 <p>I'm currently working on an energy harvesting device for my Hackaday talk coming up in November, and in the process I need to evaluate a bunch of the elements of an energy harvesting device (solar/RF/thermal, harvesting chips, storage methods, low-powered microcontrollers, communication methods). I don't think it'll be worth it to try out everything from every category, but I still love testing out chips just to make sure they do what they say on the tin. Anyway, cya later!</p></body></html>]]></content:encoded>
@@ -765,7 +851,7 @@ print(f"{label:24s} {ms:6.0f}ms")
       <link>https://andykong.org/blog/eee/</link>
       <description>Popup City No. 2</description>
       <content:encoded><![CDATA[<html><body><p>Hello! Again I have returned from a distant land with tales from a popup community. This city was/is called <a href="https://www.edgeesmeralda.com/">Edge Esmerelda</a>, and is/was located in Healdsburg, CA.  </p>
-<p><img alt="" class="addpic" src="/static/eee/0.png"/></p>
+<p><img alt="Palm tree rising among leafy green trees under a blue sky dotted with clouds in Healdsburg" class="addpic" src="/static/eee/0.png"/></p>
 <p>In part, going was an experiment. I remember reading someone's blog post about "asking favors/questions you are SURE will be refused" as a way to make sure you really know the bounds of your social position (a la <a href="https://www.youtube.com/watch?v=vKA4w2O61Xo">Veritasium</a>) — I did this about a year ago when I asked 3 people if I could borrow 20,000 Swiss Francs so I could stay in Switzerland. None of them had it, but all of them said yes.</p>
 <p>Regarding Edge Esmerelda, I had just recently gone to SF and did not really want to go back so soon, but decided that if it was free then I would. I DM'd one of the organizers and asked if I could come for a week if I sorted my own housing, and they were very generous to me. Every time I do this exercise I am surprised.</p>
 <p>Anyway. Here's what</p>
@@ -790,7 +876,7 @@ print(f"{label:24s} {ms:6.0f}ms")
 <p>I gave a talk on implants</p>
 </li>
 </ul>
-<p><img alt="" class="addpic" src="/static/eee/1.png"/></p>
+<p><img alt="Title slide of the Primer on Implants talk given by Andy Kong at Edge Esmerelda, June 2024" class="addpic" src="/static/eee/1.png"/></p>
 <ul>
 <li>
 <p>Showed off my holograms to a ton of people</p>
@@ -799,15 +885,15 @@ print(f"{label:24s} {ms:6.0f}ms")
 <p>Experienced my first Pilates session</p>
 </li>
 </ul>
-<p><img alt="" class="addpic" src="/static/eee/2.jpeg"/></p>
+<p><img alt="Pilates class holding side planks on mats in a sunny mirrored studio" class="addpic" src="/static/eee/2.jpeg"/></p>
 <ul>
 <li>learned you can 3d print spring-y stuff, like this knife!</li>
 </ul>
-<p><img alt="" class="addpic" src="/static/eee/4.jpeg"/></p>
+<p><img alt="Black 3D printed retractable knife with a springy serpentine flexure in the handle, held in one hand" class="addpic" src="/static/eee/4.jpeg"/></p>
 <ul>
 <li>Stayed at Hotel Anson for 3 nights where I made friends with Canadians and non-Canadians alike</li>
 </ul>
-<p><img alt="" class="addpic" src="/static/eee/3.jpeg"/></p></body></html>]]></content:encoded>
+<p><img alt="Four friends in matching red shirts dancing together in a hotel room" class="addpic" src="/static/eee/3.jpeg"/></p></body></html>]]></content:encoded>
       <guid isPermaLink="true">https://andykong.org/blog/eee/</guid>
       <pubDate>Tue, 25 Jun 2024 00:00:00 -0400</pubDate>
     </item>
@@ -817,20 +903,68 @@ print(f"{label:24s} {ms:6.0f}ms")
       <description>Browser meta-war</description>
       <content:encoded><![CDATA[<html><body><p>Hello. Today I'm going to tell you about a work-style switch I made about a year ago. First, a tangent.</p>
 <h1 id="tangent">Tangent</h1>
-<p><img alt="" class="addpic" src="/static/monochrome/0.jpeg"/></p>
+<p><img alt="macOS Mission Control showing many app windows crowded onto a single desktop" class="addpic" src="/static/monochrome/0.jpeg"/></p>
 <p>In 2021, I watched a coworker swipe up their Mission Control page to reveal ~20 different applications all on the same desktop. Extremely surprised, I asked why they did that, and they said it was faster. At the time, thought of only using 1 desktop was alien to me because I segregated each work subject into a different desktop (PCBs, software, messenger apps).</p>
 <p>Later I realized multiple desktops actually do suck — there's a 0.5-1 second delay when switching desktops which cannot be reduced, and my ProMotion 120Hz screen never turns on when I have multiple desktops. This is, I think, a hard limitation meant to guarantee the OS has enough time to shift memory around and load up the main apps in the new window. But it slowed me down, and then I started using a single desktop. </p>
 <h1 id="main-point">Main point</h1>
 <p>I used to do the same thing with my Chrome tabs. 100 tabs spread across 4 windows, constantly alt-tabbing through to find the right one. One for electronics, one for articles and blog posts, one for wikipedia pages to read, etc. This was a bad strat, but at the time I felt "organized". </p>
 <p>But the same thing was true for multiple Desktops, why not apply the same lessons? Now I just keep one window open. If it gets cluttered, I go through and clear it out. Article? Read and close it. Personal blog you want to correspond with? Write them an email and close it. If you don't have time now, just save it in a Google doc or the Notes app, I'm sure you'll get back to it, if it's so important <em>wink wink</em></p>
-<p><img alt="" class="addpic" src="/static/monochrome/1.png"/></p>
+<p><img alt="Single Chrome tab strip holding about a dozen tabs for email, docs, and papers" class="addpic" src="/static/monochrome/1.png"/></p>
 <p>As an example, my current window (above) is just stuff I need to take notes on. These are all the tabs I have open. Contrast with my old "Session Buddy" saved tab lists which I've never ever looked twice at:</p>
-<p><img alt="" class="addpic" src="/static/monochrome/2.png"/></p>
-<p><img alt="" class="addpic" src="/static/monochrome/3.png"/></p>
+<p><img alt="Saved tab collection named before apple with 55 links, created 3 years ago" class="addpic" src="/static/monochrome/2.png"/></p>
+<p><img alt="Sidebar of stale saved tab collections, every one created 3 years ago" class="addpic" src="/static/monochrome/3.png"/></p>
 <p>Imagine, I have hundreds of these lists, totally rotting in there. </p>
 <p>Seize the day, close those tabs, and take back the RAM for the important stuff: your buttery-smooth 120Hz screen refresh rate </p></body></html>]]></content:encoded>
       <guid isPermaLink="true">https://andykong.org/blog/monochrome/</guid>
       <pubDate>Wed, 12 Jun 2024 00:00:00 -0400</pubDate>
+    </item>
+    <item>
+      <title>Practical Quantified Self Data Analysis, Pt. 1</title>
+      <link>https://andykong.org/blog/pqsda1%202/</link>
+      <description>Functions you'll need</description>
+      <content:encoded><![CDATA[<html><body><p>Hello! Today I'll walk you through my data analysis pipeline for my personal time series data. </p>
+<p>The problem with personal data is that it's more of a hobby than a rigorous industrial process — as such, the sensors give patchy, inconsistent data which is hard to align across time. Another issue is the movement of humans vs. the immobility of some sensors means individualized corrections must be made for each type of data depending on the source (air quality reported from your bedroom must be filtered by location, however your watch does not).</p>
+<p>This is going to be a ~3 part series on what functions, broadly, are needed for a complete data analysis suite. I'm going to share my philosophy on this analysis and some code gists, but everything should be simple enough to adapt to other formats/libraries/languages. Let's begin!</p>
+<h1 id="analysis">Analysis</h1>
+<p>In my system, there are only two kinds of data: continuous data (heart rate, CO2, location) and event data (daily HRV, sleep session, coffee intake). They differ mainly by the frequency that the data is sampled. For me, here are the main kinds of graphs that I'm interested in producing:</p>
+<ol>
+<li>
+<p>Continuous vs. continuous (e.g. blood glucose vs. heart rate, scatterplot)</p>
+</li>
+<li>
+<p>Continous after event (heart rate after drinking coffee, time series)</p>
+</li>
+<li>
+<p>Continuous vs. event (average tetris score vs. previous sleep duration, scatterplot) </p>
+</li>
+<li>
+<p>Event vs. event (daily HRV vs. sleep duration, scatterplot)</p>
+</li>
+<li>
+<p>Event average after event (sleep quality after working out, bar chart)</p>
+</li>
+</ol>
+<p>These are not many, and they cover much of what is needed. Interestingly enough, these can all be constructed through the use of two functions. </p>
+<h1 id="function-1-interpolation-by-timestamp-analyses-1-4">Function 1: Interpolation by timestamp (Analyses 1, 4)</h1>
+<p>Most continuous sensors will not share timestamps, so you will need to align them (tossing stuff that doesn't line up perfectly) or "align them" (interpolate the denser value with a sparser one to get matching rows). Since we don't usually have a ton of data to spare, we go for interpolation. The code is simple, and just uses <code>np.interpolate</code></p>
+<p><img alt="Code snippet of the interpolateWith function signature, which interpolates one Steward's data with another's" class="addpic" src="/static/pqsda1/0.png"/></p>
+<p>This is preferred for continuous vs. continous, but for event vs. event much can happen on longer timescales so I think interpolation is quite lossy. </p>
+<h1 id="function-2-select-around-timestamp-analyses-2-3-5">Function 2: Select around timestamp (Analyses 2, 3, 5)</h1>
+<p>Since these analyses all use event data, we will select y-variable data that lines up with the event timestamp. This function just slices out time ranges from the y-variable that are specific offsets from each x-variable event. </p>
+<p><img alt="Code snippet of the selectAround function signature with eventTimes, beforeHours, afterHours, and cutoff arguments" class="addpic" src="/static/pqsda1/1.png"/></p>
+<p>Once each time range is found, we toss the ranges with zero elements and then have a list of dataframes. Just for fun, I added an "eventOffset" column for each sample so we can <code>hstack</code> them into a single DataFrame if desired. Here's one element from the list of my heart rate dataframes. </p>
+<p><img alt="" class="addpic" src="/static/pqsda1/2.png"/></p>
+<p>The <code>a</code> variable was created by running <code>a = s1.selectAround(doseTimes, beforeHours=2, afterHours=4)</code>, selecting time ranges that included each doseTime and data from 2 hours before and 4 hours after. Once the list is made, you can just plot each time range on the same graph:</p>
+<p><img alt="" class="addpic" src="/static/pqsda1/3.png"/></p>
+<p>Or more cleanly, plot a smoothed mean of the same data:</p>
+<p><img alt="" class="addpic" src="/static/pqsda1/4.png"/></p>
+<p>Another fantastic use case of <code>selectAround</code> is that I can select data that happened exclusively after or before an event time. For instance, if I wanted to see all sleep sessions happening within 6 hours of a caffeine event, I could run <code>sleep.selectAround(doseTimes, 0, 6, cutoff=0, surroundRequired=False)</code> and get the list of every time that happened. The inclusion of the <code>timeOffset</code> col also means I can scatterplot the sleep data once selected:</p>
+<p><img alt="" class="addpic" src="/static/pqsda1/5.png"/></p>
+<p><code>selectAround</code> also offers negative lookback and lookahead, so you can do whatever you need. </p>
+<h1 id="conclusion">Conclusion</h1>
+<p>Anyway, I think these two primitives are all you need to find any personal insights you might wish. You may also want to use filters (air quality data bool'd by location, or sleep session filtered by coffee consumption), but that will be saved for the next post.</p></body></html>]]></content:encoded>
+      <guid isPermaLink="true">https://andykong.org/blog/pqsda1%202/</guid>
+      <pubDate>Tue, 07 May 2024 00:00:00 -0400</pubDate>
     </item>
     <item>
       <title>Practical Quantified Self Data Analysis, Pt. 1</title>
@@ -861,19 +995,19 @@ print(f"{label:24s} {ms:6.0f}ms")
 <p>These are not many, and they cover much of what is needed. Interestingly enough, these can all be constructed through the use of two functions. </p>
 <h1 id="function-1-interpolation-by-timestamp-analyses-1-4">Function 1: Interpolation by timestamp (Analyses 1, 4)</h1>
 <p>Most continuous sensors will not share timestamps, so you will need to align them (tossing stuff that doesn't line up perfectly) or "align them" (interpolate the denser value with a sparser one to get matching rows). Since we don't usually have a ton of data to spare, we go for interpolation. The code is simple, and just uses <code>np.interpolate</code></p>
-<p><img alt="" class="addpic" src="/static/pqsda1/0.png"/></p>
+<p><img alt="Code snippet of the interpolateWith function signature, which interpolates one Steward's data with another's" class="addpic" src="/static/pqsda1/0.png"/></p>
 <p>This is preferred for continuous vs. continous, but for event vs. event much can happen on longer timescales so I think interpolation is quite lossy. </p>
 <h1 id="function-2-select-around-timestamp-analyses-2-3-5">Function 2: Select around timestamp (Analyses 2, 3, 5)</h1>
 <p>Since these analyses all use event data, we will select y-variable data that lines up with the event timestamp. This function just slices out time ranges from the y-variable that are specific offsets from each x-variable event. </p>
-<p><img alt="" class="addpic" src="/static/pqsda1/1.png"/></p>
+<p><img alt="Code snippet of the selectAround function signature with eventTimes, beforeHours, afterHours, and cutoff arguments" class="addpic" src="/static/pqsda1/1.png"/></p>
 <p>Once each time range is found, we toss the ranges with zero elements and then have a list of dataframes. Just for fun, I added an "eventOffset" column for each sample so we can <code>hstack</code> them into a single DataFrame if desired. Here's one element from the list of my heart rate dataframes. </p>
-<p><img alt="" class="addpic" src="/static/pqsda1/2.png"/></p>
+<p><img alt="Polars DataFrame of heart rate rows with bpm, confidence, timestamp, and eventOffset columns spanning -2h to +4h" class="addpic" src="/static/pqsda1/2.png"/></p>
 <p>The <code>a</code> variable was created by running <code>a = s1.selectAround(doseTimes, beforeHours=2, afterHours=4)</code>, selecting time ranges that included each doseTime and data from 2 hours before and 4 hours after. Once the list is made, you can just plot each time range on the same graph:</p>
-<p><img alt="" class="addpic" src="/static/pqsda1/3.png"/></p>
+<p><img alt="Dozens of translucent heart rate time series overlaid on one plot, forming a noisy band around 80 bpm" class="addpic" src="/static/pqsda1/3.png"/></p>
 <p>Or more cleanly, plot a smoothed mean of the same data:</p>
-<p><img alt="" class="addpic" src="/static/pqsda1/4.png"/></p>
+<p><img alt="Smoothed mean heart rate curve rising from 70 to about 80 bpm around the caffeine stimulus marked at time zero" class="addpic" src="/static/pqsda1/4.png"/></p>
 <p>Another fantastic use case of <code>selectAround</code> is that I can select data that happened exclusively after or before an event time. For instance, if I wanted to see all sleep sessions happening within 6 hours of a caffeine event, I could run <code>sleep.selectAround(doseTimes, 0, 6, cutoff=0, surroundRequired=False)</code> and get the list of every time that happened. The inclusion of the <code>timeOffset</code> col also means I can scatterplot the sleep data once selected:</p>
-<p><img alt="" class="addpic" src="/static/pqsda1/5.png"/></p>
+<p><img alt="Scatterplot of hours of sleep versus hours since last caffeine, with longer sleep after longer caffeine gaps" class="addpic" src="/static/pqsda1/5.png"/></p>
 <p><code>selectAround</code> also offers negative lookback and lookahead, so you can do whatever you need. </p>
 <h1 id="conclusion">Conclusion</h1>
 <p>Anyway, I think these two primitives are all you need to find any personal insights you might wish. You may also want to use filters (air quality data bool'd by location, or sleep session filtered by coffee consumption), but that will be saved for the next post.</p></body></html>]]></content:encoded>
@@ -900,7 +1034,7 @@ print(f"{label:24s} {ms:6.0f}ms")
 <p>If the tape is instead placed over the next piece, this line only gets worse. I cannot recommend this method cause it really sucks. </p>
 <p class="caption"> Overlapping tape backing </p>
 <p><img alt="Overlapping tape backing" class="addpic" src="/static/hologramblackout/2.jpg"/></p>
-<p><img alt="" class="addpic" src="/static/hologramblackout/3.jpg"/></p>
+<p><img alt="Close-up of the hologram plate showing the visible seam ridge where overlapping tape pieces meet" class="addpic" src="/static/hologramblackout/3.jpg"/></p>
 <h1 id="paint">Paint</h1>
 <p>Lastly, I tried a matte black spray paint. One nice thing about this is that we don't really care about the finish on the back side so you can spray a pretty thick single coat. Here is a sheet I taped and spray-painted for comparison. </p>
 <p class="caption"> Holograph plate taped (left) and spray painted (right) </p>
@@ -924,7 +1058,7 @@ print(f"{label:24s} {ms:6.0f}ms")
 <p class="caption"> 60ms delay after startup on the ATtiny. Blue is power rail, yellow is the signal out </p>
 <p><img alt="60ms delay after startup on the ATtiny. Blue is power rail, yellow is the signal out" class="addpic" src="/static/attinyfuses/1.png"/></p>
 <p>Digging into the datasheet, I found that by default the ATtiny waits 64ms after startup to give the clock time to stabilize. While this is all nice and good, I don't have that kind of power to waste! This could be changed to 4ms or 0ms by setting the LFUSE (datasheet page 26), but I had no idea how — all I knew were the options on the Arduino IDE. From more reading, I learned that the fuses were what changed every time I altered the clock frequency or other pre-code options then hit Burn Bootloader, but I still didn't know how to upload non-common options.</p>
-<p><img alt="" class="addpic" src="/static/attinyfuses/2.png"/></p>
+<p><img alt="ATtiny datasheet table of start-up times with the default 64 ms additional delay highlighted" class="addpic" src="/static/attinyfuses/2.png"/></p>
 <h1 id="custom-fuses">Custom fuses</h1>
 <h2 id="burn-bootloader-command-from-the-cli">Burn Bootloader command from the CLI</h2>
 <p>On a forum post someone mentioned you could burn the fuses from the command line using the same command that the Arduino IDE used to burn the bootloader (fuses included). To get the starter command, you can go to Settings-&gt;verbose output and turn it on for upload. Next time you hit the Tools-&gt;Burn Bootloader button, at the very top of the stdout box will be the command that the IDE tried to run.</p>
@@ -935,9 +1069,9 @@ print(f"{label:24s} {ms:6.0f}ms")
 <p><img alt="Pretty-printed Burn Bootloader command from the previous image" class="addpic" src="/static/attinyfuses/4.png"/></p>
 <h2 id="determining-fuse-byte-values">Determining fuse byte values</h2>
 <p>One way to set the fuses is to figure out exactly which bits of the LFUSE bytes alter the startup time. In my case, SUT should be 00 for 0ms delay, meaning the right byte should be changed in LFUSE (0x62 above). This approach is possible albeit annoying, and I worried that I had the wrong endian-ness all the time.</p>
-<p><img alt="" class="addpic" src="/static/attinyfuses/5.png"/></p>
+<p><img alt="Fuse Low Byte datasheet table with the SUT1 and SUT0 start-up time bits highlighted" class="addpic" src="/static/attinyfuses/5.png"/></p>
 <p>The second time, I realized there were several fuse calculators webpages (like <a href="https://eleccelerator.com/fusecalc/fusecalc.php?chip=attiny85">this</a> or <a href="https://www.engbedded.com/fusecalc/">this</a>) where you could pick the options and it would auto-generate the correct fuse value. Super!</p>
-<p><img alt="" class="addpic" src="/static/attinyfuses/6.png"/></p>
+<p><img alt="Online AVR fuse calculator with preset dropdowns and per-bit checkboxes generating the fuse byte values" class="addpic" src="/static/attinyfuses/6.png"/></p>
 <p>Once you figure out the fuse bytes, just edit the original Arduino IDE string to include the new values for the appropriate fuses. You can then just run the command in your computer's terminal to set the new fuses on your ATtiny. </p>
 <p>In my case, I just changed the 0x62 in -Ulfuse to 0x42. Now my startup time is &lt;1ms!</p>
 <p class="caption"> No more startup delay </p>
@@ -991,7 +1125,7 @@ print(f"{label:24s} {ms:6.0f}ms")
 <p class="caption"> ICNIRP guidelines were probably not read by the creator of this meme </p>
 <p><img alt="ICNIRP guidelines were probably not read by the creator of this meme" class="addpic" src="/static/icnirp/babies.png"/></p>
 <p>ICNIRP is an international non-profit made up of random scientists who enjoy quantifying electromagnetic radiation safety. They read the most up-to-date literature every few years and compile a large guidelines doc describing limits of what the human body. These guidelines are then used by researchers and government regulatory bodies to establish safe legal bounds on human-EM exposure.</p>
-<p><img alt="" class="addpic" src="/static/icnirp/0.png"/></p>
+<p><img alt="ICNIRP logo of the International Commission on Non-Ionizing Radiation Protection" class="addpic" src="/static/icnirp/0.png"/></p>
 <h1 id="why-did-you-read-this-dry-and-boring-safety-text">Why did you read this dry and boring safety text?</h1>
 <p>Recently, I needed to describe the safety of an electromagnetic system that interacted with the human body. To do so, I needed to show that the design conformed to the ICNIRP guidelines — this was a task I had been putting off in case A) the system wasn't actually safe, or B) the guidelines would be complex and hard to understand. </p>
 <p>I was close to giving up in favor of relying on a secondary source's interpretation of the ICNIRP guidelines, but in a moment of clarity, I decided to first give the primary text my best crack. And thank goodness! The text is full of interesting little details, explanations of why the limits are what they are, and the different ways EM radiation can damage the human body. I found the info I needed and got out, but I found the guidelines so interesting that I told myself I'd revisit them after my deadline. </p>
@@ -1006,7 +1140,7 @@ print(f"{label:24s} {ms:6.0f}ms")
 <p>At higher frequencies &gt;10MHz, damage from tissue heating (3) happens way before cell permeability changes (2), so we can ignore 2 as long as we respect the guidelines for (3). At lower frequencies &lt;10MHz, nerve activation (1) happens way before the permeability stuff (2), so again we can ignore 2 as long as we follow the guidelines for (1). At 10MHz, changes in permeability kill you immediately (just joking)</p>
 </li>
 </ul>
-<p><img alt="" class="addpic" src="/static/icnirp/1.png"/></p>
+<p><img alt="Guideline excerpt: membrane permeability changes at 18 GHz need circa 5 kW per kg, far beyond thermal harm levels" class="addpic" src="/static/icnirp/1.png"/></p>
 <ul>
 <li>
 <p>The frequencies that can affect nerves are limited to ~100kHz and are described by participants as tingling. As frequency increases to 10MHz, this sensation becomes one of "warmth" and we start to care more about thermal safety. Nerve effects are mainly described in the other ICNIRP doc for lower frequencies.</p>
@@ -1018,48 +1152,48 @@ print(f"{label:24s} {ms:6.0f}ms")
 <p>Humans' core body temperature is 37°C and can vary up to 1°C throughout a day. Correspondingly, the guidelines try to keep EM radiation exposure below a power level that increases body temperature 1°C (as a conservative limit, they actually try to keep it under 0.1°C). At the 100kHz-6GHz range, a SAR of approximately 6 W/kg leads to a core body temperature increase of 1°C. The issue with increased body temperature is that the heart has to work harder and it causes more accidents</p>
 </li>
 </ul>
-<p><img alt="" class="addpic" src="/static/icnirp/2.png"/></p>
-<p><img alt="" class="addpic" src="/static/icnirp/3.png"/></p>
+<p><img alt="Guideline excerpt: whole-body SAR limits protect against increased cardiovascular load from restricting core temperature rise" class="addpic" src="/static/icnirp/2.png"/></p>
+<p><img alt="Guideline excerpt: accident risk rises with hyperthermia, and core temperatures above 40 degrees C can cause fatal heat stroke" class="addpic" src="/static/icnirp/3.png"/></p>
 <ul>
 <li>From this we also learn that children can dissipate heat better than adults and therefore have a higher SAR threshold.</li>
 </ul>
-<p><img alt="" class="addpic" src="/static/icnirp/4.png"/></p>
-<p><img alt="" class="addpic" src="/static/icnirp/5.png"/></p>
+<p><img alt="Guideline excerpt: children need a higher SAR for the same temperature rise due to more-efficient heat dissipation" class="addpic" src="/static/icnirp/4.png"/></p>
+<p><img alt="Guideline excerpt: child models showed 35% smaller core temperature rises than adults, thanks to higher surface-to-mass ratio" class="addpic" src="/static/icnirp/5.png"/></p>
 <ul>
 <li>ICNIRP also gives us a neat reference for how much power an adult human uses normally. At rest 1W/kg, at stand 2W/kg, and 12W/kg running. I guess this means standing desks actually work?</li>
 </ul>
-<p><img alt="" class="addpic" src="/static/icnirp/6.png"/></p>
+<p><img alt="Guideline excerpt: an adult generates about 1 W per kg at rest, nearly 2 W per kg standing, and 12 W per kg running" class="addpic" src="/static/icnirp/6.png"/></p>
 <ul>
 <li>Earlier I mentioned the distinction between surface and deep tissue EM energy absorption. The doc elaborates that at 6GHz, 86% of the power is absorbed in the first 8mm of skin. Surface heating is also less worrisome because we can get rid of it more easily.</li>
 </ul>
-<p><img alt="" class="addpic" src="/static/icnirp/7.png"/></p>
+<p><img alt="Guideline excerpt: above 6 GHz heating is superficial, with 86% of power absorbed within 8 mm of the skin surface" class="addpic" src="/static/icnirp/7.png"/></p>
 <ul>
 <li>More tangential trivia, almost all human tissues get damaged beyond 42°C, exhibiting very little interperson variation. To respect this limit, ICNIRP tries to limit localized tissue heating to 41°C. </li>
 </ul>
-<p><img alt="" class="addpic" src="/static/icnirp/8.png"/></p>
+<p><img alt="Guideline excerpt: tissue damage can occur above 41-43 degrees C, worsening with time spent at such temperatures" class="addpic" src="/static/icnirp/8.png"/></p>
 <ul>
 <li>Extremeties are usually around 33-36°C, while core tissues are closer to 38°. Therefore extremeties are limited in heating to +5°C, while core is limited to +2°C. </li>
 </ul>
-<p><img alt="" class="addpic" src="/static/icnirp/9.png"/></p>
+<p><img alt="Guideline excerpt defining Type-1 limb and skin tissue at under 33-36 degrees C and Type-2 core tissue at under 38.5 degrees C" class="addpic" src="/static/icnirp/9.png"/></p>
 <ul>
 <li>Testicles stop making sperm when people sit down because they heat up. I wonder if the increase in desk jobs is responsible for the global decline in sperm count? </li>
 </ul>
-<p><img alt="" class="addpic" src="/static/icnirp/10.png"/></p>
+<p><img alt="Guideline excerpt: spermatogenesis is reversibly reduced by the up to 2 degree C testes temperature rise caused by sitting" class="addpic" src="/static/icnirp/10.png"/></p>
 <ul>
 <li>They approximate whole-body SAR by using a 10g meat cube. They say the spread of heat in a 10g mass is "close enough" to a larger mass. </li>
 </ul>
-<p><img alt="" class="addpic" src="/static/icnirp/11.png"/></p>
+<p><img alt="Guideline excerpt: SAR averaged over a 10 g mass measures radiofrequency-induced temperature rise from 100 kHz to 6 GHz" class="addpic" src="/static/icnirp/11.png"/></p>
 <ul>
 <li>ICNIRP wants to limit body temperature rises to 0.1C, because of this they choose a whole-body SAR limit of 0.4W/kg. For civilians who don't know what they're up against, the limit is 5x better at 0.08W/kg. This reduction is a bit arbitrary to me, but I appreciate the safety factor. </li>
 </ul>
-<p><img alt="" class="addpic" src="/static/icnirp/12.png"/></p>
+<p><img alt="Guideline excerpt: a reduction factor of 10 was applied to the 1 degree C threshold for occupational exposure to cover uncertainty" class="addpic" src="/static/icnirp/12.png"/></p>
 <ul>
 <li>Old people sweat 25% less effectively than younger people</li>
 </ul>
-<p><img alt="" class="addpic" src="/static/icnirp/13.png"/></p>
+<p><img alt="Guideline excerpt: elderly people with lower sweat rates need only 4.5 W per kg to raise core temperature 1 degree C versus 6 W per kg" class="addpic" src="/static/icnirp/13.png"/></p>
 <hr/>
 <p>I realized that 5G cell phones use frequencies covered by these guidelines (450MHz-6GHz and 24-52GHz). In light of ICNIRP's explanations, people who freak out about 5G affecting their babies don't make much sense — it's just the effects of heating, and our communications are so efficient that the heating is not even significant. While I enjoy doing my own research, these people should get better at it before being so vocal. </p>
-<p><img alt="" class="addpic" src="/static/icnirp/babies.png"/></p>
+<p><img alt="5G scaremongering meme of a flip phone and cell tower next to a crying child whose face is half skull" class="addpic" src="/static/icnirp/babies.png"/></p>
 <p>It's cool: reading these guidelines I get a better understanding on how to think about quantifying safety. I also realize how much harder it would have been to spec safety without everything compiled together — thank you ICNIRP!</p>
 <p>Anyway, I hope you successfully stay away from dangerous EM waves until I see you next. Cya next time!</p></body></html>]]></content:encoded>
       <guid isPermaLink="true">https://andykong.org/blog/icnirp/</guid>
@@ -1071,7 +1205,7 @@ print(f"{label:24s} {ms:6.0f}ms")
       <description>Finally publicizing some sneaky data collection from 4 years ago</description>
       <content:encoded><![CDATA[<html><body><p>Hello!</p>
 <p>Back when I attended CMU, there were these massive bulletin boards around campus full of adverts from students and profs. Students usually promoted their app/club/org/student course, and professors pushed their classes.</p>
-<p><img alt="" class="addpic" src="/static/cmuads/0.jpg"/></p>
+<p><img alt="Campus bulletin board crowded with flyers for tutoring, MCAT prep, student clubs, and events" class="addpic" src="/static/cmuads/0.jpg"/></p>
 <p>When I started putting my own ads on these boards, I was always curious which b-boards were the most frequently looked at. For instance, the board between the Sorrells library and the bathroom gets a lot of traffic, but the people walking there were probably pretty focused on studying. Whereas the UC bulletin boards get less foot traffic, but the people there seem calmer since they aren't walking fast to get to class.</p>
 <p>Anyway, when I finished a campus events aggregator called <a href="../../projects/carnegiecalendar">Carnegie Calendar</a> and wanted to promote it by putting up bulletins, I finally had my chance to determine the highest engagement b-board.</p>
 <p>I printed out 63 of these flyers promoting Carnegie Calendar, each with a unique QR code demarcated by this little number in the corner. Each QR code led to the same website with a different trailing URL argument, which my server recorded in a text file. </p>
@@ -1079,10 +1213,10 @@ print(f"{label:24s} {ms:6.0f}ms")
 <p><img alt="See the little 1?" class="addpic" src="/static/CCzoomin.png"/></p>
 <p>I got a bunch of friends to help me put up the QR codes (Thanks Nancy Sam Ruijie and I think Nate?) and waited for the data to roll in.</p>
 <p>I always wanted to sell this data to some overzealous student group that puts up a ton of flyers and cares about it, but after 4 years I'm realizing that's probably not gonna happen. So I've tabulated the results into this map below.</p>
-<p><img alt="" class="addpic" src="/static/cmuads/1.png"/></p>
+<p><img alt="CMU campus map labeled with QR scan counts per building; the UC leads with 42, then Wean 24 and Gates 21" class="addpic" src="/static/cmuads/1.png"/></p>
 <p>More granularly, the per-bulletin board data can be found <a href="https://docs.google.com/spreadsheets/d/1T-BplbYhJhCCI-hyfR-BIS-O5AUM7uf--s4L8abqz_0/edit#gid=1010815453">here</a>.</p>
 <p>A day or two after all the flyers were up, I realized that it would be free traffic if I also advertised the website in the school Facebook groups. I made a separate URL extension for the group links and posted it. The single Facebook link received around 6x the visits to all in-person links despite only being up for like 8 hours. </p>
-<p><img alt="" class="addpic" src="/static/cmuads/2.png"/></p>
+<p><img alt="Spreadsheet tally comparing 139 visits from in-person boards to 832 from the online link" class="addpic" src="/static/cmuads/2.png"/></p>
 <p>As with all deploys, some event I scraped the first day of public release ended up busting the website, and I didn't realize until noon the next day. I always wonder about those missed first impressions. Anyway, enough lore for the day. Cya next time!</p></body></html>]]></content:encoded>
       <guid isPermaLink="true">https://andykong.org/blog/cmuads/</guid>
       <pubDate>Mon, 15 Apr 2024 00:00:00 -0400</pubDate>
@@ -1095,24 +1229,24 @@ print(f"{label:24s} {ms:6.0f}ms")
 <p>The inventor of Morse code mentions counting the occurrences of letters in printer's type in order to dole out the shorter codes to more commonly used letters. For example, E and T are both single-symbol, while something like Z requires 4 symbols.</p>
 <p>I was interested in seeing just how good Morse got his letter frequencies, so I got a letter frequency table and the Morse code chart and correlated them against each other.</p>
 <h1 id="morse-code-charlength-vs-letter-frequency">Morse Code Char-Length vs. Letter Frequency</h1>
-<p><img alt="" class="addpic" src="/static/omorse/0.png"/></p>
+<p><img alt="Scatterplot of Morse code symbol length versus English letter frequency, with common letters like E and T shortest" class="addpic" src="/static/omorse/0.png"/></p>
 <p>Further right is more common, further up is longer Morse sequences. We see some glaring gaps — O should possibly be a 2-char symbol instead of 3, maybe replacing M? But overall this follows the trend of less-common letters getting the longer end of the Morse code. </p>
 <hr/>
 <h1 id="morse-code-timelength-vs-letter-frequency">Morse Code Time-Length vs. Letter Frequency</h1>
 <p>Then I also wanted to know if the time length of each Morse letter also matched the letter frequency — the idea being that more common letters should be shorter in duration to make them easier to type. Morse is defined around the duration of a single dot — inter-symbol gaps are a dot long, and a dash is 3 dots long.</p>
-<p><img alt="" class="addpic" src="/static/omorse/1.png"/></p>
+<p><img alt="Scatterplot of Morse code time length in dot units versus letter frequency, showing O as a costly outlier at 11 units" class="addpic" src="/static/omorse/1.png"/></p>
 <p>Here is the same graph as above, but instead of Morse symbol length I'm plotting time length for each letter. The gaps here are even more extreme. "O" is typed out as "___", taking 11 dots of time despite being the 4th most common letter. "I" (..) appears less often than "A" (._), but is shorter to type. </p>
 <p>It's obvious that Morse code is clearly un-optimized for typing speed, which suggests that transmit speed wasn't actually that important in practical use. It is kinda frustrating that they didn't add such a simple improvement even though it would have helped a decent amount (10-20% I'm estimating).</p>
 <hr/>
 <h1 id="morse-transmit-speed-optimization">Morse Transmit Speed Optimization</h1>
 <p>While I know Morse was developed for terrible communication channels and could only transmit one tone, I couldn't help but think about the potential improvements especially in regards with multi-tone. If two tone were possible, a dash could be converted from a long symbol into a short dot in the other frequency.</p>
 <p>This graph compares the transmit time-lengths for each letter if dashes were 3 or 1 dots long. Y-axis is frozen for easier comparing. By adding one tone we can decrease time for any letter with a dash.</p>
-<p><img alt="" class="addpic" src="/static/omorse/3.png"/></p>
+<p><img alt="Side-by-side scatterplots of Morse time length per letter with 3-unit dashes versus 1-unit dashes" class="addpic" src="/static/omorse/3.png"/></p>
 <p>Here's a harder-to-read improvements chart</p>
-<p><img alt="" class="addpic" src="/static/omorse/2.png"/></p>
+<p><img alt="Scatterplot with vertical lines showing how much each letter's Morse time drops if dashes were 1 unit long" class="addpic" src="/static/omorse/2.png"/></p>
 <p>Finally, the approximate speedup offered by switching dashes to dots, and then further even removing the spaces between letters.</p>
-<p><img alt="" class="addpic" src="/static/omorse/4.png"/></p>
-<p><img alt="" class="addpic" src="/static/omorse/morsespeedup.png"/></p>
+<p><img alt="Bar chart of average time per letter: 6.09 units for normal Morse, 4.09 with 1-unit dashes, 2.54 with no gaps" class="addpic" src="/static/omorse/4.png"/></p>
+<p><img alt="Console output listing average time per letter and speedups: 48.94% with 1-unit dashes, 139.27% with no gaps too" class="addpic" src="/static/omorse/morsespeedup.png"/></p>
 <p>So the total improvement isn't nuts, around 50% in optimal cases with dashes being 1 dot long. This doesn't even account for possible improvements when properly staggering the Morse length vs. letter frequency. </p>
 <hr/>
 <h1 id="who-cares-why-are-you-learning-outdated-radio-speak">Who cares, why are you learning outdated radio speak?</h1>
@@ -1128,7 +1262,7 @@ print(f"{label:24s} {ms:6.0f}ms")
       <description>Exposing the internals of a dinosaur-shaped children's camera I got in Shenzhen</description>
       <content:encoded><![CDATA[<html><body><p>Hello! I've recently finished a paper, so it's time to work on sillier stuff. </p>
 <p>On a recent trip to China, I purchased this children's toy camera consisting of a front/back-facing camera and thermal printer which can print the captured photos on the spot. It's adorable, and I use it to take shitty analog-looking photos of my friends. </p>
-<p><img alt="" class="addpic" src="/static/dinocamtoypower/0.jpeg"/></p>
+<p><img alt="Teal dinosaur toy camera opened up, showing thermal printer, camera lens, and blue battery pack inside" class="addpic" src="/static/dinocamtoypower/0.jpeg"/></p>
 <p>As someone whose only used phone cameras, having one as a monotool is pretty convenient. And the terrible picture quality is quite freeing, since no matter what you do or how you look, the picture will be pretty shite.</p>
 <p>My only gripe is the speed. Most real cameras have a sleep mode where they're on, ready to shoot, but not really burning much power. I'd like to keep this camera in sleep mode too, cause it takes 5-10 seconds to turn on and another few seconds to flip around the camera. But as far as I can tell, there is no sleep mode, just a screen-off mode. You can also configure an auto-off timer in the settings, but then you have to wait for it to turn back on again.</p>
 <p>If "display off" mode uses almost no power, then I can make the auto-off timer absurdly long and just turn off the display when it's in my pocket. However, if power consumption stays high, I'll just leave it off and deal with the startup time. It's time to check!</p>
@@ -1137,19 +1271,19 @@ print(f"{label:24s} {ms:6.0f}ms")
 <p>Side note, it's sad to me that some versions of this toy will be thrown away despite being fully functional just because the parents/kid didn't know to open it and push back the battery plug back in. It should be glued on to prevent this, but I digress. </p>
 <h1 id="screen-on">Screen on</h1>
 <p>After the device turns on, power consumption is a steady ~85mA on the start screen</p>
-<p><img alt="" class="addpic" src="/static/dinocamtoypower/1.jpeg"/></p>
+<p><img alt="Oscilloscope current trace holding steady around 85mA with the toy camera on its start menu screen" class="addpic" src="/static/dinocamtoypower/1.jpeg"/></p>
 <h1 id="camera-on">Camera on</h1>
 <p>With the camera on, current consumption increases to ~95mA. It does not seem to matter which camera. </p>
-<p><img alt="" class="addpic" src="/static/dinocamtoypower/2.jpeg"/></p>
-<p><img alt="" class="addpic" src="/static/dinocamtoypower/3.jpeg"/></p>
+<p><img alt="Oscilloscope trace stepping up to roughly 95mA as the toy camera shows a live viewfinder image" class="addpic" src="/static/dinocamtoypower/2.jpeg"/></p>
+<p><img alt="Similar oscilloscope current trace with the other camera active, again around 95mA" class="addpic" src="/static/dinocamtoypower/3.jpeg"/></p>
 <h1 id="display-off">Display off</h1>
 <p>When the display is off but the device is on, power consumption is still quite high. The camera seems to turn off but we are still at a steady ~80mA, nearly the same as when we're on the intro menu.</p>
-<p><img alt="" class="addpic" src="/static/dinocamtoypower/4.jpeg"/></p>
+<p><img alt="Oscilloscope trace near 80mA with the toy camera display turned off but the device still running" class="addpic" src="/static/dinocamtoypower/4.jpeg"/></p>
 <h1 id="on-shutdown">On shutdown</h1>
 <p>Display off on the menu screen has a current consumption of ~62 mA. This increases as the turn-off jingle plays and the screen turns back on, but then drops to zero when the device is off (as expected) </p>
-<p><img alt="" class="addpic" src="/static/dinocamtoypower/5.jpeg"/></p>
+<p><img alt="Oscilloscope trace during shutdown: current rises for the off jingle then drops to zero once the camera powers down" class="addpic" src="/static/dinocamtoypower/5.jpeg"/></p>
 <p>Keeping the camera on the menu screen with display off uses the least power, but it's still a far cry from zero. It's a shame because I think the startup time need not be so long, and shortening it would make the camera more useful to me. I will continue to use the camera, but probably not the display-off mode. </p>
-<p><img alt="" class="addpic" src="/static/dinocamtoypower/6.jpg"/></p>
+<p><img alt="Grainy timestamped toy camera photo of two friends, one wearing a VR headset and the other grinning" class="addpic" src="/static/dinocamtoypower/6.jpg"/></p>
 <p>Cya next time!</p></body></html>]]></content:encoded>
       <guid isPermaLink="true">https://andykong.org/blog/dinocamtoypower/</guid>
       <pubDate>Sun, 07 Apr 2024 00:00:00 -0400</pubDate>
@@ -1161,7 +1295,7 @@ print(f"{label:24s} {ms:6.0f}ms")
       <content:encoded><![CDATA[<html><body><p>If you have a Vision Pro we could borrow and live in/near Pittsburgh and are free before May 2024, I would be interested in hosting this hackathon again. Please email/DM me if you'd like that, and we can make it happen :)</p>
 <hr/>
 <p>Hello! Last weekend I hosted an Apple Vision Pro Hackathon (aka AVP Hackathon), which simply entailed asking everyone I knew if I could borrow a Vision Pro and then asking everyone if they wanted to develop on it for a couple days.</p>
-<p><img alt="" class="addpic" src="/static/avph_reflection/0.jpg"/></p>
+<p><img alt="Whiteboard with a hand-drawn Welcome to the AVP Hackathon sign, the P doubling as a Vision Pro" class="addpic" src="/static/avph_reflection/0.jpg"/></p>
 <p>I think hackathons are a good event for colleges since full-time coders are usually too world-weary to also spend their weekends coding. Nonetheless, I picked a bad time to ask, since I mostly knew researchers and we're a month shy of the next big conference deadline. </p>
 <p>Anyway, somehow I got a crew of four people and we spent 48 hours building apps and demos for the AVP. The main goal was to write app that would make you want to wear the AVP (the most useful are screen-mirroring and web browsing). </p>
 <p>We also had a rule that someone had to be wearing the AVP at all times —  in the end, this didn't even need enforcing because we were iterating so fast that someone always needed it. In the end, we made 3.5 working apps, which is a pretty good hitrate. </p>
@@ -1169,16 +1303,16 @@ print(f"{label:24s} {ms:6.0f}ms")
 <hr/>
 <h1 id="day-1">Day 1</h1>
 <p>Started at 10am, got to the space around 10:30am. I provided beverages and coffee.</p>
-<p><img alt="" class="addpic" src="/static/avph_reflection/1.jpg"/></p>
+<p><img alt="Hackathon attendee arriving in a doorway, carrying a Vision Pro in its white case" class="addpic" src="/static/avph_reflection/1.jpg"/></p>
 <p>We spent most of the day learning Swift. I made and loaded a custom 3D model and then tried to write custom gestures that would spawn/move it around. </p>
-<p><img alt="" class="addpic" src="/static/avph_reflection/2.jpg"/></p>
+<p><img alt="Vision Pro view of many copies of a scanned 3D head model floating around the room" class="addpic" src="/static/avph_reflection/2.jpg"/></p>
 <p>I cribbed the head/hand tracking from a <a href="https://github.com/FlipByBlink/HandsRuler">Hand Ruler</a> app, then kept cutting the code down until I could understand all of it. I think everyone else had a very similar process, since the default examples that Apple provides are too full-featured to just illustrate single concepts at a time. </p>
-<p><img alt="" class="addpic" src="/static/avph_reflection/3.jpg"/></p>
+<p><img alt="Developer typing on a MacBook while wearing the Vision Pro, laptop screen showing the headset passthrough view" class="addpic" src="/static/avph_reflection/3.jpg"/></p>
 <p>The AVP is meant to be a single-user device, so it doesn't let you do screen mirroring unless the same user is signed into both the Macbook and the AVP. In order to avoid taking off the headset every time we uploaded code, we spent a lot of time looking through the AVP cameras at our screens trying to make small edits. This is really close to the limit of what the AVP's AR resolution is capable of, and this process would've been much more comfortable if we could just project our displays into AVP space.</p>
 <p>When we wrapped up the day, everyone sort-of understood the Swift structure and had run some example code already. The language is pretty straightforward, and the code completions in the Xcode IDE are more full-featured than any IDE I've used before.</p>
 <h1 id="day-2">Day 2</h1>
 <p>Late start, 11:30am. My roommate had some group project to work on in the morning, and everyone else woke up late.</p>
-<p><img alt="" class="addpic" src="/static/avph_reflection/4.jpg"/></p>
+<p><img alt="Two hackers working on laptops, one on a couch and one in a red egg chair, Vision Pro cases on the table" class="addpic" src="/static/avph_reflection/4.jpg"/></p>
 <p>Someone else finished their teardown of an example, and made an app where the press of a button opens an immersive video. I finished wrapping up all my code into a simple demo app (<a href="https://github.com/kongmunist/Vision-Pro-Head-Hand-Tracking-Demo">on github here!</a>) and started working on custom gesture recognition. </p>
 <blockquote class="twitter-tweet tw-align-center"><p dir="ltr" lang="tl">Italian simulator <a href="https://t.co/TqmlcglZLM">pic.twitter.com/TqmlcglZLM</a></p>— Andy (@oldestasian) <a href="https://twitter.com/oldestasian/status/1767012032132616565?ref_src=twsrc%5Etfw">March 11, 2024</a></blockquote>
 <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
@@ -1194,11 +1328,11 @@ print(f"{label:24s} {ms:6.0f}ms")
 <p>Collaborative video upload gallery for AVP/iPhone 15 spatial videos</p>
 </li>
 </ul>
-<p><img alt="" class="addpic" src="/static/avph_reflection/riftv1.jpg"/></p>
+<p><img alt="Rift V1 gallery window floating in the lab, recommending three spatial videos" class="addpic" src="/static/avph_reflection/riftv1.jpg"/></p>
 <ul>
 <li>AR interface to control the color and brightness of real-life smart bulbs</li>
 </ul>
-<p><img alt="" class="addpic" src="/static/avph_reflection/AVP_Light_App.jpg"/></p>
+<p><img alt="AR light control interface with intensity and saturation sliders and a dial reading 78, floating beside a lamp" class="addpic" src="/static/avph_reflection/AVP_Light_App.jpg"/></p>
 <ul>
 <li>Lighter demo like the early iPod apps</li>
 </ul>
@@ -1239,7 +1373,7 @@ print(f"{label:24s} {ms:6.0f}ms")
 <p>The AVP simulator can pretty accurately do windows, buttons, and other functionality, so you don't even need to cough up the cash for a device if you're interested in developing more straightforward apps. The only thing it doesn't have is hands — gestures can only be developed using a real device. I remember seeing a <a href="https://varrall.substack.com/p/hand-tracking-in-vision-pro-simulator">blog post about faking hands</a> in the AVP simulator, but did not try it myself yet. </p>
 </li>
 </ul>
-<p><img alt="" class="addpic" src="/static/avph_reflection/ide.png"/></p>
+<p><img alt="Xcode with the HeadHandsDemo project open and the embedded Vision Pro simulator previewing the tracking demo app" class="addpic" src="/static/avph_reflection/ide.png"/></p>
 <h2 id="dev-community">Dev community</h2>
 <ul>
 <li>Forum posts are lacking, and very few people have posted Vision Pro development questions. If we assume 100k units have been sold, and only 10k to developers, then we can only expect ~100-1000 people active on the developer forums. Consequently, there are very few tutorials — large alpha in this space! Within a few months, you could easily become the foremost authority on VisionOS development. </li>
@@ -1262,38 +1396,38 @@ print(f"{label:24s} {ms:6.0f}ms")
 <hr/>
 <p>Hello! Did you know solar cells work even through skin? More on that later.</p>
 <p>Today I'm going to show you some basic testing I did with the BPW34. This is technically a photodiode (for detection), but as we know, photodiodes work both ways.</p>
-<p><img alt="" class="addpic" src="/static/testingbpw34/0.png"/></p>
+<p><img alt="BPW34 datasheet page showing the photodiode package drawing and its description as a PIN photodiode" class="addpic" src="/static/testingbpw34/0.png"/></p>
 <h1 id="bpw34-description">BPW34 Description</h1>
 <p>These are sold on SparkFun as miniature solar cells, and I wanted to see how much power I could pull out of them in ambient light. </p>
-<p><img alt="" class="addpic" src="/static/testingbpw34/1.png"/></p>
+<p><img alt="SparkFun product listing for the BPW34 miniature solar cell shown resting on a quarter" class="addpic" src="/static/testingbpw34/1.png"/></p>
 <p>The reported open-circuit voltage is 350mV, so two in series should be enough to drive an energy-harvesting PMIC. We may even get away with just using one and a dedicated solar cell harvester IC, but I didn't have any of those on hand. Also, the more the merrier!</p>
 <p>I looked on Digikey for similar photodiodes (just find the BPW34 and then trace back what product category it fits into), and found plenty. There are alternatives, but none go much higher than 300mV (though they might be of photon-&gt;current higher efficiency). Watch out also, some have a daylight blocking filter which stymies their usage as solar cells.</p>
-<p><img alt="" class="addpic" src="/static/testingbpw34/2.png"/></p>
+<p><img alt="Vishay BPW34 datasheet characteristics table with the 350mV open-circuit voltage highlighted" class="addpic" src="/static/testingbpw34/2.png"/></p>
 <p>Here's how big it is. </p>
-<p><img alt="" class="addpic" src="/static/testingbpw34/3.png"/></p>
+<p><img alt="Fingertips pinching the tiny black BPW34 photodiode to show its small size" class="addpic" src="/static/testingbpw34/3.png"/></p>
 <p>If you're using it for power harvesting, the positive terminal is the leg with a single stripe of metal (where the probe is clipped in this photo)</p>
-<p><img alt="" class="addpic" src="/static/testingbpw34/4.png"/></p>
+<p><img alt="Probe clip attached to the single-striped positive leg of the BPW34 photodiode" class="addpic" src="/static/testingbpw34/4.png"/></p>
 <h1 id="voltage-under-no-light">Voltage under no light</h1>
 <p>I put one in a black bag just for fun and got &gt;70mV, which is not a lot, but not zero. I think this is from light leakage into the bag, but it gets an awfully small amount of light for a pretty decent voltage. You know the old saying, 5 in a bag is worth 1 in the air. I didn't try drawing power from it like this, but it should not provide very much. </p>
-<p><img alt="" class="addpic" src="/static/testingbpw34/5.png"/></p>
+<p><img alt="Photodiode leads inside a black bag with an oscilloscope overlay reading Avg 76.5mV" class="addpic" src="/static/testingbpw34/5.png"/></p>
 <h1 id="voltage-under-some-light">Voltage under some light</h1>
 <p>Indoors near a large window I get &gt;300mV no-load from a single diode. This varies from 290-350mV, depending on if the diode faces the window or not. </p>
-<p><img alt="" class="addpic" src="/static/testingbpw34/6.png"/></p>
+<p><img alt="Alligator clip holding the BPW34 in indoor light with an oscilloscope overlay reading Avg 320mV" class="addpic" src="/static/testingbpw34/6.png"/></p>
 <h1 id="voltage-under-lots-of-light">Voltage under lots of light</h1>
 <p>I blasted one with my phone flashlight and the voltage goes over 500mV. When the flashlight LED is held directly over the photodiode, I max out at 600mV. I couldn't take pictures of this since I was using my phone's flashlight, so you'll have to trust me, bro.</p>
 <h1 id="2-in-series-some-light">2 in series, some light</h1>
 <p>I wanted to make sure the diodes actually do add in series so I soldered two together. In ambient light they add up as expected. </p>
-<p><img alt="" class="addpic" src="/static/testingbpw34/7.png"/></p>
+<p><img alt="Two BPW34 diodes soldered in series held against an oscilloscope reading Avg 611mV" class="addpic" src="/static/testingbpw34/7.png"/></p>
 <h1 id="2-in-series-some-light-through-skin">2 in series, some light, through skin</h1>
 <p>I read <a href="https://www.sciencedirect.com/science/article/pii/S0956566316311320">this paper</a> which reported that fresh human skin transmits a lot of light in the spectrum of 700nm and up, allowing subdermal electronics to be powered by light exposure.</p>
-<p><img alt="" class="addpic" src="/static/testingbpw34/8.png"/></p>
-<p><img alt="" class="addpic" src="/static/testingbpw34/9.png"/></p>
+<p><img alt="Graph of skin light transmittance versus wavelength for five body sites from 400 to 900nm" class="addpic" src="/static/testingbpw34/8.png"/></p>
+<p><img alt="Current-voltage curves comparing a solar cell uncovered versus placed under human skin" class="addpic" src="/static/testingbpw34/9.png"/></p>
 <p>I did a very rudimentary test of this by covering the two diodes with my thumb. While I'm sure this is mostly leakage light from the sides of the diodes, I do get ~half the voltage.</p>
-<p><img alt="" class="addpic" src="/static/testingbpw34/10.png"/></p>
+<p><img alt="Two diodes covered by a thumb reading Avg 345mV, with an inset showing the same setup without the thumb" class="addpic" src="/static/testingbpw34/10.png"/></p>
 <p>The paper tried this using a thin skin sample (1-2mm); my thumb is a quite a bit thicker than that so I expected way less voltage than just half. </p>
 <h1 id="expected-voltage-vs-skin-thickness">Expected voltage vs. skin thickness</h1>
 <p>We can compare the fresh "Upper inner arm" 1mm sample with the fresh "Forehead" 1.5mm sample — transmittance goes from ~0.56 to 0.28 at 800nm, so the relationship between transmittance and thickness is nonlinear. </p>
-<p><img alt="" class="addpic" src="/static/testingbpw34/11.png"/></p>
+<p><img alt="Paper figure with skin thickness by body site and transmittance versus wavelength graphs" class="addpic" src="/static/testingbpw34/11.png"/></p>
 <p>However, if we compare shoulder and forehead, we get totally different transmittances at 800nm despite the similar thickness. From <a href="https://pubmed.ncbi.nlm.nih.gov/14690333/">this paper</a>, the shoulder epidermis is 11mm thick and in <a href="https://www.selcukmedj.org/uploads/publications/2022-102-13168603.pdf">this paper</a> the forehead epidermis+dermis thickness is 0.07mm and 1.6mm. Because the shoulder sample is mostly epidermis and the forehead sample is mostly dermis, I think the dermis is doing most of the light blocking here. I conclude that the forehead (and face in general is not a great place to put implanted solar cells. </p>
 <p>Anyway, that's all the testing I've done so far. Open-circuit voltage is not power, but this high of a voltage is enough for energy harvesting, however slowly that may happen. Let me know if you explore this any further!</p>
 <p>Cya next time!</p></body></html>]]></content:encoded>
@@ -1305,7 +1439,7 @@ print(f"{label:24s} {ms:6.0f}ms")
       <link>https://andykong.org/blog/vitalia1/</link>
       <description>Seven days in a city trying to usurp death</description>
       <content:encoded><![CDATA[<html><body><p>Hello. I just got back from Vitalia, a pop-up city in Prospera, a special economic zone (ZEDE) on Roatán, an island which fields a lot of cruise ship tourists and is part of the nation of Honduras, a country consisting of AT LEAST 99 islands. </p>
-<p><img alt="" class="addpic" src="/static/vitalia1/0.png"/></p>
+<p><img alt="Google search snippet citing Wikipedia that there are at least 99 islands in Honduras" class="addpic" src="/static/vitalia1/0.png"/></p>
 <p>I'm going to show some highlights and work through a "should I go to Vitalia-like thing in the future" scenario with you.</p>
 <p>Generally, Vitalia felt like a vacation amongst like-minded people. I came during an off-week, so there wasn't a ton of networking or talks going on, but this gave me more time to have good conversations with people with mutual rare interests. I think it's worth going for an on-week, but off-week it's just a very casual gathering + vacation.</p>
 <hr/>
@@ -1343,7 +1477,7 @@ print(f"{label:24s} {ms:6.0f}ms")
 <li>Most longevity people focused on genetic stuff, altering aging or improving cognition at the DNA level (I think this approach comes from watching Aubrey de Grey?). I find this approach a bit long-winded — highly skeptical that simply switching a fetus's SNPs to the slightly higher IQ ones would lead to any benefit in intelligence without causing some awful incidental genetic mutations. Price of progress or avoidable folly?</li>
 </ul>
 <h2 id="honduras">Honduras</h2>
-<p><img alt="" class="addpic" src="/static/vitalia1/5.jpg"/></p>
+<p><img alt="Lush hillside on Roatan with tropical forest, red-roofed villas, palm trees, and a golf green" class="addpic" src="/static/vitalia1/5.jpg"/></p>
 <h3>Climate</h3>
 <ul>
 <li>
@@ -1367,7 +1501,7 @@ print(f"{label:24s} {ms:6.0f}ms")
 <ul>
 <li>The grocery store nearest my hotel stocked a lot of American goodies, possibly for the tourists to feel at home. I saw several Kirkland branded things, and many familiar canned goods. This kinda took away the appeal of shopping at a local store, but I did find a few items to enjoy. Particularly, this brand of "drinkable" yogurt. The yogurt is basic cup-yogurt consistency in a large water bottle form-factor, and it's delicious though hard to drink. Prices mostly match US groceries. </li>
 </ul>
-<p><img alt="" class="addpic" src="/static/vitalia1/8.jpeg"/></p>
+<p><img alt="Bottles of Dos Pinos drinkable yogurt in blueberry and strawberry flavors next to water bottles" class="addpic" src="/static/vitalia1/8.jpeg"/></p>
 <h3>Random</h3>
 <ul>
 <li>
@@ -1416,13 +1550,13 @@ print(f"{label:24s} {ms:6.0f}ms")
 <p>To cap off all my Fitbit posting, I exported my data one last time and noticed that they have restructured the data and ruined my <a href="../fitbitsleeptzcorrection">stress method</a> for timezone correction, rendering all my latest data unusable. Since I've collected more Tetris and Stroop data that I wanted to correlate, I decided to try one final method that I've always thought about but never cared enough to do — syncing my Google Location with Fitbit's data to get UTC timestamps. I'll describe the steps verbally and the code will be at the end. </p>
 <h1 id="method">Method</h1>
 <p>First I loaded my Google location data with <a href="https://github.com/Scarygami/location-history-json-converter">this neat tool</a> by Scarygami which produces a massive CSV of all the longitude and latitude and everything else. Here I visualized part of it using plotly's <code>scatter_mapbox</code> function. </p>
-<p><img alt="" class="addpic" src="/static/glocfitbittzcorrection/0.png"/></p>
+<p><img alt="Plotly map of Google location history points clustered around Birmingham, Alabama, with a latitude-longitude tooltip" class="addpic" src="/static/glocfitbittzcorrection/0.png"/></p>
 <p>From each longitude and latitude, you can get the timezone name using the Python library <a href="https://pypi.org/project/timezonefinder/">timezonefinder</a>, which works at a rate of ~2ms/1000 coordinates without needing to do GET requests. I converted the timezone strings into timezone offsets using some code from <a href="https://stackoverflow.com/questions/5537876/get-utc-offset-from-time-zone-name-in-python">this SO post</a>. </p>
 <p>Then I realized that I needed to also account for daylight savings time across two regions, Europe and America, which for some reason have DST dates that are about a week off from each other. I can't wait for them to abolish DST so I'll have to add a bool which determines if DST correction is necessary in my timezone correction pipeline /s</p>
-<p><img alt="" class="addpic" src="/static/glocfitbittzcorrection/1.png"/></p>
+<p><img alt="Code comments listing American and European daylight savings date ranges from 2021 to 2024" class="addpic" src="/static/glocfitbittzcorrection/1.png"/></p>
 <p>Some sleep sessions have no "close" longitude/latitude coordinates, so I toss them. Close is defined arbitrarily, I use 6 hrs as my cutoff. </p>
 <p>My success rate with this method is ~60%, and most of the loss comes from me neglecting to turn on Google Timeline on my iPhone until sometime mid-2021. In total, I recovered 600+ days of <em>accurate</em> Fitbit sleep data and can now produce fun sleep graphs which I can trust. For instance, here is my true Tetris speed vs. sleep graph: </p>
-<p><img alt="" class="addpic" src="/static/glocfitbittzcorrection/2.png"/></p>
+<p><img alt="Scatterplot of sleep duration vs Tetris pieces per second with a slightly rising linear fit, p=1.91e-06" class="addpic" src="/static/glocfitbittzcorrection/2.png"/></p>
 <p>Turns out sleep is good for you, actually.</p>
 <h1 id="code">Code</h1>
 <p>Code is provided with no guarantees or user-friendly comments. Use at your own risk, etc. etc.</p>
@@ -1439,7 +1573,7 @@ print(f"{label:24s} {ms:6.0f}ms")
 <p><a href="https://thecavepearlproject.org/2017/11/03/configuring-i2c-sensors-with-arduino/">This post</a> from the Cave Pearl Project initially helped me understand I2C, but it assumes a bit more knowledge than this one.</p>
 <h1 id="i2c-is-like-an-api-for-ics">I2C is like an API for ICs</h1>
 <p>If you've ever worked with big Python libraries with unwieldy documentation and a million functions, it may help you to think of I2C as a similarly big library for hardware. Specifically, I'm thinking of matplotlib. You read and write options using matplotlib functions, you pass data, magical stuff happens internally, and voila, graph! And if it breaks, debugging is confusing because the functionality that breaks is usually buried deep in the library. </p>
-<p><img alt="" class="addpic" src="/static/attinyrtc/1.jpg"/></p>
+<p><img alt="Grandma-at-computer meme captioned How to increase the size of a matplotlib plot" class="addpic" src="/static/attinyrtc/1.jpg"/></p>
 <p>I2C has similar functionality, except instead of calling a nice English function like <code>plt.clear()</code>, you need to say "write 0x1 to the SHUTDOWN register at position 0x10". Chips using I2C have a bunch of data and config registers. To access a sensor reading, you say "let me have 8 bytes from register XX". To configure sensor settings, you say "write XX into register YY". This makes it a bit more annoying since register addresses are harder to memorize than function names in English. You will usually be checking the datasheet a lot.</p>
 <p>Normally you need to instruct the microcontroller to bit-shift your message out as bytes, but the Arduino Wire.h library makes this easier by providing functions like <code>Wire.write(0xFE)</code>.</p>
 <p class="caption"> Example table of the register locations from an I2C sensor datasheet </p>
@@ -1456,7 +1590,7 @@ print(f"{label:24s} {ms:6.0f}ms")
 <p><img alt="Pic from the last post" class="addpic" src="/static/ard2attiny/0.jpeg"/></p>
 <p>I recently got an ATtiny working on a breadboard using an Arduino Uno as the programmer. Afterwards, I also wanted to use an I2C RTC chip (real-time clock) with the ATtiny — while there are I2C libraries for it, they are written for the Arduino. And since the ATtiny25/45/85 doesn't have hardware I2C support, the <code>Wire.h</code> library that eases I2C transactions doesn't work, so the RTC libraries need a bit of editing. The ATtiny uses the <a href="https://github.com/adafruit/TinyWireM">TinyWireM.h</a> library instead as a (basically) drop-in replacement, you should be able to just replace all <code>Wire</code> with <code>TinyWireM</code>.</p>
 <p>I really wanted to manually understand the I2C stuff, so I found a DS3231 (aka ZS-042) minimal example on the <a href="https://forum.arduino.cc/t/software-i2c-and-ds3231-simple-code/508288">Arduino forums</a> and converted it to use TinyWireM. On the ATtiny, the I2C pins are SDA on physical pin 5 and SCL on physical pin 7 (these are also known as PB0 and PB2 respectively). </p>
-<p><img alt="" class="addpic" src="/static/attinyrtc/4.png"/></p>
+<p><img alt="ATtiny85 pinout diagram mapping physical pins to Arduino pin numbers, analog channels, and PWM outputs" class="addpic" src="/static/attinyrtc/4.png"/></p>
 <p>I've added SoftwareSerial so we can receive the ATtiny messages using an FTDI Friend, its RX should go into physical pin 3 (same as my previous post). Wires from the ZS-042 board are SCL -&gt; pin 7 and SDA -&gt; pin 5. V+ and GND also need to be connected. </p>
 <p class="caption"> Wiring </p>
 <p><img alt="Wiring" class="addpic" src="/static/attinyrtc/5.jpg"/></p>
@@ -1479,21 +1613,21 @@ print(f"{label:24s} {ms:6.0f}ms")
       <link>https://andykong.org/blog/ard2attiny/</link>
       <description>Blink &amp; SoftwareSerial &amp; ADC, oh my!</description>
       <content:encoded><![CDATA[<html><body><p>Hello! Today I'm gonna walk you through uploading code to an ATtiny using an Arduino. This was my first time programming a microcontroller off-board, and I got most of the process following <a href="https://www.youtube.com/watch?v=TUlzOD9T3nI">this video</a>. But that video was not sufficient alone, so I'll be describing some of the extra steps in this post.</p>
-<p><img alt="" class="addpic" src="/static/ard2attiny/0.jpeg"/></p>
+<p><img alt="ATtiny85V chip on a breadboard next to a blue Arduino Uno board" class="addpic" src="/static/ard2attiny/0.jpeg"/></p>
 <h1 id="ingredients">Ingredients</h1>
 <p>You'll need an ATtiny25/45/85 chip, Arduino, 6 jumper wires, a resistor + LED, and maybe a 10uF capacitor. </p>
 <h1 id="prepping-the-arduino">Prepping the Arduino</h1>
 <p>First we must flash the Arduino with the ArduinoISP sketch (found in File-&gt;Examples-&gt;11.ArduinoISP). We are using the "old style" wiring, so also uncomment line 81 in this sketch. </p>
-<p><img alt="" class="addpic" src="/static/ard2attiny/1.png"/></p>
+<p><img alt="Arduino IDE File menu open to Examples with 11.ArduinoISP highlighted" class="addpic" src="/static/ard2attiny/1.png"/></p>
 <p>We're not going to program the Arduino again, so go ahead and switch the target board to "ATtiny25/45/85" in Tools. If you don't have this option in your boards, follow the instructions in the <a href="https://github.com/SpenceKonde/ATTinyCore/blob/v2.0.0-devThis-is-the-head-submit-PRs-against-this/Installation.md">ATtiny repo</a>. </p>
 <p>Change the programmer to "Arduino as ISP" as in the image below, and we'll be ready to go. </p>
-<p><img alt="" class="addpic" src="/static/ard2attiny/2.png"/></p>
+<p><img alt="Arduino IDE Tools menu showing ATtiny85 board settings and Programmer set to Arduino as ISP" class="addpic" src="/static/ard2attiny/2.png"/></p>
 <h1 id="wiring-the-attiny">Wiring the ATtiny</h1>
 <p>Now we're going to need those jumpers. Follow this wiring diagram from the video above so we can upload code to the ATtiny</p>
 <p class="caption"> [source](https://www.youtube.com/watch?v=TUlzOD9T3nI) </p>
 <p><img alt="source" class="addpic" src="/static/ard2attiny/3.jpeg"/></p>
 <p>To do the Blink sketch properly, we need to add the LED and resistor across PB0 and GND. Make sure the longer (positive) leg of the LED is on PB0. </p>
-<p><img alt="" class="addpic" src="/static/ard2attiny/4.jpeg"/></p>
+<p><img alt="Breadboard with the ATtiny wired to jumper cables plus a red LED and resistor for the Blink test" class="addpic" src="/static/ard2attiny/4.jpeg"/></p>
 <h1 id="uploading-blink">Uploading Blink</h1>
 <p>If this is the first time your ATtiny is being used or you've changed any build settings, you'll need to hit Tools-&gt;Burn Bootloader. This should work with no errors, but if you get one, make sure you've uncommented that "old style wiring" line in ArduinoISP and that your wire connections are solid. </p>
 <p>Now, open the Blink example sketch. Change all instances of <code>LED_BUILTIN</code> to 0, then upload the sketch. If you have no errors, fortune smiles upon thee. Proceed to the next section. </p>
@@ -1509,9 +1643,9 @@ print(f"{label:24s} {ms:6.0f}ms")
 <p>The ATtiny's messages are scrambled when we receive them over Serial because the Arduino also uses the RX/TX pins and they're physically routed to the UART-&gt;USB converter chip. By holding down the RESET, we disable the Arduino and get to see the ATtiny messages without any problems.</p>
 <h2 id="less-sus-method">Less sus method</h2>
 <p>The proper way is to get an FTDI Friend or other UART-&gt;USB converter and receive messages using that instead. </p>
-<p><img alt="" class="addpic" src="/static/ard2attiny/7.jpeg"/></p>
+<p><img alt="Adafruit FTDI Friend USB-to-serial adapter product listing" class="addpic" src="/static/ard2attiny/7.jpeg"/></p>
 <p>If you go this route, the ATtiny's TX goes into the FTDI Friend's  RX, and the GNDs are connected. The port will have to be changed, and the messages will be received just fine. </p>
-<p><img alt="" class="addpic" src="/static/ard2attiny/8.jpeg"/></p>
+<p><img alt="FTDI Friend plugged into USB with jumper wires connected to its RX and GND pins" class="addpic" src="/static/ard2attiny/8.jpeg"/></p>
 <h1 id="trying-out-the-adc">Trying out the ADC</h1>
 <p>The ATtiny85 is big enough to fit a lot of the Arduino helper functions, so the <code>analogRead</code> function just works like normal. You will need to be careful to pick a pin which can receive analog, so be sure to check. Here's my code to read from pin 2 and print it to Serial. </p>
 <!-- HTML generated using hilite.me -->
@@ -1542,7 +1676,7 @@ SoftwareSerial <span style="color: #0066BB; font-weight: bold">mySerial</span>(R
 <p><img alt="ADC readings plotted over time" class="addpic" src="/static/ard2attiny/9.png"/></p>
 <h1 id="have-fun">Have fun!</h1>
 <p>Hopefully you know the basics. As <a href="https://www.youtube.com/watch?v=7bZg_GzUbHI&amp;t=1771s">DeepBlueMbedded</a> said, you're basically done once you get blinking.</p>
-<p><img alt="" class="addpic" src="/static/ard2attiny/10.png"/></p></body></html>]]></content:encoded>
+<p><img alt="DeepBlueMbedded video whiteboard: get the datasheet and blink an LED to start with any microcontroller" class="addpic" src="/static/ard2attiny/10.png"/></p></body></html>]]></content:encoded>
       <guid isPermaLink="true">https://andykong.org/blog/ard2attiny/</guid>
       <pubDate>Fri, 02 Feb 2024 00:00:00 -0500</pubDate>
     </item>
@@ -1556,20 +1690,20 @@ SoftwareSerial <span style="color: #0066BB; font-weight: bold">mySerial</span>(R
 <p>In this post I'm going to show y'all few self-insights I've derived from logging a lot of my personal data. I'll also list all the types of data and how they're collected. </p>
 <h1 id="why-i-collect-data">Why I collect data</h1>
 <p>I think it's important to specify "why research" as well as "how research", and this "why" can become insincere when scientists court the big grant-writers in industry and government instead of saying what they really mean. I currently work for myself and will try to be a bit more honest — I like learning how my body and mind interact with my environment to create my lived experience. I also just like to know stuff.</p>
-<p><img alt="" class="addpic" src="/static/allmydata/0.png"/></p>
+<p><img alt="Meme of an orange plush lizard captioned The autistic urge to know why" class="addpic" src="/static/allmydata/0.png"/></p>
 <h1 id="cool-selfinsights-ive-found">Cool self-insights I've found</h1>
 <ul>
 <li>My Ritalin blood concentration correlates with better Tetris performance</li>
 </ul>
-<p><img alt="" class="addpic" src="/static/allmydata/1.png"/></p>
+<p><img alt="Scatter plot of Ritalin blood concentration vs Tetris survival time with an upward linear fit, p=0.001" class="addpic" src="/static/allmydata/1.png"/></p>
 <ul>
 <li>I think better with more sleep (actually one of my most burning questions)</li>
 </ul>
-<p><img alt="" class="addpic" src="/static/allmydata/2.png"/></p>
+<p><img alt="Scatter plot of Stroop interference factor vs sleep duration with a downward linear fit, p=0.015" class="addpic" src="/static/allmydata/2.png"/></p>
 <ul>
 <li>My Tetris speed (pieces per second = PPS) correlates slightly with lower humidity</li>
 </ul>
-<p><img alt="" class="addpic" src="/static/allmydata/3.png"/></p>
+<p><img alt="Scatter plot of Tetris pieces per second vs humidity percentage with a slight downward linear fit" class="addpic" src="/static/allmydata/3.png"/></p>
 <p>Here's a <a href="https://medium.com/@kongmunist/playing-faster-tetris-by-sleeping-less-3d9b04d30349">few</a> more <a href="/blog/stroopvssleep/">examples</a></p>
 <hr/>
 <h1 id="my-data-stack">My data stack</h1>
@@ -1577,44 +1711,44 @@ SoftwareSerial <span style="color: #0066BB; font-weight: bold">mySerial</span>(R
 <p>Not all the data is obviously useful — some of it is just easy to collect. But most data I expect to use as an 'x' or 'y' variable in some future analysis.</p>
 <h2 id="browser-activity">Browser Activity</h2>
 <p>Chrome websites visited with URL and timestamp. Collected via Tom Critchlow's <a href="../settingupelectrictables/">JS electric tables script</a></p>
-<p><img alt="" class="addpic" src="/static/allmydata/4.png"/></p>
+<p><img alt="Google Sheet of browser history rows pairing timestamps with visited URLs" class="addpic" src="/static/allmydata/4.png"/></p>
 <h2 id="hard-drive-space">Hard Drive Space</h2>
 <p>Every 4 hours, a bash script logs my available hard drive space in bytes. </p>
-<p><img alt="" class="addpic" src="/static/allmydata/5.png"/></p>
+<p><img alt="CSV log of timestamps next to available hard drive space in bytes" class="addpic" src="/static/allmydata/5.png"/></p>
 <h2 id="physical-location">Physical Location</h2>
 <p>Google Maps Timeline is enabled on my phone and records my latitude/longitude every few minutes. I have this data going back a couple of years, and it includes the velocity and predicted mode of transport. </p>
-<p><img alt="" class="addpic" src="/static/allmydata/6.png"/></p>
+<p><img alt="Map of the southeastern US covered in blue GPS dots tracing highways, with a latitude-longitude tooltip" class="addpic" src="/static/allmydata/6.png"/></p>
 <h2 id="smartwatch-biometrics">Smartwatch Biometrics</h2>
 <p>Fitbit records a ton of data and multiple granularities. There's tons of problems with the data itself (documented <a href="../fitbittsproblem/">here</a> and <a href="../fitbitsleeptzcorrection/">here</a> ), but the majority is usable. Most usable stuff is probably the nightly sleep stats, minutely heart rate + HR variance, and daily step count. Fitbit offers this data export <a href="https://www.fitbit.com/settings/data/export&lt;/a&gt;">through the web interface</a></p>
-<p><img alt="" class="addpic" src="/static/allmydata/7.png"/></p>
+<p><img alt="Folder of Fitbit export CSVs covering heart rate, sleep, steps, SpO2, and weight" class="addpic" src="/static/allmydata/7.png"/></p>
 <h2 id="music">Music</h2>
 <p>Spotify! It's a bit complicated and I haven't looked into it, but all the streaming data is there. Spotify offers this data export <a href="https://support.spotify.com/us/article/understanding-my-data/">through the web interface</a></p>
-<p><img alt="" class="addpic" src="/static/allmydata/8.png"/></p>
+<p><img alt="Raw Spotify streaming history JSON with track names, timestamps, and milliseconds played" class="addpic" src="/static/allmydata/8.png"/></p>
 <h2 id="tweets">Tweets</h2>
 <p>Twitter activity, has been used by <a href="https://twitter.com/ultimape/status/1145889385256296449&lt;/a&gt;">ultimape</a> to detect their shifting circadian rhythm, has been used by Andy for nothing so far. Twitter offers this data export <a href="https://help.twitter.com/en/managing-your-account/how-to-download-your-x-archive&lt;/a&gt;">through the web interface</a></p>
-<p><img alt="" class="addpic" src="/static/allmydata/9.png"/></p>
+<p><img alt="Tweet by ultimape with a tweets-per-day chart from 2015 to 2019 showing recurring yearly dips" class="addpic" src="/static/allmydata/9.png"/></p>
 <h2 id="purchasing-data">Purchasing data</h2>
 <p>My Apple Card tracks all my purchases. The data is retrieved by manually hitting the "Export CSV" button on each month, and includes the Merchant and category and date.</p>
-<p><img alt="" class="addpic" src="/static/allmydata/10.png"/></p>
+<p><img alt="Apple Card transactions CSV listing dates, merchants, categories, and amounts" class="addpic" src="/static/allmydata/10.png"/></p>
 <h2 id="glucose">Glucose</h2>
 <p>I wore a Freestyle Libre 2 CGM for two weeks and have nearly continuous data from that period (15-min intervals). Export is done through web interface.</p>
-<p><img alt="" class="addpic" src="/static/allmydata/11.png"/></p>
+<p><img alt="FreeStyle LibreLink glucose export table with readings in mmol/L at 15-minute intervals" class="addpic" src="/static/allmydata/11.png"/></p>
 <h2 id="air-quality">Air quality</h2>
 <p>I use a QingPing air quality monitor to track my relative humidity, temperature, CO2, particulates (PM2.5), and tVOC (total volatile organic compounds). Through the QingPing IoT app, we can export the past year of data logged at 15-min intervals. </p>
-<p><img alt="" class="addpic" src="/static/allmydata/12.png"/></p>
+<p><img alt="QingPing air monitor displaying PM2.5, tVOC, CO2, temperature, and humidity next to its phone app" class="addpic" src="/static/allmydata/12.png"/></p>
 <h2 id="tetris-cognitive">Tetris (cognitive)</h2>
 <p>I play Tetris for fun a few times a day. The website I play on records the stats and timestamps of each game, and I wrote a little Selenium scraper to retrieve it all. I run this every few months to collate all the data into a CSV.</p>
-<p><img alt="" class="addpic" src="/static/allmydata/13.png"/></p>
+<p><img alt="Jstris leaderboard of personal best Tetris sprint times with blocks, PPS, and finesse stats" class="addpic" src="/static/allmydata/13.png"/></p>
 <h2 id="stroop-cognitive">Stroop (cognitive)</h2>
 <p>I use my Strooper <a href="../../projects/strooper">chrome extension</a> and complete a mini-Stroop test a few times a day. This gives me a coarse metric of my executive function, reading speed, and reaction time randomly throughout the day. I transfer the results into a spreadsheet monthly. </p>
-<p><img alt="" class="addpic" src="/static/allmydata/14.png"/></p>
-<p><img alt="" class="addpic" src="/static/allmydata/15.png"/></p>
+<p><img alt="Strooper trial showing the word yellow printed in blue above four color answer buttons" class="addpic" src="/static/allmydata/14.png"/></p>
+<p><img alt="Google Sheet of raw Strooper results stored as JSON rows of timestamped button presses" class="addpic" src="/static/allmydata/15.png"/></p>
 <h2 id="weight-and-grip-strength">Weight and grip strength</h2>
 <p>Every night I record my weight and fat % with a bioimpedance scale, then record my left and right handed grip strength using a dynamometer. I record these as calendar events and transfer them to spreadsheets monthly. </p>
-<p><img alt="" class="addpic" src="/static/allmydata/16.png"/></p>
+<p><img alt="Smiling man flexing one arm while holding a digital grip strength dynamometer" class="addpic" src="/static/allmydata/16.png"/></p>
 <h2 id="dose-times">Dose times</h2>
 <p>I frequently drink caffeinated beverages, sometimes use nicotine patches, and randomly try out OTC supplements like L-Theanine or magnesium. I update a calendar notebook with my dosage and time, and have gotten pretty good at just noting the time when I take them and logging it later. I transfer this to a spreadsheet every month or so. </p>
-<p><img alt="" class="addpic" src="/static/allmydata/17.png"/></p>
+<p><img alt="Handwritten calendar notebook entries logging dose times of caffeine and supplements" class="addpic" src="/static/allmydata/17.png"/></p>
 <hr/>
 <h1 id="conclusion">Conclusion</h1>
 <h2 id="do-it-now">Do it now!</h2>
@@ -1632,7 +1766,7 @@ SoftwareSerial <span style="color: #0066BB; font-weight: bold">mySerial</span>(R
 <h1 id="the-story">The Story</h1>
 <p>On January 14th, I got tired early and slept from 8pm to midnight, then got up until I slept again from 5am-10am. In the afternoon, I noticed that my Fitbit's time was off — this happens if the battery is allowed to be dead for more than 1-2 days. It said 10:xx on January 13th (Sat), but the time was actually 4:xx on January 15th (Mon), meaning it was off by ~42 hours (or 54, not sure the am/pm). </p>
 <p>When I synced my Fitbit app from the phone, it usually fixes the time shift, so I did that. Then I looked at my sleep history and saw it. </p>
-<p><img alt="" class="addpic" src="/static/fitbittsproblem/0.png"/></p>
+<p><img alt="Fitbit app sleep log showing two short sessions with incorrect dates and times after the clock drifted" class="addpic" src="/static/fitbittsproblem/0.png"/></p>
 <p>Here we see my two sleep sessions logged under Friday — but the times are totally wrong, 2pm-6pm then 11pm-3am. </p>
 <p>Consider that before I synced it, my Fitbit time was ~6 hours behind the real time (said 10, was 4). If we add 6 hours to the sleep logs, the times become correct (8pm-12am, 5am-9am). This is horrible!</p>
 <h1 id="why-is-it-horrible">Why is it horrible?</h1>
@@ -1656,7 +1790,7 @@ SoftwareSerial <span style="color: #0066BB; font-weight: bold">mySerial</span>(R
 <p>Today I have some more results, this time regarding the nu-age speed-reading technique called "Bionic Reading". I have read the first two books of the next Olympians series by Rick Riordan, one with Bionic Reading and one without. </p>
 <hr/>
 <h1 id="inspiration">Inspiration</h1>
-<p><img alt="" class="addpic" src="/static/printvsdigital/2.png"/></p>
+<p><img alt="Bar chart of reading speeds across the five Percy Jackson books, all between 752 and 847 words per minute" class="addpic" src="/static/printvsdigital/2.png"/></p>
 <p>Looking at the graphs of my reading speed from the previous post, I find it amazing how close the reading speeds are for each book. While I think I read at a fairly consistent rate, Rick Riordan must also target a word count, and the vocab level must be held consistent across each one. To me, this ability to write series of books around the same character or universe with an audience that stays invested seems like a staple of young-adult / teenage fiction. Or maybe just for entertainment novels? I'm thinking of</p>
 <ul>
 <li>Warriors series (8 series of 6 books each)</li>
@@ -1673,18 +1807,18 @@ SoftwareSerial <span style="color: #0066BB; font-weight: bold">mySerial</span>(R
 <p>But whatever, I love running experiments, especially tiny ones.</p>
 <h1 id="experimental-setup">Experimental setup</h1>
 <p>Rick Riordan's 2nd Greco-Roman fantasy series is also 5 books long, features characters from the first series, and has similar average length (~120k words/book vs. ~85k). The first book I read normally, as a book file converted to HTML. Here is what it looks like:</p>
-<p><img alt="" class="addpic" src="/static/bionicreadingtest/1.png"/></p>
+<p><img alt="Opening page of the Jason chapter from The Lost Hero rendered as plain HTML text" class="addpic" src="/static/bionicreadingtest/1.png"/></p>
 <p>The second book I read using a Chrome extension called <a href="https://chromewebstore.google.com/detail/jiffy-reader/lljedihjnnjjefafchaljkhbpfhfkdic">JiffyReader</a>, which bolds the first half of each word in the text, making it "Bionified". Here's what it looks like now:</p>
-<p><img alt="" class="addpic" src="/static/bionicreadingtest/2.png"/></p>
+<p><img alt="The same book page with Bionic Reading applied, bolding the first half of every word" class="addpic" src="/static/bionicreadingtest/2.png"/></p>
 <p>My process was a bit convoluted because the real Bionic Reader converter 1) costs money and 2) doesn't preserve the format, which definitely affects reading speed. </p>
 <h1 id="results--discussion">Results &amp; Discussion</h1>
 <p>Here are my reading speeds for the first two books. The left is read normally, the right is read with Bionic text. Yada yada small sample size, can't draw statistically whatever conclusions, etc.</p>
 <p>Bionic Reading felt the same to me as normal reading after 10 pages, I did not feel less eye fatigue, nor did I read faster subjectively or objectively. I'm pretty sure this is a gimmick. </p>
-<p><img alt="" class="addpic" src="/static/bionicreadingtest/3.png"/></p>
+<p><img alt="Bar chart comparing reading speeds: 774 words per minute normal versus 754 with Bionic Reading" class="addpic" src="/static/bionicreadingtest/3.png"/></p>
 <hr/>
 <h1 id="extras">Extras</h1>
 <p>Also the website is awful (I'm not strawmanning, it's unrelated), check it out:</p>
-<p><img alt="" class="addpic" src="/static/bionicreadingtest/4.png"/></p></body></html>]]></content:encoded>
+<p><img alt="Bionic Reading homepage with giant overlapping mustard text, annotated in red mocking how hard it is to read" class="addpic" src="/static/bionicreadingtest/4.png"/></p></body></html>]]></content:encoded>
       <guid isPermaLink="true">https://andykong.org/blog/bionicreadingtest/</guid>
       <pubDate>Thu, 11 Jan 2024 00:00:00 -0500</pubDate>
     </item>
@@ -1697,8 +1831,8 @@ SoftwareSerial <span style="color: #0066BB; font-weight: bold">mySerial</span>(R
 <p><img alt="Stroop effect — quick, name the colors of the words" class="addpic" src="/static/strooper/img_1.png"/></p>
 <h1 id="methods-and-results">Methods and Results</h1>
 <p>Here is a lot of scatterplots where my three Stroop scores (please see above link for more info) are arranged according to some sleep variables (total time in bed, sleep efficiency, time asleep, time awake), and then I do a linear regression for each one.</p>
-<p><img alt="" class="addpic" src="/static/stroopvssleep/top.png"/></p>
-<p><img alt="" class="addpic" src="/static/stroopvssleep/bottom.png"/></p>
+<p><img alt="Six scatterplots of Stroop scores vs sleep duration and sleep efficiency with linear fits and p-values" class="addpic" src="/static/stroopvssleep/top.png"/></p>
+<p><img alt="Six scatterplots of Stroop scores vs minutes asleep and minutes awake with linear fits and p-values" class="addpic" src="/static/stroopvssleep/bottom.png"/></p>
 <p>I'm not just gonna throw a best-fit line on there and call it a day — I want to know how real that line is. I've also calculated a p-value which is the probability that the best-fit line slope is that value by random chance. I also <a href="https://en.wikipedia.org/wiki/Bonferroni_correction">Bonferroni-corrected</a> the threshold value, though I think this boundary is a bit arbitrary (we pick p=5% arbitarily like everyone else, then divide by 12 to Bonferroni correct. p&lt;.00416 is significant).</p>
 <h1 id="discussion">Discussion</h1>
 <p>As you can see, a few variables appear to be related (most notably Stroop score vs. sleep duration), but aren't actually by our experiment standards. I would need more data to confirm, and I only have 27 days of data because Stroop data is relatively new in my stack of tracked personal info. </p>
@@ -1716,13 +1850,13 @@ SoftwareSerial <span style="color: #0066BB; font-weight: bold">mySerial</span>(R
       <link>https://andykong.org/blog/printvsdigital/</link>
       <description>Also reflections on the Percy Jackson series</description>
       <content:encoded><![CDATA[<html><body><p>I recently re-read the first five books of the Percy Jackson series. I'll share some data on reading speed, as well as my thoughts on the series after re-reading as an adult.</p>
-<p><img alt="" class="addpic" src="/static/printvsdigital/0.jpg"/></p>
+<p><img alt="Covers of the first five Percy Jackson books by Rick Riordan" class="addpic" src="/static/printvsdigital/0.jpg"/></p>
 <hr/>
 <h1 id="data">Data</h1>
 <p>I read most of the PJ series on my computer, and use Timing to log the time spent reading each one. However, I happened to find my old physical copy of the third book on my shelf, and read that one on paper — since I used my computer right before and after reading it, we also have the time spent on that one. I'm getting word counts of each book from <a href="https://www.reddit.com/r/camphalfblood/comments/hm3gh8/numbers_the_length_of_percy_jackson/"> this reddit post </a>.</p>
-<p><img alt="" class="addpic" src="/static/printvsdigital/1.png"/></p>
+<p><img alt="Bar chart of word counts for the five Percy Jackson books, ranging from about 64,000 to 89,000 words" class="addpic" src="/static/printvsdigital/1.png"/></p>
 <p>It took me 503 minutes to read all of them:</p>
-<p><img alt="" class="addpic" src="/static/printvsdigital/2.png"/></p>
+<p><img alt="Bar chart of reading speeds per Percy Jackson book; The Titan's Curse is slowest at 752 words per minute" class="addpic" src="/static/printvsdigital/2.png"/></p>
 <p>Now, the difference is not huge, but the only book where I read the physical copy was also the slowest read. Weird! Originally the difference was bigger because I overzealously counted how long it took me to finish book 3, but it is slow even after correction. This made me think about potential reasons — extra sleepy while reading, bad lighting, etc.</p>
 <p>Then I thought that the page turning time was adding to the read time. Since I always scroll extra far down, I never have to wait to turn a page while reading on my computer.</p>
 <p>To test this, I timed how long it took to turn 10 pages and read the first word on each page. For physical books, this took 15.8 seconds, and on my books app, it takes 7.32 seconds. Book 3 is 300 pages, so I can estimate wasted page turning time at ~254 seconds, which is not large enough to have affected the above graph (only 0.5% of the total read time). Still, interesting. </p>
@@ -1744,7 +1878,7 @@ SoftwareSerial <span style="color: #0066BB; font-weight: bold">mySerial</span>(R
 <p class="caption"> Interesting endowment effect factoid, usually people use the analogy that a mug you own is worth much more to you than the value of the mug. I did not manage to take my ThorLabs mug back to America with me :( </p>
 <p><img alt="Interesting endowment effect factoid, usually people use the analogy that a mug you own is worth much more to you than the value of the mug. I did not manage to take my ThorLabs mug back to America with me :(" class="addpic" src="/static/packingtips/0.png"/></p>
 <p>This will be mostly targeted at people who carry around a lot of extraneous stuff related to a hobby or maybe a medical condition. I do a bit of electronics and the components and heavy equipment comprise approximately 30kg of my possessions. For instance, these two machines (oscilloscope, function generator + power supply) constitute a basic electronics lab totalling ~15kg, which I brought back from Europe. </p>
-<p><img alt="" class="addpic" src="/static/packingtips/1.jpg"/></p>
+<p><img alt="Rigol oscilloscope stacked on top of a Hameg triple power supply and function generator" class="addpic" src="/static/packingtips/1.jpg"/></p>
 <h1 id="packing">Packing</h1>
 <p>Before you start, it helps to mentally sort your stuff by density. For example, clothes are low density, books wood and weirdly shaped knick-knacks are medium, and metal/stone/ceramic stuff is high density. I also knew I would have two checked bags (23kg x 2) and a carry on (18kg in non-American countries) with personal item (no limit), with the total weight &gt;64kg.</p>
 <p>While you may think it makes sense to pack densely in the checked bags so you won't have to lug it around, you actually need to save the densest stuff for the carry-on and personal item. This is because they always check the weight of your checked bags but never your carry-on, so it doesn't matter if the carry-on is super heavy. Also, checked bags are bigger, and oftentimes you will have to pack the biggest, fluffiest stuff in there because they do not fit anywhere else.</p>
@@ -1769,7 +1903,7 @@ SoftwareSerial <span style="color: #0066BB; font-weight: bold">mySerial</span>(R
 <p>Ah, you don't trust the airport staff with all your earthly possessions? Yea, they do have a <a href="https://thepointsguy.com/news/lost-baggage-report-2022/">tendency to misplace luggage ~1% of the time</a>. I always keep an Airtag in my checked luggage just to make sure it's following along — also, if they lose it, we'll have the small comfort of knowing where it ended up.</p>
 <h1 id="total-cost">Total cost</h1>
 <p>My ticket had an included checked bag (75$), and I paid 100$ for the 2nd one. My two checked bags weighed 22.8kg each, carry-on weighed 20kg, and my backpack weighed ~10kg. 175$/75.6kg comes out to 2.31$/kg, beating out every shipping option I could find online. For reference, UPS charges approximately 9$/kg to ship a package (I'm using the weight of both my checked bags, since the carry-on is free anyway).</p>
-<p><img alt="" class="addpic" src="/static/packingtips/5.png"/></p>
+<p><img alt="UPS Express Saver shipping quote of 403.97 euros" class="addpic" src="/static/packingtips/5.png"/></p>
 <h1 id="planned-obsolescence">Planned obsolescence</h1>
 <p>This blog post will be rendered unnecessary once an hour of my life spent repacking is worth more money than 9$/kg. I'll still think applying optimization to the feat of packing is an enduring skill though, which will serve me greatly in my other arenas of life. Also, fuck rolling your clothes.</p>
 <h1 id="conclusion">Conclusion</h1>
@@ -1813,39 +1947,39 @@ SoftwareSerial <span style="color: #0066BB; font-weight: bold">mySerial</span>(R
       <link>https://andykong.org/blog/teardownlibre2cgm/</link>
       <description>Pictures and wild speculation</description>
       <content:encoded><![CDATA[<html><body><p>Hello! Recently I wore a Freestyle Libre 2 continuous glucose monitor for two weeks. They're sold over-the-counter in France for about 40 Euros a pop, and I was curious about what my glucose data could tell me about my other bodily functions.</p>
-<p><img alt="" class="addpic" src="/static/teardownlibre2cgm/0.jpg"/></p>
+<p><img alt="Opened yellow FreeStyle Libre 2 box showing the sealed sensor cup and grey applicator inside" class="addpic" src="/static/teardownlibre2cgm/0.jpg"/></p>
 <p>Here's the open box. The monitor + injector comes in two pieces. The bottom sealed cup has the monitor in it, here you can see the little triangular piece that has the needle.</p>
-<p><img alt="" class="addpic" src="/static/teardownlibre2cgm/1.jpg"/></p>
+<p><img alt="Underside of the round sensor cup with the small needle-carrying piece at its center" class="addpic" src="/static/teardownlibre2cgm/1.jpg"/></p>
 <p>You click the top grey part into the bottom cup and the monitor gets loaded into the applicator, needle-side out. </p>
-<p><img alt="" class="addpic" src="/static/teardownlibre2cgm/2.jpg"/></p>
+<p><img alt="Hands holding the two applicator pieces that click together to load the sensor needle-side out" class="addpic" src="/static/teardownlibre2cgm/2.jpg"/></p>
 <p>This gets injected into your arm or hip somewhere, where it connects to an app via Bluetooth.</p>
 <p>After about two weeks, my app said the monitor's two week lifespan had ended, and that I should purchase another one. Since I didn't notice any noticeable correlation between my blood glucose peaks and bodily functions (brain fog, tiredness, energy, etc.), I didn't opt to get another one.</p>
 <p>I kept the sensor around because I wanted to know how it worked, and finally got around to deconstructing it
 <br/></p><hr/>
 <h1 id="teardown">Teardown</h1>
-<p><img alt="" class="addpic" src="/static/teardownlibre2cgm/3.jpg"/></p>
+<p><img alt="Translucent sensor disc next to the tiny removed needle assembly with its three black squishy contacts" class="addpic" src="/static/teardownlibre2cgm/3.jpg"/></p>
 <p>First I removed the needle assembly, it has these three black squishy contacts that the needle feeds into. These touch the three golden circular pads on the Libre Freestyle 2</p>
-<p><img alt="" class="addpic" src="/static/teardownlibre2cgm/4.jpg"/></p>
+<p><img alt="Fingers holding the sensor with its clear plastic housing cracked open, exposing part of the green PCB" class="addpic" src="/static/teardownlibre2cgm/4.jpg"/></p>
 <p>From the top, it looks like the two shells are held together by a plastic rod on one going into a plastic hole on the other, and the fit is quite snug. I started using pliers to tear into the plastic housing and that worked nicely.</p>
-<p><img alt="" class="addpic" src="/static/teardownlibre2cgm/5.jpg"/></p>
+<p><img alt="Torn-open sensor revealing a component under kapton tape, possibly a thermal resistor for skin detection" class="addpic" src="/static/teardownlibre2cgm/5.jpg"/></p>
 <p>One of the first things I encountered was this taped sensor. I didn't have my multimeter on me to check, but it looks a bit like a thermal resistor used to roughly estimate temperature changes. Maybe for skin detection?</p>
-<p><img alt="" class="addpic" src="/static/teardownlibre2cgm/6.jpg"/></p>
+<p><img alt="Sensor PCB freed of plastic, showing the coin cell battery clip, chips, and gold needle contact pads" class="addpic" src="/static/teardownlibre2cgm/6.jpg"/></p>
 <p>After removing all the plastic, we can take a nice gander. The main microcontroller has an RF430 marking, looks like the TI RF430 NFC chip which also has an ADC.</p>
-<p><img alt="" class="addpic" src="/static/teardownlibre2cgm/7.jpg"/></p>
-<p><img alt="" class="addpic" src="/static/teardownlibre2cgm/8.png"/></p>
+<p><img alt="Close-up of the round PCB with the TI RF430 NFC chip, battery clip, and kapton-taped needle contacts" class="addpic" src="/static/teardownlibre2cgm/7.jpg"/></p>
+<p><img alt="TI datasheet header: RF430FRL152H NFC ISO15693 sensor transponder with SPI/I2C interface and 14-bit sigma-delta ADC" class="addpic" src="/static/teardownlibre2cgm/8.png"/></p>
 <p>I heard that the older Freestyle Libres used NFC only, requiring a user to tap their phone to the device to get readings out periodically. But mine had bluetooth, so what's doing that? There's also a PCB antenna at the top for wireless communication, furthering my suspicions that NFC is not the only thing here...</p>
-<p><img alt="" class="addpic" src="/static/teardownlibre2cgm/9.png"/></p>
+<p><img alt="Blurry close-up of the unidentified chip suspected of providing Bluetooth, next to its antenna and clock" class="addpic" src="/static/teardownlibre2cgm/9.png"/></p>
 <p>I'd venture a guess it's this chip on the the right, but I can't quite make out the letters in this picture. The antenna + clock right next to it seem to imply this IC does some thinking, and it may be responsible for the Bluetooth. </p>
 <h2 id="guard-ring">Guard Ring</h2>
-<p><img alt="" class="addpic" src="/static/teardownlibre2cgm/10.png"/></p>
+<p><img alt="Gold needle contact pads on the PCB, each encircled by a guard ring" class="addpic" src="/static/teardownlibre2cgm/10.png"/></p>
 <p>These crop circle-looking contacts for the needle are also interesting. I think this is the first time I've seen guard rings actually put to use in a circuit. They continue on the back</p>
-<p><img alt="" class="addpic" src="/static/teardownlibre2cgm/11.png"/></p>
+<p><img alt="Back of the PCB where the guard ring traces continue around teardrop-shaped gold pads" class="addpic" src="/static/teardownlibre2cgm/11.png"/></p>
 <p>I'm no expert, but I think guard rings are placed around the high input impedance inputs of an op-amp or ADC to prevent leakage current from affecting the measurement. Because the input signal can also have a high impedance, the leakage current across the PCB soldermask can significantly alter the signal. The guard ring is a grounded circle which attenuates any leakage current by shorting it out before it can get to the signal path. I'm guessing the signal that this CGM looks at is quite small or sensitive to noise.</p>
-<p><img alt="" class="addpic" src="/static/teardownlibre2cgm/12.png"/></p>
+<p><img alt="Sensor PCB held against the light, revealing guard ring inputs and the copper NFC coil looping the board" class="addpic" src="/static/teardownlibre2cgm/12.png"/></p>
 <p>Here's another picture of the CGM against the light. You can see both the guard inputs and some of the inputs from the main NFC chip. There's also a big copper trace that loops the whole board a few times - this looks like the coil that the NFC chip uses.</p>
 <p>I also wanted to measure the battery voltage at the end of the two weeks to see if the battery had really run out, or if this was some kind of planned obselescence play. Unfortunately I waited too long to check.</p>
 <p>Also, I believed that the needle had some kind of special liquid which turned the glucose level into a voltage. This doesn't seem to be the case, at least I couldn't see anything that would imply some "glucose electrifying liquid" that gets used up. There is a weird little loop of wire though on the needle, not sure what that is...</p>
-<p><img alt="" class="addpic" src="/static/teardownlibre2cgm/13.jpg"/></p>
+<p><img alt="Needle assembly close-up showing the rubbery black contact dots with tiny holes on their surfaces" class="addpic" src="/static/teardownlibre2cgm/13.jpg"/></p>
 <p>The little black dots here have tiny holes on the surface, and feel quite rubbery. I wonder if my blood actually traverses the tube and goes up to the PCB, or if some other mojo happens lower down in the needle? </p>
 <p>Anyway, that's all for now. I will be posting the results I got from the glucose data at some later time. Cya!</p></body></html>]]></content:encoded>
       <guid isPermaLink="true">https://andykong.org/blog/teardownlibre2cgm/</guid>
@@ -1903,7 +2037,7 @@ SoftwareSerial <span style="color: #0066BB; font-weight: bold">mySerial</span>(R
     </item>
     <item>
       <title>Breakdown of my most used Alfred Workflows</title>
-      <link>https://andykong.org/blog/alfredworth/</link>
+      <link>https://andykong.org/blog/alfredworth%202/</link>
       <description>Is Alfred worth buying?</description>
       <content:encoded><![CDATA[<html><body><p>On September 26, 2023, I spent 34 British pounds on a software license for Alfred 5, giving me access to some extra features like Workflows and Remote execution. This post is going to tell you about the Workflows that I've found, written, or co-opted to be useful to me.</p>
 <p><img alt="" class="addpic" src="/static/alfredworth/0.png"/></p>
@@ -1937,6 +2071,47 @@ SoftwareSerial <span style="color: #0066BB; font-weight: bold">mySerial</span>(R
 <h2 id="9-url-handler">9. URL Handler</h2>
 <p>I wrote this to handle arbitrary strings. YouTube links get downloaded as videos, Github links get downloaded as zips, other websites get turned into ".webarchive" pages. Pretty generically useful, I use it about once a week.</p>
 <p><img alt="" class="addpic" src="/static/alfredworth/10.png"/></p>
+<h1 id="worth-it">Worth it?</h1>
+<p>I'm not going to do a dry, EA-style calculation of time saved, but I estimate Alfred saves me about 30s of annoying, flow-breaking tasks every day. And that number can only ever improve, so I think Alfred is a good purchase if you plan on using your computer a lot.</p></body></html>]]></content:encoded>
+      <guid isPermaLink="true">https://andykong.org/blog/alfredworth%202/</guid>
+      <pubDate>Sun, 26 Nov 2023 00:00:00 -0500</pubDate>
+    </item>
+    <item>
+      <title>Breakdown of my most used Alfred Workflows</title>
+      <link>https://andykong.org/blog/alfredworth/</link>
+      <description>Is Alfred worth buying?</description>
+      <content:encoded><![CDATA[<html><body><p>On September 26, 2023, I spent 34 British pounds on a software license for Alfred 5, giving me access to some extra features like Workflows and Remote execution. This post is going to tell you about the Workflows that I've found, written, or co-opted to be useful to me.</p>
+<p><img alt="Alfred app logo, a black bowler hat with a purple band and a magnifying glass" class="addpic" src="/static/alfredworth/0.png"/></p>
+<hr/>
+<p>Over time, I realized Alfred just makes a lot of little things easier, and we do a lot of those little things pretty often. Here's my Workflow list:</p>
+<p><img alt="Alfred preferences Workflows tab listing the nine installed workflows covered in this post" class="addpic" src="/static/alfredworth/1.png"/></p>
+<h2 id="1-quit-arena-or-all-but-messages-and-opera">1. Quit Arena, or "All but messages and Opera"</h2>
+<p>This workflow is derived from <a href="https://github.com/vitorgalvao/alfred-workflows/tree/master/QuitArena">this other workflow called QuitArena</a>, and just closes all my apps except a preset few (Chrome, Messages, Opera, Spotify). It's nice for clearing my screen before a presentation, or just to context-switch to working on another project. Used about 2x per month</p>
+<p><img alt="Workflow list entry named All but messages and Opera, by Vitor Galvao" class="addpic" src="/static/alfredworth/2.png"/></p>
+<h2 id="2-change-audio-to-airpods">2. Change Audio To Airpods</h2>
+<p>Runs two CLI scripts, one that Bluetooth connects to my Airpods (via their hard-coded MAC address) and another that switches the sound output to my Airpods. I use this about once a day, since they tend to connect to my phone first.</p>
+<p><img alt="Change Audio To Airpods workflow canvas: keyword a runs a zsh script, then plays a success or failure sound" class="addpic" src="/static/alfredworth/3.png"/></p>
+<h2 id="3-clippaster">3. <a href="https://github.com/kongmunist/alfred_clippaster_workflow">ClipPaster</a></h2>
+<p>ClipPaster pastes the last $n$ screenshots from my clipboard history to whatever application is focused. It's nice for copying relevant parts of several screens or pictures at once and then putting them all into a doc at once. I use it about once a week. Modified from ClipSaver by luckman212 (next one!)</p>
+<p><img alt="ClipPaster workflow list entry, by Andy K" class="addpic" src="/static/alfredworth/4.png"/></p>
+<h2 id="4-clipsaver">4. <a href="https://github.com/luckman212/alfred_clipsaver_workflow">ClipSaver</a></h2>
+<p>ClipSaver does the same as above, but saves them to desktop instead of pasting them. I use it slightly less than once per week.</p>
+<p><img alt="ClipSaver workflow list entry, by luckman212" class="addpic" src="/static/alfredworth/5.png"/></p>
+<h2 id="5-email-myself">5. Email Myself</h2>
+<p>When I write "m mdmaowaodijwaojdwoaij", this workflow shoots off my "mdmaowaodijwaojdwoai" message to my mailbox. Good for quick reminders, but I don't use it that often.</p>
+<p><img alt="Email Myself workflow canvas: keyword e wired to an osascript Run Script action" class="addpic" src="/static/alfredworth/6.png"/></p>
+<h2 id="6-launch-apps">6. Launch Apps</h2>
+<p>While it's kind of silly or trivial, I find it way easier to bind hotkeys using Alfred than using the Settings-&gt;Keyboard-&gt;Keyboard Shortcuts method that's built-in to the Mac. This workflow surfaces some of my most-used applications. I use it a few times a day.</p>
+<p><img alt="Launch Apps workflow: Shift-Cmd hotkeys mapped to Messages, Google Chrome, Opera GX, and Spotify" class="addpic" src="/static/alfredworth/7.png"/></p>
+<h2 id="7-system-settings">7. <a href="https://github.com/alfredapp/system-settings-workflow/">System Settings</a></h2>
+<p>Surfaces the MacOS system settings menus and makes them searchable in Alfred. Really nice, I use it about once a day.</p>
+<p><img alt="System Settings workflow: keyword triggers like about and accessibility all feeding an Open URL action" class="addpic" src="/static/alfredworth/8.png"/></p>
+<h2 id="8-translate-hotkey">8. translate hotkey</h2>
+<p>I type "t something" and the "something" is immediately opened in Google Translate. 1-2x a day, but only because I live in a German-speaking area at the moment.</p>
+<p><img alt="Translate hotkey workflow: a snippet trigger wired to a Google Translate Open URL action" class="addpic" src="/static/alfredworth/9.png"/></p>
+<h2 id="9-url-handler">9. URL Handler</h2>
+<p>I wrote this to handle arbitrary strings. YouTube links get downloaded as videos, Github links get downloaded as zips, other websites get turned into ".webarchive" pages. Pretty generically useful, I use it about once a week.</p>
+<p><img alt="URL Handler workflow branching input to YouTube, local video, GitHub, webarchive, or fallback handlers" class="addpic" src="/static/alfredworth/10.png"/></p>
 <h1 id="worth-it">Worth it?</h1>
 <p>I'm not going to do a dry, EA-style calculation of time saved, but I estimate Alfred saves me about 30s of annoying, flow-breaking tasks every day. And that number can only ever improve, so I think Alfred is a good purchase if you plan on using your computer a lot.</p></body></html>]]></content:encoded>
       <guid isPermaLink="true">https://andykong.org/blog/alfredworth/</guid>
@@ -2066,14 +2241,14 @@ SoftwareSerial <span style="color: #0066BB; font-weight: bold">mySerial</span>(R
 <p>As I got older, specific times took on meaning. Classes starting and ending times, lunchtime, and school letting out were all hard-coded in my head, and I would think about them every time I glanced at the time. Over time, it only got worse. In college, I started keeping a calendar to track my courses and their locations. If a clock is a machine that produces time, a calendar is a factory. It is the ultimate time-keeping tool, containing every minute of your life and your past, theoretically forever in both directions if its electronic. Isn't that incredible? </p>
 <p>You may not think so, but try this. One day while working on <a href="../../projects/carnegiecalendar">Carnegie Calendar</a>, I realized that you could put in ANY date you wanted for an event. </p>
 <p>I scheduled a meeting for April 9th, 2150 that I probably won't be attending. I scrolled on my calendar to make sure the event showed up, and it was there, sitting as innocently as any other calendar event. Then I navigated to my 150th birthday, and that event was there too. I probably won't make it to that either. </p>
-<p><img alt="" class="addpic" src="/static/cm_150th.png"/></p>
+<p><img alt="Calendar popup for Andy Kong's 151st Birthday, repeating yearly with an alert one day before" class="addpic" src="/static/cm_150th.png"/></p>
 <p>If that's not insane to you, just think about it for a bit. To me, it felt like knowing exactly where I will be buried and visiting the plot of land 50 years in advance.</p>
 <hr/>
 <h1 id="sorry-that-was-a-tangent">Sorry, that was a tangent</h1>
 <p>I'm actually here to talk to you about a way to create your own holidays.</p>
 <p>You know how there are these preset holidays in your calendar that you didn't add, like "Presidents' Day" or "Thanksgiving Day"? We celebrate these events on certain days because these days were instrumental to the country's development, and that's cool. </p>
 <p>But to me, these events are kinda just taking up space — I didn't make them, and I might not celebrate them. What I find much more interesting to commemorate are the events that were instrumental to my life and my development. Stuff like "First time I got stitches" or "Failed midterm" that I can look back on and smile because they happened. </p>
-<p><img alt="" class="addpic" src="/static/cm_firststiches.png"/></p>
+<p><img alt="Calendar event titled First stitches! on Oct 4, 2021, set to repeat yearly" class="addpic" src="/static/cm_firststiches.png"/></p>
 <p>Now, whenever I feel like I've experienced something life-changing, I put it on my calendar and set it to repeat annually. I've started added the year too, just so I can gauge how long it's been. </p>
 <h2 id="in-the-farfuture">In the far-future...</h2>
 <p>I know that if I continue this, my calendar will eventually be filled with ghosts — past iterations of myself experiencing my own history. My routine weekly work meetings will clamor with "First stiches" for space on my screen. Birthdays of people I don't remember will populate the top bar. But these are the holidays I have chosen for myself, and to me, they are worth remembering.</p>
@@ -2084,6 +2259,45 @@ SoftwareSerial <span style="color: #0066BB; font-weight: bold">mySerial</span>(R
     <item>
       <title>Infoglobe Tutorial Pt. 3 — Software</title>
       <link>https://andykong.org/blog/infoglobetutorial3/</link>
+      <description>Adding bits to our atoms</description>
+      <content:encoded><![CDATA[<html><head><style>
+    /* Limit height. Show scrollbars when exceeding height */
+.gist .blob-wrapper.data {
+   max-height:40vh;
+   overflow:auto;
+}
+    </style>
+</head><body><p>Ok, welcome back for our final installment of the infoglobe tutorial series. If you've not been following along, here's links to the hardware mods that you'll need to have done before this post will be useful to you — <a href="../infoglobetutorial1">part 1</a> and <a href="../infoglobetutorial2">part 2</a>.</p>
+<p><img alt="Olympia Infoglobe with a clear blue dome displaying the scrolling message Hey Hackaday" class="addpic" src="/static/igt1_hero.jpeg"/></p>
+<p>If you've forgotten, here's the device we're hacking - the Olympia Infoglobe. I have described it too often, so we're gonna get right into the meat of this post. </p>
+<hr/>
+<h1 id="code">Code</h1>
+<p>We're using the Wemos D1 mini ESP8266/ESP32 breakout board to control our globe, it looks like this.</p>
+<p><img alt="Wemos D1 mini breakout board with its metal-shielded ESP8266 WiFi module" class="addpic" src="/static/igt3_wemos.png"/></p>
+<p>Boot up your Arduino IDE and download the "IRremoteESP8266" library from the Tools-&gt;Manage Libraries-&gt; then search for IRremoteESP8266. This library should be supported for ESP32s as well. Hit install, and twiddle your thumbs for a bit as it installs.</p>
+<p><img alt="Arduino IDE Library Manager showing the IRremoteESP8266 library installed" class="addpic" src="/static/igt3_irlib.png"/></p>
+<p>Now, copy past <a href="https://gist.github.com/kongmunist/a8bdadbacda4bcb129cd183f2f0fffc5">this gist</a> into a new Arduino file and upload it to your ESP board. </p>
+<script src="https://gist.github.com/kongmunist/a8bdadbacda4bcb129cd183f2f0fffc5.js"></script>
+<p>This script is a demo showing the usage of all the functions we have to make controlling the Infoglobe easier. If you read through the <code>loop()</code> function, then you'll begin to understand the code and become able to extend it to your own beneficial/nefarious purposes.</p>
+<p>If all went well and your ESP and Infoglobe are both powered up, you should see a "Hello World" message swirling around. You can change the default message on line 47, or you can open the Serial Monitor to upload a message to the Infoglobe immediately. </p>
+<h2 id="example-use-case">Example use case</h2>
+<p>I've personally written some code which lets the Infoglobe connect to my wifi and access <a href="https://aksuper7.pythonanywhere.com/">this website</a> I made for receiving notes from my friends. If you type a message and my globe is plugged in, I'll be able to see the message right on my Infoglobe. Pretty cool, right? </p>
+<p class="caption"> Website to connect digital friends to my physical environment </p>
+<p><img alt="Website to connect digital friends to my physical environment" class="addpic" src="/static/igt3_example1.png"/></p>
+<p>I know of other people using their infoglobes as a weather/disaster reporting station, or a way to visualize Alexa messages. </p>
+<h2 id="alternatives-to-esp">Alternatives to ESP</h2>
+<p>It should be possible to substitute in any microcontroller which is supported by one of the IRremote libraries, since it should work as long as the function names are identical.</p>
+<h2 id="more-code">More code?</h2>
+<p>There are some cool folks working on a more sophisticated platform for interacting with the Infoglobe, but I don't currently have the link for that. Hopefully I can update this soon with the link.</p>
+<h1 id="thats-all-folks">That's all folks!</h1>
+<p>What will you do with your Infoglobe? I'd love to see it! Please feel free to email me if you get it working :)</p>
+<p>Happy hacking!</p></body></html>]]></content:encoded>
+      <guid isPermaLink="true">https://andykong.org/blog/infoglobetutorial3/</guid>
+      <pubDate>Sun, 09 Apr 2023 00:00:00 -0400</pubDate>
+    </item>
+    <item>
+      <title>Infoglobe Tutorial Pt. 3 — Software</title>
+      <link>https://andykong.org/blog/infoglobetutorial3%202/</link>
       <description>Adding bits to our atoms</description>
       <content:encoded><![CDATA[<html><head><style>
     /* Limit height. Show scrollbars when exceeding height */
@@ -2117,7 +2331,7 @@ SoftwareSerial <span style="color: #0066BB; font-weight: bold">mySerial</span>(R
 <h1 id="thats-all-folks">That's all folks!</h1>
 <p>What will you do with your Infoglobe? I'd love to see it! Please feel free to email me if you get it working :)</p>
 <p>Happy hacking!</p></body></html>]]></content:encoded>
-      <guid isPermaLink="true">https://andykong.org/blog/infoglobetutorial3/</guid>
+      <guid isPermaLink="true">https://andykong.org/blog/infoglobetutorial3%202/</guid>
       <pubDate>Sun, 09 Apr 2023 00:00:00 -0400</pubDate>
     </item>
     <item>
@@ -2264,7 +2478,7 @@ If we look closely, we notice that two of the red wires go to the bottom of the 
 <p>Your microcontroller should sit nicely if it's got the Wemos D1 Mini shape. </p>
 <h1 id="step-7-put-everything-back-together">Step 7: Put everything back together.</h1>
 <p>Secure the wires internally, then put the grey shell back on, then screw the rotor back on, then put the dome back on. </p>
-<p><img alt="" class="addpic" src="/static/igt2_tolife.jpg"/></p>
+<p><img alt="Reassembled Infoglobe with its blue dome displaying TO LIFE!! in glowing dot-matrix letters" class="addpic" src="/static/igt2_tolife.jpg"/></p>
 <p>And we're done! You are now the proud owner of a modded Infoglobe. Now get out there and make it say some cool stuff!</p>
 <h1 id="cya-later">Cya later!</h1>
 <p>Let me know if I've left out details or you need any clarification, my email is listed above.</p></body></html>]]></content:encoded>
@@ -2292,7 +2506,7 @@ If we look closely, we notice that two of the red wires go to the bottom of the 
 <p class="caption"> Soaked gelatin sheet is like a clear tisseue </p>
 <p><img alt="Soaked gelatin sheet is like a clear tisseue" class="addpic" src="/static/cg1_soaked.jpg"/></p>
 <p>While that was happening I went and microwaved my tupperware to get the water warm. I brought over the gelatin, which had sagged down in the cup of water and got ready to transfer it. I used a spoon because I didn't know how my hand oils would affect the setting. </p>
-<p><img alt="" class="addpic" src="/static/gc1_bothcups.jpg"/></p>
+<p><img alt="Lifting the floppy soaked gelatin sheet out of a green glass of water with a knife, ready to transfer it" class="addpic" src="/static/gc1_bothcups.jpg"/></p>
 <p>The package said to stir until totally dissolved and I had worried that it would take a long time, but it dissolved on impact into this slightly tan cloud. I stirred it for just a few seconds and it incorporated just fine. Here's my tupperware chilling in the fridge right after this</p>
 <p class="caption"> Unset gelatin </p>
 <p><img alt="Unset gelatin" class="addpic" src="/static/gc1_preset.jpg"/></p>
@@ -2323,6 +2537,105 @@ If we look closely, we notice that two of the red wires go to the bottom of the 
 <p>I'm trying to make a circular laser, and I fear this is easily done with some hose and gelatin instead of this complex ass setup i'm envisioning. Perhaps this will be cooler though.</p></body></html>]]></content:encoded>
       <guid isPermaLink="true">https://andykong.org/blog/cleargelatin1/</guid>
       <pubDate>Tue, 04 Oct 2022 00:00:00 -0400</pubDate>
+    </item>
+    <item>
+      <title>Infoglobe Tutorial Pt 1 — Hardware Prototyping</title>
+      <link>https://andykong.org/blog/infoglobetutorial1%202/</link>
+      <description>Hacking a new brain into the Infoglobe</description>
+      <content:encoded><![CDATA[<html><head><style>
+    image{
+        max-width: 100%;
+    }
+</style>
+</head><body><p>Hello! I'm writing a tutorial on how to hack your own Olympia Infoglobe. This first part just tells you all the wires you'll need to cut or connect in order to make it display custom messages. </p>
+<p class="caption"> caption </p>
+<p><img alt="caption" class="addpic" src="/static/igt1_hero.jpeg"/></p>
+<p>If you don't already know about the Infoglobe (surprising considering how I won't shut up about it), it's a caller ID system from the turn of the millenia which displayed who was calling your quaint little landline phone. It could also store messages that people left you, and display holiday messages. Overall, a cute little device!</p>
+<p>Today, the humble Infoglobe has been rendered obsolete by the modern smartphone. With no landline resurgence in sight, we're going to hack the Infoglobe to show custom messages and give it a second life as a weather station or some other mundane job.</p>
+<p>Let's start!</p>
+<hr/>
+<h1 id="tools">Tools</h1>
+<p>You'll need the following things</p>
+<ul>
+<li>1x Infoglobe</li>
+<li>Philips head screwdriver</li>
+<li>wire cutter</li>
+<li>soldering iron + solder</li>
+<li>50-1kΩ resistor</li>
+</ul>
+<p class="caption"> Since I already did this hack, I have only photographed two of the tools. Please use your imagination for the rest </p>
+<p><img alt="Since I already did this hack, I have only photographed two of the tools. Please use your imagination for the rest" class="addpic" src="/static/igt1_tools.jpg"/></p>
+<h2 id="step-1-remove-the-screws-from-the-base">Step 1: Remove the screws from the base</h2>
+<p>Pretty straightforward. There's 4 Philips-head screws in these 4 dark holes. They're kinda deep in there, so get a long thing screwdriver. Nothing will happen when they come out, but it makes the next step easier. </p>
+<p class="caption"> The four screw burrows, helpfully circled in red </p>
+<p><img alt="The four screw burrows, helpfully circled in red" class="addpic" src="/static/igt1_screws.jpg"/></p>
+<h2 id="step-2-remove-the-clear-blue-dome">Step 2: Remove the clear blue dome</h2>
+<p>Now we're taking off the top and getting to the insides. The top is held on by four latches you can see from the outside on the edges.</p>
+<p class="caption"> Latches visible from the outside (pic from eBay) </p>
+<p><img alt="Latches visible from the outside (pic from eBay)" class="addpic" src="/static/igt1_latches.jpeg"/></p>
+<p>Inside, they have a little notch going from the wall radially inwards</p>
+<p class="caption"> Inside the base, there are notches that go towards the center </p>
+<p><img alt="Inside the base, there are notches that go towards the center" class="addpic" src="/static/igt1_bottomclasp.jpg"/></p>
+<p>The top part has these seatbelt-like shapes that line up with the notch on the inside. </p>
+<p class="caption"> And on the top part, there are latches that extend into the body </p>
+<p><img alt="And on the top part, there are latches that extend into the body" class="addpic" src="/static/igt1_topclasp.jpg"/></p>
+<h3>Careful!!</h3>
+<p>I won't lie to you: getting this thing off is kinda hard. You feel like you're gonna break it on accident, and it's a sphere so it's hard to hold on to, and will definitely break when you drop it. I recommend sitting on the floor or hugging it when you're wrestling the top part off. </p>
+<p>You'll want to pick one latch to start with. Right above the latch on the blue part, pull inwards and pull up at the same time. Hold the base tightly with your other hand, or hug it with your arm. A wedge/screwdriver is unlikely to help. Here's a video of me getting the first one out.</p>
+<video controls="" src="/static/igt1_firstlatch.mp4" style="max-width: 100%"></video>
+<p style="font-size:.7em;">Funnily enough, I'm wearing a Dome shirt as I open this dome</p>
+<p>The rest of the latches get easier after the first two. Same technique, just pull in and pull up at the same time. </p>
+<h1 id="step-3-remove-the-propeller">Step 3: remove the propeller</h1>
+<p>Once you're in, the grey part will be loose, but still held in by the spinning arm of the Infoglobe. We'll have to take that off. Just use your screwdriver to remove those 3 small screws. The propeller is spring loaded, so maybe unscrew all of them a little first so the first one doesn't bounce out and get lost</p>
+<p class="caption"> Note the square center peg and the triangular screw arrangement - automatic alignment! </p>
+<p><img alt="Note the square center peg and the triangular screw arrangement - automatic alignment!" class="addpic" src="/static/igt1_propellerscrews.jpg"/></p>
+<p>Remove both the propeller and the grey plate and set them aside. </p>
+<h1 id="step-4-hijack-the-infoglobes-data-led-and-add-a-currentlimiting-resistor">Step 4: Hijack the Infoglobe's data LED and add a current-limiting resistor</h1>
+<p>There's 3 obvious LEDs once you're looking at the circuit board. One is red, this is just a power indicator. Of the two other light-blue ones, the innermost one is the data LED. </p>
+<p class="caption"> All LEDs inside the infoglobe, labeled </p>
+<p><img alt="All LEDs inside the infoglobe, labeled" class="addpic" src="/static/igt1_dataLED.jpg"/></p>
+<p>Previous tutorials have made circuit boards that integrate into the infoglobe, allowing it to continue displaying the phone stuff you wanna see plus cool custom stuff. This is why past projects have had such complex setups. I say why bother? The data LED has two wires like any other LED, and if we cut them then we can write whatever we want. </p>
+<p>There's two ways about this. You can either cut both legs of the LED and solder on new wires that run to the outside of the infoglobe, or you can just cut the positive side of the LED and connect the grounds of the Infoglobe board to your microcontroller. </p>
+<p>Either way, two wires get added so it's really up to you. I started with the single wire and joined the grounds first because I knew I wanted to power my microcontroller off the infoglobe power eventually, and it made prototyping way faster. </p>
+<p class="caption"> The two-cut approach hijacks the entire data LED. The LED's positive side is on the left </p>
+<p><img alt="The two-cut approach hijacks the entire data LED. The LED's positive side is on the left" class="addpic" src="/static/igt1_bothcut.jpg"/></p>
+<p class="caption"> The one cut approach, hijacks only the power wire (left) and requires you find ground somewhere else (anywhere connected to the right wirse is fine) </p>
+<p><img alt="The one cut approach, hijacks only the power wire (left) and requires you find ground somewhere else (anywhere connected to the right wirse is fine)" class="addpic" src="/static/igt1_onecut.jpg"/></p>
+<p>Run those two wires outside of the casing and connect a resistor in series so you don't blow out the Infoglobe's infrared LED. </p>
+<h3>PLEASE CONNECT A SERIES RESISTOR TO THE DATA LED LINE BEFORE USING IT, OTHERWISE YOU RISK BURNING OUT THE LED!</h3>
+<hr/>
+<h1 id="testing-the-infoglobe-without-putting-it-back-together">Testing the Infoglobe without putting it back together</h1>
+<p>If you wanted to plug in the infoglobe with all the plastic off, it'd probably be dangerous for both the board and you. It just takes a hair caught in the rotor to ruin your Infoglobe and hair and project all at once. But it sucks to put it all back together, and there is a way to be relatively safe without doing that. </p>
+<p>1) Put the grey piece back on. The alignment is a bit tricky but it should drop right in</p>
+<p><img alt="Infoglobe base with the grey plate dropped back into place over the electronics" class="addpic" src="/static/igt1_reass1.jpg"/></p>
+<p>2) Then place the rotor back on the center section and screw it in. Make sure you screw them all in a bit simultaneously, since there is a spring under it. </p>
+<p><img alt="" class="addpic" src="/static/igt1_reass2.jpg"/></p>
+<p>3) Get something to fool the safety switch, preferably nonmetal</p>
+<p class="caption"> This limit switch needs to be taped or pushed down </p>
+<p><img alt="This limit switch needs to be taped or pushed down" class="addpic" src="/static/igt1_safeswitch.jpg"/></p>
+<p class="caption"> Chopstick works for depressing it </p>
+<p><img alt="Chopstick works for depressing it" class="addpic" src="/static/igt1_reass3.jpg"/></p>
+<p>The top dome can also be placed into the slots without clicking down, but still low enough to trigger the safety switch. This is probably the safest way to do it.</p>
+<p class="caption"> The lid also works for triggering the safety switch, but this is the only method that is actually safe </p>
+<p><img alt="The lid also works for triggering the safety switch, but this is the only method that is actually safe" class="addpic" src="/static/igt1_reass4.jpg"/></p>
+<p>4) Plug in the infoglobe power, and the rotor should begin spinning with no words appearing</p>
+<p>To change the insides requires at least unscrewing the rotor, but luckily you won't need to do it much at all. </p>
+<hr/>
+<h1 id="final-setup">Final setup</h1>
+<p>At this point, you should have an Infoglobe with two wires coming out of it. I originally used F jumpers as the wires to the data LED, then plugged into them using an external Arduino. </p>
+<p class="caption"> Picture of the Arduino setup I originally worked with, Arduino not in-frame </p>
+<p><img alt="Picture of the Arduino setup I originally worked with, Arduino not in-frame" class="addpic" src="/static/igt1_testingsetup2.jpg"/></p>
+<p>Later when I was sure the code worked on Arduino, I moved to using an ESP8266 microcontroller. It's the little square with a blue light in the picture below. </p>
+<p><img alt="" class="addpic" src="/static/igt1_testingsetup.jpg"/></p>
+<p>Since the ESP has no headers, I'm using a breadboard to connect the ESP to the data wires. Again, the LED's wires you've added will just run out from under the shell of the Infoglobe, and they safety switch can be engaged using the top dome despite the wires preventing it from closing fully. </p>
+<p>There is some more hardware on the breadboard than I'm letting on, but that will be covered in Pt 2.</p>
+<hr/>
+<h1 id="conclusion">Conclusion</h1>
+<p>There's a few more steps if you want to integrate the infoglobe with your microcontroller, but that's for a later tutorial. Now you've gotten a connected LED. Time to write some messaging software!</p>
+<p>If I haven't published it and you want me to get on with it, just shoot me an email and I'll add it to my very relaxed schedule. </p>
+<p>Update 10/13: There's a part two <a href="../infoglobetutorial2">here</a>!</p></body></html>]]></content:encoded>
+      <guid isPermaLink="true">https://andykong.org/blog/infoglobetutorial1%202/</guid>
+      <pubDate>Sat, 01 Oct 2022 00:00:00 -0400</pubDate>
     </item>
     <item>
       <title>Infoglobe Tutorial Pt 1 — Hardware Prototyping</title>
@@ -2393,9 +2706,9 @@ If we look closely, we notice that two of the red wires go to the bottom of the 
 <h1 id="testing-the-infoglobe-without-putting-it-back-together">Testing the Infoglobe without putting it back together</h1>
 <p>If you wanted to plug in the infoglobe with all the plastic off, it'd probably be dangerous for both the board and you. It just takes a hair caught in the rotor to ruin your Infoglobe and hair and project all at once. But it sucks to put it all back together, and there is a way to be relatively safe without doing that. </p>
 <p>1) Put the grey piece back on. The alignment is a bit tricky but it should drop right in</p>
-<p><img alt="" class="addpic" src="/static/igt1_reass1.jpg"/></p>
+<p><img alt="Infoglobe base with the grey plate dropped back into place over the electronics" class="addpic" src="/static/igt1_reass1.jpg"/></p>
 <p>2) Then place the rotor back on the center section and screw it in. Make sure you screw them all in a bit simultaneously, since there is a spring under it. </p>
-<p><img alt="" class="addpic" src="/static/igt1_reass2.jpg"/></p>
+<p><img alt="Spinning rotor arm with its LED circuit board screwed back onto the Infoglobe base" class="addpic" src="/static/igt1_reass2.jpg"/></p>
 <p>3) Get something to fool the safety switch, preferably nonmetal</p>
 <p class="caption"> This limit switch needs to be taped or pushed down </p>
 <p><img alt="This limit switch needs to be taped or pushed down" class="addpic" src="/static/igt1_safeswitch.jpg"/></p>
@@ -2412,7 +2725,7 @@ If we look closely, we notice that two of the red wires go to the bottom of the 
 <p class="caption"> Picture of the Arduino setup I originally worked with, Arduino not in-frame </p>
 <p><img alt="Picture of the Arduino setup I originally worked with, Arduino not in-frame" class="addpic" src="/static/igt1_testingsetup2.jpg"/></p>
 <p>Later when I was sure the code worked on Arduino, I moved to using an ESP8266 microcontroller. It's the little square with a blue light in the picture below. </p>
-<p><img alt="" class="addpic" src="/static/igt1_testingsetup.jpg"/></p>
+<p><img alt="Infoglobe wired to a breadboard and ESP8266, with oscilloscope probes attached for testing" class="addpic" src="/static/igt1_testingsetup.jpg"/></p>
 <p>Since the ESP has no headers, I'm using a breadboard to connect the ESP to the data wires. Again, the LED's wires you've added will just run out from under the shell of the Infoglobe, and they safety switch can be engaged using the top dome despite the wires preventing it from closing fully. </p>
 <p>There is some more hardware on the breadboard than I'm letting on, but that will be covered in Pt 2.</p>
 <hr/>
@@ -2802,7 +3115,7 @@ We see that his "Top Stocks to Watch Today: Thursday, September 16" watchlist di
     </item>
     <item>
       <title>Measuring 150 Amps With A DIY Shunt</title>
-      <link>https://andykong.org/blog/highcurrentsource/</link>
+      <link>https://andykong.org/blog/highcurrentsource%202/</link>
       <description>Speccing a 150A@5V power supply, the NJE MK750</description>
       <content:encoded><![CDATA[<html><body><p>Hello everyone! Today I'm going to show y'all my testing of a high current, low voltage DC power supply.</p>
 <p>Typical bench power supplies will go up to about 30V, and output 3A at most. For more powerful power supplies, their focus will usually be on voltage, going up to kilovolts at only a few amps or milliamps. </p>
@@ -2874,6 +3187,86 @@ Woohoo! Almost exactly 150 amps at 5V. The readout from the wall meter said arou
 <p><img alt="The pinout of the J1 connector on the NJE MK750/MK1500 high current power supply" class="addpic" src="/static/NJE_J1_PINOUT.jpg"/></p>
 <p>These pins correspond to the functions mentioned in the 1-pager manual I have above.</p>
 <p><img alt="" class="addpic" src="/static/nje_functions.png"/></p>
+<p>And the sense pins are supposed to be connected to the outputs like so (I think to monitor the output voltage).</p>
+<p class="caption"> From random eBay listing </p>
+<p><img alt="From random eBay listing" class="addpic" src="/static/nje_senseplugs.png"/></p></body></html>]]></content:encoded>
+      <guid isPermaLink="true">https://andykong.org/blog/highcurrentsource%202/</guid>
+      <pubDate>Mon, 06 Sep 2021 00:00:00 -0400</pubDate>
+    </item>
+    <item>
+      <title>Measuring 150 Amps With A DIY Shunt</title>
+      <link>https://andykong.org/blog/highcurrentsource/</link>
+      <description>Speccing a 150A@5V power supply, the NJE MK750</description>
+      <content:encoded><![CDATA[<html><body><p>Hello everyone! Today I'm going to show y'all my testing of a high current, low voltage DC power supply.</p>
+<p>Typical bench power supplies will go up to about 30V, and output 3A at most. For more powerful power supplies, their focus will usually be on voltage, going up to kilovolts at only a few amps or milliamps. </p>
+<p>I recently had the need for the opposite kind of power supply, a high current and low voltage one, up to 200A at around 3V. I found this one on Ebay which seemed the fit the bill. Let me tell you all about it!</p>
+<p class="caption">What could it be?</p>
+<p><img alt="What could it be?" src="/static/mk750_backonly.jpg"/></p>
+<h1 id="how-do-you-make-200a">How do you make 200A?</h1>
+<p>Before I bought this, I had juggled a few alternatives. There are many sketchy ways you can generate huge currents. A few I considered were: </p>
+<ul>
+<li>
+<p>A) shorting out around 10 drone/RC car LiPos in parallel (burst numbers are higher, but about 20A sustained current per battery)</p>
+</li>
+<li>
+<p>B) Rectifying and rewinding a microwave transformer to output 3V from the wall</p>
+</li>
+<li>
+<p>C) Harvesting RAM power supplies from dead motherboards (Sketchy YouTube videos put this at 20A, 3V)</p>
+</li>
+<li>
+<p>D) Buying a battery-tester power supply, which are at weird voltages (8V, 5V, 4V, 2V, etc.) but super high currents.</p>
+</li>
+</ul>
+<p>Option D beat out the others in terms of reliability, but those niche power supplies are quite expensive, even on eBay. Luckily, I found an older one that seemed to do exactly what I wanted. </p>
+<p class="MK750 eBay page. I may have bought the last one"></p>
+<p><img alt="MK750 eBay page. I may have bought the last one" src="/static/mk750_ebaypage.png"/></p>
+<p>The NJE Corp. MK750, MK1000, and MK1500 were power supplies at their eponymous wattage, which output anything from 2V to 48V at massive currents. The only datasheet I could find was <a href="/static/mk750_datasheet.pdf" target="_blank">this one</a>, and there's not a ton of information on there (like what those 6 pins are for). But I needed this power supply, so I went ahead and ordered it. </p>
+<h1 id="voltage-testing">Voltage Testing</h1>
+<p>The first thing I checked was the voltage. After wiring the AC, ACC, and GND pins (3 prong power), I plugged it into a wall meter and checked the output. It looked good, almost perfectly 5V. With no load, the power supply drew around 70W, or 0.5A from the wall. </p>
+<p class="caption">MK750 outputting 5V, as it should</p>
+<p><img alt="MK750 outputting 5V, as it should" src="/static/mk750_5vconfirmed.jpg"/></p>
+<h1 id="current-testing">Current Testing</h1>
+<p>What I <em>really</em> wanted to know was if the MK750 could output the massive currents its manual had promised. This was a bit trickier. I could have used a clamp, but I didn't think of that. Instead, I watched an ElectroBOOM <a href="https://www.youtube.com/watch?v=j4u8fl31sgQ">video</a> about DIY current shunts and decided to use one of those.</p>
+<p>Really, a DIY current shunt is just a wire. At 5V, to output 150A you need a load of </p>
+<p>$$ 5V/150A = 0.033Ω = 33mΩ $$</p>
+<p>This is usually the resistance of a few feet of wire. Mehdi talks about how multimeters suck at measuring low resistances, but they are good at voltage. I cut a random length of a random wire off the wall, and passed 1A constant-current through it to find the resistance. The measured mV corresponded directly to the mΩ of the wire. </p>
+<p class="Thin wire of a good resistance, but not nearly enough current capacity"></p>
+<p><img alt="Thin wire of a good resistance, but not nearly enough current capacity" src="/static/mk750_thinwire.jpg"/></p>
+<p>This bit of wire happened to be around 48mΩ, which was nearly perfect. However, just before I plugged it in, I realized that the entire output 750W of the MK750 would pass through this tiny 18 AWG  wire and vaporize it instantly. Immediately I threw the thin wire away, and went foraging for some thicker power wires. </p>
+<p class="Thicker wire of a perfect resistance"></p>
+<p><img alt="Thicker wire of a perfect resistance" src="/static/mk750_thickwire.jpg"/></p>
+<p>We cleaned the club a few days ago, and had thrown out some chunky orange power cables. Each cable had 3 conductors, so I took a length of this and crimped alternating ends together to make a triply long cable in the length of one. I did the same test as before, passing 1A through the combined cable. This resistance turned out to be actually perfect, at 34mΩ. </p>
+<h1 id="using-the-3wire-shunt-34mω">Using the 3-wire shunt (34mΩ)</h1>
+<p class="3-strand shunt resistor all set up, multimeter right next to it"></p>
+<p><img alt="3-strand shunt resistor all set up, multimeter right next to it" src="/static/mk750_threestrandbefore.jpg"/></p>
+<p>I connected our shunt to the power supply, then clipped my multimeter to the output. I'm measuring voltage to get the current. Since Ohm's law always holds, if we already calculated the resistance and then measure the voltage, we have everything we need. Time to plug it in!</p>
+<p class="3-strand shunt resistor under test. Multimeter reads 5.14V"></p>
+<p><img alt="3-strand shunt resistor under test. Multimeter reads 5.14V" src="/static/mk750_threestrandduring.jpg"/></p>
+<p>And the MK750 delivers! Across our 35mΩ wire we see a drop of 5.14V, which works out to
+$$\frac{5.14V}{0.035Ω} = 147.7 \text{Amps}$$
+Woohoo! Almost exactly 150 amps at 5V. The readout from the wall meter said around 900W, so approximately the baseline 50W + 150Ax5V. Not bad for efficiency.</p>
+<p>Oh, and the wires got HOT. I only left it on for a few seconds for safety, but even then the thermometer said the wire got over 100F. Crazy!</p>
+<p class="Our shunt temperature after only 10 seconds of 150A"></p>
+<p><img alt="Our shunt temperature after only 10 seconds of 150A" src="/static/mk750_hotwire.jpg"/></p>
+<h1 id="using-a-2wire-shunt-23mω">Using a 2-wire shunt (23mΩ)</h1>
+<p>I wanted to see what this power supply was really capable of. I had avoided using a shunt lower than 33mΩ because I was afraid that shorting out the power supply would break it. Thinking further, I realized that 33mΩ is already considered a dead short in any other application, so it probably wasn't a concern. </p>
+<p>In our 3-stranded shunt, each wire was around 11mΩ. I moved the crimps so that it only used two wires, for a new shunt resistance of around 23.2mΩ. I reconnected everything to this smaller shunt, and switched it on. </p>
+<p class="A snapshot of the rising voltage of our 2-strand shunt"></p>
+<p><img alt="A snapshot of the rising voltage of our 2-strand shunt" src="/static/mk750_twostrandduring.jpg"/></p>
+<p>As expected, the output voltage dropped a bit to compensate for the short. However, the voltage reading on my multimeter immediately started shooting up, beginning at 4.3V and climbing to 4.9V in the space of a few seconds. I assume this is from heat increasing the resistance of the wire, and shut it off quickly. </p>
+<p>Using the initial reading of 4.3V, Ohm's law says the MK750 output 185A at first, and a clamp meter agreed at around 170A. The wall meter read 1120W during this test.</p>
+<video controls="" src="/static/mk750_vid3.mov"></video>
+<h1 id="closing-thoughts">Closing thoughts</h1>
+<p>This power supply is amazing. Unfortunately, the NJE Corporation just filed for bankruptcy last year (2020), so I don't think we'll be seeing many more power supplies where that came from. </p>
+<p>It also smells weird, but that's completely fine given its the excellent performance otherwise. </p>
+<p>Cya next time!</p>
+<h1 id="may-8-2024-update">May 8, 2024 Update</h1>
+<p>A reader emailed me asking for the pinout of the auxiliary J1 connector on the front panel of the power supply. I never had use for these features so I did not know, but he was dedicated enough to order a manual and kind enough to send me a picture:</p>
+<p class="caption"> The pinout of the J1 connector on the NJE MK750/MK1500 high current power supply </p>
+<p><img alt="The pinout of the J1 connector on the NJE MK750/MK1500 high current power supply" class="addpic" src="/static/NJE_J1_PINOUT.jpg"/></p>
+<p>These pins correspond to the functions mentioned in the 1-pager manual I have above.</p>
+<p><img alt="Manual excerpt titled Convenience Functions describing inhibit/remote shutdown, margin check, and power-fail signals" class="addpic" src="/static/nje_functions.png"/></p>
 <p>And the sense pins are supposed to be connected to the outputs like so (I think to monitor the output voltage).</p>
 <p class="caption"> From random eBay listing </p>
 <p><img alt="From random eBay listing" class="addpic" src="/static/nje_senseplugs.png"/></p></body></html>]]></content:encoded>

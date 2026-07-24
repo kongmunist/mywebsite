@@ -100,11 +100,11 @@ If you wanted to plug in the infoglobe with all the plastic off, it'd probably b
 
 1) Put the grey piece back on. The alignment is a bit tricky but it should drop right in
 
-{{ add_pic("igt1_reass1.jpg", "") }}
+{{ add_pic("igt1_reass1.jpg", "", alt="Infoglobe base with the grey plate dropped back into place over the electronics") }}
 
 2) Then place the rotor back on the center section and screw it in. Make sure you screw them all in a bit simultaneously, since there is a spring under it. 
 
-{{ add_pic("igt1_reass2.jpg", "") }}
+{{ add_pic("igt1_reass2.jpg", "", alt="Spinning rotor arm with its LED circuit board screwed back onto the Infoglobe base") }}
 
 3) Get something to fool the safety switch, preferably nonmetal
 {{ add_pic("igt1_safeswitch.jpg", "This limit switch needs to be taped or pushed down") }}
@@ -125,7 +125,7 @@ At this point, you should have an Infoglobe with two wires coming out of it. I o
 Later when I was sure the code worked on Arduino, I moved to using an ESP8266 microcontroller. It's the little square with a blue light in the picture below. 
 
 
-{{ add_pic("igt1_testingsetup.jpg", "") }}
+{{ add_pic("igt1_testingsetup.jpg", "", alt="Infoglobe wired to a breadboard and ESP8266, with oscilloscope probes attached for testing") }}
 
 Since the ESP has no headers, I'm using a breadboard to connect the ESP to the data wires. Again, the LED's wires you've added will just run out from under the shell of the Infoglobe, and they safety switch can be engaged using the top dome despite the wires preventing it from closing fully. 
 

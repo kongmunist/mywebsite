@@ -16,23 +16,23 @@ Even though a solar cell generates its max voltage in the presence of almost any
 
 For my device, the TI BQ25570 is nearly perfect — it offers MPPT and starts from only 600 mV. However, it requires a certain amount of power to start up, around 15 uW. Since I'm expecting almost no light on my device, I wanted to find a chip which starts from even less power. This is where the R1801K comes in — this is a chip made by Nisshinbo that claims to begin harvesting at only 1 uW!
 
-{{ add_pic("eetestr1801k/1.png", "") }}
+{{ add_pic("eetestr1801k/1.png", "", alt="Datasheet excerpt for the Nisshinbo R1801K energy harvesting chip in a 3.0 by 2.7 mm DFN package") }}
 
 The only catch is that it requires 4 V, but I think the voltage will be easier to get than the power. So I bought the chip, and my friend Injoo made a little breakout board for me which pulls charge from solar cell into a storage capacitor. 
 
-{{ add_pic("eetestr1801k/2.jpg", "") }}
+{{ add_pic("eetestr1801k/2.jpg", "", alt="Front and back of a small milled copper breakout board for the R1801K, laid on a ruler for scale") }}
 
 To simulate a constrained power source, I'm passing 4 V across a 1 MΩ resistor, resulting in an output power of 16 uW. Then I connected my board.
 
-{{ add_pic("eetestr1801k/3.jpeg", "") }}
+{{ add_pic("eetestr1801k/3.jpeg", "", alt="Bench power supply feeding the breakout board through an in-line resistor, with a scope probe attached") }}
 
 Initially, the storage capacitor filled up steadily, but at some point my capacitor voltage was just holding still. To compensate, I increased my power supply voltage and the charging started again. Again, after a bit the charging would stop. 
 
-{{ add_pic("eetestr1801k/4.jpeg", "") }}
+{{ add_pic("eetestr1801k/4.jpeg", "", alt="Oscilloscope screen showing the storage capacitor voltage flatlining at an average of 1.31 V") }}
 
 I was powering the device on 4.8V, and the output voltage could go no further than 1.5V. I realized at this point that my capacitor was probably leaking, and checked out the datasheet. Lo and behold, a leakage current of 12.6 uA! Assuming this happens at the rated voltage (6.3 V), then the capacitor's resistance is 500kΩ. This meant the R1801K was desperately pumping in charge which was being leaked out at the same rate by the capacitor, and at 1.5V, that rate was 3uA. 
 
-{{ add_pic("eetestr1801k/5.png", "") }}
+{{ add_pic("eetestr1801k/5.png", "", alt="Capacitor datasheet ratings table with the 100 uF 6.3 V part highlighted, showing 12.6 uA leakage current") }}
 
 Because this is pretty close to the max current that the R1801K has access to (4.8V/1MΩ = 4.8uA), I'm pretty happy with the performance of this chip even though it couldn't overcome the leakiness of my capacitor. I now also have to think about alternative energy storage methods like SMD solid-state batteries, which are a lot less straightforward to buy. But hey, limitation breeds creativity. 
 

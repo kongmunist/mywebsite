@@ -6,7 +6,7 @@ snippet: "Also reflections on the Percy Jackson series"
 
 I recently re-read the first five books of the Percy Jackson series. I'll share some data on reading speed, as well as my thoughts on the series after re-reading as an adult.
 
-{{ add_pic("printvsdigital/0.jpg", "") }}
+{{ add_pic("printvsdigital/0.jpg", "", alt="Covers of the first five Percy Jackson books by Rick Riordan") }}
 
 <hr>
 
@@ -14,11 +14,11 @@ I recently re-read the first five books of the Percy Jackson series. I'll share 
 
 I read most of the PJ series on my computer, and use Timing to log the time spent reading each one. However, I happened to find my old physical copy of the third book on my shelf, and read that one on paper — since I used my computer right before and after reading it, we also have the time spent on that one. I'm getting word counts of each book from <a href="https://www.reddit.com/r/camphalfblood/comments/hm3gh8/numbers_the_length_of_percy_jackson/"> this reddit post </a>.
 
-{{ add_pic("printvsdigital/1.png", "") }}
+{{ add_pic("printvsdigital/1.png", "", alt="Bar chart of word counts for the five Percy Jackson books, ranging from about 64,000 to 89,000 words") }}
 
 It took me 503 minutes to read all of them:
 
-{{ add_pic("printvsdigital/2.png", "") }}
+{{ add_pic("printvsdigital/2.png", "", alt="Bar chart of reading speeds per Percy Jackson book; The Titan's Curse is slowest at 752 words per minute") }}
 
 Now, the difference is not huge, but the only book where I read the physical copy was also the slowest read. Weird! Originally the difference was bigger because I overzealously counted how long it took me to finish book 3, but it is slow even after correction. This made me think about potential reasons — extra sleepy while reading, bad lighting, etc.
 

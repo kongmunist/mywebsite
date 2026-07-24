@@ -10,7 +10,7 @@ Hello! After my undergrad, I moved from the US to Europe, taking all my earthly
 
 This will be mostly targeted at people who carry around a lot of extraneous stuff related to a hobby or maybe a medical condition. I do a bit of electronics and the components and heavy equipment comprise approximately 30kg of my possessions. For instance, these two machines (oscilloscope, function generator + power supply) constitute a basic electronics lab totalling ~15kg, which I brought back from Europe. 
 
-{{ add_pic("packingtips/1.jpg", "") }}
+{{ add_pic("packingtips/1.jpg", "", alt="Rigol oscilloscope stacked on top of a Hameg triple power supply and function generator") }}
 
 # Packing
 
@@ -54,7 +54,7 @@ Ah, you don't trust the airport staff with all your earthly possessions? Yea, th
 
 My ticket had an included checked bag (75$), and I paid 100$ for the 2nd one. My two checked bags weighed 22.8kg each, carry-on weighed 20kg, and my backpack weighed ~10kg. 175$/75.6kg comes out to 2.31$/kg, beating out every shipping option I could find online. For reference, UPS charges approximately 9$/kg to ship a package (I'm using the weight of both my checked bags, since the carry-on is free anyway).
 
-{{ add_pic("packingtips/5.png", "") }}
+{{ add_pic("packingtips/5.png", "", alt="UPS Express Saver shipping quote of 403.97 euros") }}
 
 # Planned obsolescence
 

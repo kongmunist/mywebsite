@@ -14,7 +14,7 @@ Today I have some more results, this time regarding the nu-age speed-reading tec
 
 # Inspiration
 
-{{ add_pic("printvsdigital/2.png", "") }}
+{{ add_pic("printvsdigital/2.png", "", alt="Bar chart of reading speeds across the five Percy Jackson books, all between 752 and 847 words per minute") }}
 
 Looking at the graphs of my reading speed from the previous post, I find it amazing how close the reading speeds are for each book. While I think I read at a fairly consistent rate, Rick Riordan must also target a word count, and the vocab level must be held consistent across each one. To me, this ability to write series of books around the same character or universe with an audience that stays invested seems like a staple of young-adult / teenage fiction. Or maybe just for entertainment novels? I'm thinking of
 
@@ -40,11 +40,11 @@ But whatever, I love running experiments, especially tiny ones.
 
 Rick Riordan's 2nd Greco-Roman fantasy series is also 5 books long, features characters from the first series, and has similar average length (~120k words/book vs. ~85k). The first book I read normally, as a book file converted to HTML. Here is what it looks like:
 
-{{ add_pic("bionicreadingtest/1.png", "") }}
+{{ add_pic("bionicreadingtest/1.png", "", alt="Opening page of the Jason chapter from The Lost Hero rendered as plain HTML text") }}
 
 The second book I read using a Chrome extension called [JiffyReader](https://chromewebstore.google.com/detail/jiffy-reader/lljedihjnnjjefafchaljkhbpfhfkdic), which bolds the first half of each word in the text, making it "Bionified". Here's what it looks like now:
 
-{{ add_pic("bionicreadingtest/2.png", "") }}
+{{ add_pic("bionicreadingtest/2.png", "", alt="The same book page with Bionic Reading applied, bolding the first half of every word") }}
 
 My process was a bit convoluted because the real Bionic Reader converter 1) costs money and 2) doesn't preserve the format, which definitely affects reading speed. 
 
@@ -54,9 +54,9 @@ Here are my reading speeds for the first two books. The left is read normally, t
 
 Bionic Reading felt the same to me as normal reading after 10 pages, I did not feel less eye fatigue, nor did I read faster subjectively or objectively. I'm pretty sure this is a gimmick. 
 
-{{ add_pic("bionicreadingtest/3.png", "") }}
+{{ add_pic("bionicreadingtest/3.png", "", alt="Bar chart comparing reading speeds: 774 words per minute normal versus 754 with Bionic Reading") }}
 
 <hr>
 # Extras
 Also the website is awful (I'm not strawmanning, it's unrelated), check it out:
-{{ add_pic("bionicreadingtest/4.png", "") }}
+{{ add_pic("bionicreadingtest/4.png", "", alt="Bionic Reading homepage with giant overlapping mustard text, annotated in red mocking how hard it is to read") }}

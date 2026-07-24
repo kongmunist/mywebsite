@@ -12,7 +12,7 @@ I was interested in seeing just how good Morse got his letter frequencies, so I 
 
 # Morse Code Char-Length vs. Letter Frequency
 
-{{ add_pic("omorse/0.png", "") }}
+{{ add_pic("omorse/0.png", "", alt="Scatterplot of Morse code symbol length versus English letter frequency, with common letters like E and T shortest") }}
 
 Further right is more common, further up is longer Morse sequences. We see some glaring gaps — O should possibly be a 2-char symbol instead of 3, maybe replacing M? But overall this follows the trend of less-common letters getting the longer end of the Morse code. 
 
@@ -20,7 +20,7 @@ Further right is more common, further up is longer Morse sequences. We see some 
 # Morse Code Time-Length vs. Letter Frequency
 Then I also wanted to know if the time length of each Morse letter also matched the letter frequency — the idea being that more common letters should be shorter in duration to make them easier to type. Morse is defined around the duration of a single dot — inter-symbol gaps are a dot long, and a dash is 3 dots long.
 
-{{ add_pic("omorse/1.png", "") }}
+{{ add_pic("omorse/1.png", "", alt="Scatterplot of Morse code time length in dot units versus letter frequency, showing O as a costly outlier at 11 units") }}
 
 Here is the same graph as above, but instead of Morse symbol length I'm plotting time length for each letter. The gaps here are even more extreme. "O" is typed out as "___", taking 11 dots of time despite being the 4th most common letter. "I" (..) appears less often than "A" (._), but is shorter to type. 
 
@@ -31,15 +31,15 @@ It's obvious that Morse code is clearly un-optimized for typing speed, which sug
 While I know Morse was developed for terrible communication channels and could only transmit one tone, I couldn't help but think about the potential improvements especially in regards with multi-tone. If two tone were possible, a dash could be converted from a long symbol into a short dot in the other frequency.
 
 This graph compares the transmit time-lengths for each letter if dashes were 3 or 1 dots long. Y-axis is frozen for easier comparing. By adding one tone we can decrease time for any letter with a dash.
-{{ add_pic("omorse/3.png", "") }}
+{{ add_pic("omorse/3.png", "", alt="Side-by-side scatterplots of Morse time length per letter with 3-unit dashes versus 1-unit dashes") }}
 
 Here's a harder-to-read improvements chart
-{{ add_pic("omorse/2.png", "") }}
+{{ add_pic("omorse/2.png", "", alt="Scatterplot with vertical lines showing how much each letter's Morse time drops if dashes were 1 unit long") }}
 
 
 Finally, the approximate speedup offered by switching dashes to dots, and then further even removing the spaces between letters.
-{{ add_pic("omorse/4.png", "") }}
-{{ add_pic("omorse/morsespeedup.png", "") }}
+{{ add_pic("omorse/4.png", "", alt="Bar chart of average time per letter: 6.09 units for normal Morse, 4.09 with 1-unit dashes, 2.54 with no gaps") }}
+{{ add_pic("omorse/morsespeedup.png", "", alt="Console output listing average time per letter and speedups: 48.94% with 1-unit dashes, 139.27% with no gaps too") }}
 
 So the total improvement isn't nuts, around 50% in optimal cases with dashes being 1 dot long. This doesn't even account for possible improvements when properly staggering the Morse length vs. letter frequency. 
 

@@ -5,7 +5,7 @@ timespan: June - August 2022
 pic: infoglobe_hero.png
 description: Kinda-vintage internet-connected spinning-LED bulletin-board
 
-{{ add_pic("infoglobe_hero.png", "", True) }} 
+{{ add_pic("infoglobe_hero.png", "", True, alt="Olympia Infoglobe with a translucent blue dome displaying a message on its spinning LED arm") }} 
 
 Last year I co-opted an Olympia InfoGlobe display with an ESP8266 and made the code public [here](https://gist.github.com/kongmunist/a8bdadbacda4bcb129cd183f2f0fffc5). 
 
@@ -35,7 +35,7 @@ Then I created a website where anyone could leave messages to be displayed on my
 
 I also added the time and date as possible messages, because it was easy. Actually it wasn't super easy, since the ESP8266 has no geo-locating features and I didn't want to add them. Basically, there's a secret webpage I can visit on the infoglobe site which sets the time zone offset for the infoglobe. Assuming only I visit the page, then the infoglobe's time will always match my timezone.
 
-{{ add_pic("infoglobe_newsite.png", "", True) }} 
+{{ add_pic("infoglobe_newsite.png", "", True, alt="Infoglobe website with a message upload box, recent messages list, and last visit time") }} 
 
 Here's what the the current website looks like. If you are a designer and want to make it look less like an eyesore please hit me up. I have no money but it is a very simple page, and maybe you like the concept enough to send me a Figma link :)
 

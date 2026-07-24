@@ -6,7 +6,7 @@ snippet: "Blink & SoftwareSerial & ADC, oh my!"
 
 Hello! Today I'm gonna walk you through uploading code to an ATtiny using an Arduino. This was my first time programming a microcontroller off-board, and I got most of the process following [this video](https://www.youtube.com/watch?v=TUlzOD9T3nI). But that video was not sufficient alone, so I'll be describing some of the extra steps in this post.
 
-{{ add_pic("ard2attiny/0.jpeg", "") }}
+{{ add_pic("ard2attiny/0.jpeg", "", alt="ATtiny85V chip on a breadboard next to a blue Arduino Uno board") }}
 
 # Ingredients
 
@@ -16,13 +16,13 @@ You'll need an ATtiny25/45/85 chip, Arduino, 6 jumper wires, a resistor + LED, a
 
 First we must flash the Arduino with the ArduinoISP sketch (found in File->Examples->11.ArduinoISP). We are using the "old style" wiring, so also uncomment line 81 in this sketch. 
 
-{{ add_pic("ard2attiny/1.png", "") }}
+{{ add_pic("ard2attiny/1.png", "", alt="Arduino IDE File menu open to Examples with 11.ArduinoISP highlighted") }}
 
 We're not going to program the Arduino again, so go ahead and switch the target board to "ATtiny25/45/85" in Tools. If you don't have this option in your boards, follow the instructions in the [ATtiny repo](https://github.com/SpenceKonde/ATTinyCore/blob/v2.0.0-devThis-is-the-head-submit-PRs-against-this/Installation.md). 
 
 Change the programmer to "Arduino as ISP" as in the image below, and we'll be ready to go. 
 
-{{ add_pic("ard2attiny/2.png", "") }}
+{{ add_pic("ard2attiny/2.png", "", alt="Arduino IDE Tools menu showing ATtiny85 board settings and Programmer set to Arduino as ISP") }}
 
 # Wiring the ATtiny
 
@@ -32,7 +32,7 @@ Now we're going to need those jumpers. Follow this wiring diagram from the video
 
 To do the Blink sketch properly, we need to add the LED and resistor across PB0 and GND. Make sure the longer (positive) leg of the LED is on PB0. 
 
-{{ add_pic("ard2attiny/4.jpeg", "") }}
+{{ add_pic("ard2attiny/4.jpeg", "", alt="Breadboard with the ATtiny wired to jumper cables plus a red LED and resistor for the Blink test") }}
 
 # Uploading Blink
 
@@ -60,11 +60,11 @@ The ATtiny's messages are scrambled when we receive them over Serial because the
 
 The proper way is to get an FTDI Friend or other UART->USB converter and receive messages using that instead. 
 
-{{ add_pic("ard2attiny/7.jpeg", "") }}
+{{ add_pic("ard2attiny/7.jpeg", "", alt="Adafruit FTDI Friend USB-to-serial adapter product listing") }}
 
 If you go this route, the ATtiny's TX goes into the FTDI Friend's  RX, and the GNDs are connected. The port will have to be changed, and the messages will be received just fine. 
 
-{{ add_pic("ard2attiny/8.jpeg", "") }}
+{{ add_pic("ard2attiny/8.jpeg", "", alt="FTDI Friend plugged into USB with jumper wires connected to its RX and GND pins") }}
 
 # Trying out the ADC
 
@@ -101,4 +101,4 @@ SoftwareSerial <span style="color: #0066BB; font-weight: bold">mySerial</span>(R
 
 Hopefully you know the basics. As [DeepBlueMbedded](https://www.youtube.com/watch?v=7bZg_GzUbHI&t=1771s) said, you're basically done once you get blinking.
 
-{{ add_pic("ard2attiny/10.png", "") }}
+{{ add_pic("ard2attiny/10.png", "", alt="DeepBlueMbedded video whiteboard: get the datasheet and blink an LED to start with any microcontroller") }}

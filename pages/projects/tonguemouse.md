@@ -134,7 +134,7 @@ The hardware is only minimally interesting. The matrix is an RGB display panel, 
 ## Software
 For the website to work properly across multiple users at once, I am calling fetch every few seconds from the client-side since my hosting provider does not allow any real-time messaging like Websockets or Server-Sent Events. To avoid conflicting states, I am using a changes-only [CRDT](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type) model on the server. Users can only push updates to pixels, and cannot overwrite the server's grid with their own. The current Grid World canvas is saved to disk every 5 seconds if any edits were made, and the server's python instance maintains the true grid in memory.
 
-{{ add_pic("gw_website.png", "", True) }}
+{{ add_pic("gw_website.png", "", True, alt="Grid World web interface: a 64x64 pixel canvas with a numbered color palette and holiday-themed drawings") }}
 
 ## Social Considerations
 I also had to add some social barriers. In Grid World, drawing is done by clicking, but when debugging I wrote code which allowed drawing via mouse hold-and-drag. When deploying the website, I left this in the code and some people uncommented it for extra privileges. This quickly creates ugly noise marks over everything, so I removed that bit of code. I also had to add a rate limit because within a week the first bots were already being annoying — erasing people's work and filling the whole canvas with a single color.

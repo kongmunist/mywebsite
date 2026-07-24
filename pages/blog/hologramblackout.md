@@ -28,7 +28,7 @@ If the tape is instead placed over the next piece, this line only gets worse. I 
 
 {{ add_pic("hologramblackout/2.jpg", "Overlapping tape backing") }}
 
-{{ add_pic("hologramblackout/3.jpg", "") }}
+{{ add_pic("hologramblackout/3.jpg", "", alt="Close-up of the hologram plate showing the visible seam ridge where overlapping tape pieces meet") }}
 
 # Paint
 

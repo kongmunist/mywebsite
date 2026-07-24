@@ -136,6 +136,38 @@
 
 
 
+<link rel="canonical" href="https://andykong.org/blog/pqsda1/">
+
+    
+        <meta property="og:site_name" content="Andy Kong">
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="Practical Quantified Self Data Analysis, Pt. 1">
+        <meta property="og:description" content="Functions you&#39;ll need">
+        <meta property="og:url" content="https://andykong.org/blog/pqsda1/">
+        <meta property="article:published_time" content="2024-05-07">
+        
+        <meta property="og:image" content="https://andykong.org/static/pqsda1/0.png">
+        <meta property="og:image:alt" content="Practical Quantified Self Data Analysis, Pt. 1">
+        <meta name="twitter:card" content="summary_large_image">
+        
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": "Practical Quantified Self Data Analysis, Pt. 1",
+          "description": "Functions you\u0027ll need",
+          "datePublished": "2024-05-07",
+          "url": "https://andykong.org/blog/pqsda1/",
+          "mainEntityOfPage": "https://andykong.org/blog/pqsda1/",
+          "image": "https://andykong.org/static/pqsda1/0.png",
+          "keywords": "datascience, python, quantifiedself",
+          "author": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"},
+          "publisher": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"}
+        }
+        </script>
+    
+
+
     <style type="text/css">
         /* Atkinson Hyperlegible */
         /* latin-ext
@@ -368,19 +400,19 @@
 <p>These are not many, and they cover much of what is needed. Interestingly enough, these can all be constructed through the use of two functions. </p>
 <h1 id="function-1-interpolation-by-timestamp-analyses-1-4">Function 1: Interpolation by timestamp (Analyses 1, 4)</h1>
 <p>Most continuous sensors will not share timestamps, so you will need to align them (tossing stuff that doesn't line up perfectly) or "align them" (interpolate the denser value with a sparser one to get matching rows). Since we don't usually have a ton of data to spare, we go for interpolation. The code is simple, and just uses <code>np.interpolate</code></p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/pqsda1/0.png"/></p>
+<p><img loading="lazy" alt="Code snippet of the interpolateWith function signature, which interpolates one Steward's data with another's" class="addpic" src="/static/pqsda1/0.png"/></p>
 <p>This is preferred for continuous vs. continous, but for event vs. event much can happen on longer timescales so I think interpolation is quite lossy. </p>
 <h1 id="function-2-select-around-timestamp-analyses-2-3-5">Function 2: Select around timestamp (Analyses 2, 3, 5)</h1>
 <p>Since these analyses all use event data, we will select y-variable data that lines up with the event timestamp. This function just slices out time ranges from the y-variable that are specific offsets from each x-variable event. </p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/pqsda1/1.png"/></p>
+<p><img loading="lazy" alt="Code snippet of the selectAround function signature with eventTimes, beforeHours, afterHours, and cutoff arguments" class="addpic" src="/static/pqsda1/1.png"/></p>
 <p>Once each time range is found, we toss the ranges with zero elements and then have a list of dataframes. Just for fun, I added an "eventOffset" column for each sample so we can <code>hstack</code> them into a single DataFrame if desired. Here's one element from the list of my heart rate dataframes. </p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/pqsda1/2.png"/></p>
+<p><img loading="lazy" alt="Polars DataFrame of heart rate rows with bpm, confidence, timestamp, and eventOffset columns spanning -2h to +4h" class="addpic" src="/static/pqsda1/2.png"/></p>
 <p>The <code>a</code> variable was created by running <code>a = s1.selectAround(doseTimes, beforeHours=2, afterHours=4)</code>, selecting time ranges that included each doseTime and data from 2 hours before and 4 hours after. Once the list is made, you can just plot each time range on the same graph:</p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/pqsda1/3.png"/></p>
+<p><img loading="lazy" alt="Dozens of translucent heart rate time series overlaid on one plot, forming a noisy band around 80 bpm" class="addpic" src="/static/pqsda1/3.png"/></p>
 <p>Or more cleanly, plot a smoothed mean of the same data:</p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/pqsda1/4.png"/></p>
+<p><img loading="lazy" alt="Smoothed mean heart rate curve rising from 70 to about 80 bpm around the caffeine stimulus marked at time zero" class="addpic" src="/static/pqsda1/4.png"/></p>
 <p>Another fantastic use case of <code>selectAround</code> is that I can select data that happened exclusively after or before an event time. For instance, if I wanted to see all sleep sessions happening within 6 hours of a caffeine event, I could run <code>sleep.selectAround(doseTimes, 0, 6, cutoff=0, surroundRequired=False)</code> and get the list of every time that happened. The inclusion of the <code>timeOffset</code> col also means I can scatterplot the sleep data once selected:</p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/pqsda1/5.png"/></p>
+<p><img loading="lazy" alt="Scatterplot of hours of sleep versus hours since last caffeine, with longer sleep after longer caffeine gaps" class="addpic" src="/static/pqsda1/5.png"/></p>
 <p><code>selectAround</code> also offers negative lookback and lookahead, so you can do whatever you need. </p>
 <h1 id="conclusion">Conclusion</h1>
 <p>Anyway, I think these two primitives are all you need to find any personal insights you might wish. You may also want to use filters (air quality data bool'd by location, or sleep session filtered by coffee consumption), but that will be saved for the next post.</p></body></html>

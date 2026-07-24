@@ -10,7 +10,7 @@ If you have a Vision Pro we could borrow and live in/near Pittsburgh and are fre
 
 Hello! Last weekend I hosted an Apple Vision Pro Hackathon (aka AVP Hackathon), which simply entailed asking everyone I knew if I could borrow a Vision Pro and then asking everyone if they wanted to develop on it for a couple days.
 
-{{ add_pic("avph_reflection/0.jpg", "") }}
+{{ add_pic("avph_reflection/0.jpg", "", alt="Whiteboard with a hand-drawn Welcome to the AVP Hackathon sign, the P doubling as a Vision Pro") }}
 
 I think hackathons are a good event for colleges since full-time coders are usually too world-weary to also spend their weekends coding. Nonetheless, I picked a bad time to ask, since I mostly knew researchers and we're a month shy of the next big conference deadline. 
 
@@ -25,15 +25,15 @@ We also had a rule that someone had to be wearing the AVP at all times —  in t
 
 Started at 10am, got to the space around 10:30am. I provided beverages and coffee.
 
-{{ add_pic("avph_reflection/1.jpg", "") }}
+{{ add_pic("avph_reflection/1.jpg", "", alt="Hackathon attendee arriving in a doorway, carrying a Vision Pro in its white case") }}
 
 We spent most of the day learning Swift. I made and loaded a custom 3D model and then tried to write custom gestures that would spawn/move it around. 
 
-{{ add_pic("avph_reflection/2.jpg", "") }}
+{{ add_pic("avph_reflection/2.jpg", "", alt="Vision Pro view of many copies of a scanned 3D head model floating around the room") }}
 
 I cribbed the head/hand tracking from a [Hand Ruler](https://github.com/FlipByBlink/HandsRuler) app, then kept cutting the code down until I could understand all of it. I think everyone else had a very similar process, since the default examples that Apple provides are too full-featured to just illustrate single concepts at a time. 
 
-{{ add_pic("avph_reflection/3.jpg", "") }}
+{{ add_pic("avph_reflection/3.jpg", "", alt="Developer typing on a MacBook while wearing the Vision Pro, laptop screen showing the headset passthrough view") }}
 
 The AVP is meant to be a single-user device, so it doesn't let you do screen mirroring unless the same user is signed into both the Macbook and the AVP. In order to avoid taking off the headset every time we uploaded code, we spent a lot of time looking through the AVP cameras at our screens trying to make small edits. This is really close to the limit of what the AVP's AR resolution is capable of, and this process would've been much more comfortable if we could just project our displays into AVP space.
 
@@ -43,7 +43,7 @@ When we wrapped up the day, everyone sort-of understood the Swift structure and 
 
 Late start, 11:30am. My roommate had some group project to work on in the morning, and everyone else woke up late.
 
-{{ add_pic("avph_reflection/4.jpg", "") }}
+{{ add_pic("avph_reflection/4.jpg", "", alt="Two hackers working on laptops, one on a couch and one in a red egg chair, Vision Pro cases on the table") }}
 
 Someone else finished their teardown of an example, and made an app where the press of a button opens an immersive video. I finished wrapping up all my code into a simple demo app ([on github here!](https://github.com/kongmunist/Vision-Pro-Head-Hand-Tracking-Demo)) and started working on custom gesture recognition. 
 
@@ -60,10 +60,10 @@ In the end, we had written the following apps:
 - Gaussian splatting model viewer running on Metal, with hand gesture control
 
 - Collaborative video upload gallery for AVP/iPhone 15 spatial videos
-{{ add_pic("avph_reflection/riftv1.jpg", "") }}
+{{ add_pic("avph_reflection/riftv1.jpg", "", alt="Rift V1 gallery window floating in the lab, recommending three spatial videos") }}
 
 - AR interface to control the color and brightness of real-life smart bulbs
-{{ add_pic("avph_reflection/AVP_Light_App.jpg", "") }}
+{{ add_pic("avph_reflection/AVP_Light_App.jpg", "", alt="AR light control interface with intensity and saturation sliders and a dial reading 78, floating beside a lamp") }}
 
 
 - Lighter demo like the early iPod apps
@@ -96,7 +96,7 @@ In the end, we had written the following apps:
 
 - The AVP simulator can pretty accurately do windows, buttons, and other functionality, so you don't even need to cough up the cash for a device if you're interested in developing more straightforward apps. The only thing it doesn't have is hands — gestures can only be developed using a real device. I remember seeing a [blog post about faking hands](https://varrall.substack.com/p/hand-tracking-in-vision-pro-simulator) in the AVP simulator, but did not try it myself yet. 
 
-{{ add_pic("avph_reflection/ide.png", "") }}
+{{ add_pic("avph_reflection/ide.png", "", alt="Xcode with the HeadHandsDemo project open and the embedded Vision Pro simulator previewing the tracking demo app") }}
 
 ## Dev community
 

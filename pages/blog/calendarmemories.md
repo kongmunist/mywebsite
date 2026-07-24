@@ -12,7 +12,7 @@ You may not think so, but try this. One day while working on [Carnegie Calendar]
 
 I scheduled a meeting for April 9th, 2150 that I probably won't be attending. I scrolled on my calendar to make sure the event showed up, and it was there, sitting as innocently as any other calendar event. Then I navigated to my 150th birthday, and that event was there too. I probably won't make it to that either. 
 
-{{ add_pic("cm_150th.png", "") }}
+{{ add_pic("cm_150th.png", "", alt="Calendar popup for Andy Kong's 151st Birthday, repeating yearly with an alert one day before") }}
 
 If that's not insane to you, just think about it for a bit. To me, it felt like knowing exactly where I will be buried and visiting the plot of land 50 years in advance.
 
@@ -25,7 +25,7 @@ You know how there are these preset holidays in your calendar that you didn't ad
 
 But to me, these events are kinda just taking up space — I didn't make them, and I might not celebrate them. What I find much more interesting to commemorate are the events that were instrumental to my life and my development. Stuff like "First time I got stitches" or "Failed midterm" that I can look back on and smile because they happened. 
 
-{{ add_pic("cm_firststiches.png", "") }}
+{{ add_pic("cm_firststiches.png", "", alt="Calendar event titled First stitches! on Oct 4, 2021, set to repeat yearly") }}
 
 Now, whenever I feel like I've experienced something life-changing, I put it on my calendar and set it to repeat annually. I've started added the year too, just so I can gauge how long it's been. 
 

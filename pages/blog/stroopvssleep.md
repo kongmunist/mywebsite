@@ -12,8 +12,8 @@ Hello! I've been collecting my [Stroop effect data](../../projects/strooper) for
 
 Here is a lot of scatterplots where my three Stroop scores (please see above link for more info) are arranged according to some sleep variables (total time in bed, sleep efficiency, time asleep, time awake), and then I do a linear regression for each one.
 
-{{ add_pic("stroopvssleep/top.png", "") }}
-{{ add_pic("stroopvssleep/bottom.png", "") }}
+{{ add_pic("stroopvssleep/top.png", "", alt="Six scatterplots of Stroop scores vs sleep duration and sleep efficiency with linear fits and p-values") }}
+{{ add_pic("stroopvssleep/bottom.png", "", alt="Six scatterplots of Stroop scores vs minutes asleep and minutes awake with linear fits and p-values") }}
 
 I'm not just gonna throw a best-fit line on there and call it a day — I want to know how real that line is. I've also calculated a p-value which is the probability that the best-fit line slope is that value by random chance. I also [Bonferroni-corrected](https://en.wikipedia.org/wiki/Bonferroni_correction) the threshold value, though I think this boundary is a bit arbitrary (we pick p=5% arbitarily like everyone else, then divide by 12 to Bonferroni correct. p<.00416 is significant).
 

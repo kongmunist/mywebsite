@@ -136,6 +136,38 @@
 
 
 
+<link rel="canonical" href="https://andykong.org/blog/ard2attiny/">
+
+    
+        <meta property="og:site_name" content="Andy Kong">
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="Programming an ATtiny85V using an Arduino">
+        <meta property="og:description" content="Blink &amp; SoftwareSerial &amp; ADC, oh my!">
+        <meta property="og:url" content="https://andykong.org/blog/ard2attiny/">
+        <meta property="article:published_time" content="2024-02-02">
+        
+        <meta property="og:image" content="https://andykong.org/static/ard2attiny/0.jpeg">
+        <meta property="og:image:alt" content="Programming an ATtiny85V using an Arduino">
+        <meta name="twitter:card" content="summary_large_image">
+        
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": "Programming an ATtiny85V using an Arduino",
+          "description": "Blink \u0026 SoftwareSerial \u0026 ADC, oh my!",
+          "datePublished": "2024-02-02",
+          "url": "https://andykong.org/blog/ard2attiny/",
+          "mainEntityOfPage": "https://andykong.org/blog/ard2attiny/",
+          "image": "https://andykong.org/static/ard2attiny/0.jpeg",
+          "keywords": "electronics, arduino",
+          "author": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"},
+          "publisher": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"}
+        }
+        </script>
+    
+
+
     <style type="text/css">
         /* Atkinson Hyperlegible */
         /* latin-ext
@@ -344,21 +376,21 @@
             <p style="font-size:0.8em;"> Published February 2, 2024</p>
 <hr>
             <html><body><p>Hello! Today I'm gonna walk you through uploading code to an ATtiny using an Arduino. This was my first time programming a microcontroller off-board, and I got most of the process following <a href="https://www.youtube.com/watch?v=TUlzOD9T3nI">this video</a>. But that video was not sufficient alone, so I'll be describing some of the extra steps in this post.</p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/ard2attiny/0.jpeg"/></p>
+<p><img loading="lazy" alt="ATtiny85V chip on a breadboard next to a blue Arduino Uno board" class="addpic" src="/static/ard2attiny/0.jpeg"/></p>
 <h1 id="ingredients">Ingredients</h1>
 <p>You'll need an ATtiny25/45/85 chip, Arduino, 6 jumper wires, a resistor + LED, and maybe a 10uF capacitor. </p>
 <h1 id="prepping-the-arduino">Prepping the Arduino</h1>
 <p>First we must flash the Arduino with the ArduinoISP sketch (found in File-&gt;Examples-&gt;11.ArduinoISP). We are using the "old style" wiring, so also uncomment line 81 in this sketch. </p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/ard2attiny/1.png"/></p>
+<p><img loading="lazy" alt="Arduino IDE File menu open to Examples with 11.ArduinoISP highlighted" class="addpic" src="/static/ard2attiny/1.png"/></p>
 <p>We're not going to program the Arduino again, so go ahead and switch the target board to "ATtiny25/45/85" in Tools. If you don't have this option in your boards, follow the instructions in the <a href="https://github.com/SpenceKonde/ATTinyCore/blob/v2.0.0-devThis-is-the-head-submit-PRs-against-this/Installation.md">ATtiny repo</a>. </p>
 <p>Change the programmer to "Arduino as ISP" as in the image below, and we'll be ready to go. </p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/ard2attiny/2.png"/></p>
+<p><img loading="lazy" alt="Arduino IDE Tools menu showing ATtiny85 board settings and Programmer set to Arduino as ISP" class="addpic" src="/static/ard2attiny/2.png"/></p>
 <h1 id="wiring-the-attiny">Wiring the ATtiny</h1>
 <p>Now we're going to need those jumpers. Follow this wiring diagram from the video above so we can upload code to the ATtiny</p>
 <p class="caption"> [source](https://www.youtube.com/watch?v=TUlzOD9T3nI) </p>
 <p><img loading="lazy" alt="source" class="addpic" src="/static/ard2attiny/3.jpeg"/></p>
 <p>To do the Blink sketch properly, we need to add the LED and resistor across PB0 and GND. Make sure the longer (positive) leg of the LED is on PB0. </p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/ard2attiny/4.jpeg"/></p>
+<p><img loading="lazy" alt="Breadboard with the ATtiny wired to jumper cables plus a red LED and resistor for the Blink test" class="addpic" src="/static/ard2attiny/4.jpeg"/></p>
 <h1 id="uploading-blink">Uploading Blink</h1>
 <p>If this is the first time your ATtiny is being used or you've changed any build settings, you'll need to hit Tools-&gt;Burn Bootloader. This should work with no errors, but if you get one, make sure you've uncommented that "old style wiring" line in ArduinoISP and that your wire connections are solid. </p>
 <p>Now, open the Blink example sketch. Change all instances of <code>LED_BUILTIN</code> to 0, then upload the sketch. If you have no errors, fortune smiles upon thee. Proceed to the next section. </p>
@@ -374,9 +406,9 @@
 <p>The ATtiny's messages are scrambled when we receive them over Serial because the Arduino also uses the RX/TX pins and they're physically routed to the UART-&gt;USB converter chip. By holding down the RESET, we disable the Arduino and get to see the ATtiny messages without any problems.</p>
 <h2 id="less-sus-method">Less sus method</h2>
 <p>The proper way is to get an FTDI Friend or other UART-&gt;USB converter and receive messages using that instead. </p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/ard2attiny/7.jpeg"/></p>
+<p><img loading="lazy" alt="Adafruit FTDI Friend USB-to-serial adapter product listing" class="addpic" src="/static/ard2attiny/7.jpeg"/></p>
 <p>If you go this route, the ATtiny's TX goes into the FTDI Friend's  RX, and the GNDs are connected. The port will have to be changed, and the messages will be received just fine. </p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/ard2attiny/8.jpeg"/></p>
+<p><img loading="lazy" alt="FTDI Friend plugged into USB with jumper wires connected to its RX and GND pins" class="addpic" src="/static/ard2attiny/8.jpeg"/></p>
 <h1 id="trying-out-the-adc">Trying out the ADC</h1>
 <p>The ATtiny85 is big enough to fit a lot of the Arduino helper functions, so the <code>analogRead</code> function just works like normal. You will need to be careful to pick a pin which can receive analog, so be sure to check. Here's my code to read from pin 2 and print it to Serial. </p>
 <!-- HTML generated using hilite.me -->
@@ -407,7 +439,7 @@ SoftwareSerial <span style="color: #0066BB; font-weight: bold">mySerial</span>(R
 <p><img loading="lazy" alt="ADC readings plotted over time" class="addpic" src="/static/ard2attiny/9.png"/></p>
 <h1 id="have-fun">Have fun!</h1>
 <p>Hopefully you know the basics. As <a href="https://www.youtube.com/watch?v=7bZg_GzUbHI&amp;t=1771s">DeepBlueMbedded</a> said, you're basically done once you get blinking.</p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/ard2attiny/10.png"/></p></body></html>
+<p><img loading="lazy" alt="DeepBlueMbedded video whiteboard: get the datasheet and blink an LED to start with any microcontroller" class="addpic" src="/static/ard2attiny/10.png"/></p></body></html>
 
 
 

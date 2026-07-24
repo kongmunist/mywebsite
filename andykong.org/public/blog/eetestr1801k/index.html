@@ -136,6 +136,38 @@
 
 
 
+<link rel="canonical" href="https://andykong.org/blog/eetestr1801k/">
+
+    
+        <meta property="og:site_name" content="Andy Kong">
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="Solar energy harvesting">
+        <meta property="og:description" content="Testing out the R1801K">
+        <meta property="og:url" content="https://andykong.org/blog/eetestr1801k/">
+        <meta property="article:published_time" content="2024-08-25">
+        
+        <meta property="og:image" content="https://andykong.org/static/eetestr1801k/0.png">
+        <meta property="og:image:alt" content="Solar energy harvesting">
+        <meta name="twitter:card" content="summary_large_image">
+        
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": "Solar energy harvesting",
+          "description": "Testing out the R1801K",
+          "datePublished": "2024-08-25",
+          "url": "https://andykong.org/blog/eetestr1801k/",
+          "mainEntityOfPage": "https://andykong.org/blog/eetestr1801k/",
+          "image": "https://andykong.org/static/eetestr1801k/0.png",
+          "keywords": "electronics, solar, energyharvesting",
+          "author": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"},
+          "publisher": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"}
+        }
+        </script>
+    
+
+
     <style type="text/css">
         /* Atkinson Hyperlegible */
         /* latin-ext
@@ -350,15 +382,15 @@
 <p class="caption"> [source](https://www.atonometrics.com/applications/what-is-a-pv-module-iv-curve/) </p>
 <p><img loading="lazy" alt="source" class="addpic" src="/static/eetestr1801k/0.png"/></p>
 <p>For my device, the TI BQ25570 is nearly perfect — it offers MPPT and starts from only 600 mV. However, it requires a certain amount of power to start up, around 15 uW. Since I'm expecting almost no light on my device, I wanted to find a chip which starts from even less power. This is where the R1801K comes in — this is a chip made by Nisshinbo that claims to begin harvesting at only 1 uW!</p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/eetestr1801k/1.png"/></p>
+<p><img loading="lazy" alt="Datasheet excerpt for the Nisshinbo R1801K energy harvesting chip in a 3.0 by 2.7 mm DFN package" class="addpic" src="/static/eetestr1801k/1.png"/></p>
 <p>The only catch is that it requires 4 V, but I think the voltage will be easier to get than the power. So I bought the chip, and my friend Injoo made a little breakout board for me which pulls charge from solar cell into a storage capacitor. </p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/eetestr1801k/2.jpg"/></p>
+<p><img loading="lazy" alt="Front and back of a small milled copper breakout board for the R1801K, laid on a ruler for scale" class="addpic" src="/static/eetestr1801k/2.jpg"/></p>
 <p>To simulate a constrained power source, I'm passing 4 V across a 1 MΩ resistor, resulting in an output power of 16 uW. Then I connected my board.</p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/eetestr1801k/3.jpeg"/></p>
+<p><img loading="lazy" alt="Bench power supply feeding the breakout board through an in-line resistor, with a scope probe attached" class="addpic" src="/static/eetestr1801k/3.jpeg"/></p>
 <p>Initially, the storage capacitor filled up steadily, but at some point my capacitor voltage was just holding still. To compensate, I increased my power supply voltage and the charging started again. Again, after a bit the charging would stop. </p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/eetestr1801k/4.jpeg"/></p>
+<p><img loading="lazy" alt="Oscilloscope screen showing the storage capacitor voltage flatlining at an average of 1.31 V" class="addpic" src="/static/eetestr1801k/4.jpeg"/></p>
 <p>I was powering the device on 4.8V, and the output voltage could go no further than 1.5V. I realized at this point that my capacitor was probably leaking, and checked out the datasheet. Lo and behold, a leakage current of 12.6 uA! Assuming this happens at the rated voltage (6.3 V), then the capacitor's resistance is 500kΩ. This meant the R1801K was desperately pumping in charge which was being leaked out at the same rate by the capacitor, and at 1.5V, that rate was 3uA. </p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/eetestr1801k/5.png"/></p>
+<p><img loading="lazy" alt="Capacitor datasheet ratings table with the 100 uF 6.3 V part highlighted, showing 12.6 uA leakage current" class="addpic" src="/static/eetestr1801k/5.png"/></p>
 <p>Because this is pretty close to the max current that the R1801K has access to (4.8V/1MΩ = 4.8uA), I'm pretty happy with the performance of this chip even though it couldn't overcome the leakiness of my capacitor. I now also have to think about alternative energy storage methods like SMD solid-state batteries, which are a lot less straightforward to buy. But hey, limitation breeds creativity. </p>
 <h1 id="big-picture">Big picture</h1>
 <p>I'm currently working on an energy harvesting device for my Hackaday talk coming up in November, and in the process I need to evaluate a bunch of the elements of an energy harvesting device (solar/RF/thermal, harvesting chips, storage methods, low-powered microcontrollers, communication methods). I don't think it'll be worth it to try out everything from every category, but I still love testing out chips just to make sure they do what they say on the tin. Anyway, cya later!</p></body></html>

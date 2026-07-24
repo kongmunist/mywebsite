@@ -9,7 +9,7 @@ description: Through-Hand Electrical Nerve Stimulation
 
 Welcome to my writeup for some research I worked on in 2021! 
 
-{{ add_pic("bohems/boh_hero.jpeg", "") }}
+{{ add_pic("bohems/boh_hero.jpeg", "", alt="Paper title card: person in a VR headset grips a rope, for full-hand electro-tactile feedback research at UChicago") }}
 
 For COVID summer 2021, I worked with Prof. Pedro Lopes and the Human-Computer Integration lab at UChicago. I ran small electrical currents through my hands in order to find interesting touch sensations. We wanted to reproduce the feeling of touching real stuff using electricity so we could feel virtual objects the same way we feel real ones. 
 
@@ -45,8 +45,8 @@ I met with Pedro a few times online and we got along pretty well, so we decided 
 
 
 - Tried out the [Traxion effect](../../blog/traxionreproduction/)
-{{ add_pic("bohems/boh_traxion1.jpeg", "") }}
-{{ add_pic("bohems/boh_traxion2.png", "") }}
+{{ add_pic("bohems/boh_traxion1.jpeg", "", alt="Breadboard driver circuit wired to a small black voicecoil actuator for testing the Traxion effect") }}
+{{ add_pic("bohems/boh_traxion2.png", "", alt="Paper figure of asymmetric sawtooth current pulses that create a directional pulling sensation in voicecoil actuators") }}
 
 
 - Tried out the Kajimoto high-density fingertip stimulator

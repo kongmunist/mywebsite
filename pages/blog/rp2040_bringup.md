@@ -14,7 +14,7 @@ Hello, today I'm gonna walk you through putting the RP2040 on a custom PCB and p
 
 Ok so sometimes you want to make your circuit small, or just well-integrated, and a messy breadboard takes up a lot of space and decreases your investability (Sometimes it increases it, see [Orbit's blog](https://orbit.engineering/) for an example). In this situation you want to put the microcontroller on a custom PCB. Then programming gets complicated — the USB datastream from Arduino can't upload directly to most ICs, requiring a translator chip (USB->UART) to convert it, which is another chip to figure out. Or maybe cost is an issue. The RP2040 hits both targets, costing ~70c (as of 2025) and allowing direct USB input for programming. 
 
-{{ add_pic("rp2040_bringup/1.png", "") }}
+{{ add_pic("rp2040_bringup/1.png", "", alt="DigiKey product page for the Raspberry Pi RP2040 showing 42,381 in stock at 70 cents per unit") }}
 
 # Hardware
 
@@ -34,7 +34,7 @@ I'd also add an LED + resistor from the 3.3V supply, just so we can tell when th
 
 ## Layout
 
-{{ add_pic("rp2040_bringup/4.png", "") }}
+{{ add_pic("rp2040_bringup/4.png", "", alt="PCB layout view of the RP2040 with traces fanning out from the chip and decoupling capacitors placed nearby") }}
 
 There's a lot of recommendations on the datasheet for where to place everything, but really it comes down to priority. IMO everything should stay on the same plane as long as possible. High-speed stuff (crystal) needs to be quite close, and decoupling caps shouldn't be much further. For the flash and other sensors, proximity won't matter much.
 
@@ -54,7 +54,7 @@ Now you might be thinking to yourself, where do I get a .uf2 file? Ok so three w
 
 There's some basic "check functionality" sketches in the [raspberrypi/pico-examples github repo](https://github.com/raspberrypi/pico-examples) which you can download and then upload directly. You can't edit these, but they let you check that the IC is soldered properly. 
 
-{{ add_pic("rp2040_bringup/7.png", "") }}
+{{ add_pic("rp2040_bringup/7.png", "", alt="Table of first example apps from the pico-examples repo, with links to prebuilt UF2 files for hello_usb and blink") }}
 
 ## Method 2: Arduino IDE
 
@@ -62,7 +62,7 @@ Arduino IDE can actually generate uf2 files, you just have to go to Sketch and h
 
 {{ add_pic("rp2040_bringup/8.png", "Export compiled Binary option exports as uf2") }}
 
-{{ add_pic("rp2040_bringup/9.png", "") }}
+{{ add_pic("rp2040_bringup/9.png", "", alt="Sketch folder in the file browser containing the exported sketch_may21a.ino.generic.uf2 file") }}
 
 ## Method 3: Build it yourself
 
@@ -86,7 +86,7 @@ If you want to use the native I2C/SPI/UART functions, you should know that certa
 
 PIO is out of the scope of this post, but is mappable to any pin. However, if you need to do a parallel read of 8 channels (like for a camera MIPI), the channels should be arranged in-order going to sequential in-order GPIOs. 
 
-{{ add_pic("rp2040_bringup/10.png", "") }}
+{{ add_pic("rp2040_bringup/10.png", "", alt="GPIO functions table from the RP2040 datasheet mapping each pin to fixed SPI, UART, I2C, and PWM roles") }}
 
 # Conclusion
 

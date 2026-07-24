@@ -136,6 +136,38 @@
 
 
 
+<link rel="canonical" href="https://andykong.org/blog/rp2040_bringup/">
+
+    
+        <meta property="og:site_name" content="Andy Kong">
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="Bringing up a custom RP2040 board">
+        <meta property="og:description" content="First time lessons are easily forgotten, here mine are persisted">
+        <meta property="og:url" content="https://andykong.org/blog/rp2040_bringup/">
+        <meta property="article:published_time" content="2025-05-21">
+        
+        <meta property="og:image" content="https://andykong.org/static/rp2040_bringup/0.png">
+        <meta property="og:image:alt" content="Bringing up a custom RP2040 board">
+        <meta name="twitter:card" content="summary_large_image">
+        
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": "Bringing up a custom RP2040 board",
+          "description": "First time lessons are easily forgotten, here mine are persisted",
+          "datePublished": "2025-05-21",
+          "url": "https://andykong.org/blog/rp2040_bringup/",
+          "mainEntityOfPage": "https://andykong.org/blog/rp2040_bringup/",
+          "image": "https://andykong.org/static/rp2040_bringup/0.png",
+          "keywords": "electronics",
+          "author": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"},
+          "publisher": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"}
+        }
+        </script>
+    
+
+
     <style type="text/css">
         /* Atkinson Hyperlegible */
         /* latin-ext
@@ -350,7 +382,7 @@
 <hr/>
 <h1 id="whats-this-for">What's this for</h1>
 <p>Ok so sometimes you want to make your circuit small, or just well-integrated, and a messy breadboard takes up a lot of space and decreases your investability (Sometimes it increases it, see <a href="https://orbit.engineering/">Orbit's blog</a> for an example). In this situation you want to put the microcontroller on a custom PCB. Then programming gets complicated — the USB datastream from Arduino can't upload directly to most ICs, requiring a translator chip (USB-&gt;UART) to convert it, which is another chip to figure out. Or maybe cost is an issue. The RP2040 hits both targets, costing ~70c (as of 2025) and allowing direct USB input for programming. </p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/rp2040_bringup/1.png"/></p>
+<p><img loading="lazy" alt="DigiKey product page for the Raspberry Pi RP2040 showing 42,381 in stock at 70 cents per unit" class="addpic" src="/static/rp2040_bringup/1.png"/></p>
 <h1 id="hardware">Hardware</h1>
 <h2 id="schematic">Schematic</h2>
 <p>First step is the schematic and layout. Most manufacturers publish a minimal set of components needed to run their chip, and RP2040 is no different. The schematic can be found <a href="http://www.technoblogy.com/show?3U75">on this blog</a> and I've ported the picture for posterity. </p>
@@ -362,7 +394,7 @@
 <p>This board really is the minimal set, but there's a few more bits I'd add to make your life easier. For example, if BOOT is connected to GND on startup, the RP2040 goes into BOOTSEL mode, which you need in order to program it IF you also want to get debug messages over USB. So you should probably add a pushbutton bridging BOOT and GND. You might also want to do this for the RESET pin. Otherwise you'll have to do this with a paperclip or a pen spring.</p>
 <p>I'd also add an LED + resistor from the 3.3V supply, just so we can tell when the thing is on or not, and then another LED + resistor wired to an unused GPIO so we can use a Blink sketch to check if our uploads are working.</p>
 <h2 id="layout">Layout</h2>
-<p><img loading="lazy" alt="" class="addpic" src="/static/rp2040_bringup/4.png"/></p>
+<p><img loading="lazy" alt="PCB layout view of the RP2040 with traces fanning out from the chip and decoupling capacitors placed nearby" class="addpic" src="/static/rp2040_bringup/4.png"/></p>
 <p>There's a lot of recommendations on the datasheet for where to place everything, but really it comes down to priority. IMO everything should stay on the same plane as long as possible. High-speed stuff (crystal) needs to be quite close, and decoupling caps shouldn't be much further. For the flash and other sensors, proximity won't matter much.</p>
 <h1 id="embedded--software">Embedded / Software</h1>
 <p class="caption"> My board </p>
@@ -374,12 +406,12 @@
 <p>Now you might be thinking to yourself, where do I get a .uf2 file? Ok so three ways I know of. </p>
 <h2 id="method-1-download-one">Method 1: download one</h2>
 <p>There's some basic "check functionality" sketches in the <a href="https://github.com/raspberrypi/pico-examples">raspberrypi/pico-examples github repo</a> which you can download and then upload directly. You can't edit these, but they let you check that the IC is soldered properly. </p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/rp2040_bringup/7.png"/></p>
+<p><img loading="lazy" alt="Table of first example apps from the pico-examples repo, with links to prebuilt UF2 files for hello_usb and blink" class="addpic" src="/static/rp2040_bringup/7.png"/></p>
 <h2 id="method-2-arduino-ide">Method 2: Arduino IDE</h2>
 <p>Arduino IDE can actually generate uf2 files, you just have to go to Sketch and hit "Export compiled Binary". This will compile the program for the selected target board (Make sure you're on Tools -&gt; Board -&gt; Raspberry Pi RP2040 Boards -&gt; Generic RP2040) and saves it to the sketch folder. Just to to the sketch folder and drag+drop your uf2. </p>
 <p class="caption"> Export compiled Binary option exports as uf2 </p>
 <p><img loading="lazy" alt="Export compiled Binary option exports as uf2" class="addpic" src="/static/rp2040_bringup/8.png"/></p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/rp2040_bringup/9.png"/></p>
+<p><img loading="lazy" alt="Sketch folder in the file browser containing the exported sketch_may21a.ino.generic.uf2 file" class="addpic" src="/static/rp2040_bringup/9.png"/></p>
 <h2 id="method-3-build-it-yourself">Method 3: Build it yourself</h2>
 <p>Here I must admit I never really learned embedded in school, so my understanding of this is patchy. Basically you write your program in .c and .h files and compile them using Cmake + make. You 'include' libraries by telling <code>CMakeLists.txt</code> to link them, which CMake will pull from the pico-sdk (you need to tell CMake where this is too), at which point your programs will know where they are. Then all this gets compiled together into a binary .elf or .bin or .uf2 file by make. So the steps are, roughly:</p>
 <ol>
@@ -403,7 +435,7 @@
 <h1 id="warning-i2cspiuartpwm-pins-are-baked-into-hardware-pio-isnt-but-parallel-reads-should-be-adjacent-pins">Warning: I2C/SPI/UART/PWM pins are baked into hardware. PIO isn't, but parallel reads should be adjacent pins</h1>
 <p>If you want to use the native I2C/SPI/UART functions, you should know that certain pins are destined to be SCL/SDA and not both. And if you use PWM, make sure your PWM outputs don't share a PWM object + channel (e.g. if two pins are PWM0 A, you will only be able to PWM from one at a time). Just check the datasheet, it'll save you a rev.</p>
 <p>PIO is out of the scope of this post, but is mappable to any pin. However, if you need to do a parallel read of 8 channels (like for a camera MIPI), the channels should be arranged in-order going to sequential in-order GPIOs. </p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/rp2040_bringup/10.png"/></p>
+<p><img loading="lazy" alt="GPIO functions table from the RP2040 datasheet mapping each pin to fixed SPI, UART, I2C, and PWM roles" class="addpic" src="/static/rp2040_bringup/10.png"/></p>
 <h1 id="conclusion">Conclusion</h1>
 <p>Ok, relatively painless. Simple schematic, layout, and pretty straightforward embedded. RP2040 is a chip is nice, not particularly low-power, but lots of GPIO, communication channels, ADCs, and it's really cheap. But I'll let you know what I think in a few weeks once I've used it more. </p>
 <p>Cya!</p></body></html>

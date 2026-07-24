@@ -24,6 +24,35 @@
 </style>
 
 
+<link rel="canonical" href="https://andykong.org/projects/infoglobe/">
+
+    <meta property="og:site_name" content="Andy Kong">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Hacking The Olympia InfoGlobe">
+    <meta property="og:description" content="Kinda-vintage internet-connected spinning-LED bulletin-board">
+    <meta property="og:url" content="https://andykong.org/projects/infoglobe/">
+    <meta property="article:published_time" content="2023-11-05">
+    
+    <meta property="og:image" content="https://andykong.org/static/infoglobe_hero.png">
+    <meta property="og:image:alt" content="Hacking The Olympia InfoGlobe">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Hacking The Olympia InfoGlobe",
+      "description": "Kinda-vintage internet-connected spinning-LED bulletin-board",
+      "datePublished": "2023-11-05",
+      "url": "https://andykong.org/projects/infoglobe/",
+      "mainEntityOfPage": "https://andykong.org/projects/infoglobe/",
+      "image": "https://andykong.org/static/infoglobe_hero.png",
+      "author": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"},
+      "publisher": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"}
+    }
+    </script>
+
+
     <style type="text/css">
         /* Atkinson Hyperlegible */
         /* latin-ext
@@ -227,7 +256,7 @@
                 <p style="margin-bottom: 5px; margin-top: 0px">Published: 2023-11-05</p>
 
                 <hr>
-            <html><body><p><img loading="lazy" alt="" class="addpic" src="/static/infoglobe_hero.png"/></p>
+            <html><body><p><img loading="lazy" alt="Olympia Infoglobe with a translucent blue dome displaying a message on its spinning LED arm" class="addpic" src="/static/infoglobe_hero.png"/></p>
 <p>Last year I co-opted an Olympia InfoGlobe display with an ESP8266 and made the code public <a href="https://gist.github.com/kongmunist/a8bdadbacda4bcb129cd183f2f0fffc5">here</a>. </p>
 <p>The hardware details are in blog posts <a href="https://andykong.org/blog/infoglobetutorial1/">part 1</a> and <a href="https://andykong.org/blog/infoglobetutorial2/">part 2</a>, and I walk through the software in <a href="https://andykong.org/blog/infoglobetutorial3/">part 3</a></p>
 <hr/>
@@ -246,7 +275,7 @@
 <p class="caption"> Screenshot of the Infoglobe website where messages can be uploaded. This is actually how I learned of Gorbachev's death </p>
 <p><img loading="lazy" alt="Screenshot of the Infoglobe website where messages can be uploaded. This is actually how I learned of Gorbachev's death" class="addpic" src="/static/infoglobe_websiteex.jpg"/></p>
 <p>I also added the time and date as possible messages, because it was easy. Actually it wasn't super easy, since the ESP8266 has no geo-locating features and I didn't want to add them. Basically, there's a secret webpage I can visit on the infoglobe site which sets the time zone offset for the infoglobe. Assuming only I visit the page, then the infoglobe's time will always match my timezone.</p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/infoglobe_newsite.png"/></p>
+<p><img loading="lazy" alt="Infoglobe website with a message upload box, recent messages list, and last visit time" class="addpic" src="/static/infoglobe_newsite.png"/></p>
 <p>Here's what the the current website looks like. If you are a designer and want to make it look less like an eyesore please hit me up. I have no money but it is a very simple page, and maybe you like the concept enough to send me a Figma link :)</p>
 <p>Anyway, here's the website where you can write messages: <a href="https://aksuper7.pythonanywhere.com/">aksuper7.pythonanywhere.com</a></p></body></html>
         </div>

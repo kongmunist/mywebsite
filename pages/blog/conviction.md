@@ -18,7 +18,7 @@ Family people with a long lease. The days are the same, each one a joy. You catc
 # Unstable, sure: pursuing
 Risking and failing, doing their work with a smile. Independence, installations and workshops, but also grant rejections, rent increases, food stamps. I’ll be at the VR conference next month. Oh yea, I work for Nintendo at the moment. I’ve been exploring wax as a sculptural medium.
 
-{{ add_pic("convictionmeme.png", "") }}
+{{ add_pic("convictionmeme.png", "", alt="Meme 2x2 grid of stable vs unstable and sure vs unsure, each quadrant illustrated with a different image") }}
 
 This is an incomplete lens, but it is possible to analyze your life through it, figure out where you are and where you want to be. And if you aren’t sure yet, I think everyone gets there when they’re older, or comes to terms with their inability to change anymore. Anyway, who am I to say? I am only 25.
 

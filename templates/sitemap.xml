@@ -11,15 +11,23 @@
   <url>
     <loc>{{baseURL}}{{ url_for("page", path="projects") }}</loc>
   </url>
+  <url>
+    <loc>{{baseURL}}{{ url_for("page", path="now") }}</loc>
+  </url>
+  <url>
+    <loc>{{baseURL}}{{ url_for("page", path="agent-blog") }}</loc>
+  </url>
+  <url>
+    <loc>{{baseURL}}{{ url_for("page", path="tagged") }}</loc>
+  </url>
 
   {% for post in posts %}
     <url>
     <loc>{{baseURL}}{{ url_for("page", path=post.path)[:-1] }}</loc>
+      <lastmod>{{ post.meta.date.strftime("%Y-%m-%d") }}</lastmod>
       {% for im in post.meta.images %}
         <image:image>
-          <image:loc>
-            {{baseURL}}{{ url_for("static", filename=im) }}
-          </image:loc>
+          <image:loc>{{baseURL}}{{ url_for("static", filename=im) }}</image:loc>
         </image:image>
       {% endfor %}
     </url>

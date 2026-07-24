@@ -27,12 +27,12 @@ snippet: Show n Tell
 
 
 # Candles Projects
-{{ add_pic("ign_giantscauseway.jpg", "") }}
-{{ add_pic("ign_assem4.jpg", "") }}
-{{ add_pic("ign_exhib6.jpg", "") }}
-{{ add_pic("ign_waxy11.jpg", "") }}
-{{ add_pic("ign_waxy14.jpg", "") }}
-{{ add_pic("bigheadcandle/drama.jpg", "") }}
+{{ add_pic("ign_giantscauseway.jpg", "", alt="Hexagonal basalt columns of the Giant's Causeway rising by the sea, inspiration for the candle sculpture") }}
+{{ add_pic("ign_assem4.jpg", "", alt="Assembling tiers of white candles into a wooden box frame on a makerspace worktable") }}
+{{ add_pic("ign_exhib6.jpg", "", alt="Two visitors tending the blazing, half-melted candle sculpture at the nighttime exhibition") }}
+{{ add_pic("ign_waxy11.jpg", "", alt="Melted wax terrain after the burn, green and yellow rivulets pooled around remaining candle stubs") }}
+{{ add_pic("ign_waxy14.jpg", "", alt="Slabs and chunks of marbled multicolored leftover wax laid out on a white table") }}
+{{ add_pic("bigheadcandle/drama.jpg", "", alt="Frowning while holding a life-size wax cast of my own smiling face beside my head") }}
 
 
 <hr>

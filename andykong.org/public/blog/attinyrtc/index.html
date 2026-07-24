@@ -136,6 +136,38 @@
 
 
 
+<link rel="canonical" href="https://andykong.org/blog/attinyrtc/">
+
+    
+        <meta property="og:site_name" content="Andy Kong">
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="A computer scientist&#39;s guide to I2C">
+        <meta property="og:description" content="Illustrated via minimal example of ATtiny85 to DS3231 communication using TinyWireM">
+        <meta property="og:url" content="https://andykong.org/blog/attinyrtc/">
+        <meta property="article:published_time" content="2024-02-05">
+        
+        <meta property="og:image" content="https://andykong.org/static/attinyrtc/1.jpg">
+        <meta property="og:image:alt" content="A computer scientist&#39;s guide to I2C">
+        <meta name="twitter:card" content="summary_large_image">
+        
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": "A computer scientist\u0027s guide to I2C",
+          "description": "Illustrated via minimal example of ATtiny85 to DS3231 communication using TinyWireM",
+          "datePublished": "2024-02-05",
+          "url": "https://andykong.org/blog/attinyrtc/",
+          "mainEntityOfPage": "https://andykong.org/blog/attinyrtc/",
+          "image": "https://andykong.org/static/attinyrtc/1.jpg",
+          "keywords": "electronics, arduino, attiny",
+          "author": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"},
+          "publisher": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"}
+        }
+        </script>
+    
+
+
     <style type="text/css">
         /* Atkinson Hyperlegible */
         /* latin-ext
@@ -348,7 +380,7 @@
 <p><a href="https://thecavepearlproject.org/2017/11/03/configuring-i2c-sensors-with-arduino/">This post</a> from the Cave Pearl Project initially helped me understand I2C, but it assumes a bit more knowledge than this one.</p>
 <h1 id="i2c-is-like-an-api-for-ics">I2C is like an API for ICs</h1>
 <p>If you've ever worked with big Python libraries with unwieldy documentation and a million functions, it may help you to think of I2C as a similarly big library for hardware. Specifically, I'm thinking of matplotlib. You read and write options using matplotlib functions, you pass data, magical stuff happens internally, and voila, graph! And if it breaks, debugging is confusing because the functionality that breaks is usually buried deep in the library. </p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/attinyrtc/1.jpg"/></p>
+<p><img loading="lazy" alt="Grandma-at-computer meme captioned How to increase the size of a matplotlib plot" class="addpic" src="/static/attinyrtc/1.jpg"/></p>
 <p>I2C has similar functionality, except instead of calling a nice English function like <code>plt.clear()</code>, you need to say "write 0x1 to the SHUTDOWN register at position 0x10". Chips using I2C have a bunch of data and config registers. To access a sensor reading, you say "let me have 8 bytes from register XX". To configure sensor settings, you say "write XX into register YY". This makes it a bit more annoying since register addresses are harder to memorize than function names in English. You will usually be checking the datasheet a lot.</p>
 <p>Normally you need to instruct the microcontroller to bit-shift your message out as bytes, but the Arduino Wire.h library makes this easier by providing functions like <code>Wire.write(0xFE)</code>.</p>
 <p class="caption"> Example table of the register locations from an I2C sensor datasheet </p>
@@ -365,7 +397,7 @@
 <p><img loading="lazy" alt="Pic from the last post" class="addpic" src="/static/ard2attiny/0.jpeg"/></p>
 <p>I recently got an ATtiny working on a breadboard using an Arduino Uno as the programmer. Afterwards, I also wanted to use an I2C RTC chip (real-time clock) with the ATtiny — while there are I2C libraries for it, they are written for the Arduino. And since the ATtiny25/45/85 doesn't have hardware I2C support, the <code>Wire.h</code> library that eases I2C transactions doesn't work, so the RTC libraries need a bit of editing. The ATtiny uses the <a href="https://github.com/adafruit/TinyWireM">TinyWireM.h</a> library instead as a (basically) drop-in replacement, you should be able to just replace all <code>Wire</code> with <code>TinyWireM</code>.</p>
 <p>I really wanted to manually understand the I2C stuff, so I found a DS3231 (aka ZS-042) minimal example on the <a href="https://forum.arduino.cc/t/software-i2c-and-ds3231-simple-code/508288">Arduino forums</a> and converted it to use TinyWireM. On the ATtiny, the I2C pins are SDA on physical pin 5 and SCL on physical pin 7 (these are also known as PB0 and PB2 respectively). </p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/attinyrtc/4.png"/></p>
+<p><img loading="lazy" alt="ATtiny85 pinout diagram mapping physical pins to Arduino pin numbers, analog channels, and PWM outputs" class="addpic" src="/static/attinyrtc/4.png"/></p>
 <p>I've added SoftwareSerial so we can receive the ATtiny messages using an FTDI Friend, its RX should go into physical pin 3 (same as my previous post). Wires from the ZS-042 board are SCL -&gt; pin 7 and SDA -&gt; pin 5. V+ and GND also need to be connected. </p>
 <p class="caption"> Wiring </p>
 <p><img loading="lazy" alt="Wiring" class="addpic" src="/static/attinyrtc/5.jpg"/></p>

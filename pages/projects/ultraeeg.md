@@ -7,7 +7,7 @@ description: Ultra EEG
 
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-{{ add_pic("ultraeeg/brainhack.png", "") }}
+{{ add_pic("ultraeeg/brainhack.png", "", alt="Lab bench of glowing oscilloscopes and function generators with a hand reaching in, titled THE BRAIN HACK") }}
 
 Hi! This post is gonna describe the Ultrasound+EEG project I worked on as part of Brain Hack 2 hosted by [Marley](https://www.marleyx.com/) and [Raffi](https://www.rhotter.com/)
 
@@ -20,7 +20,7 @@ Hi! This post is gonna describe the Ultrasound+EEG project I worked on as part o
 ## Muscles
 My first circuit board measured the electrical signals thrown off by muscles as they tense and flex, amplifying a small voltage on the surface of the bicep 10,000x so I could see it on the oscilloscope, a quantification of my body working as it had for many years. This marked the beginning of my exploration into biosignals and what we could communicate to a computer through our movements.
 
-{{ add_pic("myo2output1.png", "") }}
+{{ add_pic("myo2output1.png", "", alt="Rigol oscilloscope showing bursts of amplified muscle EMG signal in green") }}
 
 ## Brain
 Later I moved to EEG because I thought it would be cool to think and have my computer pull up information for me. Brain signals are 10-100x smaller in magnitude than muscle signals, and coupling an electrode to the scalp through the hair was way harder than simply sticking 3M red dot electrodes onto the arm. I had a lot of trouble getting useful signal, so I went searching through the literature.
@@ -40,13 +40,13 @@ After that project, EEG was completely and totally dead as far as I was concerne
 As mentioned before, EEG's resolution could be enhanced by modulating brain waves at a certain frequency, then using a lock-in amplifier to extract the signal. This works just like a car radio — every station is always broadcasting, but your radio decides what frequency to pick up on. The technique goes by many names (lock in amplification, heterodyning, synchronized detection), but basically it lets you pull signals deep, deep in the background noise — all you needed was a way to modulate biosignals. 
 
 <p class="caption">Not from our work, but illustrates lock-in. Modulation shifts the original, sub-noise red signal to the blue signal, where it can be recovered above the noise floor <a href="https://www.edn.com/design-a-dsp-lock-in-amplifier-part-1-background/">(source)</a></p>
-{{ add_pic("ultraeeg/edn.gif","") }}
+{{ add_pic("ultraeeg/edn.gif","", alt="Signal-plus-noise plot showing a sub-noise signal shifted by modulation to lift it above the detector noise floor") }}
 
 What Marley and Raffi had found in the literature was an approach to modulate electrical biosignals by physically compressing the tissues the biosignals passed through using focused ultrasound energy. It's called the acousto-electric effect, or AE; by applying ~1MPa of pressure, tissues would typically change resistitivity by ~0.1%, allowing us to use the ultrasonic signal as the modulator for locking onto EEG waves. This wasn't even a theoretical technique — it had been done on the heart to image cardiac currents [(In vivo acoustoelectric imaging for high-resolution visualization
 of cardiac electric spatiotemporal dynamics)](https://pmc.ncbi.nlm.nih.gov/articles/PMC8569939/pdf/nihms-1696551.pdf). 
 
 <p class="caption">A map of the peak voltages at different areas of the heart, produced using the acousto-electric effect  <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8569939/pdf/nihms-1696551.pdf">(source)</a></p>
-{{ add_pic("ultraeeg/cardiacae.png","") }}
+{{ add_pic("ultraeeg/cardiacae.png","", alt="Colormap of cardiac peak voltages across the heart wall produced by acousto-electric imaging") }}
 
 Not only did this give us a method for higher-resolution EEG, it also meant we could read a much denser resolution of EEG. Since ultrasound can be focused down to a tiny \\(<1mm^3\\)spot, if we stimulated just one section of the brain we would be able to decode the activity from just that part. Spatial resolution of focused ultrasound and the time resolution of EEG — I was hooked.
 
@@ -63,7 +63,7 @@ Our hackers were situated in a beautiful house in Mill Valley, half an hour nort
 
 Closets were filled with deionized water, and a huge pot was constantly being boiled and cooled in order to produce degased water, a required medium for the ultrasonic transducer to not blow up. Every day Amazon packages arrived, bottlenecks lifted, and the team would make progress until we could no more. It felt like a skunkworks. It was heavenly.
 
-{{ add_pic("ultraeeg/skullwifhat.jpeg","") }}
+{{ add_pic("ultraeeg/skullwifhat.jpeg","", alt="Human skull wearing a green 3D-printed witch hat, sitting on bubble wrap") }}
 
 # Process
 I think most "science" is pretty straightforward engineering. Get it working in ideal settings, then replace ideal components with non-ideal ones, one at a time. 
@@ -95,20 +95,20 @@ I didn't keep good notes on the process, and now it is several months after the 
 
 1. Using the function generator to drive the ultrasonic transducer directly works great.
 2. Saline solution (0.9% salt) has similar properties to human tissue w/r/t the acousto-electric effect, so you can use it for testing AE
-3. Saline is conductive, and most coaxial cables are not waterproof. This means that the driving signal for the ultrasonic transducer can weakly conduct through the saline to get picked up (on the order of ~5-30M). This is deceptive because it looks like the AE signal, but is actually electrical and not acoustic. To solve this, we encapsulated the transducer in a latex balloon filled with mineral oil, which doesn't affect the ultrasonic propagation {{ add_pic("ultraeeg/balloon.jpeg", "") }}
-4. One way to ensure your signal is acoustic and not electrical is to look at the delay between driving signal and receiving signal. Acoustic signals are limited by speed of sound in the medium (50-100us), while electrical happens instantly {{ add_pic("ultraeeg/drivesignal.jpeg","") }}
-5. Ultrasound can be focused using any physical shape, for instance a cone. It kinda just matters the hardness of the material, I think. We tried using orbeez cut into cones, wax molded into a cone, silicone cone, and finally went with a 3D printed one. {{ add_pic("ultraeeg/carrotlens.jpeg", "") }}
+3. Saline is conductive, and most coaxial cables are not waterproof. This means that the driving signal for the ultrasonic transducer can weakly conduct through the saline to get picked up (on the order of ~5-30M). This is deceptive because it looks like the AE signal, but is actually electrical and not acoustic. To solve this, we encapsulated the transducer in a latex balloon filled with mineral oil, which doesn't affect the ultrasonic propagation {{ add_pic("ultraeeg/balloon.jpeg", "", alt="Ultrasonic transducer suspended in a water bath with test leads and a receiving element below it") }}
+4. One way to ensure your signal is acoustic and not electrical is to look at the delay between driving signal and receiving signal. Acoustic signals are limited by speed of sound in the medium (50-100us), while electrical happens instantly {{ add_pic("ultraeeg/drivesignal.jpeg","", alt="Siglent oscilloscope showing the acoustic signal envelope arriving about 97us after the green drive burst") }}
+5. Ultrasound can be focused using any physical shape, for instance a cone. It kinda just matters the hardness of the material, I think. We tried using orbeez cut into cones, wax molded into a cone, silicone cone, and finally went with a 3D printed one. {{ add_pic("ultraeeg/carrotlens.jpeg", "", alt="Carrot carved into a cone-shaped ultrasound lens propped on foil above a glass") }}
 6. 3D printers have come so far. Our Bambu was running nearly the whole time, and every print was necessary or saved us a lot of janky work holding. I'm beginning to enjoy 3D printing a holder for everything
-7. Working with other skilled engineers is a joy I hope everyone gets to experience. Your expertise is generally spiky, and in a group those spikes balance out to make a glorious, fast-rolling circle down progress lane. Made great friends with [Ethan](https://x.com/BigCrete) on this trip {{ add_pic("ultraeeg/menethan.jpeg", "") }}
+7. Working with other skilled engineers is a joy I hope everyone gets to experience. Your expertise is generally spiky, and in a group those spikes balance out to make a glorious, fast-rolling circle down progress lane. Made great friends with [Ethan](https://x.com/BigCrete) on this trip {{ add_pic("ultraeeg/menethan.jpeg", "", alt="Two of us posing for a selfie holding an orange-and-green 3D-printed skull between us") }}
 8. On most multi-channel function generators, there exist nanovolts of leakage between the outputs. Typically there is nothing wrong with this, except for the edge case where your signal is in the nanovolts. Oops!! Just buy a 2nd function generator. 
 9. You can buy skulls for 2000 USD online, and their reward points are denominated in "bones"
-10. Being away from the usual location is like staying up to work without social distractions, but 10x better. I thought it was a bit wasteful to just go half an hour away for this, but it really puts you in a hackathon mindset. Loved the house also, Mill Valley is a beautiful area. {{ add_pic("ultraeeg/house!.jpeg", "") }}
+10. Being away from the usual location is like staying up to work without social distractions, but 10x better. I thought it was a bit wasteful to just go half an hour away for this, but it really puts you in a hackathon mindset. Loved the house also, Mill Valley is a beautiful area. {{ add_pic("ultraeeg/house!.jpeg", "", alt="Woman flashing peace signs in the Mill Valley house living room while someone opens the patio doors") }}
 11. You can boil bones, in fact you have to if you want to put ultrasound into them. Cause in real life they're wet, so you gotta make them wet to show the proper propagation. 
 12. Bambu printers have high speed settings, and they even have ludicrous mode. These are named the same as the Tesla speed settings, but they don't go up to Plaid, which is a reference to Spaceballs, which is a parody of Star Wars, both of which I have never seen.
-13. If you put a mini-projector on a gimbal you can create a new way to be online. {{ add_pic("ultraeeg/brian.jpeg", "") }}
+13. If you put a mini-projector on a gimbal you can create a new way to be online. {{ add_pic("ultraeeg/brian.jpeg", "", alt="People walking at night beside a mini-projector casting an app grid onto the street pavement") }}
 14. Modern lock-in amplifiers allow you to lock onto a specific frequency, but in case you're off by a few Hertz or don't know where to look, they also offer the option to sweep their modulation frequency across a range. This gives you a clearer signal than simply picking one frequency. 
 15. Morale is a real thing. There is still room for fun and relaxing after a day's sprint, even if the task seems impossible. I don't know if I can implicitly budget this in yet, but Marley and Raffi and everyone else included time for it very naturally.
-{{ add_pic("ultraeeg/latenights.jpeg", "") }}
+{{ add_pic("ultraeeg/latenights.jpeg", "", alt="Three hackers working late at night around a cluttered living-room lab bench") }}
 
 
 # Conclusion
@@ -121,4 +121,4 @@ External EEG seemed so impossible for many years, and now I have hope. That too 
 
 And finally, working on this a) hard/nearly impossible problem with b) minimal resource constraints, c) a team of competent, fun people under a d) tight timeline has been a peak experience in my life. If you have a similar problem which fulfills at least a, c, and d and needs some help on the prototyping/research/EE/signals/ML/CV/problem solving/thinking/minimum viable solution side, I am your man and would love to join. Please reach out!
 
-{{ add_pic("ultraeeg/goodworks.png", "") }}
+{{ add_pic("ultraeeg/goodworks.png", "", alt="Printed passage saying to rejoice only in an increase of knowledge or an increase of good works") }}

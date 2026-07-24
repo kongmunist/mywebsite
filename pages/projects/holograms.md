@@ -25,7 +25,7 @@ You set up the plate over your objects, then expose from the top. Later when you
 Wash, Cure, etc. Please email me if you want me to add more steps, otherwise, it's going to take a few months for me to get back to this... 
 
 
-{{ add_pic("holograms/firsttry_1.jpeg", "") }}
-{{ add_pic("holograms/firsttry_2.jpeg", "") }}
+{{ add_pic("holograms/firsttry_1.jpeg", "", alt="Darkened bench holography setup with a red laser spread across a taped-down black plate, toy car and rubber glove nearby") }}
+{{ add_pic("holograms/firsttry_2.jpeg", "", alt="Hologram plate glowing pink over a pile of coins during laser exposure, the room lit only by a green safelight") }}
 
-{{ add_pic("holograms/firsttry_4.jpeg", "") }}
+{{ add_pic("holograms/firsttry_4.jpeg", "", alt="Developed glass hologram plate showing faint reddish images of coins floating within it") }}

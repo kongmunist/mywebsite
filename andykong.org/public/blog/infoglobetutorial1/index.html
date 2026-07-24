@@ -136,6 +136,38 @@
 
 
 
+<link rel="canonical" href="https://andykong.org/blog/infoglobetutorial1/">
+
+    
+        <meta property="og:site_name" content="Andy Kong">
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="Infoglobe Tutorial Pt 1 — Hardware Prototyping">
+        <meta property="og:description" content="Hacking a new brain into the Infoglobe">
+        <meta property="og:url" content="https://andykong.org/blog/infoglobetutorial1/">
+        <meta property="article:published_time" content="2022-10-01">
+        
+        <meta property="og:image" content="https://andykong.org/static/igt1_hero.jpeg">
+        <meta property="og:image:alt" content="Infoglobe Tutorial Pt 1 — Hardware Prototyping">
+        <meta name="twitter:card" content="summary_large_image">
+        
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": "Infoglobe Tutorial Pt 1 \u2014 Hardware Prototyping",
+          "description": "Hacking a new brain into the Infoglobe",
+          "datePublished": "2022-10-01",
+          "url": "https://andykong.org/blog/infoglobetutorial1/",
+          "mainEntityOfPage": "https://andykong.org/blog/infoglobetutorial1/",
+          "image": "https://andykong.org/static/igt1_hero.jpeg",
+          "keywords": "infoglobe, hardware, electronics",
+          "author": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"},
+          "publisher": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"}
+        }
+        </script>
+    
+
+
     <style type="text/css">
         /* Atkinson Hyperlegible */
         /* latin-ext
@@ -408,9 +440,9 @@
 <h1 id="testing-the-infoglobe-without-putting-it-back-together">Testing the Infoglobe without putting it back together</h1>
 <p>If you wanted to plug in the infoglobe with all the plastic off, it'd probably be dangerous for both the board and you. It just takes a hair caught in the rotor to ruin your Infoglobe and hair and project all at once. But it sucks to put it all back together, and there is a way to be relatively safe without doing that. </p>
 <p>1) Put the grey piece back on. The alignment is a bit tricky but it should drop right in</p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/igt1_reass1.jpg"/></p>
+<p><img loading="lazy" alt="Infoglobe base with the grey plate dropped back into place over the electronics" class="addpic" src="/static/igt1_reass1.jpg"/></p>
 <p>2) Then place the rotor back on the center section and screw it in. Make sure you screw them all in a bit simultaneously, since there is a spring under it. </p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/igt1_reass2.jpg"/></p>
+<p><img loading="lazy" alt="Spinning rotor arm with its LED circuit board screwed back onto the Infoglobe base" class="addpic" src="/static/igt1_reass2.jpg"/></p>
 <p>3) Get something to fool the safety switch, preferably nonmetal</p>
 <p class="caption"> This limit switch needs to be taped or pushed down </p>
 <p><img loading="lazy" alt="This limit switch needs to be taped or pushed down" class="addpic" src="/static/igt1_safeswitch.jpg"/></p>
@@ -427,7 +459,7 @@
 <p class="caption"> Picture of the Arduino setup I originally worked with, Arduino not in-frame </p>
 <p><img loading="lazy" alt="Picture of the Arduino setup I originally worked with, Arduino not in-frame" class="addpic" src="/static/igt1_testingsetup2.jpg"/></p>
 <p>Later when I was sure the code worked on Arduino, I moved to using an ESP8266 microcontroller. It's the little square with a blue light in the picture below. </p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/igt1_testingsetup.jpg"/></p>
+<p><img loading="lazy" alt="Infoglobe wired to a breadboard and ESP8266, with oscilloscope probes attached for testing" class="addpic" src="/static/igt1_testingsetup.jpg"/></p>
 <p>Since the ESP has no headers, I'm using a breadboard to connect the ESP to the data wires. Again, the LED's wires you've added will just run out from under the shell of the Infoglobe, and they safety switch can be engaged using the top dome despite the wires preventing it from closing fully. </p>
 <p>There is some more hardware on the breadboard than I'm letting on, but that will be covered in Pt 2.</p>
 <hr/>

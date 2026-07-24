@@ -6,7 +6,7 @@ snippet: "Seven days in a city trying to usurp death"
 
 Hello. I just got back from Vitalia, a pop-up city in Prospera, a special economic zone (ZEDE) on Roatán, an island which fields a lot of cruise ship tourists and is part of the nation of Honduras, a country consisting of AT LEAST 99 islands. 
 
-{{ add_pic("vitalia1/0.png", "") }}
+{{ add_pic("vitalia1/0.png", "", alt="Google search snippet citing Wikipedia that there are at least 99 islands in Honduras") }}
 
 I'm going to show some highlights and work through a "should I go to Vitalia-like thing in the future" scenario with you.
 
@@ -39,7 +39,7 @@ Generally, Vitalia felt like a vacation amongst like-minded people. I came durin
 
 ## Honduras
 
-{{ add_pic("vitalia1/5.jpg", "") }}
+{{ add_pic("vitalia1/5.jpg", "", alt="Lush hillside on Roatan with tropical forest, red-roofed villas, palm trees, and a golf green") }}
 
 ### Climate
 
@@ -59,7 +59,7 @@ Generally, Vitalia felt like a vacation amongst like-minded people. I came durin
 
 - The grocery store nearest my hotel stocked a lot of American goodies, possibly for the tourists to feel at home. I saw several Kirkland branded things, and many familiar canned goods. This kinda took away the appeal of shopping at a local store, but I did find a few items to enjoy. Particularly, this brand of "drinkable" yogurt. The yogurt is basic cup-yogurt consistency in a large water bottle form-factor, and it's delicious though hard to drink. Prices mostly match US groceries. 
 
-{{ add_pic("vitalia1/8.jpeg", "") }}
+{{ add_pic("vitalia1/8.jpeg", "", alt="Bottles of Dos Pinos drinkable yogurt in blueberry and strawberry flavors next to water bottles") }}
 
 ### Random
 

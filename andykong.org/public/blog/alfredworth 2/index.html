@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+        <meta name="author" content="Andy Kong">
+        <meta name="title" content="Breakdown of my most used Alfred Workflows">
+        <meta name="description" content="Is Alfred worth buying?">
+        <meta name="keywords" content=" mac,  alfred,  productivity, ">
+
+        <title>
+            Breakdown of my most used Alfred Workflows | Andy Kong
+        </title>
+    
+
+    <style>
+        /* ========================================
+           Typography Scale (1.25 ratio)
+           Base: 1rem (16px)
+           ======================================== */
+        
+        body {
+            counter-reset: h1counter h2counter;
+        }
+
+        h1:not(.title) {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px groove #DBAD80;
+            font-size: 1.75rem;
+            counter-reset: h2counter;
+        }
+
+        h1:not(.title)::before {
+            counter-increment: h1counter;
+            content: counter(h1counter) ". ";
+        }
+
+        .blogpage > h2 {
+            font-size: 1.4rem;
+        }
+
+        .blogpage > h2::before {
+            counter-increment: h2counter;
+            content: counter(h1counter) "." counter(h2counter) "  ";
+        }
+
+        .blogpage p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .blogpage pre {
+            background-color: #151818;
+            border: 1px solid #454949;
+            border-left: 4px solid #00b4cc;
+            color: #FAEADB;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin: 1.4em 0;
+            overflow-x: auto;
+            padding: 1em 1.1em;
+            white-space: pre;
+        }
+
+        .blogpage pre code {
+            background-color: transparent;
+            color: inherit;
+            display: block;
+            font-size: inherit;
+            line-height: inherit;
+            padding: 0;
+            white-space: pre;
+        }
+
+        .blogpage :not(pre) > code {
+            background-color: #353939;
+            border: 1px solid #4c5353;
+            color: #FAEADB;
+            font-size: 0.95em;
+            padding: 0.05em 0.25em;
+        }
+
+        .blogpage table {
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            line-height: 1.45;
+            margin: 1.4em 0;
+            width: 100%;
+        }
+
+        .blogpage th,
+        .blogpage td {
+            border-bottom: 1px solid #454949;
+            padding: 0.45em 0.65em;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .blogpage th {
+            color: #E0B890;
+            font-weight: 700;
+        }
+
+        .blogpage td:not(:first-child),
+        .blogpage th:not(:first-child) {
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        .blogpage img{
+            max-width: 100%;
+            max-height: 50vh;
+            height: auto;
+            width: auto;
+            display: block !important;
+            margin: 0 auto !important;
+            border-radius: 0;
+        }
+
+        .blogpage h1, .blogpage h2{
+            color: #E0B890;
+        }
+
+        .toc {
+            padding-left: 12px;
+            margin-left: -12px;
+            border-left: 8px ridge #DBAD80;
+            color: inherit;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+    </style>
+
+
+
+
+<link rel="canonical" href="https://andykong.org/blog/alfredworth 2/">
+
+    
+        <meta property="og:site_name" content="Andy Kong">
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="Breakdown of my most used Alfred Workflows">
+        <meta property="og:description" content="Is Alfred worth buying?">
+        <meta property="og:url" content="https://andykong.org/blog/alfredworth 2/">
+        <meta property="article:published_time" content="2023-11-26">
+        
+        <meta property="og:image" content="https://andykong.org/static/alfredworth/0.png">
+        <meta property="og:image:alt" content="Breakdown of my most used Alfred Workflows">
+        <meta name="twitter:card" content="summary_large_image">
+        
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": "Breakdown of my most used Alfred Workflows",
+          "description": "Is Alfred worth buying?",
+          "datePublished": "2023-11-26",
+          "url": "https://andykong.org/blog/alfredworth 2/",
+          "mainEntityOfPage": "https://andykong.org/blog/alfredworth 2/",
+          "image": "https://andykong.org/static/alfredworth/0.png",
+          "keywords": "mac, alfred, productivity",
+          "author": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"},
+          "publisher": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"}
+        }
+        </script>
+    
+
+
+    <style type="text/css">
+        /* Atkinson Hyperlegible */
+        /* latin-ext
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          src: url("/static/atkhyp_latext.woff2") format('woff2');
+          unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        } */
+        /* latin */
+        @font-face {
+          font-family: 'Atkinson Hyperlegible';
+          font-style: normal;
+          font-weight: 400;
+          src: url("/static/atkhyp_lat.woff2") format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+
+    </style>
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap.min.css">
+
+    <script src="/static/fontawesome.js" defer></script>
+
+    <script src="/static/instantpage-5.1.0.js" type="module" defer></script>
+
+
+
+
+    <style>
+        body {
+            background: #202222;
+            font-size: 1.1em;
+            font-family: 'Atkinson Hyperlegible', sans-serif;
+            color: #FAEADB;
+            overflow-x: hidden;
+
+            word-spacing: 0.03em;
+        }
+
+        .navlinks{
+            font-family: 'Atkinson Hyperlegible';
+            font-size: 1.1em;
+        }
+
+        h1, h2, h3, h4, h5, h6{
+            font-family: "Atkinson Hyperlegible";
+        }
+
+
+        a {
+            transition: color .05s linear;
+            color:#00B4CC;
+        }
+
+        a:hover {
+            color:#00DFFC;
+            text-decoration: none;
+        }
+
+        .navbar-custom {
+            font-size: 22px;
+            background-color: #202222 !important;
+        }
+
+        .navbar-custom .navbar-brand{
+            font-size: 30px;
+            color: #00dffc !important;
+        }
+
+        .navbar-custom .navitem{
+            color:#00dffc !important;
+        }
+
+        .navitem:hover{
+            color:#00b4cc !important;
+            text-decoration: none;
+        }
+        
+        /* External link cursor for Github and Twitter */
+        .navbar-custom a[target="_blank"] {
+            cursor: alias;
+        }
+
+        .hidden{
+          display: none;
+        }
+
+        .navbar-toggler-icon {
+          border: none;
+          outline: none;
+        }
+
+        .caption{
+            font-size:12px;
+            text-align: center;
+            font-style: italic;
+            margin-bottom: .2em;
+            margin-top: 1em;
+        }
+
+
+        hr{
+            background-color:white !important;
+        }
+
+        .video-container {
+          position: relative;
+          width: 100%;
+          padding-bottom: 56.25%;
+        }
+
+        .youtubevideo {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 0;
+        }
+
+        code {
+          font-family: Consolas,"courier new";
+          color: #110000;
+          background-color: #FAEADB;
+          padding: 2px;
+          font-size: 105%;
+        }
+
+
+        .addpic {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+            border-radius: 0;
+        }
+
+</style>
+
+
+    <link rel="icon" type="image/png" href=" /static/aklogo.png " />
+
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YNX5JQZWHT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YNX5JQZWHT');
+</script>
+<script data-goatcounter="https://kong.goatcounter.com/count"
+                    async src="//gc.zgo.at/count.js"></script>
+    
+</head>
+
+
+
+<body>
+
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
+      <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
+          </span>
+        </i>
+    </button>
+
+    <div class="collapse navbar-collapse " id="navbarSupportedContent" style="margin-left:25px;margin-top:10px">
+        <ul class="navbar-nav ml-auto navlinks">
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://github.com/kongmunist" target="_blank" title="Github">Github</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="https://twitter.com/oldestasian" target="_blank" title="twitter">Twitter</a>
+            </li>
+            <li class="nav-item"></li>
+                <a class="nav-link navitem" href="/now/" >[Now]</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<div style="height:100vh; width: 100vw; padding: 0px 1em 0px 1em;">
+    <div style="max-width:50em; margin-bottom:4em; margin-left:auto; margin-right:auto;">
+        
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        
+
+
+<!-- <div class="blogpage overflow-hidden" style="margin-bottom:4em;"> -->
+<div class="blogpage overflow-hidden" style="max-width:50em; margin-bottom:4em; margin-left:auto; margin-right:auto;">
+    <h1 class="title" style="margin-bottom:0px; margin-top:1em; font-size:2.5em;">Breakdown of my most used Alfred Workflows</h1>
+            <p style="font-size:0.8em;"> Published November 26, 2023</p>
+<hr>
+            <html><body><p>On September 26, 2023, I spent 34 British pounds on a software license for Alfred 5, giving me access to some extra features like Workflows and Remote execution. This post is going to tell you about the Workflows that I've found, written, or co-opted to be useful to me.</p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/alfredworth/0.png"/></p>
+<hr/>
+<p>Over time, I realized Alfred just makes a lot of little things easier, and we do a lot of those little things pretty often. Here's my Workflow list:</p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/alfredworth/1.png"/></p>
+<h2 id="1-quit-arena-or-all-but-messages-and-opera">1. Quit Arena, or "All but messages and Opera"</h2>
+<p>This workflow is derived from <a href="https://github.com/vitorgalvao/alfred-workflows/tree/master/QuitArena">this other workflow called QuitArena</a>, and just closes all my apps except a preset few (Chrome, Messages, Opera, Spotify). It's nice for clearing my screen before a presentation, or just to context-switch to working on another project. Used about 2x per month</p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/alfredworth/2.png"/></p>
+<h2 id="2-change-audio-to-airpods">2. Change Audio To Airpods</h2>
+<p>Runs two CLI scripts, one that Bluetooth connects to my Airpods (via their hard-coded MAC address) and another that switches the sound output to my Airpods. I use this about once a day, since they tend to connect to my phone first.</p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/alfredworth/3.png"/></p>
+<h2 id="3-clippaster">3. <a href="https://github.com/kongmunist/alfred_clippaster_workflow">ClipPaster</a></h2>
+<p>ClipPaster pastes the last $n$ screenshots from my clipboard history to whatever application is focused. It's nice for copying relevant parts of several screens or pictures at once and then putting them all into a doc at once. I use it about once a week. Modified from ClipSaver by luckman212 (next one!)</p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/alfredworth/4.png"/></p>
+<h2 id="4-clipsaver">4. <a href="https://github.com/luckman212/alfred_clipsaver_workflow">ClipSaver</a></h2>
+<p>ClipSaver does the same as above, but saves them to desktop instead of pasting them. I use it slightly less than once per week.</p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/alfredworth/5.png"/></p>
+<h2 id="5-email-myself">5. Email Myself</h2>
+<p>When I write "m mdmaowaodijwaojdwoaij", this workflow shoots off my "mdmaowaodijwaojdwoai" message to my mailbox. Good for quick reminders, but I don't use it that often.</p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/alfredworth/6.png"/></p>
+<h2 id="6-launch-apps">6. Launch Apps</h2>
+<p>While it's kind of silly or trivial, I find it way easier to bind hotkeys using Alfred than using the Settings-&gt;Keyboard-&gt;Keyboard Shortcuts method that's built-in to the Mac. This workflow surfaces some of my most-used applications. I use it a few times a day.</p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/alfredworth/7.png"/></p>
+<h2 id="7-system-settings">7. <a href="https://github.com/alfredapp/system-settings-workflow/">System Settings</a></h2>
+<p>Surfaces the MacOS system settings menus and makes them searchable in Alfred. Really nice, I use it about once a day.</p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/alfredworth/8.png"/></p>
+<h2 id="8-translate-hotkey">8. translate hotkey</h2>
+<p>I type "t something" and the "something" is immediately opened in Google Translate. 1-2x a day, but only because I live in a German-speaking area at the moment.</p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/alfredworth/9.png"/></p>
+<h2 id="9-url-handler">9. URL Handler</h2>
+<p>I wrote this to handle arbitrary strings. YouTube links get downloaded as videos, Github links get downloaded as zips, other websites get turned into ".webarchive" pages. Pretty generically useful, I use it about once a week.</p>
+<p><img loading="lazy" alt="" class="addpic" src="/static/alfredworth/10.png"/></p>
+<h1 id="worth-it">Worth it?</h1>
+<p>I'm not going to do a dry, EA-style calculation of time saved, but I estimate Alfred saves me about 30s of annoying, flow-breaking tasks every day. And that number can only ever improve, so I think Alfred is a good purchase if you plan on using your computer a lot.</p></body></html>
+
+
+
+    
+        <p style="line-height:250%;">
+        <a class="btn btn-info" href="/tagged/mac/">mac</a>
+
+        
+            <a class="btn btn-info" href="/tagged/alfred/">alfred</a>
+        
+            <a class="btn btn-info" href="/tagged/productivity/">productivity</a>
+        
+        </p> 
+    
+</div>
+
+
+
+
+    </div>
+    <br>
+</div>
+
+
+<script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

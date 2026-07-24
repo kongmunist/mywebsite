@@ -32,7 +32,7 @@ First, you gotta soak the gelatin sheets in cold water for 5-10 minutes. This is
 
 While that was happening I went and microwaved my tupperware to get the water warm. I brought over the gelatin, which had sagged down in the cup of water and got ready to transfer it. I used a spoon because I didn't know how my hand oils would affect the setting. 
 
-{{ add_pic("gc1_bothcups.jpg", "") }}
+{{ add_pic("gc1_bothcups.jpg", "", alt="Lifting the floppy soaked gelatin sheet out of a green glass of water with a knife, ready to transfer it") }}
 
 The package said to stir until totally dissolved and I had worried that it would take a long time, but it dissolved on impact into this slightly tan cloud. I stirred it for just a few seconds and it incorporated just fine. Here's my tupperware chilling in the fridge right after this
 

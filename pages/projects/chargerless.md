@@ -32,17 +32,17 @@ Can we do better?
 
 Chargerless is a rethinking of the way personal devices have always been powered. Instead of making the user top up their watch every day, what if wearables charged themselves just by being worn around? What if, like the previous generation of self-winding watches, our wearables could power themselves using the heat or light or motion they see every day? 
 
-{{ add_pic("chargerless/handshot.jpg", "") }}
+{{ add_pic("chargerless/handshot.jpg", "", alt="Slim Chargerless band with a brown leather strap and dark blue face, worn on a wrist in sunlight") }}
 
 First, if your device charges itself all the time, we can get the same functionality using a much smaller battery; sleep, exercise, health tracking without any of the hassle. Ane secondly, your device would never die again — how magical is that?
 
-{{ add_pic("chargerless/beaut.jpg", "") }}
+{{ add_pic("chargerless/beaut.jpg", "", alt="Chargerless band with thin leather strap, brass buckle, and small dark rectangular face, laid on a wooden table") }}
 
 # Why now?
 
 Energy harvesting has been studied for decades, but only recently have low-power microcontrollers caught up. The current generation of chips can run sensors, process data, and transmit signals wirelessly, all from a silicon chip smaller than a salt grain — the primary limitation is a way of thinking about power: how to use it and where it comes from. 
 
-{{ add_pic("chargerless/smallenough.jpg", "") }}
+{{ add_pic("chargerless/smallenough.jpg", "", alt="Tiny curved circuit board with a few chips fitting inside a watch-link-sized black enclosure on a workbench") }}
 
 <br>
 
@@ -51,7 +51,7 @@ You might be wondering why I'm so eager to build a fitness tracker if today's pe
 
 Bryan Johnson obviously has someone analyzing his biometrics data, and in the near future AI can offer this analysis to anyone. But you can't get data from the past, we must start now, and do it by removing any reason to not have a device. This means smaller designs enabled by our power harvesting stack, and an infinite battery life when others are quibbling over weeks and days.
 
-{{ add_pic("chargerless/glowing.jpg", "") }}
+{{ add_pic("chargerless/glowing.jpg", "", alt="Two rectangular device modules glowing teal inside a translucent disc resting on a grid of lit LEDs") }}
 
 <hr>
 
@@ -77,7 +77,7 @@ Our target audience is primarily people in their mid-20s to late 40s — with fr
 
 [//]: # (# Why you?)
 
-[//]: # ({{ add_pic("chargerless/andy.jpg", "") }})
+[//]: # ({{ add_pic("chargerless/andy.jpg", "", alt="Portrait of Andy Kong smiling in a dark sweater") }})
 
 [//]: # ()
 [//]: # (My name is Andy Kong, welcome to my website! )

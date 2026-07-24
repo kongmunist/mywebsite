@@ -8,13 +8,13 @@ Hello everyone,
 
 Hope everything is well in your life. I'm working on my implants talk for Hackaday Supercon (more info [here](https://hackaday.com/2024/09/17/2024-hackaday-superconference-speakers-round-one/)). As part of my research, I tried out the Stelo CGM by Dexcom, this is (I think) the first over-the-counter continuous glucose monitor. I'll tell you how it was and then we're gonna dissect this bad boy!
 
-{{ add_pic("cgmteardown1/0.jpg", "") }}
+{{ add_pic("cgmteardown1/0.jpg", "", alt="Render of the Dexcom Stelo CGM, a small gray oval sensor on a white adhesive patch") }}
 
 # How did it feel?
 
 In a world where glucose monitors are >100$ on Amazon sans insurance, Dexcom offers an affordable ($50) CGM with easily accessible data export, sampling your blood sugar every 5m and passing it to your phone via Bluetooth. The device lasts 15.5 days and comes in a kit of two, meaning annual glucose tracking can now be accomplished for ~1k USD.
 
-{{ add_pic("cgmteardown1/1.jpeg", "") }}
+{{ add_pic("cgmteardown1/1.jpeg", "", alt="Looking into the round spring-loaded Stelo applicator held in hand, sensor visible at the bottom") }}
 
 Deploying is done through this spring-loaded applicator, and is easy as pressing a button. A sharp, stiff needle in the cap punches a small hole in your arm and retracts, leaving behind the sensor body and a flexible needle with glucose oxidase coating. 15 days later, the app sends you an alert to replace it, and 12 hours after that it stops recording data. 
 
@@ -22,15 +22,15 @@ When I got this notification I went and got my teardown tools ready — nothing 
 
 # Internal pics
 
-{{ add_pic("cgmteardown1/2.jpeg", "") }}
+{{ add_pic("cgmteardown1/2.jpeg", "", alt="Stelo sensor with its gray rubber casing partly cut away, exposing the DEXCOM-marked circuit board") }}
 
 I started out using a Dremel, but then realized the soft rubber casing is weak enough you can just use wire snippers. The board is quite thin and liable to break as you peel the rubber off, so I had to be careful. 
 
-{{ add_pic("cgmteardown1/3.jpeg", "") }}
+{{ add_pic("cgmteardown1/3.jpeg", "", alt="Fingers holding the thin round Stelo circuit board freed from its rubber casing") }}
 
-{{ add_pic("cgmteardown1/4.jpeg", "") }}
+{{ add_pic("cgmteardown1/4.jpeg", "", alt="Maxell CR1216 3V coin cell battery mounted on the opened Stelo sensor board") }}
 
-{{ add_pic("cgmteardown1/5.jpeg", "") }}
+{{ add_pic("cgmteardown1/5.jpeg", "", alt="Skin-facing side of the Stelo board, annotated with battery leads, needle leads, and a perimeter antenna") }}
 
 # Broad architecture
 
@@ -40,29 +40,29 @@ As far as I can tell, the glucose oxidase on the needle reacts with interstital 
 
 One of the things I wanted to find out through this teardown was if the battery life was longer than the software claimed. 15 days is an incredibly square number, which led me to believe that Dexcom is "guaranteeing performance" by imposing an artificial software lifetime limit when the sensor could really go for longer.
 
-{{ add_pic("cgmteardown1/6.jpeg", "") }}
+{{ add_pic("cgmteardown1/6.jpeg", "", alt="Fluke multimeter reading 2.959V across the coin cell removed from the Stelo") }}
 
 Immediately after I took the sensor off, the battery still reads 2.95V, but since this battery sports an extraordinarily flat discharge curve I have little idea how much capacity is left. 
 
-{{ add_pic("cgmteardown1/7.png", "") }}
+{{ add_pic("cgmteardown1/7.png", "", alt="CR1216 datasheet discharge curves: voltage stays flat then drops sharply, shown for 120k, 1.2M, and 3.6M ohm loads") }}
 
 Since we can't tell by looking at the voltage, I powered the device using an external meter (Nordic PPK2) to find out how much power it draws. Here's the current consumption over 15 minutes:
 
-{{ add_pic("cgmteardown1/8.png", "") }}
+{{ add_pic("cgmteardown1/8.png", "", alt="Current trace of the Stelo over 19 minutes: a high-current boot, then periodic spikes averaging about 11uA") }}
 
 After an initially high power boot for ~2 minutes, we reach steady operating conditions. Small spikes happen every 7.5 seconds, medium spikes every 30 seconds, and then large bursts of activity every 5 minutes denote Bluetooth activity (large bars on the ends). Average power consumption during steady-state is 8.7uA. If you'd like to see this power consumption data more granularly, feel free to email me for it. 
 
-{{ add_pic("cgmteardown1/9.png", "") }}
+{{ add_pic("cgmteardown1/9.png", "", alt="Zoomed steady-state current trace: small spikes every 7.5 and 30 seconds, averaging 8.65uA over a 5 minute window") }}
 
 Given its capacity of 25mAh, the battery on the Stelo could theoretically run it for 17 weeks continuously. However, nominal capacity assumes discharge down to 2V — while the nRF52832 microcontroller keeps working down to 1.7V, the other chips on this board may not. Let's say the board needs >2.8V, then we can model our 8.7uA draw as a ~300kΩ load. On the battery curve given above, this corresponds to a lifetime of ~1000 hours, or about 5 weeks. Adding some margin for safety, we may indeed arrive at a reasonable lifetime of 15 days for this device.
 
-{{ add_pic("cgmteardown1/11.png", "") }}
+{{ add_pic("cgmteardown1/11.png", "", alt="Current trace of one Bluetooth transmission: a dense burst of packet spikes lasting about 7 seconds, averaging 107uA") }}
 
 Oh also, here's what the power looks like during the Bluetooth transmission. It looks like >50 packets, and averages 100uA for 7 seconds.
 
 ## Question 2: What other chips are in this thing?
 
-{{ add_pic("cgmteardown1/10.jpeg", "") }}
+{{ add_pic("cgmteardown1/10.jpeg", "", alt="Top of the Stelo board annotated: nRF52832 microcontroller, mystery chips U78 and DCG7, BLE and NFC antennas, needle electrode") }}
 
 The nRF is easily identified, but I cannot figure out what the other two are. The top has a small IC which seems to be connected to the larger antenna (possibly RFID?), and when I look up U78 it turns up an UHF amplifier (possible) with a different package, the 3SK206. But UHF antennas are pretty big usually, at least bigger than the Bluetooth one. 
 

@@ -6,67 +6,67 @@ snippet: "Is Alfred worth buying?"
 
 On September 26, 2023, I spent 34 British pounds on a software license for Alfred 5, giving me access to some extra features like Workflows and Remote execution. This post is going to tell you about the Workflows that I've found, written, or co-opted to be useful to me.
 
-{{ add_pic("alfredworth/0.png", "") }}
+{{ add_pic("alfredworth/0.png", "", alt="Alfred app logo, a black bowler hat with a purple band and a magnifying glass") }}
 
 <hr>
 
 Over time, I realized Alfred just makes a lot of little things easier, and we do a lot of those little things pretty often. Here's my Workflow list:
 
-{{ add_pic("alfredworth/1.png", "") }}
+{{ add_pic("alfredworth/1.png", "", alt="Alfred preferences Workflows tab listing the nine installed workflows covered in this post") }}
 
 ## 1. Quit Arena, or "All but messages and Opera"
 
 This workflow is derived from [this other workflow called QuitArena](https://github.com/vitorgalvao/alfred-workflows/tree/master/QuitArena), and just closes all my apps except a preset few (Chrome, Messages, Opera, Spotify). It's nice for clearing my screen before a presentation, or just to context-switch to working on another project. Used about 2x per month
 
-{{ add_pic("alfredworth/2.png", "") }}
+{{ add_pic("alfredworth/2.png", "", alt="Workflow list entry named All but messages and Opera, by Vitor Galvao") }}
 
 ## 2. Change Audio To Airpods
 
 Runs two CLI scripts, one that Bluetooth connects to my Airpods (via their hard-coded MAC address) and another that switches the sound output to my Airpods. I use this about once a day, since they tend to connect to my phone first.
 
-{{ add_pic("alfredworth/3.png", "") }}
+{{ add_pic("alfredworth/3.png", "", alt="Change Audio To Airpods workflow canvas: keyword a runs a zsh script, then plays a success or failure sound") }}
 
 ## 3. [ClipPaster](https://github.com/kongmunist/alfred_clippaster_workflow)
 
 ClipPaster pastes the last $n$ screenshots from my clipboard history to whatever application is focused. It's nice for copying relevant parts of several screens or pictures at once and then putting them all into a doc at once. I use it about once a week. Modified from ClipSaver by luckman212 (next one!)
 
-{{ add_pic("alfredworth/4.png", "") }}
+{{ add_pic("alfredworth/4.png", "", alt="ClipPaster workflow list entry, by Andy K") }}
 
 ## 4. [ClipSaver](https://github.com/luckman212/alfred_clipsaver_workflow)
 
 ClipSaver does the same as above, but saves them to desktop instead of pasting them. I use it slightly less than once per week.
 
-{{ add_pic("alfredworth/5.png", "") }}
+{{ add_pic("alfredworth/5.png", "", alt="ClipSaver workflow list entry, by luckman212") }}
 
 ## 5. Email Myself
 
 When I write "m mdmaowaodijwaojdwoaij", this workflow shoots off my "mdmaowaodijwaojdwoai" message to my mailbox. Good for quick reminders, but I don't use it that often.
 
-{{ add_pic("alfredworth/6.png", "") }}
+{{ add_pic("alfredworth/6.png", "", alt="Email Myself workflow canvas: keyword e wired to an osascript Run Script action") }}
 
 ## 6. Launch Apps
 
 While it's kind of silly or trivial, I find it way easier to bind hotkeys using Alfred than using the Settings->Keyboard->Keyboard Shortcuts method that's built-in to the Mac. This workflow surfaces some of my most-used applications. I use it a few times a day.
 
-{{ add_pic("alfredworth/7.png", "") }}
+{{ add_pic("alfredworth/7.png", "", alt="Launch Apps workflow: Shift-Cmd hotkeys mapped to Messages, Google Chrome, Opera GX, and Spotify") }}
 
 ## 7. [System Settings](https://github.com/alfredapp/system-settings-workflow/)
 
 Surfaces the MacOS system settings menus and makes them searchable in Alfred. Really nice, I use it about once a day.
 
-{{ add_pic("alfredworth/8.png", "") }}
+{{ add_pic("alfredworth/8.png", "", alt="System Settings workflow: keyword triggers like about and accessibility all feeding an Open URL action") }}
 
 ## 8. translate hotkey
 
 I type "t something" and the "something" is immediately opened in Google Translate. 1-2x a day, but only because I live in a German-speaking area at the moment.
 
-{{ add_pic("alfredworth/9.png", "") }}
+{{ add_pic("alfredworth/9.png", "", alt="Translate hotkey workflow: a snippet trigger wired to a Google Translate Open URL action") }}
 
 ## 9. URL Handler
 
 I wrote this to handle arbitrary strings. YouTube links get downloaded as videos, Github links get downloaded as zips, other websites get turned into ".webarchive" pages. Pretty generically useful, I use it about once a week.
 
-{{ add_pic("alfredworth/10.png", "") }}
+{{ add_pic("alfredworth/10.png", "", alt="URL Handler workflow branching input to YouTube, local video, GitHub, webarchive, or fallback handlers") }}
 
 # Worth it?
 

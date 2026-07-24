@@ -5,7 +5,7 @@ timespan: October 2023
 pic: strooper/strooper_storepage.png
 description: A Chrome extension to track your cognitive performance when visiting particular websites
 
-{{ add_pic("strooper/strooper_storepage.png", "") }}
+{{ add_pic("strooper/strooper_storepage.png", "", alt="Strooper's Chrome Web Store listing with a red button logo, tagged Extension and Well-being") }}
 
 Strooper is the first Chrome extension I've ever made that worked. It pops up a Stroop test which you must complete whenever you visit a user-specified list of websites, and logs your performance to the localStorage. Check it out [here](https://chromewebstore.google.com/detail/strooper/bmpmimimabakkagnniammiljclhjcmgi)!
 
@@ -63,7 +63,7 @@ I got this from reading ["Scoring the Stroop Test"](https://psycnet.apa.org/reco
 
 Basically, there were a lot of different score calculation methods floating around and he wanted to figure out which ones were actually useful. He got a big batch of data, calculated all the different scoring methods, and noted which ones were redundant using PCA. That left us with scores B, D, and E. 
 
-{{ add_pic("strooper/img_5.png", "") }}
+{{ add_pic("strooper/img_5.png", "", alt="Table from Jensen's paper listing basic Stroop scores A, B, C and the formulas for derived scores D through N") }}
 
 Scores A, B, and C are the scores of the three subtasks in order. B is the reading speed, D = A/(A+B) (color naming score regularized by reading speed), and E = C-A (Stroop effect score)
 
@@ -86,7 +86,7 @@ As mentioned above, even if the Stroop effect itself is not useful, the approxim
 - No results, but KPier's [Chess](https://www.lesswrong.com/posts/nvRauqCD3u5hdkLm9/chess-and-cheap-ways-to-check-day-to-day-variance-in) article
 
 Here's a graphic I made for my email to Mr. Mite comparing the different tests.
-{{ add_pic("strooper/img_4.png", "") }}
+{{ add_pic("strooper/img_4.png", "", alt="Spreadsheet comparing WordTwist, Puzzle Storm, Tetris, and N-back on traits like fun, resolution, and variance") }}
 
 [//]: # ()
 [//]: # (Tetris - 90hr, 850 games)

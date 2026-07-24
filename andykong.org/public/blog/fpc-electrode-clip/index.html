@@ -136,6 +136,38 @@
 
 
 
+<link rel="canonical" href="https://andykong.org/blog/fpc-electrode-clip/">
+
+    
+        <meta property="og:site_name" content="Andy Kong">
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="Using flex PCB as electrode mount">
+        <meta property="og:description" content="First opaque clear PCBs">
+        <meta property="og:url" content="https://andykong.org/blog/fpc-electrode-clip/">
+        <meta property="article:published_time" content="2026-02-03">
+        
+        <meta property="og:image" content="https://andykong.org/static/fpc-electrode-clip/0.png">
+        <meta property="og:image:alt" content="Using flex PCB as electrode mount">
+        <meta name="twitter:card" content="summary_large_image">
+        
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": "Using flex PCB as electrode mount",
+          "description": "First opaque clear PCBs",
+          "datePublished": "2026-02-03",
+          "url": "https://andykong.org/blog/fpc-electrode-clip/",
+          "mainEntityOfPage": "https://andykong.org/blog/fpc-electrode-clip/",
+          "image": "https://andykong.org/static/fpc-electrode-clip/0.png",
+          "keywords": "pcb, electronics",
+          "author": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"},
+          "publisher": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"}
+        }
+        </script>
+    
+
+
     <style type="text/css">
         /* Atkinson Hyperlegible */
         /* latin-ext
@@ -344,19 +376,19 @@
             <p style="font-size:0.8em;"> Published February 3, 2026</p>
 <hr>
             <html><body><p>Recently I built a wearable EKG circuit with Lucia for a fun party device that visualizes your heart rate.</p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/fpc-electrode-clip/0.png"/></p>
+<p><img loading="lazy" alt="Mirror selfie with two red LEDs glowing through a black tank top from the wearable EKG heart visualizer" class="addpic" src="/static/fpc-electrode-clip/0.png"/></p>
 <p>The most clunky part of any biosensing project is coupling the human to the circuit, and this was no different. We had to get EKG gel electrodes, corresponding snap electrode cables, and then connect them to the person in question. This is annoying because the electrodes are disposable, the wires are too long and windy, and the connection to the board is bulky because the EKG electrodes normally go off-body to get digitized. </p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/fpc-electrode-clip/1.png"/></p>
+<p><img loading="lazy" alt="Person reclined at an electronics workbench with a long white electrode wire trailing from under their shirt to the desk" class="addpic" src="/static/fpc-electrode-clip/1.png"/></p>
 <p>It would be much nicer if the EKG was an all-in-one piece that sits across the heart and captured the same signal. A worn EKG like this exists already for monitoring people over 1-2 days, but it isn't fun or hackable or attainable by normal people, so I was looking for alternatives.</p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/fpc-electrode-clip/2.png"/></p>
+<p><img loading="lazy" alt="Compact all-in-one wearable EKG patch monitor adhered across a man's chest" class="addpic" src="/static/fpc-electrode-clip/2.png"/></p>
 <p>One such method used flex PCBs as the "snap", using the flexibility of the FPC material to ensure good contact with an electrode. I could think of many ways to do this coupling but I had two problems: I wasn't sure how big the electrodes were (no calipers) and I could think of 3+ ways to shape the electrode-mounting hole on the FPC itself. I started by modeling out the different geometries for this (simple hole, star-shaped hole, and keyhole) in 10 different sizes spanning 3-4mm (I knew we had a 3.5mm snap electrode, I just wasn't sure which part was 3.5mm). I got this on flex, and just for fun I ordered it on JLC's clear PCB. </p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/fpc-electrode-clip/3.png"/></p>
+<p><img loading="lazy" alt="PCB render of the Electrode Flex Check board: gold strips with simple, star, and keyhole holes sized 3.1 to 4.0 mm" class="addpic" src="/static/fpc-electrode-clip/3.png"/></p>
 <p>They emailed me immediately asking about soldermask, and since I wanted the gold to be exposed for good contact, I told them to remove all of it. As it turns out, the base material of the clear FPC is clear (and slightly pink?), but the surface finish is not smooth enough to see through it without soldermask. You can approximate the soldermask with a piece of clear tape on both sides.</p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/fpc-electrode-clip/4.png"/></p>
+<p><img loading="lazy" alt="Manufactured clear flex PCB with exposed gold strips and keyhole cutouts on a translucent frosted substrate" class="addpic" src="/static/fpc-electrode-clip/4.png"/></p>
 <p>As for the electrodes, it turns out just pretending the buckle was perfectly 3.5mm is a decent strategy. The simple hole performed ok, the star-hole had a bit too much material in the middle, and the keyhole worked just as well as the simple hole (but needed smaller sizes).</p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/fpc-electrode-clip/5.png"/></p>
+<p><img loading="lazy" alt="Gold flex strip snapped onto the metal stud of a 3M Red Dot gel electrode, held between fingers" class="addpic" src="/static/fpc-electrode-clip/5.png"/></p>
 <p>It's easy to say in hindsight, but the simple holes used the flexibility of the metal, which deforms and does not snap back. This meant repeated use of a single hole meant it stopped making good contact (though it still held on to the electrode well enough). </p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/fpc-electrode-clip/6.png"/></p>
+<p><img loading="lazy" alt="Keyhole slot in the flex PCB clipped around the snap stud of a gel electrode" class="addpic" src="/static/fpc-electrode-clip/6.png"/></p>
 <p>The keyhole intermediate channel was 2mm, and held much more consistently across uses. I think this is because it relied on the flexibility of the underlying substrate, or on the flexing as opposed to the deformation of the thin metal layer. In the future we'll go with the too-thin channel, and I think the electrode clips and EKG circuit will be able to all fit on the same circuit. </p></body></html>
 
 

@@ -136,6 +136,38 @@
 
 
 
+<link rel="canonical" href="https://andykong.org/blog/dinocamtoypower/">
+
+    
+        <meta property="og:site_name" content="Andy Kong">
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="Power profiling a thermal printer camera">
+        <meta property="og:description" content="Exposing the internals of a dinosaur-shaped children&#39;s camera I got in Shenzhen">
+        <meta property="og:url" content="https://andykong.org/blog/dinocamtoypower/">
+        <meta property="article:published_time" content="2024-04-07">
+        
+        <meta property="og:image" content="https://andykong.org/static/dinocamtoypower/0.jpeg">
+        <meta property="og:image:alt" content="Power profiling a thermal printer camera">
+        <meta name="twitter:card" content="summary_large_image">
+        
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": "Power profiling a thermal printer camera",
+          "description": "Exposing the internals of a dinosaur-shaped children\u0027s camera I got in Shenzhen",
+          "datePublished": "2024-04-07",
+          "url": "https://andykong.org/blog/dinocamtoypower/",
+          "mainEntityOfPage": "https://andykong.org/blog/dinocamtoypower/",
+          "image": "https://andykong.org/static/dinocamtoypower/0.jpeg",
+          "keywords": "electronics, powerprofile",
+          "author": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"},
+          "publisher": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"}
+        }
+        </script>
+    
+
+
     <style type="text/css">
         /* Atkinson Hyperlegible */
         /* latin-ext
@@ -345,7 +377,7 @@
 <hr>
             <html><body><p>Hello! I've recently finished a paper, so it's time to work on sillier stuff. </p>
 <p>On a recent trip to China, I purchased this children's toy camera consisting of a front/back-facing camera and thermal printer which can print the captured photos on the spot. It's adorable, and I use it to take shitty analog-looking photos of my friends. </p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/dinocamtoypower/0.jpeg"/></p>
+<p><img loading="lazy" alt="Teal dinosaur toy camera opened up, showing thermal printer, camera lens, and blue battery pack inside" class="addpic" src="/static/dinocamtoypower/0.jpeg"/></p>
 <p>As someone whose only used phone cameras, having one as a monotool is pretty convenient. And the terrible picture quality is quite freeing, since no matter what you do or how you look, the picture will be pretty shite.</p>
 <p>My only gripe is the speed. Most real cameras have a sleep mode where they're on, ready to shoot, but not really burning much power. I'd like to keep this camera in sleep mode too, cause it takes 5-10 seconds to turn on and another few seconds to flip around the camera. But as far as I can tell, there is no sleep mode, just a screen-off mode. You can also configure an auto-off timer in the settings, but then you have to wait for it to turn back on again.</p>
 <p>If "display off" mode uses almost no power, then I can make the auto-off timer absurdly long and just turn off the display when it's in my pocket. However, if power consumption stays high, I'll just leave it off and deal with the startup time. It's time to check!</p>
@@ -354,19 +386,19 @@
 <p>Side note, it's sad to me that some versions of this toy will be thrown away despite being fully functional just because the parents/kid didn't know to open it and push back the battery plug back in. It should be glued on to prevent this, but I digress. </p>
 <h1 id="screen-on">Screen on</h1>
 <p>After the device turns on, power consumption is a steady ~85mA on the start screen</p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/dinocamtoypower/1.jpeg"/></p>
+<p><img loading="lazy" alt="Oscilloscope current trace holding steady around 85mA with the toy camera on its start menu screen" class="addpic" src="/static/dinocamtoypower/1.jpeg"/></p>
 <h1 id="camera-on">Camera on</h1>
 <p>With the camera on, current consumption increases to ~95mA. It does not seem to matter which camera. </p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/dinocamtoypower/2.jpeg"/></p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/dinocamtoypower/3.jpeg"/></p>
+<p><img loading="lazy" alt="Oscilloscope trace stepping up to roughly 95mA as the toy camera shows a live viewfinder image" class="addpic" src="/static/dinocamtoypower/2.jpeg"/></p>
+<p><img loading="lazy" alt="Similar oscilloscope current trace with the other camera active, again around 95mA" class="addpic" src="/static/dinocamtoypower/3.jpeg"/></p>
 <h1 id="display-off">Display off</h1>
 <p>When the display is off but the device is on, power consumption is still quite high. The camera seems to turn off but we are still at a steady ~80mA, nearly the same as when we're on the intro menu.</p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/dinocamtoypower/4.jpeg"/></p>
+<p><img loading="lazy" alt="Oscilloscope trace near 80mA with the toy camera display turned off but the device still running" class="addpic" src="/static/dinocamtoypower/4.jpeg"/></p>
 <h1 id="on-shutdown">On shutdown</h1>
 <p>Display off on the menu screen has a current consumption of ~62 mA. This increases as the turn-off jingle plays and the screen turns back on, but then drops to zero when the device is off (as expected) </p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/dinocamtoypower/5.jpeg"/></p>
+<p><img loading="lazy" alt="Oscilloscope trace during shutdown: current rises for the off jingle then drops to zero once the camera powers down" class="addpic" src="/static/dinocamtoypower/5.jpeg"/></p>
 <p>Keeping the camera on the menu screen with display off uses the least power, but it's still a far cry from zero. It's a shame because I think the startup time need not be so long, and shortening it would make the camera more useful to me. I will continue to use the camera, but probably not the display-off mode. </p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/dinocamtoypower/6.jpg"/></p>
+<p><img loading="lazy" alt="Grainy timestamped toy camera photo of two friends, one wearing a VR headset and the other grinning" class="addpic" src="/static/dinocamtoypower/6.jpg"/></p>
 <p>Cya next time!</p></body></html>
 
 

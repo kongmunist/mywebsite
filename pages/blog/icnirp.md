@@ -12,7 +12,7 @@ In this post I'm going to sum up all the cool things I learned about the human b
 
 ICNIRP is an international non-profit made up of random scientists who enjoy quantifying electromagnetic radiation safety. They read the most up-to-date literature every few years and compile a large guidelines doc describing limits of what the human body. These guidelines are then used by researchers and government regulatory bodies to establish safe legal bounds on human-EM exposure.
 
-{{ add_pic("icnirp/0.png", "") }}
+{{ add_pic("icnirp/0.png", "", alt="ICNIRP logo of the International Commission on Non-Ionizing Radiation Protection") }}
 
 # Why did you read this dry and boring safety text?
 
@@ -30,7 +30,7 @@ The rest of this blog will be in list format, interrupted by occasional screensh
 
 - At higher frequencies >10MHz, damage from tissue heating (3) happens way before cell permeability changes (2), so we can ignore 2 as long as we respect the guidelines for (3). At lower frequencies <10MHz, nerve activation (1) happens way before the permeability stuff (2), so again we can ignore 2 as long as we follow the guidelines for (1). At 10MHz, changes in permeability kill you immediately (just joking)
 
-{{ add_pic("icnirp/1.png", "") }}
+{{ add_pic("icnirp/1.png", "", alt="Guideline excerpt: membrane permeability changes at 18 GHz need circa 5 kW per kg, far beyond thermal harm levels") }}
 
 - The frequencies that can affect nerves are limited to ~100kHz and are described by participants as tingling. As frequency increases to 10MHz, this sensation becomes one of "warmth" and we start to care more about thermal safety. Nerve effects are mainly described in the other ICNIRP doc for lower frequencies.
 
@@ -38,53 +38,53 @@ The rest of this blog will be in list format, interrupted by occasional screensh
 
 - Humans' core body temperature is 37°C and can vary up to 1°C throughout a day. Correspondingly, the guidelines try to keep EM radiation exposure below a power level that increases body temperature 1°C (as a conservative limit, they actually try to keep it under 0.1°C). At the 100kHz-6GHz range, a SAR of approximately 6 W/kg leads to a core body temperature increase of 1°C. The issue with increased body temperature is that the heart has to work harder and it causes more accidents
 
-{{ add_pic("icnirp/2.png", "") }}
+{{ add_pic("icnirp/2.png", "", alt="Guideline excerpt: whole-body SAR limits protect against increased cardiovascular load from restricting core temperature rise") }}
 
-{{ add_pic("icnirp/3.png", "") }}
+{{ add_pic("icnirp/3.png", "", alt="Guideline excerpt: accident risk rises with hyperthermia, and core temperatures above 40 degrees C can cause fatal heat stroke") }}
 
 - From this we also learn that children can dissipate heat better than adults and therefore have a higher SAR threshold.
 
-{{ add_pic("icnirp/4.png", "") }}
+{{ add_pic("icnirp/4.png", "", alt="Guideline excerpt: children need a higher SAR for the same temperature rise due to more-efficient heat dissipation") }}
 
-{{ add_pic("icnirp/5.png", "") }}
+{{ add_pic("icnirp/5.png", "", alt="Guideline excerpt: child models showed 35% smaller core temperature rises than adults, thanks to higher surface-to-mass ratio") }}
 
 - ICNIRP also gives us a neat reference for how much power an adult human uses normally. At rest 1W/kg, at stand 2W/kg, and 12W/kg running. I guess this means standing desks actually work?
 
-{{ add_pic("icnirp/6.png", "") }}
+{{ add_pic("icnirp/6.png", "", alt="Guideline excerpt: an adult generates about 1 W per kg at rest, nearly 2 W per kg standing, and 12 W per kg running") }}
 
 - Earlier I mentioned the distinction between surface and deep tissue EM energy absorption. The doc elaborates that at 6GHz, 86% of the power is absorbed in the first 8mm of skin. Surface heating is also less worrisome because we can get rid of it more easily.
 
-{{ add_pic("icnirp/7.png", "") }}
+{{ add_pic("icnirp/7.png", "", alt="Guideline excerpt: above 6 GHz heating is superficial, with 86% of power absorbed within 8 mm of the skin surface") }}
 
 - More tangential trivia, almost all human tissues get damaged beyond 42°C, exhibiting very little interperson variation. To respect this limit, ICNIRP tries to limit localized tissue heating to 41°C. 
 
-{{ add_pic("icnirp/8.png", "") }}
+{{ add_pic("icnirp/8.png", "", alt="Guideline excerpt: tissue damage can occur above 41-43 degrees C, worsening with time spent at such temperatures") }}
 
 - Extremeties are usually around 33-36°C, while core tissues are closer to 38°. Therefore extremeties are limited in heating to +5°C, while core is limited to +2°C. 
 
-{{ add_pic("icnirp/9.png", "") }}
+{{ add_pic("icnirp/9.png", "", alt="Guideline excerpt defining Type-1 limb and skin tissue at under 33-36 degrees C and Type-2 core tissue at under 38.5 degrees C") }}
 
 - Testicles stop making sperm when people sit down because they heat up. I wonder if the increase in desk jobs is responsible for the global decline in sperm count? 
 
-{{ add_pic("icnirp/10.png", "") }}
+{{ add_pic("icnirp/10.png", "", alt="Guideline excerpt: spermatogenesis is reversibly reduced by the up to 2 degree C testes temperature rise caused by sitting") }}
 
 - They approximate whole-body SAR by using a 10g meat cube. They say the spread of heat in a 10g mass is "close enough" to a larger mass. 
 
-{{ add_pic("icnirp/11.png", "") }}
+{{ add_pic("icnirp/11.png", "", alt="Guideline excerpt: SAR averaged over a 10 g mass measures radiofrequency-induced temperature rise from 100 kHz to 6 GHz") }}
 
 - ICNIRP wants to limit body temperature rises to 0.1C, because of this they choose a whole-body SAR limit of 0.4W/kg. For civilians who don't know what they're up against, the limit is 5x better at 0.08W/kg. This reduction is a bit arbitrary to me, but I appreciate the safety factor. 
 
-{{ add_pic("icnirp/12.png", "") }}
+{{ add_pic("icnirp/12.png", "", alt="Guideline excerpt: a reduction factor of 10 was applied to the 1 degree C threshold for occupational exposure to cover uncertainty") }}
 
 - Old people sweat 25% less effectively than younger people
 
-{{ add_pic("icnirp/13.png", "") }}
+{{ add_pic("icnirp/13.png", "", alt="Guideline excerpt: elderly people with lower sweat rates need only 4.5 W per kg to raise core temperature 1 degree C versus 6 W per kg") }}
 
 <hr>
 
 I realized that 5G cell phones use frequencies covered by these guidelines (450MHz-6GHz and 24-52GHz). In light of ICNIRP's explanations, people who freak out about 5G affecting their babies don't make much sense — it's just the effects of heating, and our communications are so efficient that the heating is not even significant. While I enjoy doing my own research, these people should get better at it before being so vocal. 
 
-{{ add_pic("icnirp/babies.png", "") }}
+{{ add_pic("icnirp/babies.png", "", alt="5G scaremongering meme of a flip phone and cell tower next to a crying child whose face is half skull") }}
 
 It's cool: reading these guidelines I get a better understanding on how to think about quantifying safety. I also realize how much harder it would have been to spec safety without everything compiled together — thank you ICNIRP!
 

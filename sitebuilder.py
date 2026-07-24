@@ -43,6 +43,7 @@ app.config['FLATPAGES_EXTENSION'] = '.md'
 print(app.config['FLATPAGES_EXTENSION'])
 
 BASE_URL = "https://andykong.org"
+app.jinja_env.globals['BASE_URL'] = BASE_URL
 
 
 def page_tags(page):
@@ -114,12 +115,15 @@ app.jinja_env.globals.update(dateconvert=dateconvert)
 
 @app.context_processor
 def utility_processor():
-    def add_pic(filename, captionalt, center=True, width=100):
+    def add_pic(filename, captionalt, center=True, width=100, alt=""):
         # format for image:
         # < p class ="caption" > Desc < / p > ![Caption]({{url_for('static', filename='badglasses.png')}})
 
+        # alt= sets the img alt text without rendering a visible caption;
+        # a non-empty captionalt still wins for both caption and alt.
+        imgalt = captionalt if len(captionalt.strip()) > 0 else alt
         overallString = ""
-        mdstuff = "![%s]({{url_for(\"static\", filename=\"%s\")}})" % (captionalt, filename)
+        mdstuff = "![%s]({{url_for(\"static\", filename=\"%s\")}})" % (imgalt, filename)
 
         # don't add caption if it's empty string
         if not len(captionalt.strip()) == 0:
@@ -246,6 +250,14 @@ def index():
     return render_template('main.html', pages = projPages)
 
 
+@app.route("/robots.txt")
+def robots():
+    body = "User-agent: *\nAllow: /\n\nSitemap: https://andykong.org/sitemap.xml\n"
+    response = make_response(body)
+    response.headers["Content-Type"] = "text/plain"
+    return response
+
+
 @app.route("/sitemap.xml")
 def sitemap():
     blogPosts = [p for p in pages if is_public_blog_or_log(p)]
@@ -266,6 +278,10 @@ def sitemap():
         for i in range(len(ims)):
             if " " in ims[i]:
                 ims[i] = ims[i].split(" ")[0]
+        # Include project hero pic when it's an image
+        pic = post.meta.get('pic')
+        if post.meta.get('label') == 'project' and pic and not pic.endswith(('.mp4', '.mov')) and pic not in ims:
+            ims.append(pic)
         post.meta['images'] = ims
         # print(ims)
 
@@ -386,6 +402,14 @@ def blog(title):
     for p in page:
         p.html = re.sub(pattern, '<img loading="lazy"', p.html)
 
+    # Find first in-content static image for social preview
+    imgpattern = '<img.*?src\s*=\s*"?(.+?)"'
+    for p in page:
+        ims = re.findall(imgpattern, p.html)
+        ims = [x.split("/static/")[1] for x in ims if "/static/" in x]
+        if ims:
+            p.meta['ogimage'] = ims[0].split(" ")[0]
+
     return render_template('blog.html', page=page, pages=blogPages)
 
 
@@ -458,6 +482,14 @@ def project(project):
     for p in page:
         p.html = re.sub(pattern, '<img loading="lazy"', p.html)
 
+    # Find first in-content static image for social preview
+    imgpattern = '<img.*?src\s*=\s*"?(.+?)"'
+    for p in page:
+        ims = re.findall(imgpattern, p.html)
+        ims = [x.split("/static/")[1] for x in ims if "/static/" in x]
+        if ims:
+            p.meta['ogimage'] = ims[0].split(" ")[0]
+
     return render_template('projects.html', page = page[0])
 
 @app.route('/cwang/')
@@ -527,12 +559,6 @@ if __name__ == "__main__":
             os.system("git stage -A")
             os.system("git commit -m \"blog update " + time.ctime() + "\"")
             os.system("git push origin master")
-
-            # Make HTTP request to update sitemap on google, get response. Use blue
-            blue = "\033[0;34m"
-            endc = "\033[0m"
-            print(blue + "Updating sitemap on google" + endc)
-            sp.run(["wget", "-qO-", "https://www.google.com/ping?sitemap=https://andykong.org/sitemap.xml"])
 
             # Deploy build file to firebase — effective 10/4 no more firebase.
             # os.system("(cd andykong.org && firebase deploy)")

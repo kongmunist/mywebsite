@@ -12,29 +12,29 @@ So if you can receive email at a custom domain (e.g. Namecheap offers free custo
 
 Menu should look like this. Hit "Add another email address" to trigger a popup
 
-{{ add_pic("freebusinessemail/0.png", "") }}
+{{ add_pic("freebusinessemail/0.png", "", alt="Gmail Settings on the Accounts and Import tab, with the Add another email address link under Send mail as") }}
 
 ## 2. Put in your custom email
 
-{{ add_pic("freebusinessemail/1.png", "") }}
+{{ add_pic("freebusinessemail/1.png", "", alt="Gmail popup for adding another email address you own, with name and custom domain email filled in") }}
 
 ## 3. Fill out SMTP
 
 Use "smtp.gmail.com" and port 587, then add your current gmail address as the username (remove the @gmail.com). For password you'll need to make an app password. 
 
-{{ add_pic("freebusinessemail/2.png", "") }}
+{{ add_pic("freebusinessemail/2.png", "", alt="SMTP server form filled with smtp.gmail.com, port 587, and a Gmail username, password still blank") }}
 
 An app password is basically a way to give an app access to your email without exposing your password. To make one, go to [myaccount.google.com](https://myaccount.google.com/), search for "App passwords" (you will not find it as a menu item), do a sign-in again, then make up a name and generate one.
 
-{{ add_pic("freebusinessemail/3.png", "") }}
+{{ add_pic("freebusinessemail/3.png", "", alt="Google Account search for app password, with App passwords appearing under the Security results") }}
 
 Copy that into the SMTP popup and hit Add Account:
 
-{{ add_pic("freebusinessemail/4.png", "") }}
+{{ add_pic("freebusinessemail/4.png", "", alt="Completed SMTP form with the app password pasted in, ready to hit the Add Account button") }}
 
 You are pretty much done. They will send a confirmation email to your custom domain, which, if your forwarding was really set up right, will go somewhere you can click it. From then on you can send emails from your custom domain fo free. Enjoy!
 
-{{ add_pic("freebusinessemail/5.png", "") }}
+{{ add_pic("freebusinessemail/5.png", "", alt="Gmail compose window with the From field set to the new custom domain address") }}
 
 <hr>
 

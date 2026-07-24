@@ -184,7 +184,7 @@ Your microcontroller should sit nicely if it's got the Wemos D1 Mini shape.
 # Step 7: Put everything back together.
 Secure the wires internally, then put the grey shell back on, then screw the rotor back on, then put the dome back on. 
 
-{{ add_pic("igt2_tolife.jpg", "") }}
+{{ add_pic("igt2_tolife.jpg", "", alt="Reassembled Infoglobe with its blue dome displaying TO LIFE!! in glowing dot-matrix letters") }}
 
 And we're done! You are now the proud owner of a modded Infoglobe. Now get out there and make it say some cool stuff!
 

@@ -12,11 +12,11 @@ We're currently in a battery-powered era of devices, driven by the cheap availab
 
 The development of light-harvesting products specifically is driven by the availablility of flexible, "normal"-looking PowerFoyle solar cells by a Swedish company called Exeger. Light-harvesting electronics require a minimum power (light level) to harvest properly, and the minimum light level is higher the smaller the photovoltaic cell. PowerFoyle's cells are optimized for indoor harvesting so even dim indoor lighting can make it work, and the consumer device with the most area turns out to be headphones.
 
-{{ add_pic("urbanista-teardown/0.png", "") }}
+{{ add_pic("urbanista-teardown/0.png", "", alt="Exeger promo shot of hands flexing a leather-textured PowerFoyle solar cell strip") }}
 
 Since we all work in the same space, I felt compelled to get one and test their panels myself. Exeger has partnered with a lot of big brands like JBL and Adidas, but the cheapest device I could find on eBay was a refurbed/stolen pair of Urbanista Los Angeles headphones.
 
-{{ add_pic("urbanista-teardown/1.png", "") }}
+{{ add_pic("urbanista-teardown/1.png", "", alt="Urbanista web store page for the Los Angeles hybrid ANC headphones, marked sold out at 119 dollars") }}
 
 My interests lie mostly in the PV cell and the harvesting methodology, but I'm always interested to see how people make certain mechanisms at scale. The rest of this post will mostly be pictures.
 
@@ -24,29 +24,29 @@ My interests lie mostly in the PV cell and the harvesting methodology, but I'm a
 
 Here's the device
 
-{{ add_pic("urbanista-teardown/2.png", "") }}
+{{ add_pic("urbanista-teardown/2.png", "", alt="Black Urbanista Los Angeles headphones lying on a paper-covered workbench before disassembly") }}
 
 Here's the panel we're after, built into the top band
 
-{{ add_pic("urbanista-teardown/3.png", "") }}
+{{ add_pic("urbanista-teardown/3.png", "", alt="Hand holding the top band with the Powerfoyle logo engraved on the built-in solar panel") }}
 
 We start by popping off the pieces of the device that are snap-fit — The inner band, parts of the outer band, the earmuffs. You can immediately see they've strain reliefed the cable on the headband
 
-{{ add_pic("urbanista-teardown/4.png", "") }}
+{{ add_pic("urbanista-teardown/4.png", "", alt="Headband with its snap-fit covers popped off, exposing the strain-relieved cable running through it") }}
 
 There's a couple of stickers keeping the band together, once those go the PV cell just falls out 
 
-{{ add_pic("urbanista-teardown/5.png", "") }}
+{{ add_pic("urbanista-teardown/5.png", "", alt="Hands pulling the headband frame apart, with the coiled interconnect cable and inner rails exposed") }}
 
-{{ add_pic("urbanista-teardown/6.png", "") }}
+{{ add_pic("urbanista-teardown/6.png", "", alt="Freed PowerFoyle solar cell strip with its flex circuit and QR labels, next to the two detached earcups") }}
 
 I used a clamp to pop off the two outer shell bits on the headphone themselves. The right one contains the harvesting and bluetooth chips (labeled on paper), and 2 mics for the noise-cancelling. 
 
-{{ add_pic("urbanista-teardown/7.png", "") }}
+{{ add_pic("urbanista-teardown/7.png", "", alt="Opened right earcup and solar band beside handwritten notes of chip markings, including the SUNBST harvester") }}
 
 The left earmuff has a 750mAh battery (10 kJ), PMIC, and 1 mic. I roughly calculated charging rate in direct sunlight and came up with 3-4 hrs to go from 0 to 100%.
 
-{{ add_pic("urbanista-teardown/8.png", "") }}
+{{ add_pic("urbanista-teardown/8.png", "", alt="Inside the left earcup: a silver 750 mAh 3.7 V pouch battery wired to the PMIC board") }}
 
 The part of the band coupling to the earmuffs (for the wire pass-through) is made of steel, which I found a bit surprising — its the only mechanical component that's made of metal in the whole device. Actually I felt a bit bad seeing how good the build quality was during the teardown. It was taken apart in a way that could be put back together, but I'm not really interested. 
 

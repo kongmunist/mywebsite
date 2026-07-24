@@ -14,7 +14,7 @@ snippet: Adding bits to our atoms
 
 Ok, welcome back for our final installment of the infoglobe tutorial series. If you've not been following along, here's links to the hardware mods that you'll need to have done before this post will be useful to you — [part 1](../infoglobetutorial1) and [part 2](../infoglobetutorial2).
 
-{{ add_pic("igt1_hero.jpeg", "") }}
+{{ add_pic("igt1_hero.jpeg", "", alt="Olympia Infoglobe with a clear blue dome displaying the scrolling message Hey Hackaday") }}
 
 If you've forgotten, here's the device we're hacking - the Olympia Infoglobe. I have described it too often, so we're gonna get right into the meat of this post. 
 
@@ -22,11 +22,11 @@ If you've forgotten, here's the device we're hacking - the Olympia Infoglobe. I 
 
 # Code
 We're using the Wemos D1 mini ESP8266/ESP32 breakout board to control our globe, it looks like this.
-{{ add_pic("igt3_wemos.png", "") }}
+{{ add_pic("igt3_wemos.png", "", alt="Wemos D1 mini breakout board with its metal-shielded ESP8266 WiFi module") }}
 
 Boot up your Arduino IDE and download the "IRremoteESP8266" library from the Tools->Manage Libraries-> then search for IRremoteESP8266. This library should be supported for ESP32s as well. Hit install, and twiddle your thumbs for a bit as it installs.
 
-{{ add_pic("igt3_irlib.png", "") }}
+{{ add_pic("igt3_irlib.png", "", alt="Arduino IDE Library Manager showing the IRremoteESP8266 library installed") }}
 
 Now, copy past [this gist](https://gist.github.com/kongmunist/a8bdadbacda4bcb129cd183f2f0fffc5) into a new Arduino file and upload it to your ESP board. 
 <script src="https://gist.github.com/kongmunist/a8bdadbacda4bcb129cd183f2f0fffc5.js"></script>
