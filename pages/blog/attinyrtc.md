@@ -1,6 +1,7 @@
 title: "A computer scientist's guide to I2C"
 date: 2024-02-05
 label: log
+ogimage: ard2attiny/0.jpeg
 tags: [electronics, arduino, attiny]
 snippet: "Illustrated via minimal example of ATtiny85 to DS3231 communication using TinyWireM"
 

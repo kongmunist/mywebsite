@@ -23,6 +23,20 @@
 
   
     <url>
+    <loc>https://andykong.org/projects/catherinewang</loc>
+      <lastmod>2026-08-23</lastmod>
+      
+        <image:image>
+          <image:loc>https://andykong.org/static/cwang/cwang.png</image:loc>
+        </image:image>
+      
+        <image:image>
+          <image:loc>https://andykong.org/static/chargerless/beaut.jpg</image:loc>
+        </image:image>
+      
+    </url>
+  
+    <url>
     <loc>https://andykong.org/blog/fast_mobile_e2e</loc>
       <lastmod>2026-05-13</lastmod>
       
@@ -427,7 +441,7 @@
         </image:image>
       
         <image:image>
-          <image:loc>https://andykong.org/static/ultraeeg/house%2521.jpeg</image:loc>
+          <image:loc>https://andykong.org/static/ultraeeg/house!.jpeg</image:loc>
         </image:image>
       
         <image:image>

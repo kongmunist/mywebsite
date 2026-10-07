@@ -1,20 +1,6 @@
 {% extends "base.html" %}
 
-{% block meta_content %}
-<meta name="description" content="Digital footprint of a curious man">
-<meta name="author" content="Andy Kong">
-
-<title> Andy Kong Website </title>
-{% endblock %}
-
 {% block social_meta %}
-<meta property="og:site_name" content="Andy Kong">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Andy Kong">
-<meta property="og:description" content="Digital footprint of a curious man">
-<meta property="og:url" content="{{ BASE_URL ~ request.path }}">
-<meta property="og:image" content="{{ BASE_URL ~ url_for('static', filename='aklogohires.png') }}">
-<meta name="twitter:card" content="summary">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -22,7 +8,7 @@
   "name": "Andy Kong",
   "url": "https://andykong.org",
   "image": {{ (BASE_URL ~ url_for('static', filename='meiceland1.jpg'))|tojson }},
-  "description": "Builder of sensors and biosensing hardware. Human-computer interaction research at CMU and ETH Zurich, quantum physics hardware at Open Quantum, founder of Chargerless.",
+  "description": {{ preview.description|tojson }},
   "sameAs": [
     "https://github.com/kongmunist",
     "https://twitter.com/oldestasian"

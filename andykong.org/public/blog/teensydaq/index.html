@@ -1,17 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    
-        <meta name="author" content="Andy Kong">
-        <meta name="title" content="Teensy DAQ: ADC Oversampling on the Teensy 4.0 microcontroller">
-        <meta name="description" content="300 kSPS to 1 kSPS faster than you can say &#34;free bits&#34;">
-        <meta name="keywords" content=" hardware,  microcontrollers,  Teensy,  ADC, ">
+<title>Teensy DAQ: ADC Oversampling on the Teensy 4.0 microcontroller | Andy Kong</title>
+<meta name="description" content="300 kSPS to 1 kSPS faster than you can say &#34;free bits&#34;">
+<meta name="author" content="Andy Kong">
+<link rel="canonical" href="https://andykong.org/blog/teensydaq/">
+<meta property="og:site_name" content="Andy Kong">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Teensy DAQ: ADC Oversampling on the Teensy 4.0 microcontroller">
+<meta property="og:description" content="300 kSPS to 1 kSPS faster than you can say &#34;free bits&#34;">
+<meta property="og:url" content="https://andykong.org/blog/teensydaq/">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://andykong.org/static/teensydaq_ADCoutput.jpeg">
+<meta property="og:image:secure_url" content="https://andykong.org/static/teensydaq_ADCoutput.jpeg">
+<meta property="og:image:type" content="image/jpeg">
 
-        <title>
-            Teensy DAQ: ADC Oversampling on the Teensy 4.0 microcontroller | Andy Kong
-        </title>
+<meta property="og:image:alt" content="Free-running ADC goes at 362kHz">
+
+<meta property="article:published_time" content="2020-11-27">
+<meta property="article:author" content="https://andykong.org/">
+<meta property="article:tag" content="hardware">
+<meta property="article:tag" content="microcontrollers">
+<meta property="article:tag" content="Teensy">
+<meta property="article:tag" content="ADC">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@oldestasian">
+<meta name="twitter:creator" content="@oldestasian">
+<meta name="twitter:title" content="Teensy DAQ: ADC Oversampling on the Teensy 4.0 microcontroller">
+<meta name="twitter:description" content="300 kSPS to 1 kSPS faster than you can say &#34;free bits&#34;">
+<meta name="twitter:image" content="https://andykong.org/static/teensydaq_ADCoutput.jpeg">
+<meta name="twitter:image:alt" content="Free-running ADC goes at 362kHz">
+
+    
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": "Teensy DAQ: ADC Oversampling on the Teensy 4.0 microcontroller",
+          "description": "300 kSPS to 1 kSPS faster than you can say \"free bits\"",
+          "datePublished": "2020-11-27",
+          "url": "https://andykong.org/blog/teensydaq/",
+          "mainEntityOfPage": "https://andykong.org/blog/teensydaq/",
+          "image": "https://andykong.org/static/teensydaq_ADCoutput.jpeg",
+          "keywords": "hardware, microcontrollers, Teensy, ADC",
+          "author": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"},
+          "publisher": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"}
+        }
+        </script>
+    
+
+
+    
+        <meta name="title" content="Teensy DAQ: ADC Oversampling on the Teensy 4.0 microcontroller">
+        <meta name="keywords" content=" hardware,  microcontrollers,  Teensy,  ADC, ">
     
 
     <style>
@@ -134,38 +180,6 @@
     </style>
 
 
-
-
-<link rel="canonical" href="https://andykong.org/blog/teensydaq/">
-
-    
-        <meta property="og:site_name" content="Andy Kong">
-        <meta property="og:type" content="article">
-        <meta property="og:title" content="Teensy DAQ: ADC Oversampling on the Teensy 4.0 microcontroller">
-        <meta property="og:description" content="300 kSPS to 1 kSPS faster than you can say &#34;free bits&#34;">
-        <meta property="og:url" content="https://andykong.org/blog/teensydaq/">
-        <meta property="article:published_time" content="2020-11-27">
-        
-        <meta property="og:image" content="https://andykong.org/static/teensydaq_ADCoutput.jpeg">
-        <meta property="og:image:alt" content="Teensy DAQ: ADC Oversampling on the Teensy 4.0 microcontroller">
-        <meta name="twitter:card" content="summary_large_image">
-        
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "BlogPosting",
-          "headline": "Teensy DAQ: ADC Oversampling on the Teensy 4.0 microcontroller",
-          "description": "300 kSPS to 1 kSPS faster than you can say \"free bits\"",
-          "datePublished": "2020-11-27",
-          "url": "https://andykong.org/blog/teensydaq/",
-          "mainEntityOfPage": "https://andykong.org/blog/teensydaq/",
-          "image": "https://andykong.org/static/teensydaq_ADCoutput.jpeg",
-          "keywords": "hardware, microcontrollers, Teensy, ADC",
-          "author": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"},
-          "publisher": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"}
-        }
-        </script>
-    
 
 
     <style type="text/css">

@@ -1,17 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    
-        <meta name="author" content="Andy Kong">
-        <meta name="title" content="A computer scientist&#39;s guide to I2C">
-        <meta name="description" content="Illustrated via minimal example of ATtiny85 to DS3231 communication using TinyWireM">
-        <meta name="keywords" content=" electronics,  arduino,  attiny, ">
+<title>A computer scientist&#39;s guide to I2C | Andy Kong</title>
+<meta name="description" content="Illustrated via minimal example of ATtiny85 to DS3231 communication using TinyWireM">
+<meta name="author" content="Andy Kong">
+<link rel="canonical" href="https://andykong.org/blog/attinyrtc/">
+<meta property="og:site_name" content="Andy Kong">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A computer scientist&#39;s guide to I2C">
+<meta property="og:description" content="Illustrated via minimal example of ATtiny85 to DS3231 communication using TinyWireM">
+<meta property="og:url" content="https://andykong.org/blog/attinyrtc/">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://andykong.org/static/ard2attiny/0.jpeg">
+<meta property="og:image:secure_url" content="https://andykong.org/static/ard2attiny/0.jpeg">
+<meta property="og:image:type" content="image/jpeg">
 
-        <title>
-            A computer scientist&#39;s guide to I2C | Andy Kong
-        </title>
+<meta property="og:image:alt" content="A computer scientist&#39;s guide to I2C">
+
+<meta property="article:published_time" content="2024-02-05">
+<meta property="article:author" content="https://andykong.org/">
+<meta property="article:tag" content="electronics">
+<meta property="article:tag" content="arduino">
+<meta property="article:tag" content="attiny">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@oldestasian">
+<meta name="twitter:creator" content="@oldestasian">
+<meta name="twitter:title" content="A computer scientist&#39;s guide to I2C">
+<meta name="twitter:description" content="Illustrated via minimal example of ATtiny85 to DS3231 communication using TinyWireM">
+<meta name="twitter:image" content="https://andykong.org/static/ard2attiny/0.jpeg">
+<meta name="twitter:image:alt" content="A computer scientist&#39;s guide to I2C">
+
+    
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": "A computer scientist\u0027s guide to I2C",
+          "description": "Illustrated via minimal example of ATtiny85 to DS3231 communication using TinyWireM",
+          "datePublished": "2024-02-05",
+          "url": "https://andykong.org/blog/attinyrtc/",
+          "mainEntityOfPage": "https://andykong.org/blog/attinyrtc/",
+          "image": "https://andykong.org/static/ard2attiny/0.jpeg",
+          "keywords": "electronics, arduino, attiny",
+          "author": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"},
+          "publisher": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"}
+        }
+        </script>
+    
+
+
+    
+        <meta name="title" content="A computer scientist&#39;s guide to I2C">
+        <meta name="keywords" content=" electronics,  arduino,  attiny, ">
     
 
     <style>
@@ -134,38 +179,6 @@
     </style>
 
 
-
-
-<link rel="canonical" href="https://andykong.org/blog/attinyrtc/">
-
-    
-        <meta property="og:site_name" content="Andy Kong">
-        <meta property="og:type" content="article">
-        <meta property="og:title" content="A computer scientist&#39;s guide to I2C">
-        <meta property="og:description" content="Illustrated via minimal example of ATtiny85 to DS3231 communication using TinyWireM">
-        <meta property="og:url" content="https://andykong.org/blog/attinyrtc/">
-        <meta property="article:published_time" content="2024-02-05">
-        
-        <meta property="og:image" content="https://andykong.org/static/attinyrtc/1.jpg">
-        <meta property="og:image:alt" content="A computer scientist&#39;s guide to I2C">
-        <meta name="twitter:card" content="summary_large_image">
-        
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "BlogPosting",
-          "headline": "A computer scientist\u0027s guide to I2C",
-          "description": "Illustrated via minimal example of ATtiny85 to DS3231 communication using TinyWireM",
-          "datePublished": "2024-02-05",
-          "url": "https://andykong.org/blog/attinyrtc/",
-          "mainEntityOfPage": "https://andykong.org/blog/attinyrtc/",
-          "image": "https://andykong.org/static/attinyrtc/1.jpg",
-          "keywords": "electronics, arduino, attiny",
-          "author": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"},
-          "publisher": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"}
-        }
-        </script>
-    
 
 
     <style type="text/css">

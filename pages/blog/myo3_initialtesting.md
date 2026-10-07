@@ -3,6 +3,7 @@ date: 2020-11-26
 label: log
 tags: [myo3, projectlog, PCB]
 snippet: It's like they always say, the hard part's the software
+ogimage: myo3_fixingpower.jpg
 
 
 I finally got around to powering on those EMG circuits I made. 

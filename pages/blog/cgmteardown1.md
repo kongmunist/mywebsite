@@ -1,6 +1,7 @@
 title: "Electronics Teardown: Stelo CGM"
 date: 2024-10-06
 label: log
+ogimage: cgmteardown1/3.jpeg
 tags: [electronics, cgm, qs]
 snippet: "Power testing a consumer continuous glucose monitor"
 

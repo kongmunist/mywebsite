@@ -1,11 +1,8 @@
 {% extends "base.html" %}
+{% set social_page = page %}
 
 {% block meta_content %}
-    <meta name="author" content="Andy Kong">
     <meta name="title" content="{{ page.title }}">
-    <meta name="description" content="{{ page.description }}">
-
-<title> {{page.title}} | Andy Kong</title>
 
 <style>
     .projectpage h1, .projectpage h2{
@@ -23,34 +20,16 @@
 {% endblock %}
 
 {% block social_meta %}
-    <meta property="og:site_name" content="Andy Kong">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="{{ page.title }}">
-    <meta property="og:description" content="{{ page.description }}">
-    <meta property="og:url" content="{{ BASE_URL ~ request.path }}">
-    <meta property="article:published_time" content="{{ page.meta.date.isoformat() }}">
-    {% if page.pic and not page.pic.endswith('.mp4') and not page.pic.endswith('.mov') %}
-    <meta property="og:image" content="{{ BASE_URL ~ url_for('static', filename=page.pic) }}">
-    <meta property="og:image:alt" content="{{ page.title }}">
-    <meta name="twitter:card" content="summary_large_image">
-    {% elif page.meta.ogimage %}
-    <meta property="og:image" content="{{ BASE_URL ~ url_for('static', filename=page.meta.ogimage) }}">
-    <meta property="og:image:alt" content="{{ page.title }}">
-    <meta name="twitter:card" content="summary_large_image">
-    {% else %}
-    <meta property="og:image" content="{{ BASE_URL ~ url_for('static', filename='aklogohires.png') }}">
-    <meta name="twitter:card" content="summary">
-    {% endif %}
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Article",
-      "headline": {{ page.title|tojson }},
-      "description": {{ page.description|tojson }},
+      "headline": {{ preview.title|tojson }},
+      "description": {{ preview.description|tojson }},
       "datePublished": {{ page.meta.date.isoformat()|tojson }},
       "url": {{ (BASE_URL ~ request.path)|tojson }},
       "mainEntityOfPage": {{ (BASE_URL ~ request.path)|tojson }},
-      {% if page.pic and not page.pic.endswith('.mp4') and not page.pic.endswith('.mov') %}"image": {{ (BASE_URL ~ url_for('static', filename=page.pic))|tojson }},{% elif page.meta.ogimage %}"image": {{ (BASE_URL ~ url_for('static', filename=page.meta.ogimage))|tojson }},{% endif %}
+      "image": {{ preview.image|tojson }},
       "author": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"},
       "publisher": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"}
     }

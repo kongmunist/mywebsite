@@ -1,6 +1,7 @@
 title: "Using flex PCB as electrode mount"
 date: 2026-02-03
 label: log
+ogimage: fpc-electrode-clip/4.png
 tags: [pcb, electronics]
 snippet: "First opaque clear PCBs"
 

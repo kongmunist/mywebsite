@@ -1,6 +1,7 @@
 title: "Breakdown of my most used Alfred Workflows"
 date: 2023-11-26
 label: log
+ogimage: alfredworth/3.png
 tags: [mac, alfred, productivity]
 snippet: "Is Alfred worth buying?"
 

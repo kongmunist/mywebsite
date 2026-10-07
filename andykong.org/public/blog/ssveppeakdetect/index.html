@@ -1,17 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    
-        <meta name="author" content="Andy Kong">
-        <meta name="title" content="Trying out various peak detection techniques for the SSVEP">
-        <meta name="description" content="Garbage in, garbage out.">
-        <meta name="keywords" content=" ssvep,  eeg,  bci,  dsp, ">
+<title>Trying out various peak detection techniques for the SSVEP | Andy Kong</title>
+<meta name="description" content="Garbage in, garbage out.">
+<meta name="author" content="Andy Kong">
+<link rel="canonical" href="https://andykong.org/blog/ssveppeakdetect/">
+<meta property="og:site_name" content="Andy Kong">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Trying out various peak detection techniques for the SSVEP">
+<meta property="og:description" content="Garbage in, garbage out.">
+<meta property="og:url" content="https://andykong.org/blog/ssveppeakdetect/">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://andykong.org/static/PSD5secwindow.png">
+<meta property="og:image:secure_url" content="https://andykong.org/static/PSD5secwindow.png">
+<meta property="og:image:type" content="image/png">
 
-        <title>
-            Trying out various peak detection techniques for the SSVEP | Andy Kong
-        </title>
+<meta property="og:image:alt" content="Graph of power spectral distribution of a 35Hz signal, fed in 5s increments and peak detected from 10-60Hz">
+
+<meta property="article:published_time" content="2021-01-18">
+<meta property="article:author" content="https://andykong.org/">
+<meta property="article:tag" content="ssvep">
+<meta property="article:tag" content="eeg">
+<meta property="article:tag" content="bci">
+<meta property="article:tag" content="dsp">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@oldestasian">
+<meta name="twitter:creator" content="@oldestasian">
+<meta name="twitter:title" content="Trying out various peak detection techniques for the SSVEP">
+<meta name="twitter:description" content="Garbage in, garbage out.">
+<meta name="twitter:image" content="https://andykong.org/static/PSD5secwindow.png">
+<meta name="twitter:image:alt" content="Graph of power spectral distribution of a 35Hz signal, fed in 5s increments and peak detected from 10-60Hz">
+
+    
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": "Trying out various peak detection techniques for the SSVEP",
+          "description": "Garbage in, garbage out.",
+          "datePublished": "2021-01-18",
+          "url": "https://andykong.org/blog/ssveppeakdetect/",
+          "mainEntityOfPage": "https://andykong.org/blog/ssveppeakdetect/",
+          "image": "https://andykong.org/static/PSD5secwindow.png",
+          "keywords": "ssvep, eeg, bci, dsp",
+          "author": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"},
+          "publisher": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"}
+        }
+        </script>
+    
+
+
+    
+        <meta name="title" content="Trying out various peak detection techniques for the SSVEP">
+        <meta name="keywords" content=" ssvep,  eeg,  bci,  dsp, ">
     
 
     <style>
@@ -134,38 +180,6 @@
     </style>
 
 
-
-
-<link rel="canonical" href="https://andykong.org/blog/ssveppeakdetect/">
-
-    
-        <meta property="og:site_name" content="Andy Kong">
-        <meta property="og:type" content="article">
-        <meta property="og:title" content="Trying out various peak detection techniques for the SSVEP">
-        <meta property="og:description" content="Garbage in, garbage out.">
-        <meta property="og:url" content="https://andykong.org/blog/ssveppeakdetect/">
-        <meta property="article:published_time" content="2021-01-18">
-        
-        <meta property="og:image" content="https://andykong.org/static/PSD5secwindow.png">
-        <meta property="og:image:alt" content="Trying out various peak detection techniques for the SSVEP">
-        <meta name="twitter:card" content="summary_large_image">
-        
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "BlogPosting",
-          "headline": "Trying out various peak detection techniques for the SSVEP",
-          "description": "Garbage in, garbage out.",
-          "datePublished": "2021-01-18",
-          "url": "https://andykong.org/blog/ssveppeakdetect/",
-          "mainEntityOfPage": "https://andykong.org/blog/ssveppeakdetect/",
-          "image": "https://andykong.org/static/PSD5secwindow.png",
-          "keywords": "ssvep, eeg, bci, dsp",
-          "author": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"},
-          "publisher": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"}
-        }
-        </script>
-    
 
 
     <style type="text/css">

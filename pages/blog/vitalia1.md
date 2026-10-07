@@ -1,6 +1,7 @@
 title: "My Vitalia Experience"
 date: 2024-02-23
 label: blog
+ogimage: vitalia1/2.jpeg
 tags: [vitalia]
 snippet: "Seven days in a city trying to usurp death"
 

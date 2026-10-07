@@ -3,6 +3,7 @@ date: 2021-05-23
 label: log
 tags: [EMS, TENS]
 snippet: The Firm Handshake-inator 3000
+ogimage: mr1_elecplacement.png
 
 Hello! As you may know, there are 4 mechanoreceptors in the skin.
 

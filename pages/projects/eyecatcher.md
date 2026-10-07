@@ -3,6 +3,7 @@ date: 2020-12-16
 label: project
 timespan: December 2020
 pic: eyecatchercrop4.gif
+ogimage: eyecatchergif.gif
 description: A glimpse into another world, made possible through real-time head tracking
 
 A friend and I decided it'd be fun to do a real-time video art project that we could display on the lab's huge TV. The end result is a reactive screen showing a triple-torus floating in the aether, which turns as your head turns, and moves as your head moves. 

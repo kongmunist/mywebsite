@@ -1,17 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    
-        <meta name="author" content="Andy Kong">
-        <meta name="title" content="Improving noisy EEG data through single channel averaging">
-        <meta name="description" content="How to get rid of Gaussian noise using a single electrode&#39;s measurements">
-        <meta name="keywords" content=" bci,  signalprocessing, ">
+<title>Improving noisy EEG data through single channel averaging | Andy Kong</title>
+<meta name="description" content="How to get rid of Gaussian noise using a single electrode&#39;s measurements">
+<meta name="author" content="Andy Kong">
+<link rel="canonical" href="https://andykong.org/blog/eegsinglechannelavg/">
+<meta property="og:site_name" content="Andy Kong">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Improving noisy EEG data through single channel averaging">
+<meta property="og:description" content="How to get rid of Gaussian noise using a single electrode&#39;s measurements">
+<meta property="og:url" content="https://andykong.org/blog/eegsinglechannelavg/">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://andykong.org/static/tradeeg.png">
+<meta property="og:image:secure_url" content="https://andykong.org/static/tradeeg.png">
+<meta property="og:image:type" content="image/png">
 
-        <title>
-            Improving noisy EEG data through single channel averaging | Andy Kong
-        </title>
+<meta property="og:image:alt" content="Traditional EEG cap">
+
+<meta property="article:published_time" content="2020-12-18">
+<meta property="article:author" content="https://andykong.org/">
+<meta property="article:tag" content="bci">
+<meta property="article:tag" content="signalprocessing">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@oldestasian">
+<meta name="twitter:creator" content="@oldestasian">
+<meta name="twitter:title" content="Improving noisy EEG data through single channel averaging">
+<meta name="twitter:description" content="How to get rid of Gaussian noise using a single electrode&#39;s measurements">
+<meta name="twitter:image" content="https://andykong.org/static/tradeeg.png">
+<meta name="twitter:image:alt" content="Traditional EEG cap">
+
+    
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": "Improving noisy EEG data through single channel averaging",
+          "description": "How to get rid of Gaussian noise using a single electrode\u0027s measurements",
+          "datePublished": "2020-12-18",
+          "url": "https://andykong.org/blog/eegsinglechannelavg/",
+          "mainEntityOfPage": "https://andykong.org/blog/eegsinglechannelavg/",
+          "image": "https://andykong.org/static/tradeeg.png",
+          "keywords": "bci, signalprocessing",
+          "author": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"},
+          "publisher": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"}
+        }
+        </script>
+    
+
+
+    
+        <meta name="title" content="Improving noisy EEG data through single channel averaging">
+        <meta name="keywords" content=" bci,  signalprocessing, ">
     
 
     <style>
@@ -134,38 +178,6 @@
     </style>
 
 
-
-
-<link rel="canonical" href="https://andykong.org/blog/eegsinglechannelavg/">
-
-    
-        <meta property="og:site_name" content="Andy Kong">
-        <meta property="og:type" content="article">
-        <meta property="og:title" content="Improving noisy EEG data through single channel averaging">
-        <meta property="og:description" content="How to get rid of Gaussian noise using a single electrode&#39;s measurements">
-        <meta property="og:url" content="https://andykong.org/blog/eegsinglechannelavg/">
-        <meta property="article:published_time" content="2020-12-18">
-        
-        <meta property="og:image" content="https://andykong.org/static/tradeeg.png">
-        <meta property="og:image:alt" content="Improving noisy EEG data through single channel averaging">
-        <meta name="twitter:card" content="summary_large_image">
-        
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "BlogPosting",
-          "headline": "Improving noisy EEG data through single channel averaging",
-          "description": "How to get rid of Gaussian noise using a single electrode\u0027s measurements",
-          "datePublished": "2020-12-18",
-          "url": "https://andykong.org/blog/eegsinglechannelavg/",
-          "mainEntityOfPage": "https://andykong.org/blog/eegsinglechannelavg/",
-          "image": "https://andykong.org/static/tradeeg.png",
-          "keywords": "bci, signalprocessing",
-          "author": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"},
-          "publisher": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"}
-        }
-        </script>
-    
 
 
     <style type="text/css">

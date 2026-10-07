@@ -3,6 +3,7 @@ date: 2024-01-10
 label: log
 tags: [personalinformatics, quantifiedself, data]
 snippet: "Correlating my Stroop with sleep data"
+ogimage: stroopvssleep/top.png
 
 Hello! I've been collecting my [Stroop effect data](../../projects/strooper) for about three months now, and I also have my Fitbit collecting sleep data from the whole period. A friend asked me how sleep affects my Stroop scores, and I went ahead and set up the analysis.
 

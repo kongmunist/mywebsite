@@ -1,7 +1,9 @@
 import re
+import mimetypes
+from urllib.parse import unquote, urlsplit
 
 from flask import Flask, render_template, url_for, render_template_string, Markup, \
-        redirect,make_response,send_from_directory,abort
+        redirect,make_response,send_from_directory,abort,request
 from flask_flatpages import FlatPages, pygmented_markdown
 # from flask_bootstrap import Bootstrap
 from flask_frozen import Freezer
@@ -44,6 +46,75 @@ print(app.config['FLATPAGES_EXTENSION'])
 
 BASE_URL = "https://andykong.org"
 app.jinja_env.globals['BASE_URL'] = BASE_URL
+
+
+def social_preview(page=None, title=None, description=None):
+    """Keep HTML, Open Graph, and Twitter metadata in sync for every page."""
+    default_description = "Projects, experiments, and writing by Andy Kong, building sensors to better understand the mind and body."
+    route_metadata = {
+        'mainproject': ('Projects', 'Sensors, biosensing hardware, human-computer interaction, and other projects by Andy Kong.'),
+        'now': ('Now', 'Where Andy Kong is living and what he is working on now, with updates from past chapters.'),
+        'maintag': ('Blog tags', 'Browse Andy Kong\'s writing and project logs by topic.'),
+        'tag': ("Posts tagged '{}'".format((request.view_args or {}).get('tag', '')), 'Writing and project logs by Andy Kong on this topic.'),
+        'friends': ('Friends', 'A page dedicated to Andy Kong\'s friends.'),
+        'vday2020': ("Happy Valentine's Day", 'A Valentine\'s Day page by Andy Kong.'),
+    }
+    route_title, route_description = route_metadata.get(request.endpoint, ('Andy Kong', default_description))
+    preview = {
+        'title': title or route_title,
+        'description': description or route_description,
+        'url': BASE_URL + request.path,
+        'type': 'website',
+        'image': BASE_URL + url_for('static', filename='holograms/hero.jpeg'),
+        'image_alt': 'Green and yellow laser hologram fragments held in Andy Kong\'s hand',
+        'image_type': 'image/jpeg',
+        'image_width': 959,
+        'image_height': 959,
+    }
+    if page is not None:
+        preview['title'] = page.meta.get('title') or preview['title']
+        preview['description'] = page.meta.get('snippet') or page.meta.get('description') or preview['description']
+        if page.meta.get('label') in ('blog', 'log', 'project'):
+            preview['type'] = 'article'
+            preview['published'] = page.meta['date'].isoformat()
+            preview['tags'] = page.meta.get('tags', [])
+
+        # An explicit choice wins, then a project hero, then a content image.
+        # Parse HTML so single-quoted URLs and filenames with spaces also work.
+        candidates = [(page.meta.get('ogimage'), preview['title']),
+                      (page.meta.get('pic'), preview['title'])]
+        for img in BeautifulSoup(page.html, 'lxml').find_all('img', src=True):
+            candidates.append((img['src'], img.get('alt') or preview['title']))
+        for source, alt in candidates:
+            if not source:
+                continue
+            parsed = urlsplit(source)
+            if parsed.scheme or parsed.netloc:
+                # Use local assets whose availability we can check at build time.
+                if parsed.netloc != urlsplit(BASE_URL).netloc:
+                    continue
+            filename = unquote(parsed.path)
+            if filename.startswith('/static/'):
+                filename = filename[len('/static/'):]
+            filename = filename.lstrip('/')
+            image_type = mimetypes.guess_type(filename)[0]
+            if image_type not in ('image/jpeg', 'image/png', 'image/gif', 'image/webp'):
+                continue
+            if not os.path.isfile(os.path.join(app.static_folder, filename)):
+                continue
+            preview.update(image=BASE_URL + url_for('static', filename=filename),
+                           image_alt=alt, image_type=image_type)
+            if filename != 'holograms/hero.jpeg':
+                preview.pop('image_width')
+                preview.pop('image_height')
+            break
+
+    for field in ('title', 'description', 'image_alt'):
+        preview[field] = ' '.join(BeautifulSoup(str(preview[field]), 'lxml').get_text().split())
+    return preview
+
+
+app.jinja_env.globals['social_preview'] = social_preview
 
 
 def page_tags(page):
@@ -402,14 +473,6 @@ def blog(title):
     for p in page:
         p.html = re.sub(pattern, '<img loading="lazy"', p.html)
 
-    # Find first in-content static image for social preview
-    imgpattern = '<img.*?src\s*=\s*"?(.+?)"'
-    for p in page:
-        ims = re.findall(imgpattern, p.html)
-        ims = [x.split("/static/")[1] for x in ims if "/static/" in x]
-        if ims:
-            p.meta['ogimage'] = ims[0].split(" ")[0]
-
     return render_template('blog.html', page=page, pages=blogPages)
 
 
@@ -481,14 +544,6 @@ def project(project):
     pattern = '<img'
     for p in page:
         p.html = re.sub(pattern, '<img loading="lazy"', p.html)
-
-    # Find first in-content static image for social preview
-    imgpattern = '<img.*?src\s*=\s*"?(.+?)"'
-    for p in page:
-        ims = re.findall(imgpattern, p.html)
-        ims = [x.split("/static/")[1] for x in ims if "/static/" in x]
-        if ims:
-            p.meta['ogimage'] = ims[0].split(" ")[0]
 
     return render_template('projects.html', page = page[0])
 

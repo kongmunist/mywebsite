@@ -3,6 +3,7 @@ date: 2020-08-05
 label: project
 timespan: July-August 2020
 pic: heartratefromcamera.jpg
+ogimage: heartratemainpage.png
 description: Website that can determine your heartrate using ambient lighting and a camera.
 
 Hey! This is Andy. Here's the link to the [website that can find your heartrate](http://heartrateleaderboard.netlify.app/).
