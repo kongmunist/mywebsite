@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Examples from the Taxonomy of Automation | Andy Kong</title>
 <meta name="description" content="Summary and thoughts on the convenience of interfaces">
@@ -319,6 +320,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -344,7 +352,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -364,10 +372,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -430,7 +438,7 @@
 <h1 id="conclusion">Conclusion</h1>
 <p>I think we should be pushing robots as far up the automation hierarchy as possible. Each layer saves exponentially more time. The question is if the idea being automated is worth doing yourself, and if it is, why automate it? I close with a quote from the little prince</p>
 <p class="caption">The Merchant passage from The Little Prince</p>
-<p><img loading="lazy" alt="The Merchant passage from The Little Prince" src="/static/tlpmerchant.png"/></p>
+<p><img alt="The Merchant passage from The Little Prince" height="904" loading="lazy" src="/static/tlpmerchant.png" style="aspect-ratio: auto 1690 / 904;" width="1690"/></p>
 <p>A question for later: Why do we value human level 3 much more than robot level 3? (I think it's related to the fact that we know humans have opportunity cost but don't really think about computers having the same). What if we reported robot operating cost whenever they did a task for us? </p>
 <p>Until then, cya around!</p></body></html>
 
@@ -455,6 +463,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

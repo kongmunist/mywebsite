@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Running QUCS Studio (uSimmics) on a Mac | Andy Kong</title>
 <meta name="description" content="RF circuit simulation without ANY piracy!">
@@ -319,6 +320,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -344,7 +352,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -364,10 +372,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -388,7 +396,7 @@
             <p style="font-size:0.8em;"> Published May 31, 2025</p>
 <hr>
             <html><body><p>Hi, if you're reading this you must be truly desperate — casual readers would never ever click a blog post titled like this. Today I'm gonna walk you through running QUCS Studio on your Mac computer. </p>
-<p><img loading="lazy" alt="uSimmics 5.8 welcome window open on a Mac desktop" class="addpic" src="/static/qucsstudioinstall/0.jpg"/></p>
+<p><img alt="uSimmics 5.8 welcome window open on a Mac desktop" class="addpic" height="473" loading="lazy" src="/static/qucsstudioinstall/0.jpg" style="aspect-ratio: auto 754 / 473;" width="754"/></p>
 <h1 id="background">Background</h1>
 <p>Software people love Apple, but real engineers use software that only runs on Windows. As an aspiring EE, I can usually get by for circuit/SPICE simulation via Paul Falstad's lovely <a href="https://www.falstad.com/circuit/circuitjs.html">CircuitJS</a> web calculator or LTSpice.app, but as I got into more high frequency stuff, there were rapidly fewer options. While Windows users get to pick from Microwave Office, Pathwave ADS, HFSS, or Cadence, Apple users get nothing at all. This software is big, bulky, and running it in a VM is painful. Luckily there are some smaller packages which can do the same simulation, such as QUCS-Studio (which looks very familiar for ADS users), but again, annoying to run in a VM. If not a VM, you might think of Wine for running an .exe, to which I can respond I've never ever gotten that to work for anything.</p>
 <p>However, recently I found a guide by Vanderson PC (<a href="https://www.vandersonpc.com/Qucstudio-on-MacOs/">link</a>, <a href="https://archive.is/SYlBm">mirror</a>) on running QUCS-Studio using PlayOnMac. I followed it diligently and it did not work either. This is because the guide is from 2017 and there have been a lot of MacOS breaking changes in the meantime, and PlayOnMac has not been so updated. However, the problems were solvable and I will share how.</p>
@@ -396,21 +404,21 @@
 <p>Ok just do everything the guide says. Yes uSimmics 5.8 works even though the blog author is running QUCS-Studio 3.3.4</p>
 <h1 id="2-follow-the-guide-until-step-6">2. follow the guide until Step 6</h1>
 <p>On step 6, you are asked to select a Wine version. I don't have a wine version. The first step of this guide should be how to install a wine version on PlayOnMac.</p>
-<p><img loading="lazy" alt="Guide step 6: PlayOnMac wizard asking which Wine version to use, with only System in the list" class="addpic" src="/static/qucsstudioinstall/1.png"/></p>
+<p><img alt="Guide step 6: PlayOnMac wizard asking which Wine version to use, with only System in the list" class="addpic" height="592" loading="lazy" src="/static/qucsstudioinstall/1.png" style="aspect-ratio: auto 1358 / 592;" width="1358"/></p>
 <p>Leave the configuration menu. Install a Wine version by going to Tools-&gt;Manage Wine versions. </p>
-<p><img loading="lazy" alt="PlayOnMac Tools menu with the Manage Wine versions item" class="addpic" src="/static/qucsstudioinstall/2.png"/></p>
+<p><img alt="PlayOnMac Tools menu with the Manage Wine versions item" class="addpic" height="56" loading="lazy" src="/static/qucsstudioinstall/2.png" style="aspect-ratio: auto 219 / 56;" width="219"/></p>
 <p>If you're like me, the list on the left is empty. Pretty daunting. If it's still empty after 5s you have a problem.</p>
-<p><img loading="lazy" alt="PlayOnMac Wine versions manager with an empty Available Wine versions list on the left" class="addpic" src="/static/qucsstudioinstall/3.png"/></p>
+<p><img alt="PlayOnMac Wine versions manager with an empty Available Wine versions list on the left" class="addpic" height="319" loading="lazy" src="/static/qucsstudioinstall/3.png" style="aspect-ratio: auto 517 / 319;" width="517"/></p>
 <p>After reading some <a href="https://www.playonmac.com/en/topic-17045-2.html">forums</a>, I realized that PlayOnMac makes some questionable code decisions. One of which is that all the URL requests have a 5s timeout and then fail silently. To figure out where it's failing, you exit PlayOnMac (Cmd+Q), open up a terminal and navigate to the .app file, and then run the application file from the terminal so you can see the debug messages (Find PlayOnMac.app, then run <code>./PlayOnMac.app/Contents/MacOS/playonmac</code>). It should boot normally. </p>
-<p><img loading="lazy" alt="Terminal output after launching the PlayOnMac binary directly, showing its startup debug messages" class="addpic" src="/static/qucsstudioinstall/4.png"/></p>
+<p><img alt="Terminal output after launching the PlayOnMac binary directly, showing its startup debug messages" class="addpic" height="124" loading="lazy" src="/static/qucsstudioinstall/4.png" style="aspect-ratio: auto 851 / 124;" width="851"/></p>
 <p>Now go to the Tool-&gt;Wine window again. If the list stays empty, you should see something like this:</p>
-<p><img loading="lazy" alt="Python traceback in WineVersionsFetcher.py ending in socket.timeout while downloading the phoenicis Wine list" class="addpic" src="/static/qucsstudioinstall/5.png"/></p>
+<p><img alt="Python traceback in WineVersionsFetcher.py ending in socket.timeout while downloading the phoenicis Wine list" class="addpic" height="296" loading="lazy" src="/static/qucsstudioinstall/5.png" style="aspect-ratio: auto 856 / 296;" width="856"/></p>
 <p>So, you can check that the "phoenicis" URL is still active by just going to it using your browser. If it's still up, it just means that their server is slow and the request is just timing out locally. Go into the "WineVersionsFetcher.py" file and change the timeout to like 15 or 30 or 60 seconds. Then you'll get your Wine version downloaded.</p>
-<p><img loading="lazy" alt="WineVersionsFetcher.py source with the urlopen timeout argument raised to 15 seconds" class="addpic" src="/static/qucsstudioinstall/6.png"/></p>
+<p><img alt="WineVersionsFetcher.py source with the urlopen timeout argument raised to 15 seconds" class="addpic" height="504" loading="lazy" src="/static/qucsstudioinstall/6.png" style="aspect-ratio: auto 2054 / 504;" width="2054"/></p>
 <p>After that continue following the guide. Other people on the forums had an issue where Wine wouldn't download properly, but you could download it yourself and move it into the directory it was supposed to be in and it'd work. Honestly I feel a bit like a battle medic when I'm doing edits like this, but y'know, it's gotta work. </p>
 <h1 id="step-3-finish-the-guide">Step 3. finish the guide.</h1>
 <p>Just follow the other guy's post, it's a good blog. No step should throw an error. </p>
-<p><img loading="lazy" alt="uSimmics schematic editor with a microstrip line circuit set up for an s-parameter simulation" class="addpic" src="/static/qucsstudioinstall/7.png"/></p>
+<p><img alt="uSimmics schematic editor with a microstrip line circuit set up for an s-parameter simulation" class="addpic" height="1692" loading="lazy" src="/static/qucsstudioinstall/7.png" style="aspect-ratio: auto 2548 / 1692;" width="2548"/></p>
 <p>Sorry for the lazy post, have fun simulating!</p></body></html>
 
 
@@ -434,6 +442,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

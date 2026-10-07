@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Outro to Intro to Woodworking | Andy Kong</title>
 <meta name="description" content="Crate, shelf, stool">
@@ -319,6 +320,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -344,7 +352,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -364,10 +372,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -411,27 +419,27 @@
 <h2 id="bread-shelf">Bread Shelf</h2>
 <p>This shelf was made so we could stop keeping bread on top of the fridge, where it blocked some cabinets. We had some preexisting screws in the wall which I measured, and then I made the decorative wall legs too short :(. I could only put one set of screws so the shelf is very weak. Holds bread good though. </p>
 <p class="caption">Bread shelf without bread</p>
-<p><img loading="lazy" alt="Bread shelf without bread" src="/static/wood2_breadshelfwithoutbread.jpg"/></p>
+<p><img alt="Bread shelf without bread" height="926" loading="lazy" src="/static/wood2_breadshelfwithoutbread.jpg" style="aspect-ratio: auto 1210 / 926;" width="1210"/></p>
 <p class="caption">Bread shelf with bread</p>
-<p><img loading="lazy" alt="Bread shelf with bread" src="/static/wood2_breadshelfwithbread.jpg"/></p>
+<p><img alt="Bread shelf with bread" height="1320" loading="lazy" src="/static/wood2_breadshelfwithbread.jpg" style="aspect-ratio: auto 1056 / 1320;" width="1056"/></p>
 <h2 id="crate">Crate</h2>
 <p>The crate was for an assignment. Very bulky, hard to store, but makes a good stool. </p>
 <p class="caption">Crate assembled</p>
-<p><img loading="lazy" alt="Crate assembled" src="/static/wood2_crate.jpg"/></p>
+<p><img alt="Crate assembled" height="805" loading="lazy" src="/static/wood2_crate.jpg" style="aspect-ratio: auto 907 / 805;" width="907"/></p>
 <p class="caption">Crate holding Yerba Mate</p>
-<p><img loading="lazy" alt="Crate holding Yerba Mate" src="/static/wood2_crate2.jpg"/></p>
+<p><img alt="Crate holding Yerba Mate" height="1089" loading="lazy" src="/static/wood2_crate2.jpg" style="aspect-ratio: auto 1188 / 1089;" width="1188"/></p>
 <h2 id="unfoldable-stool">Unfoldable Stool</h2>
 <p>The camping stool was our final assignment. It’s meant to be foldable but I messed up the tolerances. Many stool jokes were made in the process. Anyway, seats one. </p>
 <p class="caption">Pieces of the stool</p>
-<p><img loading="lazy" alt="Pieces of the stool" src="/static/wood2_stool1.jpg"/></p>
+<p><img alt="Pieces of the stool" height="1366" loading="lazy" src="/static/wood2_stool1.jpg" style="aspect-ratio: auto 1210 / 1366;" width="1210"/></p>
 <p class="caption">Stool parts fit check</p>
-<p><img loading="lazy" alt="Stool parts fit check" src="/static/wood2_stool2.jpg"/></p>
+<p><img alt="Stool parts fit check" height="866" loading="lazy" src="/static/wood2_stool2.jpg" style="aspect-ratio: auto 907 / 866;" width="907"/></p>
 <p class="caption">Completed seat!</p>
-<p><img loading="lazy" alt="Completed seat!" src="/static/wood2_stool3.jpg"/></p>
+<p><img alt="Completed seat!" height="1094" loading="lazy" src="/static/wood2_stool3.jpg" style="aspect-ratio: auto 1210 / 1094;" width="1210"/></p>
 <h2 id="for-fun">For Fun</h2>
 <p>Me and Elio also redesigned our club logo, and made it out of wood. Looks better on paper, but worth a shot.</p>
 <p class="caption">Completed seat!</p>
-<p><img loading="lazy" alt="Completed seat!" src="/static/wood2_roboclublogo.jpg"/></p>
+<p><img alt="Completed seat!" height="1578" loading="lazy" src="/static/wood2_roboclublogo.jpg" style="aspect-ratio: auto 1512 / 1578;" width="1512"/></p>
 <p>Cya around next time I make stuff out of wood!</p></body></html>
 
 
@@ -455,6 +463,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

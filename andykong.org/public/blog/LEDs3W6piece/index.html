@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Testing out some high power LEDs | Andy Kong</title>
 <meta name="description" content="Casting light on far away surfaces using 3W LEDs">
@@ -321,6 +322,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -346,7 +354,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -366,10 +374,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -391,11 +399,11 @@
 <hr>
             <html><body><p>I bought some cheap, high-power LEDs off Amazon about a week ago. I wanted something really bright that came with a backing, and I didn't want too many. They look like this:</p>
 <p class="caption">Cheap, 3W LEDs with aluminum backing connected to a 9V wall adaptor</p>
-<p><img loading="lazy" alt="Cheap, 3W LEDs with aluminum backing connected to a 9V wall adaptor" src="/static/LED3W_poweringsetup.JPG"/></p>
+<p><img alt="Cheap, 3W LEDs with aluminum backing connected to a 9V wall adaptor" height="718" loading="lazy" src="/static/LED3W_poweringsetup.JPG" style="aspect-ratio: auto 741 / 718;" width="741"/></p>
 <p>I have here soldered it to a 9V wall adaptor, which outputs a DC 9V at 0.3A max load. This is precisely what was specified by the Amazon page, though the accuracy of that I cannot be sure. I tried a 5V at first and that failed. VERY BRIGHT! Hurts to look at for any amount of time, at arm's length. Heats up negligibly when turned on for under a minute.</p>
 <p>I funneled their light through my projector lens, but just got something like this. I guess I'll need a diffuser or something between the LEDs and lens to get a uniform wall projection.</p>
 <p class="caption">Projected image produced by the LEDs and a lens from a projector clock. All 6 LED segments are separated out, instead of diffused</p>
-<p><img loading="lazy" alt="Projected image produced by the LEDs and a lens from a projector clock. All 6 LED segments are separated out, instead of diffused." src="/static/LED3W_projected.JPG"/></p>
+<p><img alt="Projected image produced by the LEDs and a lens from a projector clock. All 6 LED segments are separated out, instead of diffused." height="775" loading="lazy" src="/static/LED3W_projected.JPG" style="aspect-ratio: auto 694 / 775;" width="694"/></p>
 <p>I tried to diode test them using my trusty multimeter, but it saturated. I then tried using a 2V voltage reading across one LED, and it saturated as well! The voltage drop for these babies was 2.8V each!! I've never seen them so high before, though it's probably to do with needing a lot of current to turn on the LED. </p></body></html>
 
 
@@ -423,6 +431,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

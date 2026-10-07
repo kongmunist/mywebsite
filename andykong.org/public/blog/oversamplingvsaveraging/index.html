@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Oversampling vs. Averaging for Noise Reduction | Andy Kong</title>
 <meta name="description" content="Spoiler: always oversample.">
@@ -319,6 +320,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -344,7 +352,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -364,10 +372,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -391,26 +399,26 @@
 <h2 id="what-did-i-try-then">What did I try then?</h2>
 <p>So, I generated a sine wave at a low-ish frequency (50Hz) of amplitude 1, then added Gaussian noise of power 10 to it. It has duration 1 second, but I created it using a 100kHz "sample frequency". Here's what it looks like. </p>
 <p class="caption">Graph of the original and corrupted signal. Orange is the original</p>
-<p><img loading="lazy" alt="Graph of the original and corrupted signal. Orange is the original" src="/static/ovacombined.png"/></p>
+<p><img alt="Graph of the original and corrupted signal. Orange is the original" height="527" loading="lazy" src="/static/ovacombined.png" style="aspect-ratio: auto 1126 / 527;" width="1126"/></p>
 <p>I then took 1 sample every n samples in order to create two downsampled data streams. One was sampled every 100 samples, giving a sample rate of 1kHz. The other took one point every 500 points, and had a sample rate of 200Hz. I then compared their FFTs.</p>
 <p class="caption">Spectrum of the 200Hz sampled signal vs the 1kHz sampled signal. Blue is the 200Hz.</p>
-<p><img loading="lazy" alt="Spectrum of the 200Hz sampled signal vs the 1kHz sampled signal. Blue is the 200Hz." src="/static/ova1kvs200zoomout.png"/></p>
+<p><img alt="Spectrum of the 200Hz sampled signal vs the 1kHz sampled signal. Blue is the 200Hz." height="621" loading="lazy" src="/static/ova1kvs200zoomout.png" style="aspect-ratio: auto 1162 / 621;" width="1162"/></p>
 <p class="caption">Spectrum of the 200Hz sampled signal vs the 1kHz sampled signal, zoomed in to show the difference. Blue is the 200Hz, and much noisier.</p>
-<p><img loading="lazy" alt="Spectrum of the 200Hz sampled signal vs the 1kHz sampled signal, zoomed in to show the difference. Blue is the 200Hz, and much noisier." src="/static/ova1kvs200.png"/></p>
+<p><img alt="Spectrum of the 200Hz sampled signal vs the 1kHz sampled signal, zoomed in to show the difference. Blue is the 200Hz, and much noisier." height="485" loading="lazy" src="/static/ova1kvs200.png" style="aspect-ratio: auto 566 / 485;" width="566"/></p>
 <p>I've scaled the peaks so they line up, but we see clearly that the 1kHz signal (orange) has much lower noise compared to its peak compared to the 200Hz signal. Let's see what happens if we downsample the 1kHz signal down to 200Hz and compare spectrums then.</p>
 <p class="caption">Blue is the 1kHz signal downsampled to 200Hz, orange is the original 200Hz sampled signal. The downsampled data is much less noisy</p>
-<p><img loading="lazy" alt="Blue is the 1kHz signal downsampled to 200Hz, orange is the original 200Hz sampled signal. The downsampled data is much less noisy" src="/static/ovadownsample.png"/></p>
+<p><img alt="Blue is the 1kHz signal downsampled to 200Hz, orange is the original 200Hz sampled signal. The downsampled data is much less noisy" height="798" loading="lazy" src="/static/ovadownsample.png" style="aspect-ratio: auto 1279 / 798;" width="1279"/></p>
 <p>We see that the downsampled data beats the 200Hz anyway, even though they're at the same length now and sample frequency now. </p>
 <p>What if the 200Hz sampling had 4 unique channels? These are created frmo the original 100kHz signal, and are side by side. What if they were all averaged together to reduce the Gaussian noise (simulating averaging channels)?</p>
 <p class="caption">Blue is the 4-channel average, each 200Hz. Orange is the downsampled 1kHz spectrum.</p>
-<p><img loading="lazy" alt="Blue is the 4-channel average, each 200Hz. Orange is the downsampled 1kHz spectrum." src="/static/ovaavgvsdown.png"/></p>
+<p><img alt="Blue is the 4-channel average, each 200Hz. Orange is the downsampled 1kHz spectrum." height="606" loading="lazy" src="/static/ovaavgvsdown.png" style="aspect-ratio: auto 858 / 606;" width="858"/></p>
 <p>Blue is the averaged, orange is the downsampled spectrum. We see that the noise has gone down by a lot in the original 200Hz spectrum, but it's still higher than the oversampled one by about a factor of 2 (just from comparing peaks visually). Here's the same plot including the original, unaveraged 200Hz channel.</p>
 <p class="caption">Same as the last graph, but with the original 200Hz sampled spectrum in green. </p>
-<p><img loading="lazy" alt="Same as the last graph, but with the original 200Hz sampled spectrum in green. " src="/static/ovaavgvsdownplusorig.png"/></p>
+<p><img alt="Same as the last graph, but with the original 200Hz sampled spectrum in green. " height="641" loading="lazy" src="/static/ovaavgvsdownplusorig.png" style="aspect-ratio: auto 894 / 641;" width="894"/></p>
 <p>Though I didn't scale the peaks, we see that the noise power has gone down by a factor of 2 (makes sense because of the Gaussian noise), but it still doesn't beat the downsampled 1kHz data. Even if we lower the original signal frequency, the oversampled one continues to outperform the multi-channel setup.</p>
 <p>The orange is actually the averaged one here, it has higher noise peaks than the original signal.</p>
 <p class="caption">At a lower signal frequency, the downsampled 1kHz signal still has the lowest noise (green). The averaged 4-channel signal has even higher noise than the original 200Hz signal actually (orange vs. blue).</p>
-<p><img loading="lazy" alt="At a lower signal frequency, the downsampled 1kHz signal still has the lowest noise (green). The averaged 4-channel signal has even higher noise than the original 200Hz signal actually (orange vs. blue)." src="/static/ovalowfreq.png"/></p>
+<p><img alt="At a lower signal frequency, the downsampled 1kHz signal still has the lowest noise (green). The averaged 4-channel signal has even higher noise than the original 200Hz signal actually (orange vs. blue)." height="520" loading="lazy" src="/static/ovalowfreq.png" style="aspect-ratio: auto 602 / 520;" width="602"/></p>
 <h2 id="discussion">Discussion</h2>
 <p>I didn't think the effect would be so drastic, but it seems that sampling at a high rate then downsampling is a very effective strategy compared to averaging all your channels together. But then I don't know what to do with my 4 channels then...</p>
 <p>This result is counterintuitive because having 5, 200Hz channels and averaging them is equivalent to sampling at 1kHz and downsampling. </p>
@@ -438,6 +446,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

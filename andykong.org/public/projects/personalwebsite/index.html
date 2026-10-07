@@ -3,15 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Personal Website | Andy Kong</title>
-<meta name="description" content="Static website generator built with Flask and hosted on Firebase. You&#39;re looking right at it!">
+<meta name="description" content="A custom static website generator built with Flask and hosted on Cloudflare Pages. You&#39;re looking right at it!">
 <meta name="author" content="Andy Kong">
 <link rel="canonical" href="https://andykong.org/projects/personalwebsite/">
 <meta property="og:site_name" content="Andy Kong">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Personal Website">
-<meta property="og:description" content="Static website generator built with Flask and hosted on Firebase. You&#39;re looking right at it!">
+<meta property="og:description" content="A custom static website generator built with Flask and hosted on Cloudflare Pages. You&#39;re looking right at it!">
 <meta property="og:url" content="https://andykong.org/projects/personalwebsite/">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://andykong.org/static/websitev2.png">
@@ -28,7 +29,7 @@
 <meta name="twitter:site" content="@oldestasian">
 <meta name="twitter:creator" content="@oldestasian">
 <meta name="twitter:title" content="Personal Website">
-<meta name="twitter:description" content="Static website generator built with Flask and hosted on Firebase. You&#39;re looking right at it!">
+<meta name="twitter:description" content="A custom static website generator built with Flask and hosted on Cloudflare Pages. You&#39;re looking right at it!">
 <meta name="twitter:image" content="https://andykong.org/static/websitev2.png">
 <meta name="twitter:image:alt" content="Personal Website">
 
@@ -37,7 +38,7 @@
       "@context": "https://schema.org",
       "@type": "Article",
       "headline": "Personal Website",
-      "description": "Static website generator built with Flask and hosted on Firebase. You\u0027re looking right at it!",
+      "description": "A custom static website generator built with Flask and hosted on Cloudflare Pages. You\u0027re looking right at it!",
       "datePublished": "2019-06-26",
       "url": "https://andykong.org/projects/personalwebsite/",
       "mainEntityOfPage": "https://andykong.org/projects/personalwebsite/",
@@ -204,6 +205,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -229,7 +237,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -249,10 +257,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -263,7 +271,7 @@
 <div class="overflow-hidden" style = "height:100vh; width: 100vw; padding: 0px 1em 0px 1em;">
         <div class="projectpage" style="max-width:50em; margin-bottom:4em; margin-left:auto; margin-right:auto;">
             <h1 style="margin-bottom: 5px">Personal Website</h1>
-                <i><p style="margin-bottom: 5px; margin-top: 0px">Static website generator built with Flask and hosted on Firebase. You&#39;re looking right at it!</p></i>
+                <i><p style="margin-bottom: 5px; margin-top: 0px">A custom static website generator built with Flask and hosted on Cloudflare Pages. You&#39;re looking right at it!</p></i>
                 <p style="margin-bottom: 0px; margin-top: 0px">Timespan: June-July 2019</p>
                 <p style="margin-bottom: 5px; margin-top: 0px">Published: 2019-06-26</p>
 
@@ -273,20 +281,21 @@
 <p>It is done. </p>
 <h3>7/2</h3>
 <p>Lots has been done! The project display page has some neat animations I stole from <a href="https://miketricking.github.io/bootstrap-image-hover/">this guy</a> and hacked to pieces. Blog list page is also legible now, with lines and stuff separating all the info
-<img loading="lazy" class="d-block mx-auto" src="/static/websitev3.png"/></p>
+<img class="d-block mx-auto" height="247" loading="lazy" src="/static/websitev3.png" style="aspect-ratio: auto 500 / 247;" width="500"/></p>
 <p class="caption">Rendering the "Date Published" as legible text was inordinately hard given how minor it looks...</p>
 <p>Projects also no longer fill your entire FOV (I tried to add a picture to show this but I realize you're also looking right at the changes I am talking about -.-)! The images also scale, but that's more easily demonstrable by just moving the browser's bounds. Need to add sorting by date for the blog and project pages, then those are done!</p>
 <h3>6/29</h3>
 <p>Writing this update sucked cause of my hacky implementation. Weird workaround in jinja allows the url_for from Flask-FlatPages to work and find the pathnames for images, but it meant there was a lot of shifting and reorganizing of words and images on the page. Real headache. 
-<img loading="lazy" class="d-block mx-auto img-thumbnail" src="/static/websitev2.png"/>
+<img class="d-block mx-auto img-thumbnail" height="300" loading="lazy" src="/static/websitev2.png" style="aspect-ratio: auto 681 / 300;" width="681"/>
 Anyway, got the color scheme sorted out now so it's less of an eyesore. Using the a variant of <a href="https://www.colourlovers.com/palette/482774/dream_magnet">Dream Magnet</a> and <a href="https://www.colourlovers.com/palette/292482/Terra">Terra</a> from this website where people just post nice color aesthetics. Very wholesome site, and quite beautiful. I've never considered that one could "discover" a color, but these people do it just for fun of arranging them. </p>
 <h3>6/27</h3>
-<p><img loading="lazy" class="d-block mx-auto" src="/static/websitev1.png"/></p>
+<p><img class="d-block mx-auto" height="300" loading="lazy" src="/static/websitev1.png" style="aspect-ratio: auto 493 / 300;" width="493"/></p>
 <p>Here's what it used to look like. Function before fashion, as they say. I'm working on the projects tab and header, after that I can make it pretty (I say that now, but I might get lazy and rationalize that it won't change anyone's opinion of me considering I don't value my web dev skills very high on my list of capabilities (That was a really long aside, you must be tired of this sentence by now)). </p></body></html>
         </div>
         <p style="line-height:300%;">&nbsp;</p>
 </div>
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

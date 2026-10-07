@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Implantables | Andy Kong</title>
 <meta name="description" content="Advanced implantable technology for continuously powered sensors and actuators">
@@ -204,6 +205,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -229,7 +237,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -249,10 +257,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -269,42 +277,43 @@
 
                 <hr>
             <html><body><p>Hi! I'm making passive implants that continuously monitor cognition and health. My main innovation is using the skin as a wire.</p>
-<video controls="" src="/static/implantables/LEDpower_over_skin.mp4" style="display: block; margin-left: auto; margin-right: auto;" width="75%"></video>
+<video class="deferred-video" controls="" data-src="/static/implantables/LEDpower_over_skin.mp4" loading="lazy" preload="none" style="display: block; margin-left: auto; margin-right: auto;" width="75%"></video><noscript><video controls="" preload="none" src="/static/implantables/LEDpower_over_skin.mp4" style="display: block; margin-left: auto; margin-right: auto;" width="75%"></video></noscript>
 <p class="caption"> Power delivery over skin, enough to light up an LED</p>
 <hr/>
 <h1 id="why-would-anyone-want-implants">Why would anyone want implants?</h1>
 <p>The dream for me: I've always wanted to be able to jack into a computer, exchanging information and intentions with silicon at the speed of thought. The keyboard has always felt like a limitation, a tiny pipe forcing me to transcribe my thoughts into letters in order to access the internet. What if we could commune directly through our body movements or thoughts? What if I could receive information as naturally as I know exactly where all my fingers are? To me, implants are a step towards that future. </p>
 <p class="caption"> The dream </p>
-<p><img loading="lazy" alt="The dream" class="addpic" src="/static/implantables/img_10.png"/></p>
+<p><img alt="The dream" class="addpic" height="520" loading="lazy" src="/static/implantables/img_10.png" style="aspect-ratio: auto 980 / 520;" width="980"/></p>
 <p>And what about health? Elderly folks would benefit from early warning of a heart attack or illness via continuous EKG monitoring, but the current equipment is large, with cables and gel pads that need switching every day. Diabetics need continuous glucose and blood pressure monitors, kidney stone formers need to monitor their hydration, and patients with chronic disease don't want to go to the doctor's office every week. What if all these biometrics could all be recorded from a one-time implant that continuously uploads the data for doctors and users to monitor?</p>
 <p class="caption"> User groups </p>
-<p><img loading="lazy" alt="User groups" class="addpic" src="/static/implantables/img_11.png"/></p>
+<p><img alt="User groups" class="addpic" height="447" loading="lazy" src="/static/implantables/img_11.png" style="aspect-ratio: auto 845 / 447;" width="845"/></p>
 <h1 id="why-are-you-making-your-own-arent-there-already-implants-available">Why are you making your own? Aren't there already implants available?</h1>
 <p>I'm making my own implants because the existing ones can't do anything I mentioned above.</p>
 <p>In 2015, I became interested in implants when I read about people getting biomagnets implanted to detect electrical fields and RFID chips to badge into places without a card.</p>
 <p class="caption"> Receipts </p>
-<p><img loading="lazy" alt="Receipts" class="addpic" src="/static/implantables/img_1.png"/></p>
+<p><img alt="Receipts" class="addpic" height="191" loading="lazy" src="/static/implantables/img_1.png" style="aspect-ratio: auto 686 / 191;" width="686"/></p>
 <p class="caption"> Implantable magnets allow for fun party tricks and perception of electrical fields </p>
-<p><img loading="lazy" alt="Implantable magnets allow for fun party tricks and perception of electrical fields" class="addpic" src="/static/implantables/img_9.png"/></p>
+<p><img alt="Implantable magnets allow for fun party tricks and perception of electrical fields" class="addpic" height="360" loading="lazy" src="/static/implantables/img_9.png" style="aspect-ratio: auto 640 / 360;" width="640"/></p>
 <p>Now it's 2024. New implants have developed that allow advanced ID verification and under-skin LEDs. Coating tech has advanced to allow for more stable and larger implants, but the core functionality has stagnated because the technological problems are still the same.</p>
 <p class="caption"> An implantable LED </p>
-<p><img loading="lazy" alt="An implantable LED" class="addpic" src="/static/implantables/img_3.png"/></p>
+<p><img alt="An implantable LED" class="addpic" height="574" loading="lazy" src="/static/implantables/img_3.png" style="aspect-ratio: auto 446 / 574;" width="446"/></p>
 <h1 id="whats-holding-us-back-from-making-more-functional-implants">What's holding us back from making more functional implants?</h1>
 <p>The main reason we haven't developed any new functionality in human implants in the past decade is power delivery.</p>
 <p>Because human skin is such a good insulator of electromagnetic radiation, once an implant is completely encased in flesh it becomes hard to power. Current implants all rely on inductive power, which is the same stuff smartphones use for wireless charging. The applications of implants are limited because power must be provided whenever the implant is in use — one-off functionality is built-in.</p>
 <p class="caption"> Diagram of inductive power transfer </p>
-<p><img loading="lazy" alt="Diagram of inductive power transfer" class="addpic" src="/static/implantables/img_7.png"/></p>
+<p><img alt="Diagram of inductive power transfer" class="addpic" height="268" loading="lazy" src="/static/implantables/img_7.png" style="aspect-ratio: auto 417 / 268;" width="417"/></p>
 <p>Implants focus so heavily on NFC because even non-implanted NFC chips need an external inductive power source to work. Adopting same use-cases as NFC makes the implant easy to motivate from a convenience standpoint. But since there aren't many other daily-use functionalities that rely on inductive power, it's hard to make implants that do other things.</p>
 <p>I've seen implants get around this using batteries charged inductively, but this runs the risks of potential leaks and larger implants. Sending messages across the skin also requires a lot of power, so even battery-powered implants aren't suitable for longer-term applications.</p>
 <h1 id="what-are-you-doing-thats-new">What are you doing that's new?</h1>
 <p>Thanks to advances in integrated circuits, we no longer need to fight against human skin — instead, we can convert it to an ally. Here is a demo of power transmitting over my skin from a single wire, enough to intermittently light up an LED.</p>
-<video controls="" src="/static/implantables/LEDpower_over_skin.mp4" style="display: block; margin-left: auto; margin-right: auto;" width="75%"></video>
+<video class="deferred-video" controls="" data-src="/static/implantables/LEDpower_over_skin.mp4" loading="lazy" preload="none" style="display: block; margin-left: auto; margin-right: auto;" width="75%"></video><noscript><video controls="" preload="none" src="/static/implantables/LEDpower_over_skin.mp4" style="display: block; margin-left: auto; margin-right: auto;" width="75%"></video></noscript>
 <p>Imagine a wearable which can power your entire body network of implanted devices — sensors, actuators, communication units. Implants which don't need to carry any battery, but can be continuously powered simply by being in contact with your body. </p>
 <p>I hope your mind is racing with the possibilities. Mine is too, so please shoot me an email if you're interested in getting one or developing new functionality with the tech or just have ideas. My DMs are open.</p></body></html>
         </div>
         <p style="line-height:300%;">&nbsp;</p>
 </div>
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

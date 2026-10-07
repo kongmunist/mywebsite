@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Speed checking Python built-in functions | Andy Kong</title>
 <meta name="description" content="Calling str, type, etc. is free... right?">
@@ -318,6 +319,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -343,7 +351,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -363,10 +371,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -388,10 +396,10 @@
 <hr>
             <html><body><p>I found this cool <a href="http://blog.kevmod.com/2020/05/python-performance-its-not-just-the-interpreter">blog post</a> that was trying to show Python's slower execution time does not just come from its interpreter, and instead was more interested in the benchmark that they ran converting ints to strings as a toy example.</p>
 <p>They mentioned off-hand that built-in function calls in Python must be traced back to the built-in library by the interpreter, which takes a decent amount of time if most of your code just calls built-in functions. Here's the code: </p>
-<p><img loading="lazy" class="d-block mx-auto" src="/static/speedcheckpybuiltinscode.png" width="400"/></p>
+<p><img class="d-block mx-auto" loading="lazy" src="/static/speedcheckpybuiltinscode.png" style="aspect-ratio: auto 675 / 314;" width="400"/></p>
 <h3>Results</h3>
 <p>All we do is move the str() function into a local variable (allowed since Python is a functional language), but we gain 20-30% speed boost in the total execution times. </p>
-<p><img loading="lazy" class="d-block mx-auto" src="/static/speedcheckpybuiltinstimings.png" width="400"/></p>
+<p><img class="d-block mx-auto" loading="lazy" src="/static/speedcheckpybuiltinstimings.png" style="aspect-ratio: auto 577 / 50;" width="400"/></p>
 <p>Of course, this is a toy example since we're only calling one function, but it might be worthwhile to precompile code like this if you're not uing Pypi or something. </p></body></html>
 
 
@@ -413,6 +421,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

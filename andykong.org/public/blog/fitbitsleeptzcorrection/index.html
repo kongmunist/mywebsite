@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Timezone correcting Fitbit sleep data | Andy Kong</title>
 <meta name="description" content="How to get your sleep data in UTC so you can actually do anything with it">
@@ -320,6 +321,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -345,7 +353,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -365,10 +373,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -393,38 +401,38 @@
 <h2 id="how-do-we-know-that-fitbit-sleep-data-is-not-timezone-corrected">How do we know that Fitbit sleep data is not timezone corrected?</h2>
 <p>On the forums, someone claimed that Fitbit data exports in <a href="https://community.fitbit.com/t5/Web-API-Development/Clarification-on-time-zones-and-date-time-values/td-p/925255">UTC timestamps</a> . I can show this is not true. One way this is really visible is in the plot of my bedtimes recorded on my Fitbit — even though I've lived in Europe, Asia, and the US throughout this period, the actual hour which I go to sleep is always the same. If the bedtimes were UTC-adjusted, they would have distinct vertical shifts whenever I drastically move timezones. </p>
 <p class="caption"> My bedtimes, according to my Fitbit data </p>
-<p><img loading="lazy" alt="My bedtimes, according to my Fitbit data" class="addpic" src="/static/fitbitsleeptzcorrection/0.png"/></p>
+<p><img alt="My bedtimes, according to my Fitbit data" class="addpic" height="1266" loading="lazy" src="/static/fitbitsleeptzcorrection/0.png" style="aspect-ratio: auto 2048 / 1266;" width="2048"/></p>
 <p>Here's another example. My sleep data from July 2021 have startTimes around 1-2am, and I was in Pittsburgh (EST, UTC-4) at the time. If the startTime were in UTC, I would have been sleeping around 10pm regularly, and I know for a fact that wasn't the case.</p>
 <p class="caption"> Raw sleep data in table form. The timestamps don't line up with UTC given my location at the time </p>
-<p><img loading="lazy" alt="Raw sleep data in table form. The timestamps don't line up with UTC given my location at the time" class="addpic" src="/static/fitbitsleeptzcorrection/1.png"/></p>
+<p><img alt="Raw sleep data in table form. The timestamps don't line up with UTC given my location at the time" class="addpic" height="610" loading="lazy" src="/static/fitbitsleeptzcorrection/1.png" style="aspect-ratio: auto 1032 / 610;" width="1032"/></p>
 <h2 id="how-do-we-fix-it">How do we fix it?</h2>
 <p>As I browsed through my agglomerated Fitbit data (details on how to do that <a href="https://medium.com/@kongmunist/how-to-import-and-organize-your-fitbit-data-caeeff8c51dd">here</a>), I could only find sleep data that either shared local timestamps (useless), or were recorded 24/7 (impossible to sync w/ sleep sessions). That was until I looked at the <em>Sleep Stress Score</em> file. </p>
 <p class="caption"> Sleep stress data, aka our saving grace </p>
-<p><img loading="lazy" alt="Sleep stress data, aka our saving grace" class="addpic" src="/static/fitbitsleeptzcorrection/2.png"/></p>
+<p><img alt="Sleep stress data, aka our saving grace" class="addpic" height="137" loading="lazy" src="/static/fitbitsleeptzcorrection/2.png" style="aspect-ratio: auto 310 / 137;" width="310"/></p>
 <p>It looks like the STRESS_SCORE column is usually finalized right after waking up, meaning the UPDATED_AT column usually lists the time 1-30 minutes after a sleep session ends. But unlike the raw sleep data, the stress data uses UTC timestamps!! </p>
 <p>Looking at July 13th, endTime=8:36 (local, UTC-4), and UPDATED_AT for the 13th is 12:37 (UTC). For the 14th, 8:03 and 12:25.</p>
 <p>I looked at a few other random ranges as well, and the shift looked consistent. Bingo!</p>
 <p class="caption"> A few consecutive  </p>
-<p><img loading="lazy" alt="A few consecutive " class="addpic" src="/static/fitbitsleeptzcorrection/3.png"/></p>
+<p><img alt="A few consecutive " class="addpic" height="346" loading="lazy" src="/static/fitbitsleeptzcorrection/3.png" style="aspect-ratio: auto 454 / 346;" width="454"/></p>
 <p>We just need to take each day of data in the stress scores and figure out which row of the sleep data it corresponds with. Then, we can timezone-adjust that row of sleep data, giving us UTC timestamped data that we can work with. </p>
 <h2 id="refining-the-technique">Refining the technique.</h2>
 <p>We naively match every stress timestamp with a sleep row, then subtract the stress timestamp from the endTime. This should give us the timezone offset of that sleep row, right? Nah!</p>
 <p class="caption"> Chart of wildly varying timezone offsets from subtracting stress UPDATED_AT and endTime </p>
-<p><img loading="lazy" alt="Chart of wildly varying timezone offsets from subtracting stress UPDATED_AT and endTime" class="addpic" src="/static/fitbitsleeptzcorrection/4.png"/></p>
+<p><img alt="Chart of wildly varying timezone offsets from subtracting stress UPDATED_AT and endTime" class="addpic" height="451" loading="lazy" src="/static/fitbitsleeptzcorrection/4.png" style="aspect-ratio: auto 986 / 451;" width="986"/></p>
 <p>A ton of the offsets are higher than +12, which aren't valid timezones! </p>
 <p>Since we are using the UPDATED_AT column, the stress score update can happen at any point after the sleep time ends. In my data alone, it can change up to a week later! If we use this as the UTC version of the endTime, we will end up with incorrect timezone offsets. This jankiness results from our unintended use of the stress data. </p>
 <h2 id="naive-filter">Naive filter</h2>
 <p>If we don't mind throwing out some bad data, an easy first filter is to throw out all data with offsets higher than 12. This gives us only the reasonable sleep rows</p>
 <p class="caption"> Timezone offset over the years, without the offsets over 12 </p>
-<p><img loading="lazy" alt="Timezone offset over the years, without the offsets over 12" class="addpic" src="/static/fitbitsleeptzcorrection/5.png"/></p>
+<p><img alt="Timezone offset over the years, without the offsets over 12" class="addpic" height="451" loading="lazy" src="/static/fitbitsleeptzcorrection/5.png" style="aspect-ratio: auto 993 / 451;" width="993"/></p>
 <p>This is much cleaner, and you can clearly see the horizontal lines from when I lived in the same place for a while. But because we've removed some data, it's going to be hard to interpolate between points to fix the remaining noisy points — if a +1 shift lasts only a day, I'm not sure if I can just flatten it to its neighbors since I'm not sure its neighbors are actually just 1 day apart. And most offsets &gt; 12 happened during a day of travel, so a spurious point is likely not equal to its neighbors and many will be thrown out.</p>
 <h2 id="less-naive-filter">Less naive filter</h2>
 <p>Instead of tossing out offsets over 12, I tried to keep as many points as I could from the beginning. Starting with full data, every single-day "spike" in time offset was set to its neighboring values (e.g. [4,5,4,4] -&gt; [4,4,4,4])</p>
 <p class="caption"> Same chart as before but removing spikes only. The title is lying </p>
-<p><img loading="lazy" alt="Same chart as before but removing spikes only. The title is lying" class="addpic" src="/static/fitbitsleeptzcorrection/6.png"/></p>
+<p><img alt="Same chart as before but removing spikes only. The title is lying" class="addpic" height="451" loading="lazy" src="/static/fitbitsleeptzcorrection/6.png" style="aspect-ratio: auto 988 / 451;" width="988"/></p>
 <p>Then, I kept only the sleep rows that had a neighboring point that agreed. My reasoning was that once the sleep timezones become stable, timezone offsets can be corroborated with adjacent points.</p>
 <p class="caption"> 2nd stage of filtering, removing spikes then only taking points that have an adjacent, equal point </p>
-<p><img loading="lazy" alt="2nd stage of filtering, removing spikes then only taking points that have an adjacent, equal point" class="addpic" src="/static/fitbitsleeptzcorrection/7.png"/></p>
+<p><img alt="2nd stage of filtering, removing spikes then only taking points that have an adjacent, equal point" class="addpic" height="451" loading="lazy" src="/static/fitbitsleeptzcorrection/7.png" style="aspect-ratio: auto 1013 / 451;" width="1013"/></p>
 <p>This operation does throw out some data points, but it's the end of my filtering process. We are left with roughly ~82% of the sleep rows, and fairly reliable knowledge of the row's timezone offset. </p>
 <h1 id="message-for-fitbit-devs">Message for Fitbit devs</h1>
 <p>Using only local timestamps for sleep data makes it incredibly hard to do proper analysis between your sleep data and other, real scientific data sources recorded using Unix timestamps, like <a href="https://kongmunist.medium.com/playing-faster-tetris-by-sleeping-less-3d9b04d30349">my Tetris scores</a>. This is a huge gripe of mine regarding Fitbit, I mean, how hard can it be to add a UTC-corrected column to the sleep .csv? </p>
@@ -455,6 +463,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

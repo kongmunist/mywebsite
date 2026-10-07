@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Spin Tank Proof-of-Concept Test | Andy Kong</title>
 <meta name="description" content="A new configuration for some old kinds of armor">
@@ -319,6 +320,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -344,7 +352,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -364,10 +372,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -389,22 +397,22 @@
 <hr>
             <html><body><p>The problem with modern day tank armor is that it relies too heavily on brute strength for defense. Armor can be made to actively resist attacks by means of a light, rapidly rotating hull that deflects projectiles instead of the heavy armor plates used today that simply endure every hit thrown at them.</p>
 <h3>Modern tanks suck</h3>
-<p><img loading="lazy" class="d-block mx-auto" src="/static/spintankabrams.png"/></p>
+<p><img class="d-block mx-auto" height="275" loading="lazy" src="/static/spintankabrams.png" style="aspect-ratio: auto 417 / 275;" width="417"/></p>
 <p>Tank armor must be strong enough to resist small arms fire (rifles, pistols, submachine guns) and stronger, penetrating projectiles (anti-tank missiles, SAMs). Thick depleted uranium plating forms the outer shell, and sheds small arms fire like water. This plating, in conjunction with ceramic armor and air pockets, also allows tank armor to redirect the focused explosions of anti-tank missiles. Anti-tank missiles first contact the tank, then use shaped charges to shoot a thin, fast-moving jet of plasma at the hull to melt a deep hole into the cockpit. On a normal tank, this stream goes straight the armor and must be redirected by the aforementioned air pockets to avoid injuring the crew.</p>
-<p><img loading="lazy" class="d-block mx-auto" src="/static/spintankantitankmissile.png"/></p>
+<p><img class="d-block mx-auto" height="244" loading="lazy" src="/static/spintankantitankmissile.png" style="aspect-ratio: auto 645 / 244;" width="645"/></p>
 <p>Not only is this armor dumb (not reactive), it is also super heavy because it takes every impact head-on. I couldn't find definitive stats on the armor weight, but it's designed to be thick and expendable. All these factors make the tank less manouverable than it could be, and more expensive than necessary. This doesn't have to be the case. </p>
 <h3>Spin tank</h3>
 <p>What if instead of the front-back-sides-bottom-top armor paradigm, we used one, rapidly-spinning shell as the armor? Keep it thick enough that small munitions won't get through, and let the hull's spinning knock away even perfectly-aimed anti-tank missiles. On the spin tank, in the time it takes the anti-tank missile to prime the plasma, the missile's contact point with the tank hull will have shifted along the perimeter. This means the shaped charges will no longer pointed in the right direction, and will detonate harmlessly, spraying plasma along the hull instead of into it. </p>
-<p><img loading="lazy" class="d-block mx-auto" src="/static/spintankmechanismdrawing.png"/></p>
+<p><img class="d-block mx-auto" height="385" loading="lazy" src="/static/spintankmechanismdrawing.png" style="aspect-ratio: auto 235 / 385;" width="235"/></p>
 <p class="caption">Missiles will just roll right off the spin tank.</p>
 <p>You might be wondering what kind of rotation speeds are necessary to shed missiles like water. Good question. It depends on a series of factors including but not limited to: projectile mass, projectile velocity, tank hull thickness, tank hull strength, and projectile penetration strength. Unfortunately, I cannot currently simulate this in software, so you'll just have to settle for a hardware implementation!</p>
-<p><img loading="lazy" class="d-block mx-auto" src="/static/spintank3dmodel.png"/></p>
-<p><img loading="lazy" class="d-block mx-auto" src="/static/spintankmounted.png"/></p>
+<p><img class="d-block mx-auto" height="435" loading="lazy" src="/static/spintank3dmodel.png" style="aspect-ratio: auto 709 / 435;" width="709"/></p>
+<p><img class="d-block mx-auto" height="576" loading="lazy" src="/static/spintankmounted.png" style="aspect-ratio: auto 535 / 576;" width="535"/></p>
 <p>I modeled a quick little dome that fits perfectly on a food processor I have, which spins almost too fast for my phone's built-in slo-mo to capture. Manually counting a mark on the rim, I got about 15 rotations per second. Not bad for a consumer appliance! </p>
 <p>I've been using a chopstick in a slingshot to simulate a missile hitting the spin tank. When the dome is stationary, the chopstick has no problem penetrating it. However, the same shot on a spinning dome will leave a dent instead of a hole. </p>
-<p><img loading="lazy" class="d-block mx-auto" src="/static/spintankstationaryshot.png"/></p>
+<p><img class="d-block mx-auto" height="482" loading="lazy" src="/static/spintankstationaryshot.png" style="aspect-ratio: auto 541 / 482;" width="541"/></p>
 <p class="caption">Stationary chopstick firing leaves a hole</p>
-<p><img loading="lazy" class="d-block mx-auto" src="/static/spintankspinningshot.png"/></p>
+<p><img class="d-block mx-auto" height="549" loading="lazy" src="/static/spintankspinningshot.png" style="aspect-ratio: auto 594 / 549;" width="594"/></p>
 <p class="caption">Spinning chopstick firing leaves a dent in the hull, but less damage</p>
 <p>I need to experiment more with which latitude I'm shooting, since the hull strength changes at different heights. I should also use different lengths and weights of projectiles, since the chopstick is incredibly narrow compared to the dome itself. Some shots on the spinning hull also tore a larger hole than the one on the stationary hull, which I think is caused by a chopstick penetrating the hull followed by the rotation ripping it out.</p>
 <p>At the very least, the spin tank reduces the total target size of the same tank, since hitting the edges of the spin tank with a projectile proves to be entirely useless.</p></body></html>
@@ -430,6 +438,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

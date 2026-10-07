@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Exploring USB-A breakout cables | Andy Kong</title>
 <meta name="description" content="The normal USB cable">
@@ -318,6 +319,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -343,7 +351,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -363,10 +371,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -390,10 +398,10 @@
 <p>Lithium polymer/ion batteries are powerful and cheap because of the hobbyist drone market, but come in multiples of 3.7V-4.2V. NiMH (AA and AAA) batteries are plentiful and expensive, but only come in intervals of 1.5V (9V is also composed of 6 similar batteries wrapping together. Who knew?!). These would be fine, except I didn't want to deal with a voltage regulator since this was just a quick test. What to do?</p>
 <p>The wall outputs 5V through a phone charger, but I (1) needed it to be wearable and (2) incapable of killing you if all the op amps and resistors shorted in just the right way. </p>
 <p>I had an extra portable phone charger battery I had gotten from a career fair, which output 5V at a capacity of 2200 mAh. Most importantly, I already had it. </p>
-<p><img loading="lazy" alt="Career fairs are good for something" src="/static/ThanksIBM.jpg"/></p>
+<p><img alt="Career fairs are good for something" height="657" loading="lazy" src="/static/ThanksIBM.jpg" style="aspect-ratio: auto 805 / 657;" width="805"/></p>
 <p class="caption">Career fairs are good for something</p>
 <p>I destroyed a USB cable (the other end was this weird flat thing) and plugged it in after charging the battery. Voltmeter confirms, &gt;5V. </p>
-<p><img loading="lazy" alt="A multimeter measuring my portable phone battery's voltage" src="/static/USBA_realvoltage.jpg"/></p>
+<p><img alt="A multimeter measuring my portable phone battery's voltage" height="1008" loading="lazy" src="/static/USBA_realvoltage.jpg" style="aspect-ratio: auto 756 / 1008;" width="756"/></p>
 <p class="caption">A multimeter measuring my portable phone battery's voltage</p>
 <p>I expected these batteries to be more regulated, though I suppose there aren't many electronics parts that work at 5V that don't work also at 5.2V. </p></body></html>
 
@@ -416,6 +424,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

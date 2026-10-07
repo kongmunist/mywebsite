@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% set page_title = "Page not found" %}
+{% set meta_description = "This page could not be found. Browse Andy Kong's projects and writing." %}
+{% set error_page = true %}
+
+{% block meta_content %}
+<meta name="robots" content="noindex">
+{% endblock %}
+
+{% block app_content %}
+<main style="max-width: 40rem; margin: 3rem auto; padding: 0 1.5rem;">
+    <h1>404 — Page not found</h1>
+    <p>The page may have moved, or the address may have a typo.</p>
+    <p>You can visit the <a href="{{ url_for('index') }}">homepage</a>, browse the
+       <a href="{{ url_for('mainproject') }}">projects</a>, or read the
+       <a href="{{ url_for('mainblog') }}">blog</a>.</p>
+</main>
+{% endblock %}

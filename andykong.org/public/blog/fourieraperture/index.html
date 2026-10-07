@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Real Time Fourier Transform Using Shaped Aperture | Andy Kong</title>
 <meta name="description" content="Light speed!">
@@ -320,6 +321,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -345,7 +353,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -365,10 +373,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -392,20 +400,20 @@
 <h1 id="backstory">Backstory</h1>
 <p>When I was still a wee boy, my computational photography professor mentioned that a lens performs a Fourier Transform on light that enters it. A Fourier transform of light is a frequency domain representation of the image, and captures the exact same information as the regular picture. We don't usually notice this property of lenses because it only happens to coherent light, like a laser. One example of this is how a bright image (the sun) becomes a single point at the focus of the lens, because there is a 0-frequency component to the brightness entering the lens. </p>
 <p class="caption">Example Fourier Transform of an image, specifically showing a text rotation application <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/fourier.htm">(source)</a></p>
-<p><img loading="lazy" alt="Example Fourier Transform of an image, specifically showing a text rotation application" src="/static/fa_textrotation.png"/></p>
+<p><img alt="Example Fourier Transform of an image, specifically showing a text rotation application" height="633" loading="lazy" src="/static/fa_textrotation.png" style="aspect-ratio: auto 706 / 633;" width="706"/></p>
 <p>Anyway, I noted this cool fact and carried on with my life</p>
 <hr/>
 <h1 id="1-year-ago">1 Year Ago</h1>
 <p>About a year ago, I bought a coffee table book called "Laser Art and Optical Transforms", by a Mr. Thomas Kallard. The book contained a ton of photos of interesting laser effects that the author had created over his career as a lighting designer, and were catalogued down to the equipment he had used to make them. </p>
 <p class="caption">A copy of the book, mine is black</p>
-<p><img loading="lazy" alt="A copy of the book, mine is black" src="/static/fa_kallardbook.png"/></p>
+<p><img alt="A copy of the book, mine is black" height="523" loading="lazy" src="/static/fa_kallardbook.png" style="aspect-ratio: auto 376 / 523;" width="376"/></p>
 <p>I read the whole book (looked at pictures), and noticed that the back half of the book was entirely these aperture pictures. </p>
 <p>To make these aperture photos, Kallard took a laser beam that was spread out by a filter, then shot through a sheet of paper with a shape cut out. The resulting image on the far wall did not resemble the hole at all, due to the self-interference of the laser light shooting through the paper cut-out. If the light source were an incoherent light source like a lamp or projector, this resulting image would look very different, but we don't have to worry about that since Mr. Kallard did use a laser.</p>
 <p class="caption">Mr. Kallard's setup</p>
-<p><img loading="lazy" alt="Mr. Kallard's setup" src="/static/fa_kallardapparatus.jpg"/></p>
+<p><img alt="Mr. Kallard's setup" height="757" loading="lazy" src="/static/fa_kallardapparatus.jpg" style="aspect-ratio: auto 1616 / 757;" width="1616"/></p>
 <p>Here's an example from the book, showing how changing the laser aperture shape changes the resulting image. The transform is slightly intuitive, but this reasoning breaks down with more complex apertures. </p>
 <p class="caption">Two dots vertically stacked make a circle with horizontal lines, two dots stacked top right and bottom left create a circle with diagonal lines.</p>
-<p><img loading="lazy" alt="Two dots vertically stacked make a circle with horizontal lines, two dots stacked top right and bottom left create a circle with diagonal lines." src="/static/fa_kallardexample.png"/></p>
+<p><img alt="Two dots vertically stacked make a circle with horizontal lines, two dots stacked top right and bottom left create a circle with diagonal lines." height="568" loading="lazy" src="/static/fa_kallardexample.png" style="aspect-ratio: auto 611 / 568;" width="611"/></p>
 <hr/>
 <h1 id="last-week">Last Week</h1>
 <p>I showed a friend my book, and he wondered aloud how the output images were being formed by the light's interference. Using what I learned from computational photography, I assumed that this was a similar principle, and that changing the aperture and changing the "image" coming into a lens were nearly the same thing. This would mean that the aperture pictures that Kallard had captured were probably just the Fourier Transforms of the apertures he was using. </p>
@@ -413,11 +421,11 @@
 <h2 id="1-circles">1. Circles</h2>
 <p>Here's some overlapping circles. The left image is the shape of the laser aperture, and the top-right image is the output that Kallard photographed. You can see the X and the overlapping arcs that face opposite directions on both, but the scale of the image is the only thing that changes.</p>
 <p class="caption">Circle aperture + FFT</p>
-<p><img loading="lazy" alt="Circle aperture + FFT" src="/static/fa_circles.png"/></p>
+<p><img alt="Circle aperture + FFT" height="595" loading="lazy" src="/static/fa_circles.png" style="aspect-ratio: auto 618 / 595;" width="618"/></p>
 <h2 id="2-spiraly-thing">2. Spiral-y thing</h2>
 <p>Similarly here, it's clear that the aperture on the left creates features like the 4 bright quadrant and the surrounding "fan" shapes in both the web and real world version, though they are a bit harder to see.</p>
 <p class="caption">Spiral aperture + FFT</p>
-<p><img loading="lazy" alt="Spiral aperture + FFT" src="/static/fa_spiral.png"/></p>
+<p><img alt="Spiral aperture + FFT" height="598" loading="lazy" src="/static/fa_spiral.png" style="aspect-ratio: auto 701 / 598;" width="701"/></p>
 <hr/>
 <p>Kinda crazy! I'm surprised that taking the FFT of a photo worked so well, considering that the photo has all sorts of distortion and noise from the paper warp and real world effects.</p>
 <p>I'm still not sure why the scale of the image was so zoomed for Kallard's images. The spread of the light depends on your angle, and Kallard had quite a large distance between his lens and the photographing wall. Perhaps if you were to recreate this using a closer camera, you'd get the same thing we got.</p>
@@ -446,6 +454,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

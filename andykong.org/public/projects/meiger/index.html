@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Meiger Counters | Andy Kong</title>
 <meta name="description" content="Geiger&#39;s 2nd most famous counter, the electromagnetic radiation detector">
@@ -204,6 +205,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -229,7 +237,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -249,10 +257,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -272,40 +280,41 @@
     Artsy project done with the F21 Electronic Logics &amp;&amp; Creative Practice class in IDeATe.
 Not medical advice. </i></p>
 <hr/>
-<p><img loading="lazy" alt="Presentation title slide reading The Biological Effects of Electromagnetic Fields over da Vinci's Vitruvian Man" class="addpic" src="/static/meiger_presentation.png"/></p>
+<p><img alt="Presentation title slide reading The Biological Effects of Electromagnetic Fields over da Vinci's Vitruvian Man" class="addpic" height="950" loading="lazy" src="/static/meiger_presentation.png" style="aspect-ratio: auto 1271 / 950;" width="1271"/></p>
 <p>Living in developed countries means constant exposure to all kinds of dirty electrical noise and strong magnetic fields. While the human body mostly signals with chemicals and ions, our brain — the intellectual center and chief information processor — communicates via electricity. </p>
 <p>In the presence of electromagnetic (EM) fields, these signals and pathways can become muddled and interfere with maintenance and development of new neural pathways. </p>
-<p><img loading="lazy" alt="Hand holding the Meiger Counter with its Magnetic Field analog meter up toward a bright ceiling light bulb" class="addpic" src="/static/meiger_hero.jpg"/></p>
+<p><img alt="Hand holding the Meiger Counter with its Magnetic Field analog meter up toward a bright ceiling light bulb" class="addpic" height="1711" loading="lazy" src="/static/meiger_hero.jpg" style="aspect-ratio: auto 2560 / 1711;" width="2560"/></p>
 <p>That's why I invented the <strong>Meiger Counter</strong>, the first handheld device used by reasonable, cautious people all over the world to detect and isolate dangerous sources of electromagnetic noise that could be putting you or your loved ones at a higher risk for cancer <a href="https://www.sciencedirect.com/science/article/abs/pii/S0013935121012883">[1]</a>. </p>
-<p><img loading="lazy" alt="Andy in a suit and mask demonstrating the Meiger Counter beside its open carrying case" class="addpic" src="/static/meiger_andypresent1.jpg"/></p>
+<p><img alt="Andy in a suit and mask demonstrating the Meiger Counter beside its open carrying case" class="addpic" height="968" loading="lazy" src="/static/meiger_andypresent1.jpg" style="aspect-ratio: auto 1258 / 968;" width="1258"/></p>
 <p>Each Meiger counter comes with a dial and speaker to alert you whenever a strong electrical field is nearby. Simply press the trigger while pointing our proprietary directional Efield Antenna at a source you suspect is poisoning the environment around you, and the rate of clicking will tell you the strength of the source.</p>
 <p class="caption"> Meiger Counters in carrying case, v1 on the left and v2 on the right  </p>
-<p><img loading="lazy" alt="Meiger Counters in carrying case, v1 on the left and v2 on the right " class="addpic" src="/static/meiger_case.jpg"/></p>
+<p><img alt="Meiger Counters in carrying case, v1 on the left and v2 on the right " class="addpic" height="1920" loading="lazy" src="/static/meiger_case.jpg" style="aspect-ratio: auto 2560 / 1920;" width="2560"/></p>
 <p>The device is lightweight, portable, and easily rechargable. Each counter comes with a lifetime guarantee, no electrical field-induced death-causing cancer or your money back!</p>
 <div class="video-container">
-<iframe allowfullscreen="" class="youtubevideo" src="https://www.youtube.com/embed/iLK8d7VIhHs"></iframe>
+<iframe allowfullscreen="" class="youtubevideo" loading="lazy" src="https://www.youtube.com/embed/iLK8d7VIhHs"></iframe>
 </div>
 <p><br/></p><hr/><br/>
 <h1 id="build-details">Build details</h1>
 <p>The carrying case was scavenged from a Roboclub cleaning, it's a DeWalt case with no tools in it. Foam is from the cleaning as well. I cut it with a package opener, which is why it looks rather rough. </p>
-<p><img loading="lazy" alt="Hand scrubbing yellow paint off the embossed DeWalt logo on the black carrying case" class="addpic" src="/static/meiger_dewalt.jpg"/></p>
-<p><img loading="lazy" alt="Open case with pluck-and-pull foam being trimmed to hold the two counters" class="addpic" src="/static/meiger_foamcase.jpg"/></p>
+<p><img alt="Hand scrubbing yellow paint off the embossed DeWalt logo on the black carrying case" class="addpic" height="626" loading="lazy" src="/static/meiger_dewalt.jpg" style="aspect-ratio: auto 605 / 626;" width="605"/></p>
+<p><img alt="Open case with pluck-and-pull foam being trimmed to hold the two counters" class="addpic" height="739" loading="lazy" src="/static/meiger_foamcase.jpg" style="aspect-ratio: auto 605 / 739;" width="605"/></p>
 <p>Meiger counter handles are made from the case of a Metrologic MH290 handheld barcode scanner, one of the <a href="../../blog/barcodehistory/">first ones ever sold commercially</a>. The top part is 3D printed on an SLS printer. To try and make it look vintage, I printed it out of a clear resin and then overexposed it in UV light. My post-processing was pretty crude, but I think it looks pretty good. </p>
-<p><img loading="lazy" alt="Close-up of the Meiger Counter body showing its analog meter, crosshair antenna face, and a potentiometer" class="addpic" src="/static/meiger_closeup1.jpg"/></p>
-<p><img loading="lazy" alt="Hand holding the translucent amber Meiger Counter, showing the copper coil antenna behind its crosshair face" class="addpic" src="/static/meiger_closeup2.jpg"/></p>
-<p><img loading="lazy" alt="Open Meiger Counter revealing its internal circuit board, red wiring, and indicator LED" class="addpic" src="/static/meiger_closeup3.jpg"/></p>
+<p><img alt="Close-up of the Meiger Counter body showing its analog meter, crosshair antenna face, and a potentiometer" class="addpic" height="774" loading="lazy" src="/static/meiger_closeup1.jpg" style="aspect-ratio: auto 756 / 774;" width="756"/></p>
+<p><img alt="Hand holding the translucent amber Meiger Counter, showing the copper coil antenna behind its crosshair face" class="addpic" height="1052" loading="lazy" src="/static/meiger_closeup2.jpg" style="aspect-ratio: auto 1072 / 1052;" width="1072"/></p>
+<p><img alt="Open Meiger Counter revealing its internal circuit board, red wiring, and indicator LED" class="addpic" height="751" loading="lazy" src="/static/meiger_closeup3.jpg" style="aspect-ratio: auto 662 / 751;" width="662"/></p>
 <p>The Meiger counter ticks according to a Poissonian distribution, same as a Geiger counter. This makes the clicks sound eerily similar, and create a similar feeling of danger. The lambda of the Poisson distribution is determined by the variance of the analog readings on a wire antenna inside the counter. The higher the variance, the more frequent the clicks. This works pretty well for picking up electrical noise from power hubs, overhead lights, and large electronic devices. </p>
 <h1 id="informational-details">Informational details</h1>
 <p>To make the presentation more convincing, I read several articles about the relationship between electromagnetic fields and various medical conditions. They presented some compelling correlations between weak magnetic fields and rates of leukemia in children, and many other conditions. The audience believed I had invented these studies, but they were quite real. Here are some screenshots from my slides:</p>
-<p><img loading="lazy" alt="Slide bar chart comparing honey bee queen development between control and EMF-exposed groups" class="addpic" src="/static/meiger_bees.png"/></p>
-<p><img loading="lazy" alt="Slide bar chart showing childhood leukemia risk rising with higher magnetic field exposure" class="addpic" src="/static/meiger_humans.png"/></p>
-<p><img loading="lazy" alt="Slide quoting the IARC classifying low-frequency magnetic field exposure as possibly carcinogenic, with the IARC logo" class="addpic" src="/static/meiger_iarc.png"/></p>
-<p><img loading="lazy" alt="Andy presenting in front of a projected slide of childhood leukemia risk versus magnetic field exposure" class="addpic" src="/static/meiger_andypresent2.jpg"/></p>
+<p><img alt="Slide bar chart comparing honey bee queen development between control and EMF-exposed groups" class="addpic" height="851" loading="lazy" src="/static/meiger_bees.png" style="aspect-ratio: auto 1136 / 851;" width="1136"/></p>
+<p><img alt="Slide bar chart showing childhood leukemia risk rising with higher magnetic field exposure" class="addpic" height="856" loading="lazy" src="/static/meiger_humans.png" style="aspect-ratio: auto 1135 / 856;" width="1135"/></p>
+<p><img alt="Slide quoting the IARC classifying low-frequency magnetic field exposure as possibly carcinogenic, with the IARC logo" class="addpic" height="846" loading="lazy" src="/static/meiger_iarc.png" style="aspect-ratio: auto 1132 / 846;" width="1132"/></p>
+<p><img alt="Andy presenting in front of a projected slide of childhood leukemia risk versus magnetic field exposure" class="addpic" height="1711" loading="lazy" src="/static/meiger_andypresent2.jpg" style="aspect-ratio: auto 2560 / 1711;" width="2560"/></p>
 <p>Adding this to the list of things that make you go "huh!"</p></body></html>
         </div>
         <p style="line-height:300%;">&nbsp;</p>
 </div>
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

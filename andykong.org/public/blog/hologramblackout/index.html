@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Different ways to black-out holograms | Andy Kong</title>
 <meta name="description" content="Paint vs. tape">
@@ -319,6 +320,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -344,7 +352,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -364,10 +372,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -395,21 +403,21 @@
 <h1 id="black-tape">Black Tape</h1>
 <p>The funny thing about black tape (duct/gaffer) is that usually the sticky side is white. I found electrical tape to have a black sticky side, but wasn't able to find any that was wide enough to cover my glass plates in one piece. I tried abutting them edge-to-edge instead. </p>
 <p class="caption"> Tape abutment works ok for blacking out holograms </p>
-<p><img loading="lazy" alt="Tape abutment works ok for blacking out holograms" class="addpic" src="/static/hologramblackout/0.jpg"/></p>
+<p><img alt="Tape abutment works ok for blacking out holograms" class="addpic" height="3024" loading="lazy" src="/static/hologramblackout/0.jpg" style="aspect-ratio: auto 3636 / 3024;" width="3636"/></p>
 <p>You'll notice this kinda works, but the gaps are clearly visible. Even for perfect alignment, there will be a noticeable thin line. There's also some bubbles — these are easy enough to get out by scratching at the tape so it flattens out, but sometimes there are bigger bubbles which do not come out easily. If done carefully it won't look too bad. </p>
 <p class="caption"> Air bubbles trapped in the tape backing. Remember manually putting on phone screens like this? </p>
-<p><img loading="lazy" alt="Air bubbles trapped in the tape backing. Remember manually putting on phone screens like this?" class="addpic" src="/static/hologramblackout/1.jpg"/></p>
+<p><img alt="Air bubbles trapped in the tape backing. Remember manually putting on phone screens like this?" class="addpic" height="2465" loading="lazy" src="/static/hologramblackout/1.jpg" style="aspect-ratio: auto 2642 / 2465;" width="2642"/></p>
 <h1 id="black-tape-overlap">Black Tape, Overlap</h1>
 <p>If the tape is instead placed over the next piece, this line only gets worse. I cannot recommend this method cause it really sucks. </p>
 <p class="caption"> Overlapping tape backing </p>
-<p><img loading="lazy" alt="Overlapping tape backing" class="addpic" src="/static/hologramblackout/2.jpg"/></p>
-<p><img loading="lazy" alt="Close-up of the hologram plate showing the visible seam ridge where overlapping tape pieces meet" class="addpic" src="/static/hologramblackout/3.jpg"/></p>
+<p><img alt="Overlapping tape backing" class="addpic" height="1330" loading="lazy" src="/static/hologramblackout/2.jpg" style="aspect-ratio: auto 1983 / 1330;" width="1983"/></p>
+<p><img alt="Close-up of the hologram plate showing the visible seam ridge where overlapping tape pieces meet" class="addpic" height="819" loading="lazy" src="/static/hologramblackout/3.jpg" style="aspect-ratio: auto 2411 / 819;" width="2411"/></p>
 <h1 id="paint">Paint</h1>
 <p>Lastly, I tried a matte black spray paint. One nice thing about this is that we don't really care about the finish on the back side so you can spray a pretty thick single coat. Here is a sheet I taped and spray-painted for comparison. </p>
 <p class="caption"> Holograph plate taped (left) and spray painted (right) </p>
-<p><img loading="lazy" alt="Holograph plate taped (left) and spray painted (right)" class="addpic" src="/static/hologramblackout/4.jpg"/></p>
+<p><img alt="Holograph plate taped (left) and spray painted (right)" class="addpic" height="2370" loading="lazy" src="/static/hologramblackout/4.jpg" style="aspect-ratio: auto 2240 / 2370;" width="2240"/></p>
 <p class="caption"> Difference in black effectiveness from the visible side </p>
-<p><img loading="lazy" alt="Difference in black effectiveness from the visible side" class="addpic" src="/static/hologramblackout/5.jpg"/></p>
+<p><img alt="Difference in black effectiveness from the visible side" class="addpic" height="1636" loading="lazy" src="/static/hologramblackout/5.jpg" style="aspect-ratio: auto 2148 / 1636;" width="2148"/></p>
 <p>In the circle above you can see the difference in contrast between tape (bottom) and paint (top). I would say the spray paint is a tad darker, and can go on more evenly. This is definitely the nicest method. </p>
 <p>Anyway, now you know!</p></body></html>
 
@@ -434,6 +442,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

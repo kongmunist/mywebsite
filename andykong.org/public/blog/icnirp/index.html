@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>A Layman&#39;s Guide To The ICNIRP Guidelines On Limiting Exposure To Electromagnetic Fields (100kHz-300GHz) | Andy Kong</title>
 <meta name="description" content="I read this and it was actually interesting">
@@ -318,6 +319,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -343,7 +351,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -363,10 +371,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -389,9 +397,9 @@
             <html><body><p>Hello!</p>
 <p>In this post I'm going to sum up all the cool things I learned about the human body and the way the body interacts with electromagnetic (EM) radiation. All these facts I learned from a casual perusal of the ICNIRP 2020 guidelines doc, which you can find yourself <a href="https://www.icnirp.org/cms/upload/publications/ICNIRPrfgdl2020.pdf">here</a>.</p>
 <p class="caption"> ICNIRP guidelines were probably not read by the creator of this meme </p>
-<p><img loading="lazy" alt="ICNIRP guidelines were probably not read by the creator of this meme" class="addpic" src="/static/icnirp/babies.png"/></p>
+<p><img alt="ICNIRP guidelines were probably not read by the creator of this meme" class="addpic" height="830" loading="lazy" src="/static/icnirp/babies.png" style="aspect-ratio: auto 964 / 830;" width="964"/></p>
 <p>ICNIRP is an international non-profit made up of random scientists who enjoy quantifying electromagnetic radiation safety. They read the most up-to-date literature every few years and compile a large guidelines doc describing limits of what the human body. These guidelines are then used by researchers and government regulatory bodies to establish safe legal bounds on human-EM exposure.</p>
-<p><img loading="lazy" alt="ICNIRP logo of the International Commission on Non-Ionizing Radiation Protection" class="addpic" src="/static/icnirp/0.png"/></p>
+<p><img alt="ICNIRP logo of the International Commission on Non-Ionizing Radiation Protection" class="addpic" height="148" loading="lazy" src="/static/icnirp/0.png" style="aspect-ratio: auto 340 / 148;" width="340"/></p>
 <h1 id="why-did-you-read-this-dry-and-boring-safety-text">Why did you read this dry and boring safety text?</h1>
 <p>Recently, I needed to describe the safety of an electromagnetic system that interacted with the human body. To do so, I needed to show that the design conformed to the ICNIRP guidelines — this was a task I had been putting off in case A) the system wasn't actually safe, or B) the guidelines would be complex and hard to understand. </p>
 <p>I was close to giving up in favor of relying on a secondary source's interpretation of the ICNIRP guidelines, but in a moment of clarity, I decided to first give the primary text my best crack. And thank goodness! The text is full of interesting little details, explanations of why the limits are what they are, and the different ways EM radiation can damage the human body. I found the info I needed and got out, but I found the guidelines so interesting that I told myself I'd revisit them after my deadline. </p>
@@ -406,7 +414,7 @@
 <p>At higher frequencies &gt;10MHz, damage from tissue heating (3) happens way before cell permeability changes (2), so we can ignore 2 as long as we respect the guidelines for (3). At lower frequencies &lt;10MHz, nerve activation (1) happens way before the permeability stuff (2), so again we can ignore 2 as long as we follow the guidelines for (1). At 10MHz, changes in permeability kill you immediately (just joking)</p>
 </li>
 </ul>
-<p><img loading="lazy" alt="Guideline excerpt: membrane permeability changes at 18 GHz need circa 5 kW per kg, far beyond thermal harm levels" class="addpic" src="/static/icnirp/1.png"/></p>
+<p><img alt="Guideline excerpt: membrane permeability changes at 18 GHz need circa 5 kW per kg, far beyond thermal harm levels" class="addpic" height="334" loading="lazy" src="/static/icnirp/1.png" style="aspect-ratio: auto 928 / 334;" width="928"/></p>
 <ul>
 <li>
 <p>The frequencies that can affect nerves are limited to ~100kHz and are described by participants as tingling. As frequency increases to 10MHz, this sensation becomes one of "warmth" and we start to care more about thermal safety. Nerve effects are mainly described in the other ICNIRP doc for lower frequencies.</p>
@@ -418,48 +426,48 @@
 <p>Humans' core body temperature is 37°C and can vary up to 1°C throughout a day. Correspondingly, the guidelines try to keep EM radiation exposure below a power level that increases body temperature 1°C (as a conservative limit, they actually try to keep it under 0.1°C). At the 100kHz-6GHz range, a SAR of approximately 6 W/kg leads to a core body temperature increase of 1°C. The issue with increased body temperature is that the heart has to work harder and it causes more accidents</p>
 </li>
 </ul>
-<p><img loading="lazy" alt="Guideline excerpt: whole-body SAR limits protect against increased cardiovascular load from restricting core temperature rise" class="addpic" src="/static/icnirp/2.png"/></p>
-<p><img loading="lazy" alt="Guideline excerpt: accident risk rises with hyperthermia, and core temperatures above 40 degrees C can cause fatal heat stroke" class="addpic" src="/static/icnirp/3.png"/></p>
+<p><img alt="Guideline excerpt: whole-body SAR limits protect against increased cardiovascular load from restricting core temperature rise" class="addpic" height="198" loading="lazy" src="/static/icnirp/2.png" style="aspect-ratio: auto 932 / 198;" width="932"/></p>
+<p><img alt="Guideline excerpt: accident risk rises with hyperthermia, and core temperatures above 40 degrees C can cause fatal heat stroke" class="addpic" height="146" loading="lazy" src="/static/icnirp/3.png" style="aspect-ratio: auto 914 / 146;" width="914"/></p>
 <ul>
 <li>From this we also learn that children can dissipate heat better than adults and therefore have a higher SAR threshold.</li>
 </ul>
-<p><img loading="lazy" alt="Guideline excerpt: children need a higher SAR for the same temperature rise due to more-efficient heat dissipation" class="addpic" src="/static/icnirp/4.png"/></p>
-<p><img loading="lazy" alt="Guideline excerpt: child models showed 35% smaller core temperature rises than adults, thanks to higher surface-to-mass ratio" class="addpic" src="/static/icnirp/5.png"/></p>
+<p><img alt="Guideline excerpt: children need a higher SAR for the same temperature rise due to more-efficient heat dissipation" class="addpic" height="196" loading="lazy" src="/static/icnirp/4.png" style="aspect-ratio: auto 942 / 196;" width="942"/></p>
+<p><img alt="Guideline excerpt: child models showed 35% smaller core temperature rises than adults, thanks to higher surface-to-mass ratio" class="addpic" height="558" loading="lazy" src="/static/icnirp/5.png" style="aspect-ratio: auto 930 / 558;" width="930"/></p>
 <ul>
 <li>ICNIRP also gives us a neat reference for how much power an adult human uses normally. At rest 1W/kg, at stand 2W/kg, and 12W/kg running. I guess this means standing desks actually work?</li>
 </ul>
-<p><img loading="lazy" alt="Guideline excerpt: an adult generates about 1 W per kg at rest, nearly 2 W per kg standing, and 12 W per kg running" class="addpic" src="/static/icnirp/6.png"/></p>
+<p><img alt="Guideline excerpt: an adult generates about 1 W per kg at rest, nearly 2 W per kg standing, and 12 W per kg running" class="addpic" height="146" loading="lazy" src="/static/icnirp/6.png" style="aspect-ratio: auto 930 / 146;" width="930"/></p>
 <ul>
 <li>Earlier I mentioned the distinction between surface and deep tissue EM energy absorption. The doc elaborates that at 6GHz, 86% of the power is absorbed in the first 8mm of skin. Surface heating is also less worrisome because we can get rid of it more easily.</li>
 </ul>
-<p><img loading="lazy" alt="Guideline excerpt: above 6 GHz heating is superficial, with 86% of power absorbed within 8 mm of the skin surface" class="addpic" src="/static/icnirp/7.png"/></p>
+<p><img alt="Guideline excerpt: above 6 GHz heating is superficial, with 86% of power absorbed within 8 mm of the skin surface" class="addpic" height="524" loading="lazy" src="/static/icnirp/7.png" style="aspect-ratio: auto 942 / 524;" width="942"/></p>
 <ul>
 <li>More tangential trivia, almost all human tissues get damaged beyond 42°C, exhibiting very little interperson variation. To respect this limit, ICNIRP tries to limit localized tissue heating to 41°C. </li>
 </ul>
-<p><img loading="lazy" alt="Guideline excerpt: tissue damage can occur above 41-43 degrees C, worsening with time spent at such temperatures" class="addpic" src="/static/icnirp/8.png"/></p>
+<p><img alt="Guideline excerpt: tissue damage can occur above 41-43 degrees C, worsening with time spent at such temperatures" class="addpic" height="288" loading="lazy" src="/static/icnirp/8.png" style="aspect-ratio: auto 938 / 288;" width="938"/></p>
 <ul>
 <li>Extremeties are usually around 33-36°C, while core tissues are closer to 38°. Therefore extremeties are limited in heating to +5°C, while core is limited to +2°C. </li>
 </ul>
-<p><img loading="lazy" alt="Guideline excerpt defining Type-1 limb and skin tissue at under 33-36 degrees C and Type-2 core tissue at under 38.5 degrees C" class="addpic" src="/static/icnirp/9.png"/></p>
+<p><img alt="Guideline excerpt defining Type-1 limb and skin tissue at under 33-36 degrees C and Type-2 core tissue at under 38.5 degrees C" class="addpic" height="470" loading="lazy" src="/static/icnirp/9.png" style="aspect-ratio: auto 928 / 470;" width="928"/></p>
 <ul>
 <li>Testicles stop making sperm when people sit down because they heat up. I wonder if the increase in desk jobs is responsible for the global decline in sperm count? </li>
 </ul>
-<p><img loading="lazy" alt="Guideline excerpt: spermatogenesis is reversibly reduced by the up to 2 degree C testes temperature rise caused by sitting" class="addpic" src="/static/icnirp/10.png"/></p>
+<p><img alt="Guideline excerpt: spermatogenesis is reversibly reduced by the up to 2 degree C testes temperature rise caused by sitting" class="addpic" height="382" loading="lazy" src="/static/icnirp/10.png" style="aspect-ratio: auto 922 / 382;" width="922"/></p>
 <ul>
 <li>They approximate whole-body SAR by using a 10g meat cube. They say the spread of heat in a 10g mass is "close enough" to a larger mass. </li>
 </ul>
-<p><img loading="lazy" alt="Guideline excerpt: SAR averaged over a 10 g mass measures radiofrequency-induced temperature rise from 100 kHz to 6 GHz" class="addpic" src="/static/icnirp/11.png"/></p>
+<p><img alt="Guideline excerpt: SAR averaged over a 10 g mass measures radiofrequency-induced temperature rise from 100 kHz to 6 GHz" class="addpic" height="196" loading="lazy" src="/static/icnirp/11.png" style="aspect-ratio: auto 928 / 196;" width="928"/></p>
 <ul>
 <li>ICNIRP wants to limit body temperature rises to 0.1C, because of this they choose a whole-body SAR limit of 0.4W/kg. For civilians who don't know what they're up against, the limit is 5x better at 0.08W/kg. This reduction is a bit arbitrary to me, but I appreciate the safety factor. </li>
 </ul>
-<p><img loading="lazy" alt="Guideline excerpt: a reduction factor of 10 was applied to the 1 degree C threshold for occupational exposure to cover uncertainty" class="addpic" src="/static/icnirp/12.png"/></p>
+<p><img alt="Guideline excerpt: a reduction factor of 10 was applied to the 1 degree C threshold for occupational exposure to cover uncertainty" class="addpic" height="246" loading="lazy" src="/static/icnirp/12.png" style="aspect-ratio: auto 954 / 246;" width="954"/></p>
 <ul>
 <li>Old people sweat 25% less effectively than younger people</li>
 </ul>
-<p><img loading="lazy" alt="Guideline excerpt: elderly people with lower sweat rates need only 4.5 W per kg to raise core temperature 1 degree C versus 6 W per kg" class="addpic" src="/static/icnirp/13.png"/></p>
+<p><img alt="Guideline excerpt: elderly people with lower sweat rates need only 4.5 W per kg to raise core temperature 1 degree C versus 6 W per kg" class="addpic" height="334" loading="lazy" src="/static/icnirp/13.png" style="aspect-ratio: auto 934 / 334;" width="934"/></p>
 <hr/>
 <p>I realized that 5G cell phones use frequencies covered by these guidelines (450MHz-6GHz and 24-52GHz). In light of ICNIRP's explanations, people who freak out about 5G affecting their babies don't make much sense — it's just the effects of heating, and our communications are so efficient that the heating is not even significant. While I enjoy doing my own research, these people should get better at it before being so vocal. </p>
-<p><img loading="lazy" alt="5G scaremongering meme of a flip phone and cell tower next to a crying child whose face is half skull" class="addpic" src="/static/icnirp/babies.png"/></p>
+<p><img alt="5G scaremongering meme of a flip phone and cell tower next to a crying child whose face is half skull" class="addpic" height="830" loading="lazy" src="/static/icnirp/babies.png" style="aspect-ratio: auto 964 / 830;" width="964"/></p>
 <p>It's cool: reading these guidelines I get a better understanding on how to think about quantifying safety. I also realize how much harder it would have been to spec safety without everything compiled together — thank you ICNIRP!</p>
 <p>Anyway, I hope you successfully stay away from dangerous EM waves until I see you next. Cya next time!</p></body></html>
 
@@ -482,6 +490,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

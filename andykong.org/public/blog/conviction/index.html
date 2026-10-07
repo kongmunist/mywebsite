@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>I&#39;ve been thinking about conviction | Andy Kong</title>
 <meta name="description" content="Projects, experiments, and writing by Andy Kong, building sensors to better understand the mind and body.">
@@ -319,6 +320,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -344,7 +352,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -364,10 +372,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -396,7 +404,7 @@
 <p>Family people with a long lease. The days are the same, each one a joy. You catch up but nothing’s changed. Dog’s at the vet again for eating marbles. We’re rewatching House. We’re making dinner with zucchini from the weekend farmer’s market. </p>
 <h1 id="unstable-sure-pursuing">Unstable, sure: pursuing</h1>
 <p>Risking and failing, doing their work with a smile. Independence, installations and workshops, but also grant rejections, rent increases, food stamps. I’ll be at the VR conference next month. Oh yea, I work for Nintendo at the moment. I’ve been exploring wax as a sculptural medium.</p>
-<p><img loading="lazy" alt="Meme 2x2 grid of stable vs unstable and sure vs unsure, each quadrant illustrated with a different image" class="addpic" src="/static/convictionmeme.png"/></p>
+<p><img alt="Meme 2x2 grid of stable vs unstable and sure vs unsure, each quadrant illustrated with a different image" class="addpic" height="1110" loading="lazy" src="/static/convictionmeme.png" style="aspect-ratio: auto 1596 / 1110;" width="1596"/></p>
 <p>This is an incomplete lens, but it is possible to analyze your life through it, figure out where you are and where you want to be. And if you aren’t sure yet, I think everyone gets there when they’re older, or comes to terms with their inability to change anymore. Anyway, who am I to say? I am only 25.</p></body></html>
 
 
@@ -420,6 +428,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

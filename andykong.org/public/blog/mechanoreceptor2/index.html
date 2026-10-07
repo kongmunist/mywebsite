@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Finding My Pacinian Corpuscles in vivo | Andy Kong</title>
 <meta name="description" content="If only Galen had had a vibrating motor">
@@ -320,6 +321,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -345,7 +353,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -365,10 +373,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -399,7 +407,7 @@
 <p>I have four unique mechanoreceptors embedded in my skin, and you probably do too. These are like little sensors in our skin which detect sensations like pain, hot and cold, vibration, and pressure.</p>
 <p>I read in a psychology textbook that out of the four mechanoreceptors, the two that live in deeper tissue are much less plentiful than the ones that live in the shallow tissue. These deeper ones are the Ruffini endings, which gauge skin stretch near joints, and the Pacinian corpuscles, which detect higher frequency vibrations. They are so sparse, in fact, that you can individually locate them on your skin surface. </p>
 <p class="caption">MRI scan of the Pacinian corpuscles in a corpse. <a href="https://www.semanticscholar.org/paper/Pacinian-corpuscles%3A-an-explanation-for-palmar-on-Rhodes-Murthy/dfc1c17d4cff70596b4bc3c913e5fef8ef69eeaa" target="_blank">Source</a> </p>
-<p><img loading="lazy" alt="MRI scan of the Pacinian corpuscles in a corpse " src="/static/mech2_pacinian.png"/></p>
+<p><img alt="MRI scan of the Pacinian corpuscles in a corpse " height="598" loading="lazy" src="/static/mech2_pacinian.png" style="aspect-ratio: auto 868 / 598;" width="868"/></p>
 <p>The Pacinian corpuscles are the focus of this post since their diameter is about 1mm, which makes them visible to the naked eye. I won't add the photo, but if you google it you'll find photos of a dissected hand with the Pacs exposed. They're huge compared to the other receptors!</p>
 <p>I'm abbreviating the Pacinians as Pacs, cause I'm gonna wind up using the word a lot. </p>
 <p>Anyway, My textbook claimed that the Pacs had a big receptive zone that they could sense vibration over, and that they had a peak sensitivity directly over the Pac itself. Looking at this MRI scan, I figured I'd try to find my hand's vibrational "hotspots" using a tiny vibrating wire. </p>
@@ -407,15 +415,15 @@
 <h1 id="hardware-setup">Hardware Setup</h1>
 <p>I always keep some linear resonant actuators on me, and they came in handy for generating a vibration of a specific frequency. These are just small, self-contained solenoids. I taped two to a jumper wire, and this acted as my vibrating point. I chose a higher vibration frequency of 500Hz to avoid the receptive ranges of my other mechanoreceptors. </p>
 <p class="caption">Pacinian Stimulator 3000</p>
-<p><img loading="lazy" alt="Pacinian Stimulator 3000" src="/static/mech2_pacstim.jpg"/></p>
+<p><img alt="Pacinian Stimulator 3000" height="384" loading="lazy" src="/static/mech2_pacstim.jpg" style="aspect-ratio: auto 484 / 384;" width="484"/></p>
 <p>I then poked this point all over my hand for about 2 hours. The Pacs are "rapidly-adapting" mechanoreceptors, meaning that they only respond to new stimulus and not to sustained stimulation. This meant each time I poked my skin, I felt a vibration sensation which immediately went away within half a second. So I had to do it a lot. </p>
 <p>I had some luck though. By repeating pokes over the same area a few times, I felt certain points that were especially sensitive. Not only would it feel like vibration, it would feel like a little spike or path of sensation travelling up my wrist/hand. I marked these points with a pen tip.</p>
 <p class="caption">Dots of high vibration sensitivity on the back of my hand</p>
-<p><img loading="lazy" alt="Dots of high vibration sensitivity on the back of my hand" src="/static/mech2_pacback.jpg"/></p>
+<p><img alt="Dots of high vibration sensitivity on the back of my hand" height="474" loading="lazy" src="/static/mech2_pacback.jpg" style="aspect-ratio: auto 454 / 474;" width="454"/></p>
 <p>Can I confirm that these were where my Pacs lived in my skin? No, I'm not going to actually cut myself and check. But the distribution lines up, and the sensation duration and localization also make sense to me. I don't think that the other mechanoreceptors would have been able to detect the 500Hz vibration frequency super well. </p>
 <p>The palm was a bit harder to feel differences in sensation, since the skin thickness also varies from the pads to the joints. Here's a few spots I found on my palm:</p>
 <p class="caption">Dots of high vibration sensitivity on my palm</p>
-<p><img loading="lazy" alt="Dots of high vibration sensitivity on my palm" src="/static/mech2_pacpalm.jpg"/></p>
+<p><img alt="Dots of high vibration sensitivity on my palm" height="484" loading="lazy" src="/static/mech2_pacpalm.jpg" style="aspect-ratio: auto 454 / 484;" width="454"/></p>
 <p><br/></p>
 <h1 id="aftereffects">Aftereffects</h1>
 <p>I held the spike with my right hand, and stimulated my left. I held it loosely, but still felt vibration in my right hand for a long time. At the end of the trial, my right hand had some weird sensations. For the next 30-45 minutes, whenever I tapped my index finger and thumb together, I felt a bouncing/springy sensation. Like hitting a drum, but the drum is just two of my fingers. It worked when I tapped other surfaces too, like my table. This felt strongest in my index finger, but it also worked for my middle finger and thumb. Really weird feeling, but probably not useful for anything. </p>
@@ -448,6 +456,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

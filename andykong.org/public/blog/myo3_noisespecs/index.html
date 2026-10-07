@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Myo3 Noise Specs | Andy Kong</title>
 <meta name="description" content="1.24µV of noise at 500,000x gain on a DIY electromyography sensor">
@@ -319,6 +320,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -344,7 +352,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -364,10 +372,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -388,21 +396,21 @@
             <p style="font-size:0.8em;"> Published November 29, 2020</p>
 <hr>
             <html><body><p>Today I tested the third iteration of my DIY EMG sensor. </p>
-<p><img loading="lazy" alt="Fresh myo3 boards from the oven" src="/static/myo3_board.png"/></p>
+<p><img alt="Fresh myo3 boards from the oven" height="235" loading="lazy" src="/static/myo3_board.png" style="aspect-ratio: auto 446 / 235;" width="446"/></p>
 <p class="caption">Fresh myo3 boards from the oven</p>
 <h3>Measuring the total gain</h3>
 <p>My function generator only goes down to 20 mV p-p, I'm using a 50kΩ and 10Ω resistor to make a voltage divier to divide my input signal by 5000.</p>
 <p>I'm using a 200Hz sine wave, since that's the center frequency of all my filtering. Its amplitude is 50 mV p-p. Afte the voltage divider, the signal actually going into the board is a 10 µV p-p sine wave. After the first stage, the output becomes 50 mV on the scope. It's like a magic trick — first we disappear the signal, then we make it reappear again!</p>
 <p>I lowered my output amplitude to as low as it could go, 20 mV p-p. This becomes 4 µV p-p after the divider, which becomes 20 mV after the first stage. What happens after the second stage? Glad you asked:</p>
-<p><img loading="lazy" alt="A choppy 2V sine wave, produced from a 4µV signal" src="/static/myo3_100hz.JPG"/></p>
+<p><img alt="A choppy 2V sine wave, produced from a 4µV signal" height="756" loading="lazy" src="/static/myo3_100hz.JPG" style="aspect-ratio: auto 1008 / 756;" width="1008"/></p>
 <p class="caption">A choppy 2V sine wave, amplified from a 4µV input signal</p>
 <p>We see that the 20mV signal becomes 2V, a gain of 100. After both stages, the total gain of a myo3 board is 500,000x, or 114 dB of gain. But that's not impressive if the noise is high — so what <em>is</em> the noise?</p>
 <h3>Noise measuring setup</h3>
 <p>I'm connecting the two inputs to the INA, and then grounding them to the center voltage of the power rails. </p>
-<p><img loading="lazy" alt="Noise testing setup for myo3" src="/static/myo3_noiseboardsetup.JPG"/></p>
+<p><img alt="Noise testing setup for myo3" height="605" loading="lazy" src="/static/myo3_noiseboardsetup.JPG" style="aspect-ratio: auto 806 / 605;" width="806"/></p>
 <p class="caption">Noise testing setup for myo3</p>
 <p>And here's what the output looks like after both stages:</p>
-<p><img loading="lazy" alt="Output signal of the myo3 after shorting its inputs. Peak to peak noise is 620 mV" src="/static/myo3_out3noise.JPG"/></p>
+<p><img alt="Output signal of the myo3 after shorting its inputs. Peak to peak noise is 620 mV" height="756" loading="lazy" src="/static/myo3_out3noise.JPG" style="aspect-ratio: auto 1008 / 756;" width="1008"/></p>
 <p class="caption">Output signal of the myo3 after shorting its inputs. Peak to peak noise is 620 mV</p>
 <p>Looks bad right? Well, let's do the calculation. </p>
 <p>After 500,000x gain, the output noise has a peak-to-peak voltage of 600-900mV. 0.62V/500000 = 0.00000124, or <em>1.24 µV</em>. </p>
@@ -430,6 +438,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

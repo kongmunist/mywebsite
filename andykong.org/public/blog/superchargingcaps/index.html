@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Fast-charging capacitors | Andy Kong</title>
 <meta name="description" content="Who has time for 5RC?">
@@ -318,6 +319,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -343,7 +351,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -363,10 +371,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -393,16 +401,16 @@
 <p>Ideally, we'd use some massive voltage source for charging, and then turn it off immediately when our capacitor hits the final voltage. We only use the previous method because we humans have slow reaction times, and can't turn off the voltage source quickly enough to avoid a potential capacitor explosion.</p>
 <p>But I'm <em>pretty sure</em> we've invented faster voltage switches than the human hand.</p>
 <h1 id="enter-the-humble-microcontroller">Enter, the humble microcontroller</h1>
-<p><img loading="lazy" alt="Arduino-enabled fast off switch" src="/static/sc1_setup.jpg"/></p>
+<p><img alt="Arduino-enabled fast off switch" height="907" loading="lazy" src="/static/sc1_setup.jpg" style="aspect-ratio: auto 1210 / 907;" width="1210"/></p>
 <p>All I did was connect an Arduino-controlled MOSFET to a 2200µF capacitor. The Arduino reads the voltage of the capacitor, and shuts off the MOSFET when the voltage gets past our set point (4V). I used 5V, 10V, 20V, and 30V for charging. Here's how long each one took:</p>
 <p class="caption">Charging with 5V</p>
-<p><img loading="lazy" alt="Charging with 5V" src="/static/sc1_chargeto4with5.jpg"/></p>
+<p><img alt="Charging with 5V" height="424" loading="lazy" src="/static/sc1_chargeto4with5.jpg" style="aspect-ratio: auto 560 / 424;" width="560"/></p>
 <p class="caption">Charging with 10V</p>
-<p><img loading="lazy" alt="Charging with 10V" src="/static/sc1_chargeto4with10.jpg"/></p>
+<p><img alt="Charging with 10V" height="427" loading="lazy" src="/static/sc1_chargeto4with10.jpg" style="aspect-ratio: auto 608 / 427;" width="608"/></p>
 <p class="caption">Charging with 20V</p>
-<p><img loading="lazy" alt="Charging with 20V" src="/static/sc1_chargeto4with20.jpg"/></p>
+<p><img alt="Charging with 20V" height="452" loading="lazy" src="/static/sc1_chargeto4with20.jpg" style="aspect-ratio: auto 604 / 452;" width="604"/></p>
 <p class="caption">Charging with 30V</p>
-<p><img loading="lazy" alt="Charging with 30V" src="/static/sc1_chargeto4with30.jpg"/></p>
+<p><img alt="Charging with 30V" height="402" loading="lazy" src="/static/sc1_chargeto4with30.jpg" style="aspect-ratio: auto 544 / 402;" width="544"/></p>
 <p>In text form, charging a 2200µF capacitor to 4V took:</p>
 <ul>
 <li>
@@ -423,9 +431,9 @@
 <p>We've seen how the real world does it; how about comparing it to theory?</p>
 <p>Here's the equation that governs how fast a capacitor charges. It calculates the cap's voltage given some time <em>t</em> connected to a voltage source Vs.</p>
 <p class="caption">Capacitor voltage after some time t, charging with a voltage Vsource</p>
-<p><img loading="lazy" alt="Capacitor voltage after some time t, charging with a voltage Vsource" src="/static/sc1_chargeVeq.png"/></p>
+<p><img alt="Capacitor voltage after some time t, charging with a voltage Vsource" height="65" loading="lazy" src="/static/sc1_chargeVeq.png" style="aspect-ratio: auto 349 / 65;" width="349"/></p>
 <p>Solving this backwards for <em>t</em>, we have some terrible looking equation for how long it would take to charge a capacitor given a source voltage.</p>
-<p><img loading="lazy" alt="Above equation solved for time t" src="/static/sc1_chargeTeq.png"/></p>
+<p><img alt="Above equation solved for time t" height="113" loading="lazy" src="/static/sc1_chargeTeq.png" style="aspect-ratio: auto 438 / 113;" width="438"/></p>
 <p>Plugging in our previous charging voltages and magically using R=1.5Ω, we get the following charge times:</p>
 <ul>
 <li>
@@ -483,6 +491,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

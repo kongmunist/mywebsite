@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>MacGyvering Electronics From Merch | Andy Kong</title>
 <meta name="description" content="TFW no batteries :(">
@@ -319,6 +320,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -344,7 +352,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -364,10 +372,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -391,19 +399,19 @@
 <h2 id="merch-to-the-rescue">Merch to the rescue!</h2>
 <p>My friend had received a small, rechargeable ring light from a CMU thing. Since it had been made this year and not in 2008, I had figured it probably had a charging circuit and LiPo in it, which would be useful in the future. Today was that day!</p>
 <p class="caption">Ring light on, courtesy of CMU</p>
-<p><img loading="lazy" alt="Ring light on" src="/static/mcg1_ringlight.jpg"/></p>
+<p><img alt="Ring light on" height="618" loading="lazy" src="/static/mcg1_ringlight.jpg" style="aspect-ratio: auto 582 / 618;" width="582"/></p>
 <p>Sam, if you're reading this, sorry for what you're about to witness. </p>
 <p class="caption">Cute little LiPo powering the ring light</p>
-<p><img loading="lazy" alt="Cute little LiPo in the ring light" src="/static/mcg1_battery.jpg"/></p>
+<p><img alt="Cute little LiPo in the ring light" height="424" loading="lazy" src="/static/mcg1_battery.jpg" style="aspect-ratio: auto 424 / 424;" width="424"/></p>
 <p>So I pried off the back hinge and spring, then broke my thumbnail on the front panel. Tried again with my nail clipper while fixing the rest of my thumbnail, and this revealed what I knew had to be in there: the tiniest little LiPo I had ever seen. </p>
 <p>Here's a better view of the circuit. I couldn't identify two of the chips here. </p>
 <p class="caption">Cheapest way to charge the cheapest LiPo</p>
-<p><img loading="lazy" alt="Cheapest way to charge the cheapest LiPo" src="/static/mcg1_circuit.jpg"/></p>
+<p><img alt="Cheapest way to charge the cheapest LiPo" height="781" loading="lazy" src="/static/mcg1_circuit.jpg" style="aspect-ratio: auto 797 / 781;" width="797"/></p>
 <p>The top half is connected to the button which turns on the light. There's 3 levels of light + off, so maybe a 4-state... resistor? Another current limiting device? Not exactly sure. But the SOT-23 is a low-side MOSFET, and the battery's ground connection goes through the other chip before reaching the FET. </p>
 <p>Bottom half is the battery charger. Looking at the resistors, it appears they're using a resistor divider with 5100Ω and 1200Ω to step the USB's 5V down to 5 x 5100/(1200+5100) = 4.04V, with at least 0.8mA going across the 1200Ω. Astounding cost saving measure. I'm not sure how the resistor is handling this, since almost 1mA across 1200Ω is 1W wasted heat, but props to them.</p>
 <p>And of course, I didn't even have a soldering iron. Two alligator clips saved the day, scavenged from another project.</p>
 <p class="caption">Alligator clips dangerously close to each other</p>
-<p><img loading="lazy" alt="Alligator clips dangerously close to each other" src="/static/mcg1_alligator.jpg"/></p>
+<p><img alt="Alligator clips dangerously close to each other" height="411" loading="lazy" src="/static/mcg1_alligator.jpg" style="aspect-ratio: auto 407 / 411;" width="407"/></p>
 <p>In the end, this worked for my purposes, except that it also let in current the other way. I had to add an LED to the path since I didn't have a real diode -.- but that's the last of my electronics adventure today.</p>
 <h2 id="did-you-learn-anything">Did you learn anything?</h2>
 <p>In the middle of doing this whole janky process, I went to CVS to buy scissors to cut some wire and didn't think to just buy a 9V. Serves me right for trying to be clever, next time I'm going for pragmatic.</p>
@@ -430,6 +438,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

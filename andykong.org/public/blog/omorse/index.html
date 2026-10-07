@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Is Morse Code Letter-Frequency Optimal? | Andy Kong</title>
 <meta name="description" content="Most common letters vs. Morse code length">
@@ -320,6 +321,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -345,7 +353,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -365,10 +373,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -392,24 +400,24 @@
 <p>The inventor of Morse code mentions counting the occurrences of letters in printer's type in order to dole out the shorter codes to more commonly used letters. For example, E and T are both single-symbol, while something like Z requires 4 symbols.</p>
 <p>I was interested in seeing just how good Morse got his letter frequencies, so I got a letter frequency table and the Morse code chart and correlated them against each other.</p>
 <h1 id="morse-code-charlength-vs-letter-frequency">Morse Code Char-Length vs. Letter Frequency</h1>
-<p><img loading="lazy" alt="Scatterplot of Morse code symbol length versus English letter frequency, with common letters like E and T shortest" class="addpic" src="/static/omorse/0.png"/></p>
+<p><img alt="Scatterplot of Morse code symbol length versus English letter frequency, with common letters like E and T shortest" class="addpic" height="377" loading="lazy" src="/static/omorse/0.png" style="aspect-ratio: auto 691 / 377;" width="691"/></p>
 <p>Further right is more common, further up is longer Morse sequences. We see some glaring gaps — O should possibly be a 2-char symbol instead of 3, maybe replacing M? But overall this follows the trend of less-common letters getting the longer end of the Morse code. </p>
 <hr/>
 <h1 id="morse-code-timelength-vs-letter-frequency">Morse Code Time-Length vs. Letter Frequency</h1>
 <p>Then I also wanted to know if the time length of each Morse letter also matched the letter frequency — the idea being that more common letters should be shorter in duration to make them easier to type. Morse is defined around the duration of a single dot — inter-symbol gaps are a dot long, and a dash is 3 dots long.</p>
-<p><img loading="lazy" alt="Scatterplot of Morse code time length in dot units versus letter frequency, showing O as a costly outlier at 11 units" class="addpic" src="/static/omorse/1.png"/></p>
+<p><img alt="Scatterplot of Morse code time length in dot units versus letter frequency, showing O as a costly outlier at 11 units" class="addpic" height="377" loading="lazy" src="/static/omorse/1.png" style="aspect-ratio: auto 686 / 377;" width="686"/></p>
 <p>Here is the same graph as above, but instead of Morse symbol length I'm plotting time length for each letter. The gaps here are even more extreme. "O" is typed out as "___", taking 11 dots of time despite being the 4th most common letter. "I" (..) appears less often than "A" (._), but is shorter to type. </p>
 <p>It's obvious that Morse code is clearly un-optimized for typing speed, which suggests that transmit speed wasn't actually that important in practical use. It is kinda frustrating that they didn't add such a simple improvement even though it would have helped a decent amount (10-20% I'm estimating).</p>
 <hr/>
 <h1 id="morse-transmit-speed-optimization">Morse Transmit Speed Optimization</h1>
 <p>While I know Morse was developed for terrible communication channels and could only transmit one tone, I couldn't help but think about the potential improvements especially in regards with multi-tone. If two tone were possible, a dash could be converted from a long symbol into a short dot in the other frequency.</p>
 <p>This graph compares the transmit time-lengths for each letter if dashes were 3 or 1 dots long. Y-axis is frozen for easier comparing. By adding one tone we can decrease time for any letter with a dash.</p>
-<p><img loading="lazy" alt="Side-by-side scatterplots of Morse time length per letter with 3-unit dashes versus 1-unit dashes" class="addpic" src="/static/omorse/3.png"/></p>
+<p><img alt="Side-by-side scatterplots of Morse time length per letter with 3-unit dashes versus 1-unit dashes" class="addpic" height="393" loading="lazy" src="/static/omorse/3.png" style="aspect-ratio: auto 686 / 393;" width="686"/></p>
 <p>Here's a harder-to-read improvements chart</p>
-<p><img loading="lazy" alt="Scatterplot with vertical lines showing how much each letter's Morse time drops if dashes were 1 unit long" class="addpic" src="/static/omorse/2.png"/></p>
+<p><img alt="Scatterplot with vertical lines showing how much each letter's Morse time drops if dashes were 1 unit long" class="addpic" height="393" loading="lazy" src="/static/omorse/2.png" style="aspect-ratio: auto 686 / 393;" width="686"/></p>
 <p>Finally, the approximate speedup offered by switching dashes to dots, and then further even removing the spaces between letters.</p>
-<p><img loading="lazy" alt="Bar chart of average time per letter: 6.09 units for normal Morse, 4.09 with 1-unit dashes, 2.54 with no gaps" class="addpic" src="/static/omorse/4.png"/></p>
-<p><img loading="lazy" alt="Console output listing average time per letter and speedups: 48.94% with 1-unit dashes, 139.27% with no gaps too" class="addpic" src="/static/omorse/morsespeedup.png"/></p>
+<p><img alt="Bar chart of average time per letter: 6.09 units for normal Morse, 4.09 with 1-unit dashes, 2.54 with no gaps" class="addpic" height="435" loading="lazy" src="/static/omorse/4.png" style="aspect-ratio: auto 554 / 435;" width="554"/></p>
+<p><img alt="Console output listing average time per letter and speedups: 48.94% with 1-unit dashes, 139.27% with no gaps too" class="addpic" height="220" loading="lazy" src="/static/omorse/morsespeedup.png" style="aspect-ratio: auto 900 / 220;" width="900"/></p>
 <p>So the total improvement isn't nuts, around 50% in optimal cases with dashes being 1 dot long. This doesn't even account for possible improvements when properly staggering the Morse length vs. letter frequency. </p>
 <hr/>
 <h1 id="who-cares-why-are-you-learning-outdated-radio-speak">Who cares, why are you learning outdated radio speak?</h1>
@@ -440,6 +448,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

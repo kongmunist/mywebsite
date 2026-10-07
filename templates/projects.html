@@ -27,8 +27,8 @@
       "headline": {{ preview.title|tojson }},
       "description": {{ preview.description|tojson }},
       "datePublished": {{ page.meta.date.isoformat()|tojson }},
-      "url": {{ (BASE_URL ~ request.path)|tojson }},
-      "mainEntityOfPage": {{ (BASE_URL ~ request.path)|tojson }},
+      "url": {{ preview.url|tojson }},
+      "mainEntityOfPage": {{ preview.url|tojson }},
       "image": {{ preview.image|tojson }},
       "author": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"},
       "publisher": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"}

@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Playing sounds with an Arduino, speaker, and no amplifier | Andy Kong</title>
 <meta name="description" content="LM386 audio amplifier? I &#39;ardly know her!">
@@ -321,6 +322,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -346,7 +354,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -366,10 +374,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -391,12 +399,12 @@
 <hr>
             <html><body><p>Today in Being Lazy With Andy, I'm gonna show you how to play audio directly from a microcontroller's output pins — no op amp, no transistor.</p>
 <p class="caption">LED for kicks</p>
-<p><img loading="lazy" alt="LED for kicks" src="/static/direct2wav_fullsetup.jpg"/></p>
+<p><img alt="LED for kicks" height="971" loading="lazy" src="/static/direct2wav_fullsetup.jpg" style="aspect-ratio: auto 608 / 971;" width="608"/></p>
 <h2 id="context">Context</h2>
 <p>I'm currently doing an Easy button hack-apart, which I'll showcase later. As an intermediate step, I wanted to play custom sounds from the speaker. I don't have any audio amplifiers lying around, and besides, there's not a ton of room in the button itself to fit that. I will probably end up using a transistor, but at the moment I just wanted to test the feasability of playing audio without anything except the speaker and Arduino. The results are useable — loud enough to be heard in a bedroom and passable for voices.</p>
 <p>It makes sense for a microcontroller to play WAVs — they're already just pressure levels, so you should be able to play each pressure level as a tone with a set time. Luckily many people have thought of this, and have written lovely libraries for it. Primarily, this relies on some Arduino Playground code written by Michael Smith, and the lovely tutorial by <a href="http://highlowtech.org/?p=1963">High-Low Tech Group</a> at MIT Media Lab. You can also find this library from Arduino's IDE directly by searching PCM Audio in the Tools-&gt;Manage Libraries... window. </p>
 <p class="caption">PCM Library at the click of a button</p>
-<p><img loading="lazy" alt="PCM Library at the click of a button" src="/static/direct2wav_library.png"/></p>
+<p><img alt="PCM Library at the click of a button" height="466" loading="lazy" src="/static/direct2wav_library.png" style="aspect-ratio: auto 819 / 466;" width="819"/></p>
 <h2 id="basic-setup-instructions">Basic Setup Instructions</h2>
 <p>Hardware-wise you need to connect the GND to GND, and pin 11 of your Arduino to the V+ of the speaker. I actually think the speaker is voltage polarity agnostic, so either direction should work. I also added a 330Ω resistor in series with the speaker to limit the current draw from the Arduino's pins. I think their max safe draw is 20mA, and this speaker is probably 8Ω and would draw 5V/8Ω = 625mA at max output. With the resistor, this is limited to 5V/338 ≈ 15 mA. </p>
 <p>For the software, the starter code from high-low tech should boot directly and work. When it starts, you should hear a lady's voice say "Arduino Demilvinove" or however you spell it. </p>
@@ -407,7 +415,7 @@
 <p>I used QuickTime to record some brief audio, and then converted the .aifc file to .wav using <a href="https://audio.online-convert.com/convert/aifc-to-wav">this site</a>, which is handy because it has many of the downsampling options I wanted. </p>
 <p>I then tried to use their Processing script to copy a .wav to my clipboard, but could't run it because it was outdated. I tried to modify it in Processing to compile, but for some reason it wouldn't parse the .wav properly :(. Instead, I found <a href="https://guilhermerodrigues680.github.io/wav2c-online/">this web version</a> of wav2c. Turns out lots of people have solved this problem, it's just very difficult to find a web version that will do it for you in JS. </p>
 <p>Anyway, it gives you a nice long text of values you can copy and paste into your code. I would like this better if it were all on one line, but that might be a personal preference. </p>
-<p><img loading="lazy" alt="Image Caption" src="/static/wav2c_online.png"/></p>
+<p><img alt="Image Caption" height="620" loading="lazy" src="/static/wav2c_online.png" style="aspect-ratio: auto 1176 / 620;" width="1176"/></p>
 <p>Paste it in the example code, comment out or delete the old line with all the values, and hit start! Your Arduino should play your sound file!</p>
 <h1 id="additional-things-you-can-try">Additional things you can try</h1>
 <h3>Optimizing for voice</h3>
@@ -444,6 +452,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

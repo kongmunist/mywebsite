@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Teardown of the Urbanista Los Angeles headphones | Andy Kong</title>
 <meta name="description" content="Removing another self-powering device from the world">
@@ -319,6 +320,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -344,7 +352,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -364,10 +372,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -391,24 +399,24 @@
 <h1 id="background">Background</h1>
 <p>We're currently in a battery-powered era of devices, driven by the cheap availability of rechargable, high density lithium batteries. However, as the chips powering these devices get more efficient, environmental energy sources like light or heat become a large enough source of power to contribute meaningful amounts of power to the device's battery life. Today, electronics that add energy harvesting can 2-3x battery life over pure battery-operated ones, especially if the duty cycle is low. </p>
 <p>The development of light-harvesting products specifically is driven by the availablility of flexible, "normal"-looking PowerFoyle solar cells by a Swedish company called Exeger. Light-harvesting electronics require a minimum power (light level) to harvest properly, and the minimum light level is higher the smaller the photovoltaic cell. PowerFoyle's cells are optimized for indoor harvesting so even dim indoor lighting can make it work, and the consumer device with the most area turns out to be headphones.</p>
-<p><img loading="lazy" alt="Exeger promo shot of hands flexing a leather-textured PowerFoyle solar cell strip" class="addpic" src="/static/urbanista-teardown/0.png"/></p>
+<p><img alt="Exeger promo shot of hands flexing a leather-textured PowerFoyle solar cell strip" class="addpic" height="675" loading="lazy" src="/static/urbanista-teardown/0.png" style="aspect-ratio: auto 1200 / 675;" width="1200"/></p>
 <p>Since we all work in the same space, I felt compelled to get one and test their panels myself. Exeger has partnered with a lot of big brands like JBL and Adidas, but the cheapest device I could find on eBay was a refurbed/stolen pair of Urbanista Los Angeles headphones.</p>
-<p><img loading="lazy" alt="Urbanista web store page for the Los Angeles hybrid ANC headphones, marked sold out at 119 dollars" class="addpic" src="/static/urbanista-teardown/1.png"/></p>
+<p><img alt="Urbanista web store page for the Los Angeles hybrid ANC headphones, marked sold out at 119 dollars" class="addpic" height="1542" loading="lazy" src="/static/urbanista-teardown/1.png" style="aspect-ratio: auto 2582 / 1542;" width="2582"/></p>
 <p>My interests lie mostly in the PV cell and the harvesting methodology, but I'm always interested to see how people make certain mechanisms at scale. The rest of this post will mostly be pictures.</p>
 <h1 id="teardown">Teardown</h1>
 <p>Here's the device</p>
-<p><img loading="lazy" alt="Black Urbanista Los Angeles headphones lying on a paper-covered workbench before disassembly" class="addpic" src="/static/urbanista-teardown/2.png"/></p>
+<p><img alt="Black Urbanista Los Angeles headphones lying on a paper-covered workbench before disassembly" class="addpic" height="666" loading="lazy" src="/static/urbanista-teardown/2.png" style="aspect-ratio: auto 868 / 666;" width="868"/></p>
 <p>Here's the panel we're after, built into the top band</p>
-<p><img loading="lazy" alt="Hand holding the top band with the Powerfoyle logo engraved on the built-in solar panel" class="addpic" src="/static/urbanista-teardown/3.png"/></p>
+<p><img alt="Hand holding the top band with the Powerfoyle logo engraved on the built-in solar panel" class="addpic" height="768" loading="lazy" src="/static/urbanista-teardown/3.png" style="aspect-ratio: auto 1024 / 768;" width="1024"/></p>
 <p>We start by popping off the pieces of the device that are snap-fit — The inner band, parts of the outer band, the earmuffs. You can immediately see they've strain reliefed the cable on the headband</p>
-<p><img loading="lazy" alt="Headband with its snap-fit covers popped off, exposing the strain-relieved cable running through it" class="addpic" src="/static/urbanista-teardown/4.png"/></p>
+<p><img alt="Headband with its snap-fit covers popped off, exposing the strain-relieved cable running through it" class="addpic" height="776" loading="lazy" src="/static/urbanista-teardown/4.png" style="aspect-ratio: auto 754 / 776;" width="754"/></p>
 <p>There's a couple of stickers keeping the band together, once those go the PV cell just falls out </p>
-<p><img loading="lazy" alt="Hands pulling the headband frame apart, with the coiled interconnect cable and inner rails exposed" class="addpic" src="/static/urbanista-teardown/5.png"/></p>
-<p><img loading="lazy" alt="Freed PowerFoyle solar cell strip with its flex circuit and QR labels, next to the two detached earcups" class="addpic" src="/static/urbanista-teardown/6.png"/></p>
+<p><img alt="Hands pulling the headband frame apart, with the coiled interconnect cable and inner rails exposed" class="addpic" height="994" loading="lazy" src="/static/urbanista-teardown/5.png" style="aspect-ratio: auto 1000 / 994;" width="1000"/></p>
+<p><img alt="Freed PowerFoyle solar cell strip with its flex circuit and QR labels, next to the two detached earcups" class="addpic" height="1294" loading="lazy" src="/static/urbanista-teardown/6.png" style="aspect-ratio: auto 1286 / 1294;" width="1286"/></p>
 <p>I used a clamp to pop off the two outer shell bits on the headphone themselves. The right one contains the harvesting and bluetooth chips (labeled on paper), and 2 mics for the noise-cancelling. </p>
-<p><img loading="lazy" alt="Opened right earcup and solar band beside handwritten notes of chip markings, including the SUNBST harvester" class="addpic" src="/static/urbanista-teardown/7.png"/></p>
+<p><img alt="Opened right earcup and solar band beside handwritten notes of chip markings, including the SUNBST harvester" class="addpic" height="908" loading="lazy" src="/static/urbanista-teardown/7.png" style="aspect-ratio: auto 1734 / 908;" width="1734"/></p>
 <p>The left earmuff has a 750mAh battery (10 kJ), PMIC, and 1 mic. I roughly calculated charging rate in direct sunlight and came up with 3-4 hrs to go from 0 to 100%.</p>
-<p><img loading="lazy" alt="Inside the left earcup: a silver 750 mAh 3.7 V pouch battery wired to the PMIC board" class="addpic" src="/static/urbanista-teardown/8.png"/></p>
+<p><img alt="Inside the left earcup: a silver 750 mAh 3.7 V pouch battery wired to the PMIC board" class="addpic" height="1044" loading="lazy" src="/static/urbanista-teardown/8.png" style="aspect-ratio: auto 1060 / 1044;" width="1060"/></p>
 <p>The part of the band coupling to the earmuffs (for the wire pass-through) is made of steel, which I found a bit surprising — its the only mechanical component that's made of metal in the whole device. Actually I felt a bit bad seeing how good the build quality was during the teardown. It was taken apart in a way that could be put back together, but I'm not really interested. </p>
 <h1 id="analysis">Analysis</h1>
 <p>From my brief research into this, Exeger bought another company called Sunboost which was also nordic in origin, and this is the harvester chip that's labeled SUNBST. Exeger also likes to partner with e-peas, a Belgian chip company. For now I don't have more info, so I'll just leave this section a stub. </p>
@@ -445,6 +453,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

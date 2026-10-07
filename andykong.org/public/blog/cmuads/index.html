@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Most-scanned bulletin boards at CMU | Andy Kong</title>
 <meta name="description" content="Finally publicizing some sneaky data collection from 4 years ago">
@@ -319,6 +320,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -344,7 +352,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -364,10 +372,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -389,18 +397,18 @@
 <hr>
             <html><body><p>Hello!</p>
 <p>Back when I attended CMU, there were these massive bulletin boards around campus full of adverts from students and profs. Students usually promoted their app/club/org/student course, and professors pushed their classes.</p>
-<p><img loading="lazy" alt="Campus bulletin board crowded with flyers for tutoring, MCAT prep, student clubs, and events" class="addpic" src="/static/cmuads/0.jpg"/></p>
+<p><img alt="Campus bulletin board crowded with flyers for tutoring, MCAT prep, student clubs, and events" class="addpic" height="600" loading="lazy" src="/static/cmuads/0.jpg" style="aspect-ratio: auto 800 / 600;" width="800"/></p>
 <p>When I started putting my own ads on these boards, I was always curious which b-boards were the most frequently looked at. For instance, the board between the Sorrells library and the bathroom gets a lot of traffic, but the people walking there were probably pretty focused on studying. Whereas the UC bulletin boards get less foot traffic, but the people there seem calmer since they aren't walking fast to get to class.</p>
 <p>Anyway, when I finished a campus events aggregator called <a href="../../projects/carnegiecalendar">Carnegie Calendar</a> and wanted to promote it by putting up bulletins, I finally had my chance to determine the highest engagement b-board.</p>
 <p>I printed out 63 of these flyers promoting Carnegie Calendar, each with a unique QR code demarcated by this little number in the corner. Each QR code led to the same website with a different trailing URL argument, which my server recorded in a text file. </p>
 <p class="caption"> See the little 1? </p>
-<p><img loading="lazy" alt="See the little 1?" class="addpic" src="/static/CCzoomin.png"/></p>
+<p><img alt="See the little 1?" class="addpic" height="596" loading="lazy" src="/static/CCzoomin.png" style="aspect-ratio: auto 848 / 596;" width="848"/></p>
 <p>I got a bunch of friends to help me put up the QR codes (Thanks Nancy Sam Ruijie and I think Nate?) and waited for the data to roll in.</p>
 <p>I always wanted to sell this data to some overzealous student group that puts up a ton of flyers and cares about it, but after 4 years I'm realizing that's probably not gonna happen. So I've tabulated the results into this map below.</p>
-<p><img loading="lazy" alt="CMU campus map labeled with QR scan counts per building; the UC leads with 42, then Wean 24 and Gates 21" class="addpic" src="/static/cmuads/1.png"/></p>
+<p><img alt="CMU campus map labeled with QR scan counts per building; the UC leads with 42, then Wean 24 and Gates 21" class="addpic" height="1627" loading="lazy" src="/static/cmuads/1.png" style="aspect-ratio: auto 2170 / 1627;" width="2170"/></p>
 <p>More granularly, the per-bulletin board data can be found <a href="https://docs.google.com/spreadsheets/d/1T-BplbYhJhCCI-hyfR-BIS-O5AUM7uf--s4L8abqz_0/edit#gid=1010815453">here</a>.</p>
 <p>A day or two after all the flyers were up, I realized that it would be free traffic if I also advertised the website in the school Facebook groups. I made a separate URL extension for the group links and posted it. The single Facebook link received around 6x the visits to all in-person links despite only being up for like 8 hours. </p>
-<p><img loading="lazy" alt="Spreadsheet tally comparing 139 visits from in-person boards to 832 from the online link" class="addpic" src="/static/cmuads/2.png"/></p>
+<p><img alt="Spreadsheet tally comparing 139 visits from in-person boards to 832 from the online link" class="addpic" height="132" loading="lazy" src="/static/cmuads/2.png" style="aspect-ratio: auto 498 / 132;" width="498"/></p>
 <p>As with all deploys, some event I scraped the first day of public release ended up busting the website, and I didn't realize until noon the next day. I always wonder about those missed first impressions. Anyway, enough lore for the day. Cya next time!</p></body></html>
 
 
@@ -424,6 +432,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>My Vitalia Experience | Andy Kong</title>
 <meta name="description" content="Seven days in a city trying to usurp death">
@@ -318,6 +319,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -343,7 +351,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -363,10 +371,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -387,7 +395,7 @@
             <p style="font-size:0.8em;"> Published February 23, 2024</p>
 <hr>
             <html><body><p>Hello. I just got back from Vitalia, a pop-up city in Prospera, a special economic zone (ZEDE) on Roatán, an island which fields a lot of cruise ship tourists and is part of the nation of Honduras, a country consisting of AT LEAST 99 islands. </p>
-<p><img loading="lazy" alt="Google search snippet citing Wikipedia that there are at least 99 islands in Honduras" class="addpic" src="/static/vitalia1/0.png"/></p>
+<p><img alt="Google search snippet citing Wikipedia that there are at least 99 islands in Honduras" class="addpic" height="392" loading="lazy" src="/static/vitalia1/0.png" style="aspect-ratio: auto 806 / 392;" width="806"/></p>
 <p>I'm going to show some highlights and work through a "should I go to Vitalia-like thing in the future" scenario with you.</p>
 <p>Generally, Vitalia felt like a vacation amongst like-minded people. I came during an off-week, so there wasn't a ton of networking or talks going on, but this gave me more time to have good conversations with people with mutual rare interests. I think it's worth going for an on-week, but off-week it's just a very casual gathering + vacation.</p>
 <hr/>
@@ -402,12 +410,12 @@
 </li>
 </ul>
 <p class="caption"> Underutilized electronics workshop at Vitalia </p>
-<p><img loading="lazy" alt="Underutilized electronics workshop at Vitalia" class="addpic" src="/static/vitalia1/2.jpeg"/></p>
+<p><img alt="Underutilized electronics workshop at Vitalia" class="addpic" height="1253" loading="lazy" src="/static/vitalia1/2.jpeg" style="aspect-ratio: auto 1370 / 1253;" width="1370"/></p>
 <ul>
 <li>There are lots of Quantified Self people, nootropics people, and implant people. These fit my interests pretty well, so I enjoyed talking to these people — I've never found as dense a population as Vitalia. While I was there, the Biohacker DAO ran an intranasal insulin vs. cognition study and let anyone try their hand at analyzing the data. My roommate was into nootropics, and had purchased and tried many of the compounds I asked him about. And the Augmentation Lab, ran by Cassox of <a href="https://augmentationlimitles.ipage.com/">Augmentation Limitless</a> always had a couple cyborgs hanging out that would entertain fun conversations on transhumanism. </li>
 </ul>
 <p class="caption"> Cognitive enhancement / longevity substances table. Only legal stuff of course, and a ton of olive oil. </p>
-<p><img loading="lazy" alt="Cognitive enhancement / longevity substances table. Only legal stuff of course, and a ton of olive oil." class="addpic" src="/static/vitalia1/3.jpeg"/></p>
+<p><img alt="Cognitive enhancement / longevity substances table. Only legal stuff of course, and a ton of olive oil." class="addpic" height="768" loading="lazy" src="/static/vitalia1/3.jpeg" style="aspect-ratio: auto 1024 / 768;" width="1024"/></p>
 <ul>
 <li>
 <p>There were also many crypto people. During my stay, there was some kind of fundraiser on Gitcoin for Vitalia which used "quadratic funding" to match donations, and several people were fully interested in making useful cryptocurrencies. I find it hard to talk to those people, but I did like seeing real-world use cases for cryptocurrency. Even then, I thought many of the Gitcoin projects were stupid — IMO, creating some dashboard or display or status token should not require much crowdfunding.</p>
@@ -420,12 +428,12 @@
 </li>
 </ul>
 <p class="caption"> One of the talks, History of Cybernetics, hosted by Cass and Fraiz </p>
-<p><img loading="lazy" alt="One of the talks, History of Cybernetics, hosted by Cass and Fraiz" class="addpic" src="/static/vitalia1/4.png"/></p>
+<p><img alt="One of the talks, History of Cybernetics, hosted by Cass and Fraiz" class="addpic" height="1160" loading="lazy" src="/static/vitalia1/4.png" style="aspect-ratio: auto 1712 / 1160;" width="1712"/></p>
 <ul>
 <li>Most longevity people focused on genetic stuff, altering aging or improving cognition at the DNA level (I think this approach comes from watching Aubrey de Grey?). I find this approach a bit long-winded — highly skeptical that simply switching a fetus's SNPs to the slightly higher IQ ones would lead to any benefit in intelligence without causing some awful incidental genetic mutations. Price of progress or avoidable folly?</li>
 </ul>
 <h2 id="honduras">Honduras</h2>
-<p><img loading="lazy" alt="Lush hillside on Roatan with tropical forest, red-roofed villas, palm trees, and a golf green" class="addpic" src="/static/vitalia1/5.jpg"/></p>
+<p><img alt="Lush hillside on Roatan with tropical forest, red-roofed villas, palm trees, and a golf green" class="addpic" height="2328" loading="lazy" src="/static/vitalia1/5.jpg" style="aspect-ratio: auto 3024 / 2328;" width="3024"/></p>
 <h3>Climate</h3>
 <ul>
 <li>
@@ -439,17 +447,17 @@
 </li>
 </ul>
 <p class="caption"> Weird pirates everywhere in my hotel </p>
-<p><img loading="lazy" alt="Weird pirates everywhere in my hotel" class="addpic" src="/static/vitalia1/6.jpg"/></p>
+<p><img alt="Weird pirates everywhere in my hotel" class="addpic" height="2217" loading="lazy" src="/static/vitalia1/6.jpg" style="aspect-ratio: auto 2606 / 2217;" width="2606"/></p>
 <h3>Food</h3>
 <ul>
 <li>Food is not cheap. At the resort you have an option of three places, and all the food is... dry? This is the word I'm going with. I felt like all the food I ate parched me. Their rice contains less water than I'm used to, beans are dry, meat is usually dry, fish (fried) is dry. The last day I had a pasta with lobster, that meal really felt good and wet.</li>
 </ul>
 <p class="caption"> We have the same ramen at home, except not the shrimp flavored one. I bought one of those to try </p>
-<p><img loading="lazy" alt="We have the same ramen at home, except not the shrimp flavored one. I bought one of those to try" class="addpic" src="/static/vitalia1/7.jpeg"/></p>
+<p><img alt="We have the same ramen at home, except not the shrimp flavored one. I bought one of those to try" class="addpic" height="712" loading="lazy" src="/static/vitalia1/7.jpeg" style="aspect-ratio: auto 768 / 712;" width="768"/></p>
 <ul>
 <li>The grocery store nearest my hotel stocked a lot of American goodies, possibly for the tourists to feel at home. I saw several Kirkland branded things, and many familiar canned goods. This kinda took away the appeal of shopping at a local store, but I did find a few items to enjoy. Particularly, this brand of "drinkable" yogurt. The yogurt is basic cup-yogurt consistency in a large water bottle form-factor, and it's delicious though hard to drink. Prices mostly match US groceries. </li>
 </ul>
-<p><img loading="lazy" alt="Bottles of Dos Pinos drinkable yogurt in blueberry and strawberry flavors next to water bottles" class="addpic" src="/static/vitalia1/8.jpeg"/></p>
+<p><img alt="Bottles of Dos Pinos drinkable yogurt in blueberry and strawberry flavors next to water bottles" class="addpic" height="642" loading="lazy" src="/static/vitalia1/8.jpeg" style="aspect-ratio: auto 740 / 642;" width="740"/></p>
 <h3>Random</h3>
 <ul>
 <li>
@@ -484,7 +492,7 @@
 </li>
 </ul>
 <p class="caption"> My new friend James </p>
-<p><img loading="lazy" alt="My new friend James" class="addpic" src="/static/vitalia1/9.jpg"/></p></body></html>
+<p><img alt="My new friend James" class="addpic" height="2316" loading="lazy" src="/static/vitalia1/9.jpg" style="aspect-ratio: auto 2316 / 2316;" width="2316"/></p></body></html>
 
 
 
@@ -505,6 +513,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

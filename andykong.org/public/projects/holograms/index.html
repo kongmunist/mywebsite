@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Laser Holograms | Andy Kong</title>
 <meta name="description" content="Trapping 3D objects in a 2D sheet of glass">
@@ -207,6 +208,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -232,7 +240,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -252,10 +260,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -281,13 +289,14 @@
 <p>To expose them, you use a coherent light source, a laser. Diode lasers like those found in presentation pointers are acceptable, but their coherence length is too short to capture anything deep (&gt;1cm). Really, you want to get an old helium-neon gas laser / tube laser off eBay (also called a HeNe, usually from SpectraPhysics or Melles-Griot), this will run you about $150-$300 for the laser tube and the power supply. Make sure you get one with a power supply, because it's kind of hard to DIY. These generally have a coherence length in the 10s of centimeters, more than sufficient for your holography needs. </p>
 <p>You set up the plate over your objects, then expose from the top. Later when you show people, you'll have to illuminate the hologram from the same direction that you exposed it from, so make sure it's not an uncomfortable angle.</p>
 <p>Wash, Cure, etc. Please email me if you want me to add more steps, otherwise, it's going to take a few months for me to get back to this... </p>
-<p><img loading="lazy" alt="Darkened bench holography setup with a red laser spread across a taped-down black plate, toy car and rubber glove nearby" class="addpic" src="/static/holograms/firsttry_1.jpeg"/></p>
-<p><img loading="lazy" alt="Hologram plate glowing pink over a pile of coins during laser exposure, the room lit only by a green safelight" class="addpic" src="/static/holograms/firsttry_2.jpeg"/></p>
-<p><img loading="lazy" alt="Developed glass hologram plate showing faint reddish images of coins floating within it" class="addpic" src="/static/holograms/firsttry_4.jpeg"/></p></body></html>
+<p><img alt="Darkened bench holography setup with a red laser spread across a taped-down black plate, toy car and rubber glove nearby" class="addpic" height="907" loading="lazy" src="/static/holograms/firsttry_1.jpeg" style="aspect-ratio: auto 1210 / 907;" width="1210"/></p>
+<p><img alt="Hologram plate glowing pink over a pile of coins during laser exposure, the room lit only by a green safelight" class="addpic" height="1021" loading="lazy" src="/static/holograms/firsttry_2.jpeg" style="aspect-ratio: auto 907 / 1021;" width="907"/></p>
+<p><img alt="Developed glass hologram plate showing faint reddish images of coins floating within it" class="addpic" height="906" loading="lazy" src="/static/holograms/firsttry_4.jpeg" style="aspect-ratio: auto 907 / 906;" width="907"/></p></body></html>
         </div>
         <p style="line-height:300%;">&nbsp;</p>
 </div>
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

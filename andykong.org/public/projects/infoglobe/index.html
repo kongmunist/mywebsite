@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Hacking The Olympia InfoGlobe | Andy Kong</title>
 <meta name="description" content="Kinda-vintage internet-connected spinning-LED bulletin-board">
@@ -204,6 +205,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -229,7 +237,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -249,10 +257,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -268,7 +276,7 @@
                 <p style="margin-bottom: 5px; margin-top: 0px">Published: 2023-11-05</p>
 
                 <hr>
-            <html><body><p><img loading="lazy" alt="Olympia Infoglobe with a translucent blue dome displaying a message on its spinning LED arm" class="addpic" src="/static/infoglobe_hero.png"/></p>
+            <html><body><p><img alt="Olympia Infoglobe with a translucent blue dome displaying a message on its spinning LED arm" class="addpic" height="387" loading="lazy" src="/static/infoglobe_hero.png" style="aspect-ratio: auto 498 / 387;" width="498"/></p>
 <p>Last year I co-opted an Olympia InfoGlobe display with an ESP8266 and made the code public <a href="https://gist.github.com/kongmunist/a8bdadbacda4bcb129cd183f2f0fffc5">here</a>. </p>
 <p>The hardware details are in blog posts <a href="https://andykong.org/blog/infoglobetutorial1/">part 1</a> and <a href="https://andykong.org/blog/infoglobetutorial2/">part 2</a>, and I walk through the software in <a href="https://andykong.org/blog/infoglobetutorial3/">part 3</a></p>
 <hr/>
@@ -276,24 +284,25 @@
 <p>A middle school teacher was cleaning out their closet and wanted to throw away their InfoGlobe. A valid decision, considering that it's useless without a landline phone and spheres don't pack efficiently. I promised them I'd make something cool with it and saved it from the landfill, at least for a few years. </p>
 <p>I started playing with Arduinos to make this thing say what I wanted, and I got kinda close but never figured out the delays in the IR messaging protocol.</p>
 <p class="caption"> (2018) Early attempt to make the hacked Infoglobe, timings are off so some letters are missing </p>
-<p><img loading="lazy" alt="(2018) Early attempt to make the hacked Infoglobe, timings are off so some letters are missing" class="addpic" src="/static/infoglobe_earlytry.jpg"/></p>
+<p><img alt="(2018) Early attempt to make the hacked Infoglobe, timings are off so some letters are missing" class="addpic" height="1031" loading="lazy" src="/static/infoglobe_earlytry.jpg" style="aspect-ratio: auto 946 / 1031;" width="946"/></p>
 <p>I revisited it a few years later, while working at a software company. During the day, I'd get tired of looking at computer screens for hours on end, and wanted some way to talk to my friends when I got home that didn't involve typing at them on my phone or computer. The reader may mention letters or other physical artifacts, but I also wanted semi-instantaneous communication. </p>
 <p>With my newfound electrical engineering skills, I vanquished the timing issue and got consistent messages to show up on the InfoGlobe. </p>
 <p class="caption"> (2022) Photo of the modern, working version of the Infoglobe. Desk has not gotten any cleaner </p>
-<p><img loading="lazy" alt="(2022) Photo of the modern, working version of the Infoglobe. Desk has not gotten any cleaner" class="addpic" src="/static/infoglobe_booyah.png"/></p>
+<p><img alt="(2022) Photo of the modern, working version of the Infoglobe. Desk has not gotten any cleaner" class="addpic" height="1342" loading="lazy" src="/static/infoglobe_booyah.png" style="aspect-ratio: auto 1594 / 1342;" width="1594"/></p>
 <hr/>
 <h2 id="interactions-now">Interactions now</h2>
 <p>Then I created a website where anyone could leave messages to be displayed on my 'globe. This is totally unmoderated, so do not get mad at me if it says something mean about anyone.</p>
 <p class="caption"> Screenshot of the Infoglobe website where messages can be uploaded. This is actually how I learned of Gorbachev's death </p>
-<p><img loading="lazy" alt="Screenshot of the Infoglobe website where messages can be uploaded. This is actually how I learned of Gorbachev's death" class="addpic" src="/static/infoglobe_websiteex.jpg"/></p>
+<p><img alt="Screenshot of the Infoglobe website where messages can be uploaded. This is actually how I learned of Gorbachev's death" class="addpic" height="641" loading="lazy" src="/static/infoglobe_websiteex.jpg" style="aspect-ratio: auto 578 / 641;" width="578"/></p>
 <p>I also added the time and date as possible messages, because it was easy. Actually it wasn't super easy, since the ESP8266 has no geo-locating features and I didn't want to add them. Basically, there's a secret webpage I can visit on the infoglobe site which sets the time zone offset for the infoglobe. Assuming only I visit the page, then the infoglobe's time will always match my timezone.</p>
-<p><img loading="lazy" alt="Infoglobe website with a message upload box, recent messages list, and last visit time" class="addpic" src="/static/infoglobe_newsite.png"/></p>
+<p><img alt="Infoglobe website with a message upload box, recent messages list, and last visit time" class="addpic" height="510" loading="lazy" src="/static/infoglobe_newsite.png" style="aspect-ratio: auto 936 / 510;" width="936"/></p>
 <p>Here's what the the current website looks like. If you are a designer and want to make it look less like an eyesore please hit me up. I have no money but it is a very simple page, and maybe you like the concept enough to send me a Figma link :)</p>
 <p>Anyway, here's the website where you can write messages: <a href="https://aksuper7.pythonanywhere.com/">aksuper7.pythonanywhere.com</a></p></body></html>
         </div>
         <p style="line-height:300%;">&nbsp;</p>
 </div>
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

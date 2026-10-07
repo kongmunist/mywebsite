@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Magical Beans | Andy Kong</title>
 <meta name="description" content="Growing beans with an enchanted water bottle">
@@ -204,6 +205,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -229,7 +237,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -249,10 +257,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -274,46 +282,46 @@
 <p>One reason is I believe most novel scientific concepts were first dismissed as being ridiculous "psuedoscience". Imagine being the guy who first thought little invisible bacteria were making us sick while everyone else was busy believing in the four humours — laughable!</p>
 <h1 id="enchanted-water-bottle">Enchanted water bottle</h1>
 <p>Anyway, in 2021 I bought a water bottle which claimed to be enchanted — the bottle is made of "Programmed Silicon" so any water stored in it will be restored to a more natural state which is good-for-you.</p>
-<p><img loading="lazy" alt="Marketing copy claiming the glass bottles encode the vibrational essence of nature into water" class="addpic" src="/static/magicalbeans/flaskasell.png"/></p>
+<p><img alt="Marketing copy claiming the glass bottles encode the vibrational essence of nature into water" class="addpic" height="123" loading="lazy" src="/static/magicalbeans/flaskasell.png" style="aspect-ratio: auto 473 / 123;" width="473"/></p>
 <p>I was intrigued by the idea, but the thing that really got me was a sentence on the website — the company was founded by a former strawberry farmer who said strawberries watered with the enchanted water were "18.1% more plentiful".</p>
 <p class="caption"> I am a sucker for the quantitative </p>
-<p><img loading="lazy" alt="I am a sucker for the quantitative" class="addpic" src="/static/magicalbeans/strawberriesbigger.png"/></p>
+<p><img alt="I am a sucker for the quantitative" class="addpic" height="514" loading="lazy" src="/static/magicalbeans/strawberriesbigger.png" style="aspect-ratio: auto 802 / 514;" width="802"/></p>
 <p>That is testable! Woo/hippie products usually stick with qualitative effects like "feeling better" or "being healthier", and only show numbers when reporting on surveys e.g. "80% of people said they slept better". They stay out of normal science because usually they can't show results. But here was a company claiming a hypothesis and experiment — I was sold, and immediately bought the bottle.</p>
 <p class="caption"> The bottle </p>
-<p><img loading="lazy" alt="The bottle" class="addpic" src="/static/magicalbeans/bottle2.png"/></p>
+<p><img alt="The bottle" class="addpic" height="594" loading="lazy" src="/static/magicalbeans/bottle2.png" style="aspect-ratio: auto 545 / 594;" width="545"/></p>
 <p>When the bottle came, I really enjoyed it. The cap comes off quickly with just a tug, and the cap + sleeve placement makes it difficult to smash into pieces. The fact that it's all glass and cork means there's no possibility of chemicals leaching into the water. The cork was even fully-cork, not the particle+glue stuff that gets shilled as cork. The bottle also makes a pop when uncapped, the tone of which changes with water level. How cute! I even made some <a href="https://www.tiktok.com/@kongmunist/video/7277684045201509664">Tiktoks</a> with it. The only downside is the weight — when full, the bottle weighs 1.5 kg and holds only 750 mL of water.</p>
 <p>Anyway, I don't want to be accused of promoting questionable hippie water bottles so I won't tell you the brand, but it was actually good. And because it was so good, I forgot all about testing it until 3 years later, in the winter of 2023.</p>
 <h1 id="the-experiment">The Experiment</h1>
 <p>In college, I did a plant experiment where I had to grow three batches of arugula. This takes usually takes 3-6 months, but it only took me 1 to kill them off. With respect to my skill level, this time around I decided to try growing bean sprouts.</p>
 <p class="caption"> Mung bean sprouts </p>
-<p><img loading="lazy" alt="Mung bean sprouts" class="addpic" src="/static/magicalbeans/beansprouts.jpg"/></p>
+<p><img alt="Mung bean sprouts" class="addpic" height="475" loading="lazy" src="/static/magicalbeans/beansprouts.jpg" style="aspect-ratio: auto 640 / 475;" width="640"/></p>
 <p>My Asian readers probably have some domestic experience with this, but for my worldly audience, here's the dig: if you keep green/mung beans wet for 3 days, they become these big watery sprouts which you can cook and eat. Some people like the flavor, I personally like how fast they grow.</p>
 <p class="caption"> Excuse the German </p>
-<p><img loading="lazy" alt="Excuse the German" class="addpic" src="/static/magicalbeans/mungbeans.jpg"/></p>
+<p><img alt="Excuse the German" class="addpic" height="945" loading="lazy" src="/static/magicalbeans/mungbeans.jpg" style="aspect-ratio: auto 820 / 945;" width="820"/></p>
 <h2 id="growing-setup">Growing setup</h2>
 <p>I bought some mung beans in the store and soaked the whole bag in regular tap water for a day.  </p>
 <p class="caption"> Beans swelled so much they split the bag they came in! </p>
-<p><img loading="lazy" alt="Beans swelled so much they split the bag they came in!" class="addpic" src="/static/magicalbeans/bagsplit.jpg"/></p>
+<p><img alt="Beans swelled so much they split the bag they came in!" class="addpic" height="776" loading="lazy" src="/static/magicalbeans/bagsplit.jpg" style="aspect-ratio: auto 806 / 776;" width="806"/></p>
 <p>I took two yogurt containers and put a paper towel at the bottom, then I measured out 50 g of the beans into each bin. One got marked near the rim to denote it as the experimental group, and the other didn't.</p>
 <p class="caption"> Marked vs. unmarked bin of beans </p>
-<p><img loading="lazy" alt="Marked vs. unmarked bin of beans" class="addpic" src="/static/magicalbeans/foiledcontainers.jpg"/></p>
+<p><img alt="Marked vs. unmarked bin of beans" class="addpic" height="428" loading="lazy" src="/static/magicalbeans/foiledcontainers.jpg" style="aspect-ratio: auto 785 / 428;" width="785"/></p>
 <h2 id="daily-procedure">Daily procedure</h2>
 <p>Every day I filled the marked bin with enchanted water that had been sitting in the bottle for at least 5 minutes (manufacturer's instructions) and then drained it, doing the same with the unmarked bin except with fresh tap water. Then both bins went back above the fridge. Because the mung beans get bitter in the light, I wrapped both bins with foil and also inserted a cover of foil after each moistening.</p>
 <p class="caption"> Magic water for the marked beans, tap water for the unmarked beans, foil to keep them in the dark about it </p>
-<p><img loading="lazy" alt="Magic water for the marked beans, tap water for the unmarked beans, foil to keep them in the dark about it" class="addpic" src="/static/magicalbeans/twowaters.jpg"/></p>
+<p><img alt="Magic water for the marked beans, tap water for the unmarked beans, foil to keep them in the dark about it" class="addpic" height="1503" loading="lazy" src="/static/magicalbeans/twowaters.jpg" style="aspect-ratio: auto 1024 / 1503;" width="1024"/></p>
 <h1 id="results">Results</h1>
 <h2 id="visual">Visual</h2>
 <p>After four days, I took out both bean sprout bundles. There was a clear difference between the two visually. The magic beans are clearly greener, and a bit longer too.</p>
 <p class="caption"> The two bean conditions, left is tap water and right is magic water </p>
-<p><img loading="lazy" alt="The two bean conditions, left is tap water and right is magic water" class="addpic" src="/static/magicalbeans/diff.jpg"/></p>
+<p><img alt="The two bean conditions, left is tap water and right is magic water" class="addpic" height="556" loading="lazy" src="/static/magicalbeans/diff.jpg" style="aspect-ratio: auto 926 / 556;" width="926"/></p>
 <h2 id="weight">Weight</h2>
 <p>The tap water beans weighted 217 g, while the magic beans weighed 224 g. Adjusting by the initial weight of 50 g, this represents a growth factor of 3.34x and 3.48x respectively, too close to declare any difference by condition.</p>
 <p class="caption"> Nearly the same weight. Foil is tare'd out, and the paper towels are sequential ones from the same roll. </p>
-<p><img loading="lazy" alt="Nearly the same weight. Foil is tare'd out, and the paper towels are sequential ones from the same roll." class="addpic" src="/static/magicalbeans/beanweight.jpg"/></p>
+<p><img alt="Nearly the same weight. Foil is tare'd out, and the paper towels are sequential ones from the same roll." class="addpic" height="1012" loading="lazy" src="/static/magicalbeans/beanweight.jpg" style="aspect-ratio: auto 834 / 1012;" width="834"/></p>
 <h2 id="taste">Taste</h2>
 <p>Since the sprouts were food, I had to eat them. The tap water beans definitely tasted sweeter, or at least less bitter than the magic water beans. While they shouldn't've been exposed to more light, the bitterness might come from the fact that the magic beans did get more light after they grew tall enough to escape their paper towels. Or maybe the magic water makes them bitter. Who knows?</p>
 <p class="caption"> Mmmm... sprouts </p>
-<p><img loading="lazy" alt="Mmmm... sprouts" class="addpic" src="/static/magicalbeans/andyeating.jpg"/></p>
+<p><img alt="Mmmm... sprouts" class="addpic" height="513" loading="lazy" src="/static/magicalbeans/andyeating.jpg" style="aspect-ratio: auto 907 / 513;" width="907"/></p>
 <h1 id="limitations">Limitations</h1>
 <p>Some things were not controlled, and in hindsight, should've been. In order of perceived importance:</p>
 <ul>
@@ -343,6 +351,7 @@
         <p style="line-height:300%;">&nbsp;</p>
 </div>
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

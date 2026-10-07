@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 {% set preview = social_preview(social_page|default(none), page_title|default(none), meta_description|default(none)) %}
 <title>{{ preview.title }}{% if preview.title != 'Andy Kong' %} | Andy Kong{% endif %}</title>
 <meta name="description" content="{{ preview.description }}">
 <meta name="author" content="Andy Kong">
-<link rel="canonical" href="{{ preview.url }}">
+{% if not error_page|default(false) %}<link rel="canonical" href="{{ preview.url }}">{% endif %}
 <meta property="og:site_name" content="Andy Kong">
 <meta property="og:type" content="{{ preview.type }}">
 <meta property="og:title" content="{{ preview.title }}">
@@ -177,6 +178,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -222,16 +230,17 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
 </nav>
 
 {% block app_content %}{% endblock %}
+<script src="{{ url_for('static', filename='lazy-media.js') }}" defer></script>
 <script src="{{ url_for("static",filename="jquery-3.3.1.slim.min.js") }}" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="{{ url_for("static",filename="popper.min.js") }}" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="{{ url_for("static",filename="bootstrap.min.js") }}" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>How to stop noisy NeoPixels | Andy Kong</title>
 <meta name="description" content="Audible annoyance from WS2812B LEDs">
@@ -318,6 +319,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -343,7 +351,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -363,10 +371,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -388,7 +396,7 @@
 <hr>
             <html><body><p><em>When I was small, I visited my friend whose dad was an electrical engineer. I got to talking with him, and asked "Hey, what's the point of that thick bit on my cables?"</em></p>
 <p class="caption"> Big chunky cylinder on a charging cable </p>
-<p><img loading="lazy" alt="Big chunky cylinder on a charging cable" class="addpic" src="/static/nn_ferritebead.jpg"/></p>
+<p><img alt="Big chunky cylinder on a charging cable" class="addpic" height="340" loading="lazy" src="/static/nn_ferritebead.jpg" style="aspect-ratio: auto 540 / 340;" width="540"/></p>
 <p><em>He said "that's a ferrite bead, it reduces noise," and I nodded in understanding — that explained why my cables never made noise.</em></p>
 <p><em>About a decade later, I learned about electrical noise.</em></p>
 <hr/>
@@ -401,14 +409,14 @@
 <p>I'm quite sensitive to noise, and I noticed a slight buzzing coming from my Neopixels when setting the brightness higher than 5/255. Since I'm making a desktop doohickey, I wanted to learn more about the noise, particularly how it changes with brightness. </p>
 <p>In a stroke of luck, the Circuit Playground board comes with a microphone! I wrote a small script to vary the brightness and recorded sound pressure levels (SPL) for a 0.5 second window at each level. My board has a small cover which probably amplified the measured noise. </p>
 <p class="caption"> Graph of NeoPixel noise in dB as brightness increases </p>
-<p><img loading="lazy" alt="Graph of NeoPixel noise in dB as brightness increases" class="addpic" src="/static/nn_dbvslight.png"/></p>
+<p><img alt="Graph of NeoPixel noise in dB as brightness increases" class="addpic" height="1306" loading="lazy" src="/static/nn_dbvslight.png" style="aspect-ratio: auto 2114 / 1306;" width="2114"/></p>
 <p>Each line is represented by the LED color that produced it. Since white is produced by keeping all three LEDs on, it makes sense for it to be higher than all the others. </p>
 <p>Now I could target low and high brightness to cause the least amount of noise.</p>
 <h1 id="future-work">Future Work</h1>
 <p>One factor I forgot to test is the pitch of the whining at each brightness. Some brightness levels sound more annoying than other levels, even with a lower SPL. This is probably related to the nonlinearity of human hearing. </p>
 <p>With my NeoPixels on, I recorded the audio spectra to see where the whining lay. It turns out to be much lower than the PWM frequency of the Neopixels, which means I do not understand the root causes of the noise very well. </p>
 <p class="caption"> The three noisiest frequencies are all much lower than the PWM frequency of the NeoPixels. Vertical lines are the whining, and horizontal ones are me dropping my phone </p>
-<p><img loading="lazy" alt="The three noisiest frequencies are all much lower than the PWM frequency of the NeoPixels. Vertical lines are the whining, and horizontal ones are me dropping my phone" class="addpic" src="/static/nn_points.png"/></p>
+<p><img alt="The three noisiest frequencies are all much lower than the PWM frequency of the NeoPixels. Vertical lines are the whining, and horizontal ones are me dropping my phone" class="addpic" height="439" loading="lazy" src="/static/nn_points.png" style="aspect-ratio: auto 867 / 439;" width="867"/></p>
 <h1 id="conclusion">Conclusion</h1>
 <p>The Circuit Playground mic also has an FFT function, and someday I will get around to recording the spectrum along with the SPL. For now, I have minimized the overall sound, and that is enough. </p>
 <p>Cya later!</p></body></html>
@@ -432,6 +440,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

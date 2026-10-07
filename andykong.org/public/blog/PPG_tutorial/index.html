@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Remote Photoplethysmography (PPG) Tutorial | Andy Kong</title>
 <meta name="description" content="A guide on how to pronounce the word, and how to implement it in Python">
@@ -320,6 +321,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -345,7 +353,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -365,10 +373,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -394,16 +402,16 @@
 <p>Existing cameras on phones and laptops are amazing, their resolution has allowed some really cool sensing techniques besides taking great photos of your Chipotle burrito. Even knowing this, I found this technique hard to believe. </p>
 <p>I was reading about a project from Microsoft Research called <a href="https://www.microsoft.com/en-us/research/project/cardiolens/">CardioLens</a>, which projected people's heartrates onto their faces using just the camera in a Hololens headset. When your heart beats, your blood vessels swell out a little from the sudden pump motion of the heart. According to this paper, we can see this cyclical pumping as the blood vessels swell and shrink just by averaging the intensity of the colors on someone's face. With a normal camera!</p>
 <p class="caption"> Cardiolens pulse signal </p>
-<p><img loading="lazy" alt="Cardiolens pulse signal" class="addpic" src="/static/cardiolens_danielmcduff.png"/></p>
+<p><img alt="Cardiolens pulse signal" class="addpic" height="287" loading="lazy" src="/static/cardiolens_danielmcduff.png" style="aspect-ratio: auto 717 / 287;" width="717"/></p>
 <p>Nuts, right? I procrastinated trying this project despite how simple it was reported to be, but after reading about it on <a href="https://www.jimmynewland.com/wp/about-jimmy/presentations/remote-ppg-gui/">Jimmy Newland's website</a>, I felt I could give a decent crack at it. </p>
-<p><img loading="lazy" alt="Face and eye detection using Haar Cascades" src="/static/ppg.gif"/></p>
+<p><img alt="Face and eye detection using Haar Cascades" height="125" loading="lazy" src="/static/ppg.gif" style="aspect-ratio: auto 131 / 125;" width="131"/></p>
 <p class="caption">Face and eye detection using Haar Cascades</p>
 <p>Setting up a webcam feed from OpenCV is pretty easy, as is using Haar Cascades for face detection. I downsampled the webcam to a 1/16 of the original size to run face detection at 20 FPS, then ran it through SciPy's FFT (technically the power spectral density). Voila! </p>
-<p><img loading="lazy" alt="PPG from a crop on my forehead" src="/static/PPG_forehead.png"/></p>
+<p><img alt="PPG from a crop on my forehead" height="400" loading="lazy" src="/static/PPG_forehead.png" style="aspect-ratio: auto 673 / 400;" width="673"/></p>
 <p class="caption">PPG from a crop on my forehead</p>
 <p>Jimmy recommended using the forehead patch, but I got much better signal from a crop of my webcam under my eyes (cheeks are known for their blush). Interestingly enough, I was reading <a href="https://www.osapublishing.org/oe/viewmedia.cfm?uri=oe-16-26-21434&amp;seq=0">one of the earlier papers</a> on this and they recommended using the green channel and not the red. Very surprising to me, considering most light used in biosensing depends on red light being more permeable in our skin than the other colors. </p>
 <p>The final signal is only 1-2 intensity level changes of the average on my face. It's kinda crazy to me to know that we can get that kind of noise-free resolution after averaging. Amazing what we can do with today's sensing capabilities.</p>
-<p><img loading="lazy" alt="PPG from a crop under my eyes, with better signal. You can see the fluctuation of my face intensity from the graph itself" src="/static/PPG_forehead.png"/></p>
+<p><img alt="PPG from a crop under my eyes, with better signal. You can see the fluctuation of my face intensity from the graph itself" height="400" loading="lazy" src="/static/PPG_forehead.png" style="aspect-ratio: auto 673 / 400;" width="673"/></p>
 <p class="caption">PPG from a crop under my eyes, with better signal. You can see the fluctuation of my face intensity from the graph itself</p>
 <p>You also have to be holding incredibly still. Any movement changes the lighting on your forehead, which screws up your intensity chart massively. Even the back-and-forth movement caused by your heart beating screws it up, but if you hold super still it works very reliably. </p>
 <p>I want to use this for an art project, but the error arising from movement makes it impossible. Not sure how to fix either, since the error depends on your lighting environment. </p>
@@ -432,6 +440,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

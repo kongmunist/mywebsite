@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>MPR121 Touch Sensing Across Barriers | Andy Kong</title>
 <meta name="description" content="Testing capacitive coupling across various barriers">
@@ -321,6 +322,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -346,7 +354,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -366,10 +374,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -391,18 +399,18 @@
 <hr>
             <html><body><p>Hello! Today I received the MPR121, a nifty little 12-channel touch sensor:</p>
 <p class="caption">Glamour shot of the MPR121 touch sensor</p>
-<p><img loading="lazy" alt="Glamour shot of the MPR121 touch sensor" src="/static/mpr121glamour.png"/></p>
+<p><img alt="Glamour shot of the MPR121 touch sensor" height="766" loading="lazy" src="/static/mpr121glamour.png" style="aspect-ratio: auto 1014 / 766;" width="1014"/></p>
 <p>The chip is pretty simple, uses I2C to measure each pin's capacitance using the charge then discharge trick I used <a href="../touchreactiveLEDs/">here</a>. It gives a touch/no touch output, or the raw sensor values per each pin (ranges from 0-400ish). Also has a built-in filtered output that provides smoother data if you want it. </p>
 <p>The setup is easy and not very interesting since the chip is so single-purpose. I'm much more interested in showing you how well the sensor detects touch through a barrier. </p>
 <h2 id="testing-materials">Testing materials</h2>
 <p>I used what I had near me, and those were: saran wrap, masking tape, and two kinds of Scotch tape. Here's the table.</p>
 <p class="caption"></p>
-<p><img loading="lazy" alt="Table of sensor outputs for the MPR121" src="/static/mpr121chart.png"/></p>
+<p><img alt="Table of sensor outputs for the MPR121" height="343" loading="lazy" src="/static/mpr121chart.png" style="aspect-ratio: auto 1380 / 343;" width="1380"/></p>
 <p>As mentioned before, the sensor values range from 0-400. On the bare surface I was able to get down to 48, which is a big SNR! None of the others even came close to that, only dipping 10% of the max value for the Saran wrap. This was probably the thinnest barrier I tried, and even that was too much. Despite the low SNR, the sensor still detected my touches consistently when separated by most of the materials I tried. Works great! :)</p>
 <p>The capacititance didn't drift that much across my trials (~15 minutes), so I'm not so worried about needing to recalibrate very frequently. These types of biosensors are usually pretty finicky in that regard, so I'm glad. I also didn't try fabric or any porous material because I needed this to be waterproof, but it'd be cool if YOU (dear reader) did, and then told me about it!</p>
 <p>That's all for now! Cya!</p>
 <p class="caption">MPR121 wrapped in saran wrap during testing</p>
-<p><img loading="lazy" alt="MPR121 wrapped in saran wrap during testing" src="/static/mpr121saran.png"/></p></body></html>
+<p><img alt="MPR121 wrapped in saran wrap during testing" height="561" loading="lazy" src="/static/mpr121saran.png" style="aspect-ratio: auto 830 / 561;" width="830"/></p></body></html>
 
 
 
@@ -429,6 +437,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

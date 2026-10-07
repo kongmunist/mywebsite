@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Projects | Andy Kong</title>
 <meta name="description" content="Sensors, biosensing hardware, human-computer interaction, and other projects by Andy Kong.">
@@ -172,6 +173,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -197,7 +205,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -217,10 +225,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -229,6 +237,7 @@
 
 <style>
     .hovereffect {
+  display: block;
   width: 100%;
   height: 90%;
   float: center;
@@ -236,6 +245,11 @@
   position: relative;
   text-align: center;
   cursor: pointer;
+}
+
+.hovereffect,
+.hovereffect:hover {
+  text-decoration: none;
 }
 
 .hovereffect .overlay {
@@ -249,7 +263,8 @@
   transition: all 0.4s ease-in-out;
 }
 
-.hovereffect:hover .overlay {
+.hovereffect:hover .overlay,
+.hovereffect:focus-visible .overlay {
   background-color: rgba(0, 180, 196, 0.6);
 }
 
@@ -273,13 +288,14 @@
   transition: all 0.4s ease-in-out;
 }
 
-.hovereffect:hover h2 {
+.hovereffect:hover h2,
+.hovereffect:focus-visible h2 {
   -webkit-transform: translateY(5px);
   -ms-transform: translateY(5px);
   transform: translateY(5px);
 }
 
-.hovereffect a.info {
+.hovereffect .info {
   display: inline-block;
   text-decoration: none;
   padding: 7px 14px;
@@ -296,12 +312,18 @@
   font-weight: normal;
 }
 
-.hovereffect:hover a.info {
+.hovereffect:hover .info,
+.hovereffect:focus-visible .info {
   opacity: 1;
   filter: alpha(opacity=100);
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
+}
+
+.hovereffect:focus-visible {
+  outline: 3px solid #00DFFC;
+  outline-offset: 3px;
 }
 </style>
 <h1 class="text-center"> Projects</h1>
@@ -312,38 +334,18 @@
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/catherinewang/'">
-    <div class="hovereffect" >
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    <a class="hovereffect" href="/projects/shenzhen2025/" aria-label="Shenzhen 2025: A month of prototyping">
 <!--    using jinja conditionals, if p.pic has a .mov or .mp4 ending, we use a video instead    -->
         
-        <img class="img mx-auto d-block" src="/static/chargerless/beaut.jpg" height="400vw" loading="lazy">
-        
-
-        <div class="overlay">
-           <h2>Catherine Wang</h2>
-           <a class="info" href="/projects/catherinewang/">Welcome to my personal site</a>
-        </div>
-    </div>
-    </div>
-
-<!--        <br>-->
-
-
-
-        
-
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/shenzhen2025/'">
-    <div class="hovereffect" >
-<!--    using jinja conditionals, if p.pic has a .mov or .mp4 ending, we use a video instead    -->
-        
-        <img class="img mx-auto d-block" src="/static/shenzhen2025/moldmaking1.jpg" height="400vw" loading="lazy">
+        <img class="img mx-auto d-block" height="400vw" loading="lazy" src="/static/shenzhen2025/moldmaking1.jpg" style="aspect-ratio: auto 1058 / 1411;"/>
         
 
         <div class="overlay">
            <h2>Shenzhen 2025</h2>
-           <a class="info" href="/projects/shenzhen2025/">A month of prototyping</a>
+           <span class="info">A month of prototyping</span>
         </div>
-    </div>
+    </a>
     </div>
 
 <!--        <br>-->
@@ -352,18 +354,18 @@
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/ultraeeg/'">
-    <div class="hovereffect" >
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    <a class="hovereffect" href="/projects/ultraeeg/" aria-label="Brain Hack 2: Ultra EEG">
 <!--    using jinja conditionals, if p.pic has a .mov or .mp4 ending, we use a video instead    -->
         
-        <img class="img mx-auto d-block" src="/static/ultraeeg/brainhack.png" height="400vw" loading="lazy">
+        <img class="img mx-auto d-block" height="400vw" loading="lazy" src="/static/ultraeeg/brainhack.png" style="aspect-ratio: auto 393 / 442;"/>
         
 
         <div class="overlay">
            <h2>Brain Hack 2</h2>
-           <a class="info" href="/projects/ultraeeg/">Ultra EEG</a>
+           <span class="info">Ultra EEG</span>
         </div>
-    </div>
+    </a>
     </div>
 
 <!--        <br>-->
@@ -372,18 +374,18 @@
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/pos/'">
-    <div class="hovereffect" >
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    <a class="hovereffect" href="/projects/pos/" aria-label="Power-over-Skin: Battery-free wearables, powered via body contact!">
 <!--    using jinja conditionals, if p.pic has a .mov or .mp4 ending, we use a video instead    -->
         
-        <img class="img mx-auto d-block" src="/static/poweroverskin/PoS_Snail.JPG" height="400vw" loading="lazy">
+        <img class="img mx-auto d-block" height="400vw" loading="lazy" src="/static/poweroverskin/PoS_Snail.JPG" style="aspect-ratio: auto 2570 / 2448;"/>
         
 
         <div class="overlay">
            <h2>Power-over-Skin</h2>
-           <a class="info" href="/projects/pos/">Battery-free wearables, powered via body contact!</a>
+           <span class="info">Battery-free wearables, powered via body contact!</span>
         </div>
-    </div>
+    </a>
     </div>
 
 <!--        <br>-->
@@ -392,18 +394,18 @@
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/holograms/'">
-    <div class="hovereffect" >
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    <a class="hovereffect" href="/projects/holograms/" aria-label="Laser Holograms: Trapping 3D objects in a 2D sheet of glass">
 <!--    using jinja conditionals, if p.pic has a .mov or .mp4 ending, we use a video instead    -->
         
-        <img class="img mx-auto d-block" src="/static/holograms/hero.jpeg" height="400vw" loading="lazy">
+        <img class="img mx-auto d-block" height="400vw" loading="lazy" src="/static/holograms/hero.jpeg" style="aspect-ratio: auto 959 / 959;"/>
         
 
         <div class="overlay">
            <h2>Laser Holograms</h2>
-           <a class="info" href="/projects/holograms/">Trapping 3D objects in a 2D sheet of glass</a>
+           <span class="info">Trapping 3D objects in a 2D sheet of glass</span>
         </div>
-    </div>
+    </a>
     </div>
 
 <!--        <br>-->
@@ -412,18 +414,18 @@
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/magicalbeans/'">
-    <div class="hovereffect" >
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    <a class="hovereffect" href="/projects/magicalbeans/" aria-label="Magical Beans: Growing beans with an enchanted water bottle">
 <!--    using jinja conditionals, if p.pic has a .mov or .mp4 ending, we use a video instead    -->
         
-        <img class="img mx-auto d-block" src="/static/magicalbeans/hero.jpg" height="400vw" loading="lazy">
+        <img class="img mx-auto d-block" height="400vw" loading="lazy" src="/static/magicalbeans/hero.jpg" style="aspect-ratio: auto 768 / 855;"/>
         
 
         <div class="overlay">
            <h2>Magical Beans</h2>
-           <a class="info" href="/projects/magicalbeans/">Growing beans with an enchanted water bottle</a>
+           <span class="info">Growing beans with an enchanted water bottle</span>
         </div>
-    </div>
+    </a>
     </div>
 
 <!--        <br>-->
@@ -432,18 +434,18 @@
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/bigheadcandle/'">
-    <div class="hovereffect" >
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    <a class="hovereffect" href="/projects/bigheadcandle/" aria-label="Full-Size Head Candle: What if Andy was made of wax?">
 <!--    using jinja conditionals, if p.pic has a .mov or .mp4 ending, we use a video instead    -->
         
-        <img class="img mx-auto d-block" src="/static/bigheadcandle/drama.jpg" height="400vw" loading="lazy">
+        <img class="img mx-auto d-block" height="400vw" loading="lazy" src="/static/bigheadcandle/drama.jpg" style="aspect-ratio: auto 1429 / 1216;"/>
         
 
         <div class="overlay">
            <h2>Full-Size Head Candle</h2>
-           <a class="info" href="/projects/bigheadcandle/">What if Andy was made of wax?</a>
+           <span class="info">What if Andy was made of wax?</span>
         </div>
-    </div>
+    </a>
     </div>
 
 <!--        <br>-->
@@ -452,18 +454,18 @@
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/bohems/'">
-    <div class="hovereffect" >
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    <a class="hovereffect" href="/projects/bohems/" aria-label="Electroshock VR Haptics: Through-Hand Electrical Nerve Stimulation">
 <!--    using jinja conditionals, if p.pic has a .mov or .mp4 ending, we use a video instead    -->
         
-        <img class="img mx-auto d-block" src="/static/bohems/boh_nella_fullhand_hero.jpeg" height="400vw" loading="lazy">
+        <img class="img mx-auto d-block" height="400vw" loading="lazy" src="/static/bohems/boh_nella_fullhand_hero.jpeg" style="aspect-ratio: auto 621 / 626;"/>
         
 
         <div class="overlay">
            <h2>Electroshock VR Haptics</h2>
-           <a class="info" href="/projects/bohems/">Through-Hand Electrical Nerve Stimulation</a>
+           <span class="info">Through-Hand Electrical Nerve Stimulation</span>
         </div>
-    </div>
+    </a>
     </div>
 
 <!--        <br>-->
@@ -472,18 +474,18 @@
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/implantables/'">
-    <div class="hovereffect" >
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    <a class="hovereffect" href="/projects/implantables/" aria-label="Implantables: Advanced implantable technology for continuously powered sensors and actuators">
 <!--    using jinja conditionals, if p.pic has a .mov or .mp4 ending, we use a video instead    -->
         
-        <img class="img mx-auto d-block" src="/static/implantables/implantables_hero.jpeg" height="400vw" loading="lazy">
+        <img class="img mx-auto d-block" height="400vw" loading="lazy" src="/static/implantables/implantables_hero.jpeg" style="aspect-ratio: auto 800 / 670;"/>
         
 
         <div class="overlay">
            <h2>Implantables</h2>
-           <a class="info" href="/projects/implantables/">Advanced implantable technology for continuously powered sensors and actuators</a>
+           <span class="info">Advanced implantable technology for continuously powered sensors and actuators</span>
         </div>
-    </div>
+    </a>
     </div>
 
 <!--        <br>-->
@@ -492,18 +494,18 @@
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/headcandles/'">
-    <div class="hovereffect" >
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    <a class="hovereffect" href="/projects/headcandles/" aria-label="Head Candle: Candles shaped like my head">
 <!--    using jinja conditionals, if p.pic has a .mov or .mp4 ending, we use a video instead    -->
         
-        <img class="img mx-auto d-block" src="/static/headcandle/hc_hero.jpeg" height="400vw" loading="lazy">
+        <img class="img mx-auto d-block" height="400vw" loading="lazy" src="/static/headcandle/hc_hero.jpeg" style="aspect-ratio: auto 775 / 576;"/>
         
 
         <div class="overlay">
            <h2>Head Candle</h2>
-           <a class="info" href="/projects/headcandles/">Candles shaped like my head</a>
+           <span class="info">Candles shaped like my head</span>
         </div>
-    </div>
+    </a>
     </div>
 
 <!--        <br>-->
@@ -512,18 +514,18 @@
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/strooper/'">
-    <div class="hovereffect" >
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    <a class="hovereffect" href="/projects/strooper/" aria-label="Strooper: A Chrome extension to track your cognitive performance when visiting particular websites">
 <!--    using jinja conditionals, if p.pic has a .mov or .mp4 ending, we use a video instead    -->
         
-        <img class="img mx-auto d-block" src="/static/strooper/strooper_storepage.png" height="400vw" loading="lazy">
+        <img class="img mx-auto d-block" height="400vw" loading="lazy" src="/static/strooper/strooper_storepage.png" style="aspect-ratio: auto 317 / 255;"/>
         
 
         <div class="overlay">
            <h2>Strooper</h2>
-           <a class="info" href="/projects/strooper/">A Chrome extension to track your cognitive performance when visiting particular websites</a>
+           <span class="info">A Chrome extension to track your cognitive performance when visiting particular websites</span>
         </div>
-    </div>
+    </a>
     </div>
 
 <!--        <br>-->
@@ -532,18 +534,18 @@
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/yearofoutput/'">
-    <div class="hovereffect" >
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    <a class="hovereffect" href="/projects/yearofoutput/" aria-label="Year of Output: What is Andy doing in 2024?">
 <!--    using jinja conditionals, if p.pic has a .mov or .mp4 ending, we use a video instead    -->
         
-        <img class="img mx-auto d-block" src="/static/yearofoutput/andylookingeeg.jpg" height="400vw" loading="lazy">
+        <img class="img mx-auto d-block" height="400vw" loading="lazy" src="/static/yearofoutput/andylookingeeg.jpg" style="aspect-ratio: auto 735 / 691;"/>
         
 
         <div class="overlay">
            <h2>Year of Output</h2>
-           <a class="info" href="/projects/yearofoutput/">What is Andy doing in 2024?</a>
+           <span class="info">What is Andy doing in 2024?</span>
         </div>
-    </div>
+    </a>
     </div>
 
 <!--        <br>-->
@@ -552,19 +554,20 @@
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/gridworld/'">
-    <div class="hovereffect" >
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    <a class="hovereffect" href="/projects/gridworld/" aria-label="Grid World: Collaborative online pixel canvas with a physical display in my room">
 <!--    using jinja conditionals, if p.pic has a .mov or .mp4 ending, we use a video instead    -->
         
-        <video class="img mx-auto d-block" src="/static/gridworldherovid.mov" height="400vw" loading="lazy" autoplay muted loop playsinline>
-        </video>
+        <video autoplay="" class="img mx-auto d-block deferred-video" data-src="/static/gridworldherovid.mov" height="400vw" loading="lazy" loop="" muted="" playsinline="" preload="none">
+</video><noscript><video class="img mx-auto d-block" controls="" height="400vw" loading="lazy" loop="" muted="" playsinline="" preload="none" src="/static/gridworldherovid.mov">
+</video></noscript>
         
 
         <div class="overlay">
            <h2>Grid World</h2>
-           <a class="info" href="/projects/gridworld/">Collaborative online pixel canvas with a physical display in my room</a>
+           <span class="info">Collaborative online pixel canvas with a physical display in my room</span>
         </div>
-    </div>
+    </a>
     </div>
 
 <!--        <br>-->
@@ -573,18 +576,18 @@
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/infoglobe/'">
-    <div class="hovereffect" >
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    <a class="hovereffect" href="/projects/infoglobe/" aria-label="Hacking The Olympia InfoGlobe: Kinda-vintage internet-connected spinning-LED bulletin-board">
 <!--    using jinja conditionals, if p.pic has a .mov or .mp4 ending, we use a video instead    -->
         
-        <img class="img mx-auto d-block" src="/static/infoglobe_hero.png" height="400vw" loading="lazy">
+        <img class="img mx-auto d-block" height="400vw" loading="lazy" src="/static/infoglobe_hero.png" style="aspect-ratio: auto 498 / 387;"/>
         
 
         <div class="overlay">
            <h2>Hacking The Olympia InfoGlobe</h2>
-           <a class="info" href="/projects/infoglobe/">Kinda-vintage internet-connected spinning-LED bulletin-board</a>
+           <span class="info">Kinda-vintage internet-connected spinning-LED bulletin-board</span>
         </div>
-    </div>
+    </a>
     </div>
 
 <!--        <br>-->
@@ -593,18 +596,18 @@
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/meiger/'">
-    <div class="hovereffect" >
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    <a class="hovereffect" href="/projects/meiger/" aria-label="Meiger Counters: Geiger&#39;s 2nd most famous counter, the electromagnetic radiation detector">
 <!--    using jinja conditionals, if p.pic has a .mov or .mp4 ending, we use a video instead    -->
         
-        <img class="img mx-auto d-block" src="/static/meiger_hero.jpg" height="400vw" loading="lazy">
+        <img class="img mx-auto d-block" height="400vw" loading="lazy" src="/static/meiger_hero.jpg" style="aspect-ratio: auto 2560 / 1711;"/>
         
 
         <div class="overlay">
            <h2>Meiger Counters</h2>
-           <a class="info" href="/projects/meiger/">Geiger&#39;s 2nd most famous counter, the electromagnetic radiation detector</a>
+           <span class="info">Geiger&#39;s 2nd most famous counter, the electromagnetic radiation detector</span>
         </div>
-    </div>
+    </a>
     </div>
 
 <!--        <br>-->
@@ -613,18 +616,18 @@
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/facemeshdemos/'">
-    <div class="hovereffect" >
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    <a class="hovereffect" href="/projects/facemeshdemos/" aria-label="Face Mesh Demos ↗: A collection of three Face Mesh Demos that I coded to be minimal useful examples">
 <!--    using jinja conditionals, if p.pic has a .mov or .mp4 ending, we use a video instead    -->
         
-        <img class="img mx-auto d-block" src="/static/meshcool.png" height="400vw" loading="lazy">
+        <img class="img mx-auto d-block" height="400vw" loading="lazy" src="/static/meshcool.png" style="aspect-ratio: auto 328 / 250;"/>
         
 
         <div class="overlay">
            <h2>Face Mesh Demos ↗</h2>
-           <a class="info" href="/projects/facemeshdemos/">A collection of three Face Mesh Demos that I coded to be minimal useful examples</a>
+           <span class="info">A collection of three Face Mesh Demos that I coded to be minimal useful examples</span>
         </div>
-    </div>
+    </a>
     </div>
 
 <!--        <br>-->
@@ -633,18 +636,18 @@
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/igneous/'">
-    <div class="hovereffect" >
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    <a class="hovereffect" href="/projects/igneous/" aria-label="Igneous: A morphing landscape of colored wax melting for hours, reflecting visitors&#39; actions">
 <!--    using jinja conditionals, if p.pic has a .mov or .mp4 ending, we use a video instead    -->
         
-        <img class="img mx-auto d-block" src="/static/ign_exhib7.jpg" height="400vw" loading="lazy">
+        <img class="img mx-auto d-block" height="400vw" loading="lazy" src="/static/ign_exhib7.jpg" style="aspect-ratio: auto 1008 / 756;"/>
         
 
         <div class="overlay">
            <h2>Igneous</h2>
-           <a class="info" href="/projects/igneous/">A morphing landscape of colored wax melting for hours, reflecting visitors&#39; actions</a>
+           <span class="info">A morphing landscape of colored wax melting for hours, reflecting visitors&#39; actions</span>
         </div>
-    </div>
+    </a>
     </div>
 
 <!--        <br>-->
@@ -653,18 +656,18 @@
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/eyemu/'">
-    <div class="hovereffect" >
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    <a class="hovereffect" href="/projects/eyemu/" aria-label="EyeMU: First first-author paper! &#34;EyeMU Interactions, Gaze + IMU Gestures on Mobile Devices&#34;">
 <!--    using jinja conditionals, if p.pic has a .mov or .mp4 ending, we use a video instead    -->
         
-        <img class="img mx-auto d-block" src="/static/eyemuhero_clipped.png" height="400vw" loading="lazy">
+        <img class="img mx-auto d-block" height="400vw" loading="lazy" src="/static/eyemuhero_clipped.png" style="aspect-ratio: auto 526 / 564;"/>
         
 
         <div class="overlay">
            <h2>EyeMU</h2>
-           <a class="info" href="/projects/eyemu/">First first-author paper! &#34;EyeMU Interactions, Gaze + IMU Gestures on Mobile Devices&#34;</a>
+           <span class="info">First first-author paper! &#34;EyeMU Interactions, Gaze + IMU Gestures on Mobile Devices&#34;</span>
         </div>
-    </div>
+    </a>
     </div>
 
 <!--        <br>-->
@@ -673,18 +676,18 @@
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/BCC/'">
-    <div class="hovereffect" >
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    <a class="hovereffect" href="/projects/BCC/" aria-label="Body Channel Communication: Identifying users by their touch alone">
 <!--    using jinja conditionals, if p.pic has a .mov or .mp4 ending, we use a video instead    -->
         
-        <img class="img mx-auto d-block" src="/static/bcc_alansonsketch.jpg" height="400vw" loading="lazy">
+        <img class="img mx-auto d-block" height="400vw" loading="lazy" src="/static/bcc_alansonsketch.jpg" style="aspect-ratio: auto 814 / 680;"/>
         
 
         <div class="overlay">
            <h2>Body Channel Communication</h2>
-           <a class="info" href="/projects/BCC/">Identifying users by their touch alone</a>
+           <span class="info">Identifying users by their touch alone</span>
         </div>
-    </div>
+    </a>
     </div>
 
 <!--        <br>-->
@@ -693,18 +696,18 @@
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/wordlengthneonsign/'">
-    <div class="hovereffect" >
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    <a class="hovereffect" href="/projects/wordlengthneonsign/" aria-label="Physical Word Length Calculator: Calculator to determine how much string you need to spell a word">
 <!--    using jinja conditionals, if p.pic has a .mov or .mp4 ending, we use a video instead    -->
         
-        <img class="img mx-auto d-block" src="/static/physicalwordlength.png" height="400vw" loading="lazy">
+        <img class="img mx-auto d-block" height="400vw" loading="lazy" src="/static/physicalwordlength.png" style="aspect-ratio: auto 415 / 266;"/>
         
 
         <div class="overlay">
            <h2>Physical Word Length Calculator</h2>
-           <a class="info" href="/projects/wordlengthneonsign/">Calculator to determine how much string you need to spell a word</a>
+           <span class="info">Calculator to determine how much string you need to spell a word</span>
         </div>
-    </div>
+    </a>
     </div>
 
 <!--        <br>-->
@@ -713,18 +716,18 @@
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/directionofvoice/'">
-    <div class="hovereffect" >
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    <a class="hovereffect" href="/projects/directionofvoice/" aria-label="Direction-of-Voice: A novel method for estimating speaker head direction from a single microphone array">
 <!--    using jinja conditionals, if p.pic has a .mov or .mp4 ending, we use a video instead    -->
         
-        <img class="img mx-auto d-block" src="/static/dov_thumbnail.png" height="400vw" loading="lazy">
+        <img class="img mx-auto d-block" height="400vw" loading="lazy" src="/static/dov_thumbnail.png" style="aspect-ratio: auto 456 / 443;"/>
         
 
         <div class="overlay">
            <h2>Direction-of-Voice</h2>
-           <a class="info" href="/projects/directionofvoice/">A novel method for estimating speaker head direction from a single microphone array</a>
+           <span class="info">A novel method for estimating speaker head direction from a single microphone array</span>
         </div>
-    </div>
+    </a>
     </div>
 
 <!--        <br>-->
@@ -733,18 +736,18 @@
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/eyecatcher/'">
-    <div class="hovereffect" >
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    <a class="hovereffect" href="/projects/eyecatcher/" aria-label="EyeCatcher: A glimpse into another world, made possible through real-time head tracking">
 <!--    using jinja conditionals, if p.pic has a .mov or .mp4 ending, we use a video instead    -->
         
-        <img class="img mx-auto d-block" src="/static/eyecatchercrop4.gif" height="400vw" loading="lazy">
+        <img class="img mx-auto d-block" height="400vw" loading="lazy" src="/static/eyecatchercrop4.gif" style="aspect-ratio: auto 284 / 257;"/>
         
 
         <div class="overlay">
            <h2>EyeCatcher</h2>
-           <a class="info" href="/projects/eyecatcher/">A glimpse into another world, made possible through real-time head tracking</a>
+           <span class="info">A glimpse into another world, made possible through real-time head tracking</span>
         </div>
-    </div>
+    </a>
     </div>
 
 <!--        <br>-->
@@ -753,18 +756,18 @@
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/analogscalingcalculator/'">
-    <div class="hovereffect" >
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    <a class="hovereffect" href="/projects/analogscalingcalculator/" aria-label="Analog Signal Scaling: Taming an unruly analog signal into a more manageable size.">
 <!--    using jinja conditionals, if p.pic has a .mov or .mp4 ending, we use a video instead    -->
         
-        <img class="img mx-auto d-block" src="/static/analogscalinggraphic.png" height="400vw" loading="lazy">
+        <img class="img mx-auto d-block" height="400vw" loading="lazy" src="/static/analogscalinggraphic.png" style="aspect-ratio: auto 754 / 309;"/>
         
 
         <div class="overlay">
            <h2>Analog Signal Scaling</h2>
-           <a class="info" href="/projects/analogscalingcalculator/">Taming an unruly analog signal into a more manageable size.</a>
+           <span class="info">Taming an unruly analog signal into a more manageable size.</span>
         </div>
-    </div>
+    </a>
     </div>
 
 <!--        <br>-->
@@ -773,18 +776,18 @@
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/myo2/'">
-    <div class="hovereffect" >
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    <a class="hovereffect" href="/projects/myo2/" aria-label="Myo2: Making my own ultra-sensitive EMG sensors for measuring unnoticeable muscle movement">
 <!--    using jinja conditionals, if p.pic has a .mov or .mp4 ending, we use a video instead    -->
         
-        <img class="img mx-auto d-block" src="/static/myo2tensing.png" height="400vw" loading="lazy">
+        <img class="img mx-auto d-block" height="400vw" loading="lazy" src="/static/myo2tensing.png" style="aspect-ratio: auto 359 / 336;"/>
         
 
         <div class="overlay">
            <h2>Myo2</h2>
-           <a class="info" href="/projects/myo2/">Making my own ultra-sensitive EMG sensors for measuring unnoticeable muscle movement</a>
+           <span class="info">Making my own ultra-sensitive EMG sensors for measuring unnoticeable muscle movement</span>
         </div>
-    </div>
+    </a>
     </div>
 
 <!--        <br>-->
@@ -793,18 +796,18 @@
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/heartratemonitor/'">
-    <div class="hovereffect" >
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    <a class="hovereffect" href="/projects/heartratemonitor/" aria-label="Webcam Heartrate Monitor: Website that can determine your heartrate using ambient lighting and a camera.">
 <!--    using jinja conditionals, if p.pic has a .mov or .mp4 ending, we use a video instead    -->
         
-        <img class="img mx-auto d-block" src="/static/heartratefromcamera.jpg" height="400vw" loading="lazy">
+        <img class="img mx-auto d-block" height="400vw" loading="lazy" src="/static/heartratefromcamera.jpg" style="aspect-ratio: auto 206 / 186;"/>
         
 
         <div class="overlay">
            <h2>Webcam Heartrate Monitor</h2>
-           <a class="info" href="/projects/heartratemonitor/">Website that can determine your heartrate using ambient lighting and a camera.</a>
+           <span class="info">Website that can determine your heartrate using ambient lighting and a camera.</span>
         </div>
-    </div>
+    </a>
     </div>
 
 <!--        <br>-->
@@ -813,18 +816,18 @@
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/carnegiecalendar/'">
-    <div class="hovereffect" >
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    <a class="hovereffect" href="/projects/carnegiecalendar/" aria-label="Carnegie Calendar: All-encompassing, auto-updating events calendar for everything going on at uni">
 <!--    using jinja conditionals, if p.pic has a .mov or .mp4 ending, we use a video instead    -->
         
-        <img class="img mx-auto d-block" src="/static/CCmain.png" height="400vw" loading="lazy">
+        <img class="img mx-auto d-block" height="400vw" loading="lazy" src="/static/CCmain.png" style="aspect-ratio: auto 1303 / 685;"/>
         
 
         <div class="overlay">
            <h2>Carnegie Calendar</h2>
-           <a class="info" href="/projects/carnegiecalendar/">All-encompassing, auto-updating events calendar for everything going on at uni</a>
+           <span class="info">All-encompassing, auto-updating events calendar for everything going on at uni</span>
         </div>
-    </div>
+    </a>
     </div>
 
 <!--        <br>-->
@@ -833,18 +836,18 @@
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/asciizoom/'">
-    <div class="hovereffect" >
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    <a class="hovereffect" href="/projects/asciizoom/" aria-label="AsciiZOOM: The first secure, text-based videoconferencing app, accessible from the safety of your terminal.">
 <!--    using jinja conditionals, if p.pic has a .mov or .mp4 ending, we use a video instead    -->
         
-        <img class="img mx-auto d-block" src="/static/asciizoom.png" height="400vw" loading="lazy">
+        <img class="img mx-auto d-block" height="400vw" loading="lazy" src="/static/asciizoom.png" style="aspect-ratio: auto 314 / 171;"/>
         
 
         <div class="overlay">
            <h2>AsciiZOOM</h2>
-           <a class="info" href="/projects/asciizoom/">The first secure, text-based videoconferencing app, accessible from the safety of your terminal.</a>
+           <span class="info">The first secure, text-based videoconferencing app, accessible from the safety of your terminal.</span>
         </div>
-    </div>
+    </a>
     </div>
 
 <!--        <br>-->
@@ -853,18 +856,18 @@
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/alteredperceptions/'">
-    <div class="hovereffect" >
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    <a class="hovereffect" href="/projects/alteredperceptions/" aria-label="Altered Perceptions: VR headset + POV camera + preprocessing =&gt; new way to see the world">
 <!--    using jinja conditionals, if p.pic has a .mov or .mp4 ending, we use a video instead    -->
         
-        <img class="img mx-auto d-block" src="/static/alteredbonsai.jpg" height="400vw" loading="lazy">
+        <img class="img mx-auto d-block" height="400vw" loading="lazy" src="/static/alteredbonsai.jpg" style="aspect-ratio: auto 522 / 392;"/>
         
 
         <div class="overlay">
            <h2>Altered Perceptions</h2>
-           <a class="info" href="/projects/alteredperceptions/">VR headset + POV camera + preprocessing =&gt; new way to see the world</a>
+           <span class="info">VR headset + POV camera + preprocessing =&gt; new way to see the world</span>
         </div>
-    </div>
+    </a>
     </div>
 
 <!--        <br>-->
@@ -873,18 +876,18 @@
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/ampbox/'">
-    <div class="hovereffect" >
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    <a class="hovereffect" href="/projects/ampbox/" aria-label="Amp Box: A box optimized for ease-of-use in amplifying tiny electrical signals (&lt;10 mv)">
 <!--    using jinja conditionals, if p.pic has a .mov or .mp4 ending, we use a video instead    -->
         
-        <img class="img mx-auto d-block" src="/static/ampbox.png" height="400vw" loading="lazy">
+        <img class="img mx-auto d-block" height="400vw" loading="lazy" src="/static/ampbox.png" style="aspect-ratio: auto 551 / 345;"/>
         
 
         <div class="overlay">
            <h2>Amp Box</h2>
-           <a class="info" href="/projects/ampbox/">A box optimized for ease-of-use in amplifying tiny electrical signals (&lt;10 mv)</a>
+           <span class="info">A box optimized for ease-of-use in amplifying tiny electrical signals (&lt;10 mv)</span>
         </div>
-    </div>
+    </a>
     </div>
 
 <!--        <br>-->
@@ -893,18 +896,18 @@
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/manualbackprop/'">
-    <div class="hovereffect" >
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    <a class="hovereffect" href="/projects/manualbackprop/" aria-label="Manual Backpropagation: Manually implementing backpropagation to make sure I know how it works">
 <!--    using jinja conditionals, if p.pic has a .mov or .mp4 ending, we use a video instead    -->
         
-        <img class="img mx-auto d-block" src="/static/backprop.png" height="400vw" loading="lazy">
+        <img class="img mx-auto d-block" height="400vw" loading="lazy" src="/static/backprop.png" style="aspect-ratio: auto 757 / 489;"/>
         
 
         <div class="overlay">
            <h2>Manual Backpropagation</h2>
-           <a class="info" href="/projects/manualbackprop/">Manually implementing backpropagation to make sure I know how it works</a>
+           <span class="info">Manually implementing backpropagation to make sure I know how it works</span>
         </div>
-    </div>
+    </a>
     </div>
 
 <!--        <br>-->
@@ -913,18 +916,18 @@
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/spintank/'">
-    <div class="hovereffect" >
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    <a class="hovereffect" href="/projects/spintank/" aria-label="Spin Tank: Testing a novel reactive tank armor that spins to deflect projectiles">
 <!--    using jinja conditionals, if p.pic has a .mov or .mp4 ending, we use a video instead    -->
         
-        <img class="img mx-auto d-block" src="/static/spintankabrams.png" height="400vw" loading="lazy">
+        <img class="img mx-auto d-block" height="400vw" loading="lazy" src="/static/spintankabrams.png" style="aspect-ratio: auto 417 / 275;"/>
         
 
         <div class="overlay">
            <h2>Spin Tank</h2>
-           <a class="info" href="/projects/spintank/">Testing a novel reactive tank armor that spins to deflect projectiles</a>
+           <span class="info">Testing a novel reactive tank armor that spins to deflect projectiles</span>
         </div>
-    </div>
+    </a>
     </div>
 
 <!--        <br>-->
@@ -933,18 +936,18 @@
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/forcequeue/'">
-    <div class="hovereffect" >
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    <a class="hovereffect" href="/projects/forcequeue/" aria-label="Spotify Force Queueing: A Python program using Spotify APIs to forcibly queue songs on collaborative playlists when you don&#39;t have aux control">
 <!--    using jinja conditionals, if p.pic has a .mov or .mp4 ending, we use a video instead    -->
         
-        <img class="img mx-auto d-block" src="/static/kerokerokerokerokerokero.png" height="400vw" loading="lazy">
+        <img class="img mx-auto d-block" height="400vw" loading="lazy" src="/static/kerokerokerokerokerokero.png" style="aspect-ratio: auto 340 / 301;"/>
         
 
         <div class="overlay">
            <h2>Spotify Force Queueing</h2>
-           <a class="info" href="/projects/forcequeue/">A Python program using Spotify APIs to forcibly queue songs on collaborative playlists when you don&#39;t have aux control</a>
+           <span class="info">A Python program using Spotify APIs to forcibly queue songs on collaborative playlists when you don&#39;t have aux control</span>
         </div>
-    </div>
+    </a>
     </div>
 
 <!--        <br>-->
@@ -953,18 +956,18 @@
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/eyetracker/'">
-    <div class="hovereffect" >
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    <a class="hovereffect" href="/projects/eyetracker/" aria-label="Eye-Tracking Mouse: An easy-to-use, handless mouse utilizing a laptop&#39;s built-in webcam and some CNNs.">
 <!--    using jinja conditionals, if p.pic has a .mov or .mp4 ending, we use a video instead    -->
         
-        <img class="img mx-auto d-block" src="/static/eyetrackthumbnail.png" height="400vw" loading="lazy">
+        <img class="img mx-auto d-block" height="400vw" loading="lazy" src="/static/eyetrackthumbnail.png" style="aspect-ratio: auto 471 / 274;"/>
         
 
         <div class="overlay">
            <h2>Eye-Tracking Mouse</h2>
-           <a class="info" href="/projects/eyetracker/">An easy-to-use, handless mouse utilizing a laptop&#39;s built-in webcam and some CNNs.</a>
+           <span class="info">An easy-to-use, handless mouse utilizing a laptop&#39;s built-in webcam and some CNNs.</span>
         </div>
-    </div>
+    </a>
     </div>
 
 <!--        <br>-->
@@ -973,18 +976,18 @@
 
         
 
-        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12" onclick="window.location.href='/projects/personalwebsite/'">
-    <div class="hovereffect" >
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    <a class="hovereffect" href="/projects/personalwebsite/" aria-label="Personal Website: A custom static website generator built with Flask and hosted on Cloudflare Pages. You&#39;re looking right at it!">
 <!--    using jinja conditionals, if p.pic has a .mov or .mp4 ending, we use a video instead    -->
         
-        <img class="img mx-auto d-block" src="/static/websitev2.png" height="400vw" loading="lazy">
+        <img class="img mx-auto d-block" height="400vw" loading="lazy" src="/static/websitev2.png" style="aspect-ratio: auto 681 / 300;"/>
         
 
         <div class="overlay">
            <h2>Personal Website</h2>
-           <a class="info" href="/projects/personalwebsite/">Static website generator built with Flask and hosted on Firebase. You&#39;re looking right at it!</a>
+           <span class="info">A custom static website generator built with Flask and hosted on Cloudflare Pages. You&#39;re looking right at it!</span>
         </div>
-    </div>
+    </a>
     </div>
 
 <!--        <br>-->
@@ -995,6 +998,7 @@
     </div>
 </div>
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

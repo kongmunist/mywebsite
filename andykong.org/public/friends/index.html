@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Friends | Andy Kong</title>
 <meta name="description" content="A page dedicated to Andy Kong&#39;s friends.">
@@ -172,6 +173,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -197,7 +205,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -217,10 +225,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -233,17 +241,17 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-        <img class="img-responsive" src="/static/nancy.png" height="300px">
+        <img class="img-responsive" height="300px" loading="lazy" src="/static/nancy.png" style="aspect-ratio: auto 545 / 494;"/>
             <h2>Nancy</h2>
         </div>
 
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-        <img class="img-responsive" src="/static/nancy.png" height="300px">
+        <img class="img-responsive" height="300px" loading="lazy" src="/static/nancy.png" style="aspect-ratio: auto 545 / 494;"/>
             <h2>Nancy</h2>
         </div>
 
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-        <img class="img-responsive" src="/static/nancy.png" height="300px">
+        <img class="img-responsive" height="300px" loading="lazy" src="/static/nancy.png" style="aspect-ratio: auto 545 / 494;"/>
             <h2>Nancy</h2>
         </div>
         </div>
@@ -251,6 +259,7 @@
 
 <!--</div>-->
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

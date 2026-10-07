@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Shot comparisons between an iPhone and digital camera | Andy Kong</title>
 <meta name="description" content="Sensor size matters!">
@@ -319,6 +320,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -344,7 +352,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -364,10 +372,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -391,14 +399,14 @@
 <p>We talked about it on a tram and took some side-by-side shots, him with his camera and me with my phone. Even from his camera's tiny LCD screen, the closeup detail in the camera shot was incredibly clear compared to mine, which looked dusty and blurry. Unfortunately we have lost those test photos, but luckily I borrowed a similar camera to take comparison shots with.</p>
 <p>Here are two photographs of the same scene. The first photo is taken with the Canon EOS 3 (APS-C sensor), while the horizontal one is taken with an iPhone 13.</p>
 <p class="caption"> Canon shot </p>
-<p><img loading="lazy" alt="Canon shot" class="addpic" src="/static/phonecamvsrealcam/0.jpg"/></p>
+<p><img alt="Canon shot" class="addpic" height="1280" loading="lazy" src="/static/phonecamvsrealcam/0.jpg" style="aspect-ratio: auto 1920 / 1280;" width="1920"/></p>
 <p class="caption"> iPhone shot </p>
-<p><img loading="lazy" alt="iPhone shot" class="addpic" src="/static/phonecamvsrealcam/1.jpg"/></p>
+<p><img alt="iPhone shot" class="addpic" height="1856" loading="lazy" src="/static/phonecamvsrealcam/1.jpg" style="aspect-ratio: auto 2704 / 1856;" width="2704"/></p>
 <p>I have some closeup shots, but the comparison is kinda impaired by the lower resolution of the Canon. Again, the Canon is the first shot. </p>
 <p class="caption"> Curtain closeup, Canon shot </p>
-<p><img loading="lazy" alt="Curtain closeup, Canon shot" class="addpic" src="/static/phonecamvsrealcam/2.jpg"/></p>
+<p><img alt="Curtain closeup, Canon shot" class="addpic" height="2058" loading="lazy" src="/static/phonecamvsrealcam/2.jpg" style="aspect-ratio: auto 3092 / 2058;" width="3092"/></p>
 <p class="caption"> Curtain closeup, iPhone shot </p>
-<p><img loading="lazy" alt="Curtain closeup, iPhone shot" class="addpic" src="/static/phonecamvsrealcam/3.jpg"/></p>
+<p><img alt="Curtain closeup, iPhone shot" class="addpic" height="2044" loading="lazy" src="/static/phonecamvsrealcam/3.jpg" style="aspect-ratio: auto 3084 / 2044;" width="3084"/></p>
 <p>The Canon's details on the right side of the curtain come out better, but the iPhone does a bit better on the left side (less lighting). Even though more detail is resolvable in the iPhone photo, the whole shot looks a bit washed out - the colors are much crisper with the Canon.</p>
 <p>On the left wall, the iPhone image is much grainier, and I think the weird coloration on the Canon shot is from the JPG encoding and not the camera itself. </p>
 <h1 id="does-it-come-from-sensor-size">Does it come from sensor size?</h1>
@@ -432,6 +440,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

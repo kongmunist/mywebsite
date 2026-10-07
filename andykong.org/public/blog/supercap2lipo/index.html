@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Supercapacitor To Lithium Battery Converter | Andy Kong</title>
 <meta name="description" content="To enable powering all lithium battery devices with chunky supercaps instead">
@@ -321,6 +322,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -346,7 +354,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -366,10 +374,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -391,23 +399,23 @@
 <hr>
             <html><body><p>This past weekend, I attended my last Build18 as an undergrad. Build18 is a hardware hackathon at CMU which gives student teams a $300 budget to buy any parts they want, to build any project they'd like. This time around, I decided to convert a smartphone to use a supercapacitor instead of its lithium battery. The benefit of a supercapacitor is that it's easier to hold, and that it can charge around 100x faster than a lithium battery. The only downside is that it's massive. </p>
 <p class="caption">Size of the supercap, here charging my FitBit</p>
-<p><img loading="lazy" alt="Size of the supercap, here charging my FitBit" src="/static/cap2lipo_capsize.jpg"/></p>
+<p><img alt="Size of the supercap, here charging my FitBit" height="1772" loading="lazy" src="/static/cap2lipo_capsize.jpg" style="aspect-ratio: auto 1382 / 1772;" width="1382"/></p>
 <p>To replace the lipo, I needed to convert supercapacitor voltages (0-3V) to lithium battery voltages (3.7-4.2V). The most common boost/buck-boost circuits online start working at 3V, which is just out of reach of all supercaps, so I made custom boost converter board based on an application note from the <a href="https://www.analog.com/en/products/ltc3124.html">LTC3124</a>. This post tests a few metrics of this board. </p>
 <p>Most consumer electronics use lipos, and by making this board, I hope to make any future device supercap conversions easy to do. The boost converter circuit keeps working down to 0.5V, and only kicks in around 1.7V. </p>
 <p class="caption">Supercap board alone</p>
-<p><img loading="lazy" alt="Supercap board alone" src="/static/cap2lipo_board.jpg"/></p>
+<p><img alt="Supercap board alone" height="633" loading="lazy" src="/static/cap2lipo_board.jpg" style="aspect-ratio: auto 645 / 633;" width="645"/></p>
 <h1 id="testing-metrics">Testing Metrics</h1>
 <p>The metrics I'm interested in are maximum continuous current output and efficiency.</p>
 <p>The problem with powering a former-LiPo device with a supercap is that the boost converter bottlenecks the current. Even if the supercap can handle a device spike of 2 amps, the boost converter may not be able to, sending the voltage crashing. The maximum continuous current output lets me know which devices can use this converter board. </p>
 <p>The supercap's low energy density also means that the cap alone is only 2/3 or so of the total energy in a smartphone battery, and is only made worse by the inefficiency in the boost converter. The efficiency lets us get a measurement of how much current we can expect to use from the supercap.</p>
 <h1 id="setup">Setup</h1>
 <p class="caption">Setup for testing the board</p>
-<p><img loading="lazy" alt="Setup for testing the board" src="/static/cap2lipo_testsetup.jpg"/></p>
+<p><img alt="Setup for testing the board" height="1367" loading="lazy" src="/static/cap2lipo_testsetup.jpg" style="aspect-ratio: auto 1210 / 1367;" width="1210"/></p>
 <p>I used a DC  electronic load and a 3V/3A power supply for testing, and this board is set to output 4V. Here's the data:</p>
 <p class="caption">Maximum continuous current out at 4V output</p>
-<p><img loading="lazy" alt="Maximum continuous current out at 4V output" src="/static/cap2lipo_currentout.png"/></p>
+<p><img alt="Maximum continuous current out at 4V output" height="1010" loading="lazy" src="/static/cap2lipo_currentout.png" style="aspect-ratio: auto 1652 / 1010;" width="1652"/></p>
 <p class="caption">Efficiency at 4V for various input voltages</p>
-<p><img loading="lazy" alt="Efficiency at 4V for various input voltages" src="/static/cap2lipo_efficiency.png"/></p>
+<p><img alt="Efficiency at 4V for various input voltages" height="1008" loading="lazy" src="/static/cap2lipo_efficiency.png" style="aspect-ratio: auto 1636 / 1008;" width="1636"/></p>
 <p>Considering the cap's total power scales with $V^2$, we are well above 70% efficiency for 90% of the energy of the cap. Also, the 0.6A current output at 1.5V is enough to power a smartphone, since most of the time they draw 200-500mA (except on startup). </p>
 <h1 id="comparison">Comparison</h1>
 <p>Crudely, the efficiency cuts down the capacity by 75%, and it only works (for smartphones, depends on current load) down to around 1.25V. At peak, the supercap is 2.85V, so we can use 1.25^2/2.85^2 = 80.7% of the power in the cap. This means when we calculate the equivalent lipo capacity of a supercap, we need to downrate it to 60% of total capacity. Ouch!</p>
@@ -440,6 +448,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

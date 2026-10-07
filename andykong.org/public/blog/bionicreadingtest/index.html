@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Bionic reading doesn&#39;t help you read faster | Andy Kong</title>
 <meta name="description" content="An N=1 experiment">
@@ -320,6 +321,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -345,7 +353,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -365,10 +373,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -393,7 +401,7 @@
 <p>Today I have some more results, this time regarding the nu-age speed-reading technique called "Bionic Reading". I have read the first two books of the next Olympians series by Rick Riordan, one with Bionic Reading and one without. </p>
 <hr/>
 <h1 id="inspiration">Inspiration</h1>
-<p><img loading="lazy" alt="Bar chart of reading speeds across the five Percy Jackson books, all between 752 and 847 words per minute" class="addpic" src="/static/printvsdigital/2.png"/></p>
+<p><img alt="Bar chart of reading speeds across the five Percy Jackson books, all between 752 and 847 words per minute" class="addpic" height="527" loading="lazy" src="/static/printvsdigital/2.png" style="aspect-ratio: auto 579 / 527;" width="579"/></p>
 <p>Looking at the graphs of my reading speed from the previous post, I find it amazing how close the reading speeds are for each book. While I think I read at a fairly consistent rate, Rick Riordan must also target a word count, and the vocab level must be held consistent across each one. To me, this ability to write series of books around the same character or universe with an audience that stays invested seems like a staple of young-adult / teenage fiction. Or maybe just for entertainment novels? I'm thinking of</p>
 <ul>
 <li>Warriors series (8 series of 6 books each)</li>
@@ -405,23 +413,23 @@
 <h1 id="todays-intervention-bionic-reading">Today's intervention: Bionic Reading</h1>
 <p><strong>Bio</strong>nic <strong>Rea</strong>ding <strong>is</strong> <strong>th</strong>is <strong>co</strong>ol <strong>hi</strong>p <strong>ne</strong>w <strong>tech</strong>nique <strong>whe</strong>re <strong>th</strong>e <strong>fi</strong>rst <strong>ha</strong>lf <strong>of</strong> <strong>ea</strong>ch <strong>wo</strong>rd <strong>i</strong>n <strong>a</strong> <strong>te</strong>xt is bolded. Since we read text in saccades, the inventor(s) believe that bolding the first, anchor part of a word would help people read text faster by allowing the eye to lock onto the next word more quickly.</p>
 <p class="caption"> Example of Bionic Reading text </p>
-<p><img loading="lazy" alt="Example of Bionic Reading text" class="addpic" src="/static/bionicreadingtest/0.png"/></p>
+<p><img alt="Example of Bionic Reading text" class="addpic" height="142" loading="lazy" src="/static/bionicreadingtest/0.png" style="aspect-ratio: auto 423 / 142;" width="423"/></p>
 <p>As far as I can remember, this was marketed to me as a way of reading better suited for ADHD / neuro-diverse people, a sort of salesman's trick like <a href="https://en.wikipedia.org/wiki/Irlen_filters">Irlen filters</a> that supposedly speeds up reading rates in return for money (backed by science!). </p>
 <p>But whatever, I love running experiments, especially tiny ones.</p>
 <h1 id="experimental-setup">Experimental setup</h1>
 <p>Rick Riordan's 2nd Greco-Roman fantasy series is also 5 books long, features characters from the first series, and has similar average length (~120k words/book vs. ~85k). The first book I read normally, as a book file converted to HTML. Here is what it looks like:</p>
-<p><img loading="lazy" alt="Opening page of the Jason chapter from The Lost Hero rendered as plain HTML text" class="addpic" src="/static/bionicreadingtest/1.png"/></p>
+<p><img alt="Opening page of the Jason chapter from The Lost Hero rendered as plain HTML text" class="addpic" height="296" loading="lazy" src="/static/bionicreadingtest/1.png" style="aspect-ratio: auto 558 / 296;" width="558"/></p>
 <p>The second book I read using a Chrome extension called <a href="https://chromewebstore.google.com/detail/jiffy-reader/lljedihjnnjjefafchaljkhbpfhfkdic">JiffyReader</a>, which bolds the first half of each word in the text, making it "Bionified". Here's what it looks like now:</p>
-<p><img loading="lazy" alt="The same book page with Bionic Reading applied, bolding the first half of every word" class="addpic" src="/static/bionicreadingtest/2.png"/></p>
+<p><img alt="The same book page with Bionic Reading applied, bolding the first half of every word" class="addpic" height="327" loading="lazy" src="/static/bionicreadingtest/2.png" style="aspect-ratio: auto 580 / 327;" width="580"/></p>
 <p>My process was a bit convoluted because the real Bionic Reader converter 1) costs money and 2) doesn't preserve the format, which definitely affects reading speed. </p>
 <h1 id="results--discussion">Results &amp; Discussion</h1>
 <p>Here are my reading speeds for the first two books. The left is read normally, the right is read with Bionic text. Yada yada small sample size, can't draw statistically whatever conclusions, etc.</p>
 <p>Bionic Reading felt the same to me as normal reading after 10 pages, I did not feel less eye fatigue, nor did I read faster subjectively or objectively. I'm pretty sure this is a gimmick. </p>
-<p><img loading="lazy" alt="Bar chart comparing reading speeds: 774 words per minute normal versus 754 with Bionic Reading" class="addpic" src="/static/bionicreadingtest/3.png"/></p>
+<p><img alt="Bar chart comparing reading speeds: 774 words per minute normal versus 754 with Bionic Reading" class="addpic" height="470" loading="lazy" src="/static/bionicreadingtest/3.png" style="aspect-ratio: auto 621 / 470;" width="621"/></p>
 <hr/>
 <h1 id="extras">Extras</h1>
 <p>Also the website is awful (I'm not strawmanning, it's unrelated), check it out:</p>
-<p><img loading="lazy" alt="Bionic Reading homepage with giant overlapping mustard text, annotated in red mocking how hard it is to read" class="addpic" src="/static/bionicreadingtest/4.png"/></p></body></html>
+<p><img alt="Bionic Reading homepage with giant overlapping mustard text, annotated in red mocking how hard it is to read" class="addpic" height="833" loading="lazy" src="/static/bionicreadingtest/4.png" style="aspect-ratio: auto 1283 / 833;" width="1283"/></p></body></html>
 
 
 
@@ -446,6 +454,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

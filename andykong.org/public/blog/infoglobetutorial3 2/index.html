@@ -3,16 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Infoglobe Tutorial Pt. 3 — Software | Andy Kong</title>
 <meta name="description" content="Adding bits to our atoms">
 <meta name="author" content="Andy Kong">
-<link rel="canonical" href="https://andykong.org/blog/infoglobetutorial3 2/">
+<link rel="canonical" href="https://andykong.org/blog/infoglobetutorial3%202/">
 <meta property="og:site_name" content="Andy Kong">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Infoglobe Tutorial Pt. 3 — Software">
 <meta property="og:description" content="Adding bits to our atoms">
-<meta property="og:url" content="https://andykong.org/blog/infoglobetutorial3 2/">
+<meta property="og:url" content="https://andykong.org/blog/infoglobetutorial3%202/">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://andykong.org/static/igt1_hero.jpeg">
 <meta property="og:image:secure_url" content="https://andykong.org/static/igt1_hero.jpeg">
@@ -44,8 +45,8 @@
           "headline": "Infoglobe Tutorial Pt. 3 \u2014 Software",
           "description": "Adding bits to our atoms",
           "datePublished": "2023-04-09",
-          "url": "https://andykong.org/blog/infoglobetutorial3 2/",
-          "mainEntityOfPage": "https://andykong.org/blog/infoglobetutorial3 2/",
+          "url": "https://andykong.org/blog/infoglobetutorial3%202/",
+          "mainEntityOfPage": "https://andykong.org/blog/infoglobetutorial3%202/",
           "image": "https://andykong.org/static/igt1_hero.jpeg",
           "keywords": "infoglobe, software, gist, tutorial",
           "author": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"},
@@ -321,6 +322,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -346,7 +354,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -366,10 +374,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -397,14 +405,14 @@
 }
     </style>
 </head><body><p>Ok, welcome back for our final installment of the infoglobe tutorial series. If you've not been following along, here's links to the hardware mods that you'll need to have done before this post will be useful to you — <a href="../infoglobetutorial1">part 1</a> and <a href="../infoglobetutorial2">part 2</a>.</p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/igt1_hero.jpeg"/></p>
+<p><img alt="" class="addpic" height="749" loading="lazy" src="/static/igt1_hero.jpeg" style="aspect-ratio: auto 804 / 749;" width="804"/></p>
 <p>If you've forgotten, here's the device we're hacking - the Olympia Infoglobe. I have described it too often, so we're gonna get right into the meat of this post. </p>
 <hr/>
 <h1 id="code">Code</h1>
 <p>We're using the Wemos D1 mini ESP8266/ESP32 breakout board to control our globe, it looks like this.</p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/igt3_wemos.png"/></p>
+<p><img alt="" class="addpic" height="627" loading="lazy" src="/static/igt3_wemos.png" style="aspect-ratio: auto 885 / 627;" width="885"/></p>
 <p>Boot up your Arduino IDE and download the "IRremoteESP8266" library from the Tools-&gt;Manage Libraries-&gt; then search for IRremoteESP8266. This library should be supported for ESP32s as well. Hit install, and twiddle your thumbs for a bit as it installs.</p>
-<p><img loading="lazy" alt="" class="addpic" src="/static/igt3_irlib.png"/></p>
+<p><img alt="" class="addpic" height="244" loading="lazy" src="/static/igt3_irlib.png" style="aspect-ratio: auto 283 / 244;" width="283"/></p>
 <p>Now, copy past <a href="https://gist.github.com/kongmunist/a8bdadbacda4bcb129cd183f2f0fffc5">this gist</a> into a new Arduino file and upload it to your ESP board. </p>
 <script src="https://gist.github.com/kongmunist/a8bdadbacda4bcb129cd183f2f0fffc5.js"></script>
 <p>This script is a demo showing the usage of all the functions we have to make controlling the Infoglobe easier. If you read through the <code>loop()</code> function, then you'll begin to understand the code and become able to extend it to your own beneficial/nefarious purposes.</p>
@@ -412,7 +420,7 @@
 <h2 id="example-use-case">Example use case</h2>
 <p>I've personally written some code which lets the Infoglobe connect to my wifi and access <a href="https://aksuper7.pythonanywhere.com/">this website</a> I made for receiving notes from my friends. If you type a message and my globe is plugged in, I'll be able to see the message right on my Infoglobe. Pretty cool, right? </p>
 <p class="caption"> Website to connect digital friends to my physical environment </p>
-<p><img loading="lazy" alt="Website to connect digital friends to my physical environment" class="addpic" src="/static/igt3_example1.png"/></p>
+<p><img alt="Website to connect digital friends to my physical environment" class="addpic" height="664" loading="lazy" src="/static/igt3_example1.png" style="aspect-ratio: auto 616 / 664;" width="616"/></p>
 <p>I know of other people using their infoglobes as a weather/disaster reporting station, or a way to visualize Alexa messages. </p>
 <h2 id="alternatives-to-esp">Alternatives to ESP</h2>
 <p>It should be possible to substitute in any microcontroller which is supported by one of the IRremote libraries, since it should work as long as the function names are identical.</p>
@@ -447,6 +455,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

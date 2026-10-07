@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Average clip duration in MILF Manor | Andy Kong</title>
 <meta name="description" content="Gauging the audience attention span from TLC dating shows">
@@ -320,6 +321,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -345,7 +353,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -365,10 +373,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -392,14 +400,14 @@
 <p>Do this maybe 20 times, and you usually get some idea of the distribution. Usually the cuts happen so quickly and fluidly that you may notice yourself <em>missing</em> a few cuts, even though every pixel on the screen dramatically changes and it seems like something you'd notice. </p>
 <p>Recently I watched Milf Manor, a "reality" dating show where older women seeking younger men are paired with younger men seeking older women on a fancy island. The twist is that every young man is the child of one of the older women. Hilarity ensues (?). </p>
 <p class="caption"> The complicated feature I used for detecting jump cuts </p>
-<p><img loading="lazy" alt="The complicated feature I used for detecting jump cuts" class="addpic" src="/static/milf_cutfeature.jpg"/></p>
+<p><img alt="The complicated feature I used for detecting jump cuts" class="addpic" height="882" loading="lazy" src="/static/milf_cutfeature.jpg" style="aspect-ratio: auto 1127 / 882;" width="1127"/></p>
 <p>Common decency aside, this show jump-cuts like nothing else. I did my stopwatch thing but didn't want to stop there — I really wanted to know all about the cut length distribution. I downloaded an episode and used the change in standard deviation of the absolute color difference of two adjacent frames. When this number crossed ~30, I called it a cut and recorded the frame number.</p>
 <p>Then I calculated a few stats about it. Here they are:</p>
 <p class="caption"> Avg clip length is 2.48 sec, with the median at 1.92 sec </p>
-<p><img loading="lazy" alt="Avg clip length is 2.48 sec, with the median at 1.92 sec" class="addpic" src="/static/milf_stats.png"/></p>
+<p><img alt="Avg clip length is 2.48 sec, with the median at 1.92 sec" class="addpic" height="226" loading="lazy" src="/static/milf_stats.png" style="aspect-ratio: auto 417 / 226;" width="417"/></p>
 <p>While the average clip length is 2.5 seconds, the median is only 2 seconds. I also find it interesting that the average human blink rate is 1 blink per 4-5 seconds, which means we can see around two clips between blinks. Since the average blink takes ~0.3 seconds, we also won't miss much of a clip while blinking.</p>
 <p class="caption"> Milf Manor clip duration histogram </p>
-<p><img loading="lazy" alt="Milf Manor clip duration histogram" class="addpic" src="/static/milf_cutdistro.jpg"/></p>
+<p><img alt="Milf Manor clip duration histogram" class="addpic" height="1360" loading="lazy" src="/static/milf_cutdistro.jpg" style="aspect-ratio: auto 1942 / 1360;" width="1942"/></p>
 <h1 id="conclusion">Conclusion</h1>
 <p>The difficulty of identifying a cut in a video surprised me, but it makes sense if you consider all the possible transitions (fade to black, fade to another clip, slo-mo transition to real-time, etc.). There is even a library in Python called <a href="https://pypi.org/project/scenedetect/">scenedetect</a> which identifies these for you. Next time I will definitely use that for cut detection instead of making my own feature. </p>
 <p>I have completely satisfied my curiousity about Milf Manor at this time. </p></body></html>
@@ -427,6 +435,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

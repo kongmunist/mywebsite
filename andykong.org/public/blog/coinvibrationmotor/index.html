@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Coin vibration motors arrived! | Andy Kong</title>
 <meta name="description" content="Now I can do &#34;haptic feedback&#34;">
@@ -320,6 +321,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -345,7 +353,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -365,10 +373,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -390,13 +398,13 @@
 <hr>
             <html><body><p>We were going over a <a href="https://la.disneyresearch.com/publication/surround-haptics-sending-shivers-down-your-spine/">paper by Disney Research</a> in class last week that said two sufficiently close vibration motors on someone's skin created a sensation in a single spot in between them. Then, you could just vary the power to one or the other and "move" the phantom dot back and forth between the two, essentially creating a vibrating line for the price of two motors!</p>
 <p class="caption">Image from the Disney Paper "Surround Haptics: Sending Shivers Down Your Spine"</p>
-<p><img loading="lazy" alt='Image from the Disney Paper "Surround Haptics: Sending Shivers Down Your Spine"' src="/static/surroundhaptics.png"/></p>
+<p><img alt='Image from the Disney Paper "Surround Haptics: Sending Shivers Down Your Spine"' height="575" loading="lazy" src="/static/surroundhaptics.png" style="aspect-ratio: auto 875 / 575;" width="875"/></p>
 <p>This even extends to two 'virtual' spots, which can create a second phantom vibration spot in their centroid. How cool!</p>
 <h3>I had to try it!</h3>
 <p>So I ordered these tiny coin cell haptics motors off Amazon. 10 for $6, smaller than my pinky fingernail, and powered off 3 volts. Adhesive side and a foamy side. Nominal resistance is 36Ω, I powered them off my Arduino's 3.3V and it worked well. Not insane vibration, but very noticeable! </p>
 <p>The thing started warming up pretty quickly, so I may have to deal with that, but it could just be a lack of current limiting hardware in the way. It also might self-regulate when it gets hot enough, but I don't want it strapped to my arm when I find that out. I'm probably pulling too much current from the Arduino as-is. </p>
 <p class="caption">Me holding one of the tiny coin vibration motors I ordered, foamy side up</p>
-<p><img loading="lazy" alt="Me holding one of the tiny coin vibration motors I ordered, foamy side up" src="/static/coinvibrationmotors.png"/></p>
+<p><img alt="Me holding one of the tiny coin vibration motors I ordered, foamy side up" height="375" loading="lazy" src="/static/coinvibrationmotors.png" style="aspect-ratio: auto 394 / 375;" width="394"/></p>
 <p>I'm gonna try it and let you know how it goes! Be safe!</p></body></html>
 
 
@@ -422,6 +430,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

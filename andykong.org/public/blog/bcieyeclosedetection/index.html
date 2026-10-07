@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Hello World for Brain-Computer Interfaces | Andy Kong</title>
 <meta name="description" content="Detecting alpha wave activity with EEG to predict whether my eyes are open or closed">
@@ -319,6 +320,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -344,7 +352,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -364,10 +372,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -397,16 +405,16 @@
 <p>Data are being recorded on a single channel of the OpenBCI Ganglion EEG board. The electrode placements are as follows: GND on right earlobe, Channel 1 (-) on left earlobe, and Channel 1 (+) on position Oz of the 10-20 international system. </p>
 <p>Oz is right over the occipital region of the brain, near the bump on the middle-back of your head (this is called the inion). Sample rate is 200Hz, safety from being shocked in the brain by mains insured by the board streaming samples to my laptop over Bluetooth.</p>
 <p class="caption">Picture of the Ganglion board, with two earlobe electrodes and the scalp electrode. It's spiky to go through hair</p>
-<p><img loading="lazy" alt="Picture of the Ganglion board, with two earlobe electrodes and the scalp electrode. It's spiky to go through hair" src="/static/alphawaves_electrodes.jpg"/></p>
+<p><img alt="Picture of the Ganglion board, with two earlobe electrodes and the scalp electrode. It's spiky to go through hair" height="756" loading="lazy" src="/static/alphawaves_electrodes.jpg" style="aspect-ratio: auto 1008 / 756;" width="1008"/></p>
 <p>Once streamed onto the computer over BrainFlow (I made <a href="../workingwithbrainflow1" target="_blank">another blog post</a> about that), the data are filtered using SciPy's IIR filters. Mainly, a 60Hz notch filter and 5-75Hz bandpass filter, with 40dB attenuation for the stopband. These are applied with the <code>scipy.signal.filtfilt()</code> function. I don't know if the dB number is like power (div by 20 then take the logarithm) or normal (div by 10 then take the logarithm), but the stopband is completely flat either way so I don't really mind. </p>
 <p>FFT is calculated using <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.welch.html">Welch's method</a>. Alpha band integration is as simple as adding up all the magnitude contributions from frequencies in the band 7-13Hz, but Brainflow has a built-in function for doing this (if you use this, make sure you feed in the tuple as (power, freqs) instead of the (freqs, power) that <code>scipy.signal.welch()</code> gives you). That's it!</p>
 <p>Implementation: I'm creating a live plot using a matplotlib animation. The indicator is drawn on-graph as both text and an emoji. </p>
 <h2 id="results">Results</h2>
 <p>Eyes closed are pretty reliably detected by a spike, with a lag of about a second. Eyes opening, the alpha waves drop about as fast as they rise. This is probably due to my EEG data window being 5 seconds, since I'm not doing any averaging that would otherwise slow it down. </p>
 <p class="caption">Graph of baseline alpha wave activity</p>
-<p><img loading="lazy" alt="Graph of baseline alpha wave activity" src="/static/alphawaves_eyesopen.png"/></p>
+<p><img alt="Graph of baseline alpha wave activity" height="346" loading="lazy" src="/static/alphawaves_eyesopen.png" style="aspect-ratio: auto 656 / 346;" width="656"/></p>
 <p class="caption">Vastly increased alpha wave activity when user's eyes are closed</p>
-<p><img loading="lazy" alt="Vastly increased alpha wave activity when user's eyes are closed" src="/static/alphawaves_eyesclosed.png"/></p>
+<p><img alt="Vastly increased alpha wave activity when user's eyes are closed" height="347" loading="lazy" src="/static/alphawaves_eyesclosed.png" style="aspect-ratio: auto 660 / 347;" width="660"/></p>
 <h2 id="reliability-problems">Reliability problems</h2>
 <p><em>Within session</em>, I had no problems with reliability. I saw my average alpha activity around 8 uV^2, and it went above 12 or so with my eyes closed so I set that as the breakpoint. However, alpha activity also decreases with increase in drowsiness, and I finished this pretty late last night, so it could not work for me right now (not drowsy) the way the breakpoints are set.</p>
 <p>I believe the baseline alpha activity varies from person to person, so the threshold would probably have to be adjusted for new people. </p>
@@ -433,6 +441,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

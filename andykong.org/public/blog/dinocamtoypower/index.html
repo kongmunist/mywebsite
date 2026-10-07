@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Power profiling a thermal printer camera | Andy Kong</title>
 <meta name="description" content="Exposing the internals of a dinosaur-shaped children&#39;s camera I got in Shenzhen">
@@ -319,6 +320,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -344,7 +352,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -364,10 +372,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -389,7 +397,7 @@
 <hr>
             <html><body><p>Hello! I've recently finished a paper, so it's time to work on sillier stuff. </p>
 <p>On a recent trip to China, I purchased this children's toy camera consisting of a front/back-facing camera and thermal printer which can print the captured photos on the spot. It's adorable, and I use it to take shitty analog-looking photos of my friends. </p>
-<p><img loading="lazy" alt="Teal dinosaur toy camera opened up, showing thermal printer, camera lens, and blue battery pack inside" class="addpic" src="/static/dinocamtoypower/0.jpeg"/></p>
+<p><img alt="Teal dinosaur toy camera opened up, showing thermal printer, camera lens, and blue battery pack inside" class="addpic" height="4032" loading="lazy" src="/static/dinocamtoypower/0.jpeg" style="aspect-ratio: auto 3024 / 4032;" width="3024"/></p>
 <p>As someone whose only used phone cameras, having one as a monotool is pretty convenient. And the terrible picture quality is quite freeing, since no matter what you do or how you look, the picture will be pretty shite.</p>
 <p>My only gripe is the speed. Most real cameras have a sleep mode where they're on, ready to shoot, but not really burning much power. I'd like to keep this camera in sleep mode too, cause it takes 5-10 seconds to turn on and another few seconds to flip around the camera. But as far as I can tell, there is no sleep mode, just a screen-off mode. You can also configure an auto-off timer in the settings, but then you have to wait for it to turn back on again.</p>
 <p>If "display off" mode uses almost no power, then I can make the auto-off timer absurdly long and just turn off the display when it's in my pocket. However, if power consumption stays high, I'll just leave it off and deal with the startup time. It's time to check!</p>
@@ -398,19 +406,19 @@
 <p>Side note, it's sad to me that some versions of this toy will be thrown away despite being fully functional just because the parents/kid didn't know to open it and push back the battery plug back in. It should be glued on to prevent this, but I digress. </p>
 <h1 id="screen-on">Screen on</h1>
 <p>After the device turns on, power consumption is a steady ~85mA on the start screen</p>
-<p><img loading="lazy" alt="Oscilloscope current trace holding steady around 85mA with the toy camera on its start menu screen" class="addpic" src="/static/dinocamtoypower/1.jpeg"/></p>
+<p><img alt="Oscilloscope current trace holding steady around 85mA with the toy camera on its start menu screen" class="addpic" height="477" loading="lazy" src="/static/dinocamtoypower/1.jpeg" style="aspect-ratio: auto 541 / 477;" width="541"/></p>
 <h1 id="camera-on">Camera on</h1>
 <p>With the camera on, current consumption increases to ~95mA. It does not seem to matter which camera. </p>
-<p><img loading="lazy" alt="Oscilloscope trace stepping up to roughly 95mA as the toy camera shows a live viewfinder image" class="addpic" src="/static/dinocamtoypower/2.jpeg"/></p>
-<p><img loading="lazy" alt="Similar oscilloscope current trace with the other camera active, again around 95mA" class="addpic" src="/static/dinocamtoypower/3.jpeg"/></p>
+<p><img alt="Oscilloscope trace stepping up to roughly 95mA as the toy camera shows a live viewfinder image" class="addpic" height="537" loading="lazy" src="/static/dinocamtoypower/2.jpeg" style="aspect-ratio: auto 648 / 537;" width="648"/></p>
+<p><img alt="Similar oscilloscope current trace with the other camera active, again around 95mA" class="addpic" height="511" loading="lazy" src="/static/dinocamtoypower/3.jpeg" style="aspect-ratio: auto 439 / 511;" width="439"/></p>
 <h1 id="display-off">Display off</h1>
 <p>When the display is off but the device is on, power consumption is still quite high. The camera seems to turn off but we are still at a steady ~80mA, nearly the same as when we're on the intro menu.</p>
-<p><img loading="lazy" alt="Oscilloscope trace near 80mA with the toy camera display turned off but the device still running" class="addpic" src="/static/dinocamtoypower/4.jpeg"/></p>
+<p><img alt="Oscilloscope trace near 80mA with the toy camera display turned off but the device still running" class="addpic" height="493" loading="lazy" src="/static/dinocamtoypower/4.jpeg" style="aspect-ratio: auto 647 / 493;" width="647"/></p>
 <h1 id="on-shutdown">On shutdown</h1>
 <p>Display off on the menu screen has a current consumption of ~62 mA. This increases as the turn-off jingle plays and the screen turns back on, but then drops to zero when the device is off (as expected) </p>
-<p><img loading="lazy" alt="Oscilloscope trace during shutdown: current rises for the off jingle then drops to zero once the camera powers down" class="addpic" src="/static/dinocamtoypower/5.jpeg"/></p>
+<p><img alt="Oscilloscope trace during shutdown: current rises for the off jingle then drops to zero once the camera powers down" class="addpic" height="467" loading="lazy" src="/static/dinocamtoypower/5.jpeg" style="aspect-ratio: auto 373 / 467;" width="373"/></p>
 <p>Keeping the camera on the menu screen with display off uses the least power, but it's still a far cry from zero. It's a shame because I think the startup time need not be so long, and shortening it would make the camera more useful to me. I will continue to use the camera, but probably not the display-off mode. </p>
-<p><img loading="lazy" alt="Grainy timestamped toy camera photo of two friends, one wearing a VR headset and the other grinning" class="addpic" src="/static/dinocamtoypower/6.jpg"/></p>
+<p><img alt="Grainy timestamped toy camera photo of two friends, one wearing a VR headset and the other grinning" class="addpic" height="720" loading="lazy" src="/static/dinocamtoypower/6.jpg" style="aspect-ratio: auto 1280 / 720;" width="1280"/></p>
 <p>Cya next time!</p></body></html>
 
 
@@ -434,6 +442,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

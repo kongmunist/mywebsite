@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Andy Kong</title>
 <meta name="description" content="Projects, experiments, and writing by Andy Kong, building sensors to better understand the mind and body.">
@@ -187,6 +188,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -212,7 +220,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -232,10 +240,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -254,6 +262,7 @@
         font-weight: 600;
         line-height: 1.3;
         margin-top: 0.75rem;
+        margin-bottom: 0;
         text-align: center;
         color: #FAEADB;
     }
@@ -387,10 +396,8 @@
 <div class="hero-section" style="display: flex; padding: 2rem 0rem 1.5rem 0rem; gap: 2rem; margin: 0 auto;">
     
     <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
-        <div class="hero-name">Hello, I'm Andy</div><br>
-        <img alt="Photo of Andy Kong (website author) smiling" 
-        src="/static/meiceland1.jpg"
-        style="width: 100%; height: auto; border-radius: 0%;">
+        <h1 class="hero-name">Hello, I'm Andy</h1><br>
+        <img alt="Photo of Andy Kong (website author) smiling" class="hero-photo" height="1512" loading="eager" src="/static/meiceland1.jpg" style="width: 100%; height: auto; border-radius: 0%; aspect-ratio: auto 1479 / 1512;" width="1479"/>
         
     </div>
     <div style="flex: 3; display: flex; align-items: center;">
@@ -408,21 +415,11 @@
 
 <div class="portfolio-grid">
     
-    <a class="portfolio-card" href="/projects/catherinewang/">
-        <div class="portfolio-title">Catherine Wang</div>
-        <div class="portfolio-image-wrapper">
-            
-            <img alt="Catherine Wang Hero Image" src="/static/chargerless/beaut.jpg" loading="lazy">
-            
-        </div>
-        <div class="portfolio-description">Welcome to my personal site</div>
-    </a>
-    
     <a class="portfolio-card" href="/projects/shenzhen2025/">
         <div class="portfolio-title">Shenzhen 2025</div>
         <div class="portfolio-image-wrapper">
             
-            <img alt="Shenzhen 2025 Hero Image" src="/static/shenzhen2025/moldmaking1.jpg" loading="lazy">
+            <img alt="Shenzhen 2025 Hero Image" height="1411" loading="lazy" src="/static/shenzhen2025/moldmaking1.jpg" style="aspect-ratio: auto 1058 / 1411;" width="1058"/>
             
         </div>
         <div class="portfolio-description">A month of prototyping</div>
@@ -432,7 +429,7 @@
         <div class="portfolio-title">Brain Hack 2</div>
         <div class="portfolio-image-wrapper">
             
-            <img alt="Brain Hack 2 Hero Image" src="/static/ultraeeg/brainhack.png" loading="lazy">
+            <img alt="Brain Hack 2 Hero Image" height="442" loading="lazy" src="/static/ultraeeg/brainhack.png" style="aspect-ratio: auto 393 / 442;" width="393"/>
             
         </div>
         <div class="portfolio-description">Ultra EEG</div>
@@ -442,7 +439,7 @@
         <div class="portfolio-title">Power-over-Skin</div>
         <div class="portfolio-image-wrapper">
             
-            <img alt="Power-over-Skin Hero Image" src="/static/poweroverskin/PoS_Snail.JPG" loading="lazy">
+            <img alt="Power-over-Skin Hero Image" height="2448" loading="lazy" src="/static/poweroverskin/PoS_Snail.JPG" style="aspect-ratio: auto 2570 / 2448;" width="2570"/>
             
         </div>
         <div class="portfolio-description">Battery-free wearables, powered via body contact!</div>
@@ -452,7 +449,7 @@
         <div class="portfolio-title">Laser Holograms</div>
         <div class="portfolio-image-wrapper">
             
-            <img alt="Laser Holograms Hero Image" src="/static/holograms/hero.jpeg" loading="lazy">
+            <img alt="Laser Holograms Hero Image" height="959" loading="lazy" src="/static/holograms/hero.jpeg" style="aspect-ratio: auto 959 / 959;" width="959"/>
             
         </div>
         <div class="portfolio-description">Trapping 3D objects in a 2D sheet of glass</div>
@@ -462,7 +459,7 @@
         <div class="portfolio-title">Magical Beans</div>
         <div class="portfolio-image-wrapper">
             
-            <img alt="Magical Beans Hero Image" src="/static/magicalbeans/hero.jpg" loading="lazy">
+            <img alt="Magical Beans Hero Image" height="855" loading="lazy" src="/static/magicalbeans/hero.jpg" style="aspect-ratio: auto 768 / 855;" width="768"/>
             
         </div>
         <div class="portfolio-description">Growing beans with an enchanted water bottle</div>
@@ -472,7 +469,7 @@
         <div class="portfolio-title">Full-Size Head Candle</div>
         <div class="portfolio-image-wrapper">
             
-            <img alt="Full-Size Head Candle Hero Image" src="/static/bigheadcandle/drama.jpg" loading="lazy">
+            <img alt="Full-Size Head Candle Hero Image" height="1216" loading="lazy" src="/static/bigheadcandle/drama.jpg" style="aspect-ratio: auto 1429 / 1216;" width="1429"/>
             
         </div>
         <div class="portfolio-description">What if Andy was made of wax?</div>
@@ -482,7 +479,7 @@
         <div class="portfolio-title">Electroshock VR Haptics</div>
         <div class="portfolio-image-wrapper">
             
-            <img alt="Electroshock VR Haptics Hero Image" src="/static/bohems/boh_nella_fullhand_hero.jpeg" loading="lazy">
+            <img alt="Electroshock VR Haptics Hero Image" height="626" loading="lazy" src="/static/bohems/boh_nella_fullhand_hero.jpeg" style="aspect-ratio: auto 621 / 626;" width="621"/>
             
         </div>
         <div class="portfolio-description">Through-Hand Electrical Nerve Stimulation</div>
@@ -492,7 +489,7 @@
         <div class="portfolio-title">Implantables</div>
         <div class="portfolio-image-wrapper">
             
-            <img alt="Implantables Hero Image" src="/static/implantables/implantables_hero.jpeg" loading="lazy">
+            <img alt="Implantables Hero Image" height="670" loading="lazy" src="/static/implantables/implantables_hero.jpeg" style="aspect-ratio: auto 800 / 670;" width="800"/>
             
         </div>
         <div class="portfolio-description">Advanced implantable technology for continuously powered sensors and actuators</div>
@@ -502,7 +499,7 @@
         <div class="portfolio-title">Head Candle</div>
         <div class="portfolio-image-wrapper">
             
-            <img alt="Head Candle Hero Image" src="/static/headcandle/hc_hero.jpeg" loading="lazy">
+            <img alt="Head Candle Hero Image" height="576" loading="lazy" src="/static/headcandle/hc_hero.jpeg" style="aspect-ratio: auto 775 / 576;" width="775"/>
             
         </div>
         <div class="portfolio-description">Candles shaped like my head</div>
@@ -512,7 +509,7 @@
         <div class="portfolio-title">Strooper</div>
         <div class="portfolio-image-wrapper">
             
-            <img alt="Strooper Hero Image" src="/static/strooper/strooper_storepage.png" loading="lazy">
+            <img alt="Strooper Hero Image" height="255" loading="lazy" src="/static/strooper/strooper_storepage.png" style="aspect-ratio: auto 317 / 255;" width="317"/>
             
         </div>
         <div class="portfolio-description">A Chrome extension to track your cognitive performance when visiting particular websites</div>
@@ -522,7 +519,7 @@
         <div class="portfolio-title">Year of Output</div>
         <div class="portfolio-image-wrapper">
             
-            <img alt="Year of Output Hero Image" src="/static/yearofoutput/andylookingeeg.jpg" loading="lazy">
+            <img alt="Year of Output Hero Image" height="691" loading="lazy" src="/static/yearofoutput/andylookingeeg.jpg" style="aspect-ratio: auto 735 / 691;" width="735"/>
             
         </div>
         <div class="portfolio-description">What is Andy doing in 2024?</div>
@@ -532,7 +529,7 @@
         <div class="portfolio-title">Grid World</div>
         <div class="portfolio-image-wrapper">
             
-            <video src="/static/gridworldherovid.mov" autoplay muted loop playsinline loading="lazy"></video>
+            <video autoplay="" class="deferred-video" data-src="/static/gridworldherovid.mov" loading="lazy" loop="" muted="" playsinline="" preload="none"></video><noscript><video controls="" loading="lazy" loop="" muted="" playsinline="" preload="none" src="/static/gridworldherovid.mov"></video></noscript>
             
         </div>
         <div class="portfolio-description">Collaborative online pixel canvas with a physical display in my room</div>
@@ -542,7 +539,7 @@
         <div class="portfolio-title">Hacking The Olympia InfoGlobe</div>
         <div class="portfolio-image-wrapper">
             
-            <img alt="Hacking The Olympia InfoGlobe Hero Image" src="/static/infoglobe_hero.png" loading="lazy">
+            <img alt="Hacking The Olympia InfoGlobe Hero Image" height="387" loading="lazy" src="/static/infoglobe_hero.png" style="aspect-ratio: auto 498 / 387;" width="498"/>
             
         </div>
         <div class="portfolio-description">Kinda-vintage internet-connected spinning-LED bulletin-board</div>
@@ -552,7 +549,7 @@
         <div class="portfolio-title">Meiger Counters</div>
         <div class="portfolio-image-wrapper">
             
-            <img alt="Meiger Counters Hero Image" src="/static/meiger_hero.jpg" loading="lazy">
+            <img alt="Meiger Counters Hero Image" height="1711" loading="lazy" src="/static/meiger_hero.jpg" style="aspect-ratio: auto 2560 / 1711;" width="2560"/>
             
         </div>
         <div class="portfolio-description">Geiger&#39;s 2nd most famous counter, the electromagnetic radiation detector</div>
@@ -562,7 +559,7 @@
         <div class="portfolio-title">Face Mesh Demos ↗</div>
         <div class="portfolio-image-wrapper">
             
-            <img alt="Face Mesh Demos ↗ Hero Image" src="/static/meshcool.png" loading="lazy">
+            <img alt="Face Mesh Demos ↗ Hero Image" height="250" loading="lazy" src="/static/meshcool.png" style="aspect-ratio: auto 328 / 250;" width="328"/>
             
         </div>
         <div class="portfolio-description">A collection of three Face Mesh Demos that I coded to be minimal useful examples</div>
@@ -572,7 +569,7 @@
         <div class="portfolio-title">Igneous</div>
         <div class="portfolio-image-wrapper">
             
-            <img alt="Igneous Hero Image" src="/static/ign_exhib7.jpg" loading="lazy">
+            <img alt="Igneous Hero Image" height="756" loading="lazy" src="/static/ign_exhib7.jpg" style="aspect-ratio: auto 1008 / 756;" width="1008"/>
             
         </div>
         <div class="portfolio-description">A morphing landscape of colored wax melting for hours, reflecting visitors&#39; actions</div>
@@ -582,7 +579,7 @@
         <div class="portfolio-title">EyeMU</div>
         <div class="portfolio-image-wrapper">
             
-            <img alt="EyeMU Hero Image" src="/static/eyemuhero_clipped.png" loading="lazy">
+            <img alt="EyeMU Hero Image" height="564" loading="lazy" src="/static/eyemuhero_clipped.png" style="aspect-ratio: auto 526 / 564;" width="526"/>
             
         </div>
         <div class="portfolio-description">First first-author paper! &#34;EyeMU Interactions, Gaze + IMU Gestures on Mobile Devices&#34;</div>
@@ -592,7 +589,7 @@
         <div class="portfolio-title">Body Channel Communication</div>
         <div class="portfolio-image-wrapper">
             
-            <img alt="Body Channel Communication Hero Image" src="/static/bcc_alansonsketch.jpg" loading="lazy">
+            <img alt="Body Channel Communication Hero Image" height="680" loading="lazy" src="/static/bcc_alansonsketch.jpg" style="aspect-ratio: auto 814 / 680;" width="814"/>
             
         </div>
         <div class="portfolio-description">Identifying users by their touch alone</div>
@@ -602,7 +599,7 @@
         <div class="portfolio-title">Physical Word Length Calculator</div>
         <div class="portfolio-image-wrapper">
             
-            <img alt="Physical Word Length Calculator Hero Image" src="/static/physicalwordlength.png" loading="lazy">
+            <img alt="Physical Word Length Calculator Hero Image" height="266" loading="lazy" src="/static/physicalwordlength.png" style="aspect-ratio: auto 415 / 266;" width="415"/>
             
         </div>
         <div class="portfolio-description">Calculator to determine how much string you need to spell a word</div>
@@ -612,7 +609,7 @@
         <div class="portfolio-title">Direction-of-Voice</div>
         <div class="portfolio-image-wrapper">
             
-            <img alt="Direction-of-Voice Hero Image" src="/static/dov_thumbnail.png" loading="lazy">
+            <img alt="Direction-of-Voice Hero Image" height="443" loading="lazy" src="/static/dov_thumbnail.png" style="aspect-ratio: auto 456 / 443;" width="456"/>
             
         </div>
         <div class="portfolio-description">A novel method for estimating speaker head direction from a single microphone array</div>
@@ -622,7 +619,7 @@
         <div class="portfolio-title">EyeCatcher</div>
         <div class="portfolio-image-wrapper">
             
-            <img alt="EyeCatcher Hero Image" src="/static/eyecatchercrop4.gif" loading="lazy">
+            <img alt="EyeCatcher Hero Image" height="257" loading="lazy" src="/static/eyecatchercrop4.gif" style="aspect-ratio: auto 284 / 257;" width="284"/>
             
         </div>
         <div class="portfolio-description">A glimpse into another world, made possible through real-time head tracking</div>
@@ -632,7 +629,7 @@
         <div class="portfolio-title">Analog Signal Scaling</div>
         <div class="portfolio-image-wrapper">
             
-            <img alt="Analog Signal Scaling Hero Image" src="/static/analogscalinggraphic.png" loading="lazy">
+            <img alt="Analog Signal Scaling Hero Image" height="309" loading="lazy" src="/static/analogscalinggraphic.png" style="aspect-ratio: auto 754 / 309;" width="754"/>
             
         </div>
         <div class="portfolio-description">Taming an unruly analog signal into a more manageable size.</div>
@@ -642,7 +639,7 @@
         <div class="portfolio-title">Myo2</div>
         <div class="portfolio-image-wrapper">
             
-            <img alt="Myo2 Hero Image" src="/static/myo2tensing.png" loading="lazy">
+            <img alt="Myo2 Hero Image" height="336" loading="lazy" src="/static/myo2tensing.png" style="aspect-ratio: auto 359 / 336;" width="359"/>
             
         </div>
         <div class="portfolio-description">Making my own ultra-sensitive EMG sensors for measuring unnoticeable muscle movement</div>
@@ -652,7 +649,7 @@
         <div class="portfolio-title">Webcam Heartrate Monitor</div>
         <div class="portfolio-image-wrapper">
             
-            <img alt="Webcam Heartrate Monitor Hero Image" src="/static/heartratefromcamera.jpg" loading="lazy">
+            <img alt="Webcam Heartrate Monitor Hero Image" height="186" loading="lazy" src="/static/heartratefromcamera.jpg" style="aspect-ratio: auto 206 / 186;" width="206"/>
             
         </div>
         <div class="portfolio-description">Website that can determine your heartrate using ambient lighting and a camera.</div>
@@ -662,7 +659,7 @@
         <div class="portfolio-title">Carnegie Calendar</div>
         <div class="portfolio-image-wrapper">
             
-            <img alt="Carnegie Calendar Hero Image" src="/static/CCmain.png" loading="lazy">
+            <img alt="Carnegie Calendar Hero Image" height="685" loading="lazy" src="/static/CCmain.png" style="aspect-ratio: auto 1303 / 685;" width="1303"/>
             
         </div>
         <div class="portfolio-description">All-encompassing, auto-updating events calendar for everything going on at uni</div>
@@ -672,7 +669,7 @@
         <div class="portfolio-title">AsciiZOOM</div>
         <div class="portfolio-image-wrapper">
             
-            <img alt="AsciiZOOM Hero Image" src="/static/asciizoom.png" loading="lazy">
+            <img alt="AsciiZOOM Hero Image" height="171" loading="lazy" src="/static/asciizoom.png" style="aspect-ratio: auto 314 / 171;" width="314"/>
             
         </div>
         <div class="portfolio-description">The first secure, text-based videoconferencing app, accessible from the safety of your terminal.</div>
@@ -682,7 +679,7 @@
         <div class="portfolio-title">Altered Perceptions</div>
         <div class="portfolio-image-wrapper">
             
-            <img alt="Altered Perceptions Hero Image" src="/static/alteredbonsai.jpg" loading="lazy">
+            <img alt="Altered Perceptions Hero Image" height="392" loading="lazy" src="/static/alteredbonsai.jpg" style="aspect-ratio: auto 522 / 392;" width="522"/>
             
         </div>
         <div class="portfolio-description">VR headset + POV camera + preprocessing =&gt; new way to see the world</div>
@@ -692,7 +689,7 @@
         <div class="portfolio-title">Amp Box</div>
         <div class="portfolio-image-wrapper">
             
-            <img alt="Amp Box Hero Image" src="/static/ampbox.png" loading="lazy">
+            <img alt="Amp Box Hero Image" height="345" loading="lazy" src="/static/ampbox.png" style="aspect-ratio: auto 551 / 345;" width="551"/>
             
         </div>
         <div class="portfolio-description">A box optimized for ease-of-use in amplifying tiny electrical signals (&lt;10 mv)</div>
@@ -702,7 +699,7 @@
         <div class="portfolio-title">Manual Backpropagation</div>
         <div class="portfolio-image-wrapper">
             
-            <img alt="Manual Backpropagation Hero Image" src="/static/backprop.png" loading="lazy">
+            <img alt="Manual Backpropagation Hero Image" height="489" loading="lazy" src="/static/backprop.png" style="aspect-ratio: auto 757 / 489;" width="757"/>
             
         </div>
         <div class="portfolio-description">Manually implementing backpropagation to make sure I know how it works</div>
@@ -712,7 +709,7 @@
         <div class="portfolio-title">Spin Tank</div>
         <div class="portfolio-image-wrapper">
             
-            <img alt="Spin Tank Hero Image" src="/static/spintankabrams.png" loading="lazy">
+            <img alt="Spin Tank Hero Image" height="275" loading="lazy" src="/static/spintankabrams.png" style="aspect-ratio: auto 417 / 275;" width="417"/>
             
         </div>
         <div class="portfolio-description">Testing a novel reactive tank armor that spins to deflect projectiles</div>
@@ -722,7 +719,7 @@
         <div class="portfolio-title">Spotify Force Queueing</div>
         <div class="portfolio-image-wrapper">
             
-            <img alt="Spotify Force Queueing Hero Image" src="/static/kerokerokerokerokerokero.png" loading="lazy">
+            <img alt="Spotify Force Queueing Hero Image" height="301" loading="lazy" src="/static/kerokerokerokerokerokero.png" style="aspect-ratio: auto 340 / 301;" width="340"/>
             
         </div>
         <div class="portfolio-description">A Python program using Spotify APIs to forcibly queue songs on collaborative playlists when you don&#39;t have aux control</div>
@@ -732,7 +729,7 @@
         <div class="portfolio-title">Eye-Tracking Mouse</div>
         <div class="portfolio-image-wrapper">
             
-            <img alt="Eye-Tracking Mouse Hero Image" src="/static/eyetrackthumbnail.png" loading="lazy">
+            <img alt="Eye-Tracking Mouse Hero Image" height="274" loading="lazy" src="/static/eyetrackthumbnail.png" style="aspect-ratio: auto 471 / 274;" width="471"/>
             
         </div>
         <div class="portfolio-description">An easy-to-use, handless mouse utilizing a laptop&#39;s built-in webcam and some CNNs.</div>
@@ -742,14 +739,15 @@
         <div class="portfolio-title">Personal Website</div>
         <div class="portfolio-image-wrapper">
             
-            <img alt="Personal Website Hero Image" src="/static/websitev2.png" loading="lazy">
+            <img alt="Personal Website Hero Image" height="300" loading="lazy" src="/static/websitev2.png" style="aspect-ratio: auto 681 / 300;" width="681"/>
             
         </div>
-        <div class="portfolio-description">Static website generator built with Flask and hosted on Firebase. You&#39;re looking right at it!</div>
+        <div class="portfolio-description">A custom static website generator built with Flask and hosted on Cloudflare Pages. You&#39;re looking right at it!</div>
     </a>
     
 </div>
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

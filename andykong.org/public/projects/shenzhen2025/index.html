@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Shenzhen 2025 | Andy Kong</title>
 <meta name="description" content="A month of prototyping">
@@ -204,6 +205,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -229,7 +237,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -249,10 +257,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -276,35 +284,36 @@
 <p>But since you're so kind to visit my website, here are some</p>
 <h1 id="exclusive-neverbeforeseen-photos">Exclusive, never-before-seen photos</h1>
 <p class="caption"> My workspace, aka my hotel room. Funny that they let you solder, but it's not so surprising when you consider they let you smoke too </p>
-<p><img loading="lazy" alt="My workspace, aka my hotel room. Funny that they let you solder, but it's not so surprising when you consider they let you smoke too" class="addpic" src="/static/shenzhen2025/hotel.jpg"/></p>
+<p><img alt="My workspace, aka my hotel room. Funny that they let you solder, but it's not so surprising when you consider they let you smoke too" class="addpic" height="1058" loading="lazy" src="/static/shenzhen2025/hotel.jpg" style="aspect-ratio: auto 1411 / 1058;" width="1411"/></p>
 <p class="caption"> Me and Olivia with the rest of the symposium, about to embark the first of many afternoons spent getting lost in the electronics market </p>
-<p><img loading="lazy" alt="Me and Olivia with the rest of the symposium, about to embark the first of many afternoons spent getting lost in the electronics market" class="addpic" src="/static/shenzhen2025/menolivia.jpg"/></p>
+<p><img alt="Me and Olivia with the rest of the symposium, about to embark the first of many afternoons spent getting lost in the electronics market" class="addpic" height="1058" loading="lazy" src="/static/shenzhen2025/menolivia.jpg" style="aspect-ratio: auto 1411 / 1058;" width="1411"/></p>
 <p class="caption"> Funny phones from a HQB stall. All were very functional, and I suspect they're actually made to be used by children </p>
-<p><img loading="lazy" alt="Funny phones from a HQB stall. All were very functional, and I suspect they're actually made to be used by children" class="addpic" src="/static/shenzhen2025/funnyphone.jpg"/></p>
+<p><img alt="Funny phones from a HQB stall. All were very functional, and I suspect they're actually made to be used by children" class="addpic" height="1411" loading="lazy" src="/static/shenzhen2025/funnyphone.jpg" style="aspect-ratio: auto 1058 / 1411;" width="1058"/></p>
 <p class="caption"> Adnan and his nose, for an installation at SUSTech in the first week </p>
-<p><img loading="lazy" alt="Adnan and his nose, for an installation at SUSTech in the first week" class="addpic" src="/static/shenzhen2025/adnanose.jpg"/></p>
+<p><img alt="Adnan and his nose, for an installation at SUSTech in the first week" class="addpic" height="1411" loading="lazy" src="/static/shenzhen2025/adnanose.jpg" style="aspect-ratio: auto 1058 / 1411;" width="1058"/></p>
 <p class="caption"> Cedric feeling two objects of very different densities, courtesy of Taylor Tabb </p>
-<p><img loading="lazy" alt="Cedric feeling two objects of very different densities, courtesy of Taylor Tabb" class="addpic" src="/static/shenzhen2025/cedric.jpg"/></p>
+<p><img alt="Cedric feeling two objects of very different densities, courtesy of Taylor Tabb" class="addpic" height="1411" loading="lazy" src="/static/shenzhen2025/cedric.jpg" style="aspect-ratio: auto 1058 / 1411;" width="1058"/></p>
 <p class="caption"> Drawn EDM positives, made to cut out a negative out of a steel block for injection molding </p>
-<p><img loading="lazy" alt="Drawn EDM positives, made to cut out a negative out of a steel block for injection molding" class="addpic" src="/static/shenzhen2025/moldmaking1.jpg"/></p>
+<p><img alt="Drawn EDM positives, made to cut out a negative out of a steel block for injection molding" class="addpic" height="1411" loading="lazy" src="/static/shenzhen2025/moldmaking1.jpg" style="aspect-ratio: auto 1058 / 1411;" width="1058"/></p>
 <p class="caption"> Expert shows us how they check and fix for little imperfections in the mold </p>
-<p><img loading="lazy" alt="Expert shows us how they check and fix for little imperfections in the mold" class="addpic" src="/static/shenzhen2025/moldmaking2.jpg"/></p>
+<p><img alt="Expert shows us how they check and fix for little imperfections in the mold" class="addpic" height="1058" loading="lazy" src="/static/shenzhen2025/moldmaking2.jpg" style="aspect-ratio: auto 1411 / 1058;" width="1411"/></p>
 <p class="caption"> Amit and his spinning LED display hat that he built at the Seeed hackathon </p>
-<p><img loading="lazy" alt="Amit and his spinning LED display hat that he built at the Seeed hackathon" class="addpic" src="/static/shenzhen2025/amit.jpg"/></p>
+<p><img alt="Amit and his spinning LED display hat that he built at the Seeed hackathon" class="addpic" height="1411" loading="lazy" src="/static/shenzhen2025/amit.jpg" style="aspect-ratio: auto 1058 / 1411;" width="1058"/></p>
 <p class="caption"> Samy at the arcade, what world record will he break next? </p>
-<p><img loading="lazy" alt="Samy at the arcade, what world record will he break next?" class="addpic" src="/static/shenzhen2025/worldrecord.jpg"/></p>
+<p><img alt="Samy at the arcade, what world record will he break next?" class="addpic" height="1411" loading="lazy" src="/static/shenzhen2025/worldrecord.jpg" style="aspect-ratio: auto 1058 / 1411;" width="1058"/></p>
 <p class="caption"> Ellie (background) from Seeed Studios was a fantastic host, she handled our flights and overall schedule. In return, Alan stole this cute Xiao pillow from their office </p>
-<p><img loading="lazy" alt="Ellie (background) from Seeed Studios was a fantastic host, she handled our flights and overall schedule. In return, Alan stole this cute Xiao pillow from their office" class="addpic" src="/static/shenzhen2025/xiao.jpg"/></p>
+<p><img alt="Ellie (background) from Seeed Studios was a fantastic host, she handled our flights and overall schedule. In return, Alan stole this cute Xiao pillow from their office" class="addpic" height="1411" loading="lazy" src="/static/shenzhen2025/xiao.jpg" style="aspect-ratio: auto 1058 / 1411;" width="1058"/></p>
 <p class="caption"> Climbing gyms in China have totally different holds and rules. One rule is you can't use a volume unless it has a hold of your route's color. Another is that any two holds that touch can be used by either route </p>
-<p><img loading="lazy" alt="Climbing gyms in China have totally different holds and rules. One rule is you can't use a volume unless it has a hold of your route's color. Another is that any two holds that touch can be used by either route" class="addpic" src="/static/shenzhen2025/gym.jpg"/></p>
+<p><img alt="Climbing gyms in China have totally different holds and rules. One rule is you can't use a volume unless it has a hold of your route's color. Another is that any two holds that touch can be used by either route" class="addpic" height="1058" loading="lazy" src="/static/shenzhen2025/gym.jpg" style="aspect-ratio: auto 1411 / 1058;" width="1411"/></p>
 <p class="caption"> Turtles on sale </p>
-<p><img loading="lazy" alt="Turtles on sale" class="addpic" src="/static/shenzhen2025/turtles.jpg"/></p>
+<p><img alt="Turtles on sale" class="addpic" height="1411" loading="lazy" src="/static/shenzhen2025/turtles.jpg" style="aspect-ratio: auto 1058 / 1411;" width="1058"/></p>
 <p class="caption"> CNY fireworks rounded out the end of our trip </p>
-<p><img loading="lazy" alt="CNY fireworks rounded out the end of our trip" class="addpic" src="/static/shenzhen2025/fireworks.jpg"/></p></body></html>
+<p><img alt="CNY fireworks rounded out the end of our trip" class="addpic" height="1058" loading="lazy" src="/static/shenzhen2025/fireworks.jpg" style="aspect-ratio: auto 1411 / 1058;" width="1411"/></p></body></html>
         </div>
         <p style="line-height:300%;">&nbsp;</p>
 </div>
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

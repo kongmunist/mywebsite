@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Power-over-Skin | Andy Kong</title>
 <meta name="description" content="Battery-free wearables, powered via body contact!">
@@ -204,6 +205,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -229,7 +237,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -249,10 +257,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -269,7 +277,7 @@
 
                 <hr>
             <html><body><p class="caption"> Andy talking at UIST </p>
-<p><img loading="lazy" alt="Andy talking at UIST" class="addpic" src="/static/poweroverskin/andytalking.jpeg"/></p>
+<p><img alt="Andy talking at UIST" class="addpic" height="3024" loading="lazy" src="/static/poweroverskin/andytalking.jpeg" style="aspect-ratio: auto 4032 / 3024;" width="4032"/></p>
 <p>Hello! Today I'd like to tell you about my first UIST paper, Power-over-Skin! First, let me get all the links out of the way</p>
 <ul>
 <li>Paper (open-access): <a href="https://dl.acm.org/doi/10.1145/3654777.3676394">ACM Digital Library</a>, <a href="https://drive.google.com/file/d/17qtaXyanAeJqdw0Rrbnp-YJJgXEy5sqx/view?usp=sharing">(mirror)</a></li>
@@ -280,7 +288,7 @@
 <li>Hardware: <a href="https://github.com/kongmunist/Power-Over-Skin-Hardware">GitHub</a></li>
 </ul>
 <p class="caption"> Snail-shaped blinker used to demo Power-over-Skin </p>
-<p><img loading="lazy" alt="Snail-shaped blinker used to demo Power-over-Skin" class="addpic" src="/static/poweroverskin/PoS_Snail.JPG"/></p>
+<p><img alt="Snail-shaped blinker used to demo Power-over-Skin" class="addpic" height="2448" loading="lazy" src="/static/poweroverskin/PoS_Snail.JPG" style="aspect-ratio: auto 2570 / 2448;" width="2570"/></p>
 <hr/>
 <h1 id="why-did-you-do-this">Why did you do this?</h1>
 <p>I could say many reasons to motivate this project, all of them true. </p>
@@ -312,7 +320,7 @@
 <p>When you think about it, the problem with implants has always been the difficulty of getting power through the skin into the implant. We've devised ways around this, for example wearing a battery pack immediately outside the implant (Eversense CGM) or just putting a battery in the implant which makes it either one-time use (Most CGMs) or require recharging (Guardian CGM). Neither of these appeal to me because they have the same problem as the Fitbit. </p>
 <p>This led me to energy harvesting and wireless power transmission to power an implanted device. <a href="https://sapiensanonym.blogspot.com/">Lepht Anonym</a> has implanted an inductively-charged implant before, but the prospect of fitting a large inductive coil in my body kinda skeeved me out. The lessons from this are 1) inductive charging through the skin couples enough power to turn on a Raspberry Pi (not even a smaller Zero!) inside the body (power budget is a 1-5 watts), 2) WiFi works through the body. Incredible. Anyway, I wasn't doing that.</p>
 <p class="caption"> Lessons from Lepht Anonym's pirate box implant </p>
-<p><img loading="lazy" alt="Lessons from Lepht Anonym's pirate box implant" class="addpic" src="/static/poweroverskin/lepht_lessons.png"/></p>
+<p><img alt="Lessons from Lepht Anonym's pirate box implant" class="addpic" height="1214" loading="lazy" src="/static/poweroverskin/lepht_lessons.png" style="aspect-ratio: auto 1170 / 1214;" width="1170"/></p>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         // If "l" is pressed, redirect to ../blog/lablunch2024
@@ -327,6 +335,7 @@
         <p style="line-height:300%;">&nbsp;</p>
 </div>
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

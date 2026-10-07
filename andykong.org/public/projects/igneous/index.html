@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Igneous | Andy Kong</title>
 <meta name="description" content="A morphing landscape of colored wax melting for hours, reflecting visitors&#39; actions">
@@ -204,6 +205,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -229,7 +237,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -249,10 +257,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -269,7 +277,7 @@
 
                 <hr>
             <html><body><p class="caption"> Guess where we got this! </p>
-<p><img loading="lazy" alt="Guess where we got this!" class="addpic" src="/static/ign_waxy20.jpg"/></p>
+<p><img alt="Guess where we got this!" class="addpic" height="774" loading="lazy" src="/static/ign_waxy20.jpg" style="aspect-ratio: auto 677 / 774;" width="677"/></p>
 <p>My third and final project for Electronic Logics &amp;&amp; Creative Practice, an IDeATE course at CMU. </p>
 <ul>
 <li>
@@ -291,13 +299,13 @@
 <p>Howdy folks, long time no project! More info linked above, and this here is a timelapse of the exhibit. Keep reading for more pictures!</p>
 <div class="video-container">
 
-[//]: # (    <iframe allowfullscreen="" class="youtubevideo" src="https://www.youtube.com/embed/afivxSqr79Y"></iframe>)
-    <iframe allowfullscreen="" class="youtubevideo" src="https://www.youtube.com/embed/kao2IscGAG4"></iframe>
+[//]: # (    <iframe allowfullscreen="" class="youtubevideo" loading="lazy" src="https://www.youtube.com/embed/afivxSqr79Y"></iframe>)
+    <iframe allowfullscreen="" class="youtubevideo" loading="lazy" src="https://www.youtube.com/embed/kao2IscGAG4"></iframe>
 </div>
 <p><br/>
 In my 2nd to last semester at CMU, I took an artsy class called Electronic Logics &amp;&amp; Creative Practice. If you don't know CMU, we have an entire tech + arts department called IDeATE shoved into a library basement. The department gave me creative technologist vibes, and I wanted to see if I'd like that kind of environment. And I did!</p>
 <p class="caption"> Fun parts included messing around with materials </p>
-<p><img loading="lazy" alt="Fun parts included messing around with materials" class="addpic" src="/static/ign_backstory.jpg"/></p>
+<p><img alt="Fun parts included messing around with materials" class="addpic" height="540" loading="lazy" src="/static/ign_backstory.jpg" style="aspect-ratio: auto 960 / 540;" width="960"/></p>
 <p>I read once that artists require some downtime; all production and no consumption make Jack a boring, static creative. ELCP embraced that ethos wholeheartedly. </p>
 <p>Timelines for projects were 3-4 weeks, with room for slip. Class hours alternated between open shop hours and fun summer camp activities like guiding an eye-closed partner through the building using only verbal instructions. Did I feel silly running into doors or guiding my partner into a wall on accident? Yes. But I also realized how heavily we depend on our eyes. </p>
 <p>The "uselessness" of the activities felt like their use, as if the activities were fertilizer during our brain's recovery period. A fallow period is necessary for a successful crop rotation, and our brain does well with a similar concept. </p>
@@ -305,7 +313,7 @@ In my 2nd to last semester at CMU, I took an artsy class called Electronic Logic
 <p>Post-brainstorming + reality check, we were left with only one project: Igneous. Let me tell you about it!</p>
 <hr/>
 <h1 id="igneous">Igneous</h1>
-<p><img loading="lazy" alt="Hexagonal basalt columns of the Giant's Causeway rising from the sea under a blue sky" class="addpic" src="/static/ign_giantscauseway.jpg"/></p>
+<p><img alt="Hexagonal basalt columns of the Giant's Causeway rising from the sea under a blue sky" class="addpic" height="1200" loading="lazy" src="/static/ign_giantscauseway.jpg" style="aspect-ratio: auto 1200 / 1200;" width="1200"/></p>
 <p>This is the Giant's Causeway, a natural basalt formation found in Northern Ireland. The columns are believed to be formed by the cracking of cooling magma, which takes on hexagonal shapes as the cracks descend deeper. Something about minimization of surface energy... Unsure. I wanted to parallel this with hundreds of candles, creating a small scale version that visitors would be able to light and watch m</p>
 <hr/>
 <h1 id="narrative-description">Narrative Description</h1>
@@ -317,125 +325,126 @@ In my 2nd to last semester at CMU, I took an artsy class called Electronic Logic
 <h2 id="cutting-with-a-knife">Cutting with a knife</h2>
 <p>Took too long, and the final shape isn't consistent. </p>
 <p class="caption"> A stick of beeswax I had, with a hexagon outline traced out </p>
-<p><img loading="lazy" alt="A stick of beeswax I had, with a hexagon outline traced out" class="addpic" src="/static/ign_orig1.jpg"/></p>
+<p><img alt="A stick of beeswax I had, with a hexagon outline traced out" class="addpic" height="2089" loading="lazy" src="/static/ign_orig1.jpg" style="aspect-ratio: auto 2459 / 2089;" width="2459"/></p>
 <p class="caption"> Manually shaved beeswax stick with steak knife and vegetable peeler. Does not look very hexagonal and took a lot of effort :( </p>
-<p><img loading="lazy" alt="Manually shaved beeswax stick with steak knife and vegetable peeler. Does not look very hexagonal and took a lot of effort :(" class="addpic" src="/static/ign_orig2.jpg"/></p>
+<p><img alt="Manually shaved beeswax stick with steak knife and vegetable peeler. Does not look very hexagonal and took a lot of effort :(" class="addpic" height="2890" loading="lazy" src="/static/ign_orig2.jpg" style="aspect-ratio: auto 3024 / 2890;" width="3024"/></p>
 <h2 id="cutting-with-a-mold">Cutting with a mold</h2>
 <p>I sharpened a small bit of sheet metal, then bent it into a hexagon. This cutter bent outwards when cutting due to the wax being hard to cut. I sharpened it and embedded it in a block of wood, still no good. </p>
 <p class="caption"> Hexagonal candle mold made with bent sheet metal </p>
-<p><img loading="lazy" alt="Hexagonal candle mold made with bent sheet metal" class="addpic" src="/static/ign_orig3.jpg"/></p>
+<p><img alt="Hexagonal candle mold made with bent sheet metal" class="addpic" height="2562" loading="lazy" src="/static/ign_orig3.jpg" style="aspect-ratio: auto 3024 / 2562;" width="3024"/></p>
 <p class="caption"> Softening the wax candles in hot water </p>
-<p><img loading="lazy" alt="Softening the wax candles in hot water" class="addpic" src="/static/ign_orig4.jpg"/></p>
+<p><img alt="Softening the wax candles in hot water" class="addpic" height="3672" loading="lazy" src="/static/ign_orig4.jpg" style="aspect-ratio: auto 3024 / 3672;" width="3024"/></p>
 <p class="caption"> Leftover wax after cutting. The mold is now in the wood block for support purposes </p>
-<p><img loading="lazy" alt="Leftover wax after cutting. The mold is now in the wood block for support purposes" class="addpic" src="/static/ign_orig5.jpg"/></p>
+<p><img alt="Leftover wax after cutting. The mold is now in the wood block for support purposes" class="addpic" height="2572" loading="lazy" src="/static/ign_orig5.jpg" style="aspect-ratio: auto 2812 / 2572;" width="2812"/></p>
 <p class="caption"> The resulting candle. Pretty hexagonal, a bit lumpy, and super hard to push it through. </p>
-<p><img loading="lazy" alt="The resulting candle. Pretty hexagonal, a bit lumpy, and super hard to push it through." class="addpic" src="/static/ign_orig6.jpg"/></p>
+<p><img alt="The resulting candle. Pretty hexagonal, a bit lumpy, and super hard to push it through." class="addpic" height="1790" loading="lazy" src="/static/ign_orig6.jpg" style="aspect-ratio: auto 2565 / 1790;" width="2565"/></p>
 <h2 id="giving-up-on-the-hexagon-part">Giving up on the hexagon part</h2>
 <p>They're hard to cut, reduces our surface area; who even likes hexagons anyway? We decided to just stick with the cylindrical candles for our mountain for simplicity due to time constraints. We also found out the company had shipped us around 100 fewer candles than we expected, so we needed all the surface area we could get! </p>
 <h3>Concrete base</h3>
 <p>Since we didn't want to waste wax making the mountain completely solid, we made these platforms that would make it easier to vary the candle heights. </p>
 <p class="caption"> Concrete board that our teacher donated to us from his on-hold bathroom remodeling project </p>
-<p><img loading="lazy" alt="Concrete board that our teacher donated to us from his on-hold bathroom remodeling project" class="addpic" src="/static/ign_assem1.jpg"/></p>
+<p><img alt="Concrete board that our teacher donated to us from his on-hold bathroom remodeling project" class="addpic" height="3024" loading="lazy" src="/static/ign_assem1.jpg" style="aspect-ratio: auto 4032 / 3024;" width="4032"/></p>
 <p class="caption"> Inspection of the concrete board </p>
-<p><img loading="lazy" alt="Inspection of the concrete board" class="addpic" src="/static/ign_assem2.jpg"/></p>
+<p><img alt="Inspection of the concrete board" class="addpic" height="2506" loading="lazy" src="/static/ign_assem2.jpg" style="aspect-ratio: auto 3662 / 2506;" width="3662"/></p>
 <p class="caption"> The concrete platforms on their wooden pegs, pre-drilling. </p>
-<p><img loading="lazy" alt="The concrete platforms on their wooden pegs, pre-drilling." class="addpic" src="/static/ign_assem3.jpg"/></p>
+<p><img alt="The concrete platforms on their wooden pegs, pre-drilling." class="addpic" height="3024" loading="lazy" src="/static/ign_assem3.jpg" style="aspect-ratio: auto 4032 / 3024;" width="4032"/></p>
 <h2 id="candle-placement">Candle placement</h2>
 <p>The placement of the candles also took a bit of thought. Just lying them out looked ugly and too regular, so we were going to cut the bottoms off some and glue them onto others. Hot glue held everything down. </p>
 <p>Cutting the candles turned out to be hard, especially since we needed around 300 of them, but my teammates came up with the now-famous "roll a box cutter back and forth" strategy, using body weight and the radial lever arm to make it easier. </p>
 <p class="caption"> Candles placed but not glued. We also haven't varied the heights yet. </p>
-<p><img loading="lazy" alt="Candles placed but not glued. We also haven't varied the heights yet." class="addpic" src="/static/ign_assem4.jpg"/></p>
+<p><img alt="Candles placed but not glued. We also haven't varied the heights yet." class="addpic" height="2619" loading="lazy" src="/static/ign_assem4.jpg" style="aspect-ratio: auto 3174 / 2619;" width="3174"/></p>
 <p>We also used cement board later to fill in a large gap when we found out that we didn’t have enough candles to cover one side of the mountain (pictured below). </p>
 <p class="caption"> Post-cut candles, with some big ones in front. We've glued a few to be floating, and the insides are still visible. </p>
-<p><img loading="lazy" alt="Post-cut candles, with some big ones in front. We've glued a few to be floating, and the insides are still visible." class="addpic" src="/static/ign_assem5.jpg"/></p>
+<p><img alt="Post-cut candles, with some big ones in front. We've glued a few to be floating, and the insides are still visible." class="addpic" height="2674" loading="lazy" src="/static/ign_assem5.jpg" style="aspect-ratio: auto 3546 / 2674;" width="3546"/></p>
 <p class="caption"> Completed candle mountain, with a few test candles lit </p>
-<p><img loading="lazy" alt="Completed candle mountain, with a few test candles lit" class="addpic" src="/static/ign_assem7.jpg"/></p>
+<p><img alt="Completed candle mountain, with a few test candles lit" class="addpic" height="2813" loading="lazy" src="/static/ign_assem7.jpg" style="aspect-ratio: auto 3670 / 2813;" width="3670"/></p>
 <h2 id="cart-and-foil">Cart and Foil</h2>
 <p>So, we were going to transport this thing indoors so people could interact with it. Unfortunately, the fire chief did not like that, so we were exiled outside the front door. Here you can see the cart that we ended up using. </p>
 <p>Another important feature was suggested by Zach, our teacher. He wanted to layer the cart with foil in case the wax dripped out of the sculpture. "How silly" I said, "what a preposterous idea." He insisted, I demurred, we wrapped the whole top. This turns out to be an ass-saving maneuver by Zach, so I'm glad we did that.</p>
 <p class="caption"> Foil and cart that made our final exhibit presentable at the exposition </p>
-<p><img loading="lazy" alt="Foil and cart that made our final exhibit presentable at the exposition" class="addpic" src="/static/ign_assem6.jpg"/></p>
+<p><img alt="Foil and cart that made our final exhibit presentable at the exposition" class="addpic" height="2914" loading="lazy" src="/static/ign_assem6.jpg" style="aspect-ratio: auto 3583 / 2914;" width="3583"/></p>
 <p class="caption"> Wax dye chips for the audience to use on the candles so they weren't all just white </p>
-<p><img loading="lazy" alt="Wax dye chips for the audience to use on the candles so they weren't all just white" class="addpic" src="/static/ign_assem8.jpg"/></p>
+<p><img alt="Wax dye chips for the audience to use on the candles so they weren't all just white" class="addpic" height="2560" loading="lazy" src="/static/ign_assem8.jpg" style="aspect-ratio: auto 1920 / 2560;" width="1920"/></p>
 <h1 id="exhibition">Exhibition</h1>
 <p>We finished assembling all the candles and supplies the night before the exhibition. On the day of, at 4-5pm we began rolling our projects from the library to the Center of Fine Arts (this doesn't have a person's name in it because that would require a rich fine arts alumni who also loved CMU). </p>
 <p class="caption"> Poster for the exhibition </p>
-<p><img loading="lazy" alt="Poster for the exhibition" class="addpic" src="/static/ign_exhib0.png"/></p>
+<p><img alt="Poster for the exhibition" class="addpic" height="315" loading="lazy" src="/static/ign_exhib0.png" style="aspect-ratio: auto 600 / 315;" width="600"/></p>
 <p>Here's some of the first candles being lit, as well as a thematic shot. We were the only art group to be outside, and this turned out to be in our favor. Since we shared the space with the "Exploded Ensemble" class, they made so much ruckus playing everyone's project at the same time that several visitors came outside to us for refuge. </p>
 <p class="caption"> Dramatic shot of candle mountain with dye chips with the long matches </p>
-<p><img loading="lazy" alt="Dramatic shot of candle mountain with dye chips with the long matches" class="addpic" src="/static/ign_exhib11.jpg"/></p>
+<p><img alt="Dramatic shot of candle mountain with dye chips with the long matches" class="addpic" height="2560" loading="lazy" src="/static/ign_exhib11.jpg" style="aspect-ratio: auto 1920 / 2560;" width="1920"/></p>
 <p class="caption"> A fellow classmate looks on with awe </p>
-<p><img loading="lazy" alt="A fellow classmate looks on with awe" class="addpic" src="/static/ign_exhib1.jpg"/></p>
+<p><img alt="A fellow classmate looks on with awe" class="addpic" height="3024" loading="lazy" src="/static/ign_exhib1.jpg" style="aspect-ratio: auto 4032 / 3024;" width="4032"/></p>
 <p class="caption"> Far away shot from the front door of CFA to our exhibit. We're the only ones outside </p>
-<p><img loading="lazy" alt="Far away shot from the front door of CFA to our exhibit. We're the only ones outside" class="addpic" src="/static/ign_exhib2.jpg"/></p>
+<p><img alt="Far away shot from the front door of CFA to our exhibit. We're the only ones outside" class="addpic" height="2208" loading="lazy" src="/static/ign_exhib2.jpg" style="aspect-ratio: auto 3319 / 2208;" width="3319"/></p>
 <p class="caption"> Our project represented indoors by a projected video feed </p>
-<p><img loading="lazy" alt="Our project represented indoors by a projected video feed" class="addpic" src="/static/ign_exhib3.jpg"/></p>
+<p><img alt="Our project represented indoors by a projected video feed" class="addpic" height="3059" loading="lazy" src="/static/ign_exhib3.jpg" style="aspect-ratio: auto 2445 / 3059;" width="2445"/></p>
 <p class="caption"> Closeup of one of the candles flowing into another one as it melts </p>
-<p><img loading="lazy" alt="Closeup of one of the candles flowing into another one as it melts" class="addpic" src="/static/ign_exhib4.jpg"/></p>
+<p><img alt="Closeup of one of the candles flowing into another one as it melts" class="addpic" height="4032" loading="lazy" src="/static/ign_exhib4.jpg" style="aspect-ratio: auto 3024 / 4032;" width="3024"/></p>
 <p class="caption"> Closeup of the candles with pooled colored wax, and flowing down as the wax melts </p>
-<p><img loading="lazy" alt="Closeup of the candles with pooled colored wax, and flowing down as the wax melts" class="addpic" src="/static/ign_exhib5.jpg"/></p>
+<p><img alt="Closeup of the candles with pooled colored wax, and flowing down as the wax melts" class="addpic" height="4032" loading="lazy" src="/static/ign_exhib5.jpg" style="aspect-ratio: auto 3024 / 4032;" width="3024"/></p>
 <p class="caption"> Visitors having a great, arson-y time lighting candles and leaving dye chips everywhere.  </p>
-<p><img loading="lazy" alt="Visitors having a great, arson-y time lighting candles and leaving dye chips everywhere. " class="addpic" src="/static/ign_exhib6.jpg"/></p>
+<p><img alt="Visitors having a great, arson-y time lighting candles and leaving dye chips everywhere. " class="addpic" height="3024" loading="lazy" src="/static/ign_exhib6.jpg" style="aspect-ratio: auto 4032 / 3024;" width="4032"/></p>
 <p class="caption"> Front shot of candle mountain near the beginning of our exhibit </p>
-<p><img loading="lazy" alt="Front shot of candle mountain near the beginning of our exhibit" class="addpic" src="/static/ign_exhib7.jpg"/></p>
+<p><img alt="Front shot of candle mountain near the beginning of our exhibit" class="addpic" height="756" loading="lazy" src="/static/ign_exhib7.jpg" style="aspect-ratio: auto 1008 / 756;" width="1008"/></p>
 <p class="caption"> A further away shot of candle mountain with a big crowd of visitors. We were a popular project! </p>
-<p><img loading="lazy" alt="A further away shot of candle mountain with a big crowd of visitors. We were a popular project!" class="addpic" src="/static/ign_exhib8.jpg"/></p>
+<p><img alt="A further away shot of candle mountain with a big crowd of visitors. We were a popular project!" class="addpic" height="3024" loading="lazy" src="/static/ign_exhib8.jpg" style="aspect-ratio: auto 4032 / 3024;" width="4032"/></p>
 <h2 id="wax-drip">Wax drip</h2>
 <p>Remember the aluminum platform we had wrapped over the cart earlier? That turned out to be a great thing. When the wax began leaking everywhere, we were able to round up the corners of the cover and contain the wax without dropping it all over the ground. While it did not save Zach’s pants, we later found that the buildup of wax layers created many beautiful colors arranged across different layers, much like a sedimentary rock.</p>
 <p class="caption"> Drippings from the cart hit Zach in the pants. </p>
-<p><img loading="lazy" alt="Drippings from the cart hit Zach in the pants." class="addpic" src="/static/ign_exhib9.jpg"/></p>
+<p><img alt="Drippings from the cart hit Zach in the pants." class="addpic" height="4032" loading="lazy" src="/static/ign_exhib9.jpg" style="aspect-ratio: auto 3024 / 4032;" width="3024"/></p>
 <p class="caption"> The Crew behind their waxy creation. Mountain is about halfway through its brief but bright existence </p>
-<p><img loading="lazy" alt="The Crew behind their waxy creation. Mountain is about halfway through its brief but bright existence" class="addpic" src="/static/ign_exhib10.jpg"/></p>
+<p><img alt="The Crew behind their waxy creation. Mountain is about halfway through its brief but bright existence" class="addpic" height="3024" loading="lazy" src="/static/ign_exhib10.jpg" style="aspect-ratio: auto 3600 / 3024;" width="3600"/></p>
 <h1 id="cleanup">Cleanup</h1>
 <p>As we wheeled our cart back to the workshop, we reveled in the beautiful colors on the mountain, and all the crazy, winding topography that the wax had formed as it melted and flowed. </p>
 <p class="caption"> Green side of the mountain's base, with the empty wax dye container </p>
-<p><img loading="lazy" alt="Green side of the mountain's base, with the empty wax dye container" class="addpic" src="/static/ign_waxy1.jpg"/></p>
+<p><img alt="Green side of the mountain's base, with the empty wax dye container" class="addpic" height="3024" loading="lazy" src="/static/ign_waxy1.jpg" style="aspect-ratio: auto 4032 / 3024;" width="4032"/></p>
 <p class="caption"> A close-up shot of the green side </p>
-<p><img loading="lazy" alt="A close-up shot of the green side" class="addpic" src="/static/ign_waxy9.jpg"/></p>
+<p><img alt="A close-up shot of the green side" class="addpic" height="2703" loading="lazy" src="/static/ign_waxy9.jpg" style="aspect-ratio: auto 3863 / 2703;" width="3863"/></p>
 <p class="caption"> A bit messier purple side, with plenty of long match handles left in the carnage </p>
-<p><img loading="lazy" alt="A bit messier purple side, with plenty of long match handles left in the carnage" class="addpic" src="/static/ign_waxy2.jpg"/></p>
+<p><img alt="A bit messier purple side, with plenty of long match handles left in the carnage" class="addpic" height="3024" loading="lazy" src="/static/ign_waxy2.jpg" style="aspect-ratio: auto 3656 / 3024;" width="3656"/></p>
 <p class="caption"> The elephant wall, scorched and overrun by a couple of the candles </p>
-<p><img loading="lazy" alt="The elephant wall, scorched and overrun by a couple of the candles" class="addpic" src="/static/ign_waxy3.jpg"/></p>
+<p><img alt="The elephant wall, scorched and overrun by a couple of the candles" class="addpic" height="3024" loading="lazy" src="/static/ign_waxy3.jpg" style="aspect-ratio: auto 4032 / 3024;" width="4032"/></p>
 <p class="caption"> Front view, with much of the underlying concrete platforms exposed </p>
-<p><img loading="lazy" alt="Front view, with much of the underlying concrete platforms exposed" class="addpic" src="/static/ign_waxy4.jpg"/></p>
+<p><img alt="Front view, with much of the underlying concrete platforms exposed" class="addpic" height="3024" loading="lazy" src="/static/ign_waxy4.jpg" style="aspect-ratio: auto 4032 / 3024;" width="4032"/></p>
 <p class="caption"> Closeup on the inside. Stalagtites have formed from the waxy trails dripping downwards.  </p>
-<p><img loading="lazy" alt="Closeup on the inside. Stalagtites have formed from the waxy trails dripping downwards. " class="addpic" src="/static/ign_waxy5.jpg"/></p>
+<p><img alt="Closeup on the inside. Stalagtites have formed from the waxy trails dripping downwards. " class="addpic" height="2467" loading="lazy" src="/static/ign_waxy5.jpg" style="aspect-ratio: auto 3024 / 2467;" width="3024"/></p>
 <h1 id="beautiful-stratigraphy">Beautiful Stratigraphy</h1>
 <p>As we began disassembling the mountain's structure, we were really in for a surprise. No visitor had gotten to see it, but as we sliced and unscrewed everything, we exposed these vivid colored sheets. Our melting wax had formed these beautiful splotches and layers deep inside the mountain itself, purely through the audience's organic addition of color onto random candles. </p>
 <p>We were all so surprised, and I personally felt incredibly joyous to see that our original project goal of emergent behavior had come about all on its own without any planning on our part. Organic as it should be, and beautiful in its aimlessness. </p>
 <p class="caption"> The candle bases with wax filling in gaps, all attached to this central wooden beam </p>
-<p><img loading="lazy" alt="The candle bases with wax filling in gaps, all attached to this central wooden beam" class="addpic" src="/static/ign_waxy6.jpg"/></p>
+<p><img alt="The candle bases with wax filling in gaps, all attached to this central wooden beam" class="addpic" height="3269" loading="lazy" src="/static/ign_waxy6.jpg" style="aspect-ratio: auto 3024 / 3269;" width="3024"/></p>
 <p class="caption"> PLACE DYE DISH HERE </p>
-<p><img loading="lazy" alt="PLACE DYE DISH HERE" class="addpic" src="/static/ign_waxy7.jpg"/></p>
+<p><img alt="PLACE DYE DISH HERE" class="addpic" height="2876" loading="lazy" src="/static/ign_waxy7.jpg" style="aspect-ratio: auto 3024 / 2876;" width="3024"/></p>
 <p class="caption"> Layers of orange, purple, blue, and green are left in cylindrical shapes, hugging candles that are no longer there </p>
-<p><img loading="lazy" alt="Layers of orange, purple, blue, and green are left in cylindrical shapes, hugging candles that are no longer there" class="addpic" src="/static/ign_waxy8.jpg"/></p>
+<p><img alt="Layers of orange, purple, blue, and green are left in cylindrical shapes, hugging candles that are no longer there" class="addpic" height="3024" loading="lazy" src="/static/ign_waxy8.jpg" style="aspect-ratio: auto 4032 / 3024;" width="4032"/></p>
 <p class="caption"> Ridges and texture left by the wax's rapidly cooling surface, puffed up by the more molten wax below  </p>
-<p><img loading="lazy" alt="Ridges and texture left by the wax's rapidly cooling surface, puffed up by the more molten wax below " class="addpic" src="/static/ign_waxy10.jpg"/></p>
+<p><img alt="Ridges and texture left by the wax's rapidly cooling surface, puffed up by the more molten wax below " class="addpic" height="2928" loading="lazy" src="/static/ign_waxy10.jpg" style="aspect-ratio: auto 3823 / 2928;" width="3823"/></p>
 <p class="caption"> A lighthouse of a single stray candle amidst sprawling tendrils of green </p>
-<p><img loading="lazy" alt="A lighthouse of a single stray candle amidst sprawling tendrils of green" class="addpic" src="/static/ign_waxy11.jpg"/></p>
+<p><img alt="A lighthouse of a single stray candle amidst sprawling tendrils of green" class="addpic" height="3024" loading="lazy" src="/static/ign_waxy11.jpg" style="aspect-ratio: auto 4032 / 3024;" width="4032"/></p>
 <h2 id="postdisassembly-archaeology">Post-Disassembly Archaeology</h2>
 <p>In elementary school, I always wanted to be an archaeologist. I loved digging up stuff with rocks and sticks, and finding other cool scraps in the ground. I knew that cataloguing played a bit role in the daily life of an archaeologist, so I kept many samples of rocks. Some had iron inclusions, a few smooth marble, others grey and sharp. This process felt the same way.</p>
 <p>We took big chunks of wax and extracted pieces that looked interesting. I took way more photos than my teammates, but I'm assuming that's because this is my first public art endeavor, and they are jaded from doing it a lot. </p>
 <p>Beyond the first inch, the wax still hurt to touch, and felt soft under my hands. Big blocks were moldable like putty. </p>
 <p class="caption"> Tools you'll need: cardboard cutter, sample bin, black aluminum foil. ABK IYKYK </p>
-<p><img loading="lazy" alt="Tools you'll need: cardboard cutter, sample bin, black aluminum foil. ABK IYKYK" class="addpic" src="/static/ign_waxy13.jpg"/></p>
+<p><img alt="Tools you'll need: cardboard cutter, sample bin, black aluminum foil. ABK IYKYK" class="addpic" height="3529" loading="lazy" src="/static/ign_waxy13.jpg" style="aspect-ratio: auto 2994 / 3529;" width="2994"/></p>
 <p class="caption"> The side wall placed flat on the base board after all the wax has been removed. Wood stains and hot glue are the only evidence that candles once stood here proudly </p>
-<p><img loading="lazy" alt="The side wall placed flat on the base board after all the wax has been removed. Wood stains and hot glue are the only evidence that candles once stood here proudly" class="addpic" src="/static/ign_waxy12.jpg"/></p>
+<p><img alt="The side wall placed flat on the base board after all the wax has been removed. Wood stains and hot glue are the only evidence that candles once stood here proudly" class="addpic" height="2215" loading="lazy" src="/static/ign_waxy12.jpg" style="aspect-ratio: auto 3328 / 2215;" width="3328"/></p>
 <p class="caption"> Select pieces volume 1. Large chunks from the edges (rounded corners) give an idea of the waxy puzzle that once occupied the land </p>
-<p><img loading="lazy" alt="Select pieces volume 1. Large chunks from the edges (rounded corners) give an idea of the waxy puzzle that once occupied the land" class="addpic" src="/static/ign_waxy14.jpg"/></p>
+<p><img alt="Select pieces volume 1. Large chunks from the edges (rounded corners) give an idea of the waxy puzzle that once occupied the land" class="addpic" height="720" loading="lazy" src="/static/ign_waxy14.jpg" style="aspect-ratio: auto 1024 / 720;" width="1024"/></p>
 <p class="caption"> Closeup on the smaller pieces. Big fan of these, some looked like food while others just displayed a nice lineup of color </p>
-<p><img loading="lazy" alt="Closeup on the smaller pieces. Big fan of these, some looked like food while others just displayed a nice lineup of color" class="addpic" src="/static/ign_waxy15.jpg"/></p>
+<p><img alt="Closeup on the smaller pieces. Big fan of these, some looked like food while others just displayed a nice lineup of color" class="addpic" height="4032" loading="lazy" src="/static/ign_waxy15.jpg" style="aspect-ratio: auto 3024 / 4032;" width="3024"/></p>
 <p class="caption"> A few chunks resembled food, this brown and red bit looking like a slice of raspberry cake </p>
-<p><img loading="lazy" alt="A few chunks resembled food, this brown and red bit looking like a slice of raspberry cake" class="addpic" src="/static/ign_waxy17.jpg"/></p>
+<p><img alt="A few chunks resembled food, this brown and red bit looking like a slice of raspberry cake" class="addpic" height="3185" loading="lazy" src="/static/ign_waxy17.jpg" style="aspect-ratio: auto 3024 / 3185;" width="3024"/></p>
 <p class="caption"> Underside of the purple bit, with a lot of shades of blue in one patch. </p>
-<p><img loading="lazy" alt="Underside of the purple bit, with a lot of shades of blue in one patch." class="addpic" src="/static/ign_waxy18.jpg"/></p>
+<p><img alt="Underside of the purple bit, with a lot of shades of blue in one patch." class="addpic" height="4032" loading="lazy" src="/static/ign_waxy18.jpg" style="aspect-ratio: auto 3024 / 4032;" width="3024"/></p>
 <p class="caption"> Green Lighthouse (2022), wax and wick and wood </p>
-<p><img loading="lazy" alt="Green Lighthouse (2022), wax and wick and wood" class="addpic" src="/static/ign_waxy19.jpg"/></p>
+<p><img alt="Green Lighthouse (2022), wax and wick and wood" class="addpic" height="2956" loading="lazy" src="/static/ign_waxy19.jpg" style="aspect-ratio: auto 3335 / 2956;" width="3335"/></p>
 <p>Overall, a thing of great beauty that I'm glad to have brought to people's lives. A great night, great pictures, and a great quantity of random, beautiful bits of wax coming from the collective action of everyone in the audience that night.</p></body></html>
         </div>
         <p style="line-height:300%;">&nbsp;</p>
 </div>
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

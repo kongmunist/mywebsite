@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>EyeMU | Andy Kong</title>
 <meta name="description" content="First first-author paper! &#34;EyeMU Interactions, Gaze + IMU Gestures on Mobile Devices&#34;">
@@ -204,6 +205,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -229,7 +237,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -249,10 +257,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -270,14 +278,14 @@
                 <hr>
             <html><body><h1 id="second-paper" style="text-align:center;"> Second paper! </h1>
 <div style="text-align:center;">
-<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/-HwcmWRAsaA?si=-PcdylK30RvWu1hQ" title="YouTube video player" width="560"></iframe>
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/-HwcmWRAsaA?si=-PcdylK30RvWu1hQ" title="YouTube video player" width="560"></iframe>
 </div>
 <h3 style="text-align:center; margin-bottom:0px;">
     EyeMU Interactions: Gaze + IMU Gestures on Mobile Devices
     <a href="/static/ICMI_EyeMU.pdf" target="_blank">(PDF)</a>
 <a href="https://dl.acm.org/doi/abs/10.1145/3462244.3479938" target="_blank">(DOI)</a>
 </h3>
-<!--- <img loading="lazy" style="margin-top:10px;" class="d-block mx-auto" src="/static/eyemuhero.png"/> --->
+<!--- <img style="margin-top:10px;" class="d-block mx-auto" src="/static/eyemuhero.png"/> --->
 <hr/>
 <p>I'm excited to announce my trend in publishing in HCI! Woohoo!! Check out the paper itself <a href="https://dl.acm.org/doi/abs/10.1145/3462244.3479938" target="_blank">here</a>, or the conference submission + stats <a href="https://dl.acm.org/doi/abs/10.1145/3462244.3479938" target="_blank">here</a>.</p>
 <p>I led this project starting last last summer. I had actually begun coding a smartphone eye tracker with my friend when I found out Karan was working on the same thing with his friend, and we decided to merge with me as the lead. Good times. Like Yang Zhang says, when you're the first author, there's a lot of little fires that you are responsible for putting out. I did not understand his tweet until I had finished this paper. </p>
@@ -289,6 +297,7 @@
         <p style="line-height:300%;">&nbsp;</p>
 </div>
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

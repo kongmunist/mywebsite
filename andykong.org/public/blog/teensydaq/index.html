@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Teensy DAQ: ADC Oversampling on the Teensy 4.0 microcontroller | Andy Kong</title>
 <meta name="description" content="300 kSPS to 1 kSPS faster than you can say &#34;free bits&#34;">
@@ -321,6 +322,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -346,7 +354,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -366,10 +374,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -391,7 +399,7 @@
 <hr>
             <html><body><p>I recently wrote a <a href="https://github.com/kongmunist/TeensyDAQ-Fast">Teensy Data Acquisition GUI</a> for recording data from a microcontroller/sensor onto the computer. It's pretty simple, just a Python QT5 GUI that has a plot of the data as it comes in over the serial and writes it into a list as fast as it can. After you hit 'stop recording', it writes it into a text file. And yes, this order was the fastest. I checked.</p>
 <p>I felt wasteful when first using it because I only wanted to get signals at around 1kHz at most, while the Teensy analog-digital converter running at full-tilt with some averaging (noise reduction) still sampled at well over 200 kHz. What to do with these extra samples? Get extra bits, of course!</p>
-<p><img loading="lazy" alt="Free-running ADC goes at 362kHz" src="/static/teensydaq_ADCoutput.jpeg"/></p>
+<p><img alt="Free-running ADC goes at 362kHz" height="907" loading="lazy" src="/static/teensydaq_ADCoutput.jpeg" style="aspect-ratio: auto 1210 / 907;" width="1210"/></p>
 <p class="caption">Free-running Teensy ADC goes at 362kHz — and it's got two of 'em!</p>
 <p>So while you can average 2<sup>n</sup> samples to reduce the Noise Power by a factor of n, you can't quite do the same with bits of resolution from your ADC. Turns out when you sum two measurements, their noise magnitude grows by a factor of sqrt(n), while your signal magnitude only grows by a factor of n. The SNR only improves by sqrt(n), since n/sqrt(n)... well, you understand. More on that <a href="https://en.wikipedia.org/wiki/Oversampling#Resolution">here</a>. Basically, you need to sample 4 times per bit of extra resolution you want to get. So if you wanted one more bit, you'd oversample at 4x the Nyquist frequency, if you wanted two you'd have to sample at 4<sup>2</sup>, etc.</p>
 <p>However, I'm still not sure exactly how SNR relates to bits of resolution. I understand the math, but not intuitively. It still feels like you could average two binary numbers to get one that has one more bit of info. Maybe it only has 0.5 more bits of extra information? That would definitely correspond to it having "less noise," which it does after averaging... I definitely don't understand completely. </p>
@@ -427,6 +435,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

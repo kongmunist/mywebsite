@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Manual Backpropagation | Andy Kong</title>
 <meta name="description" content="Manually implementing backpropagation to make sure I know how it works">
@@ -204,6 +205,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -229,7 +237,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -249,10 +257,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -271,12 +279,13 @@
             <html><body><p>When I first completed Andrew Ng's <a href="https://www.coursera.org/learn/machine-learning">course</a>, I realized that the coding homeworks had babied me. The structure was already in-place, the matrix operations were trivial in MATLAB, and I didn't really have to understand how the backprop algorithm worked in order to implement it in the exercises. To prove to myself that I knew how to do it, I needed to implement it myself, with only a little help from Python and numpy.</p>
 <p>Also, for whatever reason, implementing machine learning in PyTorch was trivial and unimpressive to a lot of people. That kind of peeved me, since tuning hyperparameters is no trivial task. Staging layers for CNNs was also not easy to figure out. </p>
 <p>I started by watching 3Blue1Brown's video on the backprop <a href="https://www.youtube.com/watch?v=Ilg3gGewQ5U&amp;t=709s">algorithm</a>, which really helped me understand what order to do the math in. I wrote a ReLU function in Python, then either imported or created all the variables (a', z, etc.) and multiplied a bunch of matrices together. I trained on the MNIST handwritten digits dataset, and got 86% accuracy on the test set after validating on a 20% subset. </p>
-<p><img loading="lazy" class="d-block mx-auto" src="/static/manualbackpropcode.png"/></p>
+<p><img class="d-block mx-auto" height="567" loading="lazy" src="/static/manualbackpropcode.png" style="aspect-ratio: auto 757 / 567;" width="757"/></p>
 <p>This post is short because the code is not very neat to look at or think about. Machine learning really is just a bunch of matrices multiplying themselves. I meant to implement gradient checking to make sure I had taken the derivatives properly, but I was much too lazy. This whole project took about 8 hours, and doing the same thing in PyTorch would have taken less than 1. I just thought it was a fun, personal challenge, and now will never take PyTorch for granted again.</p></body></html>
         </div>
         <p style="line-height:300%;">&nbsp;</p>
 </div>
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

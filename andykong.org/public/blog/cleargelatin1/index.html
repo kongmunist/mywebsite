@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Making clear gelatin from porcine sheets | Andy Kong</title>
 <meta name="description" content="From Jello you came, and to Jello you shall return">
@@ -319,6 +320,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -344,7 +352,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -364,10 +372,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -390,41 +398,41 @@
             <html><body><p>Hello! I have recently moved to Switzerland. I'll be writing some smaller posts to encourage myself to get back into this blogging thing, and this is the first. We'll see if it works.</p>
 <p>Before coming to Switzerland, I thought a bit about the things I'd miss about America. According to forum posts from other expats, the Swiss had no mint chocolate (still true), nor peanut butter (untrue as of now), nor chocolate chips (still true), nor Jell-O and some of the other brands of random snacks. That's all fine and good since most snacks have substitutes, but Jello??? There's no equivalent for this clear, jiggly snack!</p>
 <p class="caption"> Look at that Joggly  </p>
-<p><img loading="lazy" alt="Look at that Joggly " class="addpic" src="/static/cg1_jellohero.jpg"/></p>
+<p><img alt="Look at that Joggly " class="addpic" height="596" loading="lazy" src="/static/cg1_jellohero.jpg" style="aspect-ratio: auto 720 / 596;" width="720"/></p>
 <p>Luckily, I was able to find some sheets of pure-ish gelatin in the supermarket baking section, which is (I think) the core ingredient of Jello. Since I've only ever had colored, sweetened Jello, I decided my first time making it I would see how gross the unsweetened version is, as well as checking the clarity of it without any coloring.</p>
 <p class="caption"> Partially inspired by my discovery that science classes will use gelatin casts to teach optics </p>
-<p><img loading="lazy" alt="Partially inspired by my discovery that science classes will use gelatin casts to teach optics" class="addpic" src="/static/cg1_jellolens.jpg"/></p>
+<p><img alt="Partially inspired by my discovery that science classes will use gelatin casts to teach optics" class="addpic" height="708" loading="lazy" src="/static/cg1_jellolens.jpg" style="aspect-ratio: auto 544 / 708;" width="544"/></p>
 <hr/>
 <h1 id="in-sheets">In sheets???</h1>
 <p>The store sells gelatin in both powder and sheets form, and I chose the sheets cause I found the form factor interesting. Each sheet is good enough for around 100mL of liquid, and is totally clear with some bubbles at the seams.</p>
 <p class="caption"> Clear gelatin sheets fresh from the store </p>
-<p><img loading="lazy" alt="Clear gelatin sheets fresh from the store" class="addpic" src="/static/cg1_composite.jpg"/></p>
+<p><img alt="Clear gelatin sheets fresh from the store" class="addpic" height="963" loading="lazy" src="/static/cg1_composite.jpg" style="aspect-ratio: auto 1385 / 963;" width="1385"/></p>
 <p>The sheet is pretty cool. It's embossed in a diamond pattern (zoom in!) and is quite bendy (not brittle at all) and hard to the touch. And when I touched it, it didn't get sticky or anything, so my skin moisture did not sufficiently wet it. I put it in my mouth for 30 sec and it became only a bit softer, and had no flavor. I'm using a 500mL tupperware to hold my jello, so I used around 4 sheets and left some air in the top. </p>
 <p>First, you gotta soak the gelatin sheets in cold water for 5-10 minutes. This is said to activate or "bloom" it. Supposedly putting it straight into hot water will swell the outside without letting the inside activate, but that sounds like untested baloney. </p>
 <p class="caption"> Soaked gelatin sheet is like a clear tisseue </p>
-<p><img loading="lazy" alt="Soaked gelatin sheet is like a clear tisseue" class="addpic" src="/static/cg1_soaked.jpg"/></p>
+<p><img alt="Soaked gelatin sheet is like a clear tisseue" class="addpic" height="728" loading="lazy" src="/static/cg1_soaked.jpg" style="aspect-ratio: auto 1147 / 728;" width="1147"/></p>
 <p>While that was happening I went and microwaved my tupperware to get the water warm. I brought over the gelatin, which had sagged down in the cup of water and got ready to transfer it. I used a spoon because I didn't know how my hand oils would affect the setting. </p>
-<p><img loading="lazy" alt="Lifting the floppy soaked gelatin sheet out of a green glass of water with a knife, ready to transfer it" class="addpic" src="/static/gc1_bothcups.jpg"/></p>
+<p><img alt="Lifting the floppy soaked gelatin sheet out of a green glass of water with a knife, ready to transfer it" class="addpic" height="755" loading="lazy" src="/static/gc1_bothcups.jpg" style="aspect-ratio: auto 963 / 755;" width="963"/></p>
 <p>The package said to stir until totally dissolved and I had worried that it would take a long time, but it dissolved on impact into this slightly tan cloud. I stirred it for just a few seconds and it incorporated just fine. Here's my tupperware chilling in the fridge right after this</p>
 <p class="caption"> Unset gelatin </p>
-<p><img loading="lazy" alt="Unset gelatin" class="addpic" src="/static/gc1_preset.jpg"/></p>
+<p><img alt="Unset gelatin" class="addpic" height="446" loading="lazy" src="/static/gc1_preset.jpg" style="aspect-ratio: auto 624 / 446;" width="624"/></p>
 <p>On my first attempt, it didn't set right because I misread the instructions. I thought each sheet could set 1L, but that was off by an order of magnitude (I never claimed to read French). I corrected that error, and after a night in the fridge, the properly-set gelatin turned cloudy.</p>
 <p class="caption"> Set gelatin </p>
-<p><img loading="lazy" alt="Set gelatin" class="addpic" src="/static/gc1_postset.jpg"/></p>
+<p><img alt="Set gelatin" class="addpic" height="495" loading="lazy" src="/static/gc1_postset.jpg" style="aspect-ratio: auto 687 / 495;" width="687"/></p>
 <p>The gelatin is super stiff after setting, and on measuring, I realized I used 4 sheets for around 300g of water. This is a good ratio for future gelatin — I hate squishy Jell-O.</p>
 <p class="caption"> Me holding the gelatin. If it looks fun to hold, that's because it is </p>
-<p><img loading="lazy" alt="Me holding the gelatin. If it looks fun to hold, that's because it is" class="addpic" src="/static/gc1_meholding.jpg"/></p>
+<p><img alt="Me holding the gelatin. If it looks fun to hold, that's because it is" class="addpic" height="989" loading="lazy" src="/static/gc1_meholding.jpg" style="aspect-ratio: auto 1167 / 989;" width="1167"/></p>
 <hr/>
 <h1 id="flavor">Flavor</h1>
 <p>The taste is completely neutral. The mouthfeel is that of Jell-O and there is a tiny or no taste added from the gelatin, but it feels wrong to be eating water. It's really weird!</p>
 <p>Since you can just reheat gelatin to make it liquid again, I made another batch with sugar. I heard that sucrose actually helps the gelatinization process, and wanted to check if that was true. I must say I didn't notice it being any stiffer, but it definitely tasted much better. </p>
 <h1 id="laser">Laser?</h1>
 <p class="caption"> Green laser experiment in gelatin </p>
-<p><img loading="lazy" alt="Green laser experiment in gelatin" class="addpic" src="/static/cg1_laser.jpg"/></p>
+<p><img alt="Green laser experiment in gelatin" class="addpic" height="480" loading="lazy" src="/static/cg1_laser.jpg" style="aspect-ratio: auto 798 / 480;" width="798"/></p>
 <p>Finally, the reason that one of the tags is "laser" is because I wanted to see if the sugar gradient experiment would still work if the sugar gradient were solidified in gelatin. Spoiler: It does! Still bends light as we expect it to. </p>
 <p>I think the diffusion of the sugar still happens, so eventually this block of gelatin won't bend lasers anymore. But I'll let you know how it looks later if I make a followup for this. </p>
 <p class="caption"> A red laser also bends, but much less visibly (look at the spot on the table on the right, this is the bent output of the red laser). I heard adding a small amount of creamer to the water helps the red show up, but I'll try that later. </p>
-<p><img loading="lazy" alt="A red laser also bends, but much less visibly (look at the spot on the table on the right, this is the bent output of the red laser). I heard adding a small amount of creamer to the water helps the red show up, but I'll try that later." class="addpic" src="/static/cg1_laser2.jpg"/></p>
+<p><img alt="A red laser also bends, but much less visibly (look at the spot on the table on the right, this is the bent output of the red laser). I heard adding a small amount of creamer to the water helps the red show up, but I'll try that later." class="addpic" height="516" loading="lazy" src="/static/cg1_laser2.jpg" style="aspect-ratio: auto 1025 / 516;" width="1025"/></p>
 <hr/>
 <h1 id="future-work">Future Work</h1>
 <ol>
@@ -455,6 +463,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

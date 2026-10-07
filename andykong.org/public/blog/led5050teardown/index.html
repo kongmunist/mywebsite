@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>5050 LED Strip Teardown | Andy Kong</title>
 <meta name="description" content="Repurposing an LED light strip controller and power supply">
@@ -320,6 +321,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -345,7 +353,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -365,10 +373,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -390,22 +398,22 @@
 <hr>
             <html><body><p>Hello! I purchased some LED strips off Amazon. I've always wanted some more lighting, but more importantly, I also wanted to set up some interactive visuals in my room! </p>
 <p class="caption">Let there be light</p>
-<p><img loading="lazy" alt="Let there be light" src="/static/led5050_lit.png"/></p>
+<p><img alt="Let there be light" height="520" loading="lazy" src="/static/led5050_lit.png" style="aspect-ratio: auto 842 / 520;" width="842"/></p>
 <p>Ideally, I'd create a few scripts that allow users to control the light strip in fun ways. For instance, I wanted to add an encoder dial that would control the position of a single LED, and then when turned, it would just move around strip in a big circle. Or a visual doorknob that would flash when pressed, so I could respond to people outside my door while listening to music. Or a clock that fills up or drains the LED strip as the day progresses, a visual indicator of daylight running out. There's a lot of ideas here.</p>
 <p>Anyway, the first step is to purchase a sufficiently long LED strip off Amazon. I measured my room, and need about 50 feet of lights to go all the way around. </p>
 <p>Buyer beware here, if the item description does not mention "chase effect" and is really cheap, it probably doesn't have individually addressable LEDs. They're referred to as 5050 LEDs, and instead of 3 wires have 4 wires — 12 V, R, G and B. Not sure why it's inverted like that. So since the strip is only addressable as a whole, I can't do the knob thing, but I can do some more fun things that I had planned.</p>
 <p class="caption">Unlit reel on my desk. Comes with backing and a nice rubber-y cover. </p>
-<p><img loading="lazy" alt="Unlit reel on my desk. Comes with backing and a nice rubber-y cover." src="/static/led5050_reel.jpg"/></p>
+<p><img alt="Unlit reel on my desk. Comes with backing and a nice rubber-y cover." height="903" loading="lazy" src="/static/led5050_reel.jpg" style="aspect-ratio: auto 1210 / 903;" width="1210"/></p>
 <p>Most of these come with some app, so we know there will be some Bluetooth or otherwise IoT going on inside. The supply is 12V, and claims to source up to 5 amps. At 60mA per LED at full draw, and 300 LEDs/reel (2 reels), that's a max draw of 36 A. Of course, each LED does not draw 60mA, but we are upper bounding. Though that 60mA was for NeoPixels, maybe it's lower for these...</p>
 <h2 id="power">Power</h2>
 <p>Anyway, here's the power supply. Looks like a generic 12V brick, some conversion then a Cockcraft-Walton (I assume that's what the diodes are for?), then another transformer. Take this with a grain of salt, I study computers not circuits. Out comes 14V-ish DC (no load), and 7V goes into the emitter of the transistors in bottom-left.</p>
 <p class="caption">Power supply for the LED lights</p>
-<p><img loading="lazy" alt="Power supply for the LED lights" src="/static/led5050_powersupply.jpg"/></p>
+<p><img alt="Power supply for the LED lights" height="1199" loading="lazy" src="/static/led5050_powersupply.jpg" style="aspect-ratio: auto 2016 / 1199;" width="2016"/></p>
 <h2 id="control">Control</h2>
 <p>Lying next to the power supply board unsecured is the control board. You can see the 3 transistors in the bottom left leading to some FAT traces that go to the RGB channels, as well as the 12V input. There's also the board-trace Bluetooth antenna in the top right-hand side.</p>
 <p>I couldn't find the transistor number online (X0GA 25), but if you apply 4V to the bottom-right pin of the SOT package, it lights. Good enough for me. I may also just turn all the transistors on and then put my own transistors on the output line.</p>
 <p class="caption">Controlling board for the LED light strip. Was previously just dangling in the power brick...</p>
-<p><img loading="lazy" alt="Controlling board for the LED light strip. Was previously just dangling in the power brick..." src="/static/led5050_controlboard.jpg"/></p>
+<p><img alt="Controlling board for the LED light strip. Was previously just dangling in the power brick..." height="956" loading="lazy" src="/static/led5050_controlboard.jpg" style="aspect-ratio: auto 1468 / 956;" width="1468"/></p>
 <p>Looks good. Next step, find a 5V microcontroller and hook it up! We'll see how hard the controls are, depending on the voltage-to-brightness conversion on the transistor.</p></body></html>
 
 
@@ -431,6 +439,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

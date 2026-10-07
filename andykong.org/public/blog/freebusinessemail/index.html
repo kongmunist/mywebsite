@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Free custom email domain through Gmail | Andy Kong</title>
 <meta name="description" content="1 CRAZY trick that Big Custom Mailbox doesn&#39;t want you to know">
@@ -319,6 +320,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -344,7 +352,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -364,10 +372,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -391,18 +399,18 @@
 <p>So if you can receive email at a custom domain (e.g. Namecheap offers free custom domain email forwarding) but can't send it, you can solve this. Gmail offers this service for free but has utterly gimped the setup guides, probably just to sell more Google Workspace. I'm gonna tell you how to do it because it's actually really simple. </p>
 <h2 id="1-first-navigate-to-gmail-then-hit-settings-then-hit-all-settings-then-go-to-accounts-and-imports">1. First navigate to Gmail, then hit settings, then hit all settings, then go to "Accounts and Imports"</h2>
 <p>Menu should look like this. Hit "Add another email address" to trigger a popup</p>
-<p><img loading="lazy" alt="Gmail Settings on the Accounts and Import tab, with the Add another email address link under Send mail as" class="addpic" src="/static/freebusinessemail/0.png"/></p>
+<p><img alt="Gmail Settings on the Accounts and Import tab, with the Add another email address link under Send mail as" class="addpic" height="934" loading="lazy" src="/static/freebusinessemail/0.png" style="aspect-ratio: auto 1896 / 934;" width="1896"/></p>
 <h2 id="2-put-in-your-custom-email">2. Put in your custom email</h2>
-<p><img loading="lazy" alt="Gmail popup for adding another email address you own, with name and custom domain email filled in" class="addpic" src="/static/freebusinessemail/1.png"/></p>
+<p><img alt="Gmail popup for adding another email address you own, with name and custom domain email filled in" class="addpic" height="510" loading="lazy" src="/static/freebusinessemail/1.png" style="aspect-ratio: auto 1062 / 510;" width="1062"/></p>
 <h2 id="3-fill-out-smtp">3. Fill out SMTP</h2>
 <p>Use "smtp.gmail.com" and port 587, then add your current gmail address as the username (remove the @gmail.com). For password you'll need to make an app password. </p>
-<p><img loading="lazy" alt="SMTP server form filled with smtp.gmail.com, port 587, and a Gmail username, password still blank" class="addpic" src="/static/freebusinessemail/2.png"/></p>
+<p><img alt="SMTP server form filled with smtp.gmail.com, port 587, and a Gmail username, password still blank" class="addpic" height="618" loading="lazy" src="/static/freebusinessemail/2.png" style="aspect-ratio: auto 1024 / 618;" width="1024"/></p>
 <p>An app password is basically a way to give an app access to your email without exposing your password. To make one, go to <a href="https://myaccount.google.com/">myaccount.google.com</a>, search for "App passwords" (you will not find it as a menu item), do a sign-in again, then make up a name and generate one.</p>
-<p><img loading="lazy" alt="Google Account search for app password, with App passwords appearing under the Security results" class="addpic" src="/static/freebusinessemail/3.png"/></p>
+<p><img alt="Google Account search for app password, with App passwords appearing under the Security results" class="addpic" height="724" loading="lazy" src="/static/freebusinessemail/3.png" style="aspect-ratio: auto 1788 / 724;" width="1788"/></p>
 <p>Copy that into the SMTP popup and hit Add Account:</p>
-<p><img loading="lazy" alt="Completed SMTP form with the app password pasted in, ready to hit the Add Account button" class="addpic" src="/static/freebusinessemail/4.png"/></p>
+<p><img alt="Completed SMTP form with the app password pasted in, ready to hit the Add Account button" class="addpic" height="558" loading="lazy" src="/static/freebusinessemail/4.png" style="aspect-ratio: auto 1042 / 558;" width="1042"/></p>
 <p>You are pretty much done. They will send a confirmation email to your custom domain, which, if your forwarding was really set up right, will go somewhere you can click it. From then on you can send emails from your custom domain fo free. Enjoy!</p>
-<p><img loading="lazy" alt="Gmail compose window with the From field set to the new custom domain address" class="addpic" src="/static/freebusinessemail/5.png"/></p>
+<p><img alt="Gmail compose window with the From field set to the new custom domain address" class="addpic" height="322" loading="lazy" src="/static/freebusinessemail/5.png" style="aspect-ratio: auto 728 / 322;" width="728"/></p>
 <hr/>
 <p>Guide mostly cribbed from the super-thorough but deleted Google Support guide backed up on wayback <a href="https://web.archive.org/web/20230326042630/https://support.google.com/domains/answer/9437157">here</a>. Why do they insist on making their products annoying to use? </p></body></html>
 
@@ -427,6 +435,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

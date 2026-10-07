@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Immersive Space Workarounds In The Vision Pro | Andy Kong</title>
 <meta name="description" content="Quick Immersion">
@@ -320,6 +321,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -345,7 +353,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -365,10 +373,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -393,20 +401,20 @@
 <h1 id="no-gestures">No Gestures?</h1>
 <p>So far, the thing that bothers me the most about VisionOS is the inability to use custom gestures in the main "area". The Vision Pro is mostly billed as a productivity tool, and while working in it I wanted to do hand gestures to open specific webpages or send data to some program for processing. Unfortunately, accessing hand tracking requires ARKit, which requires the app to be in an "Full Space", which closes all other apps (e.g. Safari, Macbook screen mirroring). This is intentional on Apple's part, possibly to prevent custom gestures from interfering with the system-level "Tap" and "Drag" motions.</p>
 <p class="caption"> Apple's justification </p>
-<p><img loading="lazy" alt="Apple's justification" class="addpic" src="/static/quickimmersion/apple.png"/></p>
+<p><img alt="Apple's justification" class="addpic" height="222" loading="lazy" src="/static/quickimmersion/apple.png" style="aspect-ratio: auto 1830 / 222;" width="1830"/></p>
 <p>I'm not sure what privacy would be protected by restricting ARKit usage like this, but I think custom gestures would be really cool to enable spatial computing and I want to do it. What are our alternatives?</p>
 <h1 id="quick-immersion">Quick Immersion</h1>
 <p>I've been experimenting with opening a Full Space and closing it really quickly, essentially using an app's windowed version as a toggle for the app's Full Space. The Full Space and the user's workflow can then complement each other — I do some 3D modelling on my laptop's shared screen, launch my app's Full Space for life-size model viewing and tweaks, then return to my desktop with a quick gesture. Here's some demo photos.</p>
 <p class="caption"> 1. User is using another app (reading about potatoes) </p>
-<p><img loading="lazy" alt="1. User is using another app (reading about potatoes)" class="addpic" src="/static/quickimmersion/1.jpg"/></p>
+<p><img alt="1. User is using another app (reading about potatoes)" class="addpic" height="2160" loading="lazy" src="/static/quickimmersion/1.jpg" style="aspect-ratio: auto 3840 / 2160;" width="3840"/></p>
 <p class="caption"> 2. User decides to go into an Immersive Space to work with a 3D asset </p>
-<p><img loading="lazy" alt="2. User decides to go into an Immersive Space to work with a 3D asset" class="addpic" src="/static/quickimmersion/2.jpg"/></p>
+<p><img alt="2. User decides to go into an Immersive Space to work with a 3D asset" class="addpic" height="2160" loading="lazy" src="/static/quickimmersion/2.jpg" style="aspect-ratio: auto 3840 / 2160;" width="3840"/></p>
 <p class="caption"> 3. User spawns a cube in the Full Space. Note the Safari window has closed on the left </p>
-<p><img loading="lazy" alt="3. User spawns a cube in the Full Space. Note the Safari window has closed on the left" class="addpic" src="/static/quickimmersion/3.jpg"/></p>
+<p><img alt="3. User spawns a cube in the Full Space. Note the Safari window has closed on the left" class="addpic" height="2160" loading="lazy" src="/static/quickimmersion/3.jpg" style="aspect-ratio: auto 3840 / 2160;" width="3840"/></p>
 <p class="caption"> 4. Satisfied with their cube, the user performs the exit gesture </p>
-<p><img loading="lazy" alt="4. Satisfied with their cube, the user performs the exit gesture" class="addpic" src="/static/quickimmersion/4.jpg"/></p>
+<p><img alt="4. Satisfied with their cube, the user performs the exit gesture" class="addpic" height="2160" loading="lazy" src="/static/quickimmersion/4.jpg" style="aspect-ratio: auto 3840 / 2160;" width="3840"/></p>
 <p class="caption"> 5. The previous apps return when the Full Space is closed and the user can resume their reading </p>
-<p><img loading="lazy" alt="5. The previous apps return when the Full Space is closed and the user can resume their reading" class="addpic" src="/static/quickimmersion/5.jpg"/></p>
+<p><img alt="5. The previous apps return when the Full Space is closed and the user can resume their reading" class="addpic" height="2160" loading="lazy" src="/static/quickimmersion/5.jpg" style="aspect-ratio: auto 3840 / 2160;" width="3840"/></p>
 <p>In the past I've seen apps with an exit button to get out of the Full Space. by using a custom gesture, exiting out takes only about a second — the approximate delay when switching between desktops on the Macbook. It's been quite comfortable to use but I haven't found a really useful thing to do with it. Here's some ideas I had though:</p>
 <hr/>
 <h2 id="inventory-app">Inventory app</h2>
@@ -441,6 +449,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

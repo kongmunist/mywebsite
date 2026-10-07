@@ -3,27 +3,27 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <url>
-    <loc>{{baseURL}}{{ url_for("page", path="") }}</loc>
+    <loc>{{ canonical_url(url_for('index')) }}</loc>
   </url>
   <url>
-    <loc>{{baseURL}}{{ url_for("page", path="blog") }}</loc>
+    <loc>{{ canonical_url(url_for('mainblog')) }}</loc>
   </url>
   <url>
-    <loc>{{baseURL}}{{ url_for("page", path="projects") }}</loc>
+    <loc>{{ canonical_url(url_for('mainproject')) }}</loc>
   </url>
   <url>
-    <loc>{{baseURL}}{{ url_for("page", path="now") }}</loc>
+    <loc>{{ canonical_url(url_for('now')) }}</loc>
   </url>
   <url>
-    <loc>{{baseURL}}{{ url_for("page", path="agent-blog") }}</loc>
+    <loc>{{ canonical_url(url_for('agentblog')) }}</loc>
   </url>
   <url>
-    <loc>{{baseURL}}{{ url_for("page", path="tagged") }}</loc>
+    <loc>{{ canonical_url(url_for('maintag')) }}</loc>
   </url>
 
   {% for post in posts %}
     <url>
-    <loc>{{baseURL}}{{ url_for("page", path=post.path)[:-1] }}</loc>
+    <loc>{{ canonical_url(url_for('page', path=post.path)) }}</loc>
       <lastmod>{{ post.meta.date.strftime("%Y-%m-%d") }}</lastmod>
       {% for im in post.meta.images %}
         <image:image>

@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Electronics Teardown: Stelo CGM | Andy Kong</title>
 <meta name="description" content="Power testing a consumer continuous glucose monitor">
@@ -320,6 +321,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -345,7 +353,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -365,10 +373,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -390,34 +398,34 @@
 <hr>
             <html><body><p>Hello everyone, </p>
 <p>Hope everything is well in your life. I'm working on my implants talk for Hackaday Supercon (more info <a href="https://hackaday.com/2024/09/17/2024-hackaday-superconference-speakers-round-one/">here</a>). As part of my research, I tried out the Stelo CGM by Dexcom, this is (I think) the first over-the-counter continuous glucose monitor. I'll tell you how it was and then we're gonna dissect this bad boy!</p>
-<p><img loading="lazy" alt="Render of the Dexcom Stelo CGM, a small gray oval sensor on a white adhesive patch" class="addpic" src="/static/cgmteardown1/0.jpg"/></p>
+<p><img alt="Render of the Dexcom Stelo CGM, a small gray oval sensor on a white adhesive patch" class="addpic" height="512" loading="lazy" src="/static/cgmteardown1/0.jpg" style="aspect-ratio: auto 768 / 512;" width="768"/></p>
 <h1 id="how-did-it-feel">How did it feel?</h1>
 <p>In a world where glucose monitors are &gt;100$ on Amazon sans insurance, Dexcom offers an affordable ($50) CGM with easily accessible data export, sampling your blood sugar every 5m and passing it to your phone via Bluetooth. The device lasts 15.5 days and comes in a kit of two, meaning annual glucose tracking can now be accomplished for ~1k USD.</p>
-<p><img loading="lazy" alt="Looking into the round spring-loaded Stelo applicator held in hand, sensor visible at the bottom" class="addpic" src="/static/cgmteardown1/1.jpeg"/></p>
+<p><img alt="Looking into the round spring-loaded Stelo applicator held in hand, sensor visible at the bottom" class="addpic" height="780" loading="lazy" src="/static/cgmteardown1/1.jpeg" style="aspect-ratio: auto 654 / 780;" width="654"/></p>
 <p>Deploying is done through this spring-loaded applicator, and is easy as pressing a button. A sharp, stiff needle in the cap punches a small hole in your arm and retracts, leaving behind the sensor body and a flexible needle with glucose oxidase coating. 15 days later, the app sends you an alert to replace it, and 12 hours after that it stops recording data. </p>
 <p>When I got this notification I went and got my teardown tools ready — nothing excites me more than opening a black box!</p>
 <h1 id="internal-pics">Internal pics</h1>
-<p><img loading="lazy" alt="Stelo sensor with its gray rubber casing partly cut away, exposing the DEXCOM-marked circuit board" class="addpic" src="/static/cgmteardown1/2.jpeg"/></p>
+<p><img alt="Stelo sensor with its gray rubber casing partly cut away, exposing the DEXCOM-marked circuit board" class="addpic" height="1194" loading="lazy" src="/static/cgmteardown1/2.jpeg" style="aspect-ratio: auto 1288 / 1194;" width="1288"/></p>
 <p>I started out using a Dremel, but then realized the soft rubber casing is weak enough you can just use wire snippers. The board is quite thin and liable to break as you peel the rubber off, so I had to be careful. </p>
-<p><img loading="lazy" alt="Fingers holding the thin round Stelo circuit board freed from its rubber casing" class="addpic" src="/static/cgmteardown1/3.jpeg"/></p>
-<p><img loading="lazy" alt="Maxell CR1216 3V coin cell battery mounted on the opened Stelo sensor board" class="addpic" src="/static/cgmteardown1/4.jpeg"/></p>
-<p><img loading="lazy" alt="Skin-facing side of the Stelo board, annotated with battery leads, needle leads, and a perimeter antenna" class="addpic" src="/static/cgmteardown1/5.jpeg"/></p>
+<p><img alt="Fingers holding the thin round Stelo circuit board freed from its rubber casing" class="addpic" height="766" loading="lazy" src="/static/cgmteardown1/3.jpeg" style="aspect-ratio: auto 1126 / 766;" width="1126"/></p>
+<p><img alt="Maxell CR1216 3V coin cell battery mounted on the opened Stelo sensor board" class="addpic" height="553" loading="lazy" src="/static/cgmteardown1/4.jpeg" style="aspect-ratio: auto 703 / 553;" width="703"/></p>
+<p><img alt="Skin-facing side of the Stelo board, annotated with battery leads, needle leads, and a perimeter antenna" class="addpic" height="1579" loading="lazy" src="/static/cgmteardown1/5.jpeg" style="aspect-ratio: auto 2061 / 1579;" width="2061"/></p>
 <h1 id="broad-architecture">Broad architecture</h1>
 <p>As far as I can tell, the glucose oxidase on the needle reacts with interstital glucose levels, turning your glucose concentration into a voltage. The Stelo uses an nRF52832 microcontroller to record this, waking up every 30 seconds to read the sensor and every 5 minutes to transmit the data to your phone/watch. The whole thing is powered by a coin cell battery, the Maxell CR1216 (<a href="https://www.maxell.com.tw/images/uploads/2014/10/CR1216_DataSheet_e.pdf">datasheet</a>), which claims a 25mAh capacity</p>
 <h2 id="question-1--are-we-getting-scammed-on-lifetime">Question 1 — are we getting scammed on lifetime?</h2>
 <p>One of the things I wanted to find out through this teardown was if the battery life was longer than the software claimed. 15 days is an incredibly square number, which led me to believe that Dexcom is "guaranteeing performance" by imposing an artificial software lifetime limit when the sensor could really go for longer.</p>
-<p><img loading="lazy" alt="Fluke multimeter reading 2.959V across the coin cell removed from the Stelo" class="addpic" src="/static/cgmteardown1/6.jpeg"/></p>
+<p><img alt="Fluke multimeter reading 2.959V across the coin cell removed from the Stelo" class="addpic" height="805" loading="lazy" src="/static/cgmteardown1/6.jpeg" style="aspect-ratio: auto 1064 / 805;" width="1064"/></p>
 <p>Immediately after I took the sensor off, the battery still reads 2.95V, but since this battery sports an extraordinarily flat discharge curve I have little idea how much capacity is left. </p>
-<p><img loading="lazy" alt="CR1216 datasheet discharge curves: voltage stays flat then drops sharply, shown for 120k, 1.2M, and 3.6M ohm loads" class="addpic" src="/static/cgmteardown1/7.png"/></p>
+<p><img alt="CR1216 datasheet discharge curves: voltage stays flat then drops sharply, shown for 120k, 1.2M, and 3.6M ohm loads" class="addpic" height="592" loading="lazy" src="/static/cgmteardown1/7.png" style="aspect-ratio: auto 900 / 592;" width="900"/></p>
 <p>Since we can't tell by looking at the voltage, I powered the device using an external meter (Nordic PPK2) to find out how much power it draws. Here's the current consumption over 15 minutes:</p>
-<p><img loading="lazy" alt="Current trace of the Stelo over 19 minutes: a high-current boot, then periodic spikes averaging about 11uA" class="addpic" src="/static/cgmteardown1/8.png"/></p>
+<p><img alt="Current trace of the Stelo over 19 minutes: a high-current boot, then periodic spikes averaging about 11uA" class="addpic" height="1476" loading="lazy" src="/static/cgmteardown1/8.png" style="aspect-ratio: auto 2110 / 1476;" width="2110"/></p>
 <p>After an initially high power boot for ~2 minutes, we reach steady operating conditions. Small spikes happen every 7.5 seconds, medium spikes every 30 seconds, and then large bursts of activity every 5 minutes denote Bluetooth activity (large bars on the ends). Average power consumption during steady-state is 8.7uA. If you'd like to see this power consumption data more granularly, feel free to email me for it. </p>
-<p><img loading="lazy" alt="Zoomed steady-state current trace: small spikes every 7.5 and 30 seconds, averaging 8.65uA over a 5 minute window" class="addpic" src="/static/cgmteardown1/9.png"/></p>
+<p><img alt="Zoomed steady-state current trace: small spikes every 7.5 and 30 seconds, averaging 8.65uA over a 5 minute window" class="addpic" height="1480" loading="lazy" src="/static/cgmteardown1/9.png" style="aspect-ratio: auto 2064 / 1480;" width="2064"/></p>
 <p>Given its capacity of 25mAh, the battery on the Stelo could theoretically run it for 17 weeks continuously. However, nominal capacity assumes discharge down to 2V — while the nRF52832 microcontroller keeps working down to 1.7V, the other chips on this board may not. Let's say the board needs &gt;2.8V, then we can model our 8.7uA draw as a ~300kΩ load. On the battery curve given above, this corresponds to a lifetime of ~1000 hours, or about 5 weeks. Adding some margin for safety, we may indeed arrive at a reasonable lifetime of 15 days for this device.</p>
-<p><img loading="lazy" alt="Current trace of one Bluetooth transmission: a dense burst of packet spikes lasting about 7 seconds, averaging 107uA" class="addpic" src="/static/cgmteardown1/11.png"/></p>
+<p><img alt="Current trace of one Bluetooth transmission: a dense burst of packet spikes lasting about 7 seconds, averaging 107uA" class="addpic" height="1562" loading="lazy" src="/static/cgmteardown1/11.png" style="aspect-ratio: auto 2084 / 1562;" width="2084"/></p>
 <p>Oh also, here's what the power looks like during the Bluetooth transmission. It looks like &gt;50 packets, and averages 100uA for 7 seconds.</p>
 <h2 id="question-2-what-other-chips-are-in-this-thing">Question 2: What other chips are in this thing?</h2>
-<p><img loading="lazy" alt="Top of the Stelo board annotated: nRF52832 microcontroller, mystery chips U78 and DCG7, BLE and NFC antennas, needle electrode" class="addpic" src="/static/cgmteardown1/10.jpeg"/></p>
+<p><img alt="Top of the Stelo board annotated: nRF52832 microcontroller, mystery chips U78 and DCG7, BLE and NFC antennas, needle electrode" class="addpic" height="810" loading="lazy" src="/static/cgmteardown1/10.jpeg" style="aspect-ratio: auto 1035 / 810;" width="1035"/></p>
 <p>The nRF is easily identified, but I cannot figure out what the other two are. The top has a small IC which seems to be connected to the larger antenna (possibly RFID?), and when I look up U78 it turns up an UHF amplifier (possible) with a different package, the 3SK206. But UHF antennas are pretty big usually, at least bigger than the Bluetooth one. </p>
 <p>The other big chip might be an analog frontend for the glucose needle electrode (the traces for that go right towards it). If so, it's amplifying the readout voltage from the glucose sensor before being digitized by the nRF, but again I could not figure out the specific part. Closest part marking I could find was a step-up converter, but that doesn't seem likely.</p>
 <h2 id="question-3-whats-the-bom">Question 3: What's the BOM?</h2>
@@ -448,6 +456,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

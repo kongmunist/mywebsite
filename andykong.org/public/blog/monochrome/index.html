@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>MonoChrome: In Defense Of Using One Chrome Window At A Time | Andy Kong</title>
 <meta name="description" content="Browser meta-war">
@@ -320,6 +321,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -345,7 +353,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -365,10 +373,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -390,16 +398,16 @@
 <hr>
             <html><body><p>Hello. Today I'm going to tell you about a work-style switch I made about a year ago. First, a tangent.</p>
 <h1 id="tangent">Tangent</h1>
-<p><img loading="lazy" alt="macOS Mission Control showing many app windows crowded onto a single desktop" class="addpic" src="/static/monochrome/0.jpeg"/></p>
+<p><img alt="macOS Mission Control showing many app windows crowded onto a single desktop" class="addpic" height="177" loading="lazy" src="/static/monochrome/0.jpeg" style="aspect-ratio: auto 284 / 177;" width="284"/></p>
 <p>In 2021, I watched a coworker swipe up their Mission Control page to reveal ~20 different applications all on the same desktop. Extremely surprised, I asked why they did that, and they said it was faster. At the time, thought of only using 1 desktop was alien to me because I segregated each work subject into a different desktop (PCBs, software, messenger apps).</p>
 <p>Later I realized multiple desktops actually do suck — there's a 0.5-1 second delay when switching desktops which cannot be reduced, and my ProMotion 120Hz screen never turns on when I have multiple desktops. This is, I think, a hard limitation meant to guarantee the OS has enough time to shift memory around and load up the main apps in the new window. But it slowed me down, and then I started using a single desktop. </p>
 <h1 id="main-point">Main point</h1>
 <p>I used to do the same thing with my Chrome tabs. 100 tabs spread across 4 windows, constantly alt-tabbing through to find the right one. One for electronics, one for articles and blog posts, one for wikipedia pages to read, etc. This was a bad strat, but at the time I felt "organized". </p>
 <p>But the same thing was true for multiple Desktops, why not apply the same lessons? Now I just keep one window open. If it gets cluttered, I go through and clear it out. Article? Read and close it. Personal blog you want to correspond with? Write them an email and close it. If you don't have time now, just save it in a Google doc or the Notes app, I'm sure you'll get back to it, if it's so important <em>wink wink</em></p>
-<p><img loading="lazy" alt="Single Chrome tab strip holding about a dozen tabs for email, docs, and papers" class="addpic" src="/static/monochrome/1.png"/></p>
+<p><img alt="Single Chrome tab strip holding about a dozen tabs for email, docs, and papers" class="addpic" height="68" loading="lazy" src="/static/monochrome/1.png" style="aspect-ratio: auto 2468 / 68;" width="2468"/></p>
 <p>As an example, my current window (above) is just stuff I need to take notes on. These are all the tabs I have open. Contrast with my old "Session Buddy" saved tab lists which I've never ever looked twice at:</p>
-<p><img loading="lazy" alt="Saved tab collection named before apple with 55 links, created 3 years ago" class="addpic" src="/static/monochrome/2.png"/></p>
-<p><img loading="lazy" alt="Sidebar of stale saved tab collections, every one created 3 years ago" class="addpic" src="/static/monochrome/3.png"/></p>
+<p><img alt="Saved tab collection named before apple with 55 links, created 3 years ago" class="addpic" height="184" loading="lazy" src="/static/monochrome/2.png" style="aspect-ratio: auto 524 / 184;" width="524"/></p>
+<p><img alt="Sidebar of stale saved tab collections, every one created 3 years ago" class="addpic" height="1332" loading="lazy" src="/static/monochrome/3.png" style="aspect-ratio: auto 518 / 1332;" width="518"/></p>
 <p>Imagine, I have hundreds of these lists, totally rotting in there. </p>
 <p>Seize the day, close those tabs, and take back the RAM for the important stuff: your buttery-smooth 120Hz screen refresh rate </p></body></html>
 
@@ -426,6 +434,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

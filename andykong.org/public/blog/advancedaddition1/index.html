@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Advanced addition and speedup of neural network evaluation | Andy Kong</title>
 <meta name="description" content="Linear functions and what it means for Neural Network acceleration">
@@ -319,6 +320,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -344,7 +352,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -364,10 +372,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -390,10 +398,10 @@
             <html><body><p>Hello! I've been doing some more work on the advanced addition project.</p>
 <p><a href="https://andykong.org/blog/advancedaddition/">Last time</a>, I had just created some silly neural networks that added two numbers. The evaluation was trivial, but I was able to make the simple one explainable by boiling it down to the literal equation with the two inputs. I've made progress on this front.</p>
 <p>I was able to break down the fully connected 2-10-1 neuron network (Model C) into its respective equation. Evaluated in order, this looks something like this:</p>
-<p><img loading="lazy" class="d-block mx-auto" src="/static/advancedaddition1symboliceqn.png" width="400"/></p>
+<p><img class="d-block mx-auto" loading="lazy" src="/static/advancedaddition1symboliceqn.png" style="aspect-ratio: auto 495 / 72;" width="400"/></p>
 <p>Since each variable is just a matrix of some size, and I've nicely arranged them in a way that allows multiplication, we can precompute some of the matrix multiplications for the final equation and arrive at a shortened form of the neural network for implementation purposes. You can think of this shortened form as a much easier model to evaluate for low power, discreet package sizes in remote areas without large computing pools. </p>
 <p>The sizes of each variable are not exactly clear from this LaTeX equation, but trust me when I say its just simple matrix multiplication. Nothing fancy. Depending on the initial setup, the final equation for Model C reduces to something like this:</p>
-<p><img loading="lazy" class="d-block mx-auto" src="/static/advancedaddition1numericeqn.png" width="400"/></p>
+<p><img class="d-block mx-auto" loading="lazy" src="/static/advancedaddition1numericeqn.png" style="aspect-ratio: auto 654 / 72;" width="400"/></p>
 <p>We can see that the equation is very similar to Model A's original equation from <a href="https://andykong.org/blog/advancedaddition/">this post</a>, despite Model C's <strong>30 multiplications</strong> and <strong>20 additions</strong> against Model A's <strong>two multiplications</strong> and <strong>two additions</strong>. This got me thinking; why can't we do this to every model? Why can't we precompute the matrix multiplications for every neural network, like those built for edge-computing on cameras or speakers?</p>
 <p>I thought I was clever for a second, but then I realized that my models would only be able to approximate linear functions. The only features taken for input would be x<subscript>1</subscript>,x<subscript>2</subscript>,...x<subscript>n</subscript>, and they would just come out with some coefficient but no additional features. This is a formidable technique for simpler functions, but more complex hypotheses would require the activation functions (Sigmoid, Rectified Linear Unit, etc), which cannot be precomputed because they depend on the values of their inputs! </p>
 <p>Activation functions could be broken down some more, but I would have to spend a little more time with it. I think that the individual nature of the function means that a simple precomputation wouldn't be allowed. We could threshold the inputs by backtracking the minimum value required to overcome the ReLU or something, and that would save a bit of time.</p>
@@ -420,6 +428,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

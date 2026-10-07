@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Electroshock VR Haptics | Andy Kong</title>
 <meta name="description" content="Through-Hand Electrical Nerve Stimulation">
@@ -204,6 +205,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -229,7 +237,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -249,10 +257,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -270,12 +278,12 @@
                 <hr>
             <html><body><p><a href="https://dl.acm.org/doi/full/10.1145/3544548.3581382"><h1 id="paper-link-here">Paper Link Here!</h1></a></p>
 <p>Welcome to my writeup for some research I worked on in 2021! </p>
-<p><img loading="lazy" alt="Paper title card: person in a VR headset grips a rope, for full-hand electro-tactile feedback research at UChicago" class="addpic" src="/static/bohems/boh_hero.jpeg"/></p>
+<p><img alt="Paper title card: person in a VR headset grips a rope, for full-hand electro-tactile feedback research at UChicago" class="addpic" height="1080" loading="lazy" src="/static/bohems/boh_hero.jpeg" style="aspect-ratio: auto 1920 / 1080;" width="1920"/></p>
 <p>For COVID summer 2021, I worked with Prof. Pedro Lopes and the Human-Computer Integration lab at UChicago. I ran small electrical currents through my hands in order to find interesting touch sensations. We wanted to reproduce the feeling of touching real stuff using electricity so we could feel virtual objects the same way we feel real ones. </p>
 <h1 id="background">Background</h1>
 <p>Around 2020, I bought a TENS unit because I was curious what it felt like to have a device override control of your muscles, and discovered that it was also a fun device to bring to parties. When I showed it to my friend Cathy, she suggested I reach out to Prof. Pedro since his PhD explored electrical muscle stimulation for HCI. </p>
 <p class="caption"> Administering my TENS unit on innocent partygoers </p>
-<p><img loading="lazy" alt="Administering my TENS unit on innocent partygoers" class="addpic" src="/static/bohems/andyelectrocuting.jpg"/></p>
+<p><img alt="Administering my TENS unit on innocent partygoers" class="addpic" height="703" loading="lazy" src="/static/bohems/andyelectrocuting.jpg" style="aspect-ratio: auto 548 / 703;" width="548"/></p>
 <p>My own explorations were unstructured but broad. I activated big and small muscle groups, and tried to target single muscles for more precise control. I did a few group sessions, and learned anatomy by seeing what fingers jumped for a given electrode position. But I hadz hit a cap in what could be explored with my little TENS unit since it could only do continuous pulse trains at frequencies from 2-100Hz. I definitely still had curiosities to satisfy. </p>
 <p>I met with Pedro a few times online and we got along pretty well, so we decided it could be viable for me to come to Chicago that summer to work on something. His lab had more electrode pads than I could ever need, and cool digitally-controlled precision muscle stimulation devices to play with</p>
 <h1 id="things-that-happened">Things that happened</h1>
@@ -283,47 +291,48 @@
 <li>Worked closely with Yudai</li>
 </ul>
 <p class="caption"> Yudai enjoying the Chicago summer </p>
-<p><img loading="lazy" alt="Yudai enjoying the Chicago summer" class="addpic" src="/static/bohems/boh_yudai3.jpeg"/></p>
+<p><img alt="Yudai enjoying the Chicago summer" class="addpic" height="1212" loading="lazy" src="/static/bohems/boh_yudai3.jpeg" style="aspect-ratio: auto 1484 / 1212;" width="1484"/></p>
 <ul>
 <li>Developed a high-voltage constant current board named after a restaurant we frequented after work</li>
 </ul>
 <p class="caption"> Nella stimulator boards, assembled </p>
-<p><img loading="lazy" alt="Nella stimulator boards, assembled" class="addpic" src="/static/bohems/boh_nella_assembled1.jpeg"/></p>
+<p><img alt="Nella stimulator boards, assembled" class="addpic" height="4032" loading="lazy" src="/static/bohems/boh_nella_assembled1.jpeg" style="aspect-ratio: auto 3024 / 4032;" width="3024"/></p>
 <p class="caption"> 10 Nella stimulator boards, ready for full-hand stimulation </p>
-<p><img loading="lazy" alt="10 Nella stimulator boards, ready for full-hand stimulation" class="addpic" src="/static/bohems/boh_nella10boards.jpeg"/></p>
+<p><img alt="10 Nella stimulator boards, ready for full-hand stimulation" class="addpic" height="3024" loading="lazy" src="/static/bohems/boh_nella10boards.jpeg" style="aspect-ratio: auto 4032 / 3024;" width="4032"/></p>
 <ul>
 <li>Wrote a Processing GUI for participants to report hand sensation location</li>
 </ul>
 <p class="caption"> GUI for participants, basically drawing canvas overlaid on hand image </p>
-<p><img loading="lazy" alt="GUI for participants, basically drawing canvas overlaid on hand image" class="addpic" src="/static/bohems/boh_gui.png"/></p>
+<p><img alt="GUI for participants, basically drawing canvas overlaid on hand image" class="addpic" height="309" loading="lazy" src="/static/bohems/boh_gui.png" style="aspect-ratio: auto 806 / 309;" width="806"/></p>
 <ul>
 <li>Found electrode pad placement on the back of the hand which resulted in sensation on the front</li>
 </ul>
 <p class="caption"> Pad placement for eliciting sensations on the front of the hand </p>
-<p><img loading="lazy" alt="Pad placement for eliciting sensations on the front of the hand" class="addpic" src="/static/bohems/boh_padplacement.jpeg"/></p>
+<p><img alt="Pad placement for eliciting sensations on the front of the hand" class="addpic" height="1156" loading="lazy" src="/static/bohems/boh_padplacement.jpeg" style="aspect-ratio: auto 1664 / 1156;" width="1664"/></p>
 <p class="caption"> Full-hand setup for back-of-hand stimulation. Yeowch! </p>
-<p><img loading="lazy" alt="Full-hand setup for back-of-hand stimulation. Yeowch!" class="addpic" src="/static/bohems/boh_nella_fullhand2.jpeg"/></p>
+<p><img alt="Full-hand setup for back-of-hand stimulation. Yeowch!" class="addpic" height="4032" loading="lazy" src="/static/bohems/boh_nella_fullhand2.jpeg" style="aspect-ratio: auto 3024 / 4032;" width="3024"/></p>
 <ul>
 <li>Found a location + waveform which created pressure sensations without "vibrating" sensations, required per-user per-session tuning into the microamps</li>
 </ul>
 <p class="caption"> Very sensitive to position and strength, but somewhere near 8Hz this feels like pressure ONLY  </p>
-<p><img loading="lazy" alt="Very sensitive to position and strength, but somewhere near 8Hz this feels like pressure ONLY " class="addpic" src="/static/bohems/boh_pressure_placement.jpeg"/></p>
+<p><img alt="Very sensitive to position and strength, but somewhere near 8Hz this feels like pressure ONLY " class="addpic" height="409" loading="lazy" src="/static/bohems/boh_pressure_placement.jpeg" style="aspect-ratio: auto 407 / 409;" width="407"/></p>
 <ul>
 <li>Tried out the <a href="../../blog/traxionreproduction/">Traxion effect</a></li>
 </ul>
-<p><img loading="lazy" alt="Breadboard driver circuit wired to a small black voicecoil actuator for testing the Traxion effect" class="addpic" src="/static/bohems/boh_traxion1.jpeg"/></p>
-<p><img loading="lazy" alt="Paper figure of asymmetric sawtooth current pulses that create a directional pulling sensation in voicecoil actuators" class="addpic" src="/static/bohems/boh_traxion2.png"/></p>
+<p><img alt="Breadboard driver circuit wired to a small black voicecoil actuator for testing the Traxion effect" class="addpic" height="1202" loading="lazy" src="/static/bohems/boh_traxion1.jpeg" style="aspect-ratio: auto 1376 / 1202;" width="1376"/></p>
+<p><img alt="Paper figure of asymmetric sawtooth current pulses that create a directional pulling sensation in voicecoil actuators" class="addpic" height="1828" loading="lazy" src="/static/bohems/boh_traxion2.png" style="aspect-ratio: auto 2576 / 1828;" width="2576"/></p>
 <ul>
 <li>Tried out the Kajimoto high-density fingertip stimulator</li>
 </ul>
 <p class="caption"> Tingly fingers device. Taught me principles of high voltage w/ high voltage shift register </p>
-<p><img loading="lazy" alt="Tingly fingers device. Taught me principles of high voltage w/ high voltage shift register" class="addpic" src="/static/bohems/boh_kaji1.jpeg"/></p>
+<p><img alt="Tingly fingers device. Taught me principles of high voltage w/ high voltage shift register" class="addpic" height="864" loading="lazy" src="/static/bohems/boh_kaji1.jpeg" style="aspect-ratio: auto 1209 / 864;" width="1209"/></p>
 <h1 id="conclusion">Conclusion</h1>
 <p>It was a blessing to work with such cool and interesting people during a summer where everyone else was alone. I learned so much about how the human body's sensory system works, and it still comes in handy now. </p></body></html>
         </div>
         <p style="line-height:300%;">&nbsp;</p>
 </div>
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

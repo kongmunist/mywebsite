@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Edge Esmerelda Experience | Andy Kong</title>
 <meta name="description" content="Popup City No. 2">
@@ -320,6 +321,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -345,7 +353,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -365,10 +373,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -389,7 +397,7 @@
             <p style="font-size:0.8em;"> Published June 25, 2024</p>
 <hr>
             <html><body><p>Hello! Again I have returned from a distant land with tales from a popup community. This city was/is called <a href="https://www.edgeesmeralda.com/">Edge Esmerelda</a>, and is/was located in Healdsburg, CA.  </p>
-<p><img loading="lazy" alt="Palm tree rising among leafy green trees under a blue sky dotted with clouds in Healdsburg" class="addpic" src="/static/eee/0.png"/></p>
+<p><img alt="Palm tree rising among leafy green trees under a blue sky dotted with clouds in Healdsburg" class="addpic" height="719" loading="lazy" src="/static/eee/0.png" style="aspect-ratio: auto 1058 / 719;" width="1058"/></p>
 <p>In part, going was an experiment. I remember reading someone's blog post about "asking favors/questions you are SURE will be refused" as a way to make sure you really know the bounds of your social position (a la <a href="https://www.youtube.com/watch?v=vKA4w2O61Xo">Veritasium</a>) — I did this about a year ago when I asked 3 people if I could borrow 20,000 Swiss Francs so I could stay in Switzerland. None of them had it, but all of them said yes.</p>
 <p>Regarding Edge Esmerelda, I had just recently gone to SF and did not really want to go back so soon, but decided that if it was free then I would. I DM'd one of the organizers and asked if I could come for a week if I sorted my own housing, and they were very generous to me. Every time I do this exercise I am surprised.</p>
 <p>Anyway. Here's what</p>
@@ -414,7 +422,7 @@
 <p>I gave a talk on implants</p>
 </li>
 </ul>
-<p><img loading="lazy" alt="Title slide of the Primer on Implants talk given by Andy Kong at Edge Esmerelda, June 2024" class="addpic" src="/static/eee/1.png"/></p>
+<p><img alt="Title slide of the Primer on Implants talk given by Andy Kong at Edge Esmerelda, June 2024" class="addpic" height="698" loading="lazy" src="/static/eee/1.png" style="aspect-ratio: auto 910 / 698;" width="910"/></p>
 <ul>
 <li>
 <p>Showed off my holograms to a ton of people</p>
@@ -423,15 +431,15 @@
 <p>Experienced my first Pilates session</p>
 </li>
 </ul>
-<p><img loading="lazy" alt="Pilates class holding side planks on mats in a sunny mirrored studio" class="addpic" src="/static/eee/2.jpeg"/></p>
+<p><img alt="Pilates class holding side planks on mats in a sunny mirrored studio" class="addpic" height="960" loading="lazy" src="/static/eee/2.jpeg" style="aspect-ratio: auto 1280 / 960;" width="1280"/></p>
 <ul>
 <li>learned you can 3d print spring-y stuff, like this knife!</li>
 </ul>
-<p><img loading="lazy" alt="Black 3D printed retractable knife with a springy serpentine flexure in the handle, held in one hand" class="addpic" src="/static/eee/4.jpeg"/></p>
+<p><img alt="Black 3D printed retractable knife with a springy serpentine flexure in the handle, held in one hand" class="addpic" height="794" loading="lazy" src="/static/eee/4.jpeg" style="aspect-ratio: auto 408 / 794;" width="408"/></p>
 <ul>
 <li>Stayed at Hotel Anson for 3 nights where I made friends with Canadians and non-Canadians alike</li>
 </ul>
-<p><img loading="lazy" alt="Four friends in matching red shirts dancing together in a hotel room" class="addpic" src="/static/eee/3.jpeg"/></p></body></html>
+<p><img alt="Four friends in matching red shirts dancing together in a hotel room" class="addpic" height="769" loading="lazy" src="/static/eee/3.jpeg" style="aspect-ratio: auto 1170 / 769;" width="1170"/></p></body></html>
 
 
 
@@ -456,6 +464,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

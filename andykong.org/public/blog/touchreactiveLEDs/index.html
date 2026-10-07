@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Touch Reactive LEDs | Andy Kong</title>
 <meta name="description" content="Electronic piano, anyone?">
@@ -320,6 +321,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -345,7 +353,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -365,10 +373,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -396,13 +404,13 @@
 <p>So the way the FastTouch library works is by detecting the capacitance of the human body, which is a few hundred picofarad. When assigned to a pin, it configures the pin it's reading as <code>INPUT_PULLUP</code>, which means it's held at 5V by a ~10k internal resistor. Then it changes the pin to <code>OUTPUT</code> and writes the pin as LOW, and counts how long that pin takes to hit 0V. If there's a human touching the pin, we're holding some of the charge from the 5V on the pin, so it takes longer to discharge to 0V. If we're not touching it, then it should discharge almost immediately. </p>
 <p>This works best if the human is touching the ground of the Arduino with their other hand, but also works without that because we are capacitively coupled to our environment, and the ground of the Arduino through the air (something I don't understand well enough to explain here). </p>
 <p class="caption">Top, unlit LEDs</p>
-<p><img loading="lazy" alt="Top, unlit LEDs" src="/static/touchLEDs1toppic.png"/></p>
+<p><img alt="Top, unlit LEDs" height="312" loading="lazy" src="/static/touchLEDs1toppic.png" style="aspect-ratio: auto 481 / 312;" width="481"/></p>
 <h2 id="problem">Problem</h2>
 <p>Because the library counts how long each pin takes to discharge, if we just wired an LED+resistor in series from the pin output to ground, it would discharge immediately through the LED and read no human touch. If I had used one pin for the touch and one pin for the LED, I'd only be able to do 6 LEDs because the Arduino only has around 12 usable pins. So what did we do?</p>
 <h2 id="solution">Solution</h2>
 <p>Instead of wiring the LED to ground, each one is wired to a pin that is held <code>HIGH</code> when we check the touch, then brought <code>LOW</code> (ground) when we light the LED. Because the LED prevents backwards current flow, it's an open circuit when checking touch, then allows forward current to light it up when indicating touch detection. Boom! 2x reduction in pins.</p>
 <p class="caption">Picture of the underside of the board. Alternating resistors</p>
-<p><img loading="lazy" alt="Picture of the underside of the board. Alternating resistors" src="/static/touchLEDs1resistorunderside.png"/></p>
+<p><img alt="Picture of the underside of the board. Alternating resistors" height="338" loading="lazy" src="/static/touchLEDs1resistorunderside.png" style="aspect-ratio: auto 456 / 338;" width="456"/></p>
 <h2 id="construction">Construction</h2>
 <p>This took me like two hours to solder and put together, mainly because A) the LEDs had to be in front of the finger pads for visibility, but the pins behind the LEDs had to connect to the finger pads in front, and B) I wanted it to look nice. </p>
 <p>That's all for now, take care.</p></body></html>
@@ -430,6 +438,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Sugar-Metering My First Watermelon | Andy Kong</title>
 <meta name="description" content="Tastes like Capri-sun! Bonus: Lychee and Longan">
@@ -319,6 +320,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -344,7 +352,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -364,10 +372,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -392,17 +400,17 @@
 <p>I bought a small watermelon and cut it up into bowls, which are by far the most fun way to eat a watermelon. I ate about half the bowl, then separately juiced up part of watermelon flesh in the very center and some near the wall (still red, but right beside the white flesh). </p>
 <p>The accumulated juice from each part of the watermelon was collected and measured visually in my refractometer. Since each watermelon gives two bowls, I tested both regions in both bowls to have more precise numbers. Here's the refractometer pics:</p>
 <p class="caption">Watermelon center and edge sugar concentrations</p>
-<p><img loading="lazy" alt="Watermelon center and edge sugar concentrations" src="/static/wm1_watemelonrefract.jpg"/></p>
+<p><img alt="Watermelon center and edge sugar concentrations" height="1008" loading="lazy" src="/static/wm1_watemelonrefract.jpg" style="aspect-ratio: auto 2440 / 1008;" width="2440"/></p>
 <p>The juice near the center of the watermelon was around 7.9% and 8.1%, which is about the same as the Capri-sun I measured last time. The juice near the edges was 6.4% and 5.8%, so a few percentage points lower than the center. </p>
 <h1 id="bonus-lychee-and-longan">Bonus, Lychee and Longan</h1>
 <p>I also had some Asian fruit on-hand, the juicy lychee and longan. I could taste that the Longan were a bit sweeter, but I wasn't sure how much. </p>
 <p class="caption">Tasty Lychee fruit</p>
-<p><img loading="lazy" alt="Tasty Lychee fruit" src="/static/wm1_lycheepic.jpg"/></p>
+<p><img alt="Tasty Lychee fruit" height="769" loading="lazy" src="/static/wm1_lycheepic.jpg" style="aspect-ratio: auto 945 / 769;" width="945"/></p>
 <p>They turned out incredibly high, with the longan juice twice as sweet as Coke!</p>
 <p class="caption">Lychee refractometer photo, 18.8% sugar</p>
-<p><img loading="lazy" alt="Lychee refractometer photo, 18.8% sugar" src="/static/wm1_lycheesugar.jpg"/></p>
+<p><img alt="Lychee refractometer photo, 18.8% sugar" height="670" loading="lazy" src="/static/wm1_lycheesugar.jpg" style="aspect-ratio: auto 431 / 670;" width="431"/></p>
 <p class="caption">Longan refractometer photo, 20.8% sugar</p>
-<p><img loading="lazy" alt="Longan refractometer photo, 20.8% sugar" src="/static/wm1_longan.jpg"/></p>
+<p><img alt="Longan refractometer photo, 20.8% sugar" height="727" loading="lazy" src="/static/wm1_longan.jpg" style="aspect-ratio: auto 452 / 727;" width="452"/></p>
 <p>The Lychee are 18.8% sugar, and the Longan are 20.8%! Off by 2%, but on a whole different level. I'm sure I'm getting extra nutrients with these fruits, but that's a lot of sugar for a plant! How'd they figure out how to do that? Was it selective breeding? Incredible. We're lucky the Americans haven't found out about these <em>en masse</em>!</p>
 <h2 id="brief-discussion">Brief Discussion</h2>
 <p>This watermelon tasted regular sweet to me, maybe a bit on the light side. IMO, a good watermelon would taste like the center of this one, but throughout the whole fruit. I'm just spoiled by my ability to pick good watermelon. </p>
@@ -432,6 +440,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

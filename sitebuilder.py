@@ -1,6 +1,7 @@
 import re
 import mimetypes
-from urllib.parse import unquote, urlsplit
+from urllib.parse import quote, unquote, urlsplit
+from media import prepare_media
 
 from flask import Flask, render_template, url_for, render_template_string, Markup, \
         redirect,make_response,send_from_directory,abort,request
@@ -19,7 +20,6 @@ import shutil
 import time
 
 # Dec 1 2023 TODO: Add pdf and other static non-image files to the sitemap
-# Dec 1 2023 TODO: Add lazy loading to blog images
 
 
 # run "python sitebuilder.py build" in shell to build to the build folder
@@ -48,6 +48,34 @@ BASE_URL = "https://andykong.org"
 app.jinja_env.globals['BASE_URL'] = BASE_URL
 
 
+def canonical_url(path=None):
+    """Use the routed path and one consistent encoding everywhere."""
+    if path is None:
+        path = url_for('project', project='catherinewang') if request.endpoint == 'cwang' else request.path
+    return BASE_URL + quote(unquote(path), safe='/')
+
+
+app.jinja_env.globals['canonical_url'] = canonical_url
+
+
+@app.after_request
+def prepare_page_media(response):
+    if request.endpoint != 'static' and response.mimetype == 'text/html':
+        response.set_data(prepare_media(response.get_data(as_text=True), app.static_folder, BASE_URL))
+    return response
+
+
+@app.errorhandler(404)
+def not_found(error):
+    return render_template('404.html'), 404
+
+
+@app.route('/404.html')
+def not_found_document():
+    # Frozen-Flask needs a successful route to produce the static host's 404 file.
+    return render_template('404.html')
+
+
 def social_preview(page=None, title=None, description=None):
     """Keep HTML, Open Graph, and Twitter metadata in sync for every page."""
     default_description = "Projects, experiments, and writing by Andy Kong, building sensors to better understand the mind and body."
@@ -63,7 +91,7 @@ def social_preview(page=None, title=None, description=None):
     preview = {
         'title': title or route_title,
         'description': description or route_description,
-        'url': BASE_URL + request.path,
+        'url': canonical_url(),
         'type': 'website',
         'image': BASE_URL + url_for('static', filename='holograms/hero.jpeg'),
         'image_alt': 'Green and yellow laser hologram fragments held in Andy Kong\'s hand',
@@ -337,18 +365,15 @@ def sitemap():
 
     # Remove projects whose date is in the future
     today = datetime.date(datetime.now())
-    projPosts = filter(lambda x: x['date'] < today, projPosts)
+    projPosts = filter(lambda x: x['date'] <= today, projPosts)
     posts = list(blogPosts) + list(projPosts)
     posts.sort(reverse=True, key=lambda x: x['date'])
 
     # Add images to sitemap
-    pattern = '<img.*?src\s*=\s*"?(.+?)"'
     for i,post in enumerate(posts):
-        ims = re.findall(pattern, post.html)
-        ims = [x.split("/static/")[1] for x in ims if "static" in x]
-        for i in range(len(ims)):
-            if " " in ims[i]:
-                ims[i] = ims[i].split(" ")[0]
+        ims = [unquote(urlsplit(img['src']).path[len('/static/'):])
+               for img in BeautifulSoup(post.html, 'lxml').find_all('img', src=True)
+               if urlsplit(img['src']).path.startswith('/static/')]
         # Include project hero pic when it's an image
         pic = post.meta.get('pic')
         if post.meta.get('label') == 'project' and pic and not pic.endswith(('.mp4', '.mov')) and pic not in ims:
@@ -356,10 +381,6 @@ def sitemap():
         post.meta['images'] = ims
         # print(ims)
 
-        # Remove trailing slash from sitemap # did it in the template using string slicing. Not the cleanest method.
-        # print(post)
-        # print(post.path)
-        # print(post.meta)
     temp = render_template("sitemap.xml", posts=posts, baseURL=BASE_URL)
     response = make_response(temp)
     response.headers["Content-Type"] = "application/xml"
@@ -468,11 +489,6 @@ def blog(title):
     if page[0] is None or not is_public_blog_or_log(page[0]):
         abort(404)
 
-    # Add loading="lazy" to all images
-    pattern = '<img'
-    for p in page:
-        p.html = re.sub(pattern, '<img loading="lazy"', p.html)
-
     return render_template('blog.html', page=page, pages=blogPages)
 
 
@@ -539,11 +555,6 @@ def project(project):
 
     if page[0] is None or not is_public_project(page[0]):
         abort(404)
-
-    # Add loading="lazy" to all images
-    pattern = '<img'
-    for p in page:
-        p.html = re.sub(pattern, '<img loading="lazy"', p.html)
 
     return render_template('projects.html', page = page[0])
 

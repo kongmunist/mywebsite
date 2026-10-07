@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>My Quantified-Self Data Stack | Andy Kong</title>
 <meta name="description" content="Many cool self-insights and the data logging methods used">
@@ -321,6 +322,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -346,7 +354,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -366,10 +374,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -395,20 +403,20 @@
 <p>In this post I'm going to show y'all few self-insights I've derived from logging a lot of my personal data. I'll also list all the types of data and how they're collected. </p>
 <h1 id="why-i-collect-data">Why I collect data</h1>
 <p>I think it's important to specify "why research" as well as "how research", and this "why" can become insincere when scientists court the big grant-writers in industry and government instead of saying what they really mean. I currently work for myself and will try to be a bit more honest — I like learning how my body and mind interact with my environment to create my lived experience. I also just like to know stuff.</p>
-<p><img loading="lazy" alt="Meme of an orange plush lizard captioned The autistic urge to know why" class="addpic" src="/static/allmydata/0.png"/></p>
+<p><img alt="Meme of an orange plush lizard captioned The autistic urge to know why" class="addpic" height="500" loading="lazy" src="/static/allmydata/0.png" style="aspect-ratio: auto 504 / 500;" width="504"/></p>
 <h1 id="cool-selfinsights-ive-found">Cool self-insights I've found</h1>
 <ul>
 <li>My Ritalin blood concentration correlates with better Tetris performance</li>
 </ul>
-<p><img loading="lazy" alt="Scatter plot of Ritalin blood concentration vs Tetris survival time with an upward linear fit, p=0.001" class="addpic" src="/static/allmydata/1.png"/></p>
+<p><img alt="Scatter plot of Ritalin blood concentration vs Tetris survival time with an upward linear fit, p=0.001" class="addpic" height="1106" loading="lazy" src="/static/allmydata/1.png" style="aspect-ratio: auto 1386 / 1106;" width="1386"/></p>
 <ul>
 <li>I think better with more sleep (actually one of my most burning questions)</li>
 </ul>
-<p><img loading="lazy" alt="Scatter plot of Stroop interference factor vs sleep duration with a downward linear fit, p=0.015" class="addpic" src="/static/allmydata/2.png"/></p>
+<p><img alt="Scatter plot of Stroop interference factor vs sleep duration with a downward linear fit, p=0.015" class="addpic" height="1116" loading="lazy" src="/static/allmydata/2.png" style="aspect-ratio: auto 1084 / 1116;" width="1084"/></p>
 <ul>
 <li>My Tetris speed (pieces per second = PPS) correlates slightly with lower humidity</li>
 </ul>
-<p><img loading="lazy" alt="Scatter plot of Tetris pieces per second vs humidity percentage with a slight downward linear fit" class="addpic" src="/static/allmydata/3.png"/></p>
+<p><img alt="Scatter plot of Tetris pieces per second vs humidity percentage with a slight downward linear fit" class="addpic" height="856" loading="lazy" src="/static/allmydata/3.png" style="aspect-ratio: auto 1062 / 856;" width="1062"/></p>
 <p>Here's a <a href="https://medium.com/@kongmunist/playing-faster-tetris-by-sleeping-less-3d9b04d30349">few</a> more <a href="/blog/stroopvssleep/">examples</a></p>
 <hr/>
 <h1 id="my-data-stack">My data stack</h1>
@@ -416,44 +424,44 @@
 <p>Not all the data is obviously useful — some of it is just easy to collect. But most data I expect to use as an 'x' or 'y' variable in some future analysis.</p>
 <h2 id="browser-activity">Browser Activity</h2>
 <p>Chrome websites visited with URL and timestamp. Collected via Tom Critchlow's <a href="../settingupelectrictables/">JS electric tables script</a></p>
-<p><img loading="lazy" alt="Google Sheet of browser history rows pairing timestamps with visited URLs" class="addpic" src="/static/allmydata/4.png"/></p>
+<p><img alt="Google Sheet of browser history rows pairing timestamps with visited URLs" class="addpic" height="540" loading="lazy" src="/static/allmydata/4.png" style="aspect-ratio: auto 1058 / 540;" width="1058"/></p>
 <h2 id="hard-drive-space">Hard Drive Space</h2>
 <p>Every 4 hours, a bash script logs my available hard drive space in bytes. </p>
-<p><img loading="lazy" alt="CSV log of timestamps next to available hard drive space in bytes" class="addpic" src="/static/allmydata/5.png"/></p>
+<p><img alt="CSV log of timestamps next to available hard drive space in bytes" class="addpic" height="416" loading="lazy" src="/static/allmydata/5.png" style="aspect-ratio: auto 544 / 416;" width="544"/></p>
 <h2 id="physical-location">Physical Location</h2>
 <p>Google Maps Timeline is enabled on my phone and records my latitude/longitude every few minutes. I have this data going back a couple of years, and it includes the velocity and predicted mode of transport. </p>
-<p><img loading="lazy" alt="Map of the southeastern US covered in blue GPS dots tracing highways, with a latitude-longitude tooltip" class="addpic" src="/static/allmydata/6.png"/></p>
+<p><img alt="Map of the southeastern US covered in blue GPS dots tracing highways, with a latitude-longitude tooltip" class="addpic" height="808" loading="lazy" src="/static/allmydata/6.png" style="aspect-ratio: auto 922 / 808;" width="922"/></p>
 <h2 id="smartwatch-biometrics">Smartwatch Biometrics</h2>
 <p>Fitbit records a ton of data and multiple granularities. There's tons of problems with the data itself (documented <a href="../fitbittsproblem/">here</a> and <a href="../fitbitsleeptzcorrection/">here</a> ), but the majority is usable. Most usable stuff is probably the nightly sleep stats, minutely heart rate + HR variance, and daily step count. Fitbit offers this data export <a href="https://www.fitbit.com/settings/data/export&lt;/a&gt;">through the web interface</a></p>
-<p><img loading="lazy" alt="Folder of Fitbit export CSVs covering heart rate, sleep, steps, SpO2, and weight" class="addpic" src="/static/allmydata/7.png"/></p>
+<p><img alt="Folder of Fitbit export CSVs covering heart rate, sleep, steps, SpO2, and weight" class="addpic" height="810" loading="lazy" src="/static/allmydata/7.png" style="aspect-ratio: auto 704 / 810;" width="704"/></p>
 <h2 id="music">Music</h2>
 <p>Spotify! It's a bit complicated and I haven't looked into it, but all the streaming data is there. Spotify offers this data export <a href="https://support.spotify.com/us/article/understanding-my-data/">through the web interface</a></p>
-<p><img loading="lazy" alt="Raw Spotify streaming history JSON with track names, timestamps, and milliseconds played" class="addpic" src="/static/allmydata/8.png"/></p>
+<p><img alt="Raw Spotify streaming history JSON with track names, timestamps, and milliseconds played" class="addpic" height="464" loading="lazy" src="/static/allmydata/8.png" style="aspect-ratio: auto 1612 / 464;" width="1612"/></p>
 <h2 id="tweets">Tweets</h2>
 <p>Twitter activity, has been used by <a href="https://twitter.com/ultimape/status/1145889385256296449&lt;/a&gt;">ultimape</a> to detect their shifting circadian rhythm, has been used by Andy for nothing so far. Twitter offers this data export <a href="https://help.twitter.com/en/managing-your-account/how-to-download-your-x-archive&lt;/a&gt;">through the web interface</a></p>
-<p><img loading="lazy" alt="Tweet by ultimape with a tweets-per-day chart from 2015 to 2019 showing recurring yearly dips" class="addpic" src="/static/allmydata/9.png"/></p>
+<p><img alt="Tweet by ultimape with a tweets-per-day chart from 2015 to 2019 showing recurring yearly dips" class="addpic" height="1148" loading="lazy" src="/static/allmydata/9.png" style="aspect-ratio: auto 1290 / 1148;" width="1290"/></p>
 <h2 id="purchasing-data">Purchasing data</h2>
 <p>My Apple Card tracks all my purchases. The data is retrieved by manually hitting the "Export CSV" button on each month, and includes the Merchant and category and date.</p>
-<p><img loading="lazy" alt="Apple Card transactions CSV listing dates, merchants, categories, and amounts" class="addpic" src="/static/allmydata/10.png"/></p>
+<p><img alt="Apple Card transactions CSV listing dates, merchants, categories, and amounts" class="addpic" height="458" loading="lazy" src="/static/allmydata/10.png" style="aspect-ratio: auto 2708 / 458;" width="2708"/></p>
 <h2 id="glucose">Glucose</h2>
 <p>I wore a Freestyle Libre 2 CGM for two weeks and have nearly continuous data from that period (15-min intervals). Export is done through web interface.</p>
-<p><img loading="lazy" alt="FreeStyle LibreLink glucose export table with readings in mmol/L at 15-minute intervals" class="addpic" src="/static/allmydata/11.png"/></p>
+<p><img alt="FreeStyle LibreLink glucose export table with readings in mmol/L at 15-minute intervals" class="addpic" height="236" loading="lazy" src="/static/allmydata/11.png" style="aspect-ratio: auto 1366 / 236;" width="1366"/></p>
 <h2 id="air-quality">Air quality</h2>
 <p>I use a QingPing air quality monitor to track my relative humidity, temperature, CO2, particulates (PM2.5), and tVOC (total volatile organic compounds). Through the QingPing IoT app, we can export the past year of data logged at 15-min intervals. </p>
-<p><img loading="lazy" alt="QingPing air monitor displaying PM2.5, tVOC, CO2, temperature, and humidity next to its phone app" class="addpic" src="/static/allmydata/12.png"/></p>
+<p><img alt="QingPing air monitor displaying PM2.5, tVOC, CO2, temperature, and humidity next to its phone app" class="addpic" height="1102" loading="lazy" src="/static/allmydata/12.png" style="aspect-ratio: auto 1102 / 1102;" width="1102"/></p>
 <h2 id="tetris-cognitive">Tetris (cognitive)</h2>
 <p>I play Tetris for fun a few times a day. The website I play on records the stats and timestamps of each game, and I wrote a little Selenium scraper to retrieve it all. I run this every few months to collate all the data into a CSV.</p>
-<p><img loading="lazy" alt="Jstris leaderboard of personal best Tetris sprint times with blocks, PPS, and finesse stats" class="addpic" src="/static/allmydata/13.png"/></p>
+<p><img alt="Jstris leaderboard of personal best Tetris sprint times with blocks, PPS, and finesse stats" class="addpic" height="532" loading="lazy" src="/static/allmydata/13.png" style="aspect-ratio: auto 1390 / 532;" width="1390"/></p>
 <h2 id="stroop-cognitive">Stroop (cognitive)</h2>
 <p>I use my Strooper <a href="../../projects/strooper">chrome extension</a> and complete a mini-Stroop test a few times a day. This gives me a coarse metric of my executive function, reading speed, and reaction time randomly throughout the day. I transfer the results into a spreadsheet monthly. </p>
-<p><img loading="lazy" alt="Strooper trial showing the word yellow printed in blue above four color answer buttons" class="addpic" src="/static/allmydata/14.png"/></p>
-<p><img loading="lazy" alt="Google Sheet of raw Strooper results stored as JSON rows of timestamped button presses" class="addpic" src="/static/allmydata/15.png"/></p>
+<p><img alt="Strooper trial showing the word yellow printed in blue above four color answer buttons" class="addpic" height="886" loading="lazy" src="/static/allmydata/14.png" style="aspect-ratio: auto 1322 / 886;" width="1322"/></p>
+<p><img alt="Google Sheet of raw Strooper results stored as JSON rows of timestamped button presses" class="addpic" height="696" loading="lazy" src="/static/allmydata/15.png" style="aspect-ratio: auto 1352 / 696;" width="1352"/></p>
 <h2 id="weight-and-grip-strength">Weight and grip strength</h2>
 <p>Every night I record my weight and fat % with a bioimpedance scale, then record my left and right handed grip strength using a dynamometer. I record these as calendar events and transfer them to spreadsheets monthly. </p>
-<p><img loading="lazy" alt="Smiling man flexing one arm while holding a digital grip strength dynamometer" class="addpic" src="/static/allmydata/16.png"/></p>
+<p><img alt="Smiling man flexing one arm while holding a digital grip strength dynamometer" class="addpic" height="758" loading="lazy" src="/static/allmydata/16.png" style="aspect-ratio: auto 964 / 758;" width="964"/></p>
 <h2 id="dose-times">Dose times</h2>
 <p>I frequently drink caffeinated beverages, sometimes use nicotine patches, and randomly try out OTC supplements like L-Theanine or magnesium. I update a calendar notebook with my dosage and time, and have gotten pretty good at just noting the time when I take them and logging it later. I transfer this to a spreadsheet every month or so. </p>
-<p><img loading="lazy" alt="Handwritten calendar notebook entries logging dose times of caffeine and supplements" class="addpic" src="/static/allmydata/17.png"/></p>
+<p><img alt="Handwritten calendar notebook entries logging dose times of caffeine and supplements" class="addpic" height="290" loading="lazy" src="/static/allmydata/17.png" style="aspect-ratio: auto 848 / 290;" width="848"/></p>
 <hr/>
 <h1 id="conclusion">Conclusion</h1>
 <h2 id="do-it-now">Do it now!</h2>
@@ -486,6 +494,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

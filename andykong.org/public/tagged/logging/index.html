@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Posts tagged &#39;logging&#39; | Andy Kong</title>
 <meta name="description" content="Writing and project logs by Andy Kong on this topic.">
@@ -172,6 +173,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -197,7 +205,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -217,10 +225,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -290,16 +298,16 @@
 
 
 <div class="container">
-  <aside class="sidebar">
-    <a href="/">
-      <img class="profile-pic" src="/static/merock_square.jpg" alt="Andy"/>
+  <aside class="sidebar" aria-label="About Andy Kong">
+    <a href="/" aria-label="Andy Kong's homepage">
+      <img alt="Andy" class="profile-pic" height="1446" loading="eager" src="/static/merock_square.jpg" style="aspect-ratio: auto 1446 / 1446;" width="1446"/>
     </a>
     <h1>Hi, I'm Andy!</h1>
     <div class="social-links">
-      <a href="https://critiquefood.blogspot.com/" target="_blank" title="Food For Thought"><i class="fas fa-ice-cream"></i></a>
-      <a href="https://www.youtube.com/channel/UC8hEr0FkB5i-gQC4b7b5fvg" target="_blank"><i class="fab fa-youtube"></i></a>
-      <a href="https://kongmunist.medium.com/" target="_blank"><i class="fab fa-medium"></i></a>
-      <a href="/rss.xml"><img src="/static/rss.svg" class="rss-icon"></a>
+      <a href="https://critiquefood.blogspot.com/" target="_blank" title="Food For Thought" aria-label="Food For Thought blog"><i class="fas fa-ice-cream"></i></a>
+      <a href="https://www.youtube.com/channel/UC8hEr0FkB5i-gQC4b7b5fvg" target="_blank" aria-label="Andy Kong on YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="https://kongmunist.medium.com/" target="_blank" aria-label="Andy Kong on Medium"><i class="fab fa-medium"></i></a>
+      <a href="/rss.xml" aria-label="Subscribe to Andy Kong's RSS feed"><img class="rss-icon" height="8" loading="lazy" src="/static/rss.svg" style="aspect-ratio: auto 8 / 8;" width="8"/></a>
     </div>
   </aside>
 
@@ -336,6 +344,7 @@
   </main>
 </div>
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

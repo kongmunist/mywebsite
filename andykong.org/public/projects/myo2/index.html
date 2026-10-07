@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Myo2 | Andy Kong</title>
 <meta name="description" content="Making my own ultra-sensitive EMG sensors for measuring unnoticeable muscle movement">
@@ -204,6 +205,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -229,7 +237,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -249,10 +257,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -269,11 +277,11 @@
 
                 <hr>
             <html><body><p>Here it is! My own EMG sensor board, capable of amplifying 50uV muscle signals into ~1V outputs without getting drowned out by electromagnetic interference or noise. Total gain is around 30,000x.
-<img loading="lazy" class="d-block mx-auto" src="/static/myo2tensingcropped.gif" style="margin-bottom:0px"/></p>
+<img class="d-block mx-auto" height="338" loading="lazy" src="/static/myo2tensingcropped.gif" style="margin-bottom:0px; aspect-ratio: auto 363 / 338;" width="363"/></p>
 <p class="caption">Myo2 muscle tensing test gif. Two hard contractions followed by a lighter, discreet contraction.</p>
-<p><img loading="lazy" class="d-block mx-auto" src="/static/myo2boardpic.png" style="margin-bottom:0px"/></p>
+<p><img class="d-block mx-auto" height="590" loading="lazy" src="/static/myo2boardpic.png" style="margin-bottom:0px; aspect-ratio: auto 947 / 590;" width="947"/></p>
 <p class="caption">Myo2 fully populated board, with level-shifting, right leg drive, and driven ground (and a guard ring on the inputs!)</p>
-<p><img loading="lazy" class="d-block mx-auto" src="/static/myo2output1.png" style="margin-bottom:0px"/></p>
+<p><img class="d-block mx-auto" height="401" loading="lazy" src="/static/myo2output1.png" style="margin-bottom:0px; aspect-ratio: auto 578 / 401;" width="578"/></p>
 <p class="caption">Muscle contraction test. The two clusters of activity are different electrode positions.</p>
 <hr/>
 <h3>Motivation</h3>
@@ -284,20 +292,20 @@
 <p><br/></p>
 <h3>Specifications</h3>
 <p>When a muscle tenses, the coordinated opening of the ion channels in the fibers creates an electrical signal within the muscle that propogates outwards to the skin. This creates a very small surface signal, on the order of 1 millivolt. </p>
-<p><img loading="lazy" class="d-block mx-auto" src="/static/myo2musclebelly.png"/></p>
+<p><img class="d-block mx-auto" height="372" loading="lazy" src="/static/myo2musclebelly.png" style="aspect-ratio: auto 403 / 372;" width="403"/></p>
 <p>To perform EMG, all you have to do is measure this voltage from the middle of the muscle belly to one end of the muscle. From an electronics standpoint, EMG is a high-noise, high-impedance voltage measurement problem. </p>
 <p>Since I wanted to measure nonvisible muscle signals as well as visible ones, my board would need to be ultra-low noise, with a lot of gain stages. Following Douglas Weber's research, the signal I was looking for was on the order of 1-8 microvolts, more than 1000x smaller than the ordinary EMG signal. In addition, since the body acts as an antenna for electromagnetic interference, I'd need amazingly sharp filters to cut out much of the noise before I amplified it so high.</p>
 <p>I wanted to turn a 1uV signal into a 100mV signal, a gain of 100,000x! For reference, a 100kOhm resistor alone has 1.3uV of thermal noise, which would ruin our noise floor. This makes my problem much more difficult. </p>
 <p><br/></p>
 <h3>Board Design</h3>
-<p><img loading="lazy" class="d-block mx-auto" src="/static/myo2badschematic.png" style="margin-bottom:0px"/></p>
+<p><img class="d-block mx-auto" height="569" loading="lazy" src="/static/myo2badschematic.png" style="margin-bottom:0px; aspect-ratio: auto 713 / 569;" width="713"/></p>
 <p class="caption">Myo2 caricature of the final schematic. I drew this up for a friend to help me debug, but made errors that make it not feasible if constructed exactly like it's drawn.</p>
 <p>The board looks something like this image, but is not this schematic exactly. Roughly, I construct an instrumentation amplifier from 3 ultra-low current noise op-amps to turn the differential signal into a single-ended one, then apply a combination of low-pass, high-pass, and band-pass filtering stages that each have gain to this signal. The output theoretically has 90,000x gain, and around 100 mV of noise. </p>
 <p>From the middle of the instrumentation amplifier (representing the common-mode voltage), I generate a driven right leg that is connected back to the user (to reduce common mode noise from the body) and a low-impedance driven guard (to power the guard ring and cable guard for the inputs). This helps with the noise levels on the inputs.</p>
 <p>Finally, the output is scaled from ±5V to 0-3.3V, so that I can use a Teensy 4.0 microcontroller to digitize and save the signal onto my computer.</p>
 <h3>Testing</h3>
 <p>Tests were initially done with a signal generator as the input. I made a simple voltage divider that would take a signal and divide it by 1000, then feed it into the two inputs of a myo2 board. Then I fed it a 10 mV peak-peak sine wave, and increased the amplitude until the output was visible on the oscilloscope. Around 50 uV the signal was visible; then around 100 uV the signal was very obvious. </p>
-<p><img loading="lazy" class="d-block mx-auto" src="/static/myo2RLD.png" style="margin-bottom:0px; "/></p>
+<p><img class="d-block mx-auto" height="382" loading="lazy" src="/static/myo2RLD.png" style="margin-bottom:0px; aspect-ratio: auto 566 / 382;" width="566"/></p>
 <p class="caption">Oscilloscope output of a muscle contraction. The yellow is the muscle signal, the blue is the right leg drive (RLD). When I connect the RLD pin to my body, the output noise on the yellow channel goes down by about 10% </p>
 <p>Output gain was not as high as I had hoped due to some imperfections in the filter amplifiers I chose. However, the output signal's noise was almost exactly what was predicted by the op amp's voltage and current noises after undergoing 10,000x gain. So I ran into a limitation in my parts selection, and not my implementation. It always feels good to figure out a problem is in your hardware and not the way you set it up.</p>
 <h3>Interested in making one?</h3>
@@ -306,6 +314,7 @@
         <p style="line-height:300%;">&nbsp;</p>
 </div>
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

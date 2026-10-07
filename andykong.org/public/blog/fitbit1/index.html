@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>How to get access to your Fitbit data (API tutorial) | Andy Kong</title>
 <meta name="description" content="Navigating a slightly complicated process for API noobs">
@@ -320,6 +321,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -345,7 +353,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -365,10 +373,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -394,13 +402,13 @@
 <p>Any URL will do for every URL they ask you for. For every URL I just used my personal website (the one you're sitting on now!). This is meant for external users, so when they agree to let you access their data you can get their authorization token. However, I'm just setting it up once, so I'm ok with manually snipping out my keys and such from the URL redirect. </p>
 <p>I also selected "Personal" while registering my app, so I can get higher fidelity heartrate data.</p>
 <p class="caption">Register a Fitbit app page</p>
-<p><img loading="lazy" alt="Register a Fitbit app page" src="/static/fitbit1_register.png"/></p>
+<p><img alt="Register a Fitbit app page" height="561" loading="lazy" src="/static/fitbit1_register.png" style="aspect-ratio: auto 990 / 561;" width="990"/></p>
 <h1 id="2-head-to-manage-my-apps-and-click-on-oath-20-tutorial-page-link-here">2. Head to "Manage My Apps" and click on "Oath 2.0 tutorial page" <a href="https://dev.fitbit.com/apps/oauthinteractivetutorial">[link here]</a></h1>
 <p>I left all the settings default and clicked the link under step 1. Accept the agreement, and you will be redirected to the page you filled in earlier, with a bunch of params after a "#". Copy everything past the "#" and paste it in the "2. Parse response"</p>
 <p>After pasting, the site should auto-generate you an "API endpoint URL: <code>https://api.fitbit.com/1/user/-/profile.json</code>" as a <code>curl</code> command. It redirects to your own profile though. To ask for more useful information, you can check out the Web API reference <a href="https://dev.fitbit.com/build/reference/web-api/heart-rate/">here</a>. For instance, to get heartrate, the API endpoint is <code>https://api.fitbit.com/1/user/-/activities/heart/date/today/1d.json</code>. Paste this in, and you should see the command change. </p>
 <p>I'm not going to show you any commands I ran, that would give away my Auth token. Here's the results of the heartrate one though. Granularity goes down to 1 second, though I'm not sure why you would need that. </p>
 <p class="caption">Successful heartrate output from the terminal</p>
-<p><img loading="lazy" alt="Successful heartrate output from the terminal" src="/static/fitbit1_heartrateout.png"/></p>
+<p><img alt="Successful heartrate output from the terminal" height="324" loading="lazy" src="/static/fitbit1_heartrateout.png" style="aspect-ratio: auto 984 / 324;" width="984"/></p>
 <p>This is a short post, but I wasn't sure what else needed to be done while I was navigating the process. Turns out it's just two things. Cya next time!</p></body></html>
 
 
@@ -426,6 +434,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

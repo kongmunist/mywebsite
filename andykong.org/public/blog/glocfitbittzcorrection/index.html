@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Timezone correcting Fitbit sleep data using Google Timeline | Andy Kong</title>
 <meta name="description" content="My last post on dealing with terrible Fitbit data">
@@ -320,6 +321,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -345,7 +353,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -365,10 +373,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -394,13 +402,13 @@
 <p>To cap off all my Fitbit posting, I exported my data one last time and noticed that they have restructured the data and ruined my <a href="../fitbitsleeptzcorrection">stress method</a> for timezone correction, rendering all my latest data unusable. Since I've collected more Tetris and Stroop data that I wanted to correlate, I decided to try one final method that I've always thought about but never cared enough to do — syncing my Google Location with Fitbit's data to get UTC timestamps. I'll describe the steps verbally and the code will be at the end. </p>
 <h1 id="method">Method</h1>
 <p>First I loaded my Google location data with <a href="https://github.com/Scarygami/location-history-json-converter">this neat tool</a> by Scarygami which produces a massive CSV of all the longitude and latitude and everything else. Here I visualized part of it using plotly's <code>scatter_mapbox</code> function. </p>
-<p><img loading="lazy" alt="Plotly map of Google location history points clustered around Birmingham, Alabama, with a latitude-longitude tooltip" class="addpic" src="/static/glocfitbittzcorrection/0.png"/></p>
+<p><img alt="Plotly map of Google location history points clustered around Birmingham, Alabama, with a latitude-longitude tooltip" class="addpic" height="820" loading="lazy" src="/static/glocfitbittzcorrection/0.png" style="aspect-ratio: auto 842 / 820;" width="842"/></p>
 <p>From each longitude and latitude, you can get the timezone name using the Python library <a href="https://pypi.org/project/timezonefinder/">timezonefinder</a>, which works at a rate of ~2ms/1000 coordinates without needing to do GET requests. I converted the timezone strings into timezone offsets using some code from <a href="https://stackoverflow.com/questions/5537876/get-utc-offset-from-time-zone-name-in-python">this SO post</a>. </p>
 <p>Then I realized that I needed to also account for daylight savings time across two regions, Europe and America, which for some reason have DST dates that are about a week off from each other. I can't wait for them to abolish DST so I'll have to add a bool which determines if DST correction is necessary in my timezone correction pipeline /s</p>
-<p><img loading="lazy" alt="Code comments listing American and European daylight savings date ranges from 2021 to 2024" class="addpic" src="/static/glocfitbittzcorrection/1.png"/></p>
+<p><img alt="Code comments listing American and European daylight savings date ranges from 2021 to 2024" class="addpic" height="326" loading="lazy" src="/static/glocfitbittzcorrection/1.png" style="aspect-ratio: auto 1734 / 326;" width="1734"/></p>
 <p>Some sleep sessions have no "close" longitude/latitude coordinates, so I toss them. Close is defined arbitrarily, I use 6 hrs as my cutoff. </p>
 <p>My success rate with this method is ~60%, and most of the loss comes from me neglecting to turn on Google Timeline on my iPhone until sometime mid-2021. In total, I recovered 600+ days of <em>accurate</em> Fitbit sleep data and can now produce fun sleep graphs which I can trust. For instance, here is my true Tetris speed vs. sleep graph: </p>
-<p><img loading="lazy" alt="Scatterplot of sleep duration vs Tetris pieces per second with a slightly rising linear fit, p=1.91e-06" class="addpic" src="/static/glocfitbittzcorrection/2.png"/></p>
+<p><img alt="Scatterplot of sleep duration vs Tetris pieces per second with a slightly rising linear fit, p=1.91e-06" class="addpic" height="1018" loading="lazy" src="/static/glocfitbittzcorrection/2.png" style="aspect-ratio: auto 956 / 1018;" width="956"/></p>
 <p>Turns out sleep is good for you, actually.</p>
 <h1 id="code">Code</h1>
 <p>Code is provided with no guarantees or user-friendly comments. Use at your own risk, etc. etc.</p>
@@ -429,6 +437,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

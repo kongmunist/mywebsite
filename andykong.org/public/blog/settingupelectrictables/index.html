@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Setting up Electric Tables v0.2 | Andy Kong</title>
 <meta name="description" content="Shoutout to Tom Critchlow">
@@ -322,6 +323,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -347,7 +355,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -367,10 +375,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -394,7 +402,7 @@
 <hr/>
 <h2 id="browser-as-a-memex">Browser as a Memex</h2>
 <p class="caption"> Screenshot from my Timing dashboard, back in my period of riches </p>
-<p><img loading="lazy" alt="Screenshot from my Timing dashboard, back in my period of riches" class="addpic" src="/static/rt_timingdashboard.png"/></p>
+<p><img alt="Screenshot from my Timing dashboard, back in my period of riches" class="addpic" height="1024" loading="lazy" src="/static/rt_timingdashboard.png" style="aspect-ratio: auto 1196 / 1024;" width="1196"/></p>
 <p>Over half of all my computer activity happens in the browser, so I've decided to start with indexing browser activity automatically. </p>
 <p><a href="https://tomcritchlow.com/">Tom Critchlow</a> recently released this great bookmarklet tool he calls <a href="https://tomcritchlow.com/2022/02/07/electric-tables-v2/">Electric Tables</a>, which template matches onto author names, titles, dates, and more to index a website as a row in a spreadsheet. Previously, this used the browser's <code>localStorage</code>, but it has since moved to Google Sheets. </p>
 <p>I think this is a great development, and wanted to set up Electric Tables myself. The <a href="https://gist.github.com/tomcritchlow/cbb06a9298fb6cc0804372552fda1f96">gist</a> that Tom posted with the code had instructions for each step of the way, but silly coder I am, I ran into some trouble setting it up. This post is to clarify what exactly needs to be done so future Andy (and others!) can have less trouble in the future. </p>
@@ -405,21 +413,21 @@
 <h2 id="google-script">Google Script</h2>
 <p>Go to <a href="https://script.google.com/home">script.google.com</a> and sign in, then click "New project" in the top left. It should take you to this blank page</p>
 <p class="caption"> Blank Google Script </p>
-<p><img loading="lazy" alt="Blank Google Script" class="addpic" src="/static/et_googlescript1.png"/></p>
+<p><img alt="Blank Google Script" class="addpic" height="886" loading="lazy" src="/static/et_googlescript1.png" style="aspect-ratio: auto 2608 / 886;" width="2608"/></p>
 <p>Name your project, then paste in the code from Tom's <a href="https://gist.github.com/tomcritchlow/cbb06a9298fb6cc0804372552fda1f96">gist</a> under <code>electrict-tables-v0.2.gs</code>. Feel free to delete the starter <code>myFunction</code>. </p>
 <p>We need to add a dependency called Cheerio which scrapes the text from websites. Hit the plus icon next to "Libraries" on the left panel, and include <a href="https://github.com/tani/cheeriogs">Cheerio</a> by looking up the Script ID: <code>1ReeQ6WO8kKNxoaA_O0XEQ589cIrRvEBA9qcWpNqdOP17i47u6N9M5Xh0</code>. Hit "Add" to include it.</p>
 <p class="caption"> Google Script with code, looking up Cheerio successfully </p>
-<p><img loading="lazy" alt="Google Script with code, looking up Cheerio successfully" class="addpic" src="/static/et_googlescript2.png"/></p>
+<p><img alt="Google Script with code, looking up Cheerio successfully" class="addpic" height="729" loading="lazy" src="/static/et_googlescript2.png" style="aspect-ratio: auto 1300 / 729;" width="1300"/></p>
 <p>Now we just gotta publish it to the web. Click "Deploy -&gt; New deployment", and select "Web app" as the type. I don't think the type matters for functionality, and you can leave the options as default. </p>
 <p>When you click deploy, you'll get a permissions popup screen. Since only you can run this script, it's safe to allow it to edit your spreadsheets, so go ahead and give it permission.</p>
 <p>If you go to Deploy-&gt;Manage deployments, you can grab the Web app URL. We'll need this for our bookmarklet. </p>
 <p class="caption"> Our script's API endpoint URL </p>
-<p><img loading="lazy" alt="Our script's API endpoint URL" class="addpic" src="/static/et_googlescript3.png"/></p>
+<p><img alt="Our script's API endpoint URL" class="addpic" height="617" loading="lazy" src="/static/et_googlescript3.png" style="aspect-ratio: auto 773 / 617;" width="773"/></p>
 <hr/>
 <h2 id="google-sheet">Google Sheet</h2>
 <p>Create a new Google Sheet, making sure it's under the same Google account as your script. We're going to add headers to the file so added rows are properly formatted. The column names are case-sensitive!</p>
 <p class="caption"> A properly set up Google Sheet </p>
-<p><img loading="lazy" alt="A properly set up Google Sheet" class="addpic" src="/static/et_googlesheet.png"/></p>
+<p><img alt="A properly set up Google Sheet" class="addpic" height="364" loading="lazy" src="/static/et_googlesheet.png" style="aspect-ratio: auto 987 / 364;" width="987"/></p>
 <p>I've also highlighted the Sheet ID in the URL. We only need this bit for the bookmarklet, not the whole thing. </p>
 <hr/>
 <h2 id="bookmarklet">Bookmarklet</h2>
@@ -427,18 +435,18 @@
 <p>You only need to add the macro URL from step 1 (should look like "<a href="">script.google.com/macros/s/....../exec</a>") and the spreadsheet ID (should look like <code>AodN89ua98dWL12O1oidRTa...</code> and be really long)</p>
 <p>Then head over to a <a href="https://caiorss.github.io/bookmarklet-maker/">bookmarklet generator</a> and copy in your edited <code>bookmarklet.js</code>. Hit "Run Code" to test it out, and the Electric Tables menu should pop up in the top right of your screen. Add a note, then click "Submit". </p>
 <p class="caption"> Bookmarklet page getting indexed </p>
-<p><img loading="lazy" alt="Bookmarklet page getting indexed" class="addpic" src="/static/et_bmtesting.png"/></p>
+<p><img alt="Bookmarklet page getting indexed" class="addpic" height="640" loading="lazy" src="/static/et_bmtesting.png" style="aspect-ratio: auto 1298 / 640;" width="1298"/></p>
 <p>Tab over to your Google Sheets page, and you should see a new row with the bookmarklet site and your note appear after a second.</p>
 <p class="caption"> Successful Electric Tables entry! </p>
-<p><img loading="lazy" alt="Successful Electric Tables entry!" class="addpic" src="/static/et_newrow.png"/></p>
+<p><img alt="Successful Electric Tables entry!" class="addpic" height="336" loading="lazy" src="/static/et_newrow.png" style="aspect-ratio: auto 787 / 336;" width="787"/></p>
 <p>Celebrate! Now you can just drag the bookmarklet button onto your bookmarks bar to make a button for it. You can also create a bookmark, then for the URL paste in the "Output" Javascript function. </p>
 <p class="caption"> Adding bookmarklet manually </p>
-<p><img loading="lazy" alt="Adding bookmarklet manually" class="addpic" src="/static/et_handbookmark.png"/></p>
+<p><img alt="Adding bookmarklet manually" class="addpic" height="132" loading="lazy" src="/static/et_handbookmark.png" style="aspect-ratio: auto 539 / 132;" width="539"/></p>
 <hr/>
 <h1 id="wrapping-up">Wrapping Up</h1>
 <p>So, you should have a nifty little bookmark sitting in your bookmarks bar that catalogues interesting pages you find for later, and it's all stored on Google's big boy servers! No need to remember it all yourself anymore (as if you were doing that before 😜)</p>
 <p class="caption"> Electric Tables bookmarklet </p>
-<p><img loading="lazy" alt="Electric Tables bookmarklet" class="addpic" src="/static/et_bookmarklet.png"/></p>
+<p><img alt="Electric Tables bookmarklet" class="addpic" height="65" loading="lazy" src="/static/et_bookmarklet.png" style="aspect-ratio: auto 122 / 65;" width="122"/></p>
 <p>Happy searching!</p></body></html>
 
 
@@ -468,6 +476,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

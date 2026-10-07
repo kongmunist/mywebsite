@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Recreating the Traxion psychophysics effect | Andy Kong</title>
 <meta name="description" content="Only 8 years late!">
@@ -319,6 +320,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -344,7 +352,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -364,10 +372,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -390,12 +398,12 @@
             <html><body><p>Hello! I recently learned of this paper called <a href="https://lab.rekimoto.org/projects/traxion/">Traxion</a>, wherein a genius visionary named Rekimoto discovered that asymmetrical vibration with a linear vibration motor caused a "pulling sensation" on a user's finger. A fake force that feels 32 grams of real force! Amazing!</p>
 <p>To tell the truth, I straight-up couldn't believe it until I tried it. With my limited setup, I produced 3V using an LM317 (powered by a 9V I acquired), then drove a transistor with an Arduino to generate the ramp/square wave I needed. </p>
 <p class="caption">Traxion setup</p>
-<p><img loading="lazy" alt="Traxion setup" src="/static/traxion_setup.jpg"/></p>
+<p><img alt="Traxion setup" height="843" loading="lazy" src="/static/traxion_setup.jpg" style="aspect-ratio: auto 584 / 843;" width="584"/></p>
 <p>Inside the linear actuator, there's a little weight anchored by spring to the center position of the body. This weight is what moves forward when we give the device a HIGH voltage, and it jerks back when we leave it unpowered. This "asymmetry" is what creates the sensation of a force. </p>
 <p>According to this more recent <a href="https://sci-hub.st/10.1109/HAPTICS.2016.7463151">paper</a>, the effect is caused by the skin dragging more in ON direction than when it turns OFF. This is due to the forward ON happening faster than the spring can pull it OFF. Something about detectable vs. unnoticeable acceleration. </p>
 <p>The authors drive their device with a high plateau, followed by a slow ramp down. This eases the spring-back while keeping the ON switch waaay fast. They claim the effect is strongest at 40Hz, but I found that just a simple duty cycled square wave (100Hz, 20% duty cycle) does the effect too, just less. </p>
 <p class="caption">Linear actuator I used. The little white pin is the weight, and it creates the force sensation in the length-wise axis</p>
-<p><img loading="lazy" alt="Linear actuator I used. The little white pin is the weight, and it creates the force sensation in the length-wise axis" src="/static/traxion_linearact.jpg"/></p>
+<p><img alt="Linear actuator I used. The little white pin is the weight, and it creates the force sensation in the length-wise axis" height="813" loading="lazy" src="/static/traxion_linearact.jpg" style="aspect-ratio: auto 775 / 813;" width="775"/></p>
 <h2 id="note">Note</h2>
 <p>This may sound silly, but I was surprised to feel vibration. Yea, yea, the thing is turning on and off really fast, but the paper only ever mentioned the force that it produced! I can't be blamed for wanting the vibration to go away to leave us with a free, fake force produced by a tiny vibrating motor. Maybe that's too easy though.</p>
 <p>I want to see if this can be done on a larger scale, maybe from a handheld object? (VR controller would be cool). Though vibrating things are hard to hold onto. </p>
@@ -422,6 +430,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

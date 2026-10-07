@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Reading speed comparison on paper vs screens | Andy Kong</title>
 <meta name="description" content="Also reflections on the Percy Jackson series">
@@ -320,6 +321,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -345,7 +353,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -365,10 +373,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -389,13 +397,13 @@
             <p style="font-size:0.8em;"> Published January 9, 2024</p>
 <hr>
             <html><body><p>I recently re-read the first five books of the Percy Jackson series. I'll share some data on reading speed, as well as my thoughts on the series after re-reading as an adult.</p>
-<p><img loading="lazy" alt="Covers of the first five Percy Jackson books by Rick Riordan" class="addpic" src="/static/printvsdigital/0.jpg"/></p>
+<p><img alt="Covers of the first five Percy Jackson books by Rick Riordan" class="addpic" height="1200" loading="lazy" src="/static/printvsdigital/0.jpg" style="aspect-ratio: auto 2760 / 1200;" width="2760"/></p>
 <hr/>
 <h1 id="data">Data</h1>
 <p>I read most of the PJ series on my computer, and use Timing to log the time spent reading each one. However, I happened to find my old physical copy of the third book on my shelf, and read that one on paper — since I used my computer right before and after reading it, we also have the time spent on that one. I'm getting word counts of each book from <a href="https://www.reddit.com/r/camphalfblood/comments/hm3gh8/numbers_the_length_of_percy_jackson/"> this reddit post </a>.</p>
-<p><img loading="lazy" alt="Bar chart of word counts for the five Percy Jackson books, ranging from about 64,000 to 89,000 words" class="addpic" src="/static/printvsdigital/1.png"/></p>
+<p><img alt="Bar chart of word counts for the five Percy Jackson books, ranging from about 64,000 to 89,000 words" class="addpic" height="527" loading="lazy" src="/static/printvsdigital/1.png" style="aspect-ratio: auto 591 / 527;" width="591"/></p>
 <p>It took me 503 minutes to read all of them:</p>
-<p><img loading="lazy" alt="Bar chart of reading speeds per Percy Jackson book; The Titan's Curse is slowest at 752 words per minute" class="addpic" src="/static/printvsdigital/2.png"/></p>
+<p><img alt="Bar chart of reading speeds per Percy Jackson book; The Titan's Curse is slowest at 752 words per minute" class="addpic" height="527" loading="lazy" src="/static/printvsdigital/2.png" style="aspect-ratio: auto 579 / 527;" width="579"/></p>
 <p>Now, the difference is not huge, but the only book where I read the physical copy was also the slowest read. Weird! Originally the difference was bigger because I overzealously counted how long it took me to finish book 3, but it is slow even after correction. This made me think about potential reasons — extra sleepy while reading, bad lighting, etc.</p>
 <p>Then I thought that the page turning time was adding to the read time. Since I always scroll extra far down, I never have to wait to turn a page while reading on my computer.</p>
 <p>To test this, I timed how long it took to turn 10 pages and read the first word on each page. For physical books, this took 15.8 seconds, and on my books app, it takes 7.32 seconds. Book 3 is 300 pages, so I can estimate wasted page turning time at ~254 seconds, which is not large enough to have affected the above graph (only 0.5% of the total read time). Still, interesting. </p>
@@ -430,6 +438,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

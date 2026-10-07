@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Fresnel Lens | Andy Kong</title>
 <meta name="description" content="Making flat lenses using special surface ridging">
@@ -320,6 +321,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -345,7 +353,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -365,10 +373,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -390,20 +398,20 @@
 <hr>
             <html><body><p>Hi! Today I'm going to tell you a bit about these really cool lenses that use angled surfaces to achieve magnification and other lens effects in a flat form factor instead of a curved one. I also show you some big ones I bought, and what they're useful for. We're talking about <a href="https://en.wikipedia.org/wiki/Fresnel_lens">Fresnel Lenses</a>!</p>
 <p class="caption">Fresnel lens versus regular convex lens</p>
-<p><img loading="lazy" alt="Caption" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Fresnel_lens.svg/242px-Fresnel_lens.svg.png"/></p>
+<p><img alt="Caption" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Fresnel_lens.svg/242px-Fresnel_lens.svg.png"/></p>
 <h2 id="lighthouses-and-firemaking">Lighthouses and Firemaking</h2>
 <p>They were originally created for use in lighthouses, avoiding the bulky size required by normal lenses. My first experience of one was a credit card-sized one, which my friend kept in his wallet in case he was stranded and needed to start a fire. Even though the day was sunny and we found dry kindling, the low-powered lens had difficulty lighting our kindling. It burnt the loose fibers easily, but created no flame.</p>
 <p class="caption">Fresnel lens in the shape of a credit card, for easy carrying around in the wallet</p>
-<p><img loading="lazy" alt="Fresnel lens in the shape of a credit card, for easy carrying around in the wallet" src="/static/fresnel_creditcard.jpg"/></p>
+<p><img alt="Fresnel lens in the shape of a credit card, for easy carrying around in the wallet" height="350" loading="lazy" src="/static/fresnel_creditcard.jpg" style="aspect-ratio: auto 302 / 350;" width="302"/></p>
 <h3>Projection and Magnification</h3>
 <p>I needed a lens for a project, and I stumbled upon an Amazon item that was just a big flat sheet Fresnel lens for like $3. It should have all the same properties as a normal lens, just in a flat package, so I bought it immediately. Anyway, here it is. </p>
 <p class="caption">Fresnel lens I bought magnifying office items</p>
-<p><img loading="lazy" alt="Fresnel lens I bought magnifying office items" src="/static/fresnel_magnify.jpg"/></p>
+<p><img alt="Fresnel lens I bought magnifying office items" height="374" loading="lazy" src="/static/fresnel_magnify.jpg" style="aspect-ratio: auto 512 / 374;" width="512"/></p>
 <p>As you can see, it's like a normal sheet of printer paper in size, and works quite well as a magnifier. I think this specific one is used to help old people read better. </p>
 <p>There's a few distortion effects since the sheet isn't rigid, but those can be worked out by holding it better. The instructions provided also state that the lens works better from one side than the other, which to me seems to violate <a href="https://en.wikipedia.org/wiki/Helmholtz_reciprocity">Helmholtz Reciprocity</a>. This says that the start and end of a light ray can be reversed without any effect — sending a ray down its start angle will always lead to the end, and sending the ray up its ending angle will always go back to its start. But what do I know? Maybe it's because the ridges are only on one side of the lens. </p>
 <p>The lens also works for projecting light sources. Here I am holding it up to my ceiling light, and it creates a mirror image of it quite well. </p>
 <p class="caption">Fresnel lens projecting an image of my ceiling lamp onto the wall</p>
-<p><img loading="lazy" alt="Fresnel lens projecting an image of my ceiling lamp onto the wall" src="/static/fresnel_reflectproject.jpg"/></p>
+<p><img alt="Fresnel lens projecting an image of my ceiling lamp onto the wall" height="436" loading="lazy" src="/static/fresnel_reflectproject.jpg" style="aspect-ratio: auto 349 / 436;" width="349"/></p>
 <p>I'm going to use this to try and make a wall projection. Cya!</p></body></html>
 
 
@@ -429,6 +437,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Eye-Tracking Mouse | Andy Kong</title>
 <meta name="description" content="An easy-to-use, handless mouse utilizing a laptop&#39;s built-in webcam and some CNNs.">
@@ -204,6 +205,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -229,7 +237,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -249,10 +257,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -268,22 +276,23 @@
                 <p style="margin-bottom: 5px; margin-top: 0px">Published: 2019-07-06</p>
 
                 <hr>
-            <html><body><div class="d-block mx-auto" style="text-align:center;"><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/iV9ZkvdsL7I" style="max-width: 50vw;" width="560"></iframe></div>
+            <html><body><div class="d-block mx-auto" style="text-align:center;"><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/iV9ZkvdsL7I" style="max-width: 50vw;" width="560"></iframe></div>
 <p>The mouse sucks. It only exists for changing screens and navigation; all real work done on a computer requires the keyboard. It is time to throw away the mouse as the main means of navigating around computers.</p>
 <p>I first stumbled across the eye-tracking mouse back in May on an online shop, and was astounded that I had never heard of it before. This invention had the ability to change the way we browse the internet, allowing us to move around as quickly as we can see. The only problem was its price. </p>
 <p>However, being an enterprising CS student, I realized that I could make the same thing for free. Once you know enough, most products can be replaced by custom-designed solutions made by yourself. My first prototype involved an accelerometer and ultrasonic sensor taped to some glasses and wired to an Arduino. Sadly, I realized that cheap accelerometers weren't precise enough to give consistent measurements, and neither was one ultrasound sensor. 
-<img loading="lazy" class="d-block mx-auto" src="/static/badglasses.png"/></p>
+<img class="d-block mx-auto" height="417" loading="lazy" src="/static/badglasses.png" style="aspect-ratio: auto 488 / 417;" width="488"/></p>
 <p>My next attempt involved machine learning. Thanks to Andrew Ng, I now knew enough to implement a CNN. Using a library called face_exploration, I harvested a few thousand images of my left eye to train a model. The images were all scaled to 50x100, grayscaled, and fed into a Neural Net. The structure was </p>
 <p>Conv-&gt;ReLU-&gt;BatchNorm-&gt;MaxPool-&gt;FC-&gt;FC-&gt;FC</p>
 <p>The final layer was a single real number that showed percentage of screen travelled. Multiplied by the width or height, it gave the pixel location I was looking at. </p>
 <p>I decided to make two separate models for x and y coordinates. I trained an abundance of models all hitting around 60-90 pixel accuracy, which is around 6-10% error compared to my screen width and height. I was hoping to create an ensemble capable of much better, but it only improved to 51 pixel error for the x classifier and 60 pixel error for the y classifier. </p>
-<p><img loading="lazy" class="d-block mx-auto" src="/static/eyedrawnname.png"/></p>
+<p><img class="d-block mx-auto" height="308" loading="lazy" src="/static/eyedrawnname.png" style="aspect-ratio: auto 600 / 308;" width="600"/></p>
 <p>The models performed worse in real-world conditions. The lighting was different, the angle I looked at my screen with was different, and my squintiness would change depending on how I felt. I'm sure the model was very confused. In the end, I added a 25 timestep moving average to calm down the predicted eye placements. No more jitter! Then with my newly tamed eye-tracking models, I drew my name and a star. </p>
-<p><img loading="lazy" class="d-block mx-auto" src="/static/stareye.png"/></p></body></html>
+<p><img class="d-block mx-auto" height="320" loading="lazy" src="/static/stareye.png" style="aspect-ratio: auto 701 / 320;" width="701"/></p></body></html>
         </div>
         <p style="line-height:300%;">&nbsp;</p>
 </div>
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

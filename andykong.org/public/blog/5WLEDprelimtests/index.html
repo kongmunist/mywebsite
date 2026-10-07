@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Preliminary 5W LED Tests | Andy Kong</title>
 <meta name="description" content="Projecting 5W of light onto a wall — DIY Projector">
@@ -320,6 +321,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -345,7 +353,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -365,10 +373,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -392,19 +400,19 @@
 <h2 id="setup">Setup</h2>
 <p>I got 10 of these yellow LEDs with legs in the mail, along with some aluminum backing plates. It's inordinately hard to find high power LEDs with the backing plates attached, but they're so cheap I just caved and bought them separately. </p>
 <p class="caption">Setup of the 5W LEDs. Each LED has a drop of 6-7V, so I am using two in series to test them with my 12V power supply</p>
-<p><img loading="lazy" alt="Setup of the 5W LEDs. Each LED has a drop of 6-7V, so I am using two in series to test them with my 12V power supply, which is just a laptop wall brick." src="/static/5Watters.jpg"/></p>
+<p><img alt="Setup of the 5W LEDs. Each LED has a drop of 6-7V, so I am using two in series to test them with my 12V power supply, which is just a laptop wall brick." height="600" loading="lazy" src="/static/5Watters.jpg" style="aspect-ratio: auto 661 / 600;" width="661"/></p>
 <p>I'm using a laptop wall brick, which outputs 5V and 12V at 1.5A each. Kinda cool, high output current bricks are a little hard to find. I always feel bad cutting the plug to get to the wires too... </p>
 <p>Anyway. I soldered on the two LEDs, no thermal paste just mechanical contact for now. I'll probably mount it on a larger heatsink, because this thing gets HOT. The circular indents around the edge look like they're for screws to hold in place. </p>
 <h2 id="projection">Projection</h2>
 <p>You remember those <a href="../fresnellens">Fresnel lenses</a> I bought a while back? This is what they were for. Here I got my brother to hold the sheet above the LEDs, and as he moved it up and down, the projected spot on the ceiling changed size and brightness. </p>
 <p class="caption">5W LED (very bright) being held under a Fresnel lens from my last post. I'm holding by the alligator clip since it's very hot.</p>
-<p><img loading="lazy" alt="5W LED (very bright) being held under a Fresnel lens from my last post. I'm holding by the alligator clip since it's very hot." src="/static/5W_setup.jpg"/></p>
+<p><img alt="5W LED (very bright) being held under a Fresnel lens from my last post. I'm holding by the alligator clip since it's very hot." height="533" loading="lazy" src="/static/5W_setup.jpg" style="aspect-ratio: auto 529 / 533;" width="529"/></p>
 <p class="caption">Far from the LEDs</p>
-<p><img loading="lazy" alt="Fresnel lens held far" src="/static/5W_tightcircles.jpg"/></p>
+<p><img alt="Fresnel lens held far" height="605" loading="lazy" src="/static/5W_tightcircles.jpg" style="aspect-ratio: auto 680 / 605;" width="680"/></p>
 <p class="caption">Middle far</p>
-<p><img loading="lazy" alt="Fresnel lens held in the middle" src="/static/5W_circles.jpg"/></p>
+<p><img alt="Fresnel lens held in the middle" height="605" loading="lazy" src="/static/5W_circles.jpg" style="aspect-ratio: auto 668 / 605;" width="668"/></p>
 <p class="caption">Close to the LEDs</p>
-<p><img loading="lazy" alt="Fresnel lens held close" src="/static/5W_bigcircle.jpg"/></p>
+<p><img alt="Fresnel lens held close" height="605" loading="lazy" src="/static/5W_bigcircle.jpg" style="aspect-ratio: auto 806 / 605;" width="806"/></p>
 <p>We only turned them on for about a minute, but the backplate hurt immediately to the touch. Definitely need to heatsink them, and I may even have some thermal paste from a computer build a while ago.</p>
 <p>The projected spot is massive just from the floor to ceiling, not to mention one wall to another. It could be even brighter if I funnel the light using some aluminum foil or some mirrors. </p>
 <p>One problem is that the Fresnel lens has distortion issues, and doesn't focus very well at all. The edges of shadows projected are all blurry, probably partially because of diffraction around my finger. Maybe I should collimate the light somehow before I shine it through the screen (I want this to show text eventually), but we'll see what problems I run into with the lens I currently have before I come up with new solutions.</p>
@@ -433,6 +441,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

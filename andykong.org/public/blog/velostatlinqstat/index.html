@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Variable resistance tests of Velostat/Linqstat | Andy Kong</title>
 <meta name="description" content="Testing the effects of bending, twisting, and touch on the conductive plastic Velostat.">
@@ -320,6 +321,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -345,7 +353,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -365,10 +373,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -389,35 +397,35 @@
             <p style="font-size:0.8em;"> Published May 17, 2020</p>
 <hr>
             <html><body><p>This is <a href="https://en.wikipedia.org/wiki/Velostat">Velostat</a>:</p>
-<p><img loading="lazy" class="d-block mx-auto" src="/static/velostat.jpg" width="400"/></p>
+<p><img class="d-block mx-auto" loading="lazy" src="/static/velostat.jpg" style="aspect-ratio: auto 400 / 300;" width="400"/></p>
 <p>It's a conductive sheet that's sometimes used for packaging ESD-sensitive electronics, but is commonly used by wearables hobbyists since it changes resistance when <i>anything</i> happens to it. Wrinkling. Heating. Bending. Twisting. Pressing. Anything that touches it is detectable!</p>
 <p>However, there's not a ton of information about it online, like how much change in resistance is visible for bending vs. twisting, etc. So I decide to do some testing and show y'all the results so you wouldn't have to!</p>
 <p>All tests were done on a 6.0 x 1.2 cm piece of the material, which I got from Adafruit. I held it in contact using some alligator clips, which weren't super precise contacts. This is probably why the baseline resistances were so variable, around 55 kΩ ± 5 kΩ. </p>
-<p><img loading="lazy" class="d-block mx-auto" src="/static/velostatnormal2.jpg" width="400"/></p>
+<p><img class="d-block mx-auto" loading="lazy" src="/static/velostatnormal2.jpg" style="aspect-ratio: auto 3024 / 2303;" width="400"/></p>
 <p class="caption">Basic experimental setup</p>
 <h3>Twisting</h3>
-<p><img loading="lazy" class="d-block mx-auto" src="/static/velostat180.jpg" width="400"/></p>
+<p><img class="d-block mx-auto" loading="lazy" src="/static/velostat180.jpg" style="aspect-ratio: auto 756 / 595;" width="400"/></p>
 <p>For these tests, I simply flipped one alligator clip and held the strip taut on the table. Best results came from twisting the strip so much that it curled into a tube, around 360 degrees for this width of strip.</p>
-<p><img loading="lazy" class="d-block mx-auto" src="/static/velostattwist.png" width="400"/></p>
+<p><img class="d-block mx-auto" loading="lazy" src="/static/velostattwist.png" style="aspect-ratio: auto 332 / 122;" width="400"/></p>
 <h3>Bending</h3>
-<p><img loading="lazy" class="d-block mx-auto" src="/static/velostatbend.jpg" width="400"/></p>
+<p><img class="d-block mx-auto" loading="lazy" src="/static/velostatbend.jpg" style="aspect-ratio: auto 756 / 488;" width="400"/></p>
 <p>I bent the strip into a bit of an omega shape, which didn't change it much. When I pinched it, the overall distance of the strip changed so the resistance went down instead of up.</p>
-<p><img loading="lazy" class="d-block mx-auto" src="/static/velostatbend.png" width="400"/></p>
+<p><img class="d-block mx-auto" loading="lazy" src="/static/velostatbend.png" style="aspect-ratio: auto 330 / 106;" width="400"/></p>
 <h3>Pulling</h3>
 <p>The resistance increased "linearly" from not pulling to maximum pull strength. This test was a bit tricky since my resistance would change the strips if I touched both alligator clips, so I carefully pulled both ends of the plastic without contacting the clips. </p>
-<p><img loading="lazy" class="d-block mx-auto" src="/static/velostatpull.png" width="400"/></p>
+<p><img class="d-block mx-auto" loading="lazy" src="/static/velostatpull.png" style="aspect-ratio: auto 334 / 78;" width="400"/></p>
 <h3>Touching/Pressure</h3>
 <p>When it comes to pressure, Velostat is not that great of a sensor without modification. I found that surface area of the finger touch affects the resistance more than pressing on it, and that non-finger touching with a plastic scissor's handle did not affect it much at at all. </p>
-<p><img loading="lazy" class="d-block mx-auto" src="/static/velostattouch.png" width="400"/></p>
+<p><img class="d-block mx-auto" loading="lazy" src="/static/velostattouch.png" style="aspect-ratio: auto 337 / 147;" width="400"/></p>
 <h3>Touching (Bent sheet)</h3>
 <p>Since I wanted to use this as a pressure sensor, I tried folding the sheet in the middle then pressing on that. This worked much better, but required securing by tape or some other adhesive. </p>
-<p><img loading="lazy" class="d-block mx-auto" src="/static/velostatfoldtouch.png" width="400"/></p>
+<p><img class="d-block mx-auto" loading="lazy" src="/static/velostatfoldtouch.png" style="aspect-ratio: auto 353 / 118;" width="400"/></p>
 <h3>Heating</h3>
 <p><a href="https://electronics.stackexchange.com/questions/452291/velostat-sensitivity-to-temperature">This</a> site I visited claimed that heat did not affect the sheet's resistance, but I decided to test it out. I held a soldering iron near my test strip without touching it, and found the biggest changes yet! It took a few seconds to heat to the max resistance, and about a minute to cool back to baseline. </p>
-<p><img loading="lazy" class="d-block mx-auto" src="/static/velostatheating.png" width="400"/></p>
+<p><img class="d-block mx-auto" loading="lazy" src="/static/velostatheating.png" style="aspect-ratio: auto 342 / 74;" width="400"/></p>
 <h3>Connections and Conclusions</h3>
 <p>I wanted to connect some wire to this stuff, but <a href="https://www.kobakant.at/DIY/?p=381">some people</a> online were using copper tape with conductive adhesive and conductive thread, which I didn't have. I tried soldering to it, but it just melted :(. Since alligator clips worked, I tried "crimping" some metal wire onto it, and that seemed to work well. Seems like it just needs to be in tight contact with metal to conduct. </p>
-<p><img loading="lazy" class="d-block mx-auto" src="/static/velostatcrimp.jpg" width="400"/></p>
+<p><img class="d-block mx-auto" loading="lazy" src="/static/velostatcrimp.jpg" style="aspect-ratio: auto 756 / 504;" width="400"/></p>
 <p>That's all! I'm probably going to stick with pressure sensing with my folded sheet, it seems to produce pretty drastic resistance changes. </p></body></html>
 
 
@@ -443,6 +451,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

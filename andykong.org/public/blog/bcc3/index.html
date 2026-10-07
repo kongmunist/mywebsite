@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Body Channel Communication Tutorial Pt. 3 | Andy Kong</title>
 <meta name="description" content="Reinventing the radio and using touch as the antenna">
@@ -321,6 +322,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -346,7 +354,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -366,10 +374,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -395,12 +403,12 @@
 <p><br/>
 Here's a demo showing a reactive calendar. When a user touches the pad, their smart watch transmits their encoded ID to the computer. When decoded, the computer knows who is touching it, and can show that user's calendar. </p>
 <p class="caption">Calendar that detects user identity through their touch</p>
-<p><img loading="lazy" alt="Calendar that detects user identity through their touch" src="/static/bcc3_caldemosmall.png"/></p>
+<p><img alt="Calendar that detects user identity through their touch" height="404" loading="lazy" src="/static/bcc3_caldemosmall.png" style="aspect-ratio: auto 1170 / 404;" width="1170"/></p>
 <hr/>
 <h1 id="recap-of-what-doesnt-work">Recap of what doesn't work</h1>
 <p><a href="../bcc2">Last time</a> I showed that high frequency switching on a transmitter could be received as "spikes" of voltage on the receiver side. </p>
 <p class="caption">Dense, thin groups of spikes are digital 1s, thick spikes of noise are the 60Hz leaking in to our 0 signal</p>
-<p><img loading="lazy" alt="Dense, thin groups of spikes are digital 1s, thick spikes of noise are the 60Hz leaking in to our 0 signal" src="/static/bcc2_every50msIS.png"/></p>
+<p><img alt="Dense, thin groups of spikes are digital 1s, thick spikes of noise are the 60Hz leaking in to our 0 signal" height="666" loading="lazy" src="/static/bcc2_every50msIS.png" style="aspect-ratio: auto 1368 / 666;" width="1368"/></p>
 <p>It turns out I was wrong; the spikes are only visible because the grounds were galvanically linked. I had done the separation of receiver and transmitter using a USB isolator, which produces its own ground from the laptop's USB power. This ground happens to be produced at the same potential as the transmitter's ground, so they still share the reference. </p>
 <p>When I powered the transmitter with a battery pack, the spikes dropped down to the level of the noise. They were still visible to the eye as higher movement bits of noise, but definitely impossible to detect computationally. Time to try something else.</p>
 <hr/>
@@ -408,34 +416,34 @@ Here's a demo showing a reactive calendar. When a user touches the pad, their sm
 <p>I'm using a high frequency carrier wave to carry the bits, and an amp to detect the signal in the specific frequency band of the carrier wave. This is basically how radios work. The transmitter uses the digitally-modulated clock signal of the Arduino(8 MHz) to send 0s and 1s. The receiver is a passive RC high-pass filter, followed by an amplifier stage before the ADC.</p>
 <h2 id="transmitter">Transmitter</h2>
 <p class="caption">Picture of the transmitter</p>
-<p><img loading="lazy" alt="Picture of the transmitter" src="/static/bcc3_transmitter.jpg"/></p>
+<p><img alt="Picture of the transmitter" height="1372" loading="lazy" src="/static/bcc3_transmitter.jpg" style="aspect-ratio: auto 1928 / 1372;" width="1928"/></p>
 <p>I was lazy with the earlier prototype and tried to transmit bits using the output from flipping a pin in the <code>loop()</code> of the Arduino as fast as possible. This technique caps out at a frequency of around 100kHz, but I wanted to go higher. </p>
 <p>I found a <a href="https://arduino.stackexchange.com/questions/16698/arduino-constant-clock-output">way</a> to output the Arduino's clock signal (16MHz square wave) on a pin. Connecting that to the input of a transistor, I could then turn the clock signal on and off using another pin on the base/gate. This became the transmitter signal: high frequency clock when on, grounded when off. </p>
 <p class="caption">Raw signal from the transmitter</p>
-<p><img loading="lazy" alt="Raw signal from the transmitter" src="/static/bcc3_raw.jpg"/></p>
+<p><img alt="Raw signal from the transmitter" height="621" loading="lazy" src="/static/bcc3_raw.jpg" style="aspect-ratio: auto 563 / 621;" width="563"/></p>
 <p>This turned out to be even easier to implement than what I tried in Pt. 2, since I only had to turn on and off a digital pin in the middle loop.</p>
 <p class="caption">Circuit for the transmitter, which is just a modulated clock signal</p>
-<p><img loading="lazy" alt="Circuit for the transmitter, which is just a modulated clock signal" src="/static/bcc3_transmittercircuit.jpg"/></p>
+<p><img alt="Circuit for the transmitter, which is just a modulated clock signal" height="405" loading="lazy" src="/static/bcc3_transmittercircuit.jpg" style="aspect-ratio: auto 643 / 405;" width="643"/></p>
 <h2 id="receiver">Receiver</h2>
 <p class="caption">Picture of the receiver</p>
-<p><img loading="lazy" alt="Picture of the receiver" src="/static/bcc3_receiver.jpg"/>
+<p><img alt="Picture of the receiver" height="899" loading="lazy" src="/static/bcc3_receiver.jpg" style="aspect-ratio: auto 1426 / 899;" width="1426"/>
 The receiver side swamps with 60Hz when I touch the input pin. This is both because the human body is a big antenna for all EMI pickup, and because the Arduino's ADC draws current from the source to measure voltages. </p>
 <p>To get rid of the 60Hz noise, we built an RC high-pass filter at 159Hz. It works surprisingly well for how close the cutoff frequency is to the noise frequency. After that, we had to add a lot of gain (300x) on the signal to see the square wave being modulated. We also built an artificial ground at 2.5V to act as the central reference for the op amp. </p>
 <p class="caption">Circuit for the reciever, composed of the stages in the above paragraph</p>
-<p><img loading="lazy" alt="Circuit for the reciever, composed of the stages in the above paragraph" src="/static/bcc3_receivercircuit.jpg"/></p>
+<p><img alt="Circuit for the reciever, composed of the stages in the above paragraph" height="515" loading="lazy" src="/static/bcc3_receivercircuit.jpg" style="aspect-ratio: auto 686 / 515;" width="686"/></p>
 <h2 id="transmitted-signal">Transmitted signal</h2>
 <p>Here's what we're sending. A header of 10 so the reciever knows a signal's coming, then an ASCII character. </p>
 <p class="caption">Raw output from the transmitter with labeled sections of the data</p>
-<p><img loading="lazy" alt="Raw output from the transmitter with labeled sections of the data" src="/static/bcc3_transmittedraw.png"/></p>
+<p><img alt="Raw output from the transmitter with labeled sections of the data" height="394" loading="lazy" src="/static/bcc3_transmittedraw.png" style="aspect-ratio: auto 431 / 394;" width="431"/></p>
 <p>And on the receiving side, the signal appears perfectly among all the 60Hz noise. </p>
 <p class="caption">Input on the receiving side, after filtering and gain. The bits are clearly visible</p>
-<p><img loading="lazy" alt="Input on the receiving side, after filtering and gain. The bits are clearly visible" src="/static/bcc3_receivedraw.png"/></p>
+<p><img alt="Input on the receiving side, after filtering and gain. The bits are clearly visible" height="825" loading="lazy" src="/static/bcc3_receivedraw.png" style="aspect-ratio: auto 1433 / 825;" width="1433"/></p>
 <h2 id="code">Code</h2>
 <p>The repo can be found <a href="https://github.com/kongmunist/BCC">here</a>. The transmitter code is very simple, just a digital write and some array reading. The receiver is a little more complex, and a bit hacky to read bitstrings. Works surprisingly well though. </p>
 <h2 id="final-demo">Final Demo</h2>
 <p>Here's a video of the calendar demo. I didn't have time to rig up two "watches" with different IDs, but my friend who is uninstrumented is unable to access a calendar like I am. Sorry buddy, should've been a technlogist!</p>
 <div style="text-align:center;">
-<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/4pwZ0hJcawM" title="YouTube video player" width="560"></iframe></div>
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/4pwZ0hJcawM" title="YouTube video player" width="560"></iframe></div>
 <h1 id="final-notes">Final Notes</h1>
 <h3>Limited signal propagation</h3>
 <p>The signal does not spread across my entire body, which was a little weird. Wearing the watch on my left wrist, I can trigger the calendar using my left hand, left elbow, nose, and right elbow, but not my right hand. I think with more gain on my receiving side I'd be able to detect it there too. I think <a href="http://www.alansonsample.com/publications/docs/2018%20-%20UIST%20-%20Enabling%20Interactive%20Infrastructure%20with%20BCC.pdf">this paper</a> talks more about distance of effect.</p>
@@ -470,6 +478,7 @@ The receiver side swamps with 60Hz when I touch the input pin. This is both beca
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

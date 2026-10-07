@@ -3,16 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Catherine Wang | Andy Kong</title>
 <meta name="description" content="Welcome to my personal site">
 <meta name="author" content="Andy Kong">
-<link rel="canonical" href="https://andykong.org/cwang/">
+<link rel="canonical" href="https://andykong.org/projects/catherinewang/">
 <meta property="og:site_name" content="Andy Kong">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Catherine Wang">
 <meta property="og:description" content="Welcome to my personal site">
-<meta property="og:url" content="https://andykong.org/cwang/">
+<meta property="og:url" content="https://andykong.org/projects/catherinewang/">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://andykong.org/static/chargerless/beaut.jpg">
 <meta property="og:image:secure_url" content="https://andykong.org/static/chargerless/beaut.jpg">
@@ -20,7 +21,7 @@
 
 <meta property="og:image:alt" content="Catherine Wang">
 
-<meta property="article:published_time" content="2026-08-23">
+<meta property="article:published_time" content="2031-08-23">
 <meta property="article:author" content="https://andykong.org/">
 
 
@@ -38,9 +39,9 @@
       "@type": "Article",
       "headline": "Catherine Wang",
       "description": "Welcome to my personal site",
-      "datePublished": "2026-08-23",
-      "url": "https://andykong.org/cwang/",
-      "mainEntityOfPage": "https://andykong.org/cwang/",
+      "datePublished": "2031-08-23",
+      "url": "https://andykong.org/projects/catherinewang/",
+      "mainEntityOfPage": "https://andykong.org/projects/catherinewang/",
       "image": "https://andykong.org/static/chargerless/beaut.jpg",
       "author": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"},
       "publisher": {"@type": "Person", "name": "Andy Kong", "url": "https://andykong.org"}
@@ -204,6 +205,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -229,7 +237,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -249,10 +257,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -265,7 +273,7 @@
             <h1 style="margin-bottom: 5px">Catherine Wang</h1>
                 <i><p style="margin-bottom: 5px; margin-top: 0px">Welcome to my personal site</p></i>
                 <p style="margin-bottom: 0px; margin-top: 0px">Timespan: Dec 2000-now</p>
-                <p style="margin-bottom: 5px; margin-top: 0px">Published: 2026-08-23</p>
+                <p style="margin-bottom: 5px; margin-top: 0px">Published: 2031-08-23</p>
 
                 <hr>
             <html><body><h1 id="hello-i-am-stanford-phd-uwu">🧠 Hello! I am Stanford PhD uwu</h1>
@@ -277,7 +285,7 @@ My research is somewhere between neuroscience, data science, and staring at tiny
 - Accidentally spending 3 hours debugging code that had a missing semicolon<br/>
 - Talking too loudly about dynamic capabilities at coffee shops  </p>
 <p class="caption"> me pretending to be serious in lab </p>
-<p><img alt="me pretending to be serious in lab" class="addpic" src="/static/cwang/cwang.png"/></p>
+<p><img alt="me pretending to be serious in lab" class="addpic" height="508" loading="lazy" src="/static/cwang/cwang.png" style="aspect-ratio: auto 472 / 508;" width="472"/></p>
 <hr/>
 <h2 id="my-papers-pls-cite-me">📚 My Papers (pls cite me 👉👈)</h2>
 <h3><a href="https://doi.org/10.1111/ijmr.12007">Entrepreneurial Learning: Past Research and Future Challenges</a></h3>
@@ -306,7 +314,7 @@ Available to Purchase (yes I know, academia paywalls are pain 🫠)  </p>
 <li>Here’s a plot of my sleep schedule during grant season: <code>function(your_sleep) = chaos(t)</code></li>
 <li>Here is a stock photo of a mouse that I pretend is my experimental subject:</li>
 </ul>
-<p><img alt="mouse!" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/House_mouse.jpg/320px-House_mouse.jpg"/></p>
+<p><img alt="mouse!" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/House_mouse.jpg/320px-House_mouse.jpg"/></p>
 <hr/>
 <h2 id="contact">📬 Contact</h2>
 <ul>
@@ -323,6 +331,7 @@ Available to Purchase (yes I know, academia paywalls are pain 🫠)  </p>
         <p style="line-height:300%;">&nbsp;</p>
 </div>
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

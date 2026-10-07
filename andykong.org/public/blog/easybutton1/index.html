@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<noscript><style>video.deferred-video { display: none; }</style></noscript>
 
 <title>Easy Button Hack Pt. 1 | Andy Kong</title>
 <meta name="description" content="Learning about SD cards, transistor audio amps, Arduino sleep and interrupts">
@@ -322,6 +323,13 @@
             border-radius: 0;
         }
 
+        :where(img[width][height]) {
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+
 </style>
 
 
@@ -347,7 +355,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img src="/static/aklogo.png" alt="Andy Kong's logo" height="50px" style="margin-top:0px;margin-bottom:10px" /></a>
+    <a class="navbar-brand" aria-label="Link to homepage in the navbar" style="height:50px; padding-left:10px;" href="/"><img alt="Andy Kong's logo" height="50px" loading="eager" src="/static/aklogo.png" style="margin-top:0px;margin-bottom:10px; aspect-ratio: auto 120 / 80;"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon hidden" style="background-color:#00b4cc;">
       <i class="fab fa-buffer fa-2x" style="color:#00b4cc; ">
@@ -367,10 +375,10 @@
                 <a class="nav-link navitem" href="/now/" >[Now]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/blog/" >[HBlog]</a>
+                <a class="nav-link navitem" href="/blog/" aria-label="HBlog: human-written posts">[HBlog]</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navitem" href="/agent-blog/" >[ABlog]</a>
+                <a class="nav-link navitem" href="/agent-blog/" aria-label="ABlog: agent-written posts">[ABlog]</a>
             </li>
         </ul>
     </div>
@@ -392,7 +400,7 @@
 <hr>
             <html><body><p>WOOO. In sort-of order, today I learned: how to read from SD cards, how to play wavs from SD cards, how to boost speaker volume using a transistor, how to limit transistor current using a resistor, how to trigger interrupts for Arduino sleep modes, how to change what shape causes an interrupt, which pins are and AREN'T interrupt pins, how to hijack the button on an Easy button (not easy, actually).</p>
 <p>Here's the end result: An Arduino rig that powers off until the button is pressed, then plays a random sound file from the SD card before powering off again. Gonna solder everything tomorrow and move it to battery power. </p>
-<p><img loading="lazy" alt="Pictured are the audio amplifier, speaker, Arduino Uno, and SD card" src="/static/easybuttonday1.jpg"/></p>
+<p><img alt="Pictured are the audio amplifier, speaker, Arduino Uno, and SD card" height="750" loading="lazy" src="/static/easybuttonday1.jpg" style="aspect-ratio: auto 1040 / 750;" width="1040"/></p>
 <p class="caption">Pictured are the audio amplifier, speaker, Arduino Uno, and SD card</p>
 <p><br/></p><hr/>
 <h3>Things I learned today that each took me at least an hour to figure out</h3>
@@ -435,6 +443,7 @@
 </div>
 
 
+<script src="/static/lazy-media.js" defer></script>
 <script src="/static/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="/static/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="/static/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
