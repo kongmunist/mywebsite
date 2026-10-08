@@ -47,6 +47,25 @@ print(app.config['FLATPAGES_EXTENSION'])
 BASE_URL = "https://andykong.org"
 app.jinja_env.globals['BASE_URL'] = BASE_URL
 
+# Former public URLs created by iCloud's duplicate filenames.
+LEGACY_BLOG_COPIES = ('alfredworth', 'cgmteardown1', 'highcurrentsource',
+                     'infoglobetutorial1', 'infoglobetutorial3', 'pqsda1',
+                     'urbanista-teardown')
+
+
+@app.route('/_redirects')
+def redirects_manifest():
+    """Freeze Cloudflare Pages' redirect rules alongside the HTML output."""
+    rules = []
+    for title in LEGACY_BLOG_COPIES:
+        # Do not register removed URLs with Frozen-Flask's url_for discovery.
+        source = '/blog/' + quote(title + ' 2', safe='') + '/'
+        destination = url_for('blog', title=title)
+        rules.extend(f'{path} {destination} 301' for path in (source, source.rstrip('/')))
+    response = make_response('\n'.join(rules) + '\n')
+    response.mimetype = 'text/plain'
+    return response
+
 
 def canonical_url(path=None):
     """Use the routed path and one consistent encoding everywhere."""
@@ -483,6 +502,8 @@ def agentblog():
 @app.route("/blog/<string:title>/")
 def blog(title):
     print("blog page " + title)
+    if title.endswith(' 2') and title[:-2] in LEGACY_BLOG_COPIES:
+        return redirect(url_for('blog', title=title[:-2]), code=301)
     page = [pages.get("blog/" + title)]
     blogPages = [p for p in pages if is_public_blog_or_log(p)]
 

@@ -7,7 +7,7 @@
     <atom:link href="https://andykong.org/rss.xml" rel="self"/>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
-    <lastBuildDate>Wed, 07 Oct 2026 23:48:23 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 08 Oct 2026 01:44:18 +0000</lastBuildDate>
     <item>
       <title>Fast automated mobile E2E testing — the unwritten manual</title>
       <link>https://andykong.org/blog/fast_mobile_e2e/</link>
@@ -493,49 +493,6 @@ print(f"{label:24s} {ms:6.0f}ms")
       <pubDate>Sun, 01 Feb 2026 00:00:00 -0500</pubDate>
     </item>
     <item>
-      <title>Teardown of the Urbanista Los Angeles headphones</title>
-      <link>https://andykong.org/blog/urbanista-teardown%202/</link>
-      <description>Removing another self-powering device from the world</description>
-      <content:encoded><![CDATA[<html><body><p>Hello all, it's certainly been a while since my last post so I thought we'd do something fun. Because of my current startup, I'm really interested in consumer electronics which can power themselves. I've only found a few devices like this, and today we're gonna take one apart to see how they're implementing it.</p>
-<h1 id="background">Background</h1>
-<p>We're currently in a battery-powered era of devices, driven by the cheap availability of rechargable, high density lithium batteries. However, as the chips powering these devices get more efficient, environmental energy sources like light or heat become a large enough source of power to contribute meaningful amounts of power to the device's battery life. Today, electronics that add energy harvesting can 2-3x battery life over pure battery-operated ones, especially if the duty cycle is low. </p>
-<p>The development of light-harvesting products specifically is driven by the availablility of flexible, "normal"-looking PowerFoyle solar cells by a Swedish company called Exeger. Light-harvesting electronics require a minimum power (light level) to harvest properly, and the minimum light level is higher the smaller the photovoltaic cell. PowerFoyle's cells are optimized for indoor harvesting so even dim indoor lighting can make it work, and the consumer device with the most area turns out to be headphones.</p>
-<p><img alt="" class="addpic" src="/static/urbanista-teardown/0.png"/></p>
-<p>Since we all work in the same space, I felt compelled to get one and test their panels myself. Exeger has partnered with a lot of big brands like JBL and Adidas, but the cheapest device I could find on eBay was a refurbed/stolen pair of Urbanista Los Angeles headphones.</p>
-<p><img alt="" class="addpic" src="/static/urbanista-teardown/1.png"/></p>
-<p>My interests lie mostly in the PV cell and the harvesting methodology, but I'm always interested to see how people make certain mechanisms at scale. The rest of this post will mostly be pictures.</p>
-<h1 id="teardown">Teardown</h1>
-<p>Here's the device</p>
-<p><img alt="" class="addpic" src="/static/urbanista-teardown/2.png"/></p>
-<p>Here's the panel we're after, built into the top band</p>
-<p><img alt="" class="addpic" src="/static/urbanista-teardown/3.png"/></p>
-<p>We start by popping off the pieces of the device that are snap-fit — The inner band, parts of the outer band, the earmuffs. You can immediately see they've strain reliefed the cable on the headband</p>
-<p><img alt="" class="addpic" src="/static/urbanista-teardown/4.png"/></p>
-<p>There's a couple of stickers keeping the band together, once those go the PV cell just falls out </p>
-<p><img alt="" class="addpic" src="/static/urbanista-teardown/5.png"/></p>
-<p><img alt="" class="addpic" src="/static/urbanista-teardown/6.png"/></p>
-<p>I used a clamp to pop off the two outer shell bits on the headphone themselves. The right one contains the harvesting and bluetooth chips (labeled on paper), and 2 mics for the noise-cancelling. </p>
-<p><img alt="" class="addpic" src="/static/urbanista-teardown/7.png"/></p>
-<p>The left earmuff has a 750mAh battery (10 kJ), PMIC, and 1 mic. I roughly calculated charging rate in direct sunlight and came up with 3-4 hrs to go from 0 to 100%.</p>
-<p><img alt="" class="addpic" src="/static/urbanista-teardown/8.png"/></p>
-<p>The part of the band coupling to the earmuffs (for the wire pass-through) is made of steel, which I found a bit surprising — its the only mechanical component that's made of metal in the whole device. Actually I felt a bit bad seeing how good the build quality was during the teardown. It was taken apart in a way that could be put back together, but I'm not really interested. </p>
-<h1 id="analysis">Analysis</h1>
-<p>From my brief research into this, Exeger bought another company called Sunboost which was also nordic in origin, and this is the harvester chip that's labeled SUNBST. Exeger also likes to partner with e-peas, a Belgian chip company. For now I don't have more info, so I'll just leave this section a stub. </p>
-<h1 id="conclusion">Conclusion</h1>
-<p>Two interesting realizations I had during this:</p>
-<ol>
-<li>
-<p>The amount of power available in the environment (heat/light) has been fixed for millenia, but our devices have become steadily more efficient. The next generation of devices will not need charging, the one after that will not even need energy harvesting.</p>
-</li>
-<li>
-<p>All devices trend smaller over time, except for things that must conform to the human body (headphones, gloves, bracelets). All tools are made small to the extent that people can still manipulate and use them effectively.</p>
-</li>
-</ol>
-<p>My review of the Urbanista Los Angeles headphones: Excellent build quality, decent noise cancelling, slightly uncomfortable and cheap earmuffs. Panel testing will come in a later</p></body></html>]]></content:encoded>
-      <guid isPermaLink="true">https://andykong.org/blog/urbanista-teardown%202/</guid>
-      <pubDate>Sun, 01 Feb 2026 00:00:00 -0500</pubDate>
-    </item>
-    <item>
       <title>First lessons from ordering CNC parts from China</title>
       <link>https://andykong.org/blog/cnctips1/</link>
       <description>metal on tap</description>
@@ -778,49 +735,6 @@ print(f"{label:24s} {ms:6.0f}ms")
       <pubDate>Sun, 06 Oct 2024 00:00:00 -0400</pubDate>
     </item>
     <item>
-      <title>Electronics Teardown: Stelo CGM</title>
-      <link>https://andykong.org/blog/cgmteardown1%202/</link>
-      <description>Power testing a consumer continuous glucose monitor</description>
-      <content:encoded><![CDATA[<html><body><p>Hello everyone, </p>
-<p>Hope everything is well in your life. I'm working on my implants talk for Hackaday Supercon (more info <a href="https://hackaday.com/2024/09/17/2024-hackaday-superconference-speakers-round-one/">here</a>). As part of my research, I tried out the Stelo CGM by Dexcom, this is (I think) the first over-the-counter continuous glucose monitor. I'll tell you how it was and then we're gonna dissect this bad boy!</p>
-<p><img alt="" class="addpic" src="/static/cgmteardown1/0.jpg"/></p>
-<h1 id="how-did-it-feel">How did it feel?</h1>
-<p>In a world where glucose monitors are &gt;100$ on Amazon sans insurance, Dexcom offers an affordable ($50) CGM with easily accessible data export, sampling your blood sugar every 5m and passing it to your phone via Bluetooth. The device lasts 15.5 days and comes in a kit of two, meaning annual glucose tracking can now be accomplished for ~1k USD.</p>
-<p><img alt="" class="addpic" src="/static/cgmteardown1/1.jpeg"/></p>
-<p>Deploying is done through this spring-loaded applicator, and is easy as pressing a button. A sharp, stiff needle in the cap punches a small hole in your arm and retracts, leaving behind the sensor body and a flexible needle with glucose oxidase coating. 15 days later, the app sends you an alert to replace it, and 12 hours after that it stops recording data. </p>
-<p>When I got this notification I went and got my teardown tools ready — nothing excites me more than opening a black box!</p>
-<h1 id="internal-pics">Internal pics</h1>
-<p><img alt="" class="addpic" src="/static/cgmteardown1/2.jpeg"/></p>
-<p>I started out using a Dremel, but then realized the soft rubber casing is weak enough you can just use wire snippers. The board is quite thin and liable to break as you peel the rubber off, so I had to be careful. </p>
-<p><img alt="" class="addpic" src="/static/cgmteardown1/3.jpeg"/></p>
-<p><img alt="" class="addpic" src="/static/cgmteardown1/4.jpeg"/></p>
-<p><img alt="" class="addpic" src="/static/cgmteardown1/5.jpeg"/></p>
-<h1 id="broad-architecture">Broad architecture</h1>
-<p>As far as I can tell, the glucose oxidase on the needle reacts with interstital glucose levels, turning your glucose concentration into a voltage. The Stelo uses an nRF52832 microcontroller to record this, waking up every 30 seconds to read the sensor and every 5 minutes to transmit the data to your phone/watch. The whole thing is powered by a coin cell battery, the Maxell CR1216 (<a href="https://www.maxell.com.tw/images/uploads/2014/10/CR1216_DataSheet_e.pdf">datasheet</a>), which claims a 25mAh capacity</p>
-<h2 id="question-1--are-we-getting-scammed-on-lifetime">Question 1 — are we getting scammed on lifetime?</h2>
-<p>One of the things I wanted to find out through this teardown was if the battery life was longer than the software claimed. 15 days is an incredibly square number, which led me to believe that Dexcom is "guaranteeing performance" by imposing an artificial software lifetime limit when the sensor could really go for longer.</p>
-<p><img alt="" class="addpic" src="/static/cgmteardown1/6.jpeg"/></p>
-<p>Immediately after I took the sensor off, the battery still reads 2.95V, but since this battery sports an extraordinarily flat discharge curve I have little idea how much capacity is left. </p>
-<p><img alt="" class="addpic" src="/static/cgmteardown1/7.png"/></p>
-<p>Since we can't tell by looking at the voltage, I powered the device using an external meter (Nordic PPK2) to find out how much power it draws. Here's the current consumption over 15 minutes:</p>
-<p><img alt="" class="addpic" src="/static/cgmteardown1/8.png"/></p>
-<p>After an initially high power boot for ~2 minutes, we reach steady operating conditions. Small spikes happen every 7.5 seconds, medium spikes every 30 seconds, and then large bursts of activity every 5 minutes denote Bluetooth activity (large bars on the ends). Average power consumption during steady-state is 8.7uA. If you'd like to see this power consumption data more granularly, feel free to email me for it. </p>
-<p><img alt="" class="addpic" src="/static/cgmteardown1/9.png"/></p>
-<p>Given its capacity of 25mAh, the battery on the Stelo could theoretically run it for 17 weeks continuously. However, nominal capacity assumes discharge down to 2V — while the nRF52832 microcontroller keeps working down to 1.7V, the other chips on this board may not. Let's say the board needs &gt;2.8V, then we can model our 8.7uA draw as a ~300kΩ load. On the battery curve given above, this corresponds to a lifetime of ~1000 hours, or about 5 weeks. Adding some margin for safety, we may indeed arrive at a reasonable lifetime of 15 days for this device.</p>
-<p><img alt="" class="addpic" src="/static/cgmteardown1/11.png"/></p>
-<p>Oh also, here's what the power looks like during the Bluetooth transmission. It looks like &gt;50 packets, and averages 100uA for 7 seconds.</p>
-<h2 id="question-2-what-other-chips-are-in-this-thing">Question 2: What other chips are in this thing?</h2>
-<p><img alt="" class="addpic" src="/static/cgmteardown1/10.jpeg"/></p>
-<p>The nRF is easily identified, but I cannot figure out what the other two are. The top has a small IC which seems to be connected to the larger antenna (possibly RFID?), and when I look up U78 it turns up an UHF amplifier (possible) with a different package, the 3SK206. But UHF antennas are pretty big usually, at least bigger than the Bluetooth one. </p>
-<p>The other big chip might be an analog frontend for the glucose needle electrode (the traces for that go right towards it). If so, it's amplifying the readout voltage from the glucose sensor before being digitized by the nRF, but again I could not figure out the specific part. Closest part marking I could find was a step-up converter, but that doesn't seem likely.</p>
-<h2 id="question-3-whats-the-bom">Question 3: What's the BOM?</h2>
-<p>I'm pretty interested in this, just because I like knowing internal info about consumer products. But until I figure out the other chips, I can't really give a good estimate for cost. I also have no idea what the encasement or needle or assembly cost, and the app is pretty nice too and that can't be easily included in cost of the product. The stuff I do know: the nRF costs about 2-3$ in bulk, passives I can't imagine exceed 50 cents in total, and the board is likely under 1$. I'm not too bummed by cost however, since in France the Libre Freestyle 2 is 40 Euro and I can't imagine them making much money over there. </p>
-<h1 id="conclusion">Conclusion</h1>
-<p>Knowing that the total power consumption is 8.7uA at 3V (~30uW) I think we can power this device using energy harvesting. For reference, I've seen a 4cm^2 solar panel receive nearly 3 mW in direct sunlight. Imagine a permanent CGM, powered simply by going outside in the sun for 15 minutes a day. What a life!</p></body></html>]]></content:encoded>
-      <guid isPermaLink="true">https://andykong.org/blog/cgmteardown1%202/</guid>
-      <pubDate>Sun, 06 Oct 2024 00:00:00 -0400</pubDate>
-    </item>
-    <item>
       <title>Solar energy harvesting</title>
       <link>https://andykong.org/blog/eetestr1801k/</link>
       <description>Testing out the R1801K</description>
@@ -917,54 +831,6 @@ print(f"{label:24s} {ms:6.0f}ms")
 <p>Seize the day, close those tabs, and take back the RAM for the important stuff: your buttery-smooth 120Hz screen refresh rate </p></body></html>]]></content:encoded>
       <guid isPermaLink="true">https://andykong.org/blog/monochrome/</guid>
       <pubDate>Wed, 12 Jun 2024 00:00:00 -0400</pubDate>
-    </item>
-    <item>
-      <title>Practical Quantified Self Data Analysis, Pt. 1</title>
-      <link>https://andykong.org/blog/pqsda1%202/</link>
-      <description>Functions you'll need</description>
-      <content:encoded><![CDATA[<html><body><p>Hello! Today I'll walk you through my data analysis pipeline for my personal time series data. </p>
-<p>The problem with personal data is that it's more of a hobby than a rigorous industrial process — as such, the sensors give patchy, inconsistent data which is hard to align across time. Another issue is the movement of humans vs. the immobility of some sensors means individualized corrections must be made for each type of data depending on the source (air quality reported from your bedroom must be filtered by location, however your watch does not).</p>
-<p>This is going to be a ~3 part series on what functions, broadly, are needed for a complete data analysis suite. I'm going to share my philosophy on this analysis and some code gists, but everything should be simple enough to adapt to other formats/libraries/languages. Let's begin!</p>
-<h1 id="analysis">Analysis</h1>
-<p>In my system, there are only two kinds of data: continuous data (heart rate, CO2, location) and event data (daily HRV, sleep session, coffee intake). They differ mainly by the frequency that the data is sampled. For me, here are the main kinds of graphs that I'm interested in producing:</p>
-<ol>
-<li>
-<p>Continuous vs. continuous (e.g. blood glucose vs. heart rate, scatterplot)</p>
-</li>
-<li>
-<p>Continous after event (heart rate after drinking coffee, time series)</p>
-</li>
-<li>
-<p>Continuous vs. event (average tetris score vs. previous sleep duration, scatterplot) </p>
-</li>
-<li>
-<p>Event vs. event (daily HRV vs. sleep duration, scatterplot)</p>
-</li>
-<li>
-<p>Event average after event (sleep quality after working out, bar chart)</p>
-</li>
-</ol>
-<p>These are not many, and they cover much of what is needed. Interestingly enough, these can all be constructed through the use of two functions. </p>
-<h1 id="function-1-interpolation-by-timestamp-analyses-1-4">Function 1: Interpolation by timestamp (Analyses 1, 4)</h1>
-<p>Most continuous sensors will not share timestamps, so you will need to align them (tossing stuff that doesn't line up perfectly) or "align them" (interpolate the denser value with a sparser one to get matching rows). Since we don't usually have a ton of data to spare, we go for interpolation. The code is simple, and just uses <code>np.interpolate</code></p>
-<p><img alt="Code snippet of the interpolateWith function signature, which interpolates one Steward's data with another's" class="addpic" src="/static/pqsda1/0.png"/></p>
-<p>This is preferred for continuous vs. continous, but for event vs. event much can happen on longer timescales so I think interpolation is quite lossy. </p>
-<h1 id="function-2-select-around-timestamp-analyses-2-3-5">Function 2: Select around timestamp (Analyses 2, 3, 5)</h1>
-<p>Since these analyses all use event data, we will select y-variable data that lines up with the event timestamp. This function just slices out time ranges from the y-variable that are specific offsets from each x-variable event. </p>
-<p><img alt="Code snippet of the selectAround function signature with eventTimes, beforeHours, afterHours, and cutoff arguments" class="addpic" src="/static/pqsda1/1.png"/></p>
-<p>Once each time range is found, we toss the ranges with zero elements and then have a list of dataframes. Just for fun, I added an "eventOffset" column for each sample so we can <code>hstack</code> them into a single DataFrame if desired. Here's one element from the list of my heart rate dataframes. </p>
-<p><img alt="" class="addpic" src="/static/pqsda1/2.png"/></p>
-<p>The <code>a</code> variable was created by running <code>a = s1.selectAround(doseTimes, beforeHours=2, afterHours=4)</code>, selecting time ranges that included each doseTime and data from 2 hours before and 4 hours after. Once the list is made, you can just plot each time range on the same graph:</p>
-<p><img alt="" class="addpic" src="/static/pqsda1/3.png"/></p>
-<p>Or more cleanly, plot a smoothed mean of the same data:</p>
-<p><img alt="" class="addpic" src="/static/pqsda1/4.png"/></p>
-<p>Another fantastic use case of <code>selectAround</code> is that I can select data that happened exclusively after or before an event time. For instance, if I wanted to see all sleep sessions happening within 6 hours of a caffeine event, I could run <code>sleep.selectAround(doseTimes, 0, 6, cutoff=0, surroundRequired=False)</code> and get the list of every time that happened. The inclusion of the <code>timeOffset</code> col also means I can scatterplot the sleep data once selected:</p>
-<p><img alt="" class="addpic" src="/static/pqsda1/5.png"/></p>
-<p><code>selectAround</code> also offers negative lookback and lookahead, so you can do whatever you need. </p>
-<h1 id="conclusion">Conclusion</h1>
-<p>Anyway, I think these two primitives are all you need to find any personal insights you might wish. You may also want to use filters (air quality data bool'd by location, or sleep session filtered by coffee consumption), but that will be saved for the next post.</p></body></html>]]></content:encoded>
-      <guid isPermaLink="true">https://andykong.org/blog/pqsda1%202/</guid>
-      <pubDate>Tue, 07 May 2024 00:00:00 -0400</pubDate>
     </item>
     <item>
       <title>Practical Quantified Self Data Analysis, Pt. 1</title>
@@ -2037,47 +1903,6 @@ SoftwareSerial <span style="color: #0066BB; font-weight: bold">mySerial</span>(R
     </item>
     <item>
       <title>Breakdown of my most used Alfred Workflows</title>
-      <link>https://andykong.org/blog/alfredworth%202/</link>
-      <description>Is Alfred worth buying?</description>
-      <content:encoded><![CDATA[<html><body><p>On September 26, 2023, I spent 34 British pounds on a software license for Alfred 5, giving me access to some extra features like Workflows and Remote execution. This post is going to tell you about the Workflows that I've found, written, or co-opted to be useful to me.</p>
-<p><img alt="" class="addpic" src="/static/alfredworth/0.png"/></p>
-<hr/>
-<p>Over time, I realized Alfred just makes a lot of little things easier, and we do a lot of those little things pretty often. Here's my Workflow list:</p>
-<p><img alt="" class="addpic" src="/static/alfredworth/1.png"/></p>
-<h2 id="1-quit-arena-or-all-but-messages-and-opera">1. Quit Arena, or "All but messages and Opera"</h2>
-<p>This workflow is derived from <a href="https://github.com/vitorgalvao/alfred-workflows/tree/master/QuitArena">this other workflow called QuitArena</a>, and just closes all my apps except a preset few (Chrome, Messages, Opera, Spotify). It's nice for clearing my screen before a presentation, or just to context-switch to working on another project. Used about 2x per month</p>
-<p><img alt="" class="addpic" src="/static/alfredworth/2.png"/></p>
-<h2 id="2-change-audio-to-airpods">2. Change Audio To Airpods</h2>
-<p>Runs two CLI scripts, one that Bluetooth connects to my Airpods (via their hard-coded MAC address) and another that switches the sound output to my Airpods. I use this about once a day, since they tend to connect to my phone first.</p>
-<p><img alt="" class="addpic" src="/static/alfredworth/3.png"/></p>
-<h2 id="3-clippaster">3. <a href="https://github.com/kongmunist/alfred_clippaster_workflow">ClipPaster</a></h2>
-<p>ClipPaster pastes the last $n$ screenshots from my clipboard history to whatever application is focused. It's nice for copying relevant parts of several screens or pictures at once and then putting them all into a doc at once. I use it about once a week. Modified from ClipSaver by luckman212 (next one!)</p>
-<p><img alt="" class="addpic" src="/static/alfredworth/4.png"/></p>
-<h2 id="4-clipsaver">4. <a href="https://github.com/luckman212/alfred_clipsaver_workflow">ClipSaver</a></h2>
-<p>ClipSaver does the same as above, but saves them to desktop instead of pasting them. I use it slightly less than once per week.</p>
-<p><img alt="" class="addpic" src="/static/alfredworth/5.png"/></p>
-<h2 id="5-email-myself">5. Email Myself</h2>
-<p>When I write "m mdmaowaodijwaojdwoaij", this workflow shoots off my "mdmaowaodijwaojdwoai" message to my mailbox. Good for quick reminders, but I don't use it that often.</p>
-<p><img alt="" class="addpic" src="/static/alfredworth/6.png"/></p>
-<h2 id="6-launch-apps">6. Launch Apps</h2>
-<p>While it's kind of silly or trivial, I find it way easier to bind hotkeys using Alfred than using the Settings-&gt;Keyboard-&gt;Keyboard Shortcuts method that's built-in to the Mac. This workflow surfaces some of my most-used applications. I use it a few times a day.</p>
-<p><img alt="" class="addpic" src="/static/alfredworth/7.png"/></p>
-<h2 id="7-system-settings">7. <a href="https://github.com/alfredapp/system-settings-workflow/">System Settings</a></h2>
-<p>Surfaces the MacOS system settings menus and makes them searchable in Alfred. Really nice, I use it about once a day.</p>
-<p><img alt="" class="addpic" src="/static/alfredworth/8.png"/></p>
-<h2 id="8-translate-hotkey">8. translate hotkey</h2>
-<p>I type "t something" and the "something" is immediately opened in Google Translate. 1-2x a day, but only because I live in a German-speaking area at the moment.</p>
-<p><img alt="" class="addpic" src="/static/alfredworth/9.png"/></p>
-<h2 id="9-url-handler">9. URL Handler</h2>
-<p>I wrote this to handle arbitrary strings. YouTube links get downloaded as videos, Github links get downloaded as zips, other websites get turned into ".webarchive" pages. Pretty generically useful, I use it about once a week.</p>
-<p><img alt="" class="addpic" src="/static/alfredworth/10.png"/></p>
-<h1 id="worth-it">Worth it?</h1>
-<p>I'm not going to do a dry, EA-style calculation of time saved, but I estimate Alfred saves me about 30s of annoying, flow-breaking tasks every day. And that number can only ever improve, so I think Alfred is a good purchase if you plan on using your computer a lot.</p></body></html>]]></content:encoded>
-      <guid isPermaLink="true">https://andykong.org/blog/alfredworth%202/</guid>
-      <pubDate>Sun, 26 Nov 2023 00:00:00 -0500</pubDate>
-    </item>
-    <item>
-      <title>Breakdown of my most used Alfred Workflows</title>
       <link>https://andykong.org/blog/alfredworth/</link>
       <description>Is Alfred worth buying?</description>
       <content:encoded><![CDATA[<html><body><p>On September 26, 2023, I spent 34 British pounds on a software license for Alfred 5, giving me access to some extra features like Workflows and Remote execution. This post is going to tell you about the Workflows that I've found, written, or co-opted to be useful to me.</p>
@@ -2296,45 +2121,6 @@ SoftwareSerial <span style="color: #0066BB; font-weight: bold">mySerial</span>(R
       <pubDate>Sun, 09 Apr 2023 00:00:00 -0400</pubDate>
     </item>
     <item>
-      <title>Infoglobe Tutorial Pt. 3 — Software</title>
-      <link>https://andykong.org/blog/infoglobetutorial3%202/</link>
-      <description>Adding bits to our atoms</description>
-      <content:encoded><![CDATA[<html><head><style>
-    /* Limit height. Show scrollbars when exceeding height */
-.gist .blob-wrapper.data {
-   max-height:40vh;
-   overflow:auto;
-}
-    </style>
-</head><body><p>Ok, welcome back for our final installment of the infoglobe tutorial series. If you've not been following along, here's links to the hardware mods that you'll need to have done before this post will be useful to you — <a href="../infoglobetutorial1">part 1</a> and <a href="../infoglobetutorial2">part 2</a>.</p>
-<p><img alt="" class="addpic" src="/static/igt1_hero.jpeg"/></p>
-<p>If you've forgotten, here's the device we're hacking - the Olympia Infoglobe. I have described it too often, so we're gonna get right into the meat of this post. </p>
-<hr/>
-<h1 id="code">Code</h1>
-<p>We're using the Wemos D1 mini ESP8266/ESP32 breakout board to control our globe, it looks like this.</p>
-<p><img alt="" class="addpic" src="/static/igt3_wemos.png"/></p>
-<p>Boot up your Arduino IDE and download the "IRremoteESP8266" library from the Tools-&gt;Manage Libraries-&gt; then search for IRremoteESP8266. This library should be supported for ESP32s as well. Hit install, and twiddle your thumbs for a bit as it installs.</p>
-<p><img alt="" class="addpic" src="/static/igt3_irlib.png"/></p>
-<p>Now, copy past <a href="https://gist.github.com/kongmunist/a8bdadbacda4bcb129cd183f2f0fffc5">this gist</a> into a new Arduino file and upload it to your ESP board. </p>
-<script src="https://gist.github.com/kongmunist/a8bdadbacda4bcb129cd183f2f0fffc5.js"></script>
-<p>This script is a demo showing the usage of all the functions we have to make controlling the Infoglobe easier. If you read through the <code>loop()</code> function, then you'll begin to understand the code and become able to extend it to your own beneficial/nefarious purposes.</p>
-<p>If all went well and your ESP and Infoglobe are both powered up, you should see a "Hello World" message swirling around. You can change the default message on line 47, or you can open the Serial Monitor to upload a message to the Infoglobe immediately. </p>
-<h2 id="example-use-case">Example use case</h2>
-<p>I've personally written some code which lets the Infoglobe connect to my wifi and access <a href="https://aksuper7.pythonanywhere.com/">this website</a> I made for receiving notes from my friends. If you type a message and my globe is plugged in, I'll be able to see the message right on my Infoglobe. Pretty cool, right? </p>
-<p class="caption"> Website to connect digital friends to my physical environment </p>
-<p><img alt="Website to connect digital friends to my physical environment" class="addpic" src="/static/igt3_example1.png"/></p>
-<p>I know of other people using their infoglobes as a weather/disaster reporting station, or a way to visualize Alexa messages. </p>
-<h2 id="alternatives-to-esp">Alternatives to ESP</h2>
-<p>It should be possible to substitute in any microcontroller which is supported by one of the IRremote libraries, since it should work as long as the function names are identical.</p>
-<h2 id="more-code">More code?</h2>
-<p>There are some cool folks working on a more sophisticated platform for interacting with the Infoglobe, but I don't currently have the link for that. Hopefully I can update this soon with the link.</p>
-<h1 id="thats-all-folks">That's all folks!</h1>
-<p>What will you do with your Infoglobe? I'd love to see it! Please feel free to email me if you get it working :)</p>
-<p>Happy hacking!</p></body></html>]]></content:encoded>
-      <guid isPermaLink="true">https://andykong.org/blog/infoglobetutorial3%202/</guid>
-      <pubDate>Sun, 09 Apr 2023 00:00:00 -0400</pubDate>
-    </item>
-    <item>
       <title>Infoglobe Tutorial Pt. 2 — Hardware Integration</title>
       <link>https://andykong.org/blog/infoglobetutorial2/</link>
       <description>Letting go of externalized electronics</description>
@@ -2537,105 +2323,6 @@ If we look closely, we notice that two of the red wires go to the bottom of the 
 <p>I'm trying to make a circular laser, and I fear this is easily done with some hose and gelatin instead of this complex ass setup i'm envisioning. Perhaps this will be cooler though.</p></body></html>]]></content:encoded>
       <guid isPermaLink="true">https://andykong.org/blog/cleargelatin1/</guid>
       <pubDate>Tue, 04 Oct 2022 00:00:00 -0400</pubDate>
-    </item>
-    <item>
-      <title>Infoglobe Tutorial Pt 1 — Hardware Prototyping</title>
-      <link>https://andykong.org/blog/infoglobetutorial1%202/</link>
-      <description>Hacking a new brain into the Infoglobe</description>
-      <content:encoded><![CDATA[<html><head><style>
-    image{
-        max-width: 100%;
-    }
-</style>
-</head><body><p>Hello! I'm writing a tutorial on how to hack your own Olympia Infoglobe. This first part just tells you all the wires you'll need to cut or connect in order to make it display custom messages. </p>
-<p class="caption"> caption </p>
-<p><img alt="caption" class="addpic" src="/static/igt1_hero.jpeg"/></p>
-<p>If you don't already know about the Infoglobe (surprising considering how I won't shut up about it), it's a caller ID system from the turn of the millenia which displayed who was calling your quaint little landline phone. It could also store messages that people left you, and display holiday messages. Overall, a cute little device!</p>
-<p>Today, the humble Infoglobe has been rendered obsolete by the modern smartphone. With no landline resurgence in sight, we're going to hack the Infoglobe to show custom messages and give it a second life as a weather station or some other mundane job.</p>
-<p>Let's start!</p>
-<hr/>
-<h1 id="tools">Tools</h1>
-<p>You'll need the following things</p>
-<ul>
-<li>1x Infoglobe</li>
-<li>Philips head screwdriver</li>
-<li>wire cutter</li>
-<li>soldering iron + solder</li>
-<li>50-1kΩ resistor</li>
-</ul>
-<p class="caption"> Since I already did this hack, I have only photographed two of the tools. Please use your imagination for the rest </p>
-<p><img alt="Since I already did this hack, I have only photographed two of the tools. Please use your imagination for the rest" class="addpic" src="/static/igt1_tools.jpg"/></p>
-<h2 id="step-1-remove-the-screws-from-the-base">Step 1: Remove the screws from the base</h2>
-<p>Pretty straightforward. There's 4 Philips-head screws in these 4 dark holes. They're kinda deep in there, so get a long thing screwdriver. Nothing will happen when they come out, but it makes the next step easier. </p>
-<p class="caption"> The four screw burrows, helpfully circled in red </p>
-<p><img alt="The four screw burrows, helpfully circled in red" class="addpic" src="/static/igt1_screws.jpg"/></p>
-<h2 id="step-2-remove-the-clear-blue-dome">Step 2: Remove the clear blue dome</h2>
-<p>Now we're taking off the top and getting to the insides. The top is held on by four latches you can see from the outside on the edges.</p>
-<p class="caption"> Latches visible from the outside (pic from eBay) </p>
-<p><img alt="Latches visible from the outside (pic from eBay)" class="addpic" src="/static/igt1_latches.jpeg"/></p>
-<p>Inside, they have a little notch going from the wall radially inwards</p>
-<p class="caption"> Inside the base, there are notches that go towards the center </p>
-<p><img alt="Inside the base, there are notches that go towards the center" class="addpic" src="/static/igt1_bottomclasp.jpg"/></p>
-<p>The top part has these seatbelt-like shapes that line up with the notch on the inside. </p>
-<p class="caption"> And on the top part, there are latches that extend into the body </p>
-<p><img alt="And on the top part, there are latches that extend into the body" class="addpic" src="/static/igt1_topclasp.jpg"/></p>
-<h3>Careful!!</h3>
-<p>I won't lie to you: getting this thing off is kinda hard. You feel like you're gonna break it on accident, and it's a sphere so it's hard to hold on to, and will definitely break when you drop it. I recommend sitting on the floor or hugging it when you're wrestling the top part off. </p>
-<p>You'll want to pick one latch to start with. Right above the latch on the blue part, pull inwards and pull up at the same time. Hold the base tightly with your other hand, or hug it with your arm. A wedge/screwdriver is unlikely to help. Here's a video of me getting the first one out.</p>
-<video controls="" src="/static/igt1_firstlatch.mp4" style="max-width: 100%"></video>
-<p style="font-size:.7em;">Funnily enough, I'm wearing a Dome shirt as I open this dome</p>
-<p>The rest of the latches get easier after the first two. Same technique, just pull in and pull up at the same time. </p>
-<h1 id="step-3-remove-the-propeller">Step 3: remove the propeller</h1>
-<p>Once you're in, the grey part will be loose, but still held in by the spinning arm of the Infoglobe. We'll have to take that off. Just use your screwdriver to remove those 3 small screws. The propeller is spring loaded, so maybe unscrew all of them a little first so the first one doesn't bounce out and get lost</p>
-<p class="caption"> Note the square center peg and the triangular screw arrangement - automatic alignment! </p>
-<p><img alt="Note the square center peg and the triangular screw arrangement - automatic alignment!" class="addpic" src="/static/igt1_propellerscrews.jpg"/></p>
-<p>Remove both the propeller and the grey plate and set them aside. </p>
-<h1 id="step-4-hijack-the-infoglobes-data-led-and-add-a-currentlimiting-resistor">Step 4: Hijack the Infoglobe's data LED and add a current-limiting resistor</h1>
-<p>There's 3 obvious LEDs once you're looking at the circuit board. One is red, this is just a power indicator. Of the two other light-blue ones, the innermost one is the data LED. </p>
-<p class="caption"> All LEDs inside the infoglobe, labeled </p>
-<p><img alt="All LEDs inside the infoglobe, labeled" class="addpic" src="/static/igt1_dataLED.jpg"/></p>
-<p>Previous tutorials have made circuit boards that integrate into the infoglobe, allowing it to continue displaying the phone stuff you wanna see plus cool custom stuff. This is why past projects have had such complex setups. I say why bother? The data LED has two wires like any other LED, and if we cut them then we can write whatever we want. </p>
-<p>There's two ways about this. You can either cut both legs of the LED and solder on new wires that run to the outside of the infoglobe, or you can just cut the positive side of the LED and connect the grounds of the Infoglobe board to your microcontroller. </p>
-<p>Either way, two wires get added so it's really up to you. I started with the single wire and joined the grounds first because I knew I wanted to power my microcontroller off the infoglobe power eventually, and it made prototyping way faster. </p>
-<p class="caption"> The two-cut approach hijacks the entire data LED. The LED's positive side is on the left </p>
-<p><img alt="The two-cut approach hijacks the entire data LED. The LED's positive side is on the left" class="addpic" src="/static/igt1_bothcut.jpg"/></p>
-<p class="caption"> The one cut approach, hijacks only the power wire (left) and requires you find ground somewhere else (anywhere connected to the right wirse is fine) </p>
-<p><img alt="The one cut approach, hijacks only the power wire (left) and requires you find ground somewhere else (anywhere connected to the right wirse is fine)" class="addpic" src="/static/igt1_onecut.jpg"/></p>
-<p>Run those two wires outside of the casing and connect a resistor in series so you don't blow out the Infoglobe's infrared LED. </p>
-<h3>PLEASE CONNECT A SERIES RESISTOR TO THE DATA LED LINE BEFORE USING IT, OTHERWISE YOU RISK BURNING OUT THE LED!</h3>
-<hr/>
-<h1 id="testing-the-infoglobe-without-putting-it-back-together">Testing the Infoglobe without putting it back together</h1>
-<p>If you wanted to plug in the infoglobe with all the plastic off, it'd probably be dangerous for both the board and you. It just takes a hair caught in the rotor to ruin your Infoglobe and hair and project all at once. But it sucks to put it all back together, and there is a way to be relatively safe without doing that. </p>
-<p>1) Put the grey piece back on. The alignment is a bit tricky but it should drop right in</p>
-<p><img alt="Infoglobe base with the grey plate dropped back into place over the electronics" class="addpic" src="/static/igt1_reass1.jpg"/></p>
-<p>2) Then place the rotor back on the center section and screw it in. Make sure you screw them all in a bit simultaneously, since there is a spring under it. </p>
-<p><img alt="" class="addpic" src="/static/igt1_reass2.jpg"/></p>
-<p>3) Get something to fool the safety switch, preferably nonmetal</p>
-<p class="caption"> This limit switch needs to be taped or pushed down </p>
-<p><img alt="This limit switch needs to be taped or pushed down" class="addpic" src="/static/igt1_safeswitch.jpg"/></p>
-<p class="caption"> Chopstick works for depressing it </p>
-<p><img alt="Chopstick works for depressing it" class="addpic" src="/static/igt1_reass3.jpg"/></p>
-<p>The top dome can also be placed into the slots without clicking down, but still low enough to trigger the safety switch. This is probably the safest way to do it.</p>
-<p class="caption"> The lid also works for triggering the safety switch, but this is the only method that is actually safe </p>
-<p><img alt="The lid also works for triggering the safety switch, but this is the only method that is actually safe" class="addpic" src="/static/igt1_reass4.jpg"/></p>
-<p>4) Plug in the infoglobe power, and the rotor should begin spinning with no words appearing</p>
-<p>To change the insides requires at least unscrewing the rotor, but luckily you won't need to do it much at all. </p>
-<hr/>
-<h1 id="final-setup">Final setup</h1>
-<p>At this point, you should have an Infoglobe with two wires coming out of it. I originally used F jumpers as the wires to the data LED, then plugged into them using an external Arduino. </p>
-<p class="caption"> Picture of the Arduino setup I originally worked with, Arduino not in-frame </p>
-<p><img alt="Picture of the Arduino setup I originally worked with, Arduino not in-frame" class="addpic" src="/static/igt1_testingsetup2.jpg"/></p>
-<p>Later when I was sure the code worked on Arduino, I moved to using an ESP8266 microcontroller. It's the little square with a blue light in the picture below. </p>
-<p><img alt="" class="addpic" src="/static/igt1_testingsetup.jpg"/></p>
-<p>Since the ESP has no headers, I'm using a breadboard to connect the ESP to the data wires. Again, the LED's wires you've added will just run out from under the shell of the Infoglobe, and they safety switch can be engaged using the top dome despite the wires preventing it from closing fully. </p>
-<p>There is some more hardware on the breadboard than I'm letting on, but that will be covered in Pt 2.</p>
-<hr/>
-<h1 id="conclusion">Conclusion</h1>
-<p>There's a few more steps if you want to integrate the infoglobe with your microcontroller, but that's for a later tutorial. Now you've gotten a connected LED. Time to write some messaging software!</p>
-<p>If I haven't published it and you want me to get on with it, just shoot me an email and I'll add it to my very relaxed schedule. </p>
-<p>Update 10/13: There's a part two <a href="../infoglobetutorial2">here</a>!</p></body></html>]]></content:encoded>
-      <guid isPermaLink="true">https://andykong.org/blog/infoglobetutorial1%202/</guid>
-      <pubDate>Sat, 01 Oct 2022 00:00:00 -0400</pubDate>
     </item>
     <item>
       <title>Infoglobe Tutorial Pt 1 — Hardware Prototyping</title>
@@ -3112,86 +2799,6 @@ We see that his "Top Stocks to Watch Today: Thursday, September 16" watchlist di
 <p>Either way, pretty dope. </p></body></html>]]></content:encoded>
       <guid isPermaLink="true">https://andykong.org/blog/fourieraperture/</guid>
       <pubDate>Mon, 20 Sep 2021 00:00:00 -0400</pubDate>
-    </item>
-    <item>
-      <title>Measuring 150 Amps With A DIY Shunt</title>
-      <link>https://andykong.org/blog/highcurrentsource%202/</link>
-      <description>Speccing a 150A@5V power supply, the NJE MK750</description>
-      <content:encoded><![CDATA[<html><body><p>Hello everyone! Today I'm going to show y'all my testing of a high current, low voltage DC power supply.</p>
-<p>Typical bench power supplies will go up to about 30V, and output 3A at most. For more powerful power supplies, their focus will usually be on voltage, going up to kilovolts at only a few amps or milliamps. </p>
-<p>I recently had the need for the opposite kind of power supply, a high current and low voltage one, up to 200A at around 3V. I found this one on Ebay which seemed the fit the bill. Let me tell you all about it!</p>
-<p class="caption">What could it be?</p>
-<p><img alt="What could it be?" src="/static/mk750_backonly.jpg"/></p>
-<h1 id="how-do-you-make-200a">How do you make 200A?</h1>
-<p>Before I bought this, I had juggled a few alternatives. There are many sketchy ways you can generate huge currents. A few I considered were: </p>
-<ul>
-<li>
-<p>A) shorting out around 10 drone/RC car LiPos in parallel (burst numbers are higher, but about 20A sustained current per battery)</p>
-</li>
-<li>
-<p>B) Rectifying and rewinding a microwave transformer to output 3V from the wall</p>
-</li>
-<li>
-<p>C) Harvesting RAM power supplies from dead motherboards (Sketchy YouTube videos put this at 20A, 3V)</p>
-</li>
-<li>
-<p>D) Buying a battery-tester power supply, which are at weird voltages (8V, 5V, 4V, 2V, etc.) but super high currents.</p>
-</li>
-</ul>
-<p>Option D beat out the others in terms of reliability, but those niche power supplies are quite expensive, even on eBay. Luckily, I found an older one that seemed to do exactly what I wanted. </p>
-<p class="MK750 eBay page. I may have bought the last one"></p>
-<p><img alt="MK750 eBay page. I may have bought the last one" src="/static/mk750_ebaypage.png"/></p>
-<p>The NJE Corp. MK750, MK1000, and MK1500 were power supplies at their eponymous wattage, which output anything from 2V to 48V at massive currents. The only datasheet I could find was <a href="/static/mk750_datasheet.pdf" target="_blank">this one</a>, and there's not a ton of information on there (like what those 6 pins are for). But I needed this power supply, so I went ahead and ordered it. </p>
-<h1 id="voltage-testing">Voltage Testing</h1>
-<p>The first thing I checked was the voltage. After wiring the AC, ACC, and GND pins (3 prong power), I plugged it into a wall meter and checked the output. It looked good, almost perfectly 5V. With no load, the power supply drew around 70W, or 0.5A from the wall. </p>
-<p class="caption">MK750 outputting 5V, as it should</p>
-<p><img alt="MK750 outputting 5V, as it should" src="/static/mk750_5vconfirmed.jpg"/></p>
-<h1 id="current-testing">Current Testing</h1>
-<p>What I <em>really</em> wanted to know was if the MK750 could output the massive currents its manual had promised. This was a bit trickier. I could have used a clamp, but I didn't think of that. Instead, I watched an ElectroBOOM <a href="https://www.youtube.com/watch?v=j4u8fl31sgQ">video</a> about DIY current shunts and decided to use one of those.</p>
-<p>Really, a DIY current shunt is just a wire. At 5V, to output 150A you need a load of </p>
-<p>$$ 5V/150A = 0.033Ω = 33mΩ $$</p>
-<p>This is usually the resistance of a few feet of wire. Mehdi talks about how multimeters suck at measuring low resistances, but they are good at voltage. I cut a random length of a random wire off the wall, and passed 1A constant-current through it to find the resistance. The measured mV corresponded directly to the mΩ of the wire. </p>
-<p class="Thin wire of a good resistance, but not nearly enough current capacity"></p>
-<p><img alt="Thin wire of a good resistance, but not nearly enough current capacity" src="/static/mk750_thinwire.jpg"/></p>
-<p>This bit of wire happened to be around 48mΩ, which was nearly perfect. However, just before I plugged it in, I realized that the entire output 750W of the MK750 would pass through this tiny 18 AWG  wire and vaporize it instantly. Immediately I threw the thin wire away, and went foraging for some thicker power wires. </p>
-<p class="Thicker wire of a perfect resistance"></p>
-<p><img alt="Thicker wire of a perfect resistance" src="/static/mk750_thickwire.jpg"/></p>
-<p>We cleaned the club a few days ago, and had thrown out some chunky orange power cables. Each cable had 3 conductors, so I took a length of this and crimped alternating ends together to make a triply long cable in the length of one. I did the same test as before, passing 1A through the combined cable. This resistance turned out to be actually perfect, at 34mΩ. </p>
-<h1 id="using-the-3wire-shunt-34mω">Using the 3-wire shunt (34mΩ)</h1>
-<p class="3-strand shunt resistor all set up, multimeter right next to it"></p>
-<p><img alt="3-strand shunt resistor all set up, multimeter right next to it" src="/static/mk750_threestrandbefore.jpg"/></p>
-<p>I connected our shunt to the power supply, then clipped my multimeter to the output. I'm measuring voltage to get the current. Since Ohm's law always holds, if we already calculated the resistance and then measure the voltage, we have everything we need. Time to plug it in!</p>
-<p class="3-strand shunt resistor under test. Multimeter reads 5.14V"></p>
-<p><img alt="3-strand shunt resistor under test. Multimeter reads 5.14V" src="/static/mk750_threestrandduring.jpg"/></p>
-<p>And the MK750 delivers! Across our 35mΩ wire we see a drop of 5.14V, which works out to
-$$\frac{5.14V}{0.035Ω} = 147.7 \text{Amps}$$
-Woohoo! Almost exactly 150 amps at 5V. The readout from the wall meter said around 900W, so approximately the baseline 50W + 150Ax5V. Not bad for efficiency.</p>
-<p>Oh, and the wires got HOT. I only left it on for a few seconds for safety, but even then the thermometer said the wire got over 100F. Crazy!</p>
-<p class="Our shunt temperature after only 10 seconds of 150A"></p>
-<p><img alt="Our shunt temperature after only 10 seconds of 150A" src="/static/mk750_hotwire.jpg"/></p>
-<h1 id="using-a-2wire-shunt-23mω">Using a 2-wire shunt (23mΩ)</h1>
-<p>I wanted to see what this power supply was really capable of. I had avoided using a shunt lower than 33mΩ because I was afraid that shorting out the power supply would break it. Thinking further, I realized that 33mΩ is already considered a dead short in any other application, so it probably wasn't a concern. </p>
-<p>In our 3-stranded shunt, each wire was around 11mΩ. I moved the crimps so that it only used two wires, for a new shunt resistance of around 23.2mΩ. I reconnected everything to this smaller shunt, and switched it on. </p>
-<p class="A snapshot of the rising voltage of our 2-strand shunt"></p>
-<p><img alt="A snapshot of the rising voltage of our 2-strand shunt" src="/static/mk750_twostrandduring.jpg"/></p>
-<p>As expected, the output voltage dropped a bit to compensate for the short. However, the voltage reading on my multimeter immediately started shooting up, beginning at 4.3V and climbing to 4.9V in the space of a few seconds. I assume this is from heat increasing the resistance of the wire, and shut it off quickly. </p>
-<p>Using the initial reading of 4.3V, Ohm's law says the MK750 output 185A at first, and a clamp meter agreed at around 170A. The wall meter read 1120W during this test.</p>
-<video controls="" src="/static/mk750_vid3.mov"></video>
-<h1 id="closing-thoughts">Closing thoughts</h1>
-<p>This power supply is amazing. Unfortunately, the NJE Corporation just filed for bankruptcy last year (2020), so I don't think we'll be seeing many more power supplies where that came from. </p>
-<p>It also smells weird, but that's completely fine given its the excellent performance otherwise. </p>
-<p>Cya next time!</p>
-<h1 id="may-8-2024-update">May 8, 2024 Update</h1>
-<p>A reader emailed me asking for the pinout of the auxiliary J1 connector on the front panel of the power supply. I never had use for these features so I did not know, but he was dedicated enough to order a manual and kind enough to send me a picture:</p>
-<p class="caption"> The pinout of the J1 connector on the NJE MK750/MK1500 high current power supply </p>
-<p><img alt="The pinout of the J1 connector on the NJE MK750/MK1500 high current power supply" class="addpic" src="/static/NJE_J1_PINOUT.jpg"/></p>
-<p>These pins correspond to the functions mentioned in the 1-pager manual I have above.</p>
-<p><img alt="" class="addpic" src="/static/nje_functions.png"/></p>
-<p>And the sense pins are supposed to be connected to the outputs like so (I think to monitor the output voltage).</p>
-<p class="caption"> From random eBay listing </p>
-<p><img alt="From random eBay listing" class="addpic" src="/static/nje_senseplugs.png"/></p></body></html>]]></content:encoded>
-      <guid isPermaLink="true">https://andykong.org/blog/highcurrentsource%202/</guid>
-      <pubDate>Mon, 06 Sep 2021 00:00:00 -0400</pubDate>
     </item>
     <item>
       <title>Measuring 150 Amps With A DIY Shunt</title>
